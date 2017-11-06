@@ -23,6 +23,15 @@
 </div>
 ```
 
+## Primary
+
+```js
+<div style={{ display: 'flex' }}>
+  <Button isPrimary={ false }>Cancel</Button>
+  <Button isPrimary={ true }>Primary button</Button>
+</div>
+```
+
 ## Hints
 
 Hints can be used for displaying keyboard shortcuts.

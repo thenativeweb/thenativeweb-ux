@@ -1,6 +1,7 @@
 @import '../../variables.css';
 
 .View {
+  box-sizing: border-box;
   position: relative;
   font-family: var(--font-family-default);
 }
