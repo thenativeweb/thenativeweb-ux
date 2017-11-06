@@ -1,0 +1,43 @@
+@import '../../variables.css';
+
+.Brand {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-headline);
+  background: var(--color-brand-grey);
+
+  & .Suffix {
+    text-align: 'center';
+    margin-top: 3px;
+    color: var(--color-brand-white);
+  }
+}
+
+.Collapsed {
+  & * {
+    animation: none;
+  }
+}
+
+.SizeL {
+  & .Suffix {
+    font-size: var(--font-size-large);
+  }
+}
+
+.SizeS {
+  & .Suffix {
+    font-size: var(--font-size-medium);
+  }
+}
+
+@media (--device-tablet) {
+  .SizeL {
+    & .Suffix {
+      font-size: var(--font-size-medium);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../variables.css';
+
+.TextBox {
+  padding: 9px 12px;
+  font-size: 16px;
+  font-family: var(--font-family-default);
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--color-brand-mid-grey);
+
+  &:focus {
+    border: 1px solid var(--color-brand-dark-grey);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--color-brand-dark-grey);
+    font-family: var(--font-family-default);
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.5;
+  }
+}
+
+.TypePort {
+  width: 4em;
+}

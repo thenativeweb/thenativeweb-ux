@@ -1,0 +1,77 @@
+@import '../../variables.css';
+
+.Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-brand-highlight);
+  color: var(--color-brand-white);
+  font-family: var(--font-family-default);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: var(--components-border-radius-default);
+  border: 1px solid var(--color-brand-highlight);
+  outline: none;
+
+  &:focus {
+    border: 1px solid var(--color-interaction-focus);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.AdjustFlex {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100%;
+}
+
+.AdjustAuto {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.SizeDefault {
+  padding: 7px 11px;
+  margin: 16px;
+  margin-left: 0;
+  font-size: var(--font-size-default);
+}
+
+.SizeS {
+  padding: 7px 11px;
+  font-size: var(--font-size-medium);
+  margin: 0;
+  margin-right: 6px;
+}
+
+.TypeLink {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 16px;
+  margin: 0;
+  color: var(--color-brand-highlight);
+  background: none;
+  outline: none;
+  border: none;
+
+  &:focus {
+    border: none;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.Hint {
+  opacity: 0.5;
+  font-size: var(--font-size-medium);
+  padding-left: 0.75em;
+}

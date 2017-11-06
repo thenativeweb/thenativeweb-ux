@@ -1,0 +1,22 @@
+@import '../../variables.css';
+
+.Logo {
+  /* Left blank intentionally */
+}
+
+.SizeS {
+  width: 64px;
+  height: 64px;
+}
+
+.SizeL {
+  width: 120px;
+  height: 120px;
+}
+
+@media (--device-tablet) {
+  .SizeL {
+    width: 100px;
+    height: 100px;
+  }
+}
