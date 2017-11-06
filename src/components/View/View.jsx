@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './styles.css';
 
 const View = ({ adjust, alignItems, children, className, justifyContent, scrollable, style, orientation }) => {
-  const viewClassNames = classNames(className, styles.View, {
+  const viewClassNames = classNames(styles.View, {
     [styles.OrientationCentered]: orientation === 'centered',
     [styles.OrientationHorizontal]: orientation === 'horizontal',
     [styles.OrientationVertical]: orientation === 'vertical',
@@ -13,7 +13,7 @@ const View = ({ adjust, alignItems, children, className, justifyContent, scrolla
     [styles.AlignItemsCenter]: alignItems === 'center',
     [styles.JustifyContentCenter]: justifyContent === 'center',
     [styles.ScrollableAuto]: scrollable === 'auto'
-  });
+  }, className);
 
   return (
     <div className={ viewClassNames } style={ style }>
