@@ -5,6 +5,7 @@ import ControlGroup from './components/ControlGroup';
 import Form from './components/Form';
 import Icon from './components/Icon';
 import setup from './setup';
+import Sidebar from './components/Sidebar';
 import TextBox from './components/TextBox';
 import View from './components/View';
 
@@ -16,6 +17,7 @@ export {
   Form,
   Icon,
   setup,
+  Sidebar,
   TextBox,
   View
 };
