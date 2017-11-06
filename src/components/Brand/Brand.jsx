@@ -4,31 +4,28 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.css';
 
-const Brand = ({ isCollapsed, showLogo, suffix, size }) => {
+const Brand = ({ suffix, size }) => {
   const brandClassNames = classNames(styles.Brand, {
-    [styles.Collapsed]: isCollapsed,
     [styles.SizeS]: size === 's',
     [styles.SizeL]: size === 'l'
   });
 
   return (
     <div className={ brandClassNames } role='presentational'>
-      <Logo isVisible={ showLogo } size={ size } />
+      <Logo size={ size } />
       <div className={ styles.Suffix }>{ suffix }</div>
     </div>
   );
 };
 
 Brand.propTypes = {
-  showLogo: PropTypes.bool,
   size: PropTypes.oneOf([ 's', 'l' ]),
   /** A suffix that will be added below the logo. */
   suffix: PropTypes.string
 };
 
 Brand.defaultProps = {
-  showLogo: true,
-  size: 'l',
+  size: 's',
   suffix: undefined
 };
 

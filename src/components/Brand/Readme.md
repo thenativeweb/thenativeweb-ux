@@ -9,14 +9,5 @@ Use this component to display the brand in pages an applications. The brand cons
 ```
 
 ```js
-<Brand showLogo={ false } />
-```
-
-
-```js
-<Brand suffix='profile' />
-```
-
-```js
-<Brand size='s'  suffix='profile' />
+<Brand size='l'  suffix='profile' />
 ```
