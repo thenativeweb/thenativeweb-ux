@@ -74,4 +74,4 @@ Dropdown.defaultProps = {
   size: 'default'
 };
 
-module.exports = Dropdown;
+export default Dropdown;

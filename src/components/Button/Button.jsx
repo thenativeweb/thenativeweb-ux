@@ -50,6 +50,7 @@ class Button extends React.PureComponent {
     return (
       <button
         id={ id }
+        type={ isPrimary ? 'submit' : 'button' }
         className={ buttonClassNames }
         onClick={ onClick }
         onMouseDown={ this.handlePointerDown }
