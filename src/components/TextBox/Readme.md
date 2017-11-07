@@ -19,3 +19,12 @@ initialState = { port: '3000' };
   onChange={event => setState({ port: event.target.value })}
 />
 ```
+
+```js
+initialState = { value: 'This input is disabled' };
+<TextBox
+  value={ state.value }
+  disabled={ true }
+  onChange={event => setState({ port: event.target.value })}
+/>
+```

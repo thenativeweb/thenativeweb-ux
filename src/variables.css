@@ -14,6 +14,7 @@
   --color-content-border: var(--color-brand-mid-grey);
   --color-copy-text: #232323;
   --color-interaction-focus: var(--color-brand-dark-grey);
+  --color-backdrop: rgba(0, 0, 0, 0.5);
 
   /* Typo */
   --font-size-medium: 14px;

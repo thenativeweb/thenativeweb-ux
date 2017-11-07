@@ -4,6 +4,7 @@ import Button from './components/Button';
 import ControlGroup from './components/ControlGroup';
 import Form from './components/Form';
 import Icon from './components/Icon';
+import Modal from './components/Modal';
 import setup from './setup';
 import Sidebar from './components/Sidebar';
 import TextBox from './components/TextBox';
@@ -16,6 +17,7 @@ export {
   ControlGroup,
   Form,
   Icon,
+  Modal,
   setup,
   Sidebar,
   TextBox,

@@ -29,7 +29,7 @@ const Item = ({ className, adjust = 'flex', children, helpLink, label, isVisible
         <div className={ styles.Label }>
           <div className={ styles.Control }>{ children }</div>
           { label ? <label htmlFor={ controlId }>{ label }</label> : null }
-          { helpLink ? <a className='help' title='Get more detailed information…' rel='noopener noreferrer' target='_blank' href={ helpLink }><Icon name='help' /></a> : null }
+          { helpLink ? <a className={ styles.Help } title='Get more detailed information…' rel='noopener noreferrer' target='_blank' href={ helpLink }><Icon name='help' className={ styles.IconHelp } /></a> : null }
         </div>
       </div>
     );
@@ -41,7 +41,7 @@ const Item = ({ className, adjust = 'flex', children, helpLink, label, isVisible
     >
       <div className={ styles.Label }>
         { label ? <label>{ label }</label> : null }
-        { helpLink ? <a className='help' rel='noopener noreferrer' target='_blank' href={ helpLink }><Icon name='help' /></a> : null }
+        { helpLink ? <a className={ styles.Help } rel='noopener noreferrer' target='_blank' href={ helpLink }><Icon name='help' className={ styles.IconHelp } /></a> : null }
       </div>
       <div className={ styles.Control }>{ children }</div>
     </div>

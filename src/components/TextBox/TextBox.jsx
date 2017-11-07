@@ -40,10 +40,12 @@ class TextBox extends React.Component {
   }
 
   render () {
-    const { className, id, name, value, onChange, placeholder, required, type } = this.props;
+    const { className, disabled, id, name, value, onChange, placeholder, required, type } = this.props;
 
     const componentClasses = classNames(styles.TextBox, {
-      [styles.TypePort]: type === 'port'
+      [styles.TypePort]: type === 'port',
+      [styles.IsDisabled]: disabled === true,
+      [styles.IsRequired]: required === true
     }, className);
 
     return (
@@ -56,6 +58,7 @@ class TextBox extends React.Component {
         onChange={ onChange }
         placeholder={ placeholder }
         required={ required }
+        disable={ disabled ? 'disabled' : null }
       />
     );
   }
@@ -63,6 +66,7 @@ class TextBox extends React.Component {
 
 TextBox.propTypes = {
   autoFocus: PropTypes.bool,
+  disabled: PropTypes.bool,
   id: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
@@ -74,6 +78,8 @@ TextBox.propTypes = {
 
 TextBox.defaultProps = {
   autoFocus: false,
+  disabled: false,
+  required: false,
   focusDelay: 0,
   type: 'default',
   onChange () {}
