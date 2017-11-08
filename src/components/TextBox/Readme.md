@@ -21,7 +21,7 @@ initialState = { port: '3000' };
 ```
 
 ```js
-initialState = { value: 'This input is disabled' };
+initialState = { value: 'This TextBox is disabled' };
 <TextBox
   value={ state.value }
   disabled={ true }

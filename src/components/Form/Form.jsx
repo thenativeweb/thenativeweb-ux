@@ -13,6 +13,18 @@ const Title = ({ children, className }) => {
   );
 };
 
+const Row = function ({ children }) {
+  return (
+    <div className={ styles.Row }>{ children }</div>
+  );
+};
+
+const Actions = function ({ children }) {
+  return (
+    <div className={ styles.Actions }>{ children }</div>
+  );
+};
+
 const Form = ({ children, className, onSubmit }) => {
   const componentClasses = classNames(styles.Form, className);
 
@@ -31,8 +43,9 @@ const Form = ({ children, className, onSubmit }) => {
   );
 };
 
-Form.Error = Error;
 Form.Title = Title;
+Form.Row = Row;
+Form.Actions = Actions;
 
 Form.propTypes = {
   onSubmit: PropTypes.func

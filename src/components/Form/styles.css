@@ -12,20 +12,21 @@
     text-align: center;
     padding: 0;
     margin: 0;
+    border-bottom: 1px solid var(--color-content-border);
+    padding-bottom: calc(var(--grid-step-size) * 2);
+    margin-bottom: calc(var(--grid-step-size) * 2);
   }
 
-  & .Title::after {
-    content: '';
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: auto;
-    width: 100%;
-    height: 1px;
-    background: var(--color-brand-dark-grey);
-    opacity: 0.1;
+  & .Row {
+    display: flex;
+    margin-bottom: var(--grid-step-size);
+  }
+
+  & .Actions {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid var(--color-content-border);
+    padding-top: var(--grid-step-size);
     margin-top: calc(var(--grid-step-size) * 2);
-    margin-bottom: calc(var(--grid-step-size) * 2);
-    border: none;
   }
 }

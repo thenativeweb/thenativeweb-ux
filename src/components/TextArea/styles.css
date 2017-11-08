@@ -1,6 +1,6 @@
 @import '../../variables.css';
 
-.TextBox {
+.TextArea {
   padding: 9px 12px;
   font-size: var(--font-size-default);
   font-family: var(--font-family-default);

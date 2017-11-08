@@ -1,5 +1,5 @@
 import React from 'react';
-import { Application, Brand, Button, ControlGroup, Dropdown, Form, Sidebar, TextBox, View } from '../src';
+import { Application, Brand, Button, ControlGroup, Dropdown, Form, Modal, Sidebar, TextBox, View } from '../src';
 
 class TestApp extends React.Component {
   constructor (props) {
@@ -27,7 +27,7 @@ class TestApp extends React.Component {
   }
 
   render () {
-    const { buttonClicked, dropdownOptions, dropdownOptionSelected, formValue, formSubmitted } = this.state;
+    const { buttonClicked, dropdownOptions, dropdownOptionSelected, formValue, formSubmitted, showModal } = this.state;
 
     return (
       <Application orientation='horizontal'>
@@ -53,6 +53,19 @@ class TestApp extends React.Component {
                 <Button>Cancel</Button> <Button id='form-submit' isPrimary={ true }>{ !formSubmitted ? 'Submit' : 'Thanks!' }</Button>
               </ControlGroup>
             </Form>
+            <h2>Modal</h2>
+            <Button id='show-modal' onClick={ () => this.setState({ showModal: true }) }>Show modal</Button>
+
+            <Modal attach='sidebar' width='large' isVisible={ showModal } onCancel={ () => this.setState({ showModal: false }) }>
+              <Form onSubmit={ () => this.setState({ showModal: false }) }>
+                <Form.Title>Title</Form.Title>
+                <div id='modal-content'>This is the content of the modal.</div>
+                <Form.Actions>
+                  <Button id='cancel-modal' onClick={ () => this.setState({ showModal: false }) }>Cancel</Button>
+                  <Button id='submit-modal' isPrimary={ true }>Submit</Button>
+                </Form.Actions>
+              </Form>
+            </Modal>
           </section>
         </View>
       </Application>

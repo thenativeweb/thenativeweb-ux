@@ -54,6 +54,16 @@
     max-width: 100vw;
   }
 
+  &.ContentAttachedSidebar {
+    left: var(--sidebar-width);
+    top: 0;
+  }
+
+  &.ContentAttachedLeft {
+    left: 0;
+    top: 0;
+  }
+
   &.ContentAttachedRight {
     right: 0;
     top: 0;

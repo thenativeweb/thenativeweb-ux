@@ -1,16 +1,15 @@
 import anime from 'animejs';
+import defaults from './defaults';
 import React from 'react';
 import { Transition } from 'react-transition-group';
-
-const DURATION = 300;
 
 const handleEnter = function (node) {
   anime({
     targets: node,
     opacity: [ 0, 1 ],
     translateX: [ '25%', 0 ],
-    duration: DURATION,
-    easing: 'easeOutExpo'
+    duration: defaults.duration,
+    easing: defaults.easing
   });
 };
 
@@ -19,19 +18,20 @@ const handleExit = function (node) {
     targets: node,
     opacity: [ 1, 0 ],
     translateX: [ 0, '25%' ],
-    duration: DURATION,
-    easing: 'easeOutExpo'
+    duration: defaults.duration,
+    easing: defaults.easing
   });
 };
 
 const FadeInLeft = ({ children, show }) => (
   <Transition
     in={ show }
+    appear={ true }
     mountOnEnter={ true }
     unmountOnExit={ true }
     onEnter={ handleEnter }
     onExit={ handleExit }
-    timeout={ DURATION }
+    timeout={ defaults.duration }
   >
     { children }
   </Transition>

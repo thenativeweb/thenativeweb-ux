@@ -7,7 +7,6 @@ const handleEnter = function (node) {
   anime({
     targets: node,
     opacity: [ 0, 1 ],
-    translateX: [ '-25%', 0 ],
     duration: defaults.duration,
     easing: defaults.easing
   });
@@ -17,13 +16,12 @@ const handleExit = function (node) {
   anime({
     targets: node,
     opacity: [ 1, 0 ],
-    translateX: [ 0, '-25%' ],
     duration: defaults.duration,
     easing: defaults.easing
   });
 };
 
-const FadeInRight = ({ children, show }) => (
+const Fade = ({ children, show }) => (
   <Transition
     in={ show }
     appear={ true }
@@ -37,4 +35,4 @@ const FadeInRight = ({ children, show }) => (
   </Transition>
 );
 
-export default FadeInRight;
+export default Fade;
