@@ -1,10 +1,12 @@
 @import '../../variables.css';
 
 .Sidebar {
-  width: var(--sidebar-width);
-  background: var(--color-brand-grey);
-  padding: var(--grid-step-size * 20) 0;
+  flex-grow: 0;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  box-sizing: content-box;
+  width: var(--sidebar-width);
+  background: var(--color-brand-grey);
+  padding: calc(var(--grid-step-size) * 2) 0;
 }
