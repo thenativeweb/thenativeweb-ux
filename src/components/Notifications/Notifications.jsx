@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import FadeInLeft from '../transitions/FadeInLeft.jsx';
+import Notification from '../Notification';
 import React from 'react';
 import services from '../../services';
 import styles from './styles.css';
@@ -29,11 +29,9 @@ class Notifications extends React.PureComponent {
     return (
       <div className={ styles.Notifications }>
         <TransitionGroup>
-          { services.notifications.items.map(notification => (
+          { services.notifications.state.items.map(notification => (
             <FadeInLeft key={ notification.id }>
-              <div className={ classNames(styles.Notification, { [styles.TypeError]: notification.type === 'error' }) }>
-                <div className={ styles.Text }>{ notification.text }</div>
-              </div>
+              <Notification type={ notification.type } text={ notification.text } />
             </FadeInLeft>
           ))}
         </TransitionGroup>

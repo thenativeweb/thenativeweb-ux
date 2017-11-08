@@ -5,7 +5,9 @@ class NotificationsService extends EventEmitter {
   constructor () {
     super();
 
-    this.items = [];
+    this.state = {
+      items: []
+    };
   }
 
   show (notification, options = { duration: 3000 }) {
@@ -24,13 +26,13 @@ class NotificationsService extends EventEmitter {
 
     notification.id = uuid();
 
-    this.items.unshift(notification);
+    this.state.items.unshift(notification);
     this.emit('changed');
 
     setTimeout(() => {
-      const notificationIndex = this.items.indexOf(notification);
+      const notificationIndex = this.state.items.indexOf(notification);
 
-      this.items.splice(notificationIndex, 1);
+      this.state.items.splice(notificationIndex, 1);
       this.emit('changed');
     }, options.duration);
   }

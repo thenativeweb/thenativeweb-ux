@@ -1,0 +1,12 @@
+@import '../../variables.css';
+
+.Dialogs {
+  & .Actions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .Actions * {
+    flex-grow: 1;
+  }
+}

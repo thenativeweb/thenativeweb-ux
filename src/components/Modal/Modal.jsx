@@ -83,7 +83,8 @@ class Modal extends React.PureComponent {
       [styles.ContentSizeM]: size === 'm',
       [styles.ContentAttachedSidebar]: attach === 'sidebar',
       [styles.ContentAttachedLeft]: attach === 'left',
-      [styles.ContentAttachedRight]: attach === 'right'
+      [styles.ContentAttachedRight]: attach === 'right',
+      [styles.ContentAttachedCenter]: attach === 'center'
     });
 
     const Transition = (attach === 'left' || attach === 'sidebar') ? FadeInRight : FadeInLeft;
@@ -105,7 +106,7 @@ Modal.Row = Row;
 Modal.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
-  attach: PropTypes.oneOf([ 'left', 'right', 'sidebar' ]),
+  attach: PropTypes.oneOf([ 'left', 'right', 'sidebar', 'center' ]),
   size: PropTypes.oneOf([ 's', 'm' ])
 };
 

@@ -1,12 +1,16 @@
 @import '../../variables.css';
 
 .Modal {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   pointer-events: none;
+  z-index: calc(var(--zindex-modal));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Backdrop {
@@ -67,6 +71,11 @@
   &.ContentAttachedRight {
     right: 0;
     top: 0;
+  }
+
+  &.ContentAttachedCenter {
+    width: auto;
+    height: auto;
   }
 }
 

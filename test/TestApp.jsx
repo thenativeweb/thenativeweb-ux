@@ -4,6 +4,7 @@ import {
   Brand,
   Button,
   ControlGroup,
+  Dialogs,
   Dropdown,
   Form,
   Icon,
@@ -35,6 +36,21 @@ class TestApp extends React.Component {
       textAreaValue: '',
       textBoxValue: ''
     };
+  }
+
+  static handleShowConfirmClicked () {
+    services.dialogs.confirm({
+      title: 'Blah',
+      actions: {
+        cancel: 'Cancel',
+        confirm: 'Make it so!'
+      }
+    }).then(action => {
+      services.notifications.show({
+        type: 'success',
+        text: `You triggered the ${action} action.`
+      });
+    });
   }
 
   handleFormSubmitted (event) {
@@ -73,6 +89,11 @@ class TestApp extends React.Component {
           <section>
             <h2>ControlGroup</h2>
             <ControlGroup>This is a control group</ControlGroup>
+          </section>
+          <section>
+            <h2>Dialogs</h2>
+            <Dialogs />
+            <Button id='show-confirm' onClick={ TestApp.handleShowConfirmClicked }>Show confirm</Button>
           </section>
           <section>
             <h2>Dropdown</h2>
@@ -117,7 +138,8 @@ class TestApp extends React.Component {
           </section>
           <section>
             <h2>Notifications</h2>
-            <Button id='show-notification' onClick={ () => services.notifications.show({ type: 'error', text: 'This is an error!' }) }>Show notification</Button>
+            <Button id='show-notification-error' onClick={ () => services.notifications.show({ type: 'error', text: 'This is an error!' }) }>Show notification (error)</Button>
+            <Button id='show-notification-success' onClick={ () => services.notifications.show({ type: 'success', text: 'This is a success!' }) }>Show notification (success)</Button>
             <Notifications notifications={ notifications } />
           </section>
           <section>

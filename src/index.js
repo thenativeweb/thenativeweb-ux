@@ -2,6 +2,7 @@ import Application from './components/Application';
 import Brand from './components/Brand';
 import Button from './components/Button';
 import ControlGroup from './components/ControlGroup';
+import Dialogs from './components/Dialogs';
 import Dropdown from './components/Dropdown';
 import Form from './components/Form';
 import Icon from './components/Icon';
@@ -20,6 +21,7 @@ export {
   Brand,
   Button,
   ControlGroup,
+  Dialogs,
   Dropdown,
   Form,
   Icon,
