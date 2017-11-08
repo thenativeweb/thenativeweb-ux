@@ -9,6 +9,7 @@ import {
   Icon,
   Message,
   Modal,
+  Notifications,
   Sidebar,
   TextArea,
   TextBox,
@@ -20,6 +21,7 @@ class TestApp extends React.Component {
     super(props);
 
     this.handleFormSubmitted = this.handleFormSubmitted.bind(this);
+    this.handleShowNotificationClicked = this.handleShowNotificationClicked.bind(this);
 
     this.state = {
       buttonClicked: false,
@@ -29,6 +31,7 @@ class TestApp extends React.Component {
       dropdownOptionSelected: 'foo',
       formValue: '',
       formSubmitted: false,
+      notifications: [],
       textAreaValue: '',
       textBoxValue: ''
     };
@@ -42,6 +45,30 @@ class TestApp extends React.Component {
     });
   }
 
+  handleShowNotificationClicked () {
+    let newNotifications = this.state.notifications.slice(0);
+    const newNotification = {
+      id: (new Date()).getTime(),
+      type: 'error',
+      text: 'This is an error.'
+    };
+
+    newNotifications.unshift(newNotification);
+    this.setState({
+      notifications: newNotifications
+    });
+
+    setTimeout(() => {
+      newNotifications = this.state.notifications.slice(0);
+
+      newNotifications.splice(newNotifications.indexOf(newNotification), 1);
+
+      this.setState({
+        notifications: newNotifications
+      });
+    }, 3000);
+  }
+
   render () {
     const {
       buttonClicked,
@@ -49,6 +76,7 @@ class TestApp extends React.Component {
       dropdownOptionSelected,
       formValue,
       formSubmitted,
+      notifications,
       showModal,
       textAreaValue,
       textBoxValue
@@ -110,6 +138,11 @@ class TestApp extends React.Component {
                 </Form.Actions>
               </Form>
             </Modal>
+          </section>
+          <section>
+            <h2>Notifications</h2>
+            <Button id='show-notification' onClick={ this.handleShowNotificationClicked }>Show notification</Button>
+            <Notifications notifications={ notifications } />
           </section>
           <section>
             <h2>TextArea</h2>

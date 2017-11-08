@@ -7,6 +7,7 @@ import Form from './components/Form';
 import Icon from './components/Icon';
 import Message from './components/Message';
 import Modal from './components/Modal';
+import Notifications from './components/Notifications';
 import setup from './setup';
 import Sidebar from './components/Sidebar';
 import TextArea from './components/TextArea';
@@ -23,6 +24,7 @@ export {
   Icon,
   Message,
   Modal,
+  Notifications,
   setup,
   Sidebar,
   TextArea,

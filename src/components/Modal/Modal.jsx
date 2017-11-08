@@ -91,7 +91,7 @@ class Modal extends React.PureComponent {
     return (
       <div className={ styles.Modal }>
         <div className={ backdropClasses } onClick={ this.handleBackDropClicked } />
-        <Transition show={ isVisible }>
+        <Transition in={ isVisible }>
           <div className={ contentClasses }>{ children }</div>
         </Transition>
       </div>

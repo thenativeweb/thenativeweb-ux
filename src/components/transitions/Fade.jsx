@@ -21,9 +21,10 @@ const handleExit = function (node) {
   });
 };
 
-const Fade = ({ children, show }) => (
+const Fade = props => (
   <Transition
-    in={ show }
+    key={ props.key }
+    in={ props.in }
     appear={ true }
     mountOnEnter={ true }
     unmountOnExit={ true }
@@ -31,7 +32,7 @@ const Fade = ({ children, show }) => (
     onExit={ handleExit }
     timeout={ defaults.duration }
   >
-    { children }
+    { props.children }
   </Transition>
 );
 
