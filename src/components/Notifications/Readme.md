@@ -1,13 +1,7 @@
 ```js
-initialState = { notifications: [  ] };
+const services = require('../../services').default;
 <div>
-  <Notifications notifications={ state.notifications } />
-  <Button
-    onClick={
-      () => {
-        setState({ notifications: [ { id: 1234, type: 'error', text: 'Blah' } ]});
-        setTimeout(() => setState({ notifications: []}), 3000);
-      }
-    }>Show Notification!</Button>
+  <Notifications />
+  <Button onClick={ () => services.notifications.show({ type: 'error', text: 'This is an error!' }) }>Show Notification!</Button>
 </div>
 ```

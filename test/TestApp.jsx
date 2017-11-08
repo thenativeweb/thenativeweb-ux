@@ -10,6 +10,7 @@ import {
   Message,
   Modal,
   Notifications,
+  services,
   Sidebar,
   TextArea,
   TextBox,
@@ -21,7 +22,6 @@ class TestApp extends React.Component {
     super(props);
 
     this.handleFormSubmitted = this.handleFormSubmitted.bind(this);
-    this.handleShowNotificationClicked = this.handleShowNotificationClicked.bind(this);
 
     this.state = {
       buttonClicked: false,
@@ -43,30 +43,6 @@ class TestApp extends React.Component {
     this.setState({
       formSubmitted: true
     });
-  }
-
-  handleShowNotificationClicked () {
-    let newNotifications = this.state.notifications.slice(0);
-    const newNotification = {
-      id: (new Date()).getTime(),
-      type: 'error',
-      text: 'This is an error.'
-    };
-
-    newNotifications.unshift(newNotification);
-    this.setState({
-      notifications: newNotifications
-    });
-
-    setTimeout(() => {
-      newNotifications = this.state.notifications.slice(0);
-
-      newNotifications.splice(newNotifications.indexOf(newNotification), 1);
-
-      this.setState({
-        notifications: newNotifications
-      });
-    }, 3000);
   }
 
   render () {
@@ -141,7 +117,7 @@ class TestApp extends React.Component {
           </section>
           <section>
             <h2>Notifications</h2>
-            <Button id='show-notification' onClick={ this.handleShowNotificationClicked }>Show notification</Button>
+            <Button id='show-notification' onClick={ () => services.notifications.show({ type: 'error', text: 'This is an error!' }) }>Show notification</Button>
             <Notifications notifications={ notifications } />
           </section>
           <section>
