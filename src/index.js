@@ -9,6 +9,7 @@ import Message from './components/Message';
 import Modal from './components/Modal';
 import setup from './setup';
 import Sidebar from './components/Sidebar';
+import TextArea from './components/TextArea';
 import TextBox from './components/TextBox';
 import View from './components/View';
 
@@ -24,6 +25,7 @@ export {
   Modal,
   setup,
   Sidebar,
+  TextArea,
   TextBox,
   View
 };

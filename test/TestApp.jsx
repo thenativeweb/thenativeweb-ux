@@ -1,5 +1,17 @@
 import React from 'react';
-import { Application, Brand, Button, ControlGroup, Dropdown, Form, Modal, Sidebar, TextBox, View } from '../src';
+import {
+  Application,
+  Brand,
+  Button,
+  ControlGroup,
+  Dropdown,
+  Form,
+  Modal,
+  Sidebar,
+  TextArea,
+  TextBox,
+  View
+} from '../src';
 
 class TestApp extends React.Component {
   constructor (props) {
@@ -14,7 +26,9 @@ class TestApp extends React.Component {
       ],
       dropdownOptionSelected: 'foo',
       formValue: '',
-      formSubmitted: false
+      formSubmitted: false,
+      textAreaValue: '',
+      textBoxValue: ''
     };
   }
 
@@ -27,7 +41,16 @@ class TestApp extends React.Component {
   }
 
   render () {
-    const { buttonClicked, dropdownOptions, dropdownOptionSelected, formValue, formSubmitted, showModal } = this.state;
+    const {
+      buttonClicked,
+      dropdownOptions,
+      dropdownOptionSelected,
+      formValue,
+      formSubmitted,
+      showModal,
+      textAreaValue,
+      textBoxValue
+    } = this.state;
 
     return (
       <Application orientation='horizontal'>
@@ -36,12 +59,16 @@ class TestApp extends React.Component {
           <section>
             <h2>Brand</h2>
             <Brand suffix='profile' />
+
             <h2>Button</h2>
             <Button id='button' onClick={ () => this.setState({ buttonClicked: true }) }>{ !buttonClicked ? 'Click me' : 'Thanks!' }</Button>
+
             <h2>ControlGroup</h2>
             <ControlGroup>This is a control group</ControlGroup>
+
             <h2>Dropdown</h2>
             <Dropdown value={ dropdownOptionSelected } options={ dropdownOptions } onChange={ value => this.setState({ dropdownOptionSelected: value }) } />
+
             <h2>Form</h2>
             <Form onSubmit={ this.handleFormSubmitted }>
               <ControlGroup>
@@ -53,9 +80,9 @@ class TestApp extends React.Component {
                 <Button>Cancel</Button> <Button id='form-submit' isPrimary={ true }>{ !formSubmitted ? 'Submit' : 'Thanks!' }</Button>
               </ControlGroup>
             </Form>
+
             <h2>Modal</h2>
             <Button id='show-modal' onClick={ () => this.setState({ showModal: true }) }>Show modal</Button>
-
             <Modal attach='sidebar' width='large' isVisible={ showModal } onCancel={ () => this.setState({ showModal: false }) }>
               <Form onSubmit={ () => this.setState({ showModal: false }) }>
                 <Form.Title>Title</Form.Title>
@@ -66,6 +93,12 @@ class TestApp extends React.Component {
                 </Form.Actions>
               </Form>
             </Modal>
+
+            <h2>TextArea</h2>
+            <TextArea value={ textAreaValue } placeholder='Enter text' onChange={ event => this.setState({ textAreaValue: event.target.value }) } />
+
+            <h2>TextBox</h2>
+            <TextBox value={ textBoxValue } placeholder='Enter text' onChange={ event => this.setState({ textBoxValue: event.target.value }) } />
           </section>
         </View>
       </Application>
