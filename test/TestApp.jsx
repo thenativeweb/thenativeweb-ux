@@ -6,6 +6,8 @@ import {
   ControlGroup,
   Dropdown,
   Form,
+  Icon,
+  Message,
   Modal,
   Sidebar,
   TextArea,
@@ -59,16 +61,20 @@ class TestApp extends React.Component {
           <section>
             <h2>Brand</h2>
             <Brand suffix='profile' />
-
+          </section>
+          <section>
             <h2>Button</h2>
             <Button id='button' onClick={ () => this.setState({ buttonClicked: true }) }>{ !buttonClicked ? 'Click me' : 'Thanks!' }</Button>
-
+          </section>
+          <section>
             <h2>ControlGroup</h2>
             <ControlGroup>This is a control group</ControlGroup>
-
+          </section>
+          <section>
             <h2>Dropdown</h2>
             <Dropdown value={ dropdownOptionSelected } options={ dropdownOptions } onChange={ value => this.setState({ dropdownOptionSelected: value }) } />
-
+          </section>
+          <section>
             <h2>Form</h2>
             <Form onSubmit={ this.handleFormSubmitted }>
               <ControlGroup>
@@ -80,7 +86,17 @@ class TestApp extends React.Component {
                 <Button>Cancel</Button> <Button id='form-submit' isPrimary={ true }>{ !formSubmitted ? 'Submit' : 'Thanks!' }</Button>
               </ControlGroup>
             </Form>
-
+          </section>
+          <section>
+            <h2>Icon</h2>
+            <Icon name='help' size='s' />
+            <Icon name='help' size='l' />
+          </section>
+          <section>
+            <h2>Message</h2>
+            <Message type='error'>This is an error!</Message>
+          </section>
+          <section>
             <h2>Modal</h2>
             <Button id='show-modal' onClick={ () => this.setState({ showModal: true }) }>Show modal</Button>
             <Modal attach='sidebar' width='large' isVisible={ showModal } onCancel={ () => this.setState({ showModal: false }) }>
@@ -93,7 +109,8 @@ class TestApp extends React.Component {
                 </Form.Actions>
               </Form>
             </Modal>
-
+          </section>
+          <section>
             <h2>TextArea</h2>
             <TextArea value={ textAreaValue } placeholder='Enter text' onChange={ event => this.setState({ textAreaValue: event.target.value }) } />
 
