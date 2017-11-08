@@ -5,9 +5,9 @@ import fonts from '../fonts';
 import icons from '../icons';
 
 const setup = {
-  client () {
+  client (options = {}) {
     enableFonts();
-    enableIcons();
+    enableIcons(options.icons);
   },
 
   server: {
