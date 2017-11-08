@@ -40,11 +40,13 @@ class TextArea extends React.Component {
   }
 
   render () {
-    const { className, disabled, id, name, value, onChange, placeholder, required } = this.props;
+    const { className, disabled, id, name, value, onChange, placeholder, required, size } = this.props;
 
     const componentClasses = classNames(styles.TextArea, {
       [styles.IsDisabled]: disabled === true,
-      [styles.IsRequired]: required === true
+      [styles.IsRequired]: required === true,
+      [styles.SizeS]: size === 's',
+      [styles.SizeM]: size === 'm'
     }, className);
 
     return (
@@ -70,6 +72,7 @@ TextArea.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   required: PropTypes.bool,
+  size: PropTypes.oneOf([ 's', 'm' ]),
   value: PropTypes.string,
   onChange: PropTypes.func
 };
@@ -77,8 +80,9 @@ TextArea.propTypes = {
 TextArea.defaultProps = {
   autoFocus: false,
   disabled: false,
-  required: false,
   focusDelay: 0,
+  required: false,
+  size: 's',
   onChange () {}
 };
 

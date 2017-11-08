@@ -21,12 +21,16 @@
     opacity: 0.5;
   }
 
-  &.TypePort {
-    width: 4em;
-  }
-
   &.IsDisabled {
     color: var(--color-brand-dark-grey);
     background: var(--color-brand-mid-grey);
+  }
+
+  &.SizeS {
+    height: calc(var(--grid-step-size) * 8);
+  }
+
+  &.SizeM {
+    height: calc(var(--grid-step-size) * 14);
   }
 }

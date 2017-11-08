@@ -25,7 +25,7 @@ initialState = { isVisible: false };
 initialState = { isVisible: false };
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open large modal</Button>
-  <Modal attach='right' width='large' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
+  <Modal attach='right' size='m' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
     <Modal.Title>This is the title</Modal.Title>
     <div>This is a large model</div>
   </Modal>

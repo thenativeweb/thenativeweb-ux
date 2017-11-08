@@ -72,15 +72,15 @@ class Modal extends React.PureComponent {
   }
 
   render () {
-    const { attach, children, isVisible, width } = this.props;
+    const { attach, children, isVisible, size } = this.props;
 
     const backdropClasses = classNames(styles.Backdrop, {
       [styles.BackdropIsVisible]: isVisible
     });
 
     const contentClasses = classNames(styles.Content, {
-      [styles.ContentWidthDefault]: width === 'default',
-      [styles.ContentWidthLarge]: width === 'large',
+      [styles.ContentSizeS]: size === 's',
+      [styles.ContentSizeM]: size === 'm',
       [styles.ContentAttachedSidebar]: attach === 'sidebar',
       [styles.ContentAttachedLeft]: attach === 'left',
       [styles.ContentAttachedRight]: attach === 'right'
@@ -106,13 +106,13 @@ Modal.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
   attach: PropTypes.oneOf([ 'left', 'right', 'sidebar' ]),
-  width: PropTypes.oneOf([ 'default', 'large' ])
+  size: PropTypes.oneOf([ 's', 'm' ])
 };
 
 Modal.defaultProps = {
   attach: 'left',
   isVisible: false,
-  width: 'default',
+  size: 's',
   onCancel () {}
 };
 

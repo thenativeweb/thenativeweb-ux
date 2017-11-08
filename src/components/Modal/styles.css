@@ -44,12 +44,12 @@
   font-family: var(--font-family-default);
   box-sizing: border-box;
 
-  &.ContentWidthDefault {
+  &.ContentSizeS {
     min-width: calc(var(--grid-step-size) * 30);
     max-width: 100vw;
   }
 
-  &.ContentWidthLarge {
+  &.ContentSizeM {
     min-width: 61vw;
     max-width: 100vw;
   }

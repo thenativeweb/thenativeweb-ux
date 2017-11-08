@@ -99,7 +99,7 @@ class TestApp extends React.Component {
           <section>
             <h2>Modal</h2>
             <Button id='show-modal' onClick={ () => this.setState({ showModal: true }) }>Show modal</Button>
-            <Modal attach='sidebar' width='large' isVisible={ showModal } onCancel={ () => this.setState({ showModal: false }) }>
+            <Modal attach='sidebar' size='m' isVisible={ showModal } onCancel={ () => this.setState({ showModal: false }) }>
               <Form onSubmit={ () => this.setState({ showModal: false }) }>
                 <Form.Title>Title</Form.Title>
                 <div id='modal-content'>This is the content of the modal.</div>

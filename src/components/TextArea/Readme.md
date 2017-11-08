@@ -15,3 +15,12 @@ initialState = { value: 'This TextArea is disabled' };
   disabled={ true }
 />
 ```
+
+
+```js
+initialState = { value: 'This TextArea is medium' };
+<TextArea
+  value={ state.value }
+  size='m'
+/>
+```
