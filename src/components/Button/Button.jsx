@@ -34,7 +34,7 @@ class Button extends React.PureComponent {
   }
 
   render () {
-    const { adjust, children, id, onClick, isPrimary, size, type } = this.props;
+    const { autoFocus, adjust, children, id, onClick, isPrimary, size, type } = this.props;
     const { isPressed } = this.state;
 
     const buttonClassNames = classNames(styles.Button, {
@@ -49,6 +49,7 @@ class Button extends React.PureComponent {
 
     return (
       <button
+        autoFocus={ autoFocus }
         id={ id }
         type={ isPrimary ? 'submit' : 'button' }
         className={ buttonClassNames }
@@ -64,6 +65,7 @@ class Button extends React.PureComponent {
 
 Button.propTypes = {
   adjust: PropTypes.oneOf([ 'flex', 'auto' ]),
+  autoFocus: PropTypes.bool,
   isPrimary: PropTypes.bool,
   size: PropTypes.oneOf([ 'default', 's' ]),
   type: PropTypes.oneOf([ 'link' ])
@@ -71,6 +73,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   adjust: undefined,
+  autoFocus: false,
   isPrimary: false,
   size: 'default',
   type: undefined

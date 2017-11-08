@@ -74,8 +74,10 @@
   }
 
   &.ContentAttachedCenter {
+    max-width: calc(var(--grid-step-size) * 46);
     width: auto;
     height: auto;
+    top: 0;
   }
 }
 

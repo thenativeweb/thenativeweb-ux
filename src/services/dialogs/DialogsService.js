@@ -65,7 +65,10 @@ class DialogsService extends EventEmitter {
         }
       };
 
-      this.emit('changed');
+      // Delay the rendering in order to for keyboard events not to conflict
+      setTimeout(() => {
+        this.emit('changed');
+      }, 100);
     });
   }
 }

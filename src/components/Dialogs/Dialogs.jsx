@@ -4,6 +4,11 @@ import React from 'react';
 import services from '../../services';
 import styles from './styles.css';
 
+const KEY = {
+  ENTER: 13,
+  ESCAPE: 27
+};
+
 class Dialogs extends React.PureComponent {
   constructor () {
     super();
@@ -15,6 +20,7 @@ class Dialogs extends React.PureComponent {
     this.handleServiceChanged = this.handleServiceChanged.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   componentDidMount () {
@@ -38,21 +44,35 @@ class Dialogs extends React.PureComponent {
     services.dialogs.state.confirm.onConfirm();
   }
 
+  handleKeyDown (key) {
+    switch (key) {
+      case KEY.ESCAPE:
+        services.dialogs.state.confirm.onCancel();
+        break;
+      case KEY.ENTER:
+        services.dialogs.state.confirm.onConfirm();
+        break;
+      default:
+        break;
+    }
+  }
+
   render () {
     return (
       <Modal
         attach='center'
         isVisible={ services.dialogs.state.confirm.isVisible }
         className={ styles.Dialogs }
+        onKeyDown={ this.handleKeyDown }
       >
         <Modal.Title>
           { services.dialogs.state.confirm.title }
         </Modal.Title>
         <div className={ styles.Actions }>
-          <Button adjust='flex' onClick={ this.handleCancel }>
+          <Button adjust='auto' onClick={ this.handleCancel }>
             { services.dialogs.state.confirm.actions.cancel }
           </Button>
-          <Button adjust='flex' onClick={ this.handleConfirm }isPrimary={ true }>
+          <Button adjust='flex' onClick={ this.handleConfirm } isPrimary={ true } autoFocus={ true }>
             { services.dialogs.state.confirm.actions.confirm }
           </Button>
         </div>
