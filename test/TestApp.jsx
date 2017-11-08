@@ -95,6 +95,7 @@ class TestApp extends React.Component {
           <section>
             <h2>Message</h2>
             <Message type='error'>This is an error!</Message>
+            <Message type='info' icon='info'>This is a message with icon!</Message>
           </section>
           <section>
             <h2>Modal</h2>
