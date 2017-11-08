@@ -5,6 +5,7 @@ import ControlGroup from './components/ControlGroup';
 import Dropdown from './components/Dropdown';
 import Form from './components/Form';
 import Icon from './components/Icon';
+import Message from './components/Message';
 import Modal from './components/Modal';
 import setup from './setup';
 import Sidebar from './components/Sidebar';
@@ -19,6 +20,7 @@ export {
   Dropdown,
   Form,
   Icon,
+  Message,
   Modal,
   setup,
   Sidebar,
