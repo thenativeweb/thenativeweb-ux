@@ -2,7 +2,7 @@
 ```js
 initialState = { sample: 'foo' };
 <Form onSubmit={event => { event.preventDefault(); console.log(state.sample) }}>
-  <Form.Title>Example Form</Form.Title>
+  <Headline>Example Form</Headline>
   <ControlGroup>
     <ControlGroup.Item label='Sample Input' adjust='flex'>
       <TextBox

@@ -3,16 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.css';
 
-const Title = ({ children, className }) => {
-  const componentClasses = classNames(styles.Title, className);
-
-  return (
-    <h2 className={ componentClasses }>
-      { children }
-    </h2>
-  );
-};
-
 const Row = function ({ children }) {
   return (
     <div className={ styles.Row }>{ children }</div>
@@ -43,7 +33,6 @@ const Form = ({ children, className, onSubmit }) => {
   );
 };
 
-Form.Title = Title;
 Form.Row = Row;
 Form.Actions = Actions;
 

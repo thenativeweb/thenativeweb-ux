@@ -1,4 +1,5 @@
 import Button from '../Button';
+import Headline from '../Headline';
 import Modal from '../Modal';
 import React from 'react';
 import services from '../../services';
@@ -65,9 +66,9 @@ class Dialogs extends React.PureComponent {
         className={ styles.Dialogs }
         onKeyDown={ this.handleKeyDown }
       >
-        <Modal.Title>
+        <Headline>
           { services.dialogs.state.confirm.title }
-        </Modal.Title>
+        </Headline>
         <div className={ styles.Actions }>
           <Button adjust='auto' onClick={ this.handleCancel }>
             { services.dialogs.state.confirm.actions.cancel }

@@ -15,16 +15,6 @@ const Row = function ({ children }) {
   );
 };
 
-const Title = ({ children, className }) => {
-  const componentClasses = classNames(styles.Title, className);
-
-  return (
-    <h2 className={ componentClasses }>
-      { children }
-    </h2>
-  );
-};
-
 class Modal extends React.PureComponent {
   constructor (props) {
     super(props);
@@ -118,7 +108,6 @@ class Modal extends React.PureComponent {
   }
 }
 
-Modal.Title = Title;
 Modal.Row = Row;
 
 Modal.propTypes = {

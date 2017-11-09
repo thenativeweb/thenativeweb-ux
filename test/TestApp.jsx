@@ -7,6 +7,7 @@ import {
   Dialogs,
   Dropdown,
   Form,
+  Headline,
   Icon,
   Link,
   Message,
@@ -130,6 +131,10 @@ class TestApp extends React.Component {
             </Form>
           </section>
           <section>
+            <h2>Headline</h2>
+            <Headline>This is a headline</Headline>
+          </section>
+          <section>
             <h2>Icon</h2>
             <Icon name='help' size='s' />
             <Icon name='help' size='l' />
@@ -167,7 +172,8 @@ class TestApp extends React.Component {
           <section>
             <h2>TextArea</h2>
             <TextArea value={ textAreaValue } placeholder='Enter text' onChange={ event => this.setState({ textAreaValue: event.target.value }) } />
-
+          </section>
+          <section>
             <h2>TextBox</h2>
             <TextBox value={ textBoxValue } placeholder='Enter text' onChange={ event => this.setState({ textBoxValue: event.target.value }) } />
           </section>

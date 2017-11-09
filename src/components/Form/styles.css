@@ -5,18 +5,6 @@
   flex-direction: column;
   font-family: var(--font-family-default);
 
-  & .Title {
-    font-family: inherit;
-    font-weight: 600;
-    opacity: 0.75;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    border-bottom: 1px solid var(--color-content-border);
-    padding-bottom: calc(var(--grid-step-size) * 2);
-    margin-bottom: calc(var(--grid-step-size) * 2);
-  }
-
   & .Row {
     display: flex;
     margin-bottom: var(--grid-step-size);

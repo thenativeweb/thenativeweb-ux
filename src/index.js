@@ -5,6 +5,7 @@ import ControlGroup from './components/ControlGroup';
 import Dialogs from './components/Dialogs';
 import Dropdown from './components/Dropdown';
 import Form from './components/Form';
+import Headline from './components/Headline';
 import Icon from './components/Icon';
 import Link from './components/Link';
 import Message from './components/Message';
@@ -25,6 +26,7 @@ export {
   Dialogs,
   Dropdown,
   Form,
+  Headline,
   Icon,
   Link,
   Message,
