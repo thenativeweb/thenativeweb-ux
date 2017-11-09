@@ -3,6 +3,7 @@
 .Item {
   position: relative;
   flex: 0 0 auto;
+  overflow: visible;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
 
@@ -15,14 +16,20 @@
     color: var(--color-brand-white);
   }
 
+  & .Icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+
   & .Items {
     position: absolute;
+    top: 0;
     left: var(--sidebar-width);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 0;
-    max-width: calc(var(--grid-step-size) * 25);
+    max-width: calc(var(--grid-step-size) * 40);
     background: var(--color-brand-grey);
     z-index: var(--zindex-overlay);
     color: #848484;
@@ -35,9 +42,15 @@
   }
 
   &.IsNested {
+    flex: 1 1 100%;
     cursor: default;
     white-space: nowrap;
-    padding: calc(var(--grid-step-size) * 1.6) calc(var(--grid-step-size) * 2);
+
+    & .Label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: calc(var(--grid-step-size) * 1.6) calc(var(--grid-step-size) * 2);
+    }
   }
 
   &.IsNested.IsClickable {
