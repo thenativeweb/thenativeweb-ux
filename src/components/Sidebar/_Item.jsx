@@ -3,7 +3,7 @@ import Icon from '../Icon';
 import React from 'react';
 import styles from './_Item.css';
 
-const Item = ({ className, iconName, iconUrl, isNested = false, children, onClick }) => {
+const Item = ({ className, iconName, iconUrl, id, isNested = false, children, onClick }) => {
   const componentClasses = classNames(styles.Item, {
     [styles.IsNested]: isNested,
     [styles.IsTopLevel]: !isNested,
@@ -12,7 +12,7 @@ const Item = ({ className, iconName, iconUrl, isNested = false, children, onClic
 
   if (isNested) {
     return (
-      <div className={ componentClasses } onClick={ onClick }>
+      <div id={ id } className={ componentClasses } onClick={ onClick }>
         <div className={ styles.Label } >
           { children }
         </div>
@@ -21,7 +21,7 @@ const Item = ({ className, iconName, iconUrl, isNested = false, children, onClic
   }
 
   return (
-    <div className={ componentClasses }>
+    <div id={ id } className={ componentClasses }>
       <div className={ styles.Icon } onClick={ onClick }>
         { iconUrl ? <img src={ iconUrl } /> : <Icon name={ iconName } size='l' color='white' />}
       </div>

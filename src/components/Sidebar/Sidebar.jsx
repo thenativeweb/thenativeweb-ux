@@ -9,7 +9,7 @@ const Brand = props => (
 );
 
 const Sidebar = props => (
-  <div className={ styles.Sidebar }>
+  <div id={ props.id } className={ styles.Sidebar }>
     { props.children }
   </div>
 );

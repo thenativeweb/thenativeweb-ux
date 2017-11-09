@@ -19,6 +19,27 @@ import {
   View
 } from '../src';
 
+const handleShowConfirmClicked = function () {
+  services.dialogs.confirm({
+    title: 'Blah',
+    actions: {
+      cancel: 'Cancel',
+      confirm: 'Make it so!'
+    }
+  }).then(action => {
+    services.notifications.show({
+      type: 'success',
+      text: `You triggered the ${action} action.`
+    });
+  });
+};
+
+const log = function (msg) {
+  /* eslint-disable no-console */
+  console.log(msg);
+  /* eslint-enable no-console */
+};
+
 class TestApp extends React.Component {
   constructor (props) {
     super(props);
@@ -37,21 +58,6 @@ class TestApp extends React.Component {
       textAreaValue: '',
       textBoxValue: ''
     };
-  }
-
-  static handleShowConfirmClicked () {
-    services.dialogs.confirm({
-      title: 'Blah',
-      actions: {
-        cancel: 'Cancel',
-        confirm: 'Make it so!'
-      }
-    }).then(action => {
-      services.notifications.show({
-        type: 'success',
-        text: `You triggered the ${action} action.`
-      });
-    });
   }
 
   handleFormSubmitted (event) {
@@ -77,13 +83,13 @@ class TestApp extends React.Component {
 
     return (
       <Application orientation='horizontal'>
-        <Sidebar>
+        <Sidebar id='sidebar'>
           <Sidebar.Brand><Brand suffix='App' /></Sidebar.Brand>
-          <Sidebar.Item iconName='account'>
+          <Sidebar.Item iconName='account' id='sidebar-item-account'>
             <Sidebar.Item>
               { 'Authenticated as (anonymous)'}
             </Sidebar.Item>
-            <Sidebar.Item onClick={ () => console.log('blah') }>
+            <Sidebar.Item id='sidebar-item-logout' onClick={ () => log('clicked::clicked::logout') }>
               Logout
             </Sidebar.Item>
           </Sidebar.Item>
@@ -104,7 +110,7 @@ class TestApp extends React.Component {
           <section>
             <h2>Dialogs</h2>
             <Dialogs />
-            <Button id='show-confirm' onClick={ TestApp.handleShowConfirmClicked }>Show confirm</Button>
+            <Button id='show-confirm' onClick={ handleShowConfirmClicked }>Show confirm</Button>
           </section>
           <section>
             <h2>Dropdown</h2>

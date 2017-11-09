@@ -1,21 +1,18 @@
-const assert = require('assertthat'),
-      puppeteer = require('puppeteer');
+'use strict';
 
-suite('Button', () => {
-  let browser,
-      page;
+const assert = require('assertthat');
+
+const browser = require('../helpers/browser');
+
+suite('components/Button', () => {
+  let page;
 
   setup(async () => {
-    browser = await puppeteer.launch();
-    page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 800 });
-    await page.goto('http://localhost:8080/');
-
-    // await page.screenshot({ path: 'shot.png' });
+    page = await browser.setupPage();
   });
 
   teardown(async () => {
-    await browser.close();
+    await browser.teardownPage(page);
   });
 
   test('is clickable.', async () => {
