@@ -6,6 +6,7 @@ import Dialogs from './components/Dialogs';
 import Dropdown from './components/Dropdown';
 import Form from './components/Form';
 import Icon from './components/Icon';
+import Link from './components/Link';
 import Message from './components/Message';
 import Modal from './components/Modal';
 import Notifications from './components/Notifications';
@@ -25,6 +26,7 @@ export {
   Dropdown,
   Form,
   Icon,
+  Link,
   Message,
   Modal,
   Notifications,

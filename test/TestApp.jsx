@@ -8,6 +8,7 @@ import {
   Dropdown,
   Form,
   Icon,
+  Link,
   Message,
   Modal,
   Notifications,
@@ -116,6 +117,11 @@ class TestApp extends React.Component {
             <h2>Icon</h2>
             <Icon name='help' size='s' />
             <Icon name='help' size='l' />
+          </section>
+          <section>
+            <h2>Link</h2>
+            <Link href='/interal'>This is an internal link!</Link>
+            <Link href='http://www.google.de' isExternal={ true }>This is an external link!</Link>
           </section>
           <section>
             <h2>Message</h2>
