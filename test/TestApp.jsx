@@ -77,12 +77,12 @@ class TestApp extends React.Component {
     return (
       <Application orientation='horizontal'>
         <Sidebar>
-          <Brand suffix='App' />
-          <Sidebar.Item icon='help'>
+          <Sidebar.Brand><Brand suffix='App' /></Sidebar.Brand>
+          <Sidebar.Item icon='account'>
             <Sidebar.Item>
               { 'Authenticated as (anonymous)'}
             </Sidebar.Item>
-            <Sidebar.Item onClick={ console.log('blah') }>
+            <Sidebar.Item onClick={ () => console.log('blah') }>
               Logout
             </Sidebar.Item>
           </Sidebar.Item>

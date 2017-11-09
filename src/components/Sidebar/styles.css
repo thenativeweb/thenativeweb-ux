@@ -8,5 +8,10 @@
   box-sizing: content-box;
   width: var(--sidebar-width);
   background: var(--color-brand-grey);
-  padding: calc(var(--grid-step-size) * 2) 0;
+  padding: calc(var(--grid-step-size) * 1.5) 0;
+}
+
+.Brand {
+  padding-bottom: calc(var(--grid-step-size) * 2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
