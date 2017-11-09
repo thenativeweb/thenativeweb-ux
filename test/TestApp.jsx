@@ -76,7 +76,17 @@ class TestApp extends React.Component {
 
     return (
       <Application orientation='horizontal'>
-        <Sidebar />
+        <Sidebar>
+          <Brand suffix='App' />
+          <Sidebar.Item icon='help'>
+            <Sidebar.Item>
+              { 'Authenticated as (anonymous)'}
+            </Sidebar.Item>
+            <Sidebar.Item onClick={ console.log('blah') }>
+              Logout
+            </Sidebar.Item>
+          </Sidebar.Item>
+        </Sidebar>
         <View orientation='vertical' scrollable='auto'>
           <section>
             <h2>Brand</h2>

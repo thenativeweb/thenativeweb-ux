@@ -1,3 +1,4 @@
+import Item from './Item.jsx';
 import React from 'react';
 import styles from './styles.css';
 
@@ -6,5 +7,7 @@ const Sidebar = props => (
     { props.children }
   </div>
 );
+
+Sidebar.Item = Item;
 
 export default Sidebar;
