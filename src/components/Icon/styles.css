@@ -43,6 +43,11 @@
   height: var(--icon-size-xlarge);
 }
 
+.SizeXXL {
+  width: var(--icon-size-xxlarge);
+  height: var(--icon-size-xxlarge);
+}
+
 .TypeInline {
   display: inline-block;
   vertical-align: middle;

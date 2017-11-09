@@ -14,7 +14,8 @@ const Icon = ({ className, color, name, size, type }) => {
     [styles.SizeS]: size === 's',
     [styles.SizeM]: size === 'm',
     [styles.SizeL]: size === 'l',
-    [styles.SizeXL]: size === 'xl'
+    [styles.SizeXL]: size === 'xl',
+    [styles.SizeXXL]: size === 'xxl'
   }, className);
 
   return (
@@ -27,7 +28,7 @@ const Icon = ({ className, color, name, size, type }) => {
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
   color: PropTypes.oneOf([ 'default', 'highlight', 'white' ]),
-  size: PropTypes.oneOf([ 'xs', 's', 'm', 'l', 'xl' ]),
+  size: PropTypes.oneOf([ 'xs', 's', 'm', 'l', 'xl', 'xxl' ]),
   type: PropTypes.oneOf([ 'default', 'inline', 'flex-auto' ])
 };
 

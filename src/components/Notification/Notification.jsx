@@ -6,7 +6,6 @@ const Notification = ({ type, text }) => {
   const componentClasses = classNames(styles.Notification, {
     [styles.TypeError]: type === 'error',
     [styles.TypeSuccess]: type === 'success'
-
   });
 
   return (

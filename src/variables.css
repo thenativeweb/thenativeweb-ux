@@ -41,8 +41,9 @@
   --icon-size-xsmall: 14px;
   --icon-size-small: 16px;
   --icon-size-medium: 24px;
-  --icon-size-large: 48px;
-  --icon-size-xlarge: 64px;
+  --icon-size-large: 32px;
+  --icon-size-xlarge: 48px;
+  --icon-size-xxlarge: 64px;
   --sidebar-width: 80px;
 
   /* Z-Index */
