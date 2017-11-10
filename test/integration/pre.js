@@ -1,4 +1,8 @@
+/* eslint-disable strict */
+
 'use strict';
+
+/* eslint-enable strict */
 
 const { spawn } = require('child_process');
 

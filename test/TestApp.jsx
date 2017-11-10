@@ -96,29 +96,30 @@ class TestApp extends React.Component {
           </Sidebar.Item>
         </Sidebar>
         <View orientation='vertical' scrollable='auto'>
+          <section><Headline>Test app</Headline></section>
           <section>
-            <h2>Brand</h2>
+            <Headline level='2'>Brand</Headline>
             <Brand suffix='profile' />
           </section>
           <section>
-            <h2>Button</h2>
+            <Headline level='2'>Button</Headline>
             <Button id='button' onClick={ () => this.setState({ buttonClicked: true }) }>{ !buttonClicked ? 'Click me' : 'Thanks!' }</Button>
           </section>
           <section>
-            <h2>ControlGroup</h2>
+            <Headline level='2'>ControlGroup</Headline>
             <ControlGroup>This is a control group</ControlGroup>
           </section>
           <section>
-            <h2>Dialogs</h2>
+            <Headline level='2'>Dialogs</Headline>
             <Dialogs />
             <Button id='show-confirm' onClick={ handleShowConfirmClicked }>Show confirm</Button>
           </section>
           <section>
-            <h2>Dropdown</h2>
+            <Headline level='2'>Dropdown</Headline>
             <Dropdown value={ dropdownOptionSelected } options={ dropdownOptions } onChange={ value => this.setState({ dropdownOptionSelected: value }) } />
           </section>
           <section>
-            <h2>Form</h2>
+            <Headline level='2'>Form</Headline>
             <Form onSubmit={ this.handleFormSubmitted }>
               <ControlGroup>
                 <ControlGroup.Item label='TextBox with label'>
@@ -131,30 +132,26 @@ class TestApp extends React.Component {
             </Form>
           </section>
           <section>
-            <h2>Headline</h2>
-            <Headline>This is a headline</Headline>
-          </section>
-          <section>
-            <h2>Icon</h2>
+            <Headline level='2'>Icon</Headline>
             <Icon name='help' size='s' />
             <Icon name='help' size='l' />
           </section>
           <section>
-            <h2>Link</h2>
+            <Headline level='2'>Link</Headline>
             <Link href='/interal'>This is an internal link!</Link>
             <Link href='http://www.google.de' isExternal={ true }>This is an external link!</Link>
           </section>
           <section>
-            <h2>Message</h2>
+            <Headline level='2'>Message</Headline>
             <Message type='error'>This is an error!</Message>
             <Message type='info' icon='info'>This is a message with icon!</Message>
           </section>
           <section>
-            <h2>Modal</h2>
+            <Headline level='2'>Modal</Headline>
             <Button id='show-modal' onClick={ () => this.setState({ showModal: true }) }>Show modal</Button>
             <Modal attach='sidebar' size='m' isVisible={ showModal } onCancel={ () => this.setState({ showModal: false }) }>
               <Form onSubmit={ () => this.setState({ showModal: false }) }>
-                <Form.Title>Title</Form.Title>
+                <Headline level='2'>Headline</Headline>
                 <div id='modal-content'>This is the content of the modal.</div>
                 <Form.Actions>
                   <Button id='cancel-modal' onClick={ () => this.setState({ showModal: false }) }>Cancel</Button>
@@ -164,17 +161,17 @@ class TestApp extends React.Component {
             </Modal>
           </section>
           <section>
-            <h2>Notifications</h2>
+            <Headline level='2'>Notifications</Headline>
             <Button id='show-notification-error' onClick={ () => services.notifications.show({ type: 'error', text: 'This is an error!' }) }>Show notification (error)</Button>
             <Button id='show-notification-success' onClick={ () => services.notifications.show({ type: 'success', text: 'This is a success!' }) }>Show notification (success)</Button>
             <Notifications notifications={ notifications } />
           </section>
           <section>
-            <h2>TextArea</h2>
+            <Headline level='2'>TextArea</Headline>
             <TextArea value={ textAreaValue } placeholder='Enter text' onChange={ event => this.setState({ textAreaValue: event.target.value }) } />
           </section>
           <section>
-            <h2>TextBox</h2>
+            <Headline level='2'>TextBox</Headline>
             <TextBox value={ textBoxValue } placeholder='Enter text' onChange={ event => this.setState({ textBoxValue: event.target.value }) } />
           </section>
         </View>

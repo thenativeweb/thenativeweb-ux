@@ -50,14 +50,14 @@ setup.client();
 
 ## Using components
 
-To use components, you first need to integrate them into your React application. E.g., to load the `Brand` component, use the following line of code:
+To use components, you first need to integrate them into your React application. E.g., to load the `Button` component, use the following line of code:
 
 ```javascript static
-const { Brand } = require('thenativeweb-ux');
+const { Button } = require('thenativeweb-ux');
 ```
 
 Then, you can use it later on:
 
 ```jsx static
-<Brand />
+<Button>Click me!</Button>
 ```

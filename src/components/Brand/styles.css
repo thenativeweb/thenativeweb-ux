@@ -10,7 +10,7 @@
   background: var(--color-brand-grey);
 
   & .Suffix {
-    text-align: 'center';
+    text-align: center;
     margin-top: 3px;
     color: var(--color-brand-white);
   }

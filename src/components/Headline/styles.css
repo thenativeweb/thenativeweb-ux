@@ -2,13 +2,25 @@
 
 .Headline {
   font-family: var(--font-family-default);
-  font-size: var(--font-size-xlarge);
-  font-weight: 600;
   opacity: 0.95;
-  text-align: center;
   padding: 0;
   margin: 0;
+}
+
+.Level1 {
+  font-size: var(--font-size-xlarge);
+  font-weight: 600;
+  text-align: center;
   border-bottom: 1px solid var(--color-content-border);
   padding-bottom: calc(var(--grid-step-size) * 2);
+  margin-bottom: calc(var(--grid-step-size) * 2);
+}
+
+.Level2 {
+  font-size: var(--font-size-xlarge);
+  font-weight: 500;
+  text-align: left;
+  border-bottom: 1px solid var(--color-content-border);
+  padding: calc(var(--grid-step-size) * 2) 0 calc(var(--grid-step-size) * 1) 0;
   margin-bottom: calc(var(--grid-step-size) * 2);
 }

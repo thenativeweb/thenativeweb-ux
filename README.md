@@ -16,6 +16,12 @@ To run the styleguide execute the following command:
 $ bot styleguide
 ```
 
+To serve the test app execute the following command:
+
+```shell
+$ bot serve
+```
+
 Once the thenativeweb UX styleguide has been started, point your browser to `http://localhost:6060`.
 
 ## License

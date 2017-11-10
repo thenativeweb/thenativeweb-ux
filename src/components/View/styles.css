@@ -54,5 +54,6 @@
 }
 
 .ScrollableAuto {
+  -webkit-overflow-scrolling: touch;
   overflow: auto;
 }

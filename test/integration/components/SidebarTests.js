@@ -1,12 +1,14 @@
+/* eslint-disable strict */
+
 'use strict';
+
+/* eslint-enable strict */
 
 const assert = require('assertthat');
 
 const browser = require('../helpers/browser');
 
-suite('components/Sidebar', function () {
-  this.timeout(10 * 1000);
-
+suite('components/Sidebar', () => {
   let page;
 
   setup(async () => {
@@ -27,28 +29,28 @@ suite('components/Sidebar', function () {
   });
 
   suite('components/Sidebar.Item', () => {
-    test('expands on hover and subitems are clickable.', done => {
-      (async () => {
-        await page.waitForSelector('#sidebar-item-account');
+    test('expands on hover and subitems are clickable.', async () => {
+      await page.waitForSelector('#sidebar-item-account');
 
-        const parentItem = await page.$('#sidebar-item-account');
+      const parentItem = await page.$('#sidebar-item-account');
 
-        await parentItem.hover();
+      await parentItem.hover();
 
-        await page.waitForSelector('#sidebar-item-logout', {
-          visible: true
-        });
+      await page.waitForSelector('#sidebar-item-logout', {
+        visible: true
+      });
 
-        const childItem = await page.$('#sidebar-item-logout');
+      const childItem = await page.$('#sidebar-item-logout');
 
+      await new Promise(resolve => {
         page.once('console', msg => {
           assert.that(msg.text).is.equalTo('clicked::clicked::logout');
 
-          done();
+          resolve();
         });
 
-        await childItem.click();
-      })();
+        childItem.click();
+      });
     });
   });
 });

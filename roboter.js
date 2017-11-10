@@ -15,9 +15,9 @@ roboter.
 
     task('universal/shell', {
       'analyze-styles': './node_modules/.bin/stylelint "src/**/*.css"',
-      serve: './node_modules/.bin/webpack-dev-server',
+      serve: './node_modules/.bin/webpack-dev-server --env test-app',
       styleguide: './node_modules/.bin/styleguidist server',
-      build: 'NODE_ENV=production ./node_modules/.bin/webpack'
+      build: 'NODE_ENV=production ./node_modules/.bin/webpack --env build'
     });
 
     task('universal/license', {

@@ -1,73 +1,117 @@
 const path = require('path');
 
-const processenv = require('processenv'),
+const ExtractTextPlugin = require('extract-text-webpack-plugin'),
+      merge = require('lodash/merge'),
       webpack = require('webpack');
 
-const isProductionMode = processenv('NODE_ENV') === 'production';
-
-const configuration = {
-  devtool: 'eval',
-  context: path.join(__dirname, 'test'),
-  devServer: {
-    contentBase: path.join(__dirname, 'test'),
-    compress: true,
-    port: 8080
-  },
-  target: 'web',
-  entry: [
-    './index.jsx',
-    './index.html'
-  ],
-  output: {
-    path: path.join(__dirname, 'build'),
-    filename: 'index.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        include: [
-          path.join(__dirname, 'src'),
-          path.join(__dirname, 'test')
-        ],
-        use: {
-          loader: 'babel-loader'
-        }
-      },
-      {
-        test: /\.css$/,
+const getStyleLoadersFor = function (env) {
+  switch (env) {
+    case 'build':
+      return ExtractTextPlugin.extract({
+        fallback: 'style-loader',
         use: [
-          'style-loader',
           {
             loader: 'css-loader',
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: 'tnw-[local]--[hash:base64:5]'
+              localIdentName: 'tnw-[folder]-[local]',
+              minimize: true
             }
           },
           'postcss-loader'
         ]
-      },
-      {
-        test: /\.html$/,
-        use: [
-          { loader: 'file-loader', options: { name: '[name].[ext]' }}
-        ]
-      }
-    ]
+      });
+    case 'test-app':
+    default:
+      return [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            importLoaders: 1,
+            localIdentName: 'tnw-[folder]-[local]--[hash:base64:5]'
+          }
+        },
+        'postcss-loader'
+      ];
   }
 };
 
-if (isProductionMode) {
-  configuration.plugins = [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    new webpack.optimize.UglifyJsPlugin()
-  ];
+module.exports = function (env) {
+  const configurationBase = {
+    devtool: 'eval',
+    target: 'web',
 
-  configuration.devtool = undefined;
-}
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          include: [
+            path.join(__dirname, 'src'),
+            path.join(__dirname, 'test')
+          ],
+          use: {
+            loader: 'babel-loader'
+          }
+        },
+        {
+          test: /\.css$/,
+          use: getStyleLoadersFor(env)
+        },
+        {
+          test: /\.html$/,
+          use: [
+            { loader: 'file-loader', options: { name: '[name].[ext]' }}
+          ]
+        }
+      ]
+    }
+  };
 
-module.exports = configuration;
+  if (env === 'test-app') {
+    const configurationForTestApp = merge({}, configurationBase, {
+      devServer: {
+        contentBase: path.join(__dirname, 'test'),
+        compress: true,
+        port: 8080
+      },
+      entry: [
+        './index.jsx',
+        './index.html'
+      ],
+      output: {
+        path: path.join(__dirname, 'build'),
+        filename: 'index.js'
+      },
+      context: path.join(__dirname, 'test')
+    });
+
+    return configurationForTestApp;
+  }
+
+  if (env === undefined || env === 'build') {
+    const configurationForBuild = merge({}, configurationBase, {
+      devtool: 'source-map',
+      entry: [
+        './index.js'
+      ],
+      output: {
+        path: path.join(__dirname, 'build'),
+        filename: 'index.js'
+      },
+      context: path.join(__dirname, 'src')
+    });
+
+    configurationForBuild.plugins = [
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }),
+      new webpack.optimize.UglifyJsPlugin(),
+      new ExtractTextPlugin('style.css')
+    ];
+
+    return configurationForBuild;
+  }
+};

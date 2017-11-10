@@ -1,6 +1,6 @@
 const path = require('path');
 
-const webpackConfig = require('./webpack.config');
+const webpackConfig = require('./webpack.config')('test-app');
 
 module.exports = {
   title: 'the native web UX',
