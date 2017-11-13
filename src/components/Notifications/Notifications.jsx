@@ -1,5 +1,5 @@
 import FadeInLeft from '../transitions/FadeInLeft.jsx';
-import Notification from '../Notification';
+import Notification from './_Notification.jsx';
 import React from 'react';
 import services from '../../services';
 import styles from './styles.css';
