@@ -58,7 +58,8 @@
   }
 
   &.IsTopLevel:hover,
-  &.IsClickable:hover {
+  &.IsClickable:hover,
+  &.IsActive {
     cursor: pointer;
     background: var(--color-brand-highlight);
     color: var(--color-brand-white);
