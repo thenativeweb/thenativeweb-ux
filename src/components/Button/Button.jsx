@@ -42,16 +42,17 @@ class Button extends React.PureComponent {
       [styles.AdjustAuto]: adjust === 'auto',
       [styles.SizeDefault]: size === 'default',
       [styles.SizeS]: size === 's',
-      [styles.TypeLink]: type === 'link',
       [styles.TypePrimary]: isPrimary === true,
       [styles.IsPressed]: isPressed === true
     });
+
+    let buttonType = type || (isPrimary ? 'submit' : 'button');
 
     return (
       <button
         autoFocus={ autoFocus }
         id={ id }
-        type={ isPrimary ? 'submit' : 'button' }
+        type={ buttonType }
         className={ buttonClassNames }
         onClick={ onClick }
         onMouseDown={ this.handlePointerDown }
@@ -68,7 +69,7 @@ Button.propTypes = {
   autoFocus: PropTypes.bool,
   isPrimary: PropTypes.bool,
   size: PropTypes.oneOf([ 'default', 's' ]),
-  type: PropTypes.oneOf([ 'link' ])
+  type: PropTypes.oneOf([ 'button', 'submit', 'reset' ])
 };
 
 Button.defaultProps = {

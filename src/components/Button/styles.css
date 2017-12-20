@@ -60,27 +60,6 @@
   margin-right: 6px;
 }
 
-.TypeLink {
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
-  padding: 16px;
-  margin: 0;
-  color: var(--color-brand-highlight);
-  background: none;
-  outline: none;
-  border: none;
-
-  &:focus {
-    border: none;
-    text-decoration: underline;
-  }
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 .TypePrimary {
   background-color: var(--color-brand-highlight);
   border-color: var(--color-brand-highlight);
