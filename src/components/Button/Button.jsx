@@ -1,4 +1,6 @@
 import classNames from 'classnames';
+import Icon from '../Icon';
+import Label from '../Label';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.css';
@@ -34,7 +36,7 @@ class Button extends React.PureComponent {
   }
 
   render () {
-    const { autoFocus, adjust, children, id, onClick, isPrimary, size, type } = this.props;
+    const { autoFocus, adjust, children, className, id, icon, iconSize, onClick, isPrimary, isSubtle, size, type } = this.props;
     const { isPressed } = this.state;
 
     const buttonClassNames = classNames(styles.Button, {
@@ -42,11 +44,16 @@ class Button extends React.PureComponent {
       [styles.AdjustAuto]: adjust === 'auto',
       [styles.SizeDefault]: size === 'default',
       [styles.SizeS]: size === 's',
+      [styles.SizeM]: size === 'm',
+      [styles.SizeL]: size === 'l',
       [styles.TypePrimary]: isPrimary === true,
-      [styles.IsPressed]: isPressed === true
-    });
+      [styles.TypeSubtle]: isSubtle === true,
+      [styles.IsPressed]: isPressed === true,
+      [styles.TypeIcon]: icon,
+      [styles.TypeIconOnly]: icon && !children
+    }, className);
 
-    let buttonType = type || (isPrimary ? 'submit' : 'button');
+    const buttonType = type || (isPrimary ? 'submit' : 'button');
 
     return (
       <button
@@ -58,7 +65,8 @@ class Button extends React.PureComponent {
         onMouseDown={ this.handlePointerDown }
         onMouseUp={ this.handlePointerUp }
       >
-        { children }
+        { icon ? <Icon className={ styles.Icon } name={ icon } size={ iconSize } /> : null }
+        { children ? <Label className={ styles.Label }>{ children }</Label> : null }
       </button>
     );
   }
@@ -67,8 +75,11 @@ class Button extends React.PureComponent {
 Button.propTypes = {
   adjust: PropTypes.oneOf([ 'flex', 'auto' ]),
   autoFocus: PropTypes.bool,
+  icon: PropTypes.string,
+  iconSize: PropTypes.oneOf([ 'default', 'xs', 's', 'm', 'l' ]),
   isPrimary: PropTypes.bool,
-  size: PropTypes.oneOf([ 'default', 's' ]),
+  isSubtle: PropTypes.bool,
+  size: PropTypes.oneOf([ 'default', 's', 'm', 'l' ]),
   type: PropTypes.oneOf([ 'button', 'submit', 'reset' ])
 };
 
