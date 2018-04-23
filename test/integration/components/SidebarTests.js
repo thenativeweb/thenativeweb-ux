@@ -44,11 +44,10 @@ suite('components/Sidebar', () => {
 
       await new Promise(resolve => {
         page.once('console', msg => {
-          assert.that(msg.text).is.equalTo('clicked::clicked::logout');
+          assert.that(msg.text()).is.equalTo('clicked::clicked::logout');
 
           resolve();
         });
-
         childItem.click();
       });
     });
