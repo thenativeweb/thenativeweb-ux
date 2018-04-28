@@ -15,7 +15,7 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "analyze-styles": "stylelint \"src/**/*.css\"",
+    "analyse-styles": "stylelint \"src/**/*.css\"",
     "serve": "webpack-dev-server --env test-app",
     "styleguide": "styleguidist server",
     "build": "NODE_ENV=production webpack --env build"
