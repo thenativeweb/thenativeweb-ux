@@ -50,7 +50,7 @@ class TestApp extends React.Component {
     this.state = {
       buttonClicked: false,
       dropdownOptions: [
-         { value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' }
+        { value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' }
       ],
       dropdownOptionSelected: 'foo',
       formValue: '',

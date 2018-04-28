@@ -1,8 +1,6 @@
 @import '../../variables.css';
 
 .Form {
-  display: flex;
-  flex-direction: column;
   font-family: var(--font-family-default);
 
   & .Row {

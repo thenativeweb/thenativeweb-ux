@@ -95,7 +95,7 @@
     flex-basis: auto;
     width: 100%;
     height: 1px;
-    background: var(--color-brand-grey);
+    background: var(--color-brand-dark);
     opacity: 0.1;
     margin-top: calc(var(--grid-step-size) * 2);
     margin-bottom: calc(var(--grid-step-size) * 2);

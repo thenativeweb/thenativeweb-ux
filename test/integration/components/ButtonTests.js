@@ -24,12 +24,12 @@ suite('components/Button', () => {
 
     let text = await page.$eval('#button', el => el.innerText);
 
-    assert.that(text).is.equalTo('Click me');
+    assert.that(text.trim()).is.equalTo('Click me');
 
     await page.click('#button');
 
     text = await page.$eval('#button', el => el.innerText);
 
-    assert.that(text).is.equalTo('Thanks!');
+    assert.that(text.trim()).is.equalTo('Thanks!');
   });
 });

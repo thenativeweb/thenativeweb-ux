@@ -9,6 +9,7 @@ The `Sidebar` should be used to handle navigation when building an application l
         <Sidebar.Item>You are logged in as Sophie</Sidebar.Item>
         <Sidebar.Item onClick={ () => console.log('Clicked') }>Logout</Sidebar.Item>
       </Sidebar.Item>
+      <Sidebar.Item iconName='help' isActive={ true } />
       <Sidebar.Item iconName='help' onClick={ () => console.log('Clicked') } />
     </Sidebar>
     <View adjust='flex' style={{ background: 'lightgrey' }}>My content panel</View>

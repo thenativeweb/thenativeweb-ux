@@ -30,7 +30,7 @@
     flex-direction: column;
     justify-content: center;
     max-width: calc(var(--grid-step-size) * 40);
-    background: var(--color-brand-grey);
+    background: var(--color-brand-dark);
     z-index: var(--zindex-overlay);
     color: #848484;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
@@ -58,7 +58,8 @@
   }
 
   &.IsTopLevel:hover,
-  &.IsClickable:hover {
+  &.IsClickable:hover,
+  &.IsActive {
     cursor: pointer;
     background: var(--color-brand-highlight);
     color: var(--color-brand-white);

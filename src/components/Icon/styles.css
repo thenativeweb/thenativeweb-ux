@@ -7,7 +7,7 @@
 }
 
 .ColorDefault {
-  fill: var(--color-brand-grey);
+  fill: var(--color-brand-dark);
 }
 
 .ColorHighlight {

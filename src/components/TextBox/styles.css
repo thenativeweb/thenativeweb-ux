@@ -22,7 +22,11 @@
   }
 
   &.TypePort {
-    width: 4em;
+    width: 5em;
+  }
+
+  &.TypeTime {
+    width: 7em;
   }
 
   &.IsDisabled {

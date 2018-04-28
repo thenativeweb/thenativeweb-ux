@@ -13,20 +13,26 @@ $ npm install thenativeweb-ux
 To run the styleguide execute the following command:
 
 ```shell
-$ bot styleguide
+$ npx roboter styleguide
 ```
 
 To serve the test app execute the following command:
 
 ```shell
-$ bot serve
+$ npx roboter serve
 ```
 
 Once the thenativeweb UX styleguide has been started, point your browser to `http://localhost:6060`.
 
+## Running the tests
+
+```shell
+$ npx roboter test
+```
+
 ## License
 
-Copyright (c) 2017 the native web.
+Copyright (c) 2017-2018 the native web.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

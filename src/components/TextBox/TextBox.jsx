@@ -3,12 +3,17 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.css';
 
+const KEY = {
+  ENTER: 13
+};
+
 class TextBox extends React.Component {
   constructor (props) {
     super(props);
 
     this.handleFocusTimeout = this.handleFocusTimeout.bind(this);
     this.handleRefChanged = this.handleRefChanged.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   componentDidMount () {
@@ -39,14 +44,35 @@ class TextBox extends React.Component {
     this.element = ref;
   }
 
+  handleKeyDown (event) {
+    switch (event.keyCode) {
+      case KEY.ENTER:
+        this.props.onEnter(event);
+        break;
+      default:
+        break;
+    }
+  }
+
   render () {
-    const { className, disabled, id, name, value, onChange, placeholder, required, type } = this.props;
+    const { className, disabled, id, name, value, onBlur, onChange, onFocus, placeholder, required, type } = this.props;
 
     const componentClasses = classNames(styles.TextBox, {
       [styles.TypePort]: type === 'port',
+      [styles.TypeTime]: type === 'time',
       [styles.IsDisabled]: disabled === true,
       [styles.IsRequired]: required === true
     }, className);
+
+    let inputType;
+
+    switch (type) {
+      case 'port':
+        inputType = 'number';
+        break;
+      default:
+        inputType = type;
+    }
 
     return (
       <input
@@ -55,9 +81,13 @@ class TextBox extends React.Component {
         className={ componentClasses }
         name={ name }
         value={ value }
+        onBlur={ onBlur }
         onChange={ onChange }
+        onFocus={ onFocus }
+        onKeyDown={ this.handleKeyDown }
         placeholder={ placeholder }
         required={ required }
+        type={ inputType }
         disable={ disabled ? 'disabled' : null }
       />
     );
@@ -71,9 +101,12 @@ TextBox.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   required: PropTypes.bool,
-  type: PropTypes.oneOf([ 'default', 'port' ]),
+  type: PropTypes.oneOf([ 'default', 'date', 'port', 'time' ]),
   value: PropTypes.string,
-  onChange: PropTypes.func
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  onEnter: PropTypes.func,
+  onFocus: PropTypes.func
 };
 
 TextBox.defaultProps = {
@@ -82,7 +115,10 @@ TextBox.defaultProps = {
   required: false,
   focusDelay: 0,
   type: 'default',
-  onChange () {}
+  onBlur () {},
+  onChange () {},
+  onEnter () {},
+  onFocus () {}
 };
 
 export default TextBox;

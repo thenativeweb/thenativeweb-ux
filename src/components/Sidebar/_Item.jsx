@@ -3,8 +3,9 @@ import Icon from '../Icon';
 import React from 'react';
 import styles from './_Item.css';
 
-const Item = ({ className, iconName, iconUrl, id, isNested = false, children, onClick }) => {
+const Item = ({ className, iconName, iconUrl, id, isActive = false, isNested = false, children, onClick }) => {
   const componentClasses = classNames(styles.Item, {
+    [styles.IsActive]: isActive,
     [styles.IsNested]: isNested,
     [styles.IsTopLevel]: !isNested,
     [styles.IsClickable]: onClick !== undefined
