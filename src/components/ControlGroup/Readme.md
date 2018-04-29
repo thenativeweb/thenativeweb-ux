@@ -20,7 +20,9 @@
         onChange={() => {}}
       />
     </ControlGroup.Item>
+
   </ControlGroup>
+
 
   <ControlGroup>
     <ControlGroup.Item label='Address' adjust='flex'>
@@ -30,8 +32,11 @@
         placeholder='Your business adress'
         onChange={() => {}}
       />
-    </ControlGroup.Item>
+      </ControlGroup.Item>
   </ControlGroup>
+
+  <ControlGroup.Divider />
+  
   <Button>Submit</Button>
 </Form>
 ```

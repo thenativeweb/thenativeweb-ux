@@ -1,13 +1,28 @@
 import Button from '../Button';
 import Headline from '../Headline';
+import injectSheet from 'react-jss';
 import Modal from '../Modal';
 import React from 'react';
 import services from '../../services';
-import styles from './styles.css';
 
 const KEY = {
   ENTER: 13,
   ESCAPE: 27
+};
+
+const styles = {
+  Dialogs: {},
+
+  Actions: {
+    display: 'flex',
+    'flex-direction': 'row',
+    'justify-content': 'center',
+
+    '& *': {
+      'flex-grow': 0,
+      'max-width': '200px'
+    }
+  }
 };
 
 class Dialogs extends React.PureComponent {
@@ -59,17 +74,19 @@ class Dialogs extends React.PureComponent {
   }
 
   render () {
+    const { classes } = this.props;
+
     return (
       <Modal
         attach='center'
         isVisible={ services.dialogs.state.confirm.isVisible }
-        className={ styles.Dialogs }
+        className={ classes.Dialogs }
         onKeyDown={ this.handleKeyDown }
       >
         <Headline>
           { services.dialogs.state.confirm.title }
         </Headline>
-        <div className={ styles.Actions }>
+        <div className={ classes.Actions }>
           <Button adjust='auto' onClick={ this.handleCancel }>
             { services.dialogs.state.confirm.actions.cancel }
           </Button>
@@ -83,4 +100,4 @@ class Dialogs extends React.PureComponent {
   /* eslint-enable class-methods-use-this */
 }
 
-export default Dialogs;
+export default injectSheet(styles)(Dialogs);

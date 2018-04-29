@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import services from '../../services';
 import styles from './styles.css';
 import transtions from '../transitions';
 
@@ -9,11 +10,6 @@ const KEY = {
   ENTER: 13,
   ESCAPE: 27
 };
-
-const modalRootNode = document.createElement('div');
-
-modalRootNode.setAttribute('id', 'tnw-ux-modals');
-document.body.appendChild(modalRootNode);
 
 const Row = function ({ children }) {
   return (
@@ -112,7 +108,7 @@ class Modal extends React.PureComponent {
           </Transition>
         </div>
       ),
-      modalRootNode
+      services.createPortalRootNode()
     );
   }
 }

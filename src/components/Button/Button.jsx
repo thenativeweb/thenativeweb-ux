@@ -1,12 +1,13 @@
 import classNames from 'classnames';
 import Icon from '../Icon';
+import injectSheet from 'react-jss';
 import Label from '../Label';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.js';
 
-const Hint = ({ children }) => (
-  <span className={ styles.Hint }>
+const Hint = ({ children, classes }) => (
+  <span className={ classes.Hint }>
     { children }
   </span>
 );
@@ -36,21 +37,21 @@ class Button extends React.PureComponent {
   }
 
   render () {
-    const { autoFocus, adjust, children, className, id, icon, iconSize, onClick, isPrimary, isSubtle, size, type } = this.props;
+    const { autoFocus, adjust, children, classes, className, id, icon, iconSize, onClick, isPrimary, isSubtle, size, type } = this.props;
     const { isPressed } = this.state;
 
-    const buttonClassNames = classNames(styles.Button, {
-      [styles.AdjustFlex]: adjust === 'flex',
-      [styles.AdjustAuto]: adjust === 'auto',
-      [styles.SizeDefault]: size === 'default',
-      [styles.SizeS]: size === 's',
-      [styles.SizeM]: size === 'm',
-      [styles.SizeL]: size === 'l',
-      [styles.TypePrimary]: isPrimary === true,
-      [styles.TypeSubtle]: isSubtle === true,
-      [styles.IsPressed]: isPressed === true,
-      [styles.TypeIcon]: icon,
-      [styles.TypeIconOnly]: icon && !children
+    const buttonClassNames = classNames(classes.Button, {
+      [classes.AdjustFlex]: adjust === 'flex',
+      [classes.AdjustAuto]: adjust === 'auto',
+      [classes.SizeDefault]: size === 'default',
+      [classes.SizeS]: size === 's',
+      [classes.SizeM]: size === 'm',
+      [classes.SizeL]: size === 'l',
+      [classes.TypeSubtle]: isSubtle === true,
+      [classes.TypePrimary]: isPrimary === true,
+      [classes.TypeIcon]: icon,
+      [classes.TypeIconOnly]: icon && !children,
+      [classes.IsPressed]: isPressed === true
     }, className);
 
     const buttonType = type || (isPrimary ? 'submit' : 'button');
@@ -65,8 +66,8 @@ class Button extends React.PureComponent {
         onMouseDown={ this.handlePointerDown }
         onMouseUp={ this.handlePointerUp }
       >
-        { icon ? <Icon className={ styles.Icon } name={ icon } size={ iconSize } /> : null }
-        { children ? <Label className={ styles.Label }>{ children }</Label> : null }
+        { icon ? <Icon className={ classes.Icon } name={ icon } size={ iconSize } /> : null }
+        { children ? <Label className={ classes.Label }>{ children }</Label> : null }
       </button>
     );
   }
@@ -91,6 +92,11 @@ Button.defaultProps = {
   type: undefined
 };
 
-Button.Hint = Hint;
+Button.Hint = injectSheet({
+  Hint: {
+    opacity: 0.5,
+    'padding-left': '0.5em'
+  }
+})(Hint);
 
-export default Button;
+export default injectSheet(styles)(Button);

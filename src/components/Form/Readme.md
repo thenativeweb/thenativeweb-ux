@@ -13,6 +13,8 @@ initialState = { sample: 'foo' };
       />
     </ControlGroup.Item>
   </ControlGroup>
-  <Button>Submit</Button>
+  <Form.Actions>
+    <Button isPrimary={ true }>Submit</Button>
+  </Form.Actions>
 </Form>
 ```
