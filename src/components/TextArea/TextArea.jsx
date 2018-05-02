@@ -1,7 +1,45 @@
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
+
+const styles = theme => ({
+  TextArea: {
+    padding: '9px 12px',
+    'font-size': theme.font.size.default,
+    'font-family': theme.font.family.default,
+    width: '100%',
+    'box-sizing': 'border-box',
+    border: `1px solid`,
+    'border-color': theme.color.content.border,
+
+    '&:focus': {
+      outline: 'none',
+      'border-color': theme.color.interaction.focus
+    },
+
+    '&::placeholder': {
+      color: theme.color.brand.darkGrey,
+      'font-family': theme.font.family.default,
+      'font-size': 'inherit',
+      'font-weight': 400,
+      opacity: 0.5
+    }
+  },
+
+  IsDisabled: {
+    color: theme.color.brand.darkGrey,
+    background: theme.color.brand.midGrey
+  },
+
+  SizeS: {
+    height: theme.grid.stepSize * 8
+  },
+
+  SizeM: {
+    height: theme.grid.stepSize * 14
+  }
+});
 
 class TextArea extends React.Component {
   constructor (props) {
@@ -40,13 +78,13 @@ class TextArea extends React.Component {
   }
 
   render () {
-    const { className, disabled, id, name, value, onBlur, onChange, onFocus, placeholder, required, size } = this.props;
+    const { classes, className, disabled, id, name, value, onBlur, onChange, onFocus, placeholder, required, size } = this.props;
 
-    const componentClasses = classNames(styles.TextArea, {
-      [styles.IsDisabled]: disabled === true,
-      [styles.IsRequired]: required === true,
-      [styles.SizeS]: size === 's',
-      [styles.SizeM]: size === 'm'
+    const componentClasses = classNames(classes.TextArea, {
+      [classes.IsDisabled]: disabled === true,
+      [classes.IsRequired]: required === true,
+      [classes.SizeS]: size === 's',
+      [classes.SizeM]: size === 'm'
     }, className);
 
     return (
@@ -92,4 +130,4 @@ TextArea.defaultProps = {
   onFocus () {}
 };
 
-export default TextArea;
+export default injectSheet(styles)(TextArea);

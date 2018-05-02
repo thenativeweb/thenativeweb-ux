@@ -1,21 +1,22 @@
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles';
 
-const Icon = ({ className, color, name, size, style, type }) => {
-  const iconClassNames = classNames(styles.Icon, {
-    [styles.ColorDefault]: color === 'default',
-    [styles.ColorHighlight]: color === 'highlight',
-    [styles.ColorWhite]: color === 'white',
-    [styles.TypeInline]: type === 'inline',
-    [styles.TypeFlexAuto]: type === 'flex-auto',
-    [styles.SizeXS]: size === 'xs',
-    [styles.SizeS]: size === 's',
-    [styles.SizeM]: size === 'm',
-    [styles.SizeL]: size === 'l',
-    [styles.SizeXL]: size === 'xl',
-    [styles.SizeXXL]: size === 'xxl'
+const Icon = ({ classes, className, color, name, size, style, type }) => {
+  const iconClassNames = classNames(classes.Icon, {
+    [classes.ColorDefault]: color === 'default',
+    [classes.ColorHighlight]: color === 'highlight',
+    [classes.ColorWhite]: color === 'white',
+    [classes.TypeInline]: type === 'inline',
+    [classes.TypeFlexAuto]: type === 'flex-auto',
+    [classes.SizeXS]: size === 'xs',
+    [classes.SizeS]: size === 's',
+    [classes.SizeM]: size === 'm',
+    [classes.SizeL]: size === 'l',
+    [classes.SizeXL]: size === 'xl',
+    [classes.SizeXXL]: size === 'xxl'
   }, className);
 
   return (
@@ -39,4 +40,4 @@ Icon.defaultProps = {
   type: 'default'
 };
 
-export default Icon;
+export default injectSheet(styles)(Icon);

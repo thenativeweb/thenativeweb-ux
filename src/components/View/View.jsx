@@ -1,18 +1,19 @@
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles';
 
-const View = ({ adjust, alignItems, children, className, justifyContent, scrollable, style, orientation }) => {
-  const viewClassNames = classNames(styles.View, {
-    [styles.OrientationCentered]: orientation === 'centered',
-    [styles.OrientationHorizontal]: orientation === 'horizontal',
-    [styles.OrientationVertical]: orientation === 'vertical',
-    [styles.AdjustFlex]: adjust === 'flex',
-    [styles.AdjustAuto]: adjust === 'auto',
-    [styles.AlignItemsCenter]: alignItems === 'center',
-    [styles.JustifyContentCenter]: justifyContent === 'center',
-    [styles.ScrollableAuto]: scrollable === 'auto'
+const View = ({ adjust, alignItems, children, classes, className, justifyContent, scrollable, style, orientation }) => {
+  const viewClassNames = classNames(classes.View, {
+    [classes.OrientationCentered]: orientation === 'centered',
+    [classes.OrientationHorizontal]: orientation === 'horizontal',
+    [classes.OrientationVertical]: orientation === 'vertical',
+    [classes.AdjustFlex]: adjust === 'flex',
+    [classes.AdjustAuto]: adjust === 'auto',
+    [classes.AlignItemsCenter]: alignItems === 'center',
+    [classes.JustifyContentCenter]: justifyContent === 'center',
+    [classes.ScrollableAuto]: scrollable === 'auto'
   }, className);
 
   return (
@@ -30,4 +31,4 @@ View.propTypes = {
   scrollable: PropTypes.oneOf([ false, 'auto' ])
 };
 
-export default View;
+export default injectSheet(styles)(View);

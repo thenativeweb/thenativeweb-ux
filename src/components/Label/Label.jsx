@@ -1,13 +1,25 @@
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import React from 'react';
-import styles from './Label.css';
 
-const Label = function (props) {
+const styles = {
+  Label: {
+    display: 'block',
+    'flex-grow': 1,
+    'flex-shrink': 1,
+    overflow: 'hidden',
+    'text-overflow': 'ellipsis',
+    'white-space': 'nowrap',
+    color: 'inherit'
+  }
+};
+
+const Label = function ({ children, classes, className }) {
   return (
-    <div className={ classNames(styles.Label, props.className) }>
-      { props.children }
+    <div className={ classNames(classes.Label, className) }>
+      { children }
     </div>
   );
 };
 
-export default Label;
+export default injectSheet(styles)(Label);

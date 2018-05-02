@@ -24,10 +24,21 @@ initialState = { isVisible: false };
 ```js
 initialState = { isVisible: false };
 <div>
-  <Button onClick={ () => setState({ isVisible: true })}>Open large modal</Button>
+  <Button onClick={ () => setState({ isVisible: true })}>Open medium modal</Button>
   <Modal attach='right' size='m' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
     <Headline>This is the title</Headline>
     <div>This is a medium modal</div>
+  </Modal>
+</div>
+```
+
+```js
+initialState = { isVisible: false };
+<div>
+  <Button onClick={ () => setState({ isVisible: true })}>Open large modal</Button>
+  <Modal attach='right' size='l' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
+    <Headline>This is the title</Headline>
+    <div>This is a large modal</div>
   </Modal>
 </div>
 ```

@@ -1,14 +1,15 @@
 import classNames from 'classnames';
 import Icon from '../Icon';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles';
 
-const Message = ({ children, icon, isVisible = true, type = 'info' }) => {
-  const componentClasses = classNames(styles.Message, {
-    [styles.TypeInfo]: type === 'info',
-    [styles.TypeError]: type === 'error',
-    [styles.WithIcon]: icon !== undefined
+const Message = ({ children, classes, icon, isVisible = true, type = 'info' }) => {
+  const componentClasses = classNames(classes.Message, {
+    [classes.TypeInfo]: type === 'info',
+    [classes.TypeError]: type === 'error',
+    [classes.WithIcon]: icon !== undefined
   });
 
   if (isVisible === false) {
@@ -17,8 +18,8 @@ const Message = ({ children, icon, isVisible = true, type = 'info' }) => {
 
   return (
     <div className={ componentClasses }>
-      { icon !== undefined ? <div className={ styles.Icon }><Icon name={ icon } /></div> : null }
-      <div className={ styles.Content }>{ children }</div>
+      { icon !== undefined ? <div className={ classes.Icon }><Icon name={ icon } /></div> : null }
+      <div className={ classes.Content }>{ children }</div>
     </div>
   );
 };
@@ -29,4 +30,4 @@ Message.propTypes = {
   type: PropTypes.oneOf([ 'default', 'info', 'error' ])
 };
 
-export default Message;
+export default injectSheet(styles)(Message);

@@ -6,7 +6,7 @@ const styles = theme => ({
   Notification: {
     padding: '10px 15px',
     background: theme.color.brand.dark,
-    'box-shadow': '1px 1px 10px rgba(0, 0, 0, 0.25)',
+    'box-shadow': theme.shadow.overlay,
     'margin-bottom': theme.grid.stepSize,
     'font-family': theme.font.family.default
   },

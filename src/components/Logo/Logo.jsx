@@ -1,16 +1,39 @@
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
 
-const Logo = ({ isVisible, size }) => {
+const styles = theme => ({
+  Logo: {
+    /* Left blank intentionally */
+  },
+
+  SizeS: {
+    width: '56px',
+    height: '56px'
+  },
+
+  SizeL: {
+    width: '120px',
+    height: '120px'
+  },
+
+  [theme.device.medium]: {
+    SizeL: {
+      width: '100px',
+      height: '100px'
+    }
+  }
+});
+
+const Logo = ({ classes, isVisible, size }) => {
   if (!isVisible) {
     return null;
   }
 
-  const logoClassNames = classNames(styles.Logo, {
-    [styles.SizeS]: size === 's',
-    [styles.SizeL]: size === 'l'
+  const logoClassNames = classNames(classes.Logo, {
+    [classes.SizeS]: size === 's',
+    [classes.SizeL]: size === 'l'
   });
 
   return (
@@ -44,4 +67,4 @@ Logo.defaultProps = {
   size: 'l'
 };
 
-export default Logo;
+export default injectSheet(styles)(Logo);

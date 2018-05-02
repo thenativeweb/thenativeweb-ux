@@ -52,11 +52,37 @@ const theme = {
     stepSize: 10
   },
 
+  icon: {
+    size: {
+      xsmall: '14px',
+      small: '16px',
+      medium: '24px',
+      large: '32px',
+      xlarge: '48px',
+      xxlarge: '64px'
+    }
+  },
+
+  shadow: {
+    overlay: '1px 1px 10px rgba(0, 0, 0, 0.25)'
+  },
+
   /* Components */
   components: {
     borderRadius: {
       default: '1px'
+    },
+
+    sidebar: {
+      width: '80px'
     }
+  },
+
+  device: {
+    small: '@media (max-width: 544px)',
+    medium: '@media (max-width: 768px)',
+    large: '@media (max-width: 992px)',
+    xlarge: '@media (max-width: 1200px)'
   },
 
   zIndex: {

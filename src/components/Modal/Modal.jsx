@@ -1,20 +1,16 @@
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Row from './_Row.jsx';
 import services from '../../services';
-import styles from './styles.css';
+import styles from './styles';
 import transtions from '../transitions';
 
 const KEY = {
   ENTER: 13,
   ESCAPE: 27
-};
-
-const Row = function ({ children }) {
-  return (
-    <div className={ styles.Row }>{ children }</div>
-  );
 };
 
 class Modal extends React.PureComponent {
@@ -70,19 +66,20 @@ class Modal extends React.PureComponent {
   }
 
   render () {
-    const { attach, className, children, isVisible, size } = this.props;
+    const { attach, classes, className, children, isVisible, size } = this.props;
 
-    const backdropClasses = classNames(styles.Backdrop, {
-      [styles.BackdropIsVisible]: isVisible
+    const backdropClasses = classNames(classes.Backdrop, {
+      [classes.IsVisible]: isVisible
     });
 
-    const contentClasses = classNames(styles.Content, {
-      [styles.ContentSizeS]: size === 's',
-      [styles.ContentSizeM]: size === 'm',
-      [styles.ContentAttachedSidebar]: attach === 'sidebar',
-      [styles.ContentAttachedLeft]: attach === 'left',
-      [styles.ContentAttachedRight]: attach === 'right',
-      [styles.ContentAttachedCenter]: attach === 'center'
+    const contentClasses = classNames(classes.Content, {
+      [classes.ContentSizeS]: size === 's',
+      [classes.ContentSizeM]: size === 'm',
+      [classes.ContentSizeL]: size === 'l',
+      [classes.ContentAttachedSidebar]: attach === 'sidebar',
+      [classes.ContentAttachedLeft]: attach === 'left',
+      [classes.ContentAttachedRight]: attach === 'right',
+      [classes.ContentAttachedCenter]: attach === 'center'
     }, className);
 
     let Transition;
@@ -101,7 +98,7 @@ class Modal extends React.PureComponent {
 
     return ReactDOM.createPortal(
       (
-        <div className={ styles.Modal }>
+        <div className={ classes.Modal }>
           <div className={ backdropClasses } onClick={ this.handleBackDropClicked } />
           <Transition in={ isVisible }>
             <div className={ contentClasses } role='dialog'>{ children }</div>
@@ -119,7 +116,7 @@ Modal.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
   attach: PropTypes.oneOf([ 'left', 'right', 'sidebar', 'center' ]),
-  size: PropTypes.oneOf([ 's', 'm' ]),
+  size: PropTypes.oneOf([ 's', 'm', 'l' ]),
   onKeyDown: PropTypes.func
 };
 
@@ -131,4 +128,4 @@ Modal.defaultProps = {
   onKeyDown () {}
 };
 
-export default Modal;
+export default injectSheet(styles)(Modal);
