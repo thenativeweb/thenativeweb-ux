@@ -1,78 +1,39 @@
-import classNames from 'classnames';
 import injectSheet from 'react-jss';
-import Logo from '../Logo';
+import logos from './logos';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 const styles = theme => ({
   Brand: {
+    width: '100%',
+    height: '100%',
     display: 'flex',
-    'flex-direction': 'column',
-    overflow: 'hidden',
     'align-items': 'center',
     'justify-content': 'center',
-    'font-family': theme.font.family.headline,
     background: theme.color.brand.dark
-  },
-
-  IsCollapsed: {
-    '& *': {
-      animation: 'none'
-    }
-  },
-
-  Suffix: {
-    'text-align': 'center',
-    'margin-top': '3px',
-    color: theme.color.brand.white
-  },
-
-  SizeL: {
-    '& $Suffix': {
-      'font-size': theme.font.size.xlarge
-    }
-  },
-
-  SizeS: {
-    '& $Suffix': {
-      'font-size': theme.font.size.medium
-    }
-  },
-
-  [theme.device.medium]: {
-    Suffix: {},
-
-    SizeL: {
-      '& $Suffix': {
-        'font-size': theme.font.size.large
-      }
-    }
   }
 });
 
-const Brand = ({ classes, suffix, size }) => {
-  const brandClassNames = classNames(classes.Brand, {
-    [classes.SizeS]: size === 's',
-    [classes.SizeL]: size === 'l'
-  });
+const Brand = ({ color, classes, size, type, isInteractive }) => {
+  const Logo = logos[type];
 
   return (
-    <div className={ brandClassNames } role='presentational'>
-      <Logo size={ size } />
-      <div className={ classes.Suffix }>{ suffix }</div>
+    <div className={ classes.Brand }>
+      <Logo color={ color } size={ size } isInteractive={ isInteractive } />
     </div>
   );
 };
 
 Brand.propTypes = {
-  size: PropTypes.oneOf([ 's', 'l' ]),
-  /** A suffix that will be added below the logo. */
-  suffix: PropTypes.string
+  color: PropTypes.oneOf([ 'default', 'monochrome' ]),
+  isInteractive: PropTypes.bool,
+  size: PropTypes.oneOf([ 's', 'm', 'l' ]),
+  type: PropTypes.oneOf([ 'full', 'minimal' ])
 };
 
 Brand.defaultProps = {
-  size: 's',
-  suffix: undefined
+  size: 'm',
+  type: 'full'
 };
 
 export default injectSheet(styles)(Brand);

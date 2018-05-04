@@ -11,6 +11,7 @@ import Link from './components/Link';
 import Message from './components/Message';
 import Modal from './components/Modal';
 import Notifications from './components/Notifications';
+import ProductBrand from './components/ProductBrand';
 import services from './services';
 import setup from './setup';
 import Sidebar from './components/Sidebar';
@@ -33,6 +34,7 @@ export {
   Message,
   Modal,
   Notifications,
+  ProductBrand,
   services,
   setup,
   Sidebar,

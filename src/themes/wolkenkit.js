@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 import tnw from './tnw';
 
 const theme = merge({}, tnw, {
+  id: 'wolkenkit',
   color: {
     brand: {
       dark: '#2f333b',

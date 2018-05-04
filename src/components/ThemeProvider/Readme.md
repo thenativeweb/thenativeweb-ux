@@ -6,13 +6,18 @@ const wolkenkit = require('../../themes/wolkenkit').default;
   <ThemeProvider theme={ wolkenkit }>
     <Application>
       <Sidebar>
-        <Sidebar.Brand><Brand size='s' suffix='my-app' /></Sidebar.Brand>
+        <Sidebar.Brand><ProductBrand suffix='my-app' /></Sidebar.Brand>
         <Sidebar.Item iconName='account'>
           <Sidebar.Item>You are logged in as Sophie</Sidebar.Item>
           <Sidebar.Item onClick={ () => console.log('Clicked') }>Logout</Sidebar.Item>
         </Sidebar.Item>
         <Sidebar.Item iconName='help' isActive={ true } />
         <Sidebar.Item iconName='help' onClick={ () => console.log('Clicked') } />
+        <Sidebar.Footer>
+          <Link href='https://www.thenativeweb.io'>
+            <Brand type='minimal' color='monochrome' isInteractive={ true } />
+          </Link>
+        </Sidebar.Footer>
       </Sidebar>
       <View adjust='flex' style={{ padding: '20px', border: '#eee solid 1px' }}>
         <Headline>An wolkenkit themed application</Headline>

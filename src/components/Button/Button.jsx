@@ -81,7 +81,8 @@ Button.propTypes = {
   isPrimary: PropTypes.bool,
   isSubtle: PropTypes.bool,
   size: PropTypes.oneOf([ 'default', 's', 'm', 'l' ]),
-  type: PropTypes.oneOf([ 'button', 'submit', 'reset' ])
+  type: PropTypes.oneOf([ 'button', 'submit', 'reset' ]),
+  onClick: PropTypes.func
 };
 
 Button.defaultProps = {
@@ -89,7 +90,8 @@ Button.defaultProps = {
   autoFocus: false,
   isPrimary: false,
   size: 'default',
-  type: undefined
+  type: undefined,
+  onClick () {}
 };
 
 Button.Hint = injectSheet({

@@ -3,12 +3,12 @@ import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const styles = theme => ({
+const styles = {
   Logo: {
     /* Left blank intentionally */
   },
 
-  SizeS: {
+  SizeM: {
     width: '56px',
     height: '56px'
   },
@@ -16,28 +16,21 @@ const styles = theme => ({
   SizeL: {
     width: '120px',
     height: '120px'
-  },
-
-  [theme.device.medium]: {
-    SizeL: {
-      width: '100px',
-      height: '100px'
-    }
   }
-});
+};
 
 const Logo = ({ classes, isVisible, size }) => {
   if (!isVisible) {
     return null;
   }
 
-  const logoClassNames = classNames(classes.Logo, {
-    [classes.SizeS]: size === 's',
+  const componentClasses = classNames(classes.Logo, {
+    [classes.SizeM]: size === 'm',
     [classes.SizeL]: size === 'l'
   });
 
   return (
-    <div className={ logoClassNames } role='presentational'>
+    <div className={ componentClasses } role='presentational'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 112'>
         <g>
           <path fill='#FFFFFF' d='M99,80.9l-43.1,24.9L12.8,80.9V31.1L55.9,6.2L99,31.1V80.9z' />
@@ -59,12 +52,12 @@ const Logo = ({ classes, isVisible, size }) => {
 
 Logo.propTypes = {
   isVisible: PropTypes.bool,
-  size: PropTypes.oneOf([ 's', 'l' ])
+  size: PropTypes.oneOf([ 'm', 'l' ])
 };
 
 Logo.defaultProps = {
   isVisible: true,
-  size: 'l'
+  size: 'm'
 };
 
 export default injectSheet(styles)(Logo);

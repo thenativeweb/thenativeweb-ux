@@ -1,13 +1,30 @@
-Use this component to display the brand in pages an applications. The brand consists of a logo and a possible suffix that can display the application name e.g. `console` or `documentation`.
+Use this component to display the tnw brand in an application.
 
 ```js
-<Brand />
+<div>
+  <Brand size='s' />
+  <hr />
+  <Brand size='m' />
+  <hr />
+  <Brand size='l' />
+</div>
 ```
 
 ```js
-<Brand suffix='profile' />
+<div>
+  <Brand size='s' type='minimal' />
+  <hr />
+  <Brand size='m' type='minimal' />
+  <hr />
+  <Brand size='l' type='minimal' />
+</div>
 ```
 
+
 ```js
-<Brand size='l'  suffix='profile' />
+<div>
+  <Brand type='minimal' color='monochrome' />
+  <hr />
+  <Brand type='minimal' color='monochrome' isInteractive={ true } />
+</div>
 ```

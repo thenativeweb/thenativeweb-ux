@@ -13,6 +13,7 @@ import {
   Message,
   Modal,
   Notifications,
+  ProductBrand,
   services,
   Sidebar,
   TextArea,
@@ -87,7 +88,7 @@ class TestApp extends React.Component {
       <ThemeProvider>
         <Application orientation='horizontal'>
           <Sidebar id='sidebar'>
-            <Sidebar.Brand><Brand suffix='App' /></Sidebar.Brand>
+            <Sidebar.Brand><ProductBrand suffix='App' /></Sidebar.Brand>
             <Sidebar.Item iconName='account' id='sidebar-item-account'>
               <Sidebar.Item>
                 { 'Authenticated as (anonymous)'}
@@ -96,13 +97,14 @@ class TestApp extends React.Component {
                 Logout
               </Sidebar.Item>
             </Sidebar.Item>
+            <Sidebar.Footer>
+              <Link href='https://www.thenativeweb.io' isExternal={ true }>
+                <Brand type='minimal' color='monochrome' isInteractive={ true } />
+              </Link>
+            </Sidebar.Footer>
           </Sidebar>
           <View orientation='vertical' scrollable='auto'>
             <section><Headline>Test app</Headline></section>
-            <section>
-              <Headline level='2'>Brand</Headline>
-              <Brand suffix='profile' />
-            </section>
             <section>
               <Headline level='2'>Button</Headline>
               <Button id='button' onClick={ () => this.setState({ buttonClicked: true }) }>{ !buttonClicked ? 'Click me' : 'Thanks!' }</Button>
@@ -171,6 +173,10 @@ class TestApp extends React.Component {
               <Button id='show-notification-error' onClick={ () => services.notifications.show({ type: 'error', text: 'This is an error!' }) }>Show notification (error)</Button>
               <Button id='show-notification-success' onClick={ () => services.notifications.show({ type: 'success', text: 'This is a success!' }) }>Show notification (success)</Button>
               <Notifications notifications={ notifications } />
+            </section>
+            <section>
+              <Headline level='2'>ProductBrand</Headline>
+              <ProductBrand suffix='profile' />
             </section>
             <section>
               <Headline level='2'>TextArea</Headline>
