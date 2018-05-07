@@ -22,7 +22,7 @@ const styles = theme => ({
   Intro: {
     'margin-top': theme.grid.stepSize / 2,
     'margin-bottom': theme.grid.stepSize / 2,
-    color: theme.color.brand.midGrey
+    color: theme.color.brand.lightGrey
   },
 
   SizeL: {},
