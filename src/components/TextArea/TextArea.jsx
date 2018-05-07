@@ -29,7 +29,7 @@ const styles = theme => ({
 
   IsDisabled: {
     color: theme.color.brand.darkGrey,
-    background: theme.color.brand.midGrey
+    background: theme.color.brand.lightGrey
   },
 
   SizeS: {

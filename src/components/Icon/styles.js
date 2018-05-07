@@ -50,8 +50,9 @@ const styles = theme => ({
   TypeInline: {
     display: 'inline-block',
     'vertical-align': 'middle',
-    'margin-bottom': '0.175em',
-    'margin-left': '0.05em'
+    'margin-bottom': '0.2em',
+    'margin-left': '0.05em',
+    'margin-right': '0.05em'
   },
 
   TypeFlexAuto: {

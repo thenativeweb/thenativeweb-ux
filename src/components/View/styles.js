@@ -17,6 +17,15 @@ const styles = theme => ({
     'flex-basis': 'auto'
   },
 
+  BackgroundDark: {
+    background: theme.color.brand.dark,
+    color: theme.color.brand.white
+  },
+
+  BackgroundLight: {
+    background: theme.color.brand.lightGrey
+  },
+
   OrientationCentered: {
     width: '100%',
     height: '100%',

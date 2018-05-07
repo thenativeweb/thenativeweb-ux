@@ -8,8 +8,8 @@ const theme = merge({}, tnw, {
       dark: '#2f333b',
       highlight: '#29abe2',
       darkGrey: '#363d45',
-      midGrey: '#eee',
-      lightGrey: '#f7f7f7',
+      midGrey: '#595c62',
+      lightGrey: '#eee',
       white: '#fff'
     },
 

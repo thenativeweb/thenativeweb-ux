@@ -13,7 +13,7 @@ const styles = theme => ({
   },
 
   TypeInfo: {
-    background: theme.color.brand.midGrey
+    background: theme.color.brand.lightGrey
   },
 
   WithIcon: {

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const styles = theme => ({
-  ProductBrand: {
+  Product: {
     display: 'flex',
     'flex-direction': 'column',
     overflow: 'hidden',
@@ -21,60 +21,77 @@ const styles = theme => ({
     }
   },
 
-  Suffix: {
+  Name: {
     'text-align': 'center',
     'margin-top': '3px',
     color: theme.color.brand.white
   },
 
+  CompositeName: {
+    'text-align': 'center',
+    'margin-top': '3px',
+    color: theme.color.brand.highlight,
+
+    '& span': {
+      color: theme.color.brand.white
+    }
+  },
+
   SizeL: {
-    '& $Suffix': {
+    '& $Name, & $CompositeName': {
       'font-size': theme.font.size.xlarge
     }
   },
 
   SizeM: {
-    '& $Suffix': {
+    '& $Name, & $CompositeName': {
       'font-size': theme.font.size.medium
     }
   },
 
   [theme.device.medium]: {
-    Suffix: {},
+    Name: {},
 
     SizeL: {
-      '& $Suffix': {
+      '& $Name': {
         'font-size': theme.font.size.large
       }
     }
   }
 });
 
-const ProductBrand = ({ classes, suffix, size, theme }) => {
-  const brandClassNames = classNames(classes.ProductBrand, {
+const Product = ({ classes, name, size, theme }) => {
+  const brandClassNames = classNames(classes.Product, {
     [classes.SizeM]: size === 'm',
     [classes.SizeL]: size === 'l'
   });
 
-  const Logo = logos[theme.id] || logos.tnw || null;
+  let nameComponent = <div className={ classes.Name }>{ name }</div>;
+  let logoId = theme.id;
+
+  if (name === 'wolkenkit') {
+    nameComponent = <div className={ classes.CompositeName }><span>wolken</span>kit</div>;
+    logoId = 'wolkenkit';
+  }
+
+  const Logo = logos[logoId] || logos.tnw || null;
 
   return (
-    <div className={ brandClassNames } role='presentational'>
+    <div className={ brandClassNames }>
       <Logo size={ size } />
-      <div className={ classes.Suffix }>{ suffix }</div>
+      { nameComponent }
     </div>
   );
 };
 
-ProductBrand.propTypes = {
-  size: PropTypes.oneOf([ 'm', 'l' ]),
-  /** A suffix that will be added below the logo. */
-  suffix: PropTypes.string
+Product.propTypes = {
+  name: PropTypes.string,
+  size: PropTypes.oneOf([ 'm', 'l' ])
 };
 
-ProductBrand.defaultProps = {
+Product.defaultProps = {
   size: 'm',
-  suffix: undefined
+  name: undefined
 };
 
-export default injectSheet(styles)(ProductBrand);
+export default injectSheet(styles)(Product);

@@ -1,5 +1,13 @@
 import React from 'react';
 import { ThemeProvider } from 'react-jss';
-import tnw from '../../themes/tnw';
+import themes from '../../themes';
 
-export default ({ theme, children }) => (<ThemeProvider theme={ theme || tnw }>{children}</ThemeProvider>);
+export default ({ theme, children }) => {
+  if (typeof theme === 'string' && themes[theme]) {
+    theme = themes[theme];
+  }
+
+  return (
+    <ThemeProvider theme={ theme || themes.tnw }>{children}</ThemeProvider>
+  );
+};

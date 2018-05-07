@@ -2,8 +2,8 @@ const brandColors = {
   dark: '#23232c',
   highlight: '#f09',
   darkGrey: '#363d45',
-  midGrey: '#eee',
-  lightGrey: '#595c62',
+  midGrey: '#595c62',
+  lightGrey: '#eee',
   white: '#fff'
 };
 
@@ -18,9 +18,7 @@ const theme = {
 
     content: {
       background: brandColors.white,
-      panelLight: brandColors.lightGrey,
-      pandelDark: brandColors.darkGrey,
-      border: brandColors.midGrey
+      border: brandColors.lightGrey
     },
 
     copyText: brandColors.dark,
@@ -34,7 +32,8 @@ const theme = {
 
   font: {
     size: {
-      medium: '14px',
+      xsmall: '12px',
+      small: '14px',
       default: '16px',
       large: '18px',
       xlarge: '24px',

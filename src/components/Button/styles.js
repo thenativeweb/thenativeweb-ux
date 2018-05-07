@@ -55,7 +55,7 @@ const styles = function (theme) {
 
     SizeS: {
       padding: '7px 11px',
-      'font-size': theme.font.size.medium,
+      'font-size': theme.font.size.small,
       margin: 0,
       'margin-right': '6px'
     },
@@ -144,7 +144,7 @@ const styles = function (theme) {
 
     Hint: {
       opacity: 0.5,
-      'font-size': theme.font.size.medium,
+      'font-size': theme.font.size.small,
       'padding-left': '0.75em'
     },
 

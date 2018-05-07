@@ -48,7 +48,7 @@ const styles = theme => ({
   },
 
   SizeS: {
-    'font-size': theme.font.size.medium,
+    'font-size': theme.font.size.small,
     margin: 0,
     'margin-right': '6px',
 
