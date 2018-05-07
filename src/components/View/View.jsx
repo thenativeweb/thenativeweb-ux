@@ -1,18 +1,21 @@
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles';
 
-const View = ({ adjust, alignItems, children, className, justifyContent, scrollable, style, orientation }) => {
-  const viewClassNames = classNames(styles.View, {
-    [styles.OrientationCentered]: orientation === 'centered',
-    [styles.OrientationHorizontal]: orientation === 'horizontal',
-    [styles.OrientationVertical]: orientation === 'vertical',
-    [styles.AdjustFlex]: adjust === 'flex',
-    [styles.AdjustAuto]: adjust === 'auto',
-    [styles.AlignItemsCenter]: alignItems === 'center',
-    [styles.JustifyContentCenter]: justifyContent === 'center',
-    [styles.ScrollableAuto]: scrollable === 'auto'
+const View = ({ adjust, alignItems, background, children, classes, className, justifyContent, scrollable, style, orientation }) => {
+  const viewClassNames = classNames(classes.View, {
+    [classes.OrientationCentered]: orientation === 'centered',
+    [classes.OrientationHorizontal]: orientation === 'horizontal',
+    [classes.OrientationVertical]: orientation === 'vertical',
+    [classes.AdjustFlex]: adjust === 'flex',
+    [classes.AdjustAuto]: adjust === 'auto',
+    [classes.AlignItemsCenter]: alignItems === 'center',
+    [classes.BackgroundDark]: background === 'dark',
+    [classes.BackgroundLight]: background === 'light',
+    [classes.JustifyContentCenter]: justifyContent === 'center',
+    [classes.ScrollableAuto]: scrollable === 'auto'
   }, className);
 
   return (
@@ -25,9 +28,10 @@ const View = ({ adjust, alignItems, children, className, justifyContent, scrolla
 View.propTypes = {
   adjust: PropTypes.oneOf([ 'auto', 'flex' ]),
   alignItems: PropTypes.oneOf([ 'center' ]),
+  background: PropTypes.oneOf([ 'dark', 'light' ]),
   justifyContent: PropTypes.oneOf([ 'center' ]),
   orientation: PropTypes.oneOf([ 'horizontal', 'vertical', 'centered' ]),
   scrollable: PropTypes.oneOf([ false, 'auto' ])
 };
 
-export default View;
+export default injectSheet(styles)(View);

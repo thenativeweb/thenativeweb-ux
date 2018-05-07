@@ -1,11 +1,49 @@
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
 
 const KEY = {
   ENTER: 13
 };
+
+const styles = theme => ({
+  TextBox: {
+    padding: '9px 12px',
+    'font-size': theme.font.size.default,
+    'font-family': theme.font.family.default,
+    width: '100%',
+    'box-sizing': 'border-box',
+    border: `1px solid`,
+    'border-color': theme.color.content.border,
+
+    '&:focus': {
+      outline: 'none',
+      'border-color': theme.color.interaction.focus
+    },
+
+    '&::placeholder': {
+      color: theme.color.brand.darkGrey,
+      'font-family': theme.font.family.default,
+      'font-size': 'inherit',
+      'font-weight': 400,
+      opacity: 0.5
+    }
+  },
+
+  IsDisabled: {
+    color: theme.color.brand.darkGrey,
+    background: theme.color.brand.lightGrey
+  },
+
+  TypePort: {
+    width: '5em'
+  },
+
+  TypeTime: {
+    width: '7em'
+  }
+});
 
 class TextBox extends React.Component {
   constructor (props) {
@@ -55,13 +93,13 @@ class TextBox extends React.Component {
   }
 
   render () {
-    const { className, disabled, id, name, value, onBlur, onChange, onFocus, placeholder, required, type } = this.props;
+    const { className, classes, disabled, id, name, value, onBlur, onChange, onFocus, placeholder, required, type } = this.props;
 
-    const componentClasses = classNames(styles.TextBox, {
-      [styles.TypePort]: type === 'port',
-      [styles.TypeTime]: type === 'time',
-      [styles.IsDisabled]: disabled === true,
-      [styles.IsRequired]: required === true
+    const componentClasses = classNames(classes.TextBox, {
+      [classes.TypePort]: type === 'port',
+      [classes.TypeTime]: type === 'time',
+      [classes.IsDisabled]: disabled === true,
+      [classes.IsRequired]: required === true
     }, className);
 
     let inputType;
@@ -121,4 +159,4 @@ TextBox.defaultProps = {
   onFocus () {}
 };
 
-export default TextBox;
+export default injectSheet(styles)(TextBox);

@@ -1,20 +1,31 @@
+import Brand from './_Brand.jsx';
+import Footer from './_Footer.jsx';
+import injectSheet from 'react-jss';
 import Item from './_Item.jsx';
 import React from 'react';
-import styles from './styles.css';
 
-const Brand = props => (
-  <div className={ styles.Brand }>
-    { props.children }
-  </div>
-);
+const styles = theme => ({
+  Sidebar: {
+    position: 'relative',
+    'flex-grow': 0,
+    'flex-shrink': 0,
+    display: 'flex',
+    'flex-direction': 'column',
+    'box-sizing': 'content-box',
+    width: theme.components.sidebar.width,
+    background: theme.color.brand.dark,
+    padding: `${theme.grid.stepSize * 1.5}px 0`
+  }
+});
 
-const Sidebar = props => (
-  <div id={ props.id } className={ styles.Sidebar }>
-    { props.children }
+const Sidebar = ({ children, classes, id }) => (
+  <div id={ id } className={ classes.Sidebar }>
+    { children }
   </div>
 );
 
 Sidebar.Brand = Brand;
+Sidebar.Footer = Footer;
 Sidebar.Item = Item;
 
-export default Sidebar;
+export default injectSheet(styles)(Sidebar);

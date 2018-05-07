@@ -1,8 +1,9 @@
 import classNames from 'classnames';
 import Icon from '../Icon/Icon.jsx';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.js';
 
 class Dropdown extends React.PureComponent {
   constructor (props) {
@@ -34,12 +35,12 @@ class Dropdown extends React.PureComponent {
   }
 
   render () {
-    const { emptyLabel, options, size, value } = this.props;
+    const { classes, emptyLabel, options, size, value } = this.props;
 
-    const dropdownClassNames = classNames(styles.Dropdown, {
-      [styles.SizeDefault]: size === 'default',
-      [styles.SizeS]: size === 's',
-      [styles.Focused]: this.state.isFocused
+    const dropdownClassNames = classNames(classes.Dropdown, {
+      [classes.SizeDefault]: size === 'default',
+      [classes.SizeS]: size === 's',
+      [classes.IsFocused]: this.state.isFocused
     });
 
     return (
@@ -57,7 +58,7 @@ class Dropdown extends React.PureComponent {
             ))
           }
         </select>
-        <Icon key='icon' color='white' className={ styles.CollapseIcon } name='expand' />
+        <Icon key='icon' color='white' className={ classes.CollapseIcon } name='expand' />
       </div>
     );
   }
@@ -74,4 +75,4 @@ Dropdown.defaultProps = {
   size: 'default'
 };
 
-export default Dropdown;
+export default injectSheet(styles)(Dropdown);

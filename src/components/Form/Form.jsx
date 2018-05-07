@@ -1,22 +1,18 @@
+import Actions from './_Actions.jsx';
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
+import Row from './_Row.jsx';
 
-const Row = function ({ children }) {
-  return (
-    <div className={ styles.Row }>{ children }</div>
-  );
-};
+const styles = theme => ({
+  Form: {
+    'font-family': theme.font.family.default
+  }
+});
 
-const Actions = function ({ children }) {
-  return (
-    <div className={ styles.Actions }>{ children }</div>
-  );
-};
-
-const Form = ({ children, className, onSubmit }) => {
-  const componentClasses = classNames(styles.Form, className);
+const Form = ({ children, classes, className, onSubmit }) => {
+  const componentClasses = classNames(classes.Form, className);
 
   if (onSubmit) {
     return (
@@ -44,4 +40,4 @@ Form.defaultProps = {
   onSubmit () {}
 };
 
-export default Form;
+export default injectSheet(styles)(Form);

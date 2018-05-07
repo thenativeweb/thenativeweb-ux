@@ -3,8 +3,8 @@ Use the `Application` component as your root component when you want to build a 
 ```js
 <div style={{ position: 'relative', width: 640, height: 480 }}>
   <Application>
-    <View style={{ background: 'gold', width: 64 }}>My left panel</View>
-    <View adjust='flex' style={{ background: 'orange' }}>My content panel</View>
+    <View background='dark'>My left panel</View>
+    <View adjust='flex' background='light'>My content panel</View>
   </Application>
 </div>
 ```

@@ -31,5 +31,9 @@ module.exports = {
 
   require: [
     path.join(__dirname, 'src', 'setup', 'auto')
-  ]
+  ],
+
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, 'src', 'styleguide', 'ThemeWrapper.jsx')
+  }
 };

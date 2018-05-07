@@ -1,43 +1,7 @@
 const path = require('path');
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin'),
-      merge = require('lodash/merge'),
+const merge = require('lodash/merge'),
       webpack = require('webpack');
-
-const getStyleLoadersFor = function (env) {
-  switch (env) {
-    case 'build':
-      return ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: 'tnw-[folder]-[local]',
-              minimize: true
-            }
-          },
-          'postcss-loader'
-        ]
-      });
-    case 'test-app':
-    default:
-      return [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: 'tnw-[folder]-[local]--[hash:base64:5]'
-          }
-        },
-        'postcss-loader'
-      ];
-  }
-};
 
 module.exports = function (env) {
   const configurationBase = {
@@ -55,10 +19,6 @@ module.exports = function (env) {
           use: {
             loader: 'babel-loader'
           }
-        },
-        {
-          test: /\.css$/,
-          use: getStyleLoadersFor(env)
         },
         {
           test: /\.html$/,
@@ -93,7 +53,7 @@ module.exports = function (env) {
 
   if (env === undefined || env === 'build') {
     const configurationForBuild = merge({}, configurationBase, {
-      devtool: 'source-map',
+      devtool: false,
       entry: [
         './index.js'
       ],
@@ -108,8 +68,7 @@ module.exports = function (env) {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
-      new webpack.optimize.UglifyJsPlugin(),
-      new ExtractTextPlugin('style.css')
+      new webpack.optimize.UglifyJsPlugin()
     ];
 
     return configurationForBuild;

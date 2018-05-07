@@ -23,5 +23,6 @@ initialState = { value: 'This TextArea is medium' };
 <TextArea
   value={ state.value }
   size='m'
+  onChange={ event => setState({ value: event.target.value })}
 />
 ```

@@ -1,32 +1,46 @@
-import classNames from 'classnames';
-import Logo from '../Logo';
+import injectSheet from 'react-jss';
+import logos from './logos';
+import MadeBy from './MadeBy';
+import PoweredBy from './PoweredBy';
+import Product from './Product';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
 
-const Brand = ({ suffix, size }) => {
-  const brandClassNames = classNames(styles.Brand, {
-    [styles.SizeS]: size === 's',
-    [styles.SizeL]: size === 'l'
-  });
+const styles = theme => ({
+  Brand: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    'align-items': 'center',
+    'justify-content': 'center',
+    background: theme.color.brand.dark
+  }
+});
+
+const Brand = ({ color, classes, size, type, isInteractive }) => {
+  const Logo = logos[type];
 
   return (
-    <div className={ brandClassNames } role='presentational'>
-      <Logo size={ size } />
-      <div className={ styles.Suffix }>{ suffix }</div>
+    <div className={ classes.Brand }>
+      <Logo color={ color } size={ size } isInteractive={ isInteractive } />
     </div>
   );
 };
 
+Brand.MadeBy = MadeBy;
+Brand.PoweredBy = PoweredBy;
+Brand.Product = Product;
+
 Brand.propTypes = {
-  size: PropTypes.oneOf([ 's', 'l' ]),
-  /** A suffix that will be added below the logo. */
-  suffix: PropTypes.string
+  color: PropTypes.oneOf([ 'default', 'monochrome' ]),
+  isInteractive: PropTypes.bool,
+  size: PropTypes.oneOf([ 's', 'm', 'l' ]),
+  type: PropTypes.oneOf([ 'full', 'minimal' ])
 };
 
 Brand.defaultProps = {
-  size: 's',
-  suffix: undefined
+  size: 'm',
+  type: 'full'
 };
 
-export default Brand;
+export default injectSheet(styles)(Brand);

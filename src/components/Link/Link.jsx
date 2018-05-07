@@ -1,12 +1,24 @@
 import classNames from 'classnames';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './styles.css';
 
-const Link = ({ className, children, isExternal, href, onClick }) => {
-  const brandClassNames = classNames(styles.Link, {
-    [styles.IsExternal]: isExternal === true
-  }, className);
+const styles = theme => ({
+  Link: {
+    color: theme.color.brand.highlight,
+    'text-decoration': 'none',
+    'font-weight': 400,
+    'font-family': theme.font.family.default,
+    'font-size': theme.font.size.default,
+
+    '&:hover': {
+      'text-decoration': 'none'
+    }
+  }
+});
+
+const Link = ({ classes, className, children, isExternal, href, onClick }) => {
+  const brandClassNames = classNames(classes.Link, className);
 
   if (isExternal === true) {
     return (
@@ -34,4 +46,4 @@ Link.defaultProps = {
   onClick () {}
 };
 
-export default Link;
+export default injectSheet(styles)(Link);

@@ -16,6 +16,7 @@ import setup from './setup';
 import Sidebar from './components/Sidebar';
 import TextArea from './components/TextArea';
 import TextBox from './components/TextBox';
+import ThemeProvider from './components/ThemeProvider';
 import View from './components/View';
 
 export {
@@ -37,5 +38,6 @@ export {
   Sidebar,
   TextArea,
   TextBox,
+  ThemeProvider,
   View
 };
