@@ -68,5 +68,6 @@
     "thenativeweb",
     "ui",
     "ux"
-  ]
+  ],
+  "license": "LGPL-3.0"
 }
