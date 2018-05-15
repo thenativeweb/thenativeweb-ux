@@ -1,4 +1,4 @@
-# thenativeweb UX
+# thenativeweb-ux
 
 thenativeweb-ux provides UI components for the native web applications.
 
@@ -10,24 +10,26 @@ $ npm install thenativeweb-ux
 
 ## Quick start
 
-To run the styleguide execute the following command:
+The documentation of thenativeweb-ux is provided within a styleguide. To access the styleguide, run the following command:
 
 ```shell
 $ npx roboter styleguide
 ```
 
-To serve the test app execute the following command:
+Then point your browser to [http://localhost:6060](http://localhost:6060).
+
+Additionally, there is a test application. To serve the test application, run the following command:
 
 ```shell
 $ npx roboter serve
 ```
 
-Once the thenativeweb UX styleguide has been started, point your browser to `http://localhost:6060`.
+## Running the build
 
-## Running the tests
+To build this module use [roboter](https://www.npmjs.com/package/roboter).
 
 ```shell
-$ npx roboter test
+$ npx roboter
 ```
 
 ## License

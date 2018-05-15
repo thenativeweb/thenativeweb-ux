@@ -1,7 +1,7 @@
 {
   "name": "thenativeweb-ux",
   "version": "0.0.0",
-  "description": "thenativeweb-ux provides UI components for the native web applications applications.",
+  "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
       "name": "Golo Roden",
@@ -13,10 +13,9 @@
     }
   ],
   "main": "dist/index.js",
-  "private": true,
   "scripts": {
-    "serve": "webpack-dev-server --env test-app",
     "styleguide": "styleguidist server",
+    "serve": "webpack-dev-server --env test-app",
     "build": "NODE_ENV=production webpack --env build"
   },
   "dependencies": {},
@@ -63,5 +62,12 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/thenativeweb/thenativeweb-ux.git"
-  }
+  },
+  "keywords": [
+    "react",
+    "thenativeweb",
+    "ui",
+    "ux"
+  ],
+  "license": "LGPL-3.0"
 }
