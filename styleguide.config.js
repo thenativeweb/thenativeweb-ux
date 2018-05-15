@@ -19,10 +19,6 @@ module.exports = {
 
   sections: [
     {
-      name: 'Introduction',
-      content: 'docs/introduction.md'
-    },
-    {
       name: 'Components',
       components: 'src/components/*/index.js'
     }
