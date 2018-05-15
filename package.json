@@ -1,7 +1,7 @@
 {
   "name": "thenativeweb-ux",
   "version": "0.0.0",
-  "description": "thenativeweb-ux provides UI components for the native web applications applications.",
+  "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
       "name": "Golo Roden",
@@ -13,7 +13,6 @@
     }
   ],
   "main": "src/index.js",
-  "private": true,
   "scripts": {
     "serve": "webpack-dev-server --env test-app",
     "styleguide": "styleguidist server",
