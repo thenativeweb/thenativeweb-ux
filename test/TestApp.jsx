@@ -84,7 +84,7 @@ class TestApp extends React.Component {
         <Application orientation='horizontal'>
           <Application.Services />
           <Sidebar id='sidebar'>
-            <Sidebar.Brand><Brand.Product suffix='App' /></Sidebar.Brand>
+            <Sidebar.Brand><Brand.Product name='App' /></Sidebar.Brand>
             <Sidebar.Item iconName='account' id='sidebar-item-account'>
               <Sidebar.Item>
                 { 'Authenticated as (anonymous)'}
