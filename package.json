@@ -62,5 +62,11 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/thenativeweb/thenativeweb-ux.git"
-  }
+  },
+  "keywords": [
+    "react",
+    "thenativeweb",
+    "ui",
+    "ux"
+  ]
 }
