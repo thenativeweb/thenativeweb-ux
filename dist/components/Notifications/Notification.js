@@ -1,7 +1,26 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -32,13 +51,13 @@ var Notification = function Notification(_ref) {
       type = _ref.type,
       text = _ref.text;
 
-  var componentClasses = classNames(classes.Notification, (_classNames = {}, _defineProperty(_classNames, classes.TypeError, type === 'error'), _defineProperty(_classNames, classes.TypeSuccess, type === 'success'), _classNames));
+  var componentClasses = (0, _classnames2.default)(classes.Notification, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.TypeError, type === 'error'), (0, _defineProperty3.default)(_classNames, classes.TypeSuccess, type === 'success'), _classNames));
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { className: componentClasses },
     text
   );
 };
 
-export default injectSheet(styles)(Notification);
+exports.default = (0, _reactJss2.default)(styles)(Notification);

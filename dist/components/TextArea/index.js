@@ -1,13 +1,50 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import _Object$getPrototypeOf from 'babel-runtime/core-js/object/get-prototype-of';
-import _classCallCheck from 'babel-runtime/helpers/classCallCheck';
-import _createClass from 'babel-runtime/helpers/createClass';
-import _possibleConstructorReturn from 'babel-runtime/helpers/possibleConstructorReturn';
-import _inherits from 'babel-runtime/helpers/inherits';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import PropTypes from 'prop-types';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -50,19 +87,19 @@ var styles = function styles(theme) {
 };
 
 var TextArea = function (_React$Component) {
-  _inherits(TextArea, _React$Component);
+  (0, _inherits3.default)(TextArea, _React$Component);
 
   function TextArea(props) {
-    _classCallCheck(this, TextArea);
+    (0, _classCallCheck3.default)(this, TextArea);
 
-    var _this = _possibleConstructorReturn(this, (TextArea.__proto__ || _Object$getPrototypeOf(TextArea)).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (TextArea.__proto__ || (0, _getPrototypeOf2.default)(TextArea)).call(this, props));
 
     _this.handleFocusTimeout = _this.handleFocusTimeout.bind(_this);
     _this.handleRefChanged = _this.handleRefChanged.bind(_this);
     return _this;
   }
 
-  _createClass(TextArea, [{
+  (0, _createClass3.default)(TextArea, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _props = this.props,
@@ -117,9 +154,9 @@ var TextArea = function (_React$Component) {
           size = _props2.size;
 
 
-      var componentClasses = classNames(classes.TextArea, (_classNames = {}, _defineProperty(_classNames, classes.IsDisabled, disabled === true), _defineProperty(_classNames, classes.IsRequired, required === true), _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.SizeM, size === 'm'), _classNames), className);
+      var componentClasses = (0, _classnames2.default)(classes.TextArea, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.IsDisabled, disabled === true), (0, _defineProperty3.default)(_classNames, classes.IsRequired, required === true), (0, _defineProperty3.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), _classNames), className);
 
-      return React.createElement('textarea', {
+      return _react2.default.createElement('textarea', {
         id: id,
         ref: this.handleRefChanged,
         className: componentClasses,
@@ -134,22 +171,21 @@ var TextArea = function (_React$Component) {
       });
     }
   }]);
-
   return TextArea;
-}(React.Component);
+}(_react2.default.Component);
 
 TextArea.propTypes = {
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  required: PropTypes.bool,
-  size: PropTypes.oneOf(['s', 'm']),
-  value: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func
+  autoFocus: _propTypes2.default.bool,
+  disabled: _propTypes2.default.bool,
+  id: _propTypes2.default.string,
+  name: _propTypes2.default.string,
+  placeholder: _propTypes2.default.string,
+  required: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['s', 'm']),
+  value: _propTypes2.default.string,
+  onBlur: _propTypes2.default.func,
+  onChange: _propTypes2.default.func,
+  onFocus: _propTypes2.default.func
 };
 
 TextArea.defaultProps = {
@@ -163,4 +199,4 @@ TextArea.defaultProps = {
   onFocus: function onFocus() {}
 };
 
-export default injectSheet(styles)(TextArea);
+exports.default = (0, _reactJss2.default)(styles)(TextArea);

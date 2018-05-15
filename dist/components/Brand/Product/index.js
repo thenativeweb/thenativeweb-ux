@@ -1,12 +1,37 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import logos from './logos';
-import PropTypes from 'prop-types';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _logos = require('./logos');
+
+var _logos2 = _interopRequireDefault(_logos);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
-  return _defineProperty({
+  return (0, _defineProperty3.default)({
     Product: {
       display: 'flex',
       'flex-direction': 'column',
@@ -70,9 +95,9 @@ var Product = function Product(_ref2) {
       size = _ref2.size,
       theme = _ref2.theme;
 
-  var brandClassNames = classNames(classes.Product, (_classNames = {}, _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _classNames));
+  var brandClassNames = (0, _classnames2.default)(classes.Product, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), _classNames));
 
-  var nameComponent = React.createElement(
+  var nameComponent = _react2.default.createElement(
     'div',
     { className: classes.Name },
     name
@@ -80,10 +105,10 @@ var Product = function Product(_ref2) {
   var logoId = theme.id;
 
   if (name === 'wolkenkit') {
-    nameComponent = React.createElement(
+    nameComponent = _react2.default.createElement(
       'div',
       { className: classes.CompositeName },
-      React.createElement(
+      _react2.default.createElement(
         'span',
         null,
         'wolken'
@@ -93,19 +118,19 @@ var Product = function Product(_ref2) {
     logoId = 'wolkenkit';
   }
 
-  var Logo = logos[logoId] || logos.thenativeweb || null;
+  var Logo = _logos2.default[logoId] || _logos2.default.thenativeweb || null;
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { className: brandClassNames },
-    React.createElement(Logo, { size: size }),
+    _react2.default.createElement(Logo, { size: size }),
     nameComponent
   );
 };
 
 Product.propTypes = {
-  name: PropTypes.string,
-  size: PropTypes.oneOf(['m', 'l'])
+  name: _propTypes2.default.string,
+  size: _propTypes2.default.oneOf(['m', 'l'])
 };
 
 Product.defaultProps = {
@@ -113,4 +138,4 @@ Product.defaultProps = {
   name: undefined
 };
 
-export default injectSheet(styles)(Product);
+exports.default = (0, _reactJss2.default)(styles)(Product);

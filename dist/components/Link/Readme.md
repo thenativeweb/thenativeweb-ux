@@ -1,4 +1,4 @@
-```js
+```javascript
 <div>
   <p>
     <Link href='/internal'>This an interal link</Link>

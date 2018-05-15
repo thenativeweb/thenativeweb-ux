@@ -1,8 +1,30 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import classNames from 'classnames';
-import Icon from '../Icon';
-import injectSheet from 'react-jss';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _Icon = require('../Icon');
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -102,13 +124,13 @@ var Item = function Item(_ref) {
       children = _ref.children,
       onClick = _ref.onClick;
 
-  var componentClasses = classNames(classes.Item, (_classNames = {}, _defineProperty(_classNames, classes.IsActive, isActive), _defineProperty(_classNames, classes.IsNested, isNested), _defineProperty(_classNames, classes.IsTopLevel, !isNested), _defineProperty(_classNames, classes.IsClickable, onClick !== undefined), _classNames), className);
+  var componentClasses = (0, _classnames2.default)(classes.Item, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.IsActive, isActive), (0, _defineProperty3.default)(_classNames, classes.IsNested, isNested), (0, _defineProperty3.default)(_classNames, classes.IsTopLevel, !isNested), (0, _defineProperty3.default)(_classNames, classes.IsClickable, onClick !== undefined), _classNames), className);
 
   if (isNested) {
-    return React.createElement(
+    return _react2.default.createElement(
       'div',
       { id: id, className: componentClasses, onClick: onClick },
-      React.createElement(
+      _react2.default.createElement(
         'div',
         { className: classes.Label },
         children
@@ -116,22 +138,22 @@ var Item = function Item(_ref) {
     );
   }
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { id: id, className: componentClasses },
-    React.createElement(
+    _react2.default.createElement(
       'div',
       { className: classes.Icon, onClick: onClick },
-      iconUrl ? React.createElement('img', { src: iconUrl }) : React.createElement(Icon, { name: iconName, size: 'l', color: 'white' })
+      iconUrl ? _react2.default.createElement('img', { src: iconUrl }) : _react2.default.createElement(_Icon2.default, { name: iconName, size: 'l', color: 'white' })
     ),
-    React.createElement(
+    _react2.default.createElement(
       'div',
       { className: classes.Items },
-      React.Children.map(children, function (child) {
-        return React.cloneElement(child, { isNested: true });
+      _react2.default.Children.map(children, function (child) {
+        return _react2.default.cloneElement(child, { isNested: true });
       })
     )
   );
 };
 
-export default injectSheet(styles)(Item);
+exports.default = (0, _reactJss2.default)(styles)(Item);

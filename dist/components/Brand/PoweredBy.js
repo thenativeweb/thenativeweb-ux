@@ -1,9 +1,34 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import Product from './Product';
-import PropTypes from 'prop-types';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _Product = require('./Product');
+
+var _Product2 = _interopRequireDefault(_Product);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -39,23 +64,23 @@ var PoweredBy = function PoweredBy(_ref) {
       product = _ref.product,
       size = _ref.size;
 
-  var componentClasses = classNames(classes.PoweredBy, (_classNames = {}, _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _classNames));
+  var componentClasses = (0, _classnames2.default)(classes.PoweredBy, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), _classNames));
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { className: componentClasses },
-    React.createElement(
+    _react2.default.createElement(
       'div',
       { className: classes.Intro },
       'Powered by'
     ),
-    React.createElement(Product, { name: product, size: size })
+    _react2.default.createElement(_Product2.default, { name: product, size: size })
   );
 };
 
 PoweredBy.propTypes = {
-  product: PropTypes.string,
-  size: PropTypes.oneOf(['m', 'l'])
+  product: _propTypes2.default.string,
+  size: _propTypes2.default.oneOf(['m', 'l'])
 };
 
 PoweredBy.defaultProps = {
@@ -63,4 +88,4 @@ PoweredBy.defaultProps = {
   name: undefined
 };
 
-export default injectSheet(styles)(PoweredBy);
+exports.default = (0, _reactJss2.default)(styles)(PoweredBy);

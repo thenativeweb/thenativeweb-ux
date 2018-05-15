@@ -1,5 +1,4 @@
-
-```js
+```javascript
 initialState = { value: 'foo' };
 <TextArea
   value={ state.value }
@@ -10,7 +9,7 @@ initialState = { value: 'foo' };
 />
 ```
 
-```js
+```javascript
 initialState = { value: 'This TextArea is disabled' };
 <TextArea
   value={ state.value }
@@ -18,7 +17,7 @@ initialState = { value: 'This TextArea is disabled' };
 />
 ```
 
-```js
+```javascript
 initialState = { value: 'This TextArea is medium' };
 <TextArea
   value={ state.value }

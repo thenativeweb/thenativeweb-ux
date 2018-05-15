@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var portals = [];
 
 var getPortalRootNode = function getPortalRootNode() {
@@ -20,4 +25,4 @@ var getPortalRootNode = function getPortalRootNode() {
   return portal;
 };
 
-export default getPortalRootNode;
+exports.default = getPortalRootNode;

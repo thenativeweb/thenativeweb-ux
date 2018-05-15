@@ -1,7 +1,26 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import PropTypes from 'prop-types';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -27,17 +46,17 @@ var Link = function Link(_ref) {
       href = _ref.href,
       onClick = _ref.onClick;
 
-  var brandClassNames = classNames(classes.Link, className);
+  var brandClassNames = (0, _classnames2.default)(classes.Link, className);
 
   if (isExternal === true) {
-    return React.createElement(
+    return _react2.default.createElement(
       'a',
       { className: brandClassNames, href: href, onClick: onClick, rel: 'noopener noreferrer', target: '_blank' },
       children
     );
   }
 
-  return React.createElement(
+  return _react2.default.createElement(
     'a',
     { className: brandClassNames, href: href, onClick: onClick },
     children
@@ -45,9 +64,9 @@ var Link = function Link(_ref) {
 };
 
 Link.propTypes = {
-  href: PropTypes.string,
-  isExternal: PropTypes.bool,
-  onClick: PropTypes.func
+  href: _propTypes2.default.string,
+  isExternal: _propTypes2.default.bool,
+  onClick: _propTypes2.default.func
 };
 
 Link.defaultProps = {
@@ -55,4 +74,4 @@ Link.defaultProps = {
   onClick: function onClick() {}
 };
 
-export default injectSheet(styles)(Link);
+exports.default = (0, _reactJss2.default)(styles)(Link);

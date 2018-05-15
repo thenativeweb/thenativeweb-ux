@@ -1,8 +1,30 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import classNames from 'classnames';
-import Icon from '../Icon';
-import injectSheet from 'react-jss';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _Icon = require('../Icon');
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -73,58 +95,58 @@ var Item = function Item(_ref) {
       _ref$type = _ref.type,
       type = _ref$type === undefined ? 'text' : _ref$type;
 
-  var componentClasses = classNames(classes.Item, (_classNames = {}, _defineProperty(_classNames, classes.AdjustFlex, adjust === 'flex'), _defineProperty(_classNames, classes.AdjustAuto, adjust === 'auto'), _defineProperty(_classNames, classes.Hidden, isVisible === false), _defineProperty(_classNames, classes.Labeled, label), _defineProperty(_classNames, classes.TypeCheckbox, type === 'checkbox'), _classNames), className);
+  var componentClasses = (0, _classnames2.default)(classes.Item, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty3.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty3.default)(_classNames, classes.Hidden, isVisible === false), (0, _defineProperty3.default)(_classNames, classes.Labeled, label), (0, _defineProperty3.default)(_classNames, classes.TypeCheckbox, type === 'checkbox'), _classNames), className);
 
   if (type === 'checkbox') {
     var controlId = children || children.props.id ? children.props.id : undefined;
 
-    return React.createElement(
+    return _react2.default.createElement(
       'div',
       {
         className: componentClasses
       },
-      React.createElement(
+      _react2.default.createElement(
         'div',
         { className: classes.Label },
-        React.createElement(
+        _react2.default.createElement(
           'div',
           { className: classes.Control },
           children
         ),
-        label ? React.createElement(
+        label ? _react2.default.createElement(
           'label',
           { htmlFor: controlId },
           label
         ) : null,
-        helpLink ? React.createElement(
+        helpLink ? _react2.default.createElement(
           'a',
           { className: classes.Help, title: 'Get more detailed information\u2026', rel: 'noopener noreferrer', target: '_blank', href: helpLink },
-          React.createElement(Icon, { name: 'help', className: styles.IconHelp })
+          _react2.default.createElement(_Icon2.default, { name: 'help', className: styles.IconHelp })
         ) : null
       )
     );
   }
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     {
       className: componentClasses
     },
-    React.createElement(
+    _react2.default.createElement(
       'div',
       { className: classes.Label },
-      label ? React.createElement(
+      label ? _react2.default.createElement(
         'label',
         null,
         label
       ) : null,
-      helpLink ? React.createElement(
+      helpLink ? _react2.default.createElement(
         'a',
         { className: classes.Help, rel: 'noopener noreferrer', target: '_blank', href: helpLink },
-        React.createElement(Icon, { name: 'help', className: styles.IconHelp })
+        _react2.default.createElement(_Icon2.default, { name: 'help', className: styles.IconHelp })
       ) : null
     ),
-    React.createElement(
+    _react2.default.createElement(
       'div',
       { className: classes.Control },
       children
@@ -132,4 +154,4 @@ var Item = function Item(_ref) {
   );
 };
 
-export default injectSheet(styles)(Item);
+exports.default = (0, _reactJss2.default)(styles)(Item);

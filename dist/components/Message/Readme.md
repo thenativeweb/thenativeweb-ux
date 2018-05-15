@@ -1,4 +1,4 @@
-```js
+```javascript
 <div>
   <Message type='error'>
     This is a wonderful error!

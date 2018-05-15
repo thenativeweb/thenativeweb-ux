@@ -1,15 +1,56 @@
-import _Object$getPrototypeOf from 'babel-runtime/core-js/object/get-prototype-of';
-import _classCallCheck from 'babel-runtime/helpers/classCallCheck';
-import _createClass from 'babel-runtime/helpers/createClass';
-import _possibleConstructorReturn from 'babel-runtime/helpers/possibleConstructorReturn';
-import _inherits from 'babel-runtime/helpers/inherits';
-import FadeInLeft from '../transitions/FadeInLeft';
-import injectSheet from 'react-jss';
-import Notification from './Notification';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import services from '../../services';
-import { TransitionGroup } from 'react-transition-group';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _FadeInLeft = require('../transitions/FadeInLeft');
+
+var _FadeInLeft2 = _interopRequireDefault(_FadeInLeft);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _Notification = require('./Notification');
+
+var _Notification2 = _interopRequireDefault(_Notification);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _services = require('../../services');
+
+var _services2 = _interopRequireDefault(_services);
+
+var _reactTransitionGroup = require('react-transition-group');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -25,26 +66,26 @@ var styles = function styles(theme) {
 };
 
 var Notifications = function (_React$PureComponent) {
-  _inherits(Notifications, _React$PureComponent);
+  (0, _inherits3.default)(Notifications, _React$PureComponent);
 
   function Notifications() {
-    _classCallCheck(this, Notifications);
+    (0, _classCallCheck3.default)(this, Notifications);
 
-    var _this = _possibleConstructorReturn(this, (Notifications.__proto__ || _Object$getPrototypeOf(Notifications)).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Notifications.__proto__ || (0, _getPrototypeOf2.default)(Notifications)).call(this));
 
     _this.handleServiceChanged = _this.handleServiceChanged.bind(_this);
     return _this;
   }
 
-  _createClass(Notifications, [{
+  (0, _createClass3.default)(Notifications, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      services.notifications.on('changed', this.handleServiceChanged);
+      _services2.default.notifications.on('changed', this.handleServiceChanged);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      services.notifications.removeListener('changed', this.handleServiceChanged);
+      _services2.default.notifications.removeListener('changed', this.handleServiceChanged);
     }
   }, {
     key: 'handleServiceChanged',
@@ -57,25 +98,24 @@ var Notifications = function (_React$PureComponent) {
       var classes = this.props.classes;
 
 
-      return ReactDOM.createPortal(React.createElement(
+      return _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
         { className: classes.Notifications },
-        React.createElement(
-          TransitionGroup,
+        _react2.default.createElement(
+          _reactTransitionGroup.TransitionGroup,
           { component: 'span' },
-          services.notifications.state.items.map(function (notification) {
-            return React.createElement(
-              FadeInLeft,
+          _services2.default.notifications.state.items.map(function (notification) {
+            return _react2.default.createElement(
+              _FadeInLeft2.default,
               { key: notification.id },
-              React.createElement(Notification, { type: notification.type, text: notification.text })
+              _react2.default.createElement(_Notification2.default, { type: notification.type, text: notification.text })
             );
           })
         )
-      ), services.createPortalRootNode());
+      ), _services2.default.getPortalRootNode());
     }
   }]);
-
   return Notifications;
-}(React.PureComponent);
+}(_react2.default.PureComponent);
 
-export default injectSheet(styles)(Notifications);
+exports.default = (0, _reactJss2.default)(styles)(Notifications);

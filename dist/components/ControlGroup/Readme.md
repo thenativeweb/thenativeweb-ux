@@ -1,5 +1,4 @@
-
-```js
+```javascript
 <Form onSubmit={event => { event.preventDefault(); console.log('submitted') }}>
   <ControlGroup>
     <ControlGroup.Item label='First name' adjust='flex'>

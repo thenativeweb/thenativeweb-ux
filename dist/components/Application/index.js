@@ -1,10 +1,38 @@
-import Dialogs from '../Dialogs';
-import Icons from '../Icons';
-import injectSheet from 'react-jss';
-import Notifications from '../Notifications';
-import PropTypes from 'prop-types';
-import React from 'react';
-import View from '../View';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Dialogs = require('../Dialogs');
+
+var _Dialogs2 = _interopRequireDefault(_Dialogs);
+
+var _Icons = require('../Icons');
+
+var _Icons2 = _interopRequireDefault(_Icons);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _Notifications = require('../Notifications');
+
+var _Notifications2 = _interopRequireDefault(_Notifications);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _View = require('../View');
+
+var _View2 = _interopRequireDefault(_View);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -26,15 +54,15 @@ var Application = function Application(_ref) {
       classes = _ref.classes,
       style = _ref.style,
       orientation = _ref.orientation;
-  return React.createElement(
-    View,
+  return _react2.default.createElement(
+    _View2.default,
     { className: classes.Application, orientation: orientation, style: style },
     children
   );
 };
 
 Application.propTypes = {
-  orientation: PropTypes.oneOf(['horizontal', 'vertical', 'centered'])
+  orientation: _propTypes2.default.oneOf(['horizontal', 'vertical', 'centered'])
 };
 
 Application.defaultProps = {
@@ -42,13 +70,13 @@ Application.defaultProps = {
 };
 
 Application.Services = function () {
-  return React.createElement(
-    React.Fragment,
+  return _react2.default.createElement(
+    _react2.default.Fragment,
     null,
-    React.createElement(Icons, null),
-    React.createElement(Dialogs, null),
-    React.createElement(Notifications, null)
+    _react2.default.createElement(_Icons2.default, null),
+    _react2.default.createElement(_Dialogs2.default, null),
+    _react2.default.createElement(_Notifications2.default, null)
   );
 };
 
-export default injectSheet(styles)(Application);
+exports.default = (0, _reactJss2.default)(styles)(Application);

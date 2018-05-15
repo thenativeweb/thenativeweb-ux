@@ -1,11 +1,42 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import classNames from 'classnames';
-import flatten from 'lodash/flatten';
-import Icon from '../Icon';
-import injectSheet from 'react-jss';
-import Link from '../Link';
-import PropTypes from 'prop-types';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _flatten = require('lodash/flatten');
+
+var _flatten2 = _interopRequireDefault(_flatten);
+
+var _Icon = require('../Icon');
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _Link = require('../Link');
+
+var _Link2 = _interopRequireDefault(_Link);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -33,30 +64,30 @@ var MadeBy = function MadeBy(_ref) {
       partner = _ref$partner === undefined ? [] : _ref$partner,
       size = _ref.size;
 
-  var componentClasses = classNames(classes.MadeBy, (_classNames = {}, _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _classNames));
+  var componentClasses = (0, _classnames2.default)(classes.MadeBy, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), _classNames));
 
-  partner = flatten([partner]);
+  partner = (0, _flatten2.default)([partner]);
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { className: componentClasses },
-    React.createElement(
+    _react2.default.createElement(
       'span',
       { className: classes.Intro },
       'Made with ',
-      React.createElement(Icon, { name: 'heart', color: 'highlight', type: 'inline' }),
+      _react2.default.createElement(_Icon2.default, { name: 'heart', color: 'highlight', type: 'inline' }),
       ' by'
     ),
     ' ',
-    React.createElement(
-      Link,
+    _react2.default.createElement(
+      _Link2.default,
       { href: 'https://www.thenativeweb.io', isExternal: true },
       'the native web'
     ),
-    partner.length > 0 ? ' & ' : null,
+    partner.length > 0 ? ' and ' : null,
     partner.map(function (item) {
-      return React.createElement(
-        Link,
+      return _react2.default.createElement(
+        _Link2.default,
         { key: item.name, href: item.href, isExternal: true },
         item.name
       );
@@ -65,8 +96,8 @@ var MadeBy = function MadeBy(_ref) {
 };
 
 MadeBy.propTypes = {
-  partner: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  size: PropTypes.oneOf(['m', 'l'])
+  partner: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
+  size: _propTypes2.default.oneOf(['m', 'l'])
 };
 
 MadeBy.defaultProps = {
@@ -74,4 +105,4 @@ MadeBy.defaultProps = {
   name: undefined
 };
 
-export default injectSheet(styles)(MadeBy);
+exports.default = (0, _reactJss2.default)(styles)(MadeBy);

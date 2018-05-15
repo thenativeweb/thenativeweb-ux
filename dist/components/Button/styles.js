@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var styles = function styles(theme) {
   return {
     Button: {
@@ -159,4 +164,4 @@ var styles = function styles(theme) {
   };
 };
 
-export default styles;
+exports.default = styles;

@@ -1,8 +1,30 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import PropTypes from 'prop-types';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -40,9 +62,9 @@ var Headline = function Headline(_ref) {
       level = _ref.level,
       children = _ref.children;
 
-  var componentClasses = classNames(classes.Headline, (_classNames = {}, _defineProperty(_classNames, classes.Level1, level === '1'), _defineProperty(_classNames, classes.Level2, level === '2'), _classNames));
+  var componentClasses = (0, _classnames2.default)(classes.Headline, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.Level1, level === '1'), (0, _defineProperty3.default)(_classNames, classes.Level2, level === '2'), _classNames));
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { className: componentClasses },
     children
@@ -50,11 +72,11 @@ var Headline = function Headline(_ref) {
 };
 
 Headline.propTypes = {
-  level: PropTypes.oneOf(['1', '2'])
+  level: _propTypes2.default.oneOf(['1', '2'])
 };
 
 Headline.defaultProps = {
   level: '1'
 };
 
-export default injectSheet(styles)(Headline);
+exports.default = (0, _reactJss2.default)(styles)(Headline);

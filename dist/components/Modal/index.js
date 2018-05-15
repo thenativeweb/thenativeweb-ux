@@ -1,18 +1,70 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import _Object$getPrototypeOf from 'babel-runtime/core-js/object/get-prototype-of';
-import _classCallCheck from 'babel-runtime/helpers/classCallCheck';
-import _createClass from 'babel-runtime/helpers/createClass';
-import _possibleConstructorReturn from 'babel-runtime/helpers/possibleConstructorReturn';
-import _inherits from 'babel-runtime/helpers/inherits';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import PropTypes from 'prop-types';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Row from './Row';
-import services from '../../services';
-import styles from './styles';
-import transtions from '../transitions';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _Row = require('./Row');
+
+var _Row2 = _interopRequireDefault(_Row);
+
+var _services = require('../../services');
+
+var _services2 = _interopRequireDefault(_services);
+
+var _styles = require('./styles');
+
+var _styles2 = _interopRequireDefault(_styles);
+
+var _transitions = require('../transitions');
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var KEY = {
   ENTER: 13,
@@ -20,19 +72,19 @@ var KEY = {
 };
 
 var Modal = function (_React$PureComponent) {
-  _inherits(Modal, _React$PureComponent);
+  (0, _inherits3.default)(Modal, _React$PureComponent);
 
   function Modal(props) {
-    _classCallCheck(this, Modal);
+    (0, _classCallCheck3.default)(this, Modal);
 
-    var _this = _possibleConstructorReturn(this, (Modal.__proto__ || _Object$getPrototypeOf(Modal)).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Modal.__proto__ || (0, _getPrototypeOf2.default)(Modal)).call(this, props));
 
     _this.handleBackDropClicked = _this.handleBackDropClicked.bind(_this);
     _this.handleKeyDown = _this.handleKeyDown.bind(_this);
     return _this;
   }
 
-  _createClass(Modal, [{
+  (0, _createClass3.default)(Modal, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.handleVisibility(this.props.isVisible);
@@ -96,52 +148,51 @@ var Modal = function (_React$PureComponent) {
           size = _props.size;
 
 
-      var backdropClasses = classNames(classes.Backdrop, _defineProperty({}, classes.IsVisible, isVisible));
+      var backdropClasses = (0, _classnames2.default)(classes.Backdrop, (0, _defineProperty3.default)({}, classes.IsVisible, isVisible));
 
-      var contentClasses = classNames(classes.Content, (_classNames2 = {}, _defineProperty(_classNames2, classes.ContentSizeS, size === 's'), _defineProperty(_classNames2, classes.ContentSizeM, size === 'm'), _defineProperty(_classNames2, classes.ContentSizeL, size === 'l'), _defineProperty(_classNames2, classes.ContentAttachedSidebar, attach === 'sidebar'), _defineProperty(_classNames2, classes.ContentAttachedLeft, attach === 'left'), _defineProperty(_classNames2, classes.ContentAttachedRight, attach === 'right'), _defineProperty(_classNames2, classes.ContentAttachedCenter, attach === 'center'), _classNames2), className);
+      var contentClasses = (0, _classnames2.default)(classes.Content, (_classNames2 = {}, (0, _defineProperty3.default)(_classNames2, classes.ContentSizeS, size === 's'), (0, _defineProperty3.default)(_classNames2, classes.ContentSizeM, size === 'm'), (0, _defineProperty3.default)(_classNames2, classes.ContentSizeL, size === 'l'), (0, _defineProperty3.default)(_classNames2, classes.ContentAttachedSidebar, attach === 'sidebar'), (0, _defineProperty3.default)(_classNames2, classes.ContentAttachedLeft, attach === 'left'), (0, _defineProperty3.default)(_classNames2, classes.ContentAttachedRight, attach === 'right'), (0, _defineProperty3.default)(_classNames2, classes.ContentAttachedCenter, attach === 'center'), _classNames2), className);
 
       var Transition = void 0;
 
       switch (attach) {
         case 'left':
         case 'sidebar':
-          Transition = transtions.FadeInRight;
+          Transition = _transitions2.default.FadeInRight;
           break;
         case 'right':
-          Transition = transtions.FadeInLeft;
+          Transition = _transitions2.default.FadeInLeft;
           break;
         default:
-          Transition = transtions.Zoom;
+          Transition = _transitions2.default.Zoom;
       }
 
-      return ReactDOM.createPortal(React.createElement(
+      return _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
         { className: classes.Modal },
-        React.createElement('div', { className: backdropClasses, onClick: this.handleBackDropClicked }),
-        React.createElement(
+        _react2.default.createElement('div', { className: backdropClasses, onClick: this.handleBackDropClicked }),
+        _react2.default.createElement(
           Transition,
           { 'in': isVisible },
-          React.createElement(
+          _react2.default.createElement(
             'div',
             { className: contentClasses, role: 'dialog' },
             children
           )
         )
-      ), services.createPortalRootNode());
+      ), _services2.default.getPortalRootNode());
     }
   }]);
-
   return Modal;
-}(React.PureComponent);
+}(_react2.default.PureComponent);
 
-Modal.Row = Row;
+Modal.Row = _Row2.default;
 
 Modal.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
-  onCancel: PropTypes.func.isRequired,
-  attach: PropTypes.oneOf(['left', 'right', 'sidebar', 'center']),
-  size: PropTypes.oneOf(['s', 'm', 'l']),
-  onKeyDown: PropTypes.func
+  isVisible: _propTypes2.default.bool.isRequired,
+  onCancel: _propTypes2.default.func.isRequired,
+  attach: _propTypes2.default.oneOf(['left', 'right', 'sidebar', 'center']),
+  size: _propTypes2.default.oneOf(['s', 'm', 'l']),
+  onKeyDown: _propTypes2.default.func
 };
 
 Modal.defaultProps = {
@@ -152,4 +203,4 @@ Modal.defaultProps = {
   onKeyDown: function onKeyDown() {}
 };
 
-export default injectSheet(styles)(Modal);
+exports.default = (0, _reactJss2.default)(_styles2.default)(Modal);

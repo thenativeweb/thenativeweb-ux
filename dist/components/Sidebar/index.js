@@ -1,8 +1,30 @@
-import Brand from './Brand';
-import Footer from './Footer';
-import injectSheet from 'react-jss';
-import Item from './Item';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Brand = require('./Brand');
+
+var _Brand2 = _interopRequireDefault(_Brand);
+
+var _Footer = require('./Footer');
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _Item = require('./Item');
+
+var _Item2 = _interopRequireDefault(_Item);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -24,15 +46,15 @@ var Sidebar = function Sidebar(_ref) {
   var children = _ref.children,
       classes = _ref.classes,
       id = _ref.id;
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { id: id, className: classes.Sidebar },
     children
   );
 };
 
-Sidebar.Brand = Brand;
-Sidebar.Footer = Footer;
-Sidebar.Item = Item;
+Sidebar.Brand = _Brand2.default;
+Sidebar.Footer = _Footer2.default;
+Sidebar.Item = _Item2.default;
 
-export default injectSheet(styles)(Sidebar);
+exports.default = (0, _reactJss2.default)(styles)(Sidebar);

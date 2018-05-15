@@ -1,9 +1,34 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import PropTypes from 'prop-types';
-import React from 'react';
-import styles from './styles';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = require('./styles');
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var View = function View(_ref) {
   var _classNames;
@@ -19,9 +44,9 @@ var View = function View(_ref) {
       style = _ref.style,
       orientation = _ref.orientation;
 
-  var viewClassNames = classNames(classes.View, (_classNames = {}, _defineProperty(_classNames, classes.OrientationCentered, orientation === 'centered'), _defineProperty(_classNames, classes.OrientationHorizontal, orientation === 'horizontal'), _defineProperty(_classNames, classes.OrientationVertical, orientation === 'vertical'), _defineProperty(_classNames, classes.AdjustFlex, adjust === 'flex'), _defineProperty(_classNames, classes.AdjustAuto, adjust === 'auto'), _defineProperty(_classNames, classes.AlignItemsCenter, alignItems === 'center'), _defineProperty(_classNames, classes.BackgroundDark, background === 'dark'), _defineProperty(_classNames, classes.BackgroundLight, background === 'light'), _defineProperty(_classNames, classes.JustifyContentCenter, justifyContent === 'center'), _defineProperty(_classNames, classes.ScrollableAuto, scrollable === 'auto'), _classNames), className);
+  var viewClassNames = (0, _classnames2.default)(classes.View, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.OrientationCentered, orientation === 'centered'), (0, _defineProperty3.default)(_classNames, classes.OrientationHorizontal, orientation === 'horizontal'), (0, _defineProperty3.default)(_classNames, classes.OrientationVertical, orientation === 'vertical'), (0, _defineProperty3.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty3.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty3.default)(_classNames, classes.AlignItemsCenter, alignItems === 'center'), (0, _defineProperty3.default)(_classNames, classes.BackgroundDark, background === 'dark'), (0, _defineProperty3.default)(_classNames, classes.BackgroundLight, background === 'light'), (0, _defineProperty3.default)(_classNames, classes.JustifyContentCenter, justifyContent === 'center'), (0, _defineProperty3.default)(_classNames, classes.ScrollableAuto, scrollable === 'auto'), _classNames), className);
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { className: viewClassNames, style: style },
     children
@@ -29,12 +54,12 @@ var View = function View(_ref) {
 };
 
 View.propTypes = {
-  adjust: PropTypes.oneOf(['auto', 'flex']),
-  alignItems: PropTypes.oneOf(['center']),
-  background: PropTypes.oneOf(['dark', 'light']),
-  justifyContent: PropTypes.oneOf(['center']),
-  orientation: PropTypes.oneOf(['horizontal', 'vertical', 'centered']),
-  scrollable: PropTypes.oneOf([false, 'auto'])
+  adjust: _propTypes2.default.oneOf(['auto', 'flex']),
+  alignItems: _propTypes2.default.oneOf(['center']),
+  background: _propTypes2.default.oneOf(['dark', 'light']),
+  justifyContent: _propTypes2.default.oneOf(['center']),
+  orientation: _propTypes2.default.oneOf(['horizontal', 'vertical', 'centered']),
+  scrollable: _propTypes2.default.oneOf([false, 'auto'])
 };
 
-export default injectSheet(styles)(View);
+exports.default = (0, _reactJss2.default)(_styles2.default)(View);

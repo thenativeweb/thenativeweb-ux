@@ -1,13 +1,50 @@
-import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import _Object$getPrototypeOf from 'babel-runtime/core-js/object/get-prototype-of';
-import _classCallCheck from 'babel-runtime/helpers/classCallCheck';
-import _createClass from 'babel-runtime/helpers/createClass';
-import _possibleConstructorReturn from 'babel-runtime/helpers/possibleConstructorReturn';
-import _inherits from 'babel-runtime/helpers/inherits';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import PropTypes from 'prop-types';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var KEY = {
   ENTER: 13
@@ -54,12 +91,12 @@ var styles = function styles(theme) {
 };
 
 var TextBox = function (_React$Component) {
-  _inherits(TextBox, _React$Component);
+  (0, _inherits3.default)(TextBox, _React$Component);
 
   function TextBox(props) {
-    _classCallCheck(this, TextBox);
+    (0, _classCallCheck3.default)(this, TextBox);
 
-    var _this = _possibleConstructorReturn(this, (TextBox.__proto__ || _Object$getPrototypeOf(TextBox)).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (TextBox.__proto__ || (0, _getPrototypeOf2.default)(TextBox)).call(this, props));
 
     _this.handleFocusTimeout = _this.handleFocusTimeout.bind(_this);
     _this.handleRefChanged = _this.handleRefChanged.bind(_this);
@@ -67,7 +104,7 @@ var TextBox = function (_React$Component) {
     return _this;
   }
 
-  _createClass(TextBox, [{
+  (0, _createClass3.default)(TextBox, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _props = this.props,
@@ -133,7 +170,7 @@ var TextBox = function (_React$Component) {
           type = _props2.type;
 
 
-      var componentClasses = classNames(classes.TextBox, (_classNames = {}, _defineProperty(_classNames, classes.TypePort, type === 'port'), _defineProperty(_classNames, classes.TypeTime, type === 'time'), _defineProperty(_classNames, classes.IsDisabled, disabled === true), _defineProperty(_classNames, classes.IsRequired, required === true), _classNames), className);
+      var componentClasses = (0, _classnames2.default)(classes.TextBox, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.TypePort, type === 'port'), (0, _defineProperty3.default)(_classNames, classes.TypeTime, type === 'time'), (0, _defineProperty3.default)(_classNames, classes.IsDisabled, disabled === true), (0, _defineProperty3.default)(_classNames, classes.IsRequired, required === true), _classNames), className);
 
       var inputType = void 0;
 
@@ -145,7 +182,7 @@ var TextBox = function (_React$Component) {
           inputType = type;
       }
 
-      return React.createElement('input', {
+      return _react2.default.createElement('input', {
         id: id,
         ref: this.handleRefChanged,
         className: componentClasses,
@@ -162,23 +199,22 @@ var TextBox = function (_React$Component) {
       });
     }
   }]);
-
   return TextBox;
-}(React.Component);
+}(_react2.default.Component);
 
 TextBox.propTypes = {
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  required: PropTypes.bool,
-  type: PropTypes.oneOf(['default', 'date', 'port', 'time']),
-  value: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onEnter: PropTypes.func,
-  onFocus: PropTypes.func
+  autoFocus: _propTypes2.default.bool,
+  disabled: _propTypes2.default.bool,
+  id: _propTypes2.default.string,
+  name: _propTypes2.default.string,
+  placeholder: _propTypes2.default.string,
+  required: _propTypes2.default.bool,
+  type: _propTypes2.default.oneOf(['default', 'date', 'port', 'time']),
+  value: _propTypes2.default.string,
+  onBlur: _propTypes2.default.func,
+  onChange: _propTypes2.default.func,
+  onEnter: _propTypes2.default.func,
+  onFocus: _propTypes2.default.func
 };
 
 TextBox.defaultProps = {
@@ -193,4 +229,4 @@ TextBox.defaultProps = {
   onFocus: function onFocus() {}
 };
 
-export default injectSheet(styles)(TextBox);
+exports.default = (0, _reactJss2.default)(styles)(TextBox);

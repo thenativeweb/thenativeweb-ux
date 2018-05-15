@@ -1,5 +1,4 @@
-
-```js
+```javascript
 initialState = { sample: 'foo' };
 <Form onSubmit={event => { event.preventDefault(); console.log(state.sample) }}>
   <Headline>Example Form</Headline>

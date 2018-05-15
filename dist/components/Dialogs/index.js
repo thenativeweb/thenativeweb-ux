@@ -1,14 +1,54 @@
-import _Object$getPrototypeOf from 'babel-runtime/core-js/object/get-prototype-of';
-import _classCallCheck from 'babel-runtime/helpers/classCallCheck';
-import _createClass from 'babel-runtime/helpers/createClass';
-import _possibleConstructorReturn from 'babel-runtime/helpers/possibleConstructorReturn';
-import _inherits from 'babel-runtime/helpers/inherits';
-import Button from '../Button';
-import Headline from '../Headline';
-import injectSheet from 'react-jss';
-import Modal from '../Modal';
-import React from 'react';
-import services from '../../services';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _Button = require('../Button');
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _Headline = require('../Headline');
+
+var _Headline2 = _interopRequireDefault(_Headline);
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _Modal = require('../Modal');
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _services = require('../../services');
+
+var _services2 = _interopRequireDefault(_services);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var KEY = {
   ENTER: 13,
@@ -31,12 +71,12 @@ var styles = {
 };
 
 var Dialogs = function (_React$PureComponent) {
-  _inherits(Dialogs, _React$PureComponent);
+  (0, _inherits3.default)(Dialogs, _React$PureComponent);
 
   function Dialogs() {
-    _classCallCheck(this, Dialogs);
+    (0, _classCallCheck3.default)(this, Dialogs);
 
-    var _this = _possibleConstructorReturn(this, (Dialogs.__proto__ || _Object$getPrototypeOf(Dialogs)).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Dialogs.__proto__ || (0, _getPrototypeOf2.default)(Dialogs)).call(this));
 
     _this.state = {
       isVisible: false
@@ -49,15 +89,15 @@ var Dialogs = function (_React$PureComponent) {
     return _this;
   }
 
-  _createClass(Dialogs, [{
+  (0, _createClass3.default)(Dialogs, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      services.dialogs.on('changed', this.handleServiceChanged);
+      _services2.default.dialogs.on('changed', this.handleServiceChanged);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      services.dialogs.removeListener('changed', this.handleServiceChanged);
+      _services2.default.dialogs.removeListener('changed', this.handleServiceChanged);
     }
   }, {
     key: 'handleServiceChanged',
@@ -70,22 +110,22 @@ var Dialogs = function (_React$PureComponent) {
   }, {
     key: 'handleCancel',
     value: function handleCancel() {
-      services.dialogs.state.confirm.onCancel();
+      _services2.default.dialogs.state.confirm.onCancel();
     }
   }, {
     key: 'handleConfirm',
     value: function handleConfirm() {
-      services.dialogs.state.confirm.onConfirm();
+      _services2.default.dialogs.state.confirm.onConfirm();
     }
   }, {
     key: 'handleKeyDown',
     value: function handleKeyDown(key) {
       switch (key) {
         case KEY.ESCAPE:
-          services.dialogs.state.confirm.onCancel();
+          _services2.default.dialogs.state.confirm.onCancel();
           break;
         case KEY.ENTER:
-          services.dialogs.state.confirm.onConfirm();
+          _services2.default.dialogs.state.confirm.onConfirm();
           break;
         default:
           break;
@@ -99,38 +139,37 @@ var Dialogs = function (_React$PureComponent) {
       var classes = this.props.classes;
 
 
-      return React.createElement(
-        Modal,
+      return _react2.default.createElement(
+        _Modal2.default,
         {
           attach: 'center',
-          isVisible: services.dialogs.state.confirm.isVisible,
+          isVisible: _services2.default.dialogs.state.confirm.isVisible,
           className: classes.Dialogs,
           onKeyDown: this.handleKeyDown
         },
-        React.createElement(
-          Headline,
+        _react2.default.createElement(
+          _Headline2.default,
           null,
-          services.dialogs.state.confirm.title
+          _services2.default.dialogs.state.confirm.title
         ),
-        React.createElement(
+        _react2.default.createElement(
           'div',
           { className: classes.Actions },
-          React.createElement(
-            Button,
+          _react2.default.createElement(
+            _Button2.default,
             { adjust: 'auto', onClick: this.handleCancel },
-            services.dialogs.state.confirm.actions.cancel
+            _services2.default.dialogs.state.confirm.actions.cancel
           ),
-          React.createElement(
-            Button,
+          _react2.default.createElement(
+            _Button2.default,
             { adjust: 'flex', onClick: this.handleConfirm, isPrimary: true, autoFocus: true },
-            services.dialogs.state.confirm.actions.confirm
+            _services2.default.dialogs.state.confirm.actions.confirm
           )
         )
       );
     }
   }]);
-
   return Dialogs;
-}(React.PureComponent);
+}(_react2.default.PureComponent);
 
-export default injectSheet(styles)(Dialogs);
+exports.default = (0, _reactJss2.default)(styles)(Dialogs);

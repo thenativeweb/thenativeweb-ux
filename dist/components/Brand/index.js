@@ -1,10 +1,38 @@
-import injectSheet from 'react-jss';
-import logos from './logos';
-import MadeBy from './MadeBy';
-import PoweredBy from './PoweredBy';
-import Product from './Product';
-import PropTypes from 'prop-types';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _logos = require('./logos');
+
+var _logos2 = _interopRequireDefault(_logos);
+
+var _MadeBy = require('./MadeBy');
+
+var _MadeBy2 = _interopRequireDefault(_MadeBy);
+
+var _PoweredBy = require('./PoweredBy');
+
+var _PoweredBy2 = _interopRequireDefault(_PoweredBy);
+
+var _Product = require('./Product');
+
+var _Product2 = _interopRequireDefault(_Product);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -26,24 +54,24 @@ var Brand = function Brand(_ref) {
       type = _ref.type,
       isInteractive = _ref.isInteractive;
 
-  var Logo = logos[type];
+  var Logo = _logos2.default[type];
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { className: classes.Brand },
-    React.createElement(Logo, { color: color, size: size, isInteractive: isInteractive })
+    _react2.default.createElement(Logo, { color: color, size: size, isInteractive: isInteractive })
   );
 };
 
-Brand.MadeBy = MadeBy;
-Brand.PoweredBy = PoweredBy;
-Brand.Product = Product;
+Brand.MadeBy = _MadeBy2.default;
+Brand.PoweredBy = _PoweredBy2.default;
+Brand.Product = _Product2.default;
 
 Brand.propTypes = {
-  color: PropTypes.oneOf(['default', 'monochrome']),
-  isInteractive: PropTypes.bool,
-  size: PropTypes.oneOf(['s', 'm', 'l']),
-  type: PropTypes.oneOf(['full', 'minimal'])
+  color: _propTypes2.default.oneOf(['default', 'monochrome']),
+  isInteractive: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['s', 'm', 'l']),
+  type: _propTypes2.default.oneOf(['full', 'minimal'])
 };
 
 Brand.defaultProps = {
@@ -51,4 +79,4 @@ Brand.defaultProps = {
   type: 'full'
 };
 
-export default injectSheet(styles)(Brand);
+exports.default = (0, _reactJss2.default)(styles)(Brand);

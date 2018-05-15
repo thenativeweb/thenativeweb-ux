@@ -1,5 +1,4 @@
-
-```js
+```javascript
 initialState = { isVisible: false };
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open modal</Button>
@@ -10,7 +9,7 @@ initialState = { isVisible: false };
 </div>
 ```
 
-```js
+```javascript
 initialState = { isVisible: false };
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open modal attached to the right</Button>
@@ -21,7 +20,7 @@ initialState = { isVisible: false };
 </div>
 ```
 
-```js
+```javascript
 initialState = { isVisible: false };
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open medium modal</Button>
@@ -32,7 +31,7 @@ initialState = { isVisible: false };
 </div>
 ```
 
-```js
+```javascript
 initialState = { isVisible: false };
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open large modal</Button>

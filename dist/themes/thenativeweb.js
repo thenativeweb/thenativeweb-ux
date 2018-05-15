@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var brandColors = {
   dark: '#23232c',
   highlight: '#f09',
@@ -98,4 +103,4 @@ var theme = {
   }
 };
 
-export default theme;
+exports.default = theme;

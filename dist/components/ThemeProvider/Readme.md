@@ -1,6 +1,6 @@
 ThemeProvider is a used to set the theme for nested compoents. It is required at the top level of your application. It can be nested so that one part of your component tree can have a different theme than other parts of your application.
 
-```js
+```javascript
 const wolkenkit = require('../../themes/wolkenkit').default;
 <div style={{ position: 'relative', width: 640, height: 480 }}>
   <ThemeProvider theme={ wolkenkit }>

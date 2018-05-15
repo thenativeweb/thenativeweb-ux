@@ -1,5 +1,18 @@
-import injectSheet from 'react-jss';
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactJss = require('react-jss');
+
+var _reactJss2 = _interopRequireDefault(_reactJss);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -20,9 +33,9 @@ var styles = function styles(theme) {
 
 var Divider = function Divider(_ref) {
   var classes = _ref.classes;
-  return React.createElement('hr', {
+  return _react2.default.createElement('hr', {
     className: classes.Divider
   });
 };
 
-export default injectSheet(styles)(Divider);
+exports.default = (0, _reactJss2.default)(styles)(Divider);

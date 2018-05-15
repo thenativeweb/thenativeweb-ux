@@ -1,4 +1,4 @@
-```js noeditor
+```javascript noeditor
 const services = require('../../services').default;
 <div>
   <Button onClick={ () => services.notifications.show({ type: 'error', text: 'This is an error!' }) }>Show Notification  (error)!</Button>
