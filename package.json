@@ -14,8 +14,8 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "serve": "webpack-dev-server --env test-app",
     "styleguide": "styleguidist server",
+    "serve": "webpack-dev-server --env test-app",
     "build": "NODE_ENV=production webpack --env build"
   },
   "dependencies": {},
