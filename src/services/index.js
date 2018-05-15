@@ -1,9 +1,9 @@
-import createPortalRootNode from './createPortalRootNode';
+import getPortalRootNode from './getPortalRootNode';
 import dialogs from './dialogs';
 import notifications from './notifications';
 
 export default {
-  createPortalRootNode,
+  getPortalRootNode,
   dialogs,
   notifications
 };

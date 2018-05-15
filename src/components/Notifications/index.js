@@ -51,7 +51,7 @@ class Notifications extends React.PureComponent {
           </TransitionGroup>
         </div>
       ),
-      services.createPortalRootNode()
+      services.getPortalRootNode()
     );
   }
 }

@@ -1,12 +1,12 @@
 In order to use icons you need to include `Symbols` at the start of your page. They include all the icons paths that the `Icon` component will use.
 
-```js
+```javascript
 <Icon name='heart' />
 ```
 
 ## Sizes
 
-```js
+```javascript
 <div>
   <Icon name='heart' size='xs' />
   <Icon name='heart' size='s' />
@@ -17,7 +17,7 @@ In order to use icons you need to include `Symbols` at the start of your page. T
 
 ## Colors
 
-```js
+```javascript
 <div>
   <Icon name='heart' color='highlight' />
 </div>
@@ -25,7 +25,7 @@ In order to use icons you need to include `Symbols` at the start of your page. T
 
 ## Inline
 
-```js
+```javascript
 <div>
   <p style={{ fontSize: 20 }}>
     This is an icon embedded in a text <Icon name='heart' type='inline' /> it should align with the typo.
@@ -38,7 +38,7 @@ In order to use icons you need to include `Symbols` at the start of your page. T
 
 ## Flex-centered
 
-```js
+```javascript
 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'gray', width: 100, height: 100 }}>
   <Icon name='heart' type='flex-auto' />
 </div>
@@ -46,7 +46,7 @@ In order to use icons you need to include `Symbols` at the start of your page. T
 
 ## All icons
 
-```js
+```javascript
 <div>
   <p><Icon name='arrow-wide-west' type='inline' size='m' /> arrow-wide-west</p>
   <p><Icon name='breadcrumb-separator' type='inline' size='m' /> breadcrumb-separator</p>

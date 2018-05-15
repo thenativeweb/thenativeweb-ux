@@ -1,5 +1,4 @@
-
-```js
+```javascript
 initialState = { value: 'foo' };
 <TextBox
   name='host'
@@ -12,7 +11,7 @@ initialState = { value: 'foo' };
 />
 ```
 
-```js
+```javascript
 initialState = { port: '3000' };
 <TextBox
   name='host'
@@ -23,7 +22,7 @@ initialState = { port: '3000' };
 />
 ```
 
-```js
+```javascript
 initialState = { time: '3000' };
 <TextBox
   name='time'
@@ -34,7 +33,7 @@ initialState = { time: '3000' };
 />
 ```
 
-```js
+```javascript
 initialState = { date: '3000' };
 <TextBox
   name='date'
@@ -44,7 +43,7 @@ initialState = { date: '3000' };
 />
 ```
 
-```js
+```javascript
 initialState = { value: 'This TextBox is disabled' };
 <TextBox
   value={ state.value }

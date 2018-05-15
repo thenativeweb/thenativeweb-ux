@@ -40,7 +40,7 @@ const MadeBy = ({ classes, partner = [], size }) => {
 
       <Link href='https://www.thenativeweb.io' isExternal={ true }>the native web</Link>
 
-      { partner.length > 0 ? ' & ' : null }
+      { partner.length > 0 ? ' and ' : null }
 
       { partner.map(item => (
         <Link key={ item.name } href={ item.href } isExternal={ true }>{ item.name }</Link>

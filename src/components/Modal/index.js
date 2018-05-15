@@ -105,7 +105,7 @@ class Modal extends React.PureComponent {
           </Transition>
         </div>
       ),
-      services.createPortalRootNode()
+      services.getPortalRootNode()
     );
   }
 }
