@@ -1,7 +1,7 @@
-import tnw from './tnw';
+import thenativeweb from './thenativeweb';
 import wolkenkit from './wolkenkit';
 
 export default {
-  tnw,
+  thenativeweb,
   wolkenkit
 };

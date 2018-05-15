@@ -1,3 +1,44 @@
-import Application from './Application.jsx';
+import Dialogs from '../Dialogs';
+import Icons from '../Icons';
+import injectSheet from 'react-jss';
+import Notifications from '../Notifications';
+import PropTypes from 'prop-types';
+import React from 'react';
+import View from '../View';
 
-export default Application;
+const styles = theme => ({
+  '@global': {
+    '@import': `url('${theme.font.import}')`
+  },
+  Application: {
+    position: 'absolute !important',
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0
+  }
+});
+
+const Application = ({ children, classes, style, orientation }) => (
+  <View className={ classes.Application } orientation={ orientation } style={ style }>
+    { children }
+  </View>
+);
+
+Application.propTypes = {
+  orientation: PropTypes.oneOf([ 'horizontal', 'vertical', 'centered' ])
+};
+
+Application.defaultProps = {
+  orientation: 'horizontal'
+};
+
+Application.Services = () => (
+  <React.Fragment>
+    <Icons />
+    <Dialogs />
+    <Notifications />
+  </React.Fragment>
+);
+
+export default injectSheet(styles)(Application);

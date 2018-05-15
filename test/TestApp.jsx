@@ -4,7 +4,6 @@ import {
   Brand,
   Button,
   ControlGroup,
-  Dialogs,
   Dropdown,
   Form,
   Headline,
@@ -12,8 +11,6 @@ import {
   Link,
   Message,
   Modal,
-  Notifications,
-  ProductBrand,
   services,
   Sidebar,
   TextArea,
@@ -57,7 +54,6 @@ class TestApp extends React.Component {
       dropdownOptionSelected: 'foo',
       formValue: '',
       formSubmitted: false,
-      notifications: [],
       textAreaValue: '',
       textBoxValue: ''
     };
@@ -78,7 +74,6 @@ class TestApp extends React.Component {
       dropdownOptionSelected,
       formValue,
       formSubmitted,
-      notifications,
       showModal,
       textAreaValue,
       textBoxValue
@@ -87,8 +82,9 @@ class TestApp extends React.Component {
     return (
       <ThemeProvider>
         <Application orientation='horizontal'>
+          <Application.Services />
           <Sidebar id='sidebar'>
-            <Sidebar.Brand><ProductBrand suffix='App' /></Sidebar.Brand>
+            <Sidebar.Brand><Brand.Product suffix='App' /></Sidebar.Brand>
             <Sidebar.Item iconName='account' id='sidebar-item-account'>
               <Sidebar.Item>
                 { 'Authenticated as (anonymous)'}
@@ -119,7 +115,6 @@ class TestApp extends React.Component {
             </section>
             <section>
               <Headline level='2'>Dialogs</Headline>
-              <Dialogs />
               <Button id='show-confirm' onClick={ handleShowConfirmClicked }>Show confirm</Button>
             </section>
             <section>
@@ -172,11 +167,6 @@ class TestApp extends React.Component {
               <Headline level='2'>Notifications</Headline>
               <Button id='show-notification-error' onClick={ () => services.notifications.show({ type: 'error', text: 'This is an error!' }) }>Show notification (error)</Button>
               <Button id='show-notification-success' onClick={ () => services.notifications.show({ type: 'success', text: 'This is a success!' }) }>Show notification (success)</Button>
-              <Notifications notifications={ notifications } />
-            </section>
-            <section>
-              <Headline level='2'>ProductBrand</Headline>
-              <ProductBrand suffix='profile' />
             </section>
             <section>
               <Headline level='2'>TextArea</Headline>

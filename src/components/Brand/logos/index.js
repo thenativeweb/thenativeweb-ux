@@ -1,5 +1,5 @@
-import Full from './Full.jsx';
-import Minimal from './Minimal.jsx';
+import Full from './Full';
+import Minimal from './Minimal';
 
 export default {
   full: Full,

@@ -38,7 +38,7 @@ const styles = theme => ({
         fill: '#FF0099'
       },
       '& $Foreground': {
-        fill: theme.color.brand.dark
+        fill: theme.color.brand.white
       }
     }
   },

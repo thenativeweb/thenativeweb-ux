@@ -6,46 +6,16 @@ $ npm install thenativeweb-ux
 
 ## Setting up
 
-How to setup thenativeweb-ux depends on whether you want to render on the server- or on the client-side.
+In order for the design system to work you need to wrap your application in the `Application` component and provide a theme using the `ThemeProvider` component. You must include the `Application.Services` component in your application.
 
-### Rendering on the server-side
+```jsx static
+<ThemeProvider theme='thenativeweb'>
+  <Application>
+    <Application.Services />
 
-Add the following code to your application:
-
-```javascript static
-const { setup } = require('thenativeweb-ux');
-
-// Somewhere later, e.g. in your Express application...
-
-res.send(`
-  <!doctype html>
-  <html>
-    <head>
-      <meta charset="utf8" />
-
-      ${setup.server.head()}
-
-      <!-- Your application's head -->
-    </head>
-
-    <body>
-      ${setup.server.body()}
-
-      <!-- Your application's body -->
-    </body>
-  </html>`);
-```
-
-### Rendering on the client-side
-
-Add the following code to your application. Please note that the call to `setup.client` should happen as early as possible to avoid flickering:
-
-```javascript static
-const { setup } = require('thenativeweb-ux');
-
-// Somewhere later, in your code...
-
-setup.client();
+    { // Your application components go here. }
+  </Application>
+</ThemeProvider>
 ```
 
 ## Using components
@@ -53,7 +23,7 @@ setup.client();
 To use components, you first need to integrate them into your React application. E.g., to load the `Button` component, use the following line of code:
 
 ```javascript static
-const { Button } = require('thenativeweb-ux');
+import { Button } from 'thenativeweb-ux';
 ```
 
 Then, you can use it later on:

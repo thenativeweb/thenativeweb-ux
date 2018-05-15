@@ -12,7 +12,7 @@
       "email": "matthias.wagler@thenativeweb.io"
     }
   ],
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "private": true,
   "scripts": {
     "serve": "webpack-dev-server --env test-app",

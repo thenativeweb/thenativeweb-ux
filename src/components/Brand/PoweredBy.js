@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import injectSheet from 'react-jss';
-import Product from '../Product';
+import Product from './Product';
 import PropTypes from 'prop-types';
 import React from 'react';
 

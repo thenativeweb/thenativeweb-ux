@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
-import tnw from './tnw';
+import thenativeweb from './thenativeweb';
 
-const theme = merge({}, tnw, {
+const theme = merge({}, thenativeweb, {
   id: 'wolkenkit',
   color: {
     brand: {

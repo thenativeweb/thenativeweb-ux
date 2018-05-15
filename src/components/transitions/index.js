@@ -1,7 +1,7 @@
-import Fade from './Fade.jsx';
-import FadeInLeft from './FadeInLeft.jsx';
-import FadeInRight from './FadeInRight.jsx';
-import Zoom from './Zoom.jsx';
+import Fade from './Fade';
+import FadeInLeft from './FadeInLeft';
+import FadeInRight from './FadeInRight';
+import Zoom from './Zoom';
 
 export default {
   Fade,

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import Icon from '../Icon/Icon.jsx';
+import Icon from '../Icon';
 import injectSheet from 'react-jss';
 import React from 'react';
 

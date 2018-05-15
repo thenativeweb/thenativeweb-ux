@@ -2,7 +2,8 @@
   "extends": "eslint-config-es/2015/client",
 
   "rules": {
-    "no-extra-parens": 0
+    "no-extra-parens": 0,
+    "react/jsx-filename-extension": 0
   },
 
   "parserOptions": {

@@ -7,6 +7,7 @@ const styles = theme => ({
     overflow: 'hidden',
     background: theme.color.brand.dark,
     border: theme.color.brand.dark,
+    'font-family': theme.font.family.default,
 
     '& select': {
       'flex-grow': 1,
@@ -24,6 +25,7 @@ const styles = theme => ({
       overflow: 'hidden',
       'text-overflow': 'ellipsis',
       'border-radius': theme.components.borderRadius.default,
+      'font-family': 'inherit',
 
       '&:focus': {
         outline: 'none'

@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import flatten from 'lodash/flatten';
-import Icon from '../../Icon';
+import Icon from '../Icon';
 import injectSheet from 'react-jss';
-import Link from '../../Link';
+import Link from '../Link';
 import PropTypes from 'prop-types';
 import React from 'react';
 

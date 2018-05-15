@@ -1,7 +1,7 @@
-import Tnw from './Tnw.jsx';
-import Wolkenkit from './Wolkenkit.jsx';
+import TheNativeWeb from './TheNativeWeb';
+import Wolkenkit from './Wolkenkit';
 
 export default {
-  tnw: Tnw,
+  thenativeweb: TheNativeWeb,
   wolkenkit: Wolkenkit
 };

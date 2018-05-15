@@ -6,7 +6,6 @@ module.exports = {
   title: 'the native web UX',
   skipComponentsWithoutExample: true,
   showCode: true,
-  ignore: [ '**/_*.jsx' ],
   theme: {
     color: {
       link: '#f09',
@@ -17,6 +16,7 @@ module.exports = {
       monospace: '"Ubuntu Mono", monospace'
     }
   },
+
   sections: [
     {
       name: 'Introduction',
@@ -24,14 +24,11 @@ module.exports = {
     },
     {
       name: 'Components',
-      components: 'src/components/**/*.jsx'
+      components: 'src/components/*/index.js'
     }
   ],
-  webpackConfig,
 
-  require: [
-    path.join(__dirname, 'src', 'setup', 'auto')
-  ],
+  webpackConfig,
 
   styleguideComponents: {
     Wrapper: path.join(__dirname, 'src', 'styleguide', 'ThemeWrapper.jsx')

@@ -1,4 +1,4 @@
-Use this component to display the tnw brand in an application.
+Use this component to display the thenativeweb brand in an application.
 
 ### Sizes
 

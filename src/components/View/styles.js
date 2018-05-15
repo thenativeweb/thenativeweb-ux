@@ -2,7 +2,8 @@ const styles = theme => ({
   View: {
     'box-sizing': 'border-box',
     position: 'relative',
-    'font-family': theme.font.family.default
+    'font-family': theme.font.family.default,
+    'font-size': theme.font.size.default
   },
 
   AdjustFlex: {

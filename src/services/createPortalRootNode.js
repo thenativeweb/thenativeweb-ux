@@ -1,7 +1,7 @@
 const portals = [];
 
 const getPortalRootNode = function (options = {}) {
-  const id = options.id || 'tnw-ux-portal',
+  const id = options.id || 'thenativeweb-ux-portal',
         tag = options.tag || 'span';
 
   let portal = portals[id];
