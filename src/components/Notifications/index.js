@@ -1,3 +1,4 @@
+import ExecutionEnvironment from 'exenv';
 import FadeInLeft from '../transitions/FadeInLeft';
 import injectSheet from 'react-jss';
 import Notification from './Notification';
@@ -38,6 +39,10 @@ class Notifications extends React.PureComponent {
 
   render () {
     const { classes } = this.props;
+
+    if (!ExecutionEnvironment.canUseDOM) {
+      return null;
+    }
 
     return ReactDOM.createPortal(
       (

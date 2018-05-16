@@ -71,7 +71,7 @@ Application.defaultProps = {
 
 Application.Services = function () {
   return _react2.default.createElement(
-    _react2.default.Fragment,
+    'span',
     null,
     _react2.default.createElement(_Icons2.default, null),
     _react2.default.createElement(_Dialogs2.default, null),

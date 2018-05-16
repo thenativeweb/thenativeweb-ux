@@ -11,6 +11,7 @@ import Message from './components/Message';
 import Modal from './components/Modal';
 import services from './services';
 import Sidebar from './components/Sidebar';
+import StyleCollector from './components/StyleCollector';
 import TextArea from './components/TextArea';
 import TextBox from './components/TextBox';
 import ThemeProvider from './components/ThemeProvider';
@@ -30,6 +31,7 @@ export {
   Modal,
   services,
   Sidebar,
+  StyleCollector,
   TextArea,
   TextBox,
   ThemeProvider,

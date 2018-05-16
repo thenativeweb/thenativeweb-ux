@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import ExecutionEnvironment from 'exenv';
 import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -94,6 +95,10 @@ class Modal extends React.PureComponent {
         break;
       default:
         Transition = transtions.Zoom;
+    }
+
+    if (!ExecutionEnvironment.canUseDOM) {
+      return null;
     }
 
     return ReactDOM.createPortal(
