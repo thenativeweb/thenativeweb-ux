@@ -15,11 +15,13 @@
   "main": "dist/index.js",
   "scripts": {
     "styleguide": "styleguidist server",
-    "build-styleguide": "styleguidist build"
+    "build-styleguide": "styleguidist build",
+    "dist": "babel src --out-dir dist --copy-files"
   },
   "dependencies": {
     "animejs": "2.2.0",
     "classnames": "2.2.5",
+    "exenv": "1.2.2",
     "jss": "9.8.1",
     "prop-types": "15.6.1",
     "react-jss": "8.4.0",

@@ -32,6 +32,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _exenv = require('exenv');
+
+var _exenv2 = _interopRequireDefault(_exenv);
+
 var _reactJss = require('react-jss');
 
 var _reactJss2 = _interopRequireDefault(_reactJss);
@@ -164,6 +168,10 @@ var Modal = function (_React$PureComponent) {
           break;
         default:
           Transition = _transitions2.default.Zoom;
+      }
+
+      if (!_exenv2.default.canUseDOM) {
+        return null;
       }
 
       return _reactDom2.default.createPortal(_react2.default.createElement(

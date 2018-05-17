@@ -34,11 +34,11 @@ Application.defaultProps = {
 };
 
 Application.Services = () => (
-  <React.Fragment>
+  <span suppressHydrationWarning={ true }>
     <Icons />
     <Dialogs />
     <Notifications />
-  </React.Fragment>
+  </span>
 );
 
 export default injectSheet(styles)(Application);
