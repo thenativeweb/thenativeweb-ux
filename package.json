@@ -14,8 +14,8 @@
   ],
   "main": "dist/index.js",
   "scripts": {
+    "build": "docker build -t thenativeweb/ux .",
     "styleguide": "styleguidist server",
-    "build-styleguide": "styleguidist build",
     "dist": "babel src --out-dir dist --copy-files"
   },
   "dependencies": {
@@ -39,7 +39,7 @@
     "puppeteer": "1.4.0",
     "react": "16.3.2",
     "react-dom": "16.3.2",
-    "react-styleguidist": "7.0.13",
+    "react-styleguidist": "7.0.14",
     "roboter": "1.0.4",
     "webpack": "3.8.1"
   },

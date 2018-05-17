@@ -38,7 +38,7 @@ module.exports = async function () {
       }
     };
 
-    devServerProcess = spawn('webpack-dev-server', {
+    devServerProcess = spawn('npm', [ 'run', 'serve' ], {
       detached: true,
       cwd: path.join(__dirname, '..', '..', 'examples', 'with-webpack')
     });
