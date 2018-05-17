@@ -1,8 +1,8 @@
+import App from './App';
 import React from 'react';
 import ReactDom from 'react-dom';
-import TestApp from './TestApp.jsx';
 
 ReactDom.render(
-  <TestApp />,
+  <App />,
   document.querySelector('.Shell')
 );

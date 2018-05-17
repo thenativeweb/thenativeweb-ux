@@ -1,0 +1,15 @@
+{
+  "name": "thenativeweb-ux-with-webpack",
+  "version": "0.0.0",
+  "scripts": {
+    "serve": "npx webpack-dev-server"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "webpack": "3.8.1",
+    "webpack-dev-server": "2.9.4"
+  }
+}

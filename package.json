@@ -14,9 +14,7 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "styleguide": "styleguidist server",
-    "serve": "webpack-dev-server --env test-app",
-    "build": "NODE_ENV=production webpack --env build"
+    "styleguide": "styleguidist server"
   },
   "dependencies": {
     "animejs": "2.2.0",
@@ -40,8 +38,7 @@
     "react-dom": "16.3.2",
     "react-styleguidist": "7.0.13",
     "roboter": "1.0.4",
-    "webpack": "3.8.1",
-    "webpack-dev-server": "2.9.4"
+    "webpack": "3.8.1"
   },
   "peerDependencies": {
     "react": "^16.3.2",

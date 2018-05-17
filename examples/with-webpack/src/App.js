@@ -17,7 +17,7 @@ import {
   TextBox,
   ThemeProvider,
   View
-} from '../src';
+} from '../../../src';
 
 const handleShowConfirmClicked = function () {
   services.dialogs.confirm({
