@@ -8,26 +8,6 @@ var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -68,85 +48,44 @@ var Hint = function Hint(_ref) {
   );
 };
 
-var Button = function (_React$PureComponent) {
-  (0, _inherits3.default)(Button, _React$PureComponent);
+var Button = function Button(_ref2) {
+  var _classNames;
 
-  function Button(props) {
-    (0, _classCallCheck3.default)(this, Button);
+  var autoFocus = _ref2.autoFocus,
+      adjust = _ref2.adjust,
+      children = _ref2.children,
+      classes = _ref2.classes,
+      className = _ref2.className,
+      id = _ref2.id,
+      icon = _ref2.icon,
+      iconSize = _ref2.iconSize,
+      onClick = _ref2.onClick,
+      isPrimary = _ref2.isPrimary,
+      isSubtle = _ref2.isSubtle,
+      size = _ref2.size,
+      type = _ref2.type;
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Button.__proto__ || (0, _getPrototypeOf2.default)(Button)).call(this, props));
+  var buttonClassNames = (0, _classnames2.default)(classes.Button, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty3.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty3.default)(_classNames, classes.SizeDefault, size === 'default'), (0, _defineProperty3.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty3.default)(_classNames, classes.TypeSubtle, isSubtle === true), (0, _defineProperty3.default)(_classNames, classes.TypePrimary, isPrimary === true), (0, _defineProperty3.default)(_classNames, classes.TypeIcon, icon), (0, _defineProperty3.default)(_classNames, classes.TypeIconOnly, icon && !children), _classNames), className);
 
-    _this.handlePointerDown = _this.handlePointerDown.bind(_this);
-    _this.handlePointerUp = _this.handlePointerUp.bind(_this);
+  var buttonType = type || (isPrimary ? 'submit' : 'button');
 
-    _this.state = {
-      isPressed: false
-    };
-    return _this;
-  }
-
-  (0, _createClass3.default)(Button, [{
-    key: 'handlePointerDown',
-    value: function handlePointerDown() {
-      this.setState({
-        isPressed: true
-      });
-    }
-  }, {
-    key: 'handlePointerUp',
-    value: function handlePointerUp() {
-      this.setState({
-        isPressed: false
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _classNames;
-
-      var _props = this.props,
-          autoFocus = _props.autoFocus,
-          adjust = _props.adjust,
-          children = _props.children,
-          classes = _props.classes,
-          className = _props.className,
-          id = _props.id,
-          icon = _props.icon,
-          iconSize = _props.iconSize,
-          onClick = _props.onClick,
-          isPrimary = _props.isPrimary,
-          isSubtle = _props.isSubtle,
-          size = _props.size,
-          type = _props.type;
-      var isPressed = this.state.isPressed;
-
-
-      var buttonClassNames = (0, _classnames2.default)(classes.Button, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty3.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty3.default)(_classNames, classes.SizeDefault, size === 'default'), (0, _defineProperty3.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty3.default)(_classNames, classes.TypeSubtle, isSubtle === true), (0, _defineProperty3.default)(_classNames, classes.TypePrimary, isPrimary === true), (0, _defineProperty3.default)(_classNames, classes.TypeIcon, icon), (0, _defineProperty3.default)(_classNames, classes.TypeIconOnly, icon && !children), (0, _defineProperty3.default)(_classNames, classes.IsPressed, isPressed === true), _classNames), className);
-
-      var buttonType = type || (isPrimary ? 'submit' : 'button');
-
-      return _react2.default.createElement(
-        'button',
-        {
-          autoFocus: autoFocus,
-          id: id,
-          type: buttonType,
-          className: buttonClassNames,
-          onClick: onClick,
-          onMouseDown: this.handlePointerDown,
-          onMouseUp: this.handlePointerUp
-        },
-        icon ? _react2.default.createElement(_Icon2.default, { className: classes.Icon, name: icon, size: iconSize }) : null,
-        children ? _react2.default.createElement(
-          _Label2.default,
-          { className: classes.Label },
-          children
-        ) : null
-      );
-    }
-  }]);
-  return Button;
-}(_react2.default.PureComponent);
+  return _react2.default.createElement(
+    'button',
+    {
+      autoFocus: autoFocus,
+      id: id,
+      type: buttonType,
+      className: buttonClassNames,
+      onClick: onClick
+    },
+    icon ? _react2.default.createElement(_Icon2.default, { className: classes.Icon, name: icon, size: iconSize }) : null,
+    children ? _react2.default.createElement(
+      _Label2.default,
+      { className: classes.Label },
+      children
+    ) : null
+  );
+};
 
 Button.propTypes = {
   adjust: _propTypes2.default.oneOf(['flex', 'auto']),

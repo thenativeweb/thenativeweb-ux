@@ -1,6 +1,11 @@
 const path = require('path');
 
 const configuration = {
+  entry: [
+    './src/index.html',
+    './src/index.js'
+  ],
+
   module: {
     rules: [
       {
@@ -13,10 +18,9 @@ const configuration = {
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.html$/,
         use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' }
+          { loader: 'file-loader', options: { name: '[name].[ext]' }}
         ]
       }
     ]

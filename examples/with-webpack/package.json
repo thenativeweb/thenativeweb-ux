@@ -1,0 +1,9 @@
+{
+  "name": "thenativeweb-ux-with-webpack",
+  "version": "0.0.0",
+  "scripts": {
+    "serve": "npx webpack-dev-server"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

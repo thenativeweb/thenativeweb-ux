@@ -1,0 +1,10 @@
+{
+  "name": "with-next-js",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "next"
+  },
+  "dependencies": {
+    "next": "6.0.3"
+  }
+}

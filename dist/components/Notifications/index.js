@@ -24,6 +24,10 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
+var _exenv = require('exenv');
+
+var _exenv2 = _interopRequireDefault(_exenv);
+
 var _FadeInLeft = require('../transitions/FadeInLeft');
 
 var _FadeInLeft2 = _interopRequireDefault(_FadeInLeft);
@@ -97,6 +101,10 @@ var Notifications = function (_React$PureComponent) {
     value: function render() {
       var classes = this.props.classes;
 
+
+      if (!_exenv2.default.canUseDOM) {
+        return null;
+      }
 
       return _reactDom2.default.createPortal(_react2.default.createElement(
         'div',

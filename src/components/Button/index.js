@@ -12,66 +12,35 @@ const Hint = ({ children, classes }) => (
   </span>
 );
 
-class Button extends React.PureComponent {
-  constructor (props) {
-    super(props);
+const Button = ({ autoFocus, adjust, children, classes, className, id, icon, iconSize, onClick, isPrimary, isSubtle, size, type }) => {
+  const buttonClassNames = classNames(classes.Button, {
+    [classes.AdjustFlex]: adjust === 'flex',
+    [classes.AdjustAuto]: adjust === 'auto',
+    [classes.SizeDefault]: size === 'default',
+    [classes.SizeS]: size === 's',
+    [classes.SizeM]: size === 'm',
+    [classes.SizeL]: size === 'l',
+    [classes.TypeSubtle]: isSubtle === true,
+    [classes.TypePrimary]: isPrimary === true,
+    [classes.TypeIcon]: icon,
+    [classes.TypeIconOnly]: icon && !children
+  }, className);
 
-    this.handlePointerDown = this.handlePointerDown.bind(this);
-    this.handlePointerUp = this.handlePointerUp.bind(this);
+  const buttonType = type || (isPrimary ? 'submit' : 'button');
 
-    this.state = {
-      isPressed: false
-    };
-  }
-
-  handlePointerDown () {
-    this.setState({
-      isPressed: true
-    });
-  }
-
-  handlePointerUp () {
-    this.setState({
-      isPressed: false
-    });
-  }
-
-  render () {
-    const { autoFocus, adjust, children, classes, className, id, icon, iconSize, onClick, isPrimary, isSubtle, size, type } = this.props;
-    const { isPressed } = this.state;
-
-    const buttonClassNames = classNames(classes.Button, {
-      [classes.AdjustFlex]: adjust === 'flex',
-      [classes.AdjustAuto]: adjust === 'auto',
-      [classes.SizeDefault]: size === 'default',
-      [classes.SizeS]: size === 's',
-      [classes.SizeM]: size === 'm',
-      [classes.SizeL]: size === 'l',
-      [classes.TypeSubtle]: isSubtle === true,
-      [classes.TypePrimary]: isPrimary === true,
-      [classes.TypeIcon]: icon,
-      [classes.TypeIconOnly]: icon && !children,
-      [classes.IsPressed]: isPressed === true
-    }, className);
-
-    const buttonType = type || (isPrimary ? 'submit' : 'button');
-
-    return (
-      <button
-        autoFocus={ autoFocus }
-        id={ id }
-        type={ buttonType }
-        className={ buttonClassNames }
-        onClick={ onClick }
-        onMouseDown={ this.handlePointerDown }
-        onMouseUp={ this.handlePointerUp }
-      >
-        { icon ? <Icon className={ classes.Icon } name={ icon } size={ iconSize } /> : null }
-        { children ? <Label className={ classes.Label }>{ children }</Label> : null }
-      </button>
-    );
-  }
-}
+  return (
+    <button
+      autoFocus={ autoFocus }
+      id={ id }
+      type={ buttonType }
+      className={ buttonClassNames }
+      onClick={ onClick }
+    >
+      { icon ? <Icon className={ classes.Icon } name={ icon } size={ iconSize } /> : null }
+      { children ? <Label className={ classes.Label }>{ children }</Label> : null }
+    </button>
+  );
+};
 
 Button.propTypes = {
   adjust: PropTypes.oneOf([ 'flex', 'auto' ]),

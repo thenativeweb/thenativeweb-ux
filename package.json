@@ -14,13 +14,14 @@
   ],
   "main": "dist/index.js",
   "scripts": {
+    "build": "docker build -t thenativeweb/ux .",
     "styleguide": "styleguidist server",
-    "serve": "webpack-dev-server --env test-app",
-    "build": "NODE_ENV=production webpack --env build"
+    "dist": "babel src --out-dir dist --copy-files"
   },
   "dependencies": {
     "animejs": "2.2.0",
     "classnames": "2.2.5",
+    "exenv": "1.2.2",
     "jss": "9.8.1",
     "prop-types": "15.6.1",
     "react-jss": "8.4.0",
@@ -38,10 +39,9 @@
     "puppeteer": "1.4.0",
     "react": "16.3.2",
     "react-dom": "16.3.2",
-    "react-styleguidist": "7.0.13",
+    "react-styleguidist": "7.0.14",
     "roboter": "1.0.4",
-    "webpack": "3.8.1",
-    "webpack-dev-server": "2.9.4"
+    "webpack": "3.8.1"
   },
   "peerDependencies": {
     "react": "^16.3.2",

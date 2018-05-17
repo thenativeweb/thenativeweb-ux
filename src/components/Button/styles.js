@@ -16,7 +16,7 @@ const styles = function (theme) {
       'text-overflow': 'ellipsis',
       'border-radius': theme.components.borderRadius.default,
       outline: 'none',
-      transition: 'background-color 300ms',
+      transition: 'background-color 300ms cubic-bezier(0.190, 1.000, 0.220, 1.000)',
       'will-change': 'background-color',
 
       '&:focus': {
@@ -24,15 +24,15 @@ const styles = function (theme) {
         'border-color': theme.color.interaction.focus
       },
 
+      '&:active': {
+        'background-color': 'theme.color.brand.dark',
+        border: '1px solid theme.color.brand.dark',
+        opacity: 0.9
+      },
+
       '&:last-child': {
         'margin-right': 0
       }
-    },
-
-    IsPressed: {
-      'background-color': 'theme.color.brand.dark',
-      border: '1px solid theme.color.brand.dark',
-      opacity: 0.9
     },
 
     AdjustFlex: {
@@ -99,7 +99,7 @@ const styles = function (theme) {
         }
       },
 
-      '&$IsPressed': {
+      '&:active': {
         color: theme.color.brand.dark,
 
         '& $Icon': {
@@ -134,7 +134,7 @@ const styles = function (theme) {
         }
       },
 
-      '&$IsPressed': {
+      '&:active': {
         '& $Icon': {
           fill: `${theme.color.brand.dark} !important`,
           'margin-right': 0

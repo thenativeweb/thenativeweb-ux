@@ -45,14 +45,6 @@ Afterwards, you can use any component. Of course, you still need to reference th
 import { Button } from 'thenativeweb-ux';
 ```
 
-The documentation for the components is provided as a styleguide. To access the styleguide, run the following command:
-
-```shell
-$ npx roboter styleguide
-```
-
-Then point your browser to [http://localhost:6060](http://localhost:6060).
-
 ### Running the sample application
 
 Additionally, there is a sample application. To run the sample application, use the following command:
@@ -60,6 +52,8 @@ Additionally, there is a sample application. To run the sample application, use 
 ```shell
 $ npx roboter serve
 ```
+
+The complete documentation for all components can be found at [ux.thenativeweb.io](https://ux.thenativeweb.io).
 
 ## Running the build
 
