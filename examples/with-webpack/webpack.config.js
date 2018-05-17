@@ -1,3 +1,5 @@
+const path = require('path');
+
 const configuration = {
   entry: [
     './src/index.html',
@@ -8,6 +10,10 @@ const configuration = {
     rules: [
       {
         test: /\.jsx?$/,
+        include: [
+          path.join(__dirname, 'src'),
+          path.join(__dirname, '..', '..', 'src')
+        ],
         use: [
           { loader: 'babel-loader' }
         ]
@@ -16,13 +22,6 @@ const configuration = {
         test: /\.html$/,
         use: [
           { loader: 'file-loader', options: { name: '[name].[ext]' }}
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' }
         ]
       }
     ]

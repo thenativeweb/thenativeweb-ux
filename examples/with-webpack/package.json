@@ -5,10 +5,22 @@
     "serve": "npx webpack-dev-server"
   },
   "dependencies": {
-  },
-  "devDependencies": {
+    "animejs": "2.2.0",
+    "classnames": "2.2.5",
+    "jss": "9.8.1",
+    "prop-types": "15.6.1",
     "react": "16.3.2",
     "react-dom": "16.3.2",
+    "react-jss": "8.4.0",
+    "react-transition-group": "2.3.1",
+    "uuidv4": "1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4"
   }

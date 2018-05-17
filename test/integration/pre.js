@@ -1,4 +1,5 @@
-const { spawn } = require('child_process');
+const { spawn } = require('child_process'),
+      path = require('path');
 
 module.exports = async function () {
   await new Promise(resolve => {
@@ -37,7 +38,10 @@ module.exports = async function () {
       }
     };
 
-    devServerProcess = spawn('webpack-dev-server', [ '--env', 'test-app' ], { detached: true });
+    devServerProcess = spawn('webpack-dev-server', {
+      detached: true,
+      cwd: path.join(__dirname, '..', '..', 'examples', 'with-webpack')
+    });
     devServerProcess.stdout.on('data', watchServerStart);
     devServerProcess.stderr.on('data', logErrors);
 
