@@ -1,11 +1,10 @@
 import ExecutionEnvironment from 'exenv';
-import FadeInLeft from '../transitions/FadeInLeft';
 import injectSheet from 'react-jss';
 import Notification from './Notification';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import services from '../../services';
-import { TransitionGroup } from 'react-transition-group';
+import Transition from '../Transition';
 
 const styles = theme => ({
   Notifications: {
@@ -47,13 +46,11 @@ class Notifications extends React.PureComponent {
     return ReactDOM.createPortal(
       (
         <div className={ classes.Notifications }>
-          <TransitionGroup component='span'>
+          <Transition.Group type='FadeInLeft'component='span'>
             { services.notifications.state.items.map(notification => (
-              <FadeInLeft key={ notification.id }>
-                <Notification type={ notification.type } text={ notification.text } />
-              </FadeInLeft>
+              <Notification key={ notification.id } type={ notification.type } text={ notification.text } />
             ))}
-          </TransitionGroup>
+          </Transition.Group>
         </div>
       ),
       services.getPortalRootNode()

@@ -16,6 +16,7 @@ import StyleCollector from './components/StyleCollector';
 import TextArea from './components/TextArea';
 import TextBox from './components/TextBox';
 import ThemeProvider from './components/ThemeProvider';
+import Transition from './Transition';
 import View from './components/View';
 
 export {
@@ -37,5 +38,6 @@ export {
   TextArea,
   TextBox,
   ThemeProvider,
+  Transition,
   View
 };

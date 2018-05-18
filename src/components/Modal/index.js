@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import Row from './Row';
 import services from '../../services';
 import styles from './styles';
-import transtions from '../transitions';
+import Transition from '../Transition';
 
 const KEY = {
   ENTER: 13,
@@ -83,18 +83,18 @@ class Modal extends React.PureComponent {
       [classes.ContentAttachedCenter]: attach === 'center'
     }, className);
 
-    let Transition;
+    let transitionType;
 
     switch (attach) {
       case 'left':
       case 'sidebar':
-        Transition = transtions.FadeInRight;
+        transitionType = 'FadeInRight';
         break;
       case 'right':
-        Transition = transtions.FadeInLeft;
+        transitionType = 'FadeInLeft';
         break;
       default:
-        Transition = transtions.Zoom;
+        transitionType = 'Zoom';
     }
 
     if (!ExecutionEnvironment.canUseDOM) {
@@ -105,7 +105,7 @@ class Modal extends React.PureComponent {
       (
         <div className={ classes.Modal }>
           <div className={ backdropClasses } onClick={ this.handleBackDropClicked } />
-          <Transition in={ isVisible }>
+          <Transition type={ transitionType } in={ isVisible }>
             <div className={ contentClasses } role='dialog'>{ children }</div>
           </Transition>
         </div>

@@ -28,10 +28,6 @@ var _exenv = require('exenv');
 
 var _exenv2 = _interopRequireDefault(_exenv);
 
-var _FadeInLeft = require('../transitions/FadeInLeft');
-
-var _FadeInLeft2 = _interopRequireDefault(_FadeInLeft);
-
 var _reactJss = require('react-jss');
 
 var _reactJss2 = _interopRequireDefault(_reactJss);
@@ -52,7 +48,9 @@ var _services = require('../../services');
 
 var _services2 = _interopRequireDefault(_services);
 
-var _reactTransitionGroup = require('react-transition-group');
+var _Transition = require('../Transition');
+
+var _Transition2 = _interopRequireDefault(_Transition);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110,14 +108,10 @@ var Notifications = function (_React$PureComponent) {
         'div',
         { className: classes.Notifications },
         _react2.default.createElement(
-          _reactTransitionGroup.TransitionGroup,
-          { component: 'span' },
+          _Transition2.default.Group,
+          { type: 'FadeInLeft', component: 'span' },
           _services2.default.notifications.state.items.map(function (notification) {
-            return _react2.default.createElement(
-              _FadeInLeft2.default,
-              { key: notification.id },
-              _react2.default.createElement(_Notification2.default, { type: notification.type, text: notification.text })
-            );
+            return _react2.default.createElement(_Notification2.default, { key: notification.id, type: notification.type, text: notification.text });
           })
         )
       ), _services2.default.getPortalRootNode());

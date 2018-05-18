@@ -64,9 +64,9 @@ var _styles = require('./styles');
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _transitions = require('../transitions');
+var _Transition = require('../Transition');
 
-var _transitions2 = _interopRequireDefault(_transitions);
+var _Transition2 = _interopRequireDefault(_Transition);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -156,18 +156,18 @@ var Modal = function (_React$PureComponent) {
 
       var contentClasses = (0, _classnames2.default)(classes.Content, (_classNames2 = {}, (0, _defineProperty3.default)(_classNames2, classes.ContentSizeS, size === 's'), (0, _defineProperty3.default)(_classNames2, classes.ContentSizeM, size === 'm'), (0, _defineProperty3.default)(_classNames2, classes.ContentSizeL, size === 'l'), (0, _defineProperty3.default)(_classNames2, classes.ContentAttachedSidebar, attach === 'sidebar'), (0, _defineProperty3.default)(_classNames2, classes.ContentAttachedLeft, attach === 'left'), (0, _defineProperty3.default)(_classNames2, classes.ContentAttachedRight, attach === 'right'), (0, _defineProperty3.default)(_classNames2, classes.ContentAttachedCenter, attach === 'center'), _classNames2), className);
 
-      var Transition = void 0;
+      var transitionType = void 0;
 
       switch (attach) {
         case 'left':
         case 'sidebar':
-          Transition = _transitions2.default.FadeInRight;
+          transitionType = 'FadeInRight';
           break;
         case 'right':
-          Transition = _transitions2.default.FadeInLeft;
+          transitionType = 'FadeInLeft';
           break;
         default:
-          Transition = _transitions2.default.Zoom;
+          transitionType = 'Zoom';
       }
 
       if (!_exenv2.default.canUseDOM) {
@@ -179,8 +179,8 @@ var Modal = function (_React$PureComponent) {
         { className: classes.Modal },
         _react2.default.createElement('div', { className: backdropClasses, onClick: this.handleBackDropClicked }),
         _react2.default.createElement(
-          Transition,
-          { 'in': isVisible },
+          _Transition2.default,
+          { type: transitionType, 'in': isVisible },
           _react2.default.createElement(
             'div',
             { className: contentClasses, role: 'dialog' },

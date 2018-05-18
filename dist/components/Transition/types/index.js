@@ -16,6 +16,10 @@ var _FadeInRight = require('./FadeInRight');
 
 var _FadeInRight2 = _interopRequireDefault(_FadeInRight);
 
+var _Grow = require('./Grow');
+
+var _Grow2 = _interopRequireDefault(_Grow);
+
 var _Zoom = require('./Zoom');
 
 var _Zoom2 = _interopRequireDefault(_Zoom);
@@ -26,5 +30,6 @@ exports.default = {
   Fade: _Fade2.default,
   FadeInLeft: _FadeInLeft2.default,
   FadeInRight: _FadeInRight2.default,
+  Grow: _Grow2.default,
   Zoom: _Zoom2.default
 };

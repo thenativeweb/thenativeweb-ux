@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.View = exports.ThemeProvider = exports.TextBox = exports.TextArea = exports.StyleCollector = exports.Sidebar = exports.services = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.CheckBox = exports.Button = exports.Brand = exports.Application = undefined;
+exports.View = exports.Transition = exports.ThemeProvider = exports.TextBox = exports.TextArea = exports.StyleCollector = exports.Sidebar = exports.services = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.CheckBox = exports.Button = exports.Brand = exports.Application = undefined;
 
 var _Application = require('./components/Application');
 
@@ -77,6 +77,10 @@ var _ThemeProvider = require('./components/ThemeProvider');
 
 var _ThemeProvider2 = _interopRequireDefault(_ThemeProvider);
 
+var _Transition = require('./Transition');
+
+var _Transition2 = _interopRequireDefault(_Transition);
+
 var _View = require('./components/View');
 
 var _View2 = _interopRequireDefault(_View);
@@ -101,4 +105,5 @@ exports.StyleCollector = _StyleCollector2.default;
 exports.TextArea = _TextArea2.default;
 exports.TextBox = _TextBox2.default;
 exports.ThemeProvider = _ThemeProvider2.default;
+exports.Transition = _Transition2.default;
 exports.View = _View2.default;
