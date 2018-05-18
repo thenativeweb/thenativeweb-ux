@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 var styles = function styles(theme) {
   return {
     Message: {
-      'flex-grow': 1,
-      'flex-shrink': 1,
       padding: '10px 15px',
       'margin-bottom': theme.grid.stepSize,
       'font-family': theme.font.family.default
@@ -15,7 +13,11 @@ var styles = function styles(theme) {
 
     TypeError: {
       background: theme.color.state.error,
-      color: theme.color.brand.white
+      color: theme.color.brand.white,
+
+      '& $Icon': {
+        fill: theme.color.brand.white
+      }
     },
 
     TypeInfo: {
@@ -25,7 +27,7 @@ var styles = function styles(theme) {
     WithIcon: {
       display: 'flex',
 
-      '& $Icon': {
+      '& $IconContainer': {
         display: 'flex',
         'align-items': 'center',
         'justify-content': 'center',
@@ -40,6 +42,7 @@ var styles = function styles(theme) {
       }
     },
 
+    IconContainer: {},
     Icon: {},
     Content: {}
   };
