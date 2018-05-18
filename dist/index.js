@@ -77,7 +77,7 @@ var _ThemeProvider = require('./components/ThemeProvider');
 
 var _ThemeProvider2 = _interopRequireDefault(_ThemeProvider);
 
-var _Transition = require('./Transition');
+var _Transition = require('./components/Transition');
 
 var _Transition2 = _interopRequireDefault(_Transition);
 

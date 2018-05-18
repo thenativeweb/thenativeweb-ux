@@ -3,6 +3,7 @@ import {
   Application,
   Brand,
   Button,
+  CheckBox,
   ControlGroup,
   Dropdown,
   Form,
@@ -16,6 +17,7 @@ import {
   TextArea,
   TextBox,
   ThemeProvider,
+  Transition,
   View
 } from '../../../dist';
 
@@ -48,6 +50,7 @@ class TestApp extends React.Component {
 
     this.state = {
       buttonClicked: false,
+      checkBoxValue: false,
       dropdownOptions: [
         { value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' }
       ],
@@ -55,7 +58,8 @@ class TestApp extends React.Component {
       formValue: '',
       formSubmitted: false,
       textAreaValue: '',
-      textBoxValue: ''
+      textBoxValue: '',
+      isBoxVisible: true
     };
   }
 
@@ -70,6 +74,7 @@ class TestApp extends React.Component {
   render () {
     const {
       buttonClicked,
+      checkBoxValue,
       dropdownOptions,
       dropdownOptionSelected,
       formValue,
@@ -130,6 +135,11 @@ class TestApp extends React.Component {
                   </ControlGroup.Item>
                 </ControlGroup>
                 <ControlGroup>
+                  <ControlGroup.Item label='Checkbox with label'>
+                    <CheckBox id='form-checkbox' checked={ checkBoxValue } onChange={ () => this.setState({ checkBoxValue: !checkBoxValue }) } />
+                  </ControlGroup.Item>
+                </ControlGroup>
+                <ControlGroup>
                   <Button>Cancel</Button> <Button id='form-submit' isPrimary={ true }>{ !formSubmitted ? 'Submit' : 'Thanks!' }</Button>
                 </ControlGroup>
               </Form>
@@ -175,6 +185,22 @@ class TestApp extends React.Component {
             <section>
               <Headline level='2'>TextBox</Headline>
               <TextBox value={ textBoxValue } placeholder='Enter text' onChange={ event => this.setState({ textBoxValue: event.target.value }) } />
+            </section>
+            <section>
+              <Headline level='2'>Transition</Headline>
+              <Form>
+                <ControlGroup>
+                  <ControlGroup.Item label='Show box?'>
+                    <CheckBox id='transition-checkbox' onChange={ () => this.setState({ isBoxVisible: !this.state.isBoxVisible }) } />
+                  </ControlGroup.Item>
+                </ControlGroup>
+              </Form>
+
+              <View style={{ width: 200, height: 200 }}>
+                <Transition type='FadeInRight' in={ this.state.isBoxVisible }>
+                  <View style={{ width: 200, height: 200, background: 'orange', textAlign: 'center' }} orientation='centered'><span>This box will be animated in and out using `FadeInRight`.</span></View>
+                </Transition>
+              </View>
             </section>
           </View>
         </Application>
