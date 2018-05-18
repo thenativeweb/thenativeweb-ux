@@ -8,6 +8,10 @@ var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
+var _CheckBox = require('../CheckBox');
+
+var _CheckBox2 = _interopRequireDefault(_CheckBox);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -76,6 +80,14 @@ var styles = function styles(theme) {
       },
 
       opacity: 1
+    },
+
+    Control: {},
+
+    TypeCheckBox: {
+      '& $Control': {
+        'padding-right': '6px'
+      }
     }
   };
 };
@@ -91,14 +103,19 @@ var Item = function Item(_ref) {
       helpLink = _ref.helpLink,
       label = _ref.label,
       _ref$isVisible = _ref.isVisible,
-      isVisible = _ref$isVisible === undefined ? true : _ref$isVisible,
-      _ref$type = _ref.type,
-      type = _ref$type === undefined ? 'text' : _ref$type;
+      isVisible = _ref$isVisible === undefined ? true : _ref$isVisible;
 
-  var componentClasses = (0, _classnames2.default)(classes.Item, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty3.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty3.default)(_classNames, classes.Hidden, isVisible === false), (0, _defineProperty3.default)(_classNames, classes.Labeled, label), (0, _defineProperty3.default)(_classNames, classes.TypeCheckbox, type === 'checkbox'), _classNames), className);
+  var type = 'default';
+  var child = _react2.default.Children.only(children);
+
+  if (child.type === _CheckBox2.default) {
+    type = 'checkbox';
+  }
+
+  var componentClasses = (0, _classnames2.default)(classes.Item, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty3.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty3.default)(_classNames, classes.Hidden, isVisible === false), (0, _defineProperty3.default)(_classNames, classes.Labeled, label), (0, _defineProperty3.default)(_classNames, classes.TypeCheckBox, type === 'checkbox'), _classNames), className);
 
   if (type === 'checkbox') {
-    var controlId = children || children.props.id ? children.props.id : undefined;
+    var controlId = child.props.id ? child.props.id : undefined;
 
     return _react2.default.createElement(
       'div',
@@ -111,7 +128,7 @@ var Item = function Item(_ref) {
         _react2.default.createElement(
           'div',
           { className: classes.Control },
-          children
+          child
         ),
         label ? _react2.default.createElement(
           'label',
@@ -149,7 +166,7 @@ var Item = function Item(_ref) {
     _react2.default.createElement(
       'div',
       { className: classes.Control },
-      children
+      child
     )
   );
 };

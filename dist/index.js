@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.View = exports.ThemeProvider = exports.TextBox = exports.TextArea = exports.StyleCollector = exports.Sidebar = exports.services = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.Button = exports.Brand = exports.Application = undefined;
+exports.View = exports.ThemeProvider = exports.TextBox = exports.TextArea = exports.StyleCollector = exports.Sidebar = exports.services = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.CheckBox = exports.Button = exports.Brand = exports.Application = undefined;
 
 var _Application = require('./components/Application');
 
@@ -16,6 +16,10 @@ var _Brand2 = _interopRequireDefault(_Brand);
 var _Button = require('./components/Button');
 
 var _Button2 = _interopRequireDefault(_Button);
+
+var _CheckBox = require('./components/CheckBox');
+
+var _CheckBox2 = _interopRequireDefault(_CheckBox);
 
 var _ControlGroup = require('./components/ControlGroup');
 
@@ -82,6 +86,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.Application = _Application2.default;
 exports.Brand = _Brand2.default;
 exports.Button = _Button2.default;
+exports.CheckBox = _CheckBox2.default;
 exports.ControlGroup = _ControlGroup2.default;
 exports.Dropdown = _Dropdown2.default;
 exports.Form = _Form2.default;

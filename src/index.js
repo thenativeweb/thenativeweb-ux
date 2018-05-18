@@ -1,6 +1,7 @@
 import Application from './components/Application';
 import Brand from './components/Brand';
 import Button from './components/Button';
+import CheckBox from './components/CheckBox';
 import ControlGroup from './components/ControlGroup';
 import Dropdown from './components/Dropdown';
 import Form from './components/Form';
@@ -21,6 +22,7 @@ export {
   Application,
   Brand,
   Button,
+  CheckBox,
   ControlGroup,
   Dropdown,
   Form,

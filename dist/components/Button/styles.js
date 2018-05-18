@@ -30,8 +30,7 @@ var styles = function styles(theme) {
       },
 
       '&:active': {
-        'background-color': 'theme.color.brand.dark',
-        border: '1px solid theme.color.brand.dark',
+        'background-color': theme.color.brand.dark,
         opacity: 0.9
       },
 
@@ -96,8 +95,9 @@ var styles = function styles(theme) {
 
       '&:focus': {
         background: 'transparent',
-        'border-color': 'transparent',
         color: theme.color.brand.highlight,
+        border: '1px dotted ' + theme.color.interaction.focus + ' !important',
+        'border-radius': '2px',
 
         '& $Icon': {
           fill: theme.color.brand.highlight
@@ -125,7 +125,13 @@ var styles = function styles(theme) {
       '&:focus': {
         'border-color': 'transparent',
         'text-decoration': 'underline',
-        background: 'none'
+        background: 'none',
+        border: '1px dotted ' + theme.color.interaction.focus + ' !important',
+        'border-radius': '2px',
+
+        '& $Icon': {
+          fill: theme.color.brand.highlight
+        }
       },
 
       '& $Icon': {
