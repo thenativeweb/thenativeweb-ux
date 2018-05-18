@@ -1,3 +1,4 @@
+import CheckBox from '../CheckBox';
 import classNames from 'classnames';
 import Icon from '../Icon';
 import injectSheet from 'react-jss';
@@ -52,27 +53,43 @@ const styles = theme => ({
     },
 
     opacity: 1
+  },
+
+  Control: {
+  },
+
+  TypeCheckBox: {
+    '& $Control': {
+      'padding-right': '6px'
+    }
   }
 });
 
-const Item = ({ className, classes, adjust = 'flex', children, helpLink, label, isVisible = true, type = 'text' }) => {
+const Item = ({ className, classes, adjust = 'flex', children, helpLink, label, isVisible = true }) => {
+  let type = 'default';
+  const child = React.Children.only(children);
+
+  if (child.type === CheckBox) {
+    type = 'checkbox';
+  }
+
   const componentClasses = classNames(classes.Item, {
     [classes.AdjustFlex]: adjust === 'flex',
     [classes.AdjustAuto]: adjust === 'auto',
     [classes.Hidden]: isVisible === false,
     [classes.Labeled]: label,
-    [classes.TypeCheckbox]: type === 'checkbox'
+    [classes.TypeCheckBox]: type === 'checkbox'
   }, className);
 
   if (type === 'checkbox') {
-    const controlId = children || children.props.id ? children.props.id : undefined;
+    const controlId = child.props.id ? child.props.id : undefined;
 
     return (
       <div
         className={ componentClasses }
       >
         <div className={ classes.Label }>
-          <div className={ classes.Control }>{ children }</div>
+          <div className={ classes.Control }>{ child }</div>
           { label ? <label htmlFor={ controlId }>{ label }</label> : null }
           { helpLink ? <a className={ classes.Help } title='Get more detailed information…' rel='noopener noreferrer' target='_blank' href={ helpLink }><Icon name='help' className={ styles.IconHelp } /></a> : null }
         </div>
@@ -88,7 +105,7 @@ const Item = ({ className, classes, adjust = 'flex', children, helpLink, label, 
         { label ? <label>{ label }</label> : null }
         { helpLink ? <a className={ classes.Help } rel='noopener noreferrer' target='_blank' href={ helpLink }><Icon name='help' className={ styles.IconHelp } /></a> : null }
       </div>
-      <div className={ classes.Control }>{ children }</div>
+      <div className={ classes.Control }>{ child }</div>
     </div>
   );
 };
