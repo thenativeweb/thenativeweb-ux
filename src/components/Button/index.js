@@ -12,14 +12,27 @@ const Hint = ({ children, classes }) => (
   </span>
 );
 
-const Button = ({ autoFocus, adjust, children, classes, className, id, icon, iconSize, onClick, isPrimary, isSubtle, size, type }) => {
-  const buttonClassNames = classNames(classes.Button, {
+const Button = ({
+  autoFocus,
+  adjust,
+  children,
+  classes,
+  className,
+  id,
+  icon,
+  iconSize,
+  onClick,
+  isPrimary,
+  isSubtle,
+  size,
+  style,
+  type
+}) => {
+  const componentClasses = classNames(classes.Button, {
     [classes.AdjustFlex]: adjust === 'flex',
     [classes.AdjustAuto]: adjust === 'auto',
-    [classes.SizeDefault]: size === 'default',
     [classes.SizeS]: size === 's',
     [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l',
     [classes.TypeSubtle]: isSubtle === true,
     [classes.TypePrimary]: isPrimary === true,
     [classes.TypeIcon]: icon,
@@ -33,7 +46,8 @@ const Button = ({ autoFocus, adjust, children, classes, className, id, icon, ico
       autoFocus={ autoFocus }
       id={ id }
       type={ buttonType }
-      className={ buttonClassNames }
+      className={ componentClasses }
+      style={ style }
       onClick={ onClick }
     >
       { icon ? <Icon className={ classes.Icon } name={ icon } size={ iconSize } /> : null }
@@ -49,7 +63,7 @@ Button.propTypes = {
   iconSize: PropTypes.oneOf([ 'default', 'xs', 's', 'm', 'l' ]),
   isPrimary: PropTypes.bool,
   isSubtle: PropTypes.bool,
-  size: PropTypes.oneOf([ 'default', 's', 'm', 'l' ]),
+  size: PropTypes.oneOf([ 's', 'm' ]),
   type: PropTypes.oneOf([ 'button', 'submit', 'reset' ]),
   onClick: PropTypes.func
 };
@@ -58,7 +72,7 @@ Button.defaultProps = {
   adjust: undefined,
   autoFocus: false,
   isPrimary: false,
-  size: 'default',
+  size: 'm',
   type: undefined,
   onClick () {}
 };

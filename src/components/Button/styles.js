@@ -45,7 +45,7 @@ const styles = function (theme) {
       'flex-shrink': 0
     },
 
-    SizeDefault: {
+    SizeM: {
       padding: '7px 11px',
       margin: theme.grid.stepSize,
       'margin-left': 0,
