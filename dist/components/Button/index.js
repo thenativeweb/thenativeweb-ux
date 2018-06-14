@@ -63,9 +63,10 @@ var Button = function Button(_ref2) {
       isPrimary = _ref2.isPrimary,
       isSubtle = _ref2.isSubtle,
       size = _ref2.size,
+      style = _ref2.style,
       type = _ref2.type;
 
-  var buttonClassNames = (0, _classnames2.default)(classes.Button, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty3.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty3.default)(_classNames, classes.SizeDefault, size === 'default'), (0, _defineProperty3.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty3.default)(_classNames, classes.TypeSubtle, isSubtle === true), (0, _defineProperty3.default)(_classNames, classes.TypePrimary, isPrimary === true), (0, _defineProperty3.default)(_classNames, classes.TypeIcon, icon), (0, _defineProperty3.default)(_classNames, classes.TypeIconOnly, icon && !children), _classNames), className);
+  var componentClasses = (0, _classnames2.default)(classes.Button, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty3.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty3.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.TypeSubtle, isSubtle === true), (0, _defineProperty3.default)(_classNames, classes.TypePrimary, isPrimary === true), (0, _defineProperty3.default)(_classNames, classes.TypeIcon, icon), (0, _defineProperty3.default)(_classNames, classes.TypeIconOnly, icon && !children), _classNames), className);
 
   var buttonType = type || (isPrimary ? 'submit' : 'button');
 
@@ -75,7 +76,8 @@ var Button = function Button(_ref2) {
       autoFocus: autoFocus,
       id: id,
       type: buttonType,
-      className: buttonClassNames,
+      className: componentClasses,
+      style: style,
       onClick: onClick
     },
     icon ? _react2.default.createElement(_Icon2.default, { className: classes.Icon, name: icon, size: iconSize }) : null,
@@ -94,7 +96,7 @@ Button.propTypes = {
   iconSize: _propTypes2.default.oneOf(['default', 'xs', 's', 'm', 'l']),
   isPrimary: _propTypes2.default.bool,
   isSubtle: _propTypes2.default.bool,
-  size: _propTypes2.default.oneOf(['default', 's', 'm', 'l']),
+  size: _propTypes2.default.oneOf(['s', 'm']),
   type: _propTypes2.default.oneOf(['button', 'submit', 'reset']),
   onClick: _propTypes2.default.func
 };
@@ -103,7 +105,7 @@ Button.defaultProps = {
   adjust: undefined,
   autoFocus: false,
   isPrimary: false,
-  size: 'default',
+  size: 'm',
   type: undefined,
   onClick: function onClick() {}
 };
