@@ -59,12 +59,12 @@ class Toggle extends React.PureComponent {
   }
 
   render () {
-    const { classes, className, selectedValue, values, style } = this.props;
+    const { id, classes, className, selectedValue, values, style } = this.props;
 
     const componentClasses = classNames(classes.Toggle, className);
 
     return (
-      <div className={ componentClasses } style={ style }>
+      <div id={ id } className={ componentClasses } style={ style }>
         {values.map(value => this.props.children({
           value,
           isSelected: selectedValue === value,

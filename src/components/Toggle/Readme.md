@@ -6,7 +6,7 @@ initialState = { selectedValue: 'Option 1' };
     selectedValue={ state.selectedValue }
     onChange={ newValue => setState({ selectedValue: newValue }) }
   />
-  <Text>Seleced option is: {state.selectedValue}</Text>
+  <Text>Selected option is: {state.selectedValue}</Text>
 </div>
 ```
 
@@ -29,6 +29,6 @@ initialState = { selectedValue: 'blue' };
       />
     )}
   </Toggle>
-  <Text>Seleced color is: {state.selectedValue}</Text>
+  <Text>Selected color is: {state.selectedValue}</Text>
 </div>
 ```

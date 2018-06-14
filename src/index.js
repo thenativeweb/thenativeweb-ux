@@ -13,9 +13,11 @@ import Modal from './components/Modal';
 import services from './services';
 import Sidebar from './components/Sidebar';
 import StyleCollector from './components/StyleCollector';
+import Text from './components/Text';
 import TextArea from './components/TextArea';
 import TextBox from './components/TextBox';
 import ThemeProvider from './components/ThemeProvider';
+import Toggle from './components/Toggle';
 import Transition from './components/Transition';
 import View from './components/View';
 
@@ -35,8 +37,10 @@ export {
   services,
   Sidebar,
   StyleCollector,
+  Text,
   TextArea,
   TextBox,
+  Toggle,
   ThemeProvider,
   Transition,
   View
