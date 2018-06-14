@@ -1,12 +1,12 @@
-Whenever you want to display text inside your application, use the Text component as it apply consistent fonts.
+Whenever you would like to display text inside your application, use the `Text` component as it applies consistent font styling.
 
 ```javascript
 <Text>This is medium text</Text>
 <Text size='s'>This is small text</Text>
 ```
 
-The `Text` component will also make sure that text will be abbreviated, if the parent component does not hold enough space…
+The component will also make sure that text will be abbreviated, if the parent component does not hold enough space…
 
 ```javascript
-<div style={{ width: 220, overflow: 'hidden' }}><Text>This is text will be abbreviated use fonts provided from the theme</Text></div>
+<div style={{ width: 215, overflow: 'hidden' }}><Text>This is text will be abbreviated use fonts provided from the theme</Text></div>
 ```
