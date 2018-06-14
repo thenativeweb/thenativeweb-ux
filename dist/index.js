@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.View = exports.Transition = exports.ThemeProvider = exports.TextBox = exports.TextArea = exports.StyleCollector = exports.Sidebar = exports.services = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.CheckBox = exports.Button = exports.Brand = exports.Application = undefined;
+exports.View = exports.Transition = exports.ThemeProvider = exports.Toggle = exports.TextBox = exports.TextArea = exports.Text = exports.StyleCollector = exports.Sidebar = exports.services = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.CheckBox = exports.Button = exports.Brand = exports.Application = undefined;
 
 var _Application = require('./components/Application');
 
@@ -65,6 +65,10 @@ var _StyleCollector = require('./components/StyleCollector');
 
 var _StyleCollector2 = _interopRequireDefault(_StyleCollector);
 
+var _Text = require('./components/Text');
+
+var _Text2 = _interopRequireDefault(_Text);
+
 var _TextArea = require('./components/TextArea');
 
 var _TextArea2 = _interopRequireDefault(_TextArea);
@@ -76,6 +80,10 @@ var _TextBox2 = _interopRequireDefault(_TextBox);
 var _ThemeProvider = require('./components/ThemeProvider');
 
 var _ThemeProvider2 = _interopRequireDefault(_ThemeProvider);
+
+var _Toggle = require('./components/Toggle');
+
+var _Toggle2 = _interopRequireDefault(_Toggle);
 
 var _Transition = require('./components/Transition');
 
@@ -102,8 +110,10 @@ exports.Modal = _Modal2.default;
 exports.services = _services2.default;
 exports.Sidebar = _Sidebar2.default;
 exports.StyleCollector = _StyleCollector2.default;
+exports.Text = _Text2.default;
 exports.TextArea = _TextArea2.default;
 exports.TextBox = _TextBox2.default;
+exports.Toggle = _Toggle2.default;
 exports.ThemeProvider = _ThemeProvider2.default;
 exports.Transition = _Transition2.default;
 exports.View = _View2.default;

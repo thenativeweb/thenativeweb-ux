@@ -14,9 +14,11 @@ import {
   Modal,
   services,
   Sidebar,
+  Text,
   TextArea,
   TextBox,
   ThemeProvider,
+  Toggle,
   Transition,
   View
 } from '../../../dist';
@@ -59,6 +61,10 @@ class TestApp extends React.Component {
       formSubmitted: false,
       textAreaValue: '',
       textBoxValue: '',
+      toggleOptions: [
+        'Option 1', 'Option 2'
+      ],
+      toggleOptionSelected: 'Option 1',
       isBoxVisible: true
     };
   }
@@ -179,12 +185,31 @@ class TestApp extends React.Component {
               <Button id='show-notification-success' onClick={ () => services.notifications.show({ type: 'success', text: 'This is a success!' }) }>Show notification (success)</Button>
             </section>
             <section>
+              <Headline level='2'>Text</Headline>
+              <div>
+                <Text>This is medium text</Text>
+                <Text size='s'>This is small text</Text>
+              </div>
+            </section>
+            <section>
               <Headline level='2'>TextArea</Headline>
               <TextArea value={ textAreaValue } placeholder='Enter text' onChange={ event => this.setState({ textAreaValue: event.target.value }) } />
             </section>
             <section>
               <Headline level='2'>TextBox</Headline>
               <TextBox value={ textBoxValue } placeholder='Enter text' onChange={ event => this.setState({ textBoxValue: event.target.value }) } />
+            </section>
+            <section>
+              <Headline level='2'>Toggle</Headline>
+              <div>
+                <Toggle
+                  id='toggle'
+                  values={ [ 'Option 1', 'Option 2' ] }
+                  selectedValue={ this.state.toggleOptionSelected }
+                  onChange={ newValue => this.setState({ toggleOptionSelected: newValue }) }
+                />
+                Selected option is: <span id='toggle-value'>{this.state.toggleOptionSelected}</span>
+              </div>
             </section>
             <section>
               <Headline level='2'>Transition</Headline>

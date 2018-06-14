@@ -54,9 +54,10 @@ In order to use icons you need to include `Symbols` at the start of your page. T
   <p><Icon name='chevron' type='inline' size='m' /> chevron</p>
   <p><Icon name='error' type='inline' size='m' /> error</p>
   <p><Icon name='expand' type='inline' size='m' /> expand</p>
-  <p><Icon name='heart' type='inline' size='m' /> heart</p>
   <p><Icon name='github' type='inline' size='m' /> github</p>
+  <p><Icon name='heart' type='inline' size='m' /> heart</p>
   <p><Icon name='info' type='inline' size='m' /> info</p>
+  <p><Icon name='menu' type='inline' size='m' /> menu</p>
   <p><Icon name='nav' type='inline' size='m' /> nav</p>
   <p><Icon name='twitter' type='inline' size='m' /> twitter</p>
 
