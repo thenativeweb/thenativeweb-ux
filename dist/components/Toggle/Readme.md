@@ -10,7 +10,7 @@ initialState = { selectedValue: 'Option 1' };
 </div>
 ```
 
-You can also provide a custom render function to render custom desgined toggle buttons. The render function will be called for each options and will receive the `value`, `isSelected` and a function called `changeValue` to trigger a value change.
+You can provide a custom render function to render custom toggle buttons. The render function will be called for each option and will receive the `value`, `isSelected` and a function called `changeValue` to trigger a value change.
 
 ```javascript
 initialState = { selectedValue: 'blue' };
