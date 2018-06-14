@@ -20,13 +20,13 @@
   },
   "dependencies": {
     "animejs": "2.2.0",
-    "classnames": "2.2.5",
+    "classnames": "2.2.6",
     "exenv": "1.2.2",
-    "jss": "9.8.1",
+    "jss": "9.8.3",
     "prop-types": "15.6.1",
-    "react-jss": "8.4.0",
+    "react-jss": "8.5.1",
     "react-transition-group": "2.3.1",
-    "uuidv4": "1.0.0"
+    "uuidv4": "1.0.1"
   },
   "devDependencies": {
     "assertthat": "1.0.0",
@@ -37,9 +37,9 @@
     "babel-preset-react": "6.24.1",
     "file-loader": "1.1.11",
     "puppeteer": "1.4.0",
-    "react": "16.3.2",
-    "react-dom": "16.3.2",
-    "react-styleguidist": "7.0.14",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
+    "react-styleguidist": "7.0.17",
     "roboter": "1.0.4",
     "webpack": "3.8.1"
   },
