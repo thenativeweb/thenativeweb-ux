@@ -18,6 +18,11 @@ const styles = theme => ({
     height: '120px'
   },
 
+  SizeXL: {
+    width: '220px',
+    height: '220px'
+  },
+
   Box: {
     fill: theme.color.brand.dark
   },
@@ -58,7 +63,8 @@ const Logo = ({ isAnimated, classes, isVisible, size }) => {
 
   const componentClasses = classNames(classes.Logo, {
     [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l'
+    [classes.SizeL]: size === 'l',
+    [classes.SizeXL]: size === 'xl'
   });
 
   return (
@@ -136,7 +142,7 @@ const Logo = ({ isAnimated, classes, isVisible, size }) => {
 Logo.propTypes = {
   isAnimated: PropTypes.bool,
   isVisible: PropTypes.bool,
-  size: PropTypes.oneOf([ 'm', 'l' ])
+  size: PropTypes.oneOf([ 'm', 'l', 'xl' ])
 };
 
 Logo.defaultProps = {

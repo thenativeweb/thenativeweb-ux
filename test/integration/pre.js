@@ -31,7 +31,7 @@ module.exports = async function () {
       console.log(data.toString('utf8'));
       /* eslint-enable no-console */
 
-      if (serverOutput.includes('webpack: Compiled successfully.')) {
+      if (serverOutput.includes('Compiled successfully.')) {
         devServerProcess.stdout.removeListener('data', watchServerStart);
 
         return resolve();

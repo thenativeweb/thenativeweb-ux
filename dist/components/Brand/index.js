@@ -20,10 +20,6 @@ var _PoweredBy = require('./PoweredBy');
 
 var _PoweredBy2 = _interopRequireDefault(_PoweredBy);
 
-var _Product = require('./Product');
-
-var _Product2 = _interopRequireDefault(_Product);
-
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -65,7 +61,6 @@ var Brand = function Brand(_ref) {
 
 Brand.MadeBy = _MadeBy2.default;
 Brand.PoweredBy = _PoweredBy2.default;
-Brand.Product = _Product2.default;
 
 Brand.propTypes = {
   color: _propTypes2.default.oneOf(['default', 'monochrome']),

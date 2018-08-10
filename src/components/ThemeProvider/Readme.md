@@ -6,7 +6,7 @@ const wolkenkit = require('../../themes/wolkenkit').default;
   <ThemeProvider theme={ wolkenkit }>
     <Application>
       <Sidebar>
-        <Sidebar.Brand><Brand.Product name='my-app' /></Sidebar.Brand>
+        <Sidebar.Brand><Product name='my-app' /></Sidebar.Brand>
         <Sidebar.Item iconName='account'>
           <Sidebar.Item>You are logged in as Sophie</Sidebar.Item>
           <Sidebar.Item onClick={ () => console.log('Clicked') }>Logout</Sidebar.Item>

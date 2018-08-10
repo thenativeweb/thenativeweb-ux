@@ -54,24 +54,6 @@ The `Brand` is available as an interactive element. To make it interactive, set 
 <Brand size='l' type='minimal' color='monochrome' isInteractive={ true } />
 ```
 
-### Using product brands
-
-The `Brand.Product` component displays a product's brand. To use it, provide the product's name using the `name` property. Additionally, you may set a `size` as explained previously.
-
-```javascript
-<Brand.Product name='console' />
-<hr />
-<Brand.Product name='console' size='l' />
-<hr />
-<ThemeProvider theme='wolkenkit'>
-  <Brand.Product name='console' />
-</ThemeProvider>
-<hr />
-<ThemeProvider theme='wolkenkit'>
-  <Brand.Product name='wolkenkit' size='l'  />
-</ThemeProvider>
-```
-
 ### PoweredBy
 
 The `Brand.PoweredBy` component displays a teaser. Optionally, you may provide a product name using the `product` property.

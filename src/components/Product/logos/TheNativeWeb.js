@@ -16,6 +16,11 @@ const styles = {
   SizeL: {
     width: '120px',
     height: '120px'
+  },
+
+  SizeXL: {
+    width: '200px',
+    height: '200px'
   }
 };
 
@@ -26,7 +31,8 @@ const Logo = ({ classes, isVisible, size }) => {
 
   const componentClasses = classNames(classes.Logo, {
     [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l'
+    [classes.SizeL]: size === 'l',
+    [classes.SizeXL]: size === 'xl'
   });
 
   return (
@@ -52,7 +58,7 @@ const Logo = ({ classes, isVisible, size }) => {
 
 Logo.propTypes = {
   isVisible: PropTypes.bool,
-  size: PropTypes.oneOf([ 'm', 'l' ])
+  size: PropTypes.oneOf([ 'm', 'l', 'xl' ])
 };
 
 Logo.defaultProps = {

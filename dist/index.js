@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.View = exports.Transition = exports.ThemeProvider = exports.Toggle = exports.TextBox = exports.TextArea = exports.Text = exports.StyleCollector = exports.Sidebar = exports.services = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.CheckBox = exports.Button = exports.Brand = exports.Application = undefined;
+exports.View = exports.Transition = exports.ThemeProvider = exports.Toggle = exports.TextBox = exports.TextArea = exports.Text = exports.StyleCollector = exports.Sidebar = exports.services = exports.Product = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.CheckBox = exports.Button = exports.Brand = exports.Application = undefined;
 
 var _Application = require('./components/Application');
 
@@ -52,6 +52,10 @@ var _Message2 = _interopRequireDefault(_Message);
 var _Modal = require('./components/Modal');
 
 var _Modal2 = _interopRequireDefault(_Modal);
+
+var _Product = require('./components/Product');
+
+var _Product2 = _interopRequireDefault(_Product);
 
 var _services = require('./services');
 
@@ -107,6 +111,7 @@ exports.Icon = _Icon2.default;
 exports.Link = _Link2.default;
 exports.Message = _Message2.default;
 exports.Modal = _Modal2.default;
+exports.Product = _Product2.default;
 exports.services = _services2.default;
 exports.Sidebar = _Sidebar2.default;
 exports.StyleCollector = _StyleCollector2.default;

@@ -16,7 +16,7 @@ var _reactJss = require('react-jss');
 
 var _reactJss2 = _interopRequireDefault(_reactJss);
 
-var _Product = require('./Product');
+var _Product = require('../Product');
 
 var _Product2 = _interopRequireDefault(_Product);
 

@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   title: 'the native web UX',
   skipComponentsWithoutExample: true,
-  showCode: true,
+  exampleMode: 'expand',
   theme: {
     color: {
       link: '#f09',

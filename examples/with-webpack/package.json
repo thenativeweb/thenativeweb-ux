@@ -2,8 +2,12 @@
   "name": "thenativeweb-ux-with-webpack",
   "version": "0.0.0",
   "scripts": {
-    "serve": "npx webpack-dev-server"
+    "serve": "npx webpack-serve"
   },
-  "dependencies": {},
+  "dependencies": {
+    "html-webpack-plugin": "3.2.0",
+    "webpack": "4.16.5",
+    "webpack-serve": "2.0.2"
+  },
   "devDependencies": {}
 }

@@ -22,30 +22,29 @@
     "animejs": "2.2.0",
     "classnames": "2.2.6",
     "exenv": "1.2.2",
-    "jss": "9.8.3",
-    "prop-types": "15.6.1",
-    "react-jss": "8.5.1",
-    "react-transition-group": "2.3.1",
+    "jss": "9.8.7",
+    "prop-types": "15.6.2",
+    "react-jss": "8.6.1",
+    "react-transition-group": "2.4.0",
     "uuidv4": "1.0.1"
   },
   "devDependencies": {
     "assertthat": "1.0.0",
     "babel-core": "6.26.3",
-    "babel-loader": "7.1.4",
+    "babel-loader": "7.1.5",
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
-    "file-loader": "1.1.11",
-    "puppeteer": "1.4.0",
-    "react": "16.4.1",
-    "react-dom": "16.4.1",
-    "react-styleguidist": "7.0.17",
-    "roboter": "1.0.4",
-    "webpack": "3.8.1"
+    "puppeteer": "1.7.0",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-styleguidist": "7.2.1",
+    "roboter": "1.0.6",
+    "webpack": "4.16.5"
   },
   "peerDependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "repository": {
     "type": "git",

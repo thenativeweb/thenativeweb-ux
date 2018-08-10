@@ -1,11 +1,9 @@
 const path = require('path');
 
-const configuration = {
-  entry: [
-    './src/index.html',
-    './src/index.js'
-  ],
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const configuration = {
+  mode: 'development',
   module: {
     rules: [
       {
@@ -16,15 +14,15 @@ const configuration = {
         use: [
           { loader: 'babel-loader' }
         ]
-      },
-      {
-        test: /\.html$/,
-        use: [
-          { loader: 'file-loader', options: { name: '[name].[ext]' }}
-        ]
       }
     ]
-  }
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'index.html')
+    })
+  ]
 };
 
 module.exports = configuration;

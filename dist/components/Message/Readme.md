@@ -5,11 +5,7 @@
   </Message>
 
   <Message type='info'>
-    This is just an info…
-  </Message>
-
-  <Message type='info' icon='info'>
-    This is an info with icon…
+    This is an info…
   </Message>
 </div>
 ```

@@ -11,8 +11,7 @@ const styles = theme => ({
     overflow: 'hidden',
     'align-items': 'center',
     'justify-content': 'center',
-    'font-family': theme.font.family.headline,
-    background: theme.color.brand.dark
+    'font-family': theme.font.family.headline
   },
 
   IsCollapsed: {
@@ -37,15 +36,21 @@ const styles = theme => ({
     }
   },
 
-  SizeL: {
+  SizeM: {
     '& $Name, & $CompositeName': {
-      'font-size': theme.font.size.xlarge
+      'font-size': theme.font.size.small
     }
   },
 
-  SizeM: {
+  SizeL: {
     '& $Name, & $CompositeName': {
-      'font-size': theme.font.size.medium
+      'font-size': theme.font.size.large
+    }
+  },
+
+  SizeXL: {
+    '& $Name, & $CompositeName': {
+      'font-size': theme.font.size.xlarge
     }
   },
 
@@ -60,10 +65,11 @@ const styles = theme => ({
   }
 });
 
-const Product = ({ classes, name, size, theme }) => {
+const Product = ({ classes, isAnimated, name, size, theme, type }) => {
   const brandClassNames = classNames(classes.Product, {
     [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l'
+    [classes.SizeL]: size === 'l',
+    [classes.SizeXL]: size === 'xl'
   });
 
   let nameComponent = <div className={ classes.Name }>{ name }</div>;
@@ -78,20 +84,22 @@ const Product = ({ classes, name, size, theme }) => {
 
   return (
     <div className={ brandClassNames }>
-      <Logo size={ size } />
-      { nameComponent }
+      { type === 'typo-only' ? null : <Logo isAnimated={ isAnimated } size={ size } /> }
+      { type === 'logo-only' ? null : nameComponent }
     </div>
   );
 };
 
 Product.propTypes = {
   name: PropTypes.string,
-  size: PropTypes.oneOf([ 'm', 'l' ])
+  size: PropTypes.oneOf([ 'm', 'l', 'xl' ]),
+  type: PropTypes.oneOf([ 'default', 'typo-only', 'logo-only' ])
 };
 
 Product.defaultProps = {
   size: 'm',
-  name: undefined
+  name: undefined,
+  type: 'default'
 };
 
 export default injectSheet(styles)(Product);

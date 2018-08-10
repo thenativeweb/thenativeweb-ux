@@ -10,6 +10,7 @@ import Icon from './components/Icon';
 import Link from './components/Link';
 import Message from './components/Message';
 import Modal from './components/Modal';
+import Product from './components/Product';
 import services from './services';
 import Sidebar from './components/Sidebar';
 import StyleCollector from './components/StyleCollector';
@@ -34,6 +35,7 @@ export {
   Link,
   Message,
   Modal,
+  Product,
   services,
   Sidebar,
   StyleCollector,

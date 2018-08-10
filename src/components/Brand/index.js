@@ -2,7 +2,6 @@ import injectSheet from 'react-jss';
 import logos from './logos';
 import MadeBy from './MadeBy';
 import PoweredBy from './PoweredBy';
-import Product from './Product';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -29,7 +28,6 @@ const Brand = ({ color, classes, size, type, isInteractive }) => {
 
 Brand.MadeBy = MadeBy;
 Brand.PoweredBy = PoweredBy;
-Brand.Product = Product;
 
 Brand.propTypes = {
   color: PropTypes.oneOf([ 'default', 'monochrome' ]),

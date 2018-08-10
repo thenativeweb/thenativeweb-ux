@@ -1,4 +1,4 @@
-In order to use icons you need to include `Symbols` at the start of your page. They include all the icons paths that the `Icon` component will use.
+In order to use the `Icon` component make sure to include the `Application.Services` component at the start of your page. This will include all the icons paths that the `Icon` component will use.
 
 ```javascript
 <Icon name='heart' />
