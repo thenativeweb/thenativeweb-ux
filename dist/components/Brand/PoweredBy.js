@@ -40,7 +40,6 @@ var styles = function styles(theme) {
       'justify-content': 'center',
       'font-family': theme.font.family.default,
       'font-size': theme.font.size.small,
-      background: theme.color.brand.dark,
       'text-align': 'center',
       'padding-top': theme.grid.stepSize / 2,
       'padding-bottom': theme.grid.stepSize / 2
