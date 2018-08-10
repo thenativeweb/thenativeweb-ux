@@ -14,8 +14,7 @@ const styles = theme => ({
     'text-align': 'center',
     'padding-top': theme.grid.stepSize / 2,
     'padding-bottom': theme.grid.stepSize / 2,
-    color: theme.color.brand.lightGrey,
-    background: theme.color.brand.dark
+    color: theme.color.brand.lightGrey
   },
 
   SizeL: {},

@@ -59,10 +59,14 @@ The `Brand` is available as an interactive element. To make it interactive, set 
 The `Brand.PoweredBy` component displays a teaser. Optionally, you may provide a product name using the `product` property.
 
 ```javascript
-<Brand.PoweredBy />
+<View background='dark'>
+  <Brand.PoweredBy />
+</View>
 <hr />
 <ThemeProvider theme='wolkenkit'>
-  <Brand.PoweredBy product='wolkenkit' />
+  <View background='dark'>
+    <Brand.PoweredBy product='wolkenkit' />
+  </View>
 </ThemeProvider>
 ```
 
@@ -71,11 +75,18 @@ The `Brand.PoweredBy` component displays a teaser. Optionally, you may provide a
 The `Brand.MadeBy` component displays whom the application was developed by. Optionally, you may provide a partner using the `partner` property.
 
 ```javascript
-<Brand.MadeBy />
-<hr />
-<Brand.MadeBy partner={{ name: 'Intuity', href: 'https://www.intuity.de'}} />
-<hr />
-<ThemeProvider theme='wolkenkit'>
+<View background='dark'>
+  <Brand.MadeBy />
+  <hr />
   <Brand.MadeBy partner={{ name: 'Intuity', href: 'https://www.intuity.de'}} />
+</View>
+
+<hr />
+
+<ThemeProvider theme='wolkenkit'>
+  <View background='dark'>
+    <Brand.MadeBy partner={{ name: 'Intuity', href: 'https://www.intuity.de'}} />
+  </View>
 </ThemeProvider>
+
 ```
