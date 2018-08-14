@@ -21,7 +21,7 @@ const theme = {
       border: brandColors.lightGrey
     },
 
-    copyText: brandColors.dark,
+    copytext: brandColors.dark,
     backdrop: 'rgba(0, 0, 0, 0.5)',
 
     state: {
