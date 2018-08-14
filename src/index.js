@@ -18,6 +18,7 @@ import Text from './components/Text';
 import TextArea from './components/TextArea';
 import TextBox from './components/TextBox';
 import ThemeProvider from './components/ThemeProvider';
+import themes from './themes';
 import Toggle from './components/Toggle';
 import Transition from './components/Transition';
 import View from './components/View';
@@ -44,6 +45,7 @@ export {
   TextBox,
   Toggle,
   ThemeProvider,
+  themes,
   Transition,
   View
 };
