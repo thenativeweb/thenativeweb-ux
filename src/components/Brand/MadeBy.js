@@ -10,19 +10,37 @@ const styles = theme => ({
   MadeBy: {
     overflow: 'hidden',
     'font-family': theme.font.family.default,
-    'font-size': theme.font.size.small,
     'text-align': 'center',
     'padding-top': theme.grid.stepSize / 2,
-    'padding-bottom': theme.grid.stepSize / 2,
+    'padding-bottom': theme.grid.stepSize / 2
+  },
+
+  ColorDark: {
     color: theme.color.brand.lightGrey
   },
 
-  SizeL: {},
-  SizeM: {}
+  ColorLight: {
+    color: theme.color.brand.dark
+  },
+
+  SizeS: {
+    'font-size': theme.font.size.small
+  },
+
+  SizeM: {
+    'font-size': theme.font.size.default
+  },
+
+  SizeL: {
+    'font-size': theme.font.size.large
+  }
 });
 
-const MadeBy = ({ classes, partner = [], size }) => {
+const MadeBy = ({ classes, color, partner = [], size }) => {
   const componentClasses = classNames(classes.MadeBy, {
+    [classes.ColorDark]: color === 'dark',
+    [classes.ColorLight]: color === 'light',
+    [classes.SizeS]: size === 's',
     [classes.SizeM]: size === 'm',
     [classes.SizeL]: size === 'l'
   });
@@ -49,15 +67,17 @@ const MadeBy = ({ classes, partner = [], size }) => {
 };
 
 MadeBy.propTypes = {
+  color: PropTypes.oneOf([ 'dark', 'light' ]),
   partner: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object
   ]),
-  size: PropTypes.oneOf([ 'm', 'l' ])
+  size: PropTypes.oneOf([ 's', 'm', 'l' ])
 };
 
 MadeBy.defaultProps = {
-  size: 'm',
+  color: 'dark',
+  size: 's',
   name: undefined
 };
 

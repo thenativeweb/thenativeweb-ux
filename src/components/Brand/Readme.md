@@ -76,8 +76,16 @@ The `Brand.MadeBy` component displays whom the application was developed by. Opt
 
 ```javascript
 <View background='dark'>
-  <Brand.MadeBy />
-  <hr />
+  <Brand.MadeBy size='s' />
+  <Brand.MadeBy size='m' />
+  <Brand.MadeBy size='l'/>
+</View>
+
+<Brand.MadeBy color='light' />
+<Brand.MadeBy color='light' size='m' />
+<Brand.MadeBy color='light' size='l' />
+
+<View background='dark'>
   <Brand.MadeBy partner={{ name: 'Intuity', href: 'https://www.intuity.de'}} />
 </View>
 
