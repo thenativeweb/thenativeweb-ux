@@ -53,6 +53,18 @@ const styles = theme => ({
     opacity: 0.95,
     transform: 'translate3d(0, 0, 0)',
     'will-change': 'transform'
+  },
+
+  [theme.device.small]: {
+    SizeL: {
+      width: '56px',
+      height: '56px'
+    },
+
+    SizeXL: {
+      width: '100px',
+      height: '100px'
+    }
   }
 });
 

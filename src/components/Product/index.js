@@ -11,7 +11,8 @@ const styles = theme => ({
     overflow: 'hidden',
     'align-items': 'center',
     'justify-content': 'center',
-    'font-family': theme.font.family.headline
+    'font-family': theme.font.family.headline,
+    'font-weight': 500
   },
 
   IsCollapsed: {
@@ -54,11 +55,37 @@ const styles = theme => ({
     }
   },
 
+  TypeLogoOnly: {},
+
+  TypeTypoOnly: {
+    '& $Name, & $CompositeName': {
+      'margin-top': 0
+    }
+  },
+
   [theme.device.medium]: {
     Name: {},
+    CompositeName: {},
 
     SizeL: {
-      '& $Name': {
+      '& $Name, & $CompositeName': {
+        'font-size': theme.font.size.large
+      }
+    }
+  },
+
+  [theme.device.small]: {
+    Name: {},
+    CompositeName: {},
+
+    SizeL: {
+      '& $Name, & $CompositeName': {
+        'font-size': theme.font.size.default
+      }
+    },
+
+    SizeXL: {
+      '& $Name, & $CompositeName': {
         'font-size': theme.font.size.large
       }
     }
@@ -69,7 +96,9 @@ const Product = ({ classes, isAnimated, name, size, theme, type }) => {
   const brandClassNames = classNames(classes.Product, {
     [classes.SizeM]: size === 'm',
     [classes.SizeL]: size === 'l',
-    [classes.SizeXL]: size === 'xl'
+    [classes.SizeXL]: size === 'xl',
+    [classes.TypeLogoOnly]: type === 'logo-only',
+    [classes.TypeTypoOnly]: type === 'typo-only'
   });
 
   let nameComponent = <div className={ classes.Name }>{ name }</div>;
