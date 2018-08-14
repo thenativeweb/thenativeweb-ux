@@ -49,7 +49,6 @@ In order to use the `Icon` component make sure to include the `Application.Servi
 ```javascript
 <div>
   <p><Icon name='arrow-wide-west' type='inline' size='m' /> arrow-wide-west</p>
-  <p><Icon name='breadcrumb-separator' type='inline' size='m' /> breadcrumb-separator</p>
   <p><Icon name='checkmark' type='inline' size='m' /> checkmark</p>
   <p><Icon name='chevron' type='inline' size='m' /> chevron</p>
   <p><Icon name='error' type='inline' size='m' /> error</p>
