@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Dialogs from '../Dialogs';
 import Icons from '../Icons';
 import injectSheet from 'react-jss';
@@ -19,14 +20,20 @@ const styles = theme => ({
   }
 });
 
-const Application = ({ children, classes, style, orientation }) => (
-  <View className={ classes.Application } orientation={ orientation } style={ style }>
-    { children }
-  </View>
-);
+const Application = ({ children, classes, className, style, orientation }) => {
+  const componentClasses = classNames(classes.Application, className);
+
+  return (
+    <View className={ componentClasses } orientation={ orientation } style={ style }>
+      { children }
+    </View>
+  );
+};
 
 Application.propTypes = {
-  orientation: PropTypes.oneOf([ 'horizontal', 'vertical', 'centered' ])
+  className: PropTypes.string,
+  orientation: PropTypes.oneOf([ 'horizontal', 'vertical', 'centered' ]),
+  style: PropTypes.object
 };
 
 Application.defaultProps = {
