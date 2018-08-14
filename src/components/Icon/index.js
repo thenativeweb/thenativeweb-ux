@@ -7,6 +7,7 @@ import styles from './styles';
 const Icon = ({ classes, className, color, name, size, style, type }) => {
   const iconClassNames = classNames(classes.Icon, {
     [classes.ColorDefault]: color === 'default',
+    [classes.ColorCurrent]: color === 'current',
     [classes.ColorHighlight]: color === 'highlight',
     [classes.ColorWhite]: color === 'white',
     [classes.TypeInline]: type === 'inline',
@@ -28,7 +29,7 @@ const Icon = ({ classes, className, color, name, size, style, type }) => {
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
-  color: PropTypes.oneOf([ 'default', 'highlight', 'white' ]),
+  color: PropTypes.oneOf([ 'default', 'current', 'highlight', 'white' ]),
   size: PropTypes.oneOf([ 'xs', 's', 'm', 'l', 'xl', 'xxl' ]),
   style: PropTypes.object,
   type: PropTypes.oneOf([ 'default', 'inline', 'flex-auto' ])
