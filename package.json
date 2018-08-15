@@ -38,7 +38,7 @@
     "puppeteer": "1.7.0",
     "react": "16.4.2",
     "react-dom": "16.4.2",
-    "react-styleguidist": "7.2.1",
+    "react-styleguidist": "7.2.3",
     "roboter": "1.0.6",
     "webpack": "4.16.5"
   },
