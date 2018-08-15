@@ -31,14 +31,17 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
-  return (0, _defineProperty3.default)({
+  var _ref;
+
+  return _ref = {
     Product: {
       display: 'flex',
       'flex-direction': 'column',
       overflow: 'hidden',
       'align-items': 'center',
       'justify-content': 'center',
-      'font-family': theme.font.family.headline
+      'font-family': theme.font.family.headline,
+      'font-weight': 500
     },
 
     IsCollapsed: {
@@ -79,17 +82,41 @@ var styles = function styles(theme) {
       '& $Name, & $CompositeName': {
         'font-size': theme.font.size.xlarge
       }
+    },
+
+    TypeLogoOnly: {},
+
+    TypeTypoOnly: {
+      '& $Name, & $CompositeName': {
+        'margin-top': 0
+      }
     }
 
-  }, theme.device.medium, {
+  }, (0, _defineProperty3.default)(_ref, theme.device.medium, {
     Name: {},
+    CompositeName: {},
 
     SizeL: {
-      '& $Name': {
+      '& $Name, & $CompositeName': {
         'font-size': theme.font.size.large
       }
     }
-  });
+  }), (0, _defineProperty3.default)(_ref, theme.device.small, {
+    Name: {},
+    CompositeName: {},
+
+    SizeL: {
+      '& $Name, & $CompositeName': {
+        'font-size': theme.font.size.default
+      }
+    },
+
+    SizeXL: {
+      '& $Name, & $CompositeName': {
+        'font-size': theme.font.size.large
+      }
+    }
+  }), _ref;
 };
 
 var Product = function Product(_ref2) {
@@ -102,7 +129,7 @@ var Product = function Product(_ref2) {
       theme = _ref2.theme,
       type = _ref2.type;
 
-  var brandClassNames = (0, _classnames2.default)(classes.Product, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty3.default)(_classNames, classes.SizeXL, size === 'xl'), _classNames));
+  var brandClassNames = (0, _classnames2.default)(classes.Product, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty3.default)(_classNames, classes.SizeXL, size === 'xl'), (0, _defineProperty3.default)(_classNames, classes.TypeLogoOnly, type === 'logo-only'), (0, _defineProperty3.default)(_classNames, classes.TypeTypoOnly, type === 'typo-only'), _classNames));
 
   var nameComponent = _react2.default.createElement(
     'div',

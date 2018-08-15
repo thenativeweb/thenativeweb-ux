@@ -43,15 +43,30 @@ var styles = function styles(theme) {
     MadeBy: {
       overflow: 'hidden',
       'font-family': theme.font.family.default,
-      'font-size': theme.font.size.small,
       'text-align': 'center',
       'padding-top': theme.grid.stepSize / 2,
-      'padding-bottom': theme.grid.stepSize / 2,
+      'padding-bottom': theme.grid.stepSize / 2
+    },
+
+    ColorDark: {
       color: theme.color.brand.lightGrey
     },
 
-    SizeL: {},
-    SizeM: {}
+    ColorLight: {
+      color: theme.color.brand.dark
+    },
+
+    SizeS: {
+      'font-size': theme.font.size.small
+    },
+
+    SizeM: {
+      'font-size': theme.font.size.default
+    },
+
+    SizeL: {
+      'font-size': theme.font.size.large
+    }
   };
 };
 
@@ -59,11 +74,12 @@ var MadeBy = function MadeBy(_ref) {
   var _classNames;
 
   var classes = _ref.classes,
+      color = _ref.color,
       _ref$partner = _ref.partner,
       partner = _ref$partner === undefined ? [] : _ref$partner,
       size = _ref.size;
 
-  var componentClasses = (0, _classnames2.default)(classes.MadeBy, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), _classNames));
+  var componentClasses = (0, _classnames2.default)(classes.MadeBy, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.ColorDark, color === 'dark'), (0, _defineProperty3.default)(_classNames, classes.ColorLight, color === 'light'), (0, _defineProperty3.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty3.default)(_classNames, classes.SizeL, size === 'l'), _classNames));
 
   partner = (0, _flatten2.default)([partner]);
 
@@ -95,12 +111,14 @@ var MadeBy = function MadeBy(_ref) {
 };
 
 MadeBy.propTypes = {
+  color: _propTypes2.default.oneOf(['dark', 'light']),
   partner: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
-  size: _propTypes2.default.oneOf(['m', 'l'])
+  size: _propTypes2.default.oneOf(['s', 'm', 'l'])
 };
 
 MadeBy.defaultProps = {
-  size: 'm',
+  color: 'dark',
+  size: 's',
   name: undefined
 };
 

@@ -27,7 +27,7 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles(theme) {
-  return {
+  return (0, _defineProperty3.default)({
     Logo: {
       /* Left blank intentionally */
     },
@@ -78,16 +78,27 @@ var styles = function styles(theme) {
       transform: 'translate3d(0, 0, 0)',
       'will-change': 'transform'
     }
-  };
+
+  }, theme.device.small, {
+    SizeL: {
+      width: '56px',
+      height: '56px'
+    },
+
+    SizeXL: {
+      width: '100px',
+      height: '100px'
+    }
+  });
 };
 
-var Logo = function Logo(_ref) {
+var Logo = function Logo(_ref2) {
   var _classNames;
 
-  var isAnimated = _ref.isAnimated,
-      classes = _ref.classes,
-      isVisible = _ref.isVisible,
-      size = _ref.size;
+  var isAnimated = _ref2.isAnimated,
+      classes = _ref2.classes,
+      isVisible = _ref2.isVisible,
+      size = _ref2.size;
 
   if (!isVisible) {
     return null;

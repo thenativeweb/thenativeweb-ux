@@ -15,6 +15,10 @@ var styles = function styles(theme) {
       fill: theme.color.brand.dark
     },
 
+    ColorCurrent: {
+      fill: 'currentColor'
+    },
+
     ColorHighlight: {
       fill: theme.color.brand.highlight
     },

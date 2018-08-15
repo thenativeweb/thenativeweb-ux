@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.View = exports.Transition = exports.ThemeProvider = exports.Toggle = exports.TextBox = exports.TextArea = exports.Text = exports.StyleCollector = exports.Sidebar = exports.services = exports.Product = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.CheckBox = exports.Button = exports.Brand = exports.Application = undefined;
+exports.View = exports.Transition = exports.themes = exports.ThemeProvider = exports.Toggle = exports.TextBox = exports.TextArea = exports.Text = exports.StyleCollector = exports.Sidebar = exports.services = exports.Product = exports.Modal = exports.Message = exports.Link = exports.Icon = exports.Headline = exports.Form = exports.Dropdown = exports.ControlGroup = exports.CheckBox = exports.Button = exports.Brand = exports.Application = undefined;
 
 var _Application = require('./components/Application');
 
@@ -85,6 +85,10 @@ var _ThemeProvider = require('./components/ThemeProvider');
 
 var _ThemeProvider2 = _interopRequireDefault(_ThemeProvider);
 
+var _themes = require('./themes');
+
+var _themes2 = _interopRequireDefault(_themes);
+
 var _Toggle = require('./components/Toggle');
 
 var _Toggle2 = _interopRequireDefault(_Toggle);
@@ -120,5 +124,6 @@ exports.TextArea = _TextArea2.default;
 exports.TextBox = _TextBox2.default;
 exports.Toggle = _Toggle2.default;
 exports.ThemeProvider = _ThemeProvider2.default;
+exports.themes = _themes2.default;
 exports.Transition = _Transition2.default;
 exports.View = _View2.default;

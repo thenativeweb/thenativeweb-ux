@@ -51,6 +51,7 @@ In order to use the `Icon` component make sure to include the `Application.Servi
   <p><Icon name='arrow-wide-west' type='inline' size='m' /> arrow-wide-west</p>
   <p><Icon name='checkmark' type='inline' size='m' /> checkmark</p>
   <p><Icon name='chevron' type='inline' size='m' /> chevron</p>
+  <p><Icon name='close' type='inline' size='m' /> close</p>
   <p><Icon name='error' type='inline' size='m' /> error</p>
   <p><Icon name='expand' type='inline' size='m' /> expand</p>
   <p><Icon name='github' type='inline' size='m' /> github</p>
@@ -58,6 +59,8 @@ In order to use the `Icon` component make sure to include the `Application.Servi
   <p><Icon name='info' type='inline' size='m' /> info</p>
   <p><Icon name='menu' type='inline' size='m' /> menu</p>
   <p><Icon name='nav' type='inline' size='m' /> nav</p>
+  <p><Icon name='stackoverflow' type='inline' size='m' /> stackoverflow</p>
+  <p><Icon name='slack' type='inline' size='m' /> slack</p>
   <p><Icon name='twitter' type='inline' size='m' /> twitter</p>
 
   <p><Icon name='cloud-medium' type='inline' size='l' /> cloud-medium</p>

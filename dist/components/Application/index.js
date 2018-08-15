@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _Dialogs = require('../Dialogs');
 
 var _Dialogs2 = _interopRequireDefault(_Dialogs);
@@ -52,17 +56,23 @@ var styles = function styles(theme) {
 var Application = function Application(_ref) {
   var children = _ref.children,
       classes = _ref.classes,
+      className = _ref.className,
       style = _ref.style,
       orientation = _ref.orientation;
+
+  var componentClasses = (0, _classnames2.default)(classes.Application, className);
+
   return _react2.default.createElement(
     _View2.default,
-    { className: classes.Application, orientation: orientation, style: style },
+    { className: componentClasses, orientation: orientation, style: style },
     children
   );
 };
 
 Application.propTypes = {
-  orientation: _propTypes2.default.oneOf(['horizontal', 'vertical', 'centered'])
+  className: _propTypes2.default.string,
+  orientation: _propTypes2.default.oneOf(['horizontal', 'vertical', 'centered']),
+  style: _propTypes2.default.object
 };
 
 Application.defaultProps = {
