@@ -14,7 +14,7 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "postinstall": "cd examples/with-webpack && npm install",
+    "postinstall": "test -d examples && cd examples/with-webpack && npm install",
     "build": "docker build -t thenativeweb/ux .",
     "styleguide": "styleguidist server",
     "dist": "babel src --out-dir dist --copy-files"
