@@ -1,7 +1,25 @@
 const { spawn } = require('child_process'),
       path = require('path');
 
+const shell = require('shelljs');
+
 module.exports = async function () {
+  const projectRoot = path.join(__dirname, '..', '..');
+
+  // Remove temporary dist and build folders from previous tests
+  shell.rm('-rf', [
+    path.join(projectRoot, 'dist'),
+    path.join(projectRoot, 'build')
+  ]);
+
+  // Create a distribution via roboter, so
+  // that the test will always bundle the latest version.
+  const childProcess = shell.exec(`npx roboter dist`, { cwd: projectRoot });
+
+  if (childProcess.code !== 0) {
+    throw new Error('Failed to create dist.');
+  }
+
   await new Promise(resolve => {
     let serverOutput;
     let devServerProcess,

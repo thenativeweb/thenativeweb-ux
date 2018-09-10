@@ -14,6 +14,7 @@
   ],
   "main": "dist/index.js",
   "scripts": {
+    "postinstall": "cd examples/with-webpack && npm install",
     "build": "docker build -t thenativeweb/ux .",
     "styleguide": "styleguidist server",
     "dist": "babel src --out-dir dist --copy-files"
@@ -40,6 +41,7 @@
     "react-dom": "16.4.2",
     "react-styleguidist": "7.2.3",
     "roboter": "1.0.6",
+    "shelljs": "0.8.2",
     "webpack": "4.16.5"
   },
   "peerDependencies": {

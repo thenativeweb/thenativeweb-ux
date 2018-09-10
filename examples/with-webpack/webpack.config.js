@@ -4,6 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const configuration = {
   mode: 'development',
+  resolve: {
+    alias: {
+      'thenativeweb-ux': path.resolve(__dirname, '..', '..', 'dist')
+    }
+  },
   module: {
     rules: [
       {

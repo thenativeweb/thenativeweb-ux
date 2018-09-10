@@ -22,7 +22,7 @@ import {
   Toggle,
   Transition,
   View
-} from '../../../dist';
+} from 'thenativeweb-ux';
 
 const handleShowConfirmClicked = function () {
   services.dialogs.confirm({
