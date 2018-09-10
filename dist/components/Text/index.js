@@ -62,6 +62,7 @@ var Text = function Text(_ref) {
       classes = _ref.classes,
       className = _ref.className,
       children = _ref.children,
+      id = _ref.id,
       size = _ref.size,
       style = _ref.style;
 
@@ -69,7 +70,7 @@ var Text = function Text(_ref) {
 
   return _react2.default.createElement(
     'div',
-    { className: componentClasses, style: style },
+    { id: id, className: componentClasses, style: style },
     children
   );
 };

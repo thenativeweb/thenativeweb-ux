@@ -30,7 +30,7 @@ const styles = theme => ({
   }
 });
 
-const Text = function ({ breakLines, classes, className, children, size, style }) {
+const Text = function ({ breakLines, classes, className, children, id, size, style }) {
   const componentClasses = classNames(classes.Text, {
     [classes.BreakLines]: breakLines,
     [classes.SizeS]: size === 's',
@@ -38,7 +38,7 @@ const Text = function ({ breakLines, classes, className, children, size, style }
   }, className);
 
   return (
-    <div className={ componentClasses } style={ style }>
+    <div id={ id } className={ componentClasses } style={ style }>
       { children }
     </div>
   );

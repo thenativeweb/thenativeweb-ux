@@ -99,8 +99,10 @@ var Dropdown = function (_React$PureComponent) {
       var _props = this.props,
           classes = _props.classes,
           emptyLabel = _props.emptyLabel,
+          id = _props.id,
           options = _props.options,
           size = _props.size,
+          style = _props.style,
           value = _props.value;
 
 
@@ -108,7 +110,7 @@ var Dropdown = function (_React$PureComponent) {
 
       return _react2.default.createElement(
         'div',
-        { className: dropdownClassNames },
+        { id: id, className: dropdownClassNames, style: style },
         _react2.default.createElement(
           'select',
           { key: 'commands', value: value, onChange: this.handleChange, onFocus: this.handleFocus, onBlur: this.handleBlur },

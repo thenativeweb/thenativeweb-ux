@@ -4,7 +4,19 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles';
 
-const View = ({ adjust, alignItems, background, children, classes, className, justifyContent, scrollable, style, orientation }) => {
+const View = ({
+  adjust,
+  alignItems,
+  background,
+  children,
+  classes,
+  className,
+  id,
+  justifyContent,
+  scrollable,
+  style,
+  orientation
+}) => {
   const viewClassNames = classNames(classes.View, {
     [classes.OrientationCentered]: orientation === 'centered',
     [classes.OrientationHorizontal]: orientation === 'horizontal',
@@ -19,7 +31,7 @@ const View = ({ adjust, alignItems, background, children, classes, className, ju
   }, className);
 
   return (
-    <div className={ viewClassNames } style={ style }>
+    <div id={ id } className={ viewClassNames } style={ style }>
       { children }
     </div>
   );

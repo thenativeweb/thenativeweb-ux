@@ -36,6 +36,7 @@ var CheckBox = function CheckBox(_ref) {
       className = _ref.className,
       id = _ref.id,
       name = _ref.name,
+      style = _ref.style,
       onChange = _ref.onChange;
 
   var componentClasses = (0, _classnames2.default)(classes.CheckBox, className);
@@ -44,6 +45,7 @@ var CheckBox = function CheckBox(_ref) {
     id: id,
     className: componentClasses,
     name: name,
+    style: style,
     type: 'checkbox',
     checked: checked,
     onChange: onChange

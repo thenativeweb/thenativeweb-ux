@@ -78,7 +78,21 @@ class TextArea extends React.Component {
   }
 
   render () {
-    const { classes, className, disabled, id, name, value, onBlur, onChange, onFocus, placeholder, required, size } = this.props;
+    const {
+      classes,
+      className,
+      disabled,
+      id,
+      name,
+      value,
+      onBlur,
+      onChange,
+      onFocus,
+      placeholder,
+      required,
+      style,
+      size
+    } = this.props;
 
     const componentClasses = classNames(classes.TextArea, {
       [classes.IsDisabled]: disabled === true,
@@ -92,6 +106,7 @@ class TextArea extends React.Component {
         id={ id }
         ref={ this.handleRefChanged }
         className={ componentClasses }
+        disable={ disabled ? 'disabled' : null }
         name={ name }
         value={ value }
         onBlur={ onBlur }
@@ -99,7 +114,7 @@ class TextArea extends React.Component {
         onFocus={ onFocus }
         placeholder={ placeholder }
         required={ required }
-        disable={ disabled ? 'disabled' : null }
+        style={ style }
       />
     );
   }

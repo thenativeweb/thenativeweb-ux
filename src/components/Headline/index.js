@@ -30,14 +30,14 @@ const styles = theme => ({
   }
 });
 
-const Headline = ({ classes, level, children }) => {
+const Headline = ({ classes, children, id, level, style }) => {
   const componentClasses = classNames(classes.Headline, {
     [classes.Level1]: level === '1',
     [classes.Level2]: level === '2'
   });
 
   return (
-    <div className={ componentClasses }>
+    <div id={ id } className={ componentClasses } style={ style }>
       { children }
     </div>
   );

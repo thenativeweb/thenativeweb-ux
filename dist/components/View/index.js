@@ -39,6 +39,7 @@ var View = function View(_ref) {
       children = _ref.children,
       classes = _ref.classes,
       className = _ref.className,
+      id = _ref.id,
       justifyContent = _ref.justifyContent,
       scrollable = _ref.scrollable,
       style = _ref.style,
@@ -48,7 +49,7 @@ var View = function View(_ref) {
 
   return _react2.default.createElement(
     'div',
-    { className: viewClassNames, style: style },
+    { id: id, className: viewClassNames, style: style },
     children
   );
 };

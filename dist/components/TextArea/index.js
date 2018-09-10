@@ -151,6 +151,7 @@ var TextArea = function (_React$Component) {
           onFocus = _props2.onFocus,
           placeholder = _props2.placeholder,
           required = _props2.required,
+          style = _props2.style,
           size = _props2.size;
 
 
@@ -160,6 +161,7 @@ var TextArea = function (_React$Component) {
         id: id,
         ref: this.handleRefChanged,
         className: componentClasses,
+        disable: disabled ? 'disabled' : null,
         name: name,
         value: value,
         onBlur: onBlur,
@@ -167,7 +169,7 @@ var TextArea = function (_React$Component) {
         onFocus: onFocus,
         placeholder: placeholder,
         required: required,
-        disable: disabled ? 'disabled' : null
+        style: style
       });
     }
   }]);

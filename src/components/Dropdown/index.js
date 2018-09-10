@@ -35,7 +35,7 @@ class Dropdown extends React.PureComponent {
   }
 
   render () {
-    const { classes, emptyLabel, options, size, value } = this.props;
+    const { classes, emptyLabel, id, options, size, style, value } = this.props;
 
     const dropdownClassNames = classNames(classes.Dropdown, {
       [classes.SizeDefault]: size === 'default',
@@ -44,7 +44,7 @@ class Dropdown extends React.PureComponent {
     });
 
     return (
-      <div className={ dropdownClassNames }>
+      <div id={ id } className={ dropdownClassNames } style={ style }>
         <select key='commands' value={ value } onChange={ this.handleChange } onFocus={ this.handleFocus } onBlur={ this.handleBlur }>
           { emptyLabel ? <option value='' key='empty-value'>{ emptyLabel }</option> : null }
           {

@@ -9,7 +9,7 @@ const styles = theme => ({
   }
 });
 
-const CheckBox = ({ checked, classes, className, id, name, onChange }) => {
+const CheckBox = ({ checked, classes, className, id, name, style, onChange }) => {
   const componentClasses = classNames(classes.CheckBox, className);
 
   return (
@@ -17,6 +17,7 @@ const CheckBox = ({ checked, classes, className, id, name, onChange }) => {
       id={ id }
       className={ componentClasses }
       name={ name }
+      style={ style }
       type='checkbox'
       checked={ checked }
       onChange={ onChange }

@@ -93,7 +93,21 @@ class TextBox extends React.Component {
   }
 
   render () {
-    const { className, classes, disabled, id, name, value, onBlur, onChange, onFocus, placeholder, required, type } = this.props;
+    const {
+      className,
+      classes,
+      disabled,
+      id,
+      name,
+      value,
+      onBlur,
+      onChange,
+      onFocus,
+      placeholder,
+      required,
+      style,
+      type
+    } = this.props;
 
     const componentClasses = classNames(classes.TextBox, {
       [classes.TypePort]: type === 'port',
@@ -125,6 +139,7 @@ class TextBox extends React.Component {
         onKeyDown={ this.handleKeyDown }
         placeholder={ placeholder }
         required={ required }
+        style={ style }
         type={ inputType }
         disable={ disabled ? 'disabled' : null }
       />

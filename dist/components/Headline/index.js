@@ -59,14 +59,16 @@ var Headline = function Headline(_ref) {
   var _classNames;
 
   var classes = _ref.classes,
+      children = _ref.children,
+      id = _ref.id,
       level = _ref.level,
-      children = _ref.children;
+      style = _ref.style;
 
   var componentClasses = (0, _classnames2.default)(classes.Headline, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.Level1, level === '1'), (0, _defineProperty3.default)(_classNames, classes.Level2, level === '2'), _classNames));
 
   return _react2.default.createElement(
     'div',
-    { className: componentClasses },
+    { id: id, className: componentClasses, style: style },
     children
   );
 };
