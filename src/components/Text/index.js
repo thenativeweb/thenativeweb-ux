@@ -23,11 +23,16 @@ const styles = theme => ({
   SizeS: {
     padding: '7px 0',
     'font-size': theme.font.size.small
+  },
+
+  BreakLines: {
+    'white-space': 'normal'
   }
 });
 
-const Text = function ({ classes, className, children, size, style }) {
+const Text = function ({ breakLines, classes, className, children, size, style }) {
   const componentClasses = classNames(classes.Text, {
+    [classes.BreakLines]: breakLines,
     [classes.SizeS]: size === 's',
     [classes.SizeM]: size === 'm'
   }, className);
@@ -40,10 +45,12 @@ const Text = function ({ classes, className, children, size, style }) {
 };
 
 Text.propTypes = {
+  breakLines: PropTypes.bool,
   size: PropTypes.oneOf([ 's', 'm' ])
 };
 
 Text.defaultProps = {
+  breakLines: false,
   size: 'm'
 };
 
