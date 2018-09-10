@@ -47,6 +47,10 @@ var styles = function styles(theme) {
     SizeS: {
       padding: '7px 0',
       'font-size': theme.font.size.small
+    },
+
+    BreakLines: {
+      'white-space': 'normal'
     }
   };
 };
@@ -54,13 +58,14 @@ var styles = function styles(theme) {
 var Text = function Text(_ref) {
   var _classNames;
 
-  var classes = _ref.classes,
+  var breakLines = _ref.breakLines,
+      classes = _ref.classes,
       className = _ref.className,
       children = _ref.children,
       size = _ref.size,
       style = _ref.style;
 
-  var componentClasses = (0, _classnames2.default)(classes.Text, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), _classNames), className);
+  var componentClasses = (0, _classnames2.default)(classes.Text, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.BreakLines, breakLines), (0, _defineProperty3.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), _classNames), className);
 
   return _react2.default.createElement(
     'div',
@@ -70,10 +75,12 @@ var Text = function Text(_ref) {
 };
 
 Text.propTypes = {
+  breakLines: _propTypes2.default.bool,
   size: _propTypes2.default.oneOf(['s', 'm'])
 };
 
 Text.defaultProps = {
+  breakLines: false,
   size: 'm'
 };
 
