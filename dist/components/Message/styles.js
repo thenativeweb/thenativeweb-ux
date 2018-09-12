@@ -1,8 +1,10 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
+
 var styles = function styles(theme) {
   return {
     Message: {
@@ -10,23 +12,18 @@ var styles = function styles(theme) {
       'margin-bottom': theme.grid.stepSize,
       'font-family': theme.font.family.default
     },
-
     TypeError: {
       background: theme.color.state.error,
       color: theme.color.brand.white,
-
       '& $Icon': {
         fill: theme.color.brand.white
       }
     },
-
     TypeInfo: {
       background: theme.color.brand.lightGrey
     },
-
     WithIcon: {
       display: 'flex',
-
       '& $IconContainer': {
         display: 'flex',
         'align-items': 'center',
@@ -35,17 +32,16 @@ var styles = function styles(theme) {
         'flex-basis': 'auto',
         'margin-right': theme.grid.stepSize
       },
-
       '&. $Content': {
         'flex-grow': 1,
         'flex-basis': '100%'
       }
     },
-
     IconContainer: {},
     Icon: {},
     Content: {}
   };
 };
 
-exports.default = styles;
+var _default = styles;
+exports.default = _default;

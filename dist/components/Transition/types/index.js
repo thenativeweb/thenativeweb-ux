@@ -1,35 +1,27 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _Fade = require('./Fade');
+var _Fade = _interopRequireDefault(require("./Fade"));
 
-var _Fade2 = _interopRequireDefault(_Fade);
+var _FadeInLeft = _interopRequireDefault(require("./FadeInLeft"));
 
-var _FadeInLeft = require('./FadeInLeft');
+var _FadeInRight = _interopRequireDefault(require("./FadeInRight"));
 
-var _FadeInLeft2 = _interopRequireDefault(_FadeInLeft);
+var _Grow = _interopRequireDefault(require("./Grow"));
 
-var _FadeInRight = require('./FadeInRight');
+var _Zoom = _interopRequireDefault(require("./Zoom"));
 
-var _FadeInRight2 = _interopRequireDefault(_FadeInRight);
-
-var _Grow = require('./Grow');
-
-var _Grow2 = _interopRequireDefault(_Grow);
-
-var _Zoom = require('./Zoom');
-
-var _Zoom2 = _interopRequireDefault(_Zoom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  Fade: _Fade2.default,
-  FadeInLeft: _FadeInLeft2.default,
-  FadeInRight: _FadeInRight2.default,
-  Grow: _Grow2.default,
-  Zoom: _Zoom2.default
+var _default = {
+  Fade: _Fade.default,
+  FadeInLeft: _FadeInLeft.default,
+  FadeInRight: _FadeInRight.default,
+  Grow: _Grow.default,
+  Zoom: _Zoom.default
 };
+exports.default = _default;

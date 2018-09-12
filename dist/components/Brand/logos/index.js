@@ -1,20 +1,18 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _Full = require('./Full');
+var _Full = _interopRequireDefault(require("./Full"));
 
-var _Full2 = _interopRequireDefault(_Full);
+var _Minimal = _interopRequireDefault(require("./Minimal"));
 
-var _Minimal = require('./Minimal');
-
-var _Minimal2 = _interopRequireDefault(_Minimal);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  full: _Full2.default,
-  minimal: _Minimal2.default
+var _default = {
+  full: _Full.default,
+  minimal: _Minimal.default
 };
+exports.default = _default;

@@ -1,30 +1,21 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _Brand = require('./Brand');
+var _Brand = _interopRequireDefault(require("./Brand"));
 
-var _Brand2 = _interopRequireDefault(_Brand);
+var _Footer = _interopRequireDefault(require("./Footer"));
 
-var _Footer = require('./Footer');
+var _reactJss = _interopRequireDefault(require("react-jss"));
 
-var _Footer2 = _interopRequireDefault(_Footer);
+var _Item = _interopRequireDefault(require("./Item"));
 
-var _reactJss = require('react-jss');
-
-var _reactJss2 = _interopRequireDefault(_reactJss);
-
-var _Item = require('./Item');
-
-var _Item2 = _interopRequireDefault(_Item);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _react = _interopRequireDefault(require("react"));
 
 var styles = function styles(theme) {
   return {
@@ -37,7 +28,7 @@ var styles = function styles(theme) {
       'box-sizing': 'content-box',
       width: theme.components.sidebar.width,
       background: theme.color.brand.dark,
-      padding: theme.grid.stepSize * 1.5 + 'px 0'
+      padding: "".concat(theme.grid.stepSize * 1.5, "px 0")
     }
   };
 };
@@ -46,15 +37,16 @@ var Sidebar = function Sidebar(_ref) {
   var children = _ref.children,
       classes = _ref.classes,
       id = _ref.id;
-  return _react2.default.createElement(
-    'div',
-    { id: id, className: classes.Sidebar },
-    children
-  );
+  return _react.default.createElement("div", {
+    id: id,
+    className: classes.Sidebar
+  }, children);
 };
 
-Sidebar.Brand = _Brand2.default;
-Sidebar.Footer = _Footer2.default;
-Sidebar.Item = _Item2.default;
+Sidebar.Brand = _Brand.default;
+Sidebar.Footer = _Footer.default;
+Sidebar.Item = _Item.default;
 
-exports.default = (0, _reactJss2.default)(styles)(Sidebar);
+var _default = (0, _reactJss.default)(styles)(Sidebar);
+
+exports.default = _default;

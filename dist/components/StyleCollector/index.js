@@ -1,30 +1,28 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
-
-var _reactJss = require('react-jss');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _reactJss = require("react-jss");
 
 var sheets = new _reactJss.SheetsRegistry();
 
 var ServerSideProvider = function ServerSideProvider(_ref) {
   var children = _ref.children;
-  return _react2.default.createElement(
-    _reactJss.JssProvider,
-    { registry: sheets },
-    children
-  );
+  return _react.default.createElement(_reactJss.JssProvider, {
+    registry: sheets
+  }, children);
 };
 
 ServerSideProvider.getStyles = function () {
   return sheets.toString();
 };
 
-exports.default = ServerSideProvider;
+var _default = ServerSideProvider;
+exports.default = _default;

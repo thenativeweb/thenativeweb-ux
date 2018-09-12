@@ -1,30 +1,21 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+var _classnames = _interopRequireDefault(require("classnames"));
 
-var _classnames = require('classnames');
+var _reactJss = _interopRequireDefault(require("react-jss"));
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _reactJss = require('react-jss');
-
-var _reactJss2 = _interopRequireDefault(_reactJss);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _react = _interopRequireDefault(require("react"));
 
 var styles = function styles(theme) {
   return {
@@ -38,17 +29,14 @@ var styles = function styles(theme) {
       color: 'inherit',
       'font-family': theme.font.family.default
     },
-
     SizeM: {
       padding: '7px 0',
       'font-size': theme.font.size.default
     },
-
     SizeS: {
       padding: '7px 0',
       'font-size': theme.font.size.small
     },
-
     BreakLines: {
       'white-space': 'normal'
     }
@@ -65,24 +53,23 @@ var Text = function Text(_ref) {
       id = _ref.id,
       size = _ref.size,
       style = _ref.style;
-
-  var componentClasses = (0, _classnames2.default)(classes.Text, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.BreakLines, breakLines), (0, _defineProperty3.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty3.default)(_classNames, classes.SizeM, size === 'm'), _classNames), className);
-
-  return _react2.default.createElement(
-    'div',
-    { id: id, className: componentClasses, style: style },
-    children
-  );
+  var componentClasses = (0, _classnames.default)(classes.Text, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.BreakLines, breakLines), (0, _defineProperty2.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty2.default)(_classNames, classes.SizeM, size === 'm'), _classNames), className);
+  return _react.default.createElement("div", {
+    id: id,
+    className: componentClasses,
+    style: style
+  }, children);
 };
 
 Text.propTypes = {
-  breakLines: _propTypes2.default.bool,
-  size: _propTypes2.default.oneOf(['s', 'm'])
+  breakLines: _propTypes.default.bool,
+  size: _propTypes.default.oneOf(['s', 'm'])
 };
-
 Text.defaultProps = {
   breakLines: false,
   size: 'm'
 };
 
-exports.default = (0, _reactJss2.default)(styles)(Text);
+var _default = (0, _reactJss.default)(styles)(Text);
+
+exports.default = _default;

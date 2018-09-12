@@ -1,34 +1,23 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _Actions = require('./Actions');
+var _Actions = _interopRequireDefault(require("./Actions"));
 
-var _Actions2 = _interopRequireDefault(_Actions);
+var _classnames = _interopRequireDefault(require("classnames"));
 
-var _classnames = require('classnames');
+var _reactJss = _interopRequireDefault(require("react-jss"));
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _reactJss = require('react-jss');
+var _react = _interopRequireDefault(require("react"));
 
-var _reactJss2 = _interopRequireDefault(_reactJss);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Row = require('./Row');
-
-var _Row2 = _interopRequireDefault(_Row);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Row = _interopRequireDefault(require("./Row"));
 
 var styles = function styles(theme) {
   return {
@@ -43,33 +32,29 @@ var Form = function Form(_ref) {
       classes = _ref.classes,
       className = _ref.className,
       onSubmit = _ref.onSubmit;
-
-  var componentClasses = (0, _classnames2.default)(classes.Form, className);
+  var componentClasses = (0, _classnames.default)(classes.Form, className);
 
   if (onSubmit) {
-    return _react2.default.createElement(
-      'form',
-      { className: componentClasses, onSubmit: onSubmit },
-      children
-    );
+    return _react.default.createElement("form", {
+      className: componentClasses,
+      onSubmit: onSubmit
+    }, children);
   }
 
-  return _react2.default.createElement(
-    'div',
-    { className: componentClasses },
-    children
-  );
+  return _react.default.createElement("div", {
+    className: componentClasses
+  }, children);
 };
 
-Form.Row = _Row2.default;
-Form.Actions = _Actions2.default;
-
+Form.Row = _Row.default;
+Form.Actions = _Actions.default;
 Form.propTypes = {
-  onSubmit: _propTypes2.default.func
+  onSubmit: _propTypes.default.func
 };
-
 Form.defaultProps = {
   onSubmit: function onSubmit() {}
 };
 
-exports.default = (0, _reactJss2.default)(styles)(Form);
+var _default = (0, _reactJss.default)(styles)(Form);
+
+exports.default = _default;

@@ -1,34 +1,23 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _classnames = require('classnames');
+var _classnames = _interopRequireDefault(require("classnames"));
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _Divider = _interopRequireDefault(require("./Divider"));
 
-var _Divider = require('./Divider');
+var _reactJss = _interopRequireDefault(require("react-jss"));
 
-var _Divider2 = _interopRequireDefault(_Divider);
+var _Item = _interopRequireDefault(require("./Item"));
 
-var _reactJss = require('react-jss');
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _reactJss2 = _interopRequireDefault(_reactJss);
-
-var _Item = require('./Item');
-
-var _Item2 = _interopRequireDefault(_Item);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _react = _interopRequireDefault(require("react"));
 
 var styles = {
   ControlGroup: {
@@ -42,25 +31,25 @@ var ControlGroup = function ControlGroup(_ref) {
       classes = _ref.classes,
       children = _ref.children,
       _ref$isVisible = _ref.isVisible,
-      isVisible = _ref$isVisible === undefined ? true : _ref$isVisible;
-
-  var componentClasses = (0, _classnames2.default)(classes.ControlGroup, className);
+      isVisible = _ref$isVisible === void 0 ? true : _ref$isVisible;
+  var componentClasses = (0, _classnames.default)(classes.ControlGroup, className);
 
   if (!isVisible) {
     return null;
   }
 
-  return _react2.default.createElement('div', {
+  return _react.default.createElement("div", {
     className: componentClasses,
     children: children
   });
 };
 
-ControlGroup.Divider = _Divider2.default;
-ControlGroup.Item = _Item2.default;
-
+ControlGroup.Divider = _Divider.default;
+ControlGroup.Item = _Item.default;
 ControlGroup.propTypes = {
-  isVisible: _propTypes2.default.bool
+  isVisible: _propTypes.default.bool
 };
 
-exports.default = (0, _reactJss2.default)(styles)(ControlGroup);
+var _default = (0, _reactJss.default)(styles)(ControlGroup);
+
+exports.default = _default;

@@ -1,47 +1,32 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _classnames = require('classnames');
+var _classnames = _interopRequireDefault(require("classnames"));
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _Dialogs = _interopRequireDefault(require("../Dialogs"));
 
-var _Dialogs = require('../Dialogs');
+var _Icons = _interopRequireDefault(require("../Icons"));
 
-var _Dialogs2 = _interopRequireDefault(_Dialogs);
+var _reactJss = _interopRequireDefault(require("react-jss"));
 
-var _Icons = require('../Icons');
+var _Notifications = _interopRequireDefault(require("../Notifications"));
 
-var _Icons2 = _interopRequireDefault(_Icons);
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _reactJss = require('react-jss');
+var _react = _interopRequireDefault(require("react"));
 
-var _reactJss2 = _interopRequireDefault(_reactJss);
-
-var _Notifications = require('../Notifications');
-
-var _Notifications2 = _interopRequireDefault(_Notifications);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _View = require('../View');
-
-var _View2 = _interopRequireDefault(_View);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _View = _interopRequireDefault(require("../View"));
 
 var styles = function styles(theme) {
   return {
     '@global': {
-      '@import': 'url(\'' + theme.font.import + '\')'
+      '@import': "url('".concat(theme.font.import, "')")
     },
     Application: {
       position: 'absolute !important',
@@ -59,34 +44,29 @@ var Application = function Application(_ref) {
       className = _ref.className,
       style = _ref.style,
       orientation = _ref.orientation;
-
-  var componentClasses = (0, _classnames2.default)(classes.Application, className);
-
-  return _react2.default.createElement(
-    _View2.default,
-    { className: componentClasses, orientation: orientation, style: style },
-    children
-  );
+  var componentClasses = (0, _classnames.default)(classes.Application, className);
+  return _react.default.createElement(_View.default, {
+    className: componentClasses,
+    orientation: orientation,
+    style: style
+  }, children);
 };
 
 Application.propTypes = {
-  className: _propTypes2.default.string,
-  orientation: _propTypes2.default.oneOf(['horizontal', 'vertical', 'centered']),
-  style: _propTypes2.default.object
+  className: _propTypes.default.string,
+  orientation: _propTypes.default.oneOf(['horizontal', 'vertical', 'centered']),
+  style: _propTypes.default.object
 };
-
 Application.defaultProps = {
   orientation: 'horizontal'
 };
 
 Application.Services = function () {
-  return _react2.default.createElement(
-    'span',
-    { suppressHydrationWarning: true },
-    _react2.default.createElement(_Icons2.default, null),
-    _react2.default.createElement(_Dialogs2.default, null),
-    _react2.default.createElement(_Notifications2.default, null)
-  );
+  return _react.default.createElement("span", {
+    suppressHydrationWarning: true
+  }, _react.default.createElement(_Icons.default, null), _react.default.createElement(_Dialogs.default, null), _react.default.createElement(_Notifications.default, null));
 };
 
-exports.default = (0, _reactJss2.default)(styles)(Application);
+var _default = (0, _reactJss.default)(styles)(Application);
+
+exports.default = _default;

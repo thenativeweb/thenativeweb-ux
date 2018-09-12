@@ -1,8 +1,10 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
+
 var styles = function styles(theme) {
   return {
     Modal: {
@@ -17,7 +19,6 @@ var styles = function styles(theme) {
       'justify-content': 'center',
       'align-items': 'center'
     },
-
     Backdrop: {
       background: theme.color.backdrop,
       position: 'fixed',
@@ -32,12 +33,10 @@ var styles = function styles(theme) {
       transition: 'opacity 300ms',
       'will-change': 'opacity'
     },
-
     IsVisible: {
       'pointer-events': 'all',
       opacity: 1
     },
-
     Content: {
       position: 'fixed',
       display: 'flex',
@@ -47,56 +46,47 @@ var styles = function styles(theme) {
       'z-index': theme.zIndex.modal,
       background: theme.color.brand.white,
       opacity: 0,
-      padding: theme.grid.stepSize * 2 + 'px ' + theme.grid.stepSize * 3 + 'px',
+      padding: "".concat(theme.grid.stepSize * 2, "px ").concat(theme.grid.stepSize * 3, "px"),
       'pointer-events': 'all',
       'will-change': 'opacity, transform',
       'font-family': theme.font.family.default,
       'box-sizing': 'border-box'
     },
-
     ContentSizeS: {
       'min-width': theme.grid.stepSize * 30,
       'max-width': '100vw'
     },
-
     ContentSizeM: {
       'min-width': '61vw',
       'max-width': '100vw'
     },
-
     ContentSizeL: {
       'min-width': '90vw',
       'max-width': '100vw'
     },
-
     ContentAttachedSidebar: {
       left: theme.components.sidebar.width,
       top: 0
     },
-
     ContentAttachedLeft: {
       left: 0,
       top: 0
     },
-
     ContentAttachedRight: {
       right: 0,
       top: 0
     },
-
     ContentAttachedCenter: {
       'max-width': theme.grid.stepSize * 46,
       width: 'auto',
       height: 'auto',
       top: 0
     },
-
     Title: {
       'text-align': 'center',
       padding: 0,
       margin: 0,
       'font-weight': 600,
-
       '&::after': {
         content: '',
         display: 'block',
@@ -115,4 +105,5 @@ var styles = function styles(theme) {
   };
 };
 
-exports.default = styles;
+var _default = styles;
+exports.default = _default;

@@ -1,22 +1,17 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _classnames = require('classnames');
+var _classnames = _interopRequireDefault(require("classnames"));
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _reactJss = _interopRequireDefault(require("react-jss"));
 
-var _reactJss = require('react-jss');
-
-var _reactJss2 = _interopRequireDefault(_reactJss);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _react = _interopRequireDefault(require("react"));
 
 var styles = {
   Label: {
@@ -34,12 +29,11 @@ var Label = function Label(_ref) {
   var children = _ref.children,
       classes = _ref.classes,
       className = _ref.className;
-
-  return _react2.default.createElement(
-    'div',
-    { className: (0, _classnames2.default)(classes.Label, className) },
-    children
-  );
+  return _react.default.createElement("div", {
+    className: (0, _classnames.default)(classes.Label, className)
+  }, children);
 };
 
-exports.default = (0, _reactJss2.default)(styles)(Label);
+var _default = (0, _reactJss.default)(styles)(Label);
+
+exports.default = _default;
