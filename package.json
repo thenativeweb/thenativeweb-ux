@@ -14,7 +14,6 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "postinstall": "node scripts/postinstall",
     "build": "docker build -t thenativeweb/ux .",
     "styleguide": "styleguidist server",
     "dist": "babel src --out-dir dist --copy-files"
