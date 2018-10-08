@@ -4,20 +4,29 @@ const { spawn } = require('child_process'),
 const shell = require('shelljs');
 
 module.exports = async function () {
-  const projectRoot = path.join(__dirname, '..', '..');
+  const projectRoot = path.join(__dirname, '..', '..'),
+        webpackExampleRoot = path.join(projectRoot, 'examples', 'with-webpack');
 
-  // Remove temporary dist and build folders from previous tests
+  // Remove temporary dist folder from previous tests.
   shell.rm('-rf', [
-    path.join(projectRoot, 'dist'),
-    path.join(projectRoot, 'build')
+    path.join(projectRoot, 'dist')
   ]);
 
   // Create a distribution via roboter, so
   // that the test will always bundle the latest version.
-  const childProcess = shell.exec(`npx roboter dist`, { cwd: projectRoot });
+  let childProcess = shell.exec('npx roboter precompile', { cwd: projectRoot });
 
   if (childProcess.code !== 0) {
     throw new Error('Failed to create dist.');
+  }
+
+  // We install the depencencies of the webpack example.
+  if (!shell.test('-d', path.join(webpackExampleRoot, 'node_modules'))) {
+    childProcess = shell.exec('npm install', { cwd: webpackExampleRoot });
+
+    if (childProcess.code !== 0) {
+      throw new Error('Failed to install example dependencies.');
+    }
   }
 
   await new Promise(resolve => {
@@ -58,7 +67,7 @@ module.exports = async function () {
 
     devServerProcess = spawn('npm', [ 'run', 'serve' ], {
       detached: true,
-      cwd: path.join(__dirname, '..', '..', 'examples', 'with-webpack')
+      cwd: webpackExampleRoot
     });
     devServerProcess.stdout.on('data', watchServerStart);
     devServerProcess.stderr.on('data', logErrors);

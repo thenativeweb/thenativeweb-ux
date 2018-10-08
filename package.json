@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -14,10 +14,8 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "postinstall": "node scripts/postinstall",
     "build": "docker build -t thenativeweb/ux .",
-    "styleguide": "styleguidist server",
-    "dist": "roboter precompile"
+    "styleguide": "styleguidist server"
   },
   "dependencies": {
     "animejs": "2.2.0",
