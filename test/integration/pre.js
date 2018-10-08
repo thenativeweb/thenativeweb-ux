@@ -14,7 +14,7 @@ module.exports = async function () {
 
   // Create a distribution via roboter, so
   // that the test will always bundle the latest version.
-  let childProcess = shell.exec('npx roboter dist', { cwd: projectRoot });
+  let childProcess = shell.exec('npx roboter precompile', { cwd: projectRoot });
 
   if (childProcess.code !== 0) {
     throw new Error('Failed to create dist.');

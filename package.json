@@ -15,37 +15,33 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "docker build -t thenativeweb/ux .",
-    "styleguide": "styleguidist server",
-    "dist": "babel src --out-dir dist --copy-files"
+    "styleguide": "styleguidist server"
   },
   "dependencies": {
+    "@babel/runtime": "7.1.2",
     "animejs": "2.2.0",
     "classnames": "2.2.6",
     "exenv": "1.2.2",
     "jss": "9.8.7",
     "prop-types": "15.6.2",
     "react-jss": "8.6.1",
-    "react-transition-group": "2.4.0",
-    "uuidv4": "1.0.1"
+    "react-transition-group": "2.5.0",
+    "uuidv4": "2.0.0"
   },
   "devDependencies": {
     "assertthat": "1.0.0",
-    "babel-core": "6.26.3",
-    "babel-loader": "7.1.5",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.1",
-    "puppeteer": "1.7.0",
-    "react": "16.4.2",
-    "react-dom": "16.4.2",
-    "react-styleguidist": "7.2.3",
-    "roboter": "1.0.6",
+    "babel-loader": "8.0.2",
+    "puppeteer": "1.8.0",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-styleguidist": "7.3.7",
+    "roboter": "2.0.0",
     "shelljs": "0.8.2",
-    "webpack": "4.16.5"
+    "webpack": "4.18.0"
   },
   "peerDependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
   "repository": {
     "type": "git",

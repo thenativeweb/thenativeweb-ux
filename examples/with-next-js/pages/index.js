@@ -2,8 +2,8 @@ import Link from 'next/link';
 import React from 'react';
 import {
   Application,
-  Brand,
   Button,
+  Product,
   services,
   Sidebar,
   ThemeProvider,
@@ -21,7 +21,7 @@ const Page = () => (
     <Application>
       <Application.Services />
       <Sidebar>
-        <Sidebar.Brand><Brand.Product name='my-app' /></Sidebar.Brand>
+        <Sidebar.Brand><Product name='App' /></Sidebar.Brand>
         <Sidebar.Item iconName='account'>
           <Sidebar.Item>You are logged in as Sophie</Sidebar.Item>
           <Sidebar.Item onClick={ () => services.notifications.show({ type: 'success', text: 'You clicked!' }) }>Logout</Sidebar.Item>
@@ -30,7 +30,7 @@ const Page = () => (
         <Link href='/second'><Sidebar.Item iconName='help' /></Link>
       </Sidebar>
       <View adjust='flex' style={{ padding: '20px', border: '#eee solid 1px' }}>
-        This page is rendered universally. <Link href='/second'>Link to second page</Link>
+        This page is rendered universally. <Link href='/second'><a>Link to second page</a></Link>
         <Button id='button' onClick={ () => log('clicked') }>Click me</Button>
       </View>
     </Application>

@@ -1,26 +1,19 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+var _classnames = _interopRequireDefault(require("classnames"));
 
-var _classnames = require('classnames');
+var _reactJss = _interopRequireDefault(require("react-jss"));
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactJss = require('react-jss');
-
-var _reactJss2 = _interopRequireDefault(_reactJss);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _react = _interopRequireDefault(require("react"));
 
 var styles = function styles(theme) {
   return {
@@ -31,12 +24,10 @@ var styles = function styles(theme) {
       'margin-bottom': theme.grid.stepSize,
       'font-family': theme.font.family.default
     },
-
     TypeError: {
       color: theme.color.brand.white,
       background: theme.color.state.error
     },
-
     TypeSuccess: {
       color: theme.color.brand.white,
       background: theme.color.state.success
@@ -50,14 +41,12 @@ var Notification = function Notification(_ref) {
   var classes = _ref.classes,
       type = _ref.type,
       text = _ref.text;
-
-  var componentClasses = (0, _classnames2.default)(classes.Notification, (_classNames = {}, (0, _defineProperty3.default)(_classNames, classes.TypeError, type === 'error'), (0, _defineProperty3.default)(_classNames, classes.TypeSuccess, type === 'success'), _classNames));
-
-  return _react2.default.createElement(
-    'div',
-    { className: componentClasses },
-    text
-  );
+  var componentClasses = (0, _classnames.default)(classes.Notification, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.TypeError, type === 'error'), (0, _defineProperty2.default)(_classNames, classes.TypeSuccess, type === 'success'), _classNames));
+  return _react.default.createElement("div", {
+    className: componentClasses
+  }, text);
 };
 
-exports.default = (0, _reactJss2.default)(styles)(Notification);
+var _default = (0, _reactJss.default)(styles)(Notification);
+
+exports.default = _default;

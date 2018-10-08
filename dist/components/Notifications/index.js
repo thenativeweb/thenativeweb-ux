@@ -1,58 +1,37 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _createClass2 = require('babel-runtime/helpers/createClass');
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
 
-var _createClass3 = _interopRequireDefault(_createClass2);
+var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+var _exenv = _interopRequireDefault(require("exenv"));
 
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+var _reactJss = _interopRequireDefault(require("react-jss"));
 
-var _inherits2 = require('babel-runtime/helpers/inherits');
+var _Notification = _interopRequireDefault(require("./Notification"));
 
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _react = _interopRequireDefault(require("react"));
 
-var _exenv = require('exenv');
+var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _exenv2 = _interopRequireDefault(_exenv);
+var _services = _interopRequireDefault(require("../../services"));
 
-var _reactJss = require('react-jss');
-
-var _reactJss2 = _interopRequireDefault(_reactJss);
-
-var _Notification = require('./Notification');
-
-var _Notification2 = _interopRequireDefault(_Notification);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _services = require('../../services');
-
-var _services2 = _interopRequireDefault(_services);
-
-var _Transition = require('../Transition');
-
-var _Transition2 = _interopRequireDefault(_Transition);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Transition = _interopRequireDefault(require("../Transition"));
 
 var styles = function styles(theme) {
   return {
@@ -67,57 +46,61 @@ var styles = function styles(theme) {
   };
 };
 
-var Notifications = function (_React$PureComponent) {
-  (0, _inherits3.default)(Notifications, _React$PureComponent);
+var Notifications =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  (0, _inherits2.default)(Notifications, _React$PureComponent);
 
   function Notifications() {
-    (0, _classCallCheck3.default)(this, Notifications);
+    var _this;
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Notifications.__proto__ || (0, _getPrototypeOf2.default)(Notifications)).call(this));
-
-    _this.handleServiceChanged = _this.handleServiceChanged.bind(_this);
+    (0, _classCallCheck2.default)(this, Notifications);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Notifications).call(this));
+    _this.handleServiceChanged = _this.handleServiceChanged.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
     return _this;
   }
 
-  (0, _createClass3.default)(Notifications, [{
-    key: 'componentDidMount',
+  (0, _createClass2.default)(Notifications, [{
+    key: "componentDidMount",
     value: function componentDidMount() {
-      _services2.default.notifications.on('changed', this.handleServiceChanged);
+      _services.default.notifications.on('changed', this.handleServiceChanged);
     }
   }, {
-    key: 'componentWillUnmount',
+    key: "componentWillUnmount",
     value: function componentWillUnmount() {
-      _services2.default.notifications.removeListener('changed', this.handleServiceChanged);
+      _services.default.notifications.removeListener('changed', this.handleServiceChanged);
     }
   }, {
-    key: 'handleServiceChanged',
+    key: "handleServiceChanged",
     value: function handleServiceChanged() {
       this.forceUpdate();
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       var classes = this.props.classes;
 
-
-      if (!_exenv2.default.canUseDOM) {
+      if (!_exenv.default.canUseDOM) {
         return null;
       }
 
-      return _reactDom2.default.createPortal(_react2.default.createElement(
-        'div',
-        { className: classes.Notifications },
-        _react2.default.createElement(
-          _Transition2.default.Group,
-          { type: 'FadeInLeft', component: 'span' },
-          _services2.default.notifications.state.items.map(function (notification) {
-            return _react2.default.createElement(_Notification2.default, { key: notification.id, type: notification.type, text: notification.text });
-          })
-        )
-      ), _services2.default.getPortalRootNode());
+      return _reactDom.default.createPortal(_react.default.createElement("div", {
+        className: classes.Notifications
+      }, _react.default.createElement(_Transition.default.Group, {
+        type: "FadeInLeft",
+        component: "span"
+      }, _services.default.notifications.state.items.map(function (notification) {
+        return _react.default.createElement(_Notification.default, {
+          key: notification.id,
+          type: notification.type,
+          text: notification.text
+        });
+      }))), _services.default.getPortalRootNode());
     }
   }]);
   return Notifications;
-}(_react2.default.PureComponent);
+}(_react.default.PureComponent);
 
-exports.default = (0, _reactJss2.default)(styles)(Notifications);
+var _default = (0, _reactJss.default)(styles)(Notifications);
+
+exports.default = _default;

@@ -1,8 +1,10 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
+
 var styles = function styles(theme) {
   return {
     Dropdown: {
@@ -14,7 +16,6 @@ var styles = function styles(theme) {
       background: theme.color.brand.dark,
       border: theme.color.brand.dark,
       'font-family': theme.font.family.default,
-
       '& select': {
         'flex-grow': 1,
         'flex-shrink': 1,
@@ -32,43 +33,35 @@ var styles = function styles(theme) {
         'text-overflow': 'ellipsis',
         'border-radius': theme.components.borderRadius.default,
         'font-family': 'inherit',
-
         '&:focus': {
           outline: 'none'
         }
       },
-
       '&:last-child': {
         '& select': {
           'margin-right': 0
         }
       }
     },
-
     SizeDefault: {
       margin: '16px',
       'margin-left': 0,
       'font-size': theme.font.size.default,
-
       '& select': {
         padding: '7px 40px 7px 11px'
       }
     },
-
     SizeS: {
       'font-size': theme.font.size.small,
       margin: 0,
       'margin-right': '6px',
-
       '& select': {
         padding: '7px 40px 7px 11px'
       }
     },
-
     IsFocused: {
       background: theme.color.brand.highlight
     },
-
     CollapseIcon: {
       'flex-grow': 0,
       'flex-shrink': 0,
@@ -83,4 +76,5 @@ var styles = function styles(theme) {
   };
 };
 
-exports.default = styles;
+var _default = styles;
+exports.default = _default;

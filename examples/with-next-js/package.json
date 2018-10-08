@@ -5,6 +5,6 @@
     "serve": "next"
   },
   "dependencies": {
-    "next": "6.0.3"
+    "next": "7.0.1"
   }
 }

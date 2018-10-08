@@ -1,51 +1,36 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _promise = require('babel-runtime/core-js/promise');
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
-var _promise2 = _interopRequireDefault(_promise);
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
 
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+var _events = _interopRequireDefault(require("events"));
 
-var _createClass2 = require('babel-runtime/helpers/createClass');
+var _merge = _interopRequireDefault(require("lodash/merge"));
 
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _events = require('events');
-
-var _events2 = _interopRequireDefault(_events);
-
-var _merge = require('lodash/merge');
-
-var _merge2 = _interopRequireDefault(_merge);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var DialogsService = function (_EventEmitter) {
-  (0, _inherits3.default)(DialogsService, _EventEmitter);
+var DialogsService =
+/*#__PURE__*/
+function (_EventEmitter) {
+  (0, _inherits2.default)(DialogsService, _EventEmitter);
 
   function DialogsService() {
-    (0, _classCallCheck3.default)(this, DialogsService);
+    var _this;
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (DialogsService.__proto__ || (0, _getPrototypeOf2.default)(DialogsService)).call(this));
-
+    (0, _classCallCheck2.default)(this, DialogsService);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(DialogsService).call(this));
     _this.state = {
       confirm: {
         isVisible: false,
@@ -61,10 +46,10 @@ var DialogsService = function (_EventEmitter) {
     return _this;
   }
 
-  (0, _createClass3.default)(DialogsService, [{
-    key: 'hideConfirm',
+  (0, _createClass2.default)(DialogsService, [{
+    key: "hideConfirm",
     value: function hideConfirm() {
-      this.state = (0, _merge2.default)({}, this.state, {
+      this.state = (0, _merge.default)({}, this.state, {
         confirm: {
           isVisible: false,
           onCancel: function onCancel() {},
@@ -74,30 +59,33 @@ var DialogsService = function (_EventEmitter) {
       this.emit('changed');
     }
   }, {
-    key: 'confirm',
+    key: "confirm",
     value: function confirm(options) {
       var _this2 = this;
 
-      return new _promise2.default(function (resolve) {
+      return new Promise(function (resolve) {
         if (!options) {
           throw new Error('Options are missing.');
         }
+
         if (!options.title) {
           throw new Error('Title is missing.');
         }
+
         if (!options.actions) {
           throw new Error('Actions are missing.');
         }
+
         if (!options.actions.cancel) {
           throw new Error('Cancel is missing.');
         }
+
         if (!options.actions.confirm) {
           throw new Error('Confirm is missing.');
         }
+
         var title = options.title,
             actions = options.actions;
-
-
         _this2.state = {
           confirm: {
             isVisible: true,
@@ -105,16 +93,17 @@ var DialogsService = function (_EventEmitter) {
             actions: actions,
             onConfirm: function onConfirm() {
               _this2.hideConfirm();
+
               resolve('confirm');
             },
             onCancel: function onCancel() {
               _this2.hideConfirm();
+
               resolve('cancel');
             }
           }
-        };
+        }; // Delay the rendering for keyboard events not to conflict.
 
-        // Delay the rendering for keyboard events not to conflict.
         setTimeout(function () {
           _this2.emit('changed');
         }, 100);
@@ -122,6 +111,8 @@ var DialogsService = function (_EventEmitter) {
     }
   }]);
   return DialogsService;
-}(_events2.default);
+}(_events.default);
 
-exports.default = new DialogsService();
+var _default = new DialogsService();
+
+exports.default = _default;

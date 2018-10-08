@@ -1,53 +1,37 @@
-'use strict';
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _keys = require('babel-runtime/core-js/object/keys');
+var _reactTransitionGroup = require("react-transition-group");
 
-var _keys2 = _interopRequireDefault(_keys);
+var _Group = _interopRequireDefault(require("./Group"));
 
-var _reactTransitionGroup = require('react-transition-group');
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _Group = require('./Group');
+var _react = _interopRequireDefault(require("react"));
 
-var _Group2 = _interopRequireDefault(_Group);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _types = require('./types');
-
-var _types2 = _interopRequireDefault(_types);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _types = _interopRequireDefault(require("./types"));
 
 var Transition = function Transition(props) {
-  var TransitionType = _types2.default[props.type];
-
-  return _react2.default.createElement(
-    TransitionType,
-    { 'in': props.in },
-    props.children
-  );
+  var TransitionType = _types.default[props.type];
+  return _react.default.createElement(TransitionType, {
+    in: props.in
+  }, props.children);
 };
 
 Transition.propTypes = {
-  in: _propTypes2.default.bool,
-  type: _propTypes2.default.oneOf((0, _keys2.default)(_types2.default))
+  in: _propTypes.default.bool,
+  type: _propTypes.default.oneOf(Object.keys(_types.default))
 };
-
 Transition.defaultProps = {
   type: 'FadeInLeft'
 };
-
 Transition.Custom = _reactTransitionGroup.Transition;
-Transition.Group = _Group2.default;
-
-exports.default = Transition;
+Transition.Group = _Group.default;
+var _default = Transition;
+exports.default = _default;
