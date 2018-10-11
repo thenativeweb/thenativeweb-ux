@@ -1,14 +1,12 @@
 import React from 'react';
 import { JssProvider, SheetsRegistry } from 'react-jss';
 
-const sheets = new SheetsRegistry();
-
-const ServerSideProvider = ({ children }) => (
-  <JssProvider registry={ sheets }>{children}</JssProvider>
+const StyleCollector = ({ children, collection }) => (
+  <JssProvider registry={ collection }>{children}</JssProvider>
 );
 
-ServerSideProvider.getStyles = function () {
-  return sheets.toString();
+StyleCollector.createCollection = function () {
+  return new SheetsRegistry();
 };
 
-export default ServerSideProvider;
+export default StyleCollector;
