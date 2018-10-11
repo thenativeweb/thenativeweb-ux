@@ -19,7 +19,7 @@ var StyleCollector = function StyleCollector(_ref) {
   }, children);
 };
 
-StyleCollector.getCollection = function () {
+StyleCollector.createCollection = function () {
   return new _reactJss.SheetsRegistry();
 };
 
