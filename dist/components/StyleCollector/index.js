@@ -11,18 +11,17 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactJss = require("react-jss");
 
-var sheets = new _reactJss.SheetsRegistry();
-
-var ServerSideProvider = function ServerSideProvider(_ref) {
-  var children = _ref.children;
+var StyleCollector = function StyleCollector(_ref) {
+  var children = _ref.children,
+      collection = _ref.collection;
   return _react.default.createElement(_reactJss.JssProvider, {
-    registry: sheets
+    registry: collection
   }, children);
 };
 
-ServerSideProvider.getStyles = function () {
-  return sheets.toString();
+StyleCollector.createCollection = function () {
+  return new _reactJss.SheetsRegistry();
 };
 
-var _default = ServerSideProvider;
+var _default = StyleCollector;
 exports.default = _default;
