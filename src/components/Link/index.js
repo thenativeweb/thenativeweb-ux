@@ -17,19 +17,19 @@ const styles = theme => ({
   }
 });
 
-const Link = ({ classes, className, children, isExternal, href, onClick }) => {
+const Link = ({ classes, id, className, children, isExternal, href, onClick }) => {
   const brandClassNames = classNames(classes.Link, className);
 
   if (isExternal === true) {
     return (
-      <a className={ brandClassNames } href={ href } onClick={ onClick } rel='noopener noreferrer' target='_blank'>
+      <a id={ id } className={ brandClassNames } href={ href } onClick={ onClick } rel='noopener noreferrer' target='_blank'>
         { children }
       </a>
     );
   }
 
   return (
-    <a className={ brandClassNames } href={ href } onClick={ onClick }>
+    <a id={ id } className={ brandClassNames } href={ href } onClick={ onClick }>
       { children }
     </a>
   );

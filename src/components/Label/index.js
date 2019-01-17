@@ -14,9 +14,9 @@ const styles = {
   }
 };
 
-const Label = function ({ children, classes, className }) {
+const Label = function ({ children, classes, className, id }) {
   return (
-    <div className={ classNames(classes.Label, className) }>
+    <div id={ id } className={ classNames(classes.Label, className) }>
       { children }
     </div>
   );
