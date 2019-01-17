@@ -9,15 +9,13 @@ exports.default = void 0;
 
 var _Actions = _interopRequireDefault(require("./Actions"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
 
 var _Row = _interopRequireDefault(require("./Row"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -32,7 +30,7 @@ var Form = function Form(_ref) {
       classes = _ref.classes,
       className = _ref.className,
       onSubmit = _ref.onSubmit;
-  var componentClasses = (0, _classnames.default)(classes.Form, className);
+  var componentClasses = (0, _styles.classNames)(classes.Form, className);
 
   if (onSubmit) {
     return _react.default.createElement("form", {
@@ -55,6 +53,6 @@ Form.defaultProps = {
   onSubmit: function onSubmit() {}
 };
 
-var _default = (0, _reactJss.default)(styles)(Form);
+var _default = (0, _styles.withStyles)(styles)(Form);
 
 exports.default = _default;

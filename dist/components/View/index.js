@@ -9,15 +9,13 @@ exports.default = void 0;
 
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = _interopRequireDefault(require("./styles"));
+
+var _styles2 = require("../../styles");
 
 var View = function View(_ref) {
   var _classNames;
@@ -33,7 +31,7 @@ var View = function View(_ref) {
       scrollable = _ref.scrollable,
       style = _ref.style,
       orientation = _ref.orientation;
-  var viewClassNames = (0, _classnames.default)(classes.View, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.OrientationCentered, orientation === 'centered'), (0, _defineProperty2.default)(_classNames, classes.OrientationHorizontal, orientation === 'horizontal'), (0, _defineProperty2.default)(_classNames, classes.OrientationVertical, orientation === 'vertical'), (0, _defineProperty2.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty2.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty2.default)(_classNames, classes.AlignItemsCenter, alignItems === 'center'), (0, _defineProperty2.default)(_classNames, classes.BackgroundDark, background === 'dark'), (0, _defineProperty2.default)(_classNames, classes.BackgroundLight, background === 'light'), (0, _defineProperty2.default)(_classNames, classes.JustifyContentCenter, justifyContent === 'center'), (0, _defineProperty2.default)(_classNames, classes.ScrollableAuto, scrollable === 'auto'), _classNames), className);
+  var viewClassNames = (0, _styles2.classNames)(classes.View, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.OrientationCentered, orientation === 'centered'), (0, _defineProperty2.default)(_classNames, classes.OrientationHorizontal, orientation === 'horizontal'), (0, _defineProperty2.default)(_classNames, classes.OrientationVertical, orientation === 'vertical'), (0, _defineProperty2.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty2.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty2.default)(_classNames, classes.AlignItemsCenter, alignItems === 'center'), (0, _defineProperty2.default)(_classNames, classes.BackgroundDark, background === 'dark'), (0, _defineProperty2.default)(_classNames, classes.BackgroundLight, background === 'light'), (0, _defineProperty2.default)(_classNames, classes.JustifyContentCenter, justifyContent === 'center'), (0, _defineProperty2.default)(_classNames, classes.ScrollableAuto, scrollable === 'auto'), _classNames), className);
   return _react.default.createElement("div", {
     id: id,
     className: viewClassNames,
@@ -50,6 +48,6 @@ View.propTypes = {
   scrollable: _propTypes.default.oneOf([false, 'auto'])
 };
 
-var _default = (0, _reactJss.default)(_styles.default)(View);
+var _default = (0, _styles2.withStyles)(_styles.default)(View);
 
 exports.default = _default;

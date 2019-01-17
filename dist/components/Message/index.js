@@ -9,17 +9,15 @@ exports.default = void 0;
 
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
 var _Icon = _interopRequireDefault(require("../Icon"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = _interopRequireDefault(require("./styles"));
+
+var _styles2 = require("../../styles");
 
 var Message = function Message(_ref) {
   var _classNames;
@@ -29,7 +27,7 @@ var Message = function Message(_ref) {
       isVisible = _ref.isVisible,
       type = _ref.type;
   var icon = type === 'default' ? null : type;
-  var componentClasses = (0, _classnames.default)(classes.Message, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.TypeInfo, type === 'info'), (0, _defineProperty2.default)(_classNames, classes.TypeError, type === 'error'), (0, _defineProperty2.default)(_classNames, classes.WithIcon, icon !== undefined), _classNames));
+  var componentClasses = (0, _styles2.classNames)(classes.Message, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.TypeInfo, type === 'info'), (0, _defineProperty2.default)(_classNames, classes.TypeError, type === 'error'), (0, _defineProperty2.default)(_classNames, classes.WithIcon, icon !== undefined), _classNames));
 
   if (isVisible === false) {
     return null;
@@ -56,6 +54,6 @@ Message.defaultProps = {
   type: 'default'
 };
 
-var _default = (0, _reactJss.default)(_styles.default)(Message);
+var _default = (0, _styles2.withStyles)(_styles.default)(Message);
 
 exports.default = _default;

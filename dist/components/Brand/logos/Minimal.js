@@ -9,13 +9,11 @@ exports.default = void 0;
 
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -75,7 +73,7 @@ var Logo = function Logo(_ref) {
       classes = _ref.classes,
       size = _ref.size,
       isInteractive = _ref.isInteractive;
-  var componentClasses = (0, _classnames.default)(classes.Logo, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty2.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty2.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty2.default)(_classNames, classes.IsMonochrome, color === 'monochrome'), (0, _defineProperty2.default)(_classNames, classes.IsInteractive, isInteractive), _classNames));
+  var componentClasses = (0, _styles.classNames)(classes.Logo, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty2.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty2.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty2.default)(_classNames, classes.IsMonochrome, color === 'monochrome'), (0, _defineProperty2.default)(_classNames, classes.IsInteractive, isInteractive), _classNames));
   return _react.default.createElement("div", {
     className: componentClasses
   }, _react.default.createElement("svg", {
@@ -104,6 +102,6 @@ Logo.defaultProps = {
   isInteractive: false
 };
 
-var _default = (0, _reactJss.default)(styles)(Logo);
+var _default = (0, _styles.withStyles)(styles)(Logo);
 
 exports.default = _default;

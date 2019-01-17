@@ -7,9 +7,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -35,6 +35,6 @@ var Divider = function Divider(_ref) {
   });
 };
 
-var _default = (0, _reactJss.default)(styles)(Divider);
+var _default = (0, _styles.withStyles)(styles)(Divider);
 
 exports.default = _default;

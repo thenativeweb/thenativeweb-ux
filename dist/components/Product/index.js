@@ -9,15 +9,13 @@ exports.default = void 0;
 
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _logos = _interopRequireDefault(require("./logos"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   var _ref;
@@ -104,7 +102,7 @@ var Product = function Product(_ref2) {
       size = _ref2.size,
       theme = _ref2.theme,
       type = _ref2.type;
-  var brandClassNames = (0, _classnames.default)(classes.Product, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty2.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty2.default)(_classNames, classes.SizeXL, size === 'xl'), (0, _defineProperty2.default)(_classNames, classes.TypeLogoOnly, type === 'logo-only'), (0, _defineProperty2.default)(_classNames, classes.TypeTypoOnly, type === 'typo-only'), _classNames));
+  var brandClassNames = (0, _styles.classNames)(classes.Product, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty2.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty2.default)(_classNames, classes.SizeXL, size === 'xl'), (0, _defineProperty2.default)(_classNames, classes.TypeLogoOnly, type === 'logo-only'), (0, _defineProperty2.default)(_classNames, classes.TypeTypoOnly, type === 'typo-only'), _classNames));
 
   var nameComponent = _react.default.createElement("div", {
     className: classes.Name
@@ -139,6 +137,6 @@ Product.defaultProps = {
   type: 'default'
 };
 
-var _default = (0, _reactJss.default)(styles)(Product);
+var _default = (0, _styles.withStyles)(styles)(Product);
 
 exports.default = _default;

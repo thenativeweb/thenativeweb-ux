@@ -21,11 +21,9 @@ var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/hel
 
 var _Button = _interopRequireDefault(require("../Button"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -103,7 +101,7 @@ function (_React$PureComponent) {
           selectedValue = _this$props.selectedValue,
           values = _this$props.values,
           style = _this$props.style;
-      var componentClasses = (0, _classnames.default)(classes.Toggle, className);
+      var componentClasses = (0, _styles.classNames)(classes.Toggle, className);
       return _react.default.createElement("div", {
         id: id,
         className: componentClasses,
@@ -128,6 +126,6 @@ Toggle.defaultProps = {
   children: renderDefaultToggle
 };
 
-var _default = (0, _reactJss.default)(styles)(Toggle);
+var _default = (0, _styles.withStyles)(styles)(Toggle);
 
 exports.default = _default;

@@ -9,13 +9,11 @@ exports.default = void 0;
 
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -52,7 +50,7 @@ var Headline = function Headline(_ref) {
       id = _ref.id,
       level = _ref.level,
       style = _ref.style;
-  var componentClasses = (0, _classnames.default)(classes.Headline, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.Level1, level === '1'), (0, _defineProperty2.default)(_classNames, classes.Level2, level === '2'), _classNames));
+  var componentClasses = (0, _styles.classNames)(classes.Headline, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.Level1, level === '1'), (0, _defineProperty2.default)(_classNames, classes.Level2, level === '2'), _classNames));
   return _react.default.createElement("div", {
     id: id,
     className: componentClasses,
@@ -67,6 +65,6 @@ Headline.defaultProps = {
   level: '1'
 };
 
-var _default = (0, _reactJss.default)(styles)(Headline);
+var _default = (0, _styles.withStyles)(styles)(Headline);
 
 exports.default = _default;

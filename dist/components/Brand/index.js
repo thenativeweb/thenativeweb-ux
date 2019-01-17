@@ -7,17 +7,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _logos = _interopRequireDefault(require("./logos"));
 
 var _MadeBy = _interopRequireDefault(require("./MadeBy"));
+
+var _Pattern = _interopRequireDefault(require("./Pattern"));
 
 var _PoweredBy = _interopRequireDefault(require("./PoweredBy"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -48,6 +50,7 @@ var Brand = function Brand(_ref) {
   }));
 };
 
+Brand.Pattern = _Pattern.default;
 Brand.MadeBy = _MadeBy.default;
 Brand.PoweredBy = _PoweredBy.default;
 Brand.propTypes = {
@@ -61,6 +64,6 @@ Brand.defaultProps = {
   type: 'full'
 };
 
-var _default = (0, _reactJss.default)(styles)(Brand);
+var _default = (0, _styles.withStyles)(styles)(Brand);
 
 exports.default = _default;

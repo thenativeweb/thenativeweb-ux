@@ -21,17 +21,15 @@ var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits
 
 var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
 var _Icon = _interopRequireDefault(require("../Icon"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = _interopRequireDefault(require("./styles.js"));
+
+var _styles2 = require("../../styles");
 
 var Dropdown =
 /*#__PURE__*/
@@ -84,7 +82,7 @@ function (_React$PureComponent) {
           size = _this$props.size,
           style = _this$props.style,
           value = _this$props.value;
-      var dropdownClassNames = (0, _classnames.default)(classes.Dropdown, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.SizeDefault, size === 'default'), (0, _defineProperty2.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty2.default)(_classNames, classes.IsFocused, this.state.isFocused), _classNames));
+      var dropdownClassNames = (0, _styles2.classNames)(classes.Dropdown, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.SizeDefault, size === 'default'), (0, _defineProperty2.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty2.default)(_classNames, classes.IsFocused, this.state.isFocused), _classNames));
       return _react.default.createElement("div", {
         id: id,
         className: dropdownClassNames,
@@ -124,6 +122,6 @@ Dropdown.defaultProps = {
   size: 'default'
 };
 
-var _default = (0, _reactJss.default)(_styles.default)(Dropdown);
+var _default = (0, _styles2.withStyles)(_styles.default)(Dropdown);
 
 exports.default = _default;
