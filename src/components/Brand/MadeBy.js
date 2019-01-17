@@ -1,10 +1,8 @@
-import classNames from 'classnames';
-import flatten from 'lodash/flatten';
 import Icon from '../Icon';
-import injectSheet from 'react-jss';
 import Link from '../Link';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   MadeBy: {
@@ -45,7 +43,7 @@ const MadeBy = ({ classes, color, partner = [], size }) => {
     [classes.SizeL]: size === 'l'
   });
 
-  partner = flatten([ partner ]);
+  partner = Array.isArray(partner) ? partner : [ partner ];
 
   return (
     <div className={ componentClasses }>
@@ -57,10 +55,11 @@ const MadeBy = ({ classes, color, partner = [], size }) => {
 
       <Link href='https://www.thenativeweb.io' isExternal={ true }>the native web</Link>
 
-      { partner.length > 0 ? ' and ' : null }
-
-      { partner.map(item => (
-        <Link key={ item.name } href={ item.href } isExternal={ true }>{ item.name }</Link>
+      { partner.map((item, index) => (
+        <React.Fragment key={ item.name }>
+          { index === partner.length - 1 ? ' and ' : ', ' }
+          <Link href={ item.href } isExternal={ true }>{ item.name }</Link>
+        </React.Fragment>
       )) }
     </div>
   );
@@ -81,4 +80,4 @@ MadeBy.defaultProps = {
   name: undefined
 };
 
-export default injectSheet(styles)(MadeBy);
+export default withStyles(styles)(MadeBy);

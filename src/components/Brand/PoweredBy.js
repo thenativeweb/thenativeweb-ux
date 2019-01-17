@@ -1,8 +1,7 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import Product from '../Product';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   PoweredBy: {
@@ -52,4 +51,4 @@ PoweredBy.defaultProps = {
   name: undefined
 };
 
-export default injectSheet(styles)(PoweredBy);
+export default withStyles(styles)(PoweredBy);

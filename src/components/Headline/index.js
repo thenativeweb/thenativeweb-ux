@@ -1,7 +1,6 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Headline: {
@@ -51,4 +50,4 @@ Headline.defaultProps = {
   level: '1'
 };
 
-export default injectSheet(styles)(Headline);
+export default withStyles(styles)(Headline);

@@ -1,5 +1,5 @@
-import injectSheet from 'react-jss';
 import React from 'react';
+import { withStyles } from '../../styles';
 
 const styles = theme => ({
   Brand: {
@@ -14,4 +14,4 @@ const Brand = ({ children, classes }) => (
   </div>
 );
 
-export default injectSheet(styles)(Brand);
+export default withStyles(styles)(Brand);

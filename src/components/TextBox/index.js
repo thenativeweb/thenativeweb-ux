@@ -1,7 +1,6 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const KEY = {
   ENTER: 13
@@ -174,4 +173,4 @@ TextBox.defaultProps = {
   onFocus () {}
 };
 
-export default injectSheet(styles)(TextBox);
+export default withStyles(styles)(TextBox);

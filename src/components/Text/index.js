@@ -1,7 +1,6 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Text: {
@@ -54,4 +53,4 @@ Text.defaultProps = {
   size: 'm'
 };
 
-export default injectSheet(styles)(Text);
+export default withStyles(styles)(Text);

@@ -1,7 +1,6 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   TextArea: {
@@ -145,4 +144,4 @@ TextArea.defaultProps = {
   onFocus () {}
 };
 
-export default injectSheet(styles)(TextArea);
+export default withStyles(styles)(TextArea);

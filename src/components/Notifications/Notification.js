@@ -1,6 +1,5 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Notification: {
@@ -35,4 +34,4 @@ const Notification = ({ classes, type, text }) => {
   );
 };
 
-export default injectSheet(styles)(Notification);
+export default withStyles(styles)(Notification);

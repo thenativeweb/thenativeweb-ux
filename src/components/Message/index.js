@@ -1,9 +1,8 @@
-import classNames from 'classnames';
 import Icon from '../Icon';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles';
+import { classNames, withStyles } from '../../styles';
 
 const Message = ({ children, classes, isVisible, type }) => {
   const icon = type === 'default' ? null : type;
@@ -36,4 +35,4 @@ Message.defaultProps = {
   type: 'default'
 };
 
-export default injectSheet(styles)(Message);
+export default withStyles(styles)(Message);

@@ -1,8 +1,8 @@
 import Brand from './Brand';
 import Footer from './Footer';
-import injectSheet from 'react-jss';
 import Item from './Item';
 import React from 'react';
+import { withStyles } from '../../styles';
 
 const styles = theme => ({
   Sidebar: {
@@ -28,4 +28,4 @@ Sidebar.Brand = Brand;
 Sidebar.Footer = Footer;
 Sidebar.Item = Item;
 
-export default injectSheet(styles)(Sidebar);
+export default withStyles(styles)(Sidebar);

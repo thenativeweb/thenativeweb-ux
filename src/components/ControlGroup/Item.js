@@ -1,8 +1,7 @@
 import CheckBox from '../CheckBox';
-import classNames from 'classnames';
 import Icon from '../Icon';
-import injectSheet from 'react-jss';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Item: {
@@ -110,4 +109,4 @@ const Item = ({ className, classes, adjust = 'flex', children, helpLink, label, 
   );
 };
 
-export default injectSheet(styles)(Item);
+export default withStyles(styles)(Item);

@@ -1,9 +1,9 @@
 import Button from '../Button';
 import Headline from '../Headline';
-import injectSheet from 'react-jss';
 import Modal from '../Modal';
 import React from 'react';
 import services from '../../services';
+import { withStyles } from '../../styles';
 
 const KEY = {
   ENTER: 13,
@@ -100,4 +100,4 @@ class Dialogs extends React.PureComponent {
   }
 }
 
-export default injectSheet(styles)(Dialogs);
+export default withStyles(styles)(Dialogs);

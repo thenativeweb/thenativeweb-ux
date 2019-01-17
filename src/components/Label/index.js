@@ -1,6 +1,5 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = {
   Label: {
@@ -22,4 +21,4 @@ const Label = function ({ children, classes, className, id }) {
   );
 };
 
-export default injectSheet(styles)(Label);
+export default withStyles(styles)(Label);

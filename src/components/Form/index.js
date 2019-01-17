@@ -1,9 +1,8 @@
 import Actions from './Actions';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Row from './Row';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Form: {
@@ -40,4 +39,4 @@ Form.defaultProps = {
   onSubmit () {}
 };
 
-export default injectSheet(styles)(Form);
+export default withStyles(styles)(Form);

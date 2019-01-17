@@ -1,8 +1,7 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import logos from './logos';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Product: {
@@ -131,4 +130,4 @@ Product.defaultProps = {
   type: 'default'
 };
 
-export default injectSheet(styles)(Product);
+export default withStyles(styles)(Product);

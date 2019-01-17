@@ -1,10 +1,9 @@
-import classNames from 'classnames';
 import Icon from '../Icon';
-import injectSheet from 'react-jss';
 import Label from '../Label';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.js';
+import { classNames, withStyles } from '../../styles';
 
 const Hint = ({ children, classes }) => (
   <span className={ classes.Hint }>
@@ -77,11 +76,11 @@ Button.defaultProps = {
   onClick () {}
 };
 
-Button.Hint = injectSheet({
+Button.Hint = withStyles({
   Hint: {
     opacity: 0.5,
     'padding-left': '0.5em'
   }
 })(Hint);
 
-export default injectSheet(styles)(Button);
+export default withStyles(styles)(Button);

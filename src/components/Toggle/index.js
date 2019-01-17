@@ -1,7 +1,6 @@
 import Button from '../Button';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Toggle: {
@@ -83,4 +82,4 @@ Toggle.defaultProps = {
   children: renderDefaultToggle
 };
 
-export default injectSheet(styles)(Toggle);
+export default withStyles(styles)(Toggle);

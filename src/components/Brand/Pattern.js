@@ -1,6 +1,5 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Pattern: {
@@ -26,4 +25,4 @@ const Pattern = function ({ children, classes, className, type = 'default' } = {
   return <div className={ componentClasses }>{ children }</div>;
 };
 
-export default injectSheet(styles)(Pattern);
+export default withStyles(styles)(Pattern);

@@ -1,7 +1,6 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Link: {
@@ -46,4 +45,4 @@ Link.defaultProps = {
   onClick () {}
 };
 
-export default injectSheet(styles)(Link);
+export default withStyles(styles)(Link);
