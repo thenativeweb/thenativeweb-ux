@@ -1,6 +1,7 @@
 import injectSheet from 'react-jss';
 import logos from './logos';
 import MadeBy from './MadeBy';
+import Pattern from './Pattern';
 import PoweredBy from './PoweredBy';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -26,6 +27,7 @@ const Brand = ({ color, classes, size, type, isInteractive }) => {
   );
 };
 
+Brand.Pattern = Pattern;
 Brand.MadeBy = MadeBy;
 Brand.PoweredBy = PoweredBy;
 

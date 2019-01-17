@@ -54,6 +54,24 @@ The `Brand` is available as an interactive element. To make it interactive, set 
 <Brand size='l' type='minimal' color='monochrome' isInteractive={ true } />
 ```
 
+### Pattern
+
+The `Brand.Pattern` component can be used to add a pattern to a container. The pattern will be positioned absolute inside the parent container.
+
+```javascript
+<View orientation='centered' background='dark' style={{ width: 400, height: 200 }}>
+  <Brand.Pattern />
+  <View>This content is above the pattern…</View>
+</View>
+<hr />
+<ThemeProvider theme='wolkenkit'>
+  <View orientation='centered' background='dark' style={{ width: 400, height: 200 }}>
+    <Brand.Pattern />
+    <View>This content is above the pattern…</View>
+  </View>
+</ThemeProvider>
+```
+
 ### PoweredBy
 
 The `Brand.PoweredBy` component displays a teaser. Optionally, you may provide a product name using the `product` property.
