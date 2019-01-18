@@ -1,5 +1,5 @@
-import injectSheet from 'react-jss';
 import React from 'react';
+import { withStyles } from '../../styles';
 
 const styles = theme => ({
   Divider: {
@@ -22,4 +22,4 @@ const Divider = ({ classes }) => (
   />
 );
 
-export default injectSheet(styles)(Divider);
+export default withStyles(styles)(Divider);

@@ -21,13 +21,11 @@ var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits
 
 var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var KEY = {
   ENTER: 13
@@ -149,7 +147,7 @@ function (_React$Component) {
           required = _this$props2.required,
           style = _this$props2.style,
           type = _this$props2.type;
-      var componentClasses = (0, _classnames.default)(classes.TextBox, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.TypePort, type === 'port'), (0, _defineProperty2.default)(_classNames, classes.TypeTime, type === 'time'), (0, _defineProperty2.default)(_classNames, classes.IsDisabled, disabled === true), (0, _defineProperty2.default)(_classNames, classes.IsRequired, required === true), _classNames), className);
+      var componentClasses = (0, _styles.classNames)(classes.TextBox, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.TypePort, type === 'port'), (0, _defineProperty2.default)(_classNames, classes.TypeTime, type === 'time'), (0, _defineProperty2.default)(_classNames, classes.IsDisabled, disabled === true), (0, _defineProperty2.default)(_classNames, classes.IsRequired, required === true), _classNames), className);
       var inputType;
 
       switch (type) {
@@ -208,6 +206,6 @@ TextBox.defaultProps = {
   onFocus: function onFocus() {}
 };
 
-var _default = (0, _reactJss.default)(styles)(TextBox);
+var _default = (0, _styles.withStyles)(styles)(TextBox);
 
 exports.default = _default;

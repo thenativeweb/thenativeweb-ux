@@ -7,11 +7,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = {
   Label: {
@@ -28,12 +26,14 @@ var styles = {
 var Label = function Label(_ref) {
   var children = _ref.children,
       classes = _ref.classes,
-      className = _ref.className;
+      className = _ref.className,
+      id = _ref.id;
   return _react.default.createElement("div", {
-    className: (0, _classnames.default)(classes.Label, className)
+    id: id,
+    className: (0, _styles.classNames)(classes.Label, className)
   }, children);
 };
 
-var _default = (0, _reactJss.default)(styles)(Label);
+var _default = (0, _styles.withStyles)(styles)(Label);
 
 exports.default = _default;

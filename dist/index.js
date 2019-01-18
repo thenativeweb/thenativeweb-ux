@@ -5,6 +5,12 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "animate", {
+  enumerable: true,
+  get: function get() {
+    return _animejs.default;
+  }
+});
 Object.defineProperty(exports, "Application", {
   enumerable: true,
   get: function get() {
@@ -149,6 +155,8 @@ Object.defineProperty(exports, "View", {
     return _View.default;
   }
 });
+
+var _animejs = _interopRequireDefault(require("animejs"));
 
 var _Application = _interopRequireDefault(require("./components/Application"));
 

@@ -19,7 +19,18 @@ var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits
 
 var _events = _interopRequireDefault(require("events"));
 
-var _merge = _interopRequireDefault(require("lodash/merge"));
+var defaultState = {
+  confirm: {
+    isVisible: false,
+    title: '',
+    actions: {
+      cancel: '',
+      confirm: ''
+    },
+    onCancel: function onCancel() {},
+    onConfirm: function onConfirm() {}
+  }
+};
 
 var DialogsService =
 /*#__PURE__*/
@@ -31,31 +42,14 @@ function (_EventEmitter) {
 
     (0, _classCallCheck2.default)(this, DialogsService);
     _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(DialogsService).call(this));
-    _this.state = {
-      confirm: {
-        isVisible: false,
-        title: '',
-        actions: {
-          cancel: '',
-          confirm: ''
-        },
-        onCancel: function onCancel() {},
-        onConfirm: function onConfirm() {}
-      }
-    };
+    _this.state = defaultState;
     return _this;
   }
 
   (0, _createClass2.default)(DialogsService, [{
     key: "hideConfirm",
     value: function hideConfirm() {
-      this.state = (0, _merge.default)({}, this.state, {
-        confirm: {
-          isVisible: false,
-          onCancel: function onCancel() {},
-          onConfirm: function onConfirm() {}
-        }
-      });
+      this.state = defaultState;
       this.emit('changed');
     }
   }, {

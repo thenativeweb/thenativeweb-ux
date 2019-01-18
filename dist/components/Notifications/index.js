@@ -21,8 +21,6 @@ var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/hel
 
 var _exenv = _interopRequireDefault(require("exenv"));
 
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _Notification = _interopRequireDefault(require("./Notification"));
 
 var _react = _interopRequireDefault(require("react"));
@@ -32,6 +30,8 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 var _services = _interopRequireDefault(require("../../services"));
 
 var _Transition = _interopRequireDefault(require("../Transition"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -101,6 +101,6 @@ function (_React$PureComponent) {
   return Notifications;
 }(_react.default.PureComponent);
 
-var _default = (0, _reactJss.default)(styles)(Notifications);
+var _default = (0, _styles.withStyles)(styles)(Notifications);
 
 exports.default = _default;

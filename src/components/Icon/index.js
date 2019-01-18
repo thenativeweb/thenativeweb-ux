@@ -1,8 +1,7 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles';
+import { classNames, withStyles } from '../../styles';
 
 const Icon = ({ classes, className, color, name, size, style, type }) => {
   const iconClassNames = classNames(classes.Icon, {
@@ -41,4 +40,4 @@ Icon.defaultProps = {
   type: 'default'
 };
 
-export default injectSheet(styles)(Icon);
+export default withStyles(styles)(Icon);

@@ -1,5 +1,5 @@
-import injectSheet from 'react-jss';
 import React from 'react';
+import { withStyles } from '../../styles';
 
 const styles = theme => ({
   Row: {
@@ -14,4 +14,4 @@ const Row = function ({ children, classes }) {
   );
 };
 
-export default injectSheet(styles)(Row);
+export default withStyles(styles)(Row);

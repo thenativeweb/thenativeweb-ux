@@ -1,32 +1,27 @@
 import EventEmitter from 'events';
-import merge from 'lodash/merge';
+
+const defaultState = {
+  confirm: {
+    isVisible: false,
+    title: '',
+    actions: {
+      cancel: '',
+      confirm: ''
+    },
+    onCancel () {},
+    onConfirm () {}
+  }
+};
 
 class DialogsService extends EventEmitter {
   constructor () {
     super();
 
-    this.state = {
-      confirm: {
-        isVisible: false,
-        title: '',
-        actions: {
-          cancel: '',
-          confirm: ''
-        },
-        onCancel () {},
-        onConfirm () {}
-      }
-    };
+    this.state = defaultState;
   }
 
   hideConfirm () {
-    this.state = merge({}, this.state, {
-      confirm: {
-        isVisible: false,
-        onCancel () {},
-        onConfirm () {}
-      }
-    });
+    this.state = defaultState;
     this.emit('changed');
   }
 

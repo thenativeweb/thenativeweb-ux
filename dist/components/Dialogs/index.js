@@ -23,13 +23,13 @@ var _Button = _interopRequireDefault(require("../Button"));
 
 var _Headline = _interopRequireDefault(require("../Headline"));
 
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _Modal = _interopRequireDefault(require("../Modal"));
 
 var _react = _interopRequireDefault(require("react"));
 
 var _services = _interopRequireDefault(require("../../services"));
+
+var _styles = require("../../styles");
 
 var KEY = {
   ENTER: 13,
@@ -140,6 +140,6 @@ function (_React$PureComponent) {
   return Dialogs;
 }(_react.default.PureComponent);
 
-var _default = (0, _reactJss.default)(styles)(Dialogs);
+var _default = (0, _styles.withStyles)(styles)(Dialogs);
 
 exports.default = _default;

@@ -1,9 +1,8 @@
-import classNames from 'classnames';
 import Icon from '../Icon';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.js';
+import { classNames, withStyles } from '../../styles';
 
 class Dropdown extends React.PureComponent {
   constructor (props) {
@@ -75,4 +74,4 @@ Dropdown.defaultProps = {
   size: 'default'
 };
 
-export default injectSheet(styles)(Dropdown);
+export default withStyles(styles)(Dropdown);

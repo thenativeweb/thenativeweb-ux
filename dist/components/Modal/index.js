@@ -21,11 +21,7 @@ var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits
 
 var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
 var _exenv = _interopRequireDefault(require("exenv"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -40,6 +36,8 @@ var _services = _interopRequireDefault(require("../../services"));
 var _styles = _interopRequireDefault(require("./styles"));
 
 var _Transition = _interopRequireDefault(require("../Transition"));
+
+var _styles2 = require("../../styles");
 
 var KEY = {
   ENTER: 13,
@@ -126,8 +124,8 @@ function (_React$PureComponent) {
           children = _this$props.children,
           isVisible = _this$props.isVisible,
           size = _this$props.size;
-      var backdropClasses = (0, _classnames.default)(classes.Backdrop, (0, _defineProperty2.default)({}, classes.IsVisible, isVisible));
-      var contentClasses = (0, _classnames.default)(classes.Content, (_classNames2 = {}, (0, _defineProperty2.default)(_classNames2, classes.ContentSizeS, size === 's'), (0, _defineProperty2.default)(_classNames2, classes.ContentSizeM, size === 'm'), (0, _defineProperty2.default)(_classNames2, classes.ContentSizeL, size === 'l'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedSidebar, attach === 'sidebar'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedLeft, attach === 'left'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedRight, attach === 'right'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedCenter, attach === 'center'), _classNames2), className);
+      var backdropClasses = (0, _styles2.classNames)(classes.Backdrop, (0, _defineProperty2.default)({}, classes.IsVisible, isVisible));
+      var contentClasses = (0, _styles2.classNames)(classes.Content, (_classNames2 = {}, (0, _defineProperty2.default)(_classNames2, classes.ContentSizeS, size === 's'), (0, _defineProperty2.default)(_classNames2, classes.ContentSizeM, size === 'm'), (0, _defineProperty2.default)(_classNames2, classes.ContentSizeL, size === 'l'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedSidebar, attach === 'sidebar'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedLeft, attach === 'left'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedRight, attach === 'right'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedCenter, attach === 'center'), _classNames2), className);
       var transitionType;
 
       switch (attach) {
@@ -181,6 +179,6 @@ Modal.defaultProps = {
   onKeyDown: function onKeyDown() {}
 };
 
-var _default = (0, _reactJss.default)(_styles.default)(Modal);
+var _default = (0, _styles2.withStyles)(_styles.default)(Modal);
 
 exports.default = _default;

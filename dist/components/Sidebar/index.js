@@ -11,11 +11,11 @@ var _Brand = _interopRequireDefault(require("./Brand"));
 
 var _Footer = _interopRequireDefault(require("./Footer"));
 
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _Item = _interopRequireDefault(require("./Item"));
 
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -47,6 +47,6 @@ Sidebar.Brand = _Brand.default;
 Sidebar.Footer = _Footer.default;
 Sidebar.Item = _Item.default;
 
-var _default = (0, _reactJss.default)(styles)(Sidebar);
+var _default = (0, _styles.withStyles)(styles)(Sidebar);
 
 exports.default = _default;

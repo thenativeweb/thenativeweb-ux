@@ -1,7 +1,6 @@
-import classNames from 'classnames';
 import Icon from '../Icon';
-import injectSheet from 'react-jss';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Item: {
@@ -116,4 +115,4 @@ const Item = ({ classes, className, iconName, iconUrl, id, isActive = false, isN
   );
 };
 
-export default injectSheet(styles)(Item);
+export default withStyles(styles)(Item);

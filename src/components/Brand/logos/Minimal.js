@@ -1,7 +1,6 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../../styles';
 
 const styles = theme => ({
   Logo: {
@@ -100,4 +99,4 @@ Logo.defaultProps = {
   isInteractive: false
 };
 
-export default injectSheet(styles)(Logo);
+export default withStyles(styles)(Logo);

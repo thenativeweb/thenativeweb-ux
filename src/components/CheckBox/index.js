@@ -1,7 +1,6 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   CheckBox: {
@@ -35,4 +34,4 @@ CheckBox.defaultProps = {
   onChange () {}
 };
 
-export default injectSheet(styles)(CheckBox);
+export default withStyles(styles)(CheckBox);

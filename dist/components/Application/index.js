@@ -13,8 +13,6 @@ var _Dialogs = _interopRequireDefault(require("../Dialogs"));
 
 var _Icons = _interopRequireDefault(require("../Icons"));
 
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _Notifications = _interopRequireDefault(require("../Notifications"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -22,6 +20,8 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _react = _interopRequireDefault(require("react"));
 
 var _View = _interopRequireDefault(require("../View"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -67,6 +67,6 @@ Application.Services = function () {
   }, _react.default.createElement(_Icons.default, null), _react.default.createElement(_Dialogs.default, null), _react.default.createElement(_Notifications.default, null));
 };
 
-var _default = (0, _reactJss.default)(styles)(Application);
+var _default = (0, _styles.withStyles)(styles)(Application);
 
 exports.default = _default;

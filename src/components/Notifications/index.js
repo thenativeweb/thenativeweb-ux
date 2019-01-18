@@ -1,10 +1,10 @@
 import ExecutionEnvironment from 'exenv';
-import injectSheet from 'react-jss';
 import Notification from './Notification';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import services from '../../services';
 import Transition from '../Transition';
+import { withStyles } from '../../styles';
 
 const styles = theme => ({
   Notifications: {
@@ -58,4 +58,4 @@ class Notifications extends React.PureComponent {
   }
 }
 
-export default injectSheet(styles)(Notifications);
+export default withStyles(styles)(Notifications);

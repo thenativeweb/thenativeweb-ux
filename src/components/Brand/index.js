@@ -1,9 +1,10 @@
-import injectSheet from 'react-jss';
 import logos from './logos';
 import MadeBy from './MadeBy';
+import Pattern from './Pattern';
 import PoweredBy from './PoweredBy';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '../../styles';
 
 const styles = theme => ({
   Brand: {
@@ -26,6 +27,7 @@ const Brand = ({ color, classes, size, type, isInteractive }) => {
   );
 };
 
+Brand.Pattern = Pattern;
 Brand.MadeBy = MadeBy;
 Brand.PoweredBy = PoweredBy;
 
@@ -41,4 +43,4 @@ Brand.defaultProps = {
   type: 'full'
 };
 
-export default injectSheet(styles)(Brand);
+export default withStyles(styles)(Brand);

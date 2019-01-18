@@ -9,19 +9,15 @@ exports.default = void 0;
 
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _flatten = _interopRequireDefault(require("lodash/flatten"));
-
 var _Icon = _interopRequireDefault(require("../Icon"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
 
 var _Link = _interopRequireDefault(require("../Link"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -58,8 +54,8 @@ var MadeBy = function MadeBy(_ref) {
       _ref$partner = _ref.partner,
       partner = _ref$partner === void 0 ? [] : _ref$partner,
       size = _ref.size;
-  var componentClasses = (0, _classnames.default)(classes.MadeBy, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.ColorDark, color === 'dark'), (0, _defineProperty2.default)(_classNames, classes.ColorLight, color === 'light'), (0, _defineProperty2.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty2.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty2.default)(_classNames, classes.SizeL, size === 'l'), _classNames));
-  partner = (0, _flatten.default)([partner]);
+  var componentClasses = (0, _styles.classNames)(classes.MadeBy, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.ColorDark, color === 'dark'), (0, _defineProperty2.default)(_classNames, classes.ColorLight, color === 'light'), (0, _defineProperty2.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty2.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty2.default)(_classNames, classes.SizeL, size === 'l'), _classNames));
+  partner = Array.isArray(partner) ? partner : [partner];
   return _react.default.createElement("div", {
     className: componentClasses
   }, _react.default.createElement("span", {
@@ -71,12 +67,13 @@ var MadeBy = function MadeBy(_ref) {
   }), " by"), ' ', _react.default.createElement(_Link.default, {
     href: "https://www.thenativeweb.io",
     isExternal: true
-  }, "the native web"), partner.length > 0 ? ' and ' : null, partner.map(function (item) {
-    return _react.default.createElement(_Link.default, {
-      key: item.name,
+  }, "the native web"), partner.map(function (item, index) {
+    return _react.default.createElement(_react.default.Fragment, {
+      key: item.name
+    }, index === partner.length - 1 ? ' and ' : ', ', _react.default.createElement(_Link.default, {
       href: item.href,
       isExternal: true
-    }, item.name);
+    }, item.name));
   }));
 };
 
@@ -91,6 +88,6 @@ MadeBy.defaultProps = {
   name: undefined
 };
 
-var _default = (0, _reactJss.default)(styles)(MadeBy);
+var _default = (0, _styles.withStyles)(styles)(MadeBy);
 
 exports.default = _default;

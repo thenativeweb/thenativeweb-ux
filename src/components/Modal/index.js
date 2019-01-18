@@ -1,6 +1,4 @@
-import classNames from 'classnames';
 import ExecutionEnvironment from 'exenv';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -8,6 +6,7 @@ import Row from './Row';
 import services from '../../services';
 import styles from './styles';
 import Transition from '../Transition';
+import { classNames, withStyles } from '../../styles';
 
 const KEY = {
   ENTER: 13,
@@ -133,4 +132,4 @@ Modal.defaultProps = {
   onKeyDown () {}
 };
 
-export default injectSheet(styles)(Modal);
+export default withStyles(styles)(Modal);

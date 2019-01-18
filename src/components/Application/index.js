@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import Dialogs from '../Dialogs';
 import Icons from '../Icons';
-import injectSheet from 'react-jss';
 import Notifications from '../Notifications';
 import PropTypes from 'prop-types';
 import React from 'react';
 import View from '../View';
+import { withStyles } from '../../styles';
 
 const styles = theme => ({
   '@global': {
@@ -48,4 +48,4 @@ Application.Services = () => (
   </span>
 );
 
-export default injectSheet(styles)(Application);
+export default withStyles(styles)(Application);

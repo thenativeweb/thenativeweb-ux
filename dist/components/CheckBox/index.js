@@ -7,13 +7,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -31,7 +29,7 @@ var CheckBox = function CheckBox(_ref) {
       name = _ref.name,
       style = _ref.style,
       onChange = _ref.onChange;
-  var componentClasses = (0, _classnames.default)(classes.CheckBox, className);
+  var componentClasses = (0, _styles.classNames)(classes.CheckBox, className);
   return _react.default.createElement("input", {
     id: id,
     className: componentClasses,
@@ -52,6 +50,6 @@ CheckBox.defaultProps = {
   onChange: function onChange() {}
 };
 
-var _default = (0, _reactJss.default)(styles)(CheckBox);
+var _default = (0, _styles.withStyles)(styles)(CheckBox);
 
 exports.default = _default;

@@ -9,11 +9,9 @@ exports.default = void 0;
 
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -41,12 +39,12 @@ var Notification = function Notification(_ref) {
   var classes = _ref.classes,
       type = _ref.type,
       text = _ref.text;
-  var componentClasses = (0, _classnames.default)(classes.Notification, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.TypeError, type === 'error'), (0, _defineProperty2.default)(_classNames, classes.TypeSuccess, type === 'success'), _classNames));
+  var componentClasses = (0, _styles.classNames)(classes.Notification, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.TypeError, type === 'error'), (0, _defineProperty2.default)(_classNames, classes.TypeSuccess, type === 'success'), _classNames));
   return _react.default.createElement("div", {
     className: componentClasses
   }, text);
 };
 
-var _default = (0, _reactJss.default)(styles)(Notification);
+var _default = (0, _styles.withStyles)(styles)(Notification);
 
 exports.default = _default;

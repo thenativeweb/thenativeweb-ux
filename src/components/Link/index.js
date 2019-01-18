@@ -1,7 +1,6 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Link: {
@@ -17,19 +16,19 @@ const styles = theme => ({
   }
 });
 
-const Link = ({ classes, className, children, isExternal, href, onClick }) => {
+const Link = ({ classes, id, className, children, isExternal, href, onClick }) => {
   const brandClassNames = classNames(classes.Link, className);
 
   if (isExternal === true) {
     return (
-      <a className={ brandClassNames } href={ href } onClick={ onClick } rel='noopener noreferrer' target='_blank'>
+      <a id={ id } className={ brandClassNames } href={ href } onClick={ onClick } rel='noopener noreferrer' target='_blank'>
         { children }
       </a>
     );
   }
 
   return (
-    <a className={ brandClassNames } href={ href } onClick={ onClick }>
+    <a id={ id } className={ brandClassNames } href={ href } onClick={ onClick }>
       { children }
     </a>
   );
@@ -46,4 +45,4 @@ Link.defaultProps = {
   onClick () {}
 };
 
-export default injectSheet(styles)(Link);
+export default withStyles(styles)(Link);

@@ -1,3 +1,4 @@
+import animate from 'animejs';
 import Application from './components/Application';
 import Brand from './components/Brand';
 import Button from './components/Button';
@@ -24,6 +25,7 @@ import Transition from './components/Transition';
 import View from './components/View';
 
 export {
+  animate,
   Application,
   Brand,
   Button,

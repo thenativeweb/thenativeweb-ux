@@ -1,8 +1,7 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles';
+import { classNames, withStyles } from '../../styles';
 
 const View = ({
   adjust,
@@ -46,4 +45,4 @@ View.propTypes = {
   scrollable: PropTypes.oneOf([ false, 'auto' ])
 };
 
-export default injectSheet(styles)(View);
+export default withStyles(styles)(View);

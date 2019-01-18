@@ -11,13 +11,11 @@ var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/de
 
 var _CheckBox = _interopRequireDefault(require("../CheckBox"));
 
-var _classnames = _interopRequireDefault(require("classnames"));
-
 var _Icon = _interopRequireDefault(require("../Icon"));
 
-var _reactJss = _interopRequireDefault(require("react-jss"));
-
 var _react = _interopRequireDefault(require("react"));
+
+var _styles = require("../../styles");
 
 var styles = function styles(theme) {
   return {
@@ -91,7 +89,7 @@ var Item = function Item(_ref) {
     type = 'checkbox';
   }
 
-  var componentClasses = (0, _classnames.default)(classes.Item, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty2.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty2.default)(_classNames, classes.Hidden, isVisible === false), (0, _defineProperty2.default)(_classNames, classes.Labeled, label), (0, _defineProperty2.default)(_classNames, classes.TypeCheckBox, type === 'checkbox'), _classNames), className);
+  var componentClasses = (0, _styles.classNames)(classes.Item, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty2.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty2.default)(_classNames, classes.Hidden, isVisible === false), (0, _defineProperty2.default)(_classNames, classes.Labeled, label), (0, _defineProperty2.default)(_classNames, classes.TypeCheckBox, type === 'checkbox'), _classNames), className);
 
   if (type === 'checkbox') {
     var controlId = child.props.id ? child.props.id : undefined;
@@ -132,6 +130,6 @@ var Item = function Item(_ref) {
   }, child));
 };
 
-var _default = (0, _reactJss.default)(styles)(Item);
+var _default = (0, _styles.withStyles)(styles)(Item);
 
 exports.default = _default;

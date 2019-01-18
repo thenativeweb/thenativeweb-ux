@@ -1,5 +1,5 @@
-import injectSheet from 'react-jss';
 import React from 'react';
+import { withStyles } from '../../styles';
 
 const styles = theme => ({
   Footer: {
@@ -19,4 +19,4 @@ const Footer = ({ children, classes }) => (
   </div>
 );
 
-export default injectSheet(styles)(Footer);
+export default withStyles(styles)(Footer);

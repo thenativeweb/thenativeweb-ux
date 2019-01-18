@@ -1,6 +1,5 @@
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
 import React from 'react';
+import { classNames, withStyles } from '../../styles';
 
 const styles = {
   Label: {
@@ -14,12 +13,12 @@ const styles = {
   }
 };
 
-const Label = function ({ children, classes, className }) {
+const Label = function ({ children, classes, className, id }) {
   return (
-    <div className={ classNames(classes.Label, className) }>
+    <div id={ id } className={ classNames(classes.Label, className) }>
       { children }
     </div>
   );
 };
 
-export default injectSheet(styles)(Label);
+export default withStyles(styles)(Label);
