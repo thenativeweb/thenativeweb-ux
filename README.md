@@ -45,15 +45,17 @@ Afterwards, you can use any component. Of course, you still need to reference th
 import { Button } from 'thenativeweb-ux';
 ```
 
+### Viewing the documentation
+
+The complete documentation for all components can be found at [ux.thenativeweb.io](https://ux.thenativeweb.io).
+
 ### Running the sample application
 
-Additionally, there is a sample application. To run the sample application, use the following command:
+There is a [sample application](examples/with-webpack). To run it, install its dependencies, and use the following command:
 
 ```shell
 $ npx roboter serve
 ```
-
-The complete documentation for all components can be found at [ux.thenativeweb.io](https://ux.thenativeweb.io).
 
 ## Running the build
 
