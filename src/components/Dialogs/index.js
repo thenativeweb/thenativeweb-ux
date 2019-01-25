@@ -80,6 +80,7 @@ class Dialogs extends React.PureComponent {
     return (
       <Modal
         attach='center'
+        showHeader={ false }
         isVisible={ services.dialogs.state.confirm.isVisible }
         className={ classes.Dialogs }
         onKeyDown={ this.handleKeyDown }
