@@ -23,6 +23,12 @@ Object.defineProperty(exports, "Brand", {
     return _Brand.default;
   }
 });
+Object.defineProperty(exports, "BusyIndicator", {
+  enumerable: true,
+  get: function get() {
+    return _BusyIndicator.default;
+  }
+});
 Object.defineProperty(exports, "Button", {
   enumerable: true,
   get: function get() {
@@ -161,6 +167,8 @@ var _animejs = _interopRequireDefault(require("animejs"));
 var _Application = _interopRequireDefault(require("./components/Application"));
 
 var _Brand = _interopRequireDefault(require("./components/Brand"));
+
+var _BusyIndicator = _interopRequireDefault(require("./components/BusyIndicator"));
 
 var _Button = _interopRequireDefault(require("./components/Button"));
 

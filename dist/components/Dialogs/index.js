@@ -121,6 +121,7 @@ function (_React$PureComponent) {
       var classes = this.props.classes;
       return _react.default.createElement(_Modal.default, {
         attach: "center",
+        showHeader: false,
         isVisible: _services.default.dialogs.state.confirm.isVisible,
         className: classes.Dialogs,
         onKeyDown: this.handleKeyDown

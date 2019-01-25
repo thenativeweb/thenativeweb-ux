@@ -7,6 +7,11 @@ exports.default = void 0;
 
 var styles = function styles(theme) {
   return {
+    '@global': {
+      '.thenativeweb-modal--visible': {
+        'pointer-events': 'none'
+      }
+    },
     Modal: {
       position: 'fixed',
       left: 0,
@@ -37,7 +42,7 @@ var styles = function styles(theme) {
       'pointer-events': 'all',
       opacity: 1
     },
-    Content: {
+    Chrome: {
       position: 'fixed',
       display: 'flex',
       'flex-direction': 'column',
@@ -46,41 +51,67 @@ var styles = function styles(theme) {
       'z-index': theme.zIndex.modal,
       background: theme.color.brand.white,
       opacity: 0,
-      padding: "".concat(theme.grid.stepSize * 2, "px ").concat(theme.grid.stepSize * 3, "px"),
       'pointer-events': 'all',
       'will-change': 'opacity, transform',
       'font-family': theme.font.family.default,
       'box-sizing': 'border-box'
     },
-    ContentSizeS: {
-      'min-width': theme.grid.stepSize * 30,
-      'max-width': '100vw'
+    ChromeSizeS: {
+      width: '25vw'
     },
-    ContentSizeM: {
-      'min-width': '61vw',
-      'max-width': '100vw'
+    ChromeSizeM: {
+      width: '61vw'
     },
-    ContentSizeL: {
-      'min-width': '90vw',
-      'max-width': '100vw'
+    ChromeSizeL: {
+      width: '90vw'
     },
-    ContentAttachedSidebar: {
+    ChromeSizeFullscreen: {
+      width: '100vw'
+    },
+    ChromeAttachedSidebar: {
       left: theme.components.sidebar.width,
       top: 0
     },
-    ContentAttachedLeft: {
+    ChromeAttachedLeft: {
       left: 0,
       top: 0
     },
-    ContentAttachedRight: {
+    ChromeAttachedRight: {
       right: 0,
       top: 0
     },
-    ContentAttachedCenter: {
+    ChromeAttachedCenter: {
       'max-width': theme.grid.stepSize * 46,
       width: 'auto',
       height: 'auto',
       top: 0
+    },
+    ChromePaddingNone: {
+      padding: 0
+    },
+    Header: {
+      flexBasis: 'auto',
+      flexShrink: 0,
+      display: 'flex',
+      justifyContent: 'space-between',
+      position: 'relative',
+      padding: [theme.grid.stepSize * 2, theme.grid.stepSize * 3],
+      'border-bottom': "1px solid ".concat(theme.color.content.border)
+    },
+    HeaderText: {
+      'font-family': theme.font.family.default,
+      opacity: 0.95,
+      'font-size': theme.font.size.xlarge,
+      'font-weight': 600,
+      'text-align': 'center'
+    },
+    HeaderCloseButton: {},
+    Content: {
+      flexGrow: 1,
+      flexShrink: 1,
+      padding: [theme.grid.stepSize * 2, theme.grid.stepSize * 3],
+      '-webkit-overflow-scrolling': 'touch',
+      overflow: 'auto'
     },
     Title: {
       'text-align': 'center',

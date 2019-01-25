@@ -21,6 +21,8 @@ var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits
 
 var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
+var _Button = _interopRequireDefault(require("../Button"));
+
 var _exenv = _interopRequireDefault(require("exenv"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -122,10 +124,13 @@ function (_React$PureComponent) {
           classes = _this$props.classes,
           className = _this$props.className,
           children = _this$props.children,
+          header = _this$props.header,
           isVisible = _this$props.isVisible,
-          size = _this$props.size;
+          showHeader = _this$props.showHeader,
+          size = _this$props.size,
+          padding = _this$props.padding;
       var backdropClasses = (0, _styles2.classNames)(classes.Backdrop, (0, _defineProperty2.default)({}, classes.IsVisible, isVisible));
-      var contentClasses = (0, _styles2.classNames)(classes.Content, (_classNames2 = {}, (0, _defineProperty2.default)(_classNames2, classes.ContentSizeS, size === 's'), (0, _defineProperty2.default)(_classNames2, classes.ContentSizeM, size === 'm'), (0, _defineProperty2.default)(_classNames2, classes.ContentSizeL, size === 'l'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedSidebar, attach === 'sidebar'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedLeft, attach === 'left'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedRight, attach === 'right'), (0, _defineProperty2.default)(_classNames2, classes.ContentAttachedCenter, attach === 'center'), _classNames2), className);
+      var chromeClasses = (0, _styles2.classNames)(classes.Chrome, (_classNames2 = {}, (0, _defineProperty2.default)(_classNames2, classes.ChromeSizeS, size === 's'), (0, _defineProperty2.default)(_classNames2, classes.ChromeSizeM, size === 'm'), (0, _defineProperty2.default)(_classNames2, classes.ChromeSizeL, size === 'l'), (0, _defineProperty2.default)(_classNames2, classes.ChromeSizeFullscreen, size === 'fullscreen'), (0, _defineProperty2.default)(_classNames2, classes.ChromeAttachedSidebar, attach === 'sidebar'), (0, _defineProperty2.default)(_classNames2, classes.ChromeAttachedLeft, attach === 'left'), (0, _defineProperty2.default)(_classNames2, classes.ChromeAttachedRight, attach === 'right'), (0, _defineProperty2.default)(_classNames2, classes.ChromeAttachedCenter, attach === 'center'), (0, _defineProperty2.default)(_classNames2, classes.ChromePaddingNone, padding === 'none'), _classNames2), className);
       var transitionType;
 
       switch (attach) {
@@ -155,9 +160,20 @@ function (_React$PureComponent) {
         type: transitionType,
         in: isVisible
       }, _react.default.createElement("div", {
-        className: contentClasses,
+        className: chromeClasses,
         role: "dialog"
-      }, children))), _services.default.getPortalRootNode());
+      }, showHeader ? _react.default.createElement("div", {
+        className: classes.Header
+      }, _react.default.createElement("div", {
+        className: classes.HeaderText
+      }, header), _react.default.createElement(_Button.default, {
+        className: classes.HeaderCloseButton,
+        isSubtle: true,
+        icon: "close",
+        onClick: this.handleBackDropClicked
+      })) : null, _react.default.createElement("div", {
+        className: classes.Content
+      }, children)))), _services.default.getPortalRootNode());
     }
   }]);
   return Modal;
@@ -168,12 +184,15 @@ Modal.propTypes = {
   isVisible: _propTypes.default.bool.isRequired,
   onCancel: _propTypes.default.func.isRequired,
   attach: _propTypes.default.oneOf(['left', 'right', 'sidebar', 'center']),
-  size: _propTypes.default.oneOf(['s', 'm', 'l']),
+  header: _propTypes.default.node,
+  showHeader: _propTypes.default.bool,
+  size: _propTypes.default.oneOf(['s', 'm', 'l', 'fullscreen']),
   onKeyDown: _propTypes.default.func
 };
 Modal.defaultProps = {
   attach: 'left',
   isVisible: false,
+  showHeader: true,
   size: 's',
   onCancel: function onCancel() {},
   onKeyDown: function onKeyDown() {}
