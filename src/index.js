@@ -1,6 +1,7 @@
 import animate from 'animejs';
 import Application from './components/Application';
 import Brand from './components/Brand';
+import BusyIndicator from './components/BusyIndicator';
 import Button from './components/Button';
 import CheckBox from './components/CheckBox';
 import ControlGroup from './components/ControlGroup';
@@ -28,6 +29,7 @@ export {
   animate,
   Application,
   Brand,
+  BusyIndicator,
   Button,
   CheckBox,
   ControlGroup,
