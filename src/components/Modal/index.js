@@ -1,3 +1,4 @@
+import Button from '../Button';
 import ExecutionEnvironment from 'exenv';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -66,20 +67,22 @@ class Modal extends React.PureComponent {
   }
 
   render () {
-    const { attach, classes, className, children, isVisible, size } = this.props;
+    const { attach, classes, className, children, header, isVisible, showHeader, size, padding } = this.props;
 
     const backdropClasses = classNames(classes.Backdrop, {
       [classes.IsVisible]: isVisible
     });
 
-    const contentClasses = classNames(classes.Content, {
-      [classes.ContentSizeS]: size === 's',
-      [classes.ContentSizeM]: size === 'm',
-      [classes.ContentSizeL]: size === 'l',
-      [classes.ContentAttachedSidebar]: attach === 'sidebar',
-      [classes.ContentAttachedLeft]: attach === 'left',
-      [classes.ContentAttachedRight]: attach === 'right',
-      [classes.ContentAttachedCenter]: attach === 'center'
+    const chromeClasses = classNames(classes.Chrome, {
+      [classes.ChromeSizeS]: size === 's',
+      [classes.ChromeSizeM]: size === 'm',
+      [classes.ChromeSizeL]: size === 'l',
+      [classes.ChromeSizeFullscreen]: size === 'fullscreen',
+      [classes.ChromeAttachedSidebar]: attach === 'sidebar',
+      [classes.ChromeAttachedLeft]: attach === 'left',
+      [classes.ChromeAttachedRight]: attach === 'right',
+      [classes.ChromeAttachedCenter]: attach === 'center',
+      [classes.ChromePaddingNone]: padding === 'none'
     }, className);
 
     let transitionType;
@@ -105,7 +108,24 @@ class Modal extends React.PureComponent {
         <div className={ classes.Modal }>
           <div className={ backdropClasses } onClick={ this.handleBackDropClicked } />
           <Transition type={ transitionType } in={ isVisible }>
-            <div className={ contentClasses } role='dialog'>{ children }</div>
+            <div className={ chromeClasses } role='dialog'>
+              {
+                showHeader ? (
+                  <div className={ classes.Header }>
+                    <div className={ classes.HeaderText }>{ header }</div>
+                    <Button
+                      className={ classes.HeaderCloseButton }
+                      isSubtle={ true }
+                      icon='close'
+                      onClick={ this.handleBackDropClicked }
+                    />
+                  </div>
+                ) : null
+              }
+              <div className={ classes.Content }>
+                { children }
+              </div>
+            </div>
           </Transition>
         </div>
       ),
@@ -120,13 +140,16 @@ Modal.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
   attach: PropTypes.oneOf([ 'left', 'right', 'sidebar', 'center' ]),
-  size: PropTypes.oneOf([ 's', 'm', 'l' ]),
+  header: PropTypes.node,
+  showHeader: PropTypes.bool,
+  size: PropTypes.oneOf([ 's', 'm', 'l', 'fullscreen' ]),
   onKeyDown: PropTypes.func
 };
 
 Modal.defaultProps = {
   attach: 'left',
   isVisible: false,
+  showHeader: true,
   size: 's',
   onCancel () {},
   onKeyDown () {}
