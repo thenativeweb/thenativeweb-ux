@@ -1,8 +1,7 @@
 const styles = theme => ({
   '@global': {
     '.thenativeweb-modal--visible': {
-      'pointer-events': 'none',
-      overflow: 'hidden'
+      'pointer-events': 'none'
     }
   },
 
