@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Application,
   Brand,
+  BusyIndicator,
   Button,
   CheckBox,
   ControlGroup,
@@ -120,6 +121,10 @@ class TestApp extends React.Component {
               <Button id='button-icon-only' icon={ 'heart' } onClick={ () => log('button-subtle::clicked') } />
               <Button id='button-subtle' isSubtle={ true } onClick={ () => log('button-subtle::clicked') }>Subtle Button</Button>
               <Button id='button-subtle' isSubtle={ true } icon={ 'heart' } onClick={ () => log('button-subtle-with-icon::clicked') }>Subtle Button with icon</Button>
+            </section>
+            <section>
+              <Headline level='2'>BusyIndicator</Headline>
+              <BusyIndicator />
             </section>
             <section>
               <Headline level='2'>ControlGroup</Headline>
