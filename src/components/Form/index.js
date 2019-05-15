@@ -36,7 +36,9 @@ Form.propTypes = {
 };
 
 Form.defaultProps = {
-  onSubmit () {}
+  onSubmit () {
+    // Intentionally left blank
+  }
 };
 
 export default withStyles(styles)(Form);

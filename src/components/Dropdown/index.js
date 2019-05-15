@@ -18,7 +18,9 @@ class Dropdown extends React.PureComponent {
   }
 
   handleChange (event) {
-    this.props.onChange(event.target.value);
+    const { onChange } = this.props;
+
+    onChange(event.target.value);
   }
 
   handleFocus () {
@@ -35,11 +37,12 @@ class Dropdown extends React.PureComponent {
 
   render () {
     const { classes, emptyLabel, id, options, size, style, value } = this.props;
+    const { isFocused } = this.state;
 
     const dropdownClassNames = classNames(classes.Dropdown, {
       [classes.SizeDefault]: size === 'default',
       [classes.SizeS]: size === 's',
-      [classes.IsFocused]: this.state.isFocused
+      [classes.IsFocused]: isFocused
     });
 
     return (

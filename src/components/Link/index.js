@@ -42,7 +42,9 @@ Link.propTypes = {
 
 Link.defaultProps = {
   isExternal: false,
-  onClick () {}
+  onClick () {
+    // Intentionally left blank
+  }
 };
 
 export default withStyles(styles)(Link);

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var styles = function styles(theme) {
   return {
@@ -15,7 +15,7 @@ var styles = function styles(theme) {
       overflow: 'hidden',
       background: theme.color.brand.dark,
       border: theme.color.brand.dark,
-      'font-family': theme.font.family.default,
+      'font-family': theme.font.family["default"],
       '& select': {
         'flex-grow': 1,
         'flex-shrink': 1,
@@ -31,7 +31,7 @@ var styles = function styles(theme) {
         'white-space': 'nowrap',
         overflow: 'hidden',
         'text-overflow': 'ellipsis',
-        'border-radius': theme.components.borderRadius.default,
+        'border-radius': theme.components.borderRadius["default"],
         'font-family': 'inherit',
         '&:focus': {
           outline: 'none'
@@ -46,7 +46,7 @@ var styles = function styles(theme) {
     SizeDefault: {
       margin: '16px',
       'margin-left': 0,
-      'font-size': theme.font.size.default,
+      'font-size': theme.font.size["default"],
       '& select': {
         padding: '7px 40px 7px 11px'
       }
@@ -77,4 +77,4 @@ var styles = function styles(theme) {
 };
 
 var _default = styles;
-exports.default = _default;
+exports["default"] = _default;

@@ -1,25 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
-var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
-var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
-
-var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
-
-var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
-var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
+exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -27,12 +11,34 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 var styles = function styles(theme) {
   return {
     TextArea: {
       padding: '9px 12px',
-      'font-size': theme.font.size.default,
-      'font-family': theme.font.family.default,
+      'font-size': theme.font.size["default"],
+      'font-family': theme.font.family["default"],
       width: '100%',
       'box-sizing': 'border-box',
       border: "1px solid",
@@ -43,7 +49,7 @@ var styles = function styles(theme) {
       },
       '&::placeholder': {
         color: theme.color.brand.darkGrey,
-        'font-family': theme.font.family.default,
+        'font-family': theme.font.family["default"],
         'font-size': 'inherit',
         'font-weight': 400,
         opacity: 0.5
@@ -65,19 +71,20 @@ var styles = function styles(theme) {
 var TextArea =
 /*#__PURE__*/
 function (_React$Component) {
-  (0, _inherits2.default)(TextArea, _React$Component);
+  _inherits(TextArea, _React$Component);
 
   function TextArea(props) {
     var _this;
 
-    (0, _classCallCheck2.default)(this, TextArea);
-    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TextArea).call(this, props));
-    _this.handleFocusTimeout = _this.handleFocusTimeout.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-    _this.handleRefChanged = _this.handleRefChanged.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+    _classCallCheck(this, TextArea);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TextArea).call(this, props));
+    _this.handleFocusTimeout = _this.handleFocusTimeout.bind(_assertThisInitialized(_this));
+    _this.handleRefChanged = _this.handleRefChanged.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  (0, _createClass2.default)(TextArea, [{
+  _createClass(TextArea, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this$props = this.props,
@@ -130,8 +137,8 @@ function (_React$Component) {
           required = _this$props2.required,
           style = _this$props2.style,
           size = _this$props2.size;
-      var componentClasses = (0, _styles.classNames)(classes.TextArea, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.IsDisabled, disabled === true), (0, _defineProperty2.default)(_classNames, classes.IsRequired, required === true), (0, _defineProperty2.default)(_classNames, classes.SizeS, size === 's'), (0, _defineProperty2.default)(_classNames, classes.SizeM, size === 'm'), _classNames), className);
-      return _react.default.createElement("textarea", {
+      var componentClasses = (0, _styles.classNames)(classes.TextArea, (_classNames = {}, _defineProperty(_classNames, classes.IsDisabled, disabled === true), _defineProperty(_classNames, classes.IsRequired, required === true), _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.SizeM, size === 'm'), _classNames), className);
+      return _react["default"].createElement("textarea", {
         id: id,
         ref: this.handleRefChanged,
         className: componentClasses,
@@ -147,21 +154,22 @@ function (_React$Component) {
       });
     }
   }]);
+
   return TextArea;
-}(_react.default.Component);
+}(_react["default"].Component);
 
 TextArea.propTypes = {
-  autoFocus: _propTypes.default.bool,
-  disabled: _propTypes.default.bool,
-  id: _propTypes.default.string,
-  name: _propTypes.default.string,
-  placeholder: _propTypes.default.string,
-  required: _propTypes.default.bool,
-  size: _propTypes.default.oneOf(['s', 'm']),
-  value: _propTypes.default.string,
-  onBlur: _propTypes.default.func,
-  onChange: _propTypes.default.func,
-  onFocus: _propTypes.default.func
+  autoFocus: _propTypes["default"].bool,
+  disabled: _propTypes["default"].bool,
+  id: _propTypes["default"].string,
+  name: _propTypes["default"].string,
+  placeholder: _propTypes["default"].string,
+  required: _propTypes["default"].bool,
+  size: _propTypes["default"].oneOf(['s', 'm']),
+  value: _propTypes["default"].string,
+  onBlur: _propTypes["default"].func,
+  onChange: _propTypes["default"].func,
+  onFocus: _propTypes["default"].func
 };
 TextArea.defaultProps = {
   autoFocus: false,
@@ -169,11 +177,14 @@ TextArea.defaultProps = {
   focusDelay: 0,
   required: false,
   size: 's',
-  onBlur: function onBlur() {},
-  onChange: function onChange() {},
-  onFocus: function onFocus() {}
+  onBlur: function onBlur() {// Intentionally left blank
+  },
+  onChange: function onChange() {// Intentionally left blank
+  },
+  onFocus: function onFocus() {// Intentionally left blank
+  }
 };
 
 var _default = (0, _styles.withStyles)(styles)(TextArea);
 
-exports.default = _default;
+exports["default"] = _default;

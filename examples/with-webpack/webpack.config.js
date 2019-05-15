@@ -1,6 +1,6 @@
 const path = require('path');
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin,
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /* eslint-disable no-process-env */
@@ -27,7 +27,7 @@ const configuration = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx?$/u,
         include: [
           path.join(__dirname, 'src')
         ],

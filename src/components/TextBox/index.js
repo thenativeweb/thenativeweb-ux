@@ -82,9 +82,11 @@ class TextBox extends React.Component {
   }
 
   handleKeyDown (event) {
+    const { onEnter } = this.props;
+
     switch (event.keyCode) {
       case KEY.ENTER:
-        this.props.onEnter(event);
+        onEnter(event);
         break;
       default:
         break;
@@ -167,10 +169,18 @@ TextBox.defaultProps = {
   required: false,
   focusDelay: 0,
   type: 'default',
-  onBlur () {},
-  onChange () {},
-  onEnter () {},
-  onFocus () {}
+  onBlur () {
+    // Intentionally left blank
+  },
+  onChange () {
+    // Intentionally left blank
+  },
+  onEnter () {
+    // Intentionally left blank
+  },
+  onFocus () {
+    // Intentionally left blank
+  }
 };
 
 export default withStyles(styles)(TextBox);

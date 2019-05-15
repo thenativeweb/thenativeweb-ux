@@ -1,25 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
-var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
-var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
-
-var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
-
-var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
-var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
+exports["default"] = void 0;
 
 var _Button = _interopRequireDefault(require("../Button"));
 
@@ -41,6 +25,28 @@ var _Transition = _interopRequireDefault(require("../Transition"));
 
 var _styles2 = require("../../styles");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 var KEY = {
   ENTER: 13,
   ESCAPE: 27
@@ -49,27 +55,30 @@ var KEY = {
 var Modal =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  (0, _inherits2.default)(Modal, _React$PureComponent);
+  _inherits(Modal, _React$PureComponent);
 
   function Modal(props) {
     var _this;
 
-    (0, _classCallCheck2.default)(this, Modal);
-    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Modal).call(this, props));
-    _this.handleBackDropClicked = _this.handleBackDropClicked.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-    _this.handleKeyDown = _this.handleKeyDown.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+    _classCallCheck(this, Modal);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Modal).call(this, props));
+    _this.handleBackDropClicked = _this.handleBackDropClicked.bind(_assertThisInitialized(_this));
+    _this.handleKeyDown = _this.handleKeyDown.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  (0, _createClass2.default)(Modal, [{
+  _createClass(Modal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.handleVisibility(this.props.isVisible);
+      var isVisible = this.props.isVisible;
+      this.handleVisibility(isVisible);
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      this.handleVisibility(this.props.isVisible);
+      var isVisible = this.props.isVisible;
+      this.handleVisibility(isVisible);
     }
   }, {
     key: "componentWillUnmount",
@@ -90,10 +99,14 @@ function (_React$PureComponent) {
   }, {
     key: "handleKeyDown",
     value: function handleKeyDown(event) {
+      var _this$props = this.props,
+          onCancel = _this$props.onCancel,
+          onKeyDown = _this$props.onKeyDown;
+
       switch (event.keyCode) {
         case KEY.ESCAPE:
-          if (this.props.onCancel) {
-            this.props.onCancel();
+          if (onCancel) {
+            onCancel();
           }
 
           break;
@@ -105,13 +118,15 @@ function (_React$PureComponent) {
           break;
       }
 
-      this.props.onKeyDown(event.keyCode, event);
+      onKeyDown(event.keyCode, event);
     }
   }, {
     key: "handleBackDropClicked",
     value: function handleBackDropClicked() {
-      if (this.props.onCancel) {
-        this.props.onCancel();
+      var onCancel = this.props.onCancel;
+
+      if (onCancel) {
+        onCancel();
       }
     }
   }, {
@@ -119,18 +134,18 @@ function (_React$PureComponent) {
     value: function render() {
       var _classNames2;
 
-      var _this$props = this.props,
-          attach = _this$props.attach,
-          classes = _this$props.classes,
-          className = _this$props.className,
-          children = _this$props.children,
-          header = _this$props.header,
-          isVisible = _this$props.isVisible,
-          showHeader = _this$props.showHeader,
-          size = _this$props.size,
-          padding = _this$props.padding;
-      var backdropClasses = (0, _styles2.classNames)(classes.Backdrop, (0, _defineProperty2.default)({}, classes.IsVisible, isVisible));
-      var chromeClasses = (0, _styles2.classNames)(classes.Chrome, (_classNames2 = {}, (0, _defineProperty2.default)(_classNames2, classes.ChromeSizeS, size === 's'), (0, _defineProperty2.default)(_classNames2, classes.ChromeSizeM, size === 'm'), (0, _defineProperty2.default)(_classNames2, classes.ChromeSizeL, size === 'l'), (0, _defineProperty2.default)(_classNames2, classes.ChromeSizeFullscreen, size === 'fullscreen'), (0, _defineProperty2.default)(_classNames2, classes.ChromeAttachedSidebar, attach === 'sidebar'), (0, _defineProperty2.default)(_classNames2, classes.ChromeAttachedLeft, attach === 'left'), (0, _defineProperty2.default)(_classNames2, classes.ChromeAttachedRight, attach === 'right'), (0, _defineProperty2.default)(_classNames2, classes.ChromeAttachedCenter, attach === 'center'), (0, _defineProperty2.default)(_classNames2, classes.ChromePaddingNone, padding === 'none'), _classNames2), className);
+      var _this$props2 = this.props,
+          attach = _this$props2.attach,
+          classes = _this$props2.classes,
+          className = _this$props2.className,
+          children = _this$props2.children,
+          header = _this$props2.header,
+          isVisible = _this$props2.isVisible,
+          showHeader = _this$props2.showHeader,
+          size = _this$props2.size,
+          padding = _this$props2.padding;
+      var backdropClasses = (0, _styles2.classNames)(classes.Backdrop, _defineProperty({}, classes.IsVisible, isVisible));
+      var chromeClasses = (0, _styles2.classNames)(classes.Chrome, (_classNames2 = {}, _defineProperty(_classNames2, classes.ChromeSizeS, size === 's'), _defineProperty(_classNames2, classes.ChromeSizeM, size === 'm'), _defineProperty(_classNames2, classes.ChromeSizeL, size === 'l'), _defineProperty(_classNames2, classes.ChromeSizeFullscreen, size === 'fullscreen'), _defineProperty(_classNames2, classes.ChromeAttachedSidebar, attach === 'sidebar'), _defineProperty(_classNames2, classes.ChromeAttachedLeft, attach === 'left'), _defineProperty(_classNames2, classes.ChromeAttachedRight, attach === 'right'), _defineProperty(_classNames2, classes.ChromeAttachedCenter, attach === 'center'), _defineProperty(_classNames2, classes.ChromePaddingNone, padding === 'none'), _classNames2), className);
       var transitionType;
 
       switch (attach) {
@@ -147,57 +162,60 @@ function (_React$PureComponent) {
           transitionType = 'Zoom';
       }
 
-      if (!_exenv.default.canUseDOM) {
+      if (!_exenv["default"].canUseDOM) {
         return null;
       }
 
-      return _reactDom.default.createPortal(_react.default.createElement("div", {
+      return _reactDom["default"].createPortal(_react["default"].createElement("div", {
         className: classes.Modal
-      }, _react.default.createElement("div", {
+      }, _react["default"].createElement("div", {
         className: backdropClasses,
         onClick: this.handleBackDropClicked
-      }), _react.default.createElement(_Transition.default, {
+      }), _react["default"].createElement(_Transition["default"], {
         type: transitionType,
-        in: isVisible
-      }, _react.default.createElement("div", {
+        "in": isVisible
+      }, _react["default"].createElement("div", {
         className: chromeClasses,
         role: "dialog"
-      }, showHeader ? _react.default.createElement("div", {
+      }, showHeader ? _react["default"].createElement("div", {
         className: classes.Header
-      }, _react.default.createElement("div", {
+      }, _react["default"].createElement("div", {
         className: classes.HeaderText
-      }, header), _react.default.createElement(_Button.default, {
+      }, header), _react["default"].createElement(_Button["default"], {
         className: classes.HeaderCloseButton,
         isSubtle: true,
         icon: "close",
         onClick: this.handleBackDropClicked
-      })) : null, _react.default.createElement("div", {
+      })) : null, _react["default"].createElement("div", {
         className: classes.Content
-      }, children)))), _services.default.getPortalRootNode());
+      }, children)))), _services["default"].getPortalRootNode());
     }
   }]);
-  return Modal;
-}(_react.default.PureComponent);
 
-Modal.Row = _Row.default;
+  return Modal;
+}(_react["default"].PureComponent);
+
+Modal.Row = _Row["default"];
 Modal.propTypes = {
-  isVisible: _propTypes.default.bool.isRequired,
-  onCancel: _propTypes.default.func.isRequired,
-  attach: _propTypes.default.oneOf(['left', 'right', 'sidebar', 'center']),
-  header: _propTypes.default.node,
-  showHeader: _propTypes.default.bool,
-  size: _propTypes.default.oneOf(['s', 'm', 'l', 'fullscreen']),
-  onKeyDown: _propTypes.default.func
+  isVisible: _propTypes["default"].bool.isRequired,
+  onCancel: _propTypes["default"].func.isRequired,
+  attach: _propTypes["default"].oneOf(['left', 'right', 'sidebar', 'center']),
+  header: _propTypes["default"].node,
+  showHeader: _propTypes["default"].bool,
+  size: _propTypes["default"].oneOf(['s', 'm', 'l', 'fullscreen']),
+  onKeyDown: _propTypes["default"].func
 };
 Modal.defaultProps = {
   attach: 'left',
   isVisible: false,
   showHeader: true,
   size: 's',
-  onCancel: function onCancel() {},
-  onKeyDown: function onKeyDown() {}
+  onCancel: function onCancel() {// Intentionally left blank
+  },
+  onKeyDown: function onKeyDown() {// Intentionally left blank
+  }
 };
 
-var _default = (0, _styles2.withStyles)(_styles.default)(Modal);
+var _default = (0, _styles2.withStyles)(_styles["default"])(Modal);
 
-exports.default = _default;
+exports["default"] = _default;

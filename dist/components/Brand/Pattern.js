@@ -1,17 +1,17 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var styles = function styles(theme) {
   return {
@@ -38,12 +38,12 @@ var Pattern = function Pattern() {
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'default' : _ref$type;
 
-  var componentClasses = (0, _styles.classNames)(classes.Pattern, (0, _defineProperty2.default)({}, classes.TypeDefault, type === 'default'), className);
-  return _react.default.createElement("div", {
+  var componentClasses = (0, _styles.classNames)(classes.Pattern, _defineProperty({}, classes.TypeDefault, type === 'default'), className);
+  return _react["default"].createElement("div", {
     className: componentClasses
   }, children);
 };
 
 var _default = (0, _styles.withStyles)(styles)(Pattern);
 
-exports.default = _default;
+exports["default"] = _default;

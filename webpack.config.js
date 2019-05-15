@@ -4,7 +4,7 @@ const configuration = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx?$/u,
         include: [
           path.join(__dirname, 'src')
         ],
@@ -13,7 +13,7 @@ const configuration = {
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.css$/u,
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' }

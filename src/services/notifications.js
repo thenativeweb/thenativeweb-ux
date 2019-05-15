@@ -10,23 +10,26 @@ class NotificationsService extends EventEmitter {
     };
   }
 
-  show (notification, options = { duration: 3000 }) {
-    if (!notification) {
-      throw new Error('Notfication is missing.');
-    }
-    if (!notification.type) {
+  show ({ type, text, duration } = {}, options = { duration: 3000 }) {
+    if (!type) {
       throw new Error('Type is missing.');
     }
-    if (!notification.text) {
+    if (!text) {
       throw new Error('Text is missing.');
     }
-    if (!options.duration) {
+    if (!duration) {
       throw new Error('Duration is missing.');
     }
 
-    notification.id = uuid();
+    const notification = {
+      id: uuid(),
+      type,
+      text,
+      duration
+    };
 
     this.state.items.unshift(notification);
+
     this.emit('changed');
 
     setTimeout(() => {

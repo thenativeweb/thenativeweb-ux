@@ -63,9 +63,6 @@ class TestApp extends React.Component {
       formSubmitted: false,
       textAreaValue: '',
       textBoxValue: '',
-      toggleOptions: [
-        'Option 1', 'Option 2'
-      ],
       toggleOptionSelected: 'Option 1',
       isBoxVisible: true
     };
@@ -87,9 +84,11 @@ class TestApp extends React.Component {
       dropdownOptionSelected,
       formValue,
       formSubmitted,
+      isBoxVisible,
       showModal,
       textAreaValue,
-      textBoxValue
+      textBoxValue,
+      toggleOptionSelected
     } = this.state;
 
     return (
@@ -117,10 +116,10 @@ class TestApp extends React.Component {
             <section>
               <Headline level='2'>Button</Headline>
               <Button id='button' onClick={ () => this.setState({ buttonClicked: true }) }>{ !buttonClicked ? 'Click me' : 'Thanks!' }</Button>
-              <Button id='button-with-icon' icon={ 'heart' } onClick={ () => log('button-with-icon::clicked') }>Subtle Button</Button>
-              <Button id='button-icon-only' icon={ 'heart' } onClick={ () => log('button-subtle::clicked') } />
+              <Button id='button-with-icon' icon='heart' onClick={ () => log('button-with-icon::clicked') }>Subtle Button</Button>
+              <Button id='button-icon-only' icon='heart' onClick={ () => log('button-subtle::clicked') } />
               <Button id='button-subtle' isSubtle={ true } onClick={ () => log('button-subtle::clicked') }>Subtle Button</Button>
-              <Button id='button-subtle' isSubtle={ true } icon={ 'heart' } onClick={ () => log('button-subtle-with-icon::clicked') }>Subtle Button with icon</Button>
+              <Button id='button-subtle' isSubtle={ true } icon='heart' onClick={ () => log('button-subtle-with-icon::clicked') }>Subtle Button with icon</Button>
             </section>
             <section>
               <Headline level='2'>BusyIndicator</Headline>
@@ -211,10 +210,10 @@ class TestApp extends React.Component {
                 <Toggle
                   id='toggle'
                   values={ [ 'Option 1', 'Option 2' ] }
-                  selectedValue={ this.state.toggleOptionSelected }
+                  selectedValue={ toggleOptionSelected }
                   onChange={ newValue => this.setState({ toggleOptionSelected: newValue }) }
                 />
-                Selected option is: <span id='toggle-value'>{this.state.toggleOptionSelected}</span>
+                Selected option is: <span id='toggle-value'>{ toggleOptionSelected }</span>
               </div>
             </section>
             <section>
@@ -222,13 +221,13 @@ class TestApp extends React.Component {
               <Form>
                 <ControlGroup>
                   <ControlGroup.Item label='Show box?'>
-                    <CheckBox id='transition-checkbox' onChange={ () => this.setState({ isBoxVisible: !this.state.isBoxVisible }) } />
+                    <CheckBox id='transition-checkbox' onChange={ () => this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible })) } />
                   </ControlGroup.Item>
                 </ControlGroup>
               </Form>
 
               <View style={{ width: 200, height: 200 }}>
-                <Transition type='FadeInRight' in={ this.state.isBoxVisible }>
+                <Transition type='FadeInRight' in={ isBoxVisible }>
                   <View style={{ width: 200, height: 200, background: 'orange', textAlign: 'center' }} orientation='centered'><span>This box will be animated in and out using `FadeInRight`.</span></View>
                 </Transition>
               </View>

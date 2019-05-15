@@ -1,17 +1,17 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var styles = function styles(theme) {
   return {
@@ -20,7 +20,7 @@ var styles = function styles(theme) {
       background: theme.color.brand.dark,
       'box-shadow': theme.shadow.overlay,
       'margin-bottom': theme.grid.stepSize,
-      'font-family': theme.font.family.default
+      'font-family': theme.font.family["default"]
     },
     TypeError: {
       color: theme.color.brand.white,
@@ -39,12 +39,12 @@ var Notification = function Notification(_ref) {
   var classes = _ref.classes,
       type = _ref.type,
       text = _ref.text;
-  var componentClasses = (0, _styles.classNames)(classes.Notification, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.TypeError, type === 'error'), (0, _defineProperty2.default)(_classNames, classes.TypeSuccess, type === 'success'), _classNames));
-  return _react.default.createElement("div", {
+  var componentClasses = (0, _styles.classNames)(classes.Notification, (_classNames = {}, _defineProperty(_classNames, classes.TypeError, type === 'error'), _defineProperty(_classNames, classes.TypeSuccess, type === 'success'), _classNames));
+  return _react["default"].createElement("div", {
     className: componentClasses
   }, text);
 };
 
 var _default = (0, _styles.withStyles)(styles)(Notification);
 
-exports.default = _default;
+exports["default"] = _default;

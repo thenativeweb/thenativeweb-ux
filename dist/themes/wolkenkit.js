@@ -1,17 +1,17 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _merge = _interopRequireDefault(require("lodash/merge"));
 
 var _thenativeweb = _interopRequireDefault(require("./thenativeweb"));
 
-var theme = (0, _merge.default)({}, _thenativeweb.default, {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var theme = (0, _merge["default"])({}, _thenativeweb["default"], {
   id: 'wolkenkit',
   color: {
     brand: {
@@ -32,4 +32,4 @@ var theme = (0, _merge.default)({}, _thenativeweb.default, {
   }
 });
 var _default = theme;
-exports.default = _default;
+exports["default"] = _default;

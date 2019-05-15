@@ -1,13 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+exports["default"] = void 0;
 
 var _CheckBox = _interopRequireDefault(require("../CheckBox"));
 
@@ -16,6 +12,10 @@ var _Icon = _interopRequireDefault(require("../Icon"));
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var styles = function styles(theme) {
   return {
@@ -83,53 +83,53 @@ var Item = function Item(_ref) {
       isVisible = _ref$isVisible === void 0 ? true : _ref$isVisible;
   var type = 'default';
 
-  var child = _react.default.Children.only(children);
+  var child = _react["default"].Children.only(children);
 
-  if (child.type === _CheckBox.default) {
+  if (child.type === _CheckBox["default"]) {
     type = 'checkbox';
   }
 
-  var componentClasses = (0, _styles.classNames)(classes.Item, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.AdjustFlex, adjust === 'flex'), (0, _defineProperty2.default)(_classNames, classes.AdjustAuto, adjust === 'auto'), (0, _defineProperty2.default)(_classNames, classes.Hidden, isVisible === false), (0, _defineProperty2.default)(_classNames, classes.Labeled, label), (0, _defineProperty2.default)(_classNames, classes.TypeCheckBox, type === 'checkbox'), _classNames), className);
+  var componentClasses = (0, _styles.classNames)(classes.Item, (_classNames = {}, _defineProperty(_classNames, classes.AdjustFlex, adjust === 'flex'), _defineProperty(_classNames, classes.AdjustAuto, adjust === 'auto'), _defineProperty(_classNames, classes.Hidden, isVisible === false), _defineProperty(_classNames, classes.Labeled, label), _defineProperty(_classNames, classes.TypeCheckBox, type === 'checkbox'), _classNames), className);
 
   if (type === 'checkbox') {
     var controlId = child.props.id ? child.props.id : undefined;
-    return _react.default.createElement("div", {
+    return _react["default"].createElement("div", {
       className: componentClasses
-    }, _react.default.createElement("div", {
+    }, _react["default"].createElement("div", {
       className: classes.Label
-    }, _react.default.createElement("div", {
+    }, _react["default"].createElement("div", {
       className: classes.Control
-    }, child), label ? _react.default.createElement("label", {
+    }, child), label ? _react["default"].createElement("label", {
       htmlFor: controlId
-    }, label) : null, helpLink ? _react.default.createElement("a", {
+    }, label) : null, helpLink ? _react["default"].createElement("a", {
       className: classes.Help,
       title: "Get more detailed information\u2026",
       rel: "noopener noreferrer",
       target: "_blank",
       href: helpLink
-    }, _react.default.createElement(_Icon.default, {
+    }, _react["default"].createElement(_Icon["default"], {
       name: "help",
       className: styles.IconHelp
     })) : null));
   }
 
-  return _react.default.createElement("div", {
+  return _react["default"].createElement("div", {
     className: componentClasses
-  }, _react.default.createElement("div", {
+  }, _react["default"].createElement("div", {
     className: classes.Label
-  }, label ? _react.default.createElement("label", null, label) : null, helpLink ? _react.default.createElement("a", {
+  }, label ? _react["default"].createElement("label", null, label) : null, helpLink ? _react["default"].createElement("a", {
     className: classes.Help,
     rel: "noopener noreferrer",
     target: "_blank",
     href: helpLink
-  }, _react.default.createElement(_Icon.default, {
+  }, _react["default"].createElement(_Icon["default"], {
     name: "help",
     className: styles.IconHelp
-  })) : null), _react.default.createElement("div", {
+  })) : null), _react["default"].createElement("div", {
     className: classes.Control
   }, child));
 };
 
 var _default = (0, _styles.withStyles)(styles)(Item);
 
-exports.default = _default;
+exports["default"] = _default;

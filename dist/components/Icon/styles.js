@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var styles = function styles(theme) {
   return {
@@ -64,4 +64,4 @@ var styles = function styles(theme) {
 };
 
 var _default = styles;
-exports.default = _default;
+exports["default"] = _default;

@@ -3,15 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var styles = function styles(theme) {
   return {
     View: {
       'box-sizing': 'border-box',
       position: 'relative',
-      'font-family': theme.font.family.default,
-      'font-size': theme.font.size.default
+      'font-family': theme.font.family["default"],
+      'font-size': theme.font.size["default"]
     },
     AdjustFlex: {
       'flex-grow': 1,
@@ -67,4 +67,4 @@ var styles = function styles(theme) {
 };
 
 var _default = styles;
-exports.default = _default;
+exports["default"] = _default;

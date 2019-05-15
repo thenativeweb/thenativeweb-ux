@@ -1,13 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+exports["default"] = void 0;
 
 var _logos = _interopRequireDefault(require("./logos"));
 
@@ -16,6 +12,10 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var styles = function styles(theme) {
   var _ref;
@@ -69,7 +69,7 @@ var styles = function styles(theme) {
         'margin-top': 0
       }
     }
-  }, (0, _defineProperty2.default)(_ref, theme.device.medium, {
+  }, _defineProperty(_ref, theme.device.medium, {
     Name: {},
     CompositeName: {},
     SizeL: {
@@ -77,12 +77,12 @@ var styles = function styles(theme) {
         'font-size': theme.font.size.large
       }
     }
-  }), (0, _defineProperty2.default)(_ref, theme.device.small, {
+  }), _defineProperty(_ref, theme.device.small, {
     Name: {},
     CompositeName: {},
     SizeL: {
       '& $Name, & $CompositeName': {
-        'font-size': theme.font.size.default
+        'font-size': theme.font.size["default"]
       }
     },
     SizeXL: {
@@ -102,34 +102,34 @@ var Product = function Product(_ref2) {
       size = _ref2.size,
       theme = _ref2.theme,
       type = _ref2.type;
-  var brandClassNames = (0, _styles.classNames)(classes.Product, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.SizeM, size === 'm'), (0, _defineProperty2.default)(_classNames, classes.SizeL, size === 'l'), (0, _defineProperty2.default)(_classNames, classes.SizeXL, size === 'xl'), (0, _defineProperty2.default)(_classNames, classes.TypeLogoOnly, type === 'logo-only'), (0, _defineProperty2.default)(_classNames, classes.TypeTypoOnly, type === 'typo-only'), _classNames));
+  var brandClassNames = (0, _styles.classNames)(classes.Product, (_classNames = {}, _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _defineProperty(_classNames, classes.SizeXL, size === 'xl'), _defineProperty(_classNames, classes.TypeLogoOnly, type === 'logo-only'), _defineProperty(_classNames, classes.TypeTypoOnly, type === 'typo-only'), _classNames));
 
-  var nameComponent = _react.default.createElement("div", {
+  var nameComponent = _react["default"].createElement("div", {
     className: classes.Name
   }, name);
 
   var logoId = theme.id;
 
   if (name === 'wolkenkit') {
-    nameComponent = _react.default.createElement("div", {
+    nameComponent = _react["default"].createElement("div", {
       className: classes.CompositeName
-    }, _react.default.createElement("span", null, "wolken"), "kit");
+    }, _react["default"].createElement("span", null, "wolken"), "kit");
     logoId = 'wolkenkit';
   }
 
-  var Logo = _logos.default[logoId] || _logos.default.thenativeweb || null;
-  return _react.default.createElement("div", {
+  var Logo = _logos["default"][logoId] || _logos["default"].thenativeweb || null;
+  return _react["default"].createElement("div", {
     className: brandClassNames
-  }, type === 'typo-only' ? null : _react.default.createElement(Logo, {
+  }, type === 'typo-only' ? null : _react["default"].createElement(Logo, {
     isAnimated: isAnimated,
     size: size
   }), type === 'logo-only' ? null : nameComponent);
 };
 
 Product.propTypes = {
-  name: _propTypes.default.string,
-  size: _propTypes.default.oneOf(['m', 'l', 'xl']),
-  type: _propTypes.default.oneOf(['default', 'typo-only', 'logo-only'])
+  name: _propTypes["default"].string,
+  size: _propTypes["default"].oneOf(['m', 'l', 'xl']),
+  type: _propTypes["default"].oneOf(['default', 'typo-only', 'logo-only'])
 };
 Product.defaultProps = {
   size: 'm',
@@ -139,4 +139,4 @@ Product.defaultProps = {
 
 var _default = (0, _styles.withStyles)(styles)(Product);
 
-exports.default = _default;
+exports["default"] = _default;

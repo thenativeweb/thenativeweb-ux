@@ -3,14 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var styles = function styles(theme) {
   return {
     Message: {
       padding: '10px 15px',
       'margin-bottom': theme.grid.stepSize,
-      'font-family': theme.font.family.default
+      'font-family': theme.font.family["default"]
     },
     TypeError: {
       background: theme.color.state.error,
@@ -44,4 +44,4 @@ var styles = function styles(theme) {
 };
 
 var _default = styles;
-exports.default = _default;
+exports["default"] = _default;

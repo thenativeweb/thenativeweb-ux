@@ -1,13 +1,32 @@
+import { ThemeProvider as JssThemeProvider } from 'react-jss';
+import PropTypes from 'prop-types';
 import React from 'react';
-import { ThemeProvider } from 'react-jss';
 import themes from '../../themes';
 
-export default ({ theme, children }) => {
+const ThemeProvider = ({ theme, children }) => {
+  let themeForChildren;
+
   if (typeof theme === 'string' && themes[theme]) {
-    theme = themes[theme];
+    themeForChildren = themes[theme];
+  } else {
+    themeForChildren = theme;
   }
 
   return (
-    <ThemeProvider theme={ theme || themes.thenativeweb }>{children}</ThemeProvider>
+    <JssThemeProvider theme={ themeForChildren || themes.thenativeweb }>{children}</JssThemeProvider>
   );
 };
+
+ThemeProvider.propTypes = {
+  /** Either 'thenativeweb', 'wolkenkit' or a custom theme object. */
+  theme: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ])
+};
+
+ThemeProvider.defaultProps = {
+  theme: 'thenativeweb'
+};
+
+export default ThemeProvider;

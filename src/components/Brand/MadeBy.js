@@ -43,7 +43,7 @@ const MadeBy = ({ classes, color, partner = [], size }) => {
     [classes.SizeL]: size === 'l'
   });
 
-  partner = Array.isArray(partner) ? partner : [ partner ];
+  const partners = Array.isArray(partner) ? partner : [ partner ];
 
   return (
     <div className={ componentClasses }>
@@ -55,7 +55,7 @@ const MadeBy = ({ classes, color, partner = [], size }) => {
 
       <Link href='https://www.thenativeweb.io' isExternal={ true }>the native web</Link>
 
-      { partner.map((item, index) => (
+      { partners.map((item, index) => (
         <React.Fragment key={ item.name }>
           { index === partner.length - 1 ? ' and ' : ', ' }
           <Link href={ item.href } isExternal={ true }>{ item.name }</Link>

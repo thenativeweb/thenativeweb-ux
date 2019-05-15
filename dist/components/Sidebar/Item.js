@@ -1,19 +1,19 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+exports["default"] = void 0;
 
 var _Icon = _interopRequireDefault(require("../Icon"));
 
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var styles = function styles(theme) {
   return {
@@ -101,34 +101,34 @@ var Item = function Item(_ref) {
       isNested = _ref$isNested === void 0 ? false : _ref$isNested,
       children = _ref.children,
       onClick = _ref.onClick;
-  var componentClasses = (0, _styles.classNames)(classes.Item, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.IsActive, isActive), (0, _defineProperty2.default)(_classNames, classes.IsNested, isNested), (0, _defineProperty2.default)(_classNames, classes.IsTopLevel, !isNested), (0, _defineProperty2.default)(_classNames, classes.IsClickable, onClick !== undefined), _classNames), className);
+  var componentClasses = (0, _styles.classNames)(classes.Item, (_classNames = {}, _defineProperty(_classNames, classes.IsActive, isActive), _defineProperty(_classNames, classes.IsNested, isNested), _defineProperty(_classNames, classes.IsTopLevel, !isNested), _defineProperty(_classNames, classes.IsClickable, onClick !== undefined), _classNames), className);
 
   if (isNested) {
-    return _react.default.createElement("div", {
+    return _react["default"].createElement("div", {
       id: id,
       className: componentClasses,
       onClick: onClick
-    }, _react.default.createElement("div", {
+    }, _react["default"].createElement("div", {
       className: classes.Label
     }, children));
   }
 
-  return _react.default.createElement("div", {
+  return _react["default"].createElement("div", {
     id: id,
     className: componentClasses
-  }, _react.default.createElement("div", {
+  }, _react["default"].createElement("div", {
     className: classes.Icon,
     onClick: onClick
-  }, iconUrl ? _react.default.createElement("img", {
+  }, iconUrl ? _react["default"].createElement("img", {
     src: iconUrl
-  }) : _react.default.createElement(_Icon.default, {
+  }) : _react["default"].createElement(_Icon["default"], {
     name: iconName,
     size: "l",
     color: "white"
-  })), _react.default.createElement("div", {
+  })), _react["default"].createElement("div", {
     className: classes.Items
-  }, _react.default.Children.map(children, function (child) {
-    return _react.default.cloneElement(child, {
+  }, _react["default"].Children.map(children, function (child) {
+    return _react["default"].cloneElement(child, {
       isNested: true
     });
   })));
@@ -136,4 +136,4 @@ var Item = function Item(_ref) {
 
 var _default = (0, _styles.withStyles)(styles)(Item);
 
-exports.default = _default;
+exports["default"] = _default;

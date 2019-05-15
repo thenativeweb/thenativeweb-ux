@@ -5,7 +5,7 @@ import thenativeweb from '../themes/thenativeweb';
 
 let isFirstRender = true;
 
-export default props => {
+export default ({ children }) => {
   const Services = isFirstRender ? Application.Services : React.Fragment;
 
   isFirstRender = false;
@@ -14,7 +14,7 @@ export default props => {
     <ThemeProvider theme={ thenativeweb }>
       <React.Fragment>
         <Services />
-        { props.children }
+        { children }
       </React.Fragment>
     </ThemeProvider>
   );

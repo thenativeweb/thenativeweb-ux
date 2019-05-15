@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var styles = function styles(theme) {
   return {
@@ -53,7 +53,7 @@ var styles = function styles(theme) {
       opacity: 0,
       'pointer-events': 'all',
       'will-change': 'opacity, transform',
-      'font-family': theme.font.family.default,
+      'font-family': theme.font.family["default"],
       'box-sizing': 'border-box'
     },
     ChromeSizeS: {
@@ -99,7 +99,7 @@ var styles = function styles(theme) {
       'border-bottom': "1px solid ".concat(theme.color.content.border)
     },
     HeaderText: {
-      'font-family': theme.font.family.default,
+      'font-family': theme.font.family["default"],
       opacity: 0.95,
       'font-size': theme.font.size.xlarge,
       'font-weight': 600,
@@ -137,4 +137,4 @@ var styles = function styles(theme) {
 };
 
 var _default = styles;
-exports.default = _default;
+exports["default"] = _default;

@@ -1,15 +1,15 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var styles = function styles(theme) {
   return {
@@ -28,11 +28,11 @@ var styles = function styles(theme) {
 var Footer = function Footer(_ref) {
   var children = _ref.children,
       classes = _ref.classes;
-  return _react.default.createElement("div", {
+  return _react["default"].createElement("div", {
     className: classes.Footer
   }, children);
 };
 
 var _default = (0, _styles.withStyles)(styles)(Footer);
 
-exports.default = _default;
+exports["default"] = _default;

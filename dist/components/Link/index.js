@@ -1,11 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -13,13 +11,15 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 var styles = function styles(theme) {
   return {
     Link: {
       color: theme.color.brand.highlight,
       'text-decoration': 'none',
       'font-weight': 400,
-      'font-family': theme.font.family.default,
+      'font-family': theme.font.family["default"],
       'font-size': 'inherit',
       '&:hover': {
         'text-decoration': 'none'
@@ -39,7 +39,7 @@ var Link = function Link(_ref) {
   var brandClassNames = (0, _styles.classNames)(classes.Link, className);
 
   if (isExternal === true) {
-    return _react.default.createElement("a", {
+    return _react["default"].createElement("a", {
       id: id,
       className: brandClassNames,
       href: href,
@@ -49,7 +49,7 @@ var Link = function Link(_ref) {
     }, children);
   }
 
-  return _react.default.createElement("a", {
+  return _react["default"].createElement("a", {
     id: id,
     className: brandClassNames,
     href: href,
@@ -58,15 +58,16 @@ var Link = function Link(_ref) {
 };
 
 Link.propTypes = {
-  href: _propTypes.default.string,
-  isExternal: _propTypes.default.bool,
-  onClick: _propTypes.default.func
+  href: _propTypes["default"].string,
+  isExternal: _propTypes["default"].bool,
+  onClick: _propTypes["default"].func
 };
 Link.defaultProps = {
   isExternal: false,
-  onClick: function onClick() {}
+  onClick: function onClick() {// Intentionally left blank
+  }
 };
 
 var _default = (0, _styles.withStyles)(styles)(Link);
 
-exports.default = _default;
+exports["default"] = _default;

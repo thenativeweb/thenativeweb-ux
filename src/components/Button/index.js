@@ -40,6 +40,7 @@ const Button = ({
 
   const buttonType = type || (isPrimary ? 'submit' : 'button');
 
+  /* eslint-disable react/button-has-type */
   return (
     <button
       autoFocus={ autoFocus }
@@ -53,6 +54,7 @@ const Button = ({
       { children ? <Label className={ classes.Label }>{ children }</Label> : null }
     </button>
   );
+  /* eslint-enable react/button-has-type */
 };
 
 Button.propTypes = {
@@ -73,7 +75,9 @@ Button.defaultProps = {
   isPrimary: false,
   size: 'm',
   type: undefined,
-  onClick () {}
+  onClick () {
+    // Intentionally left bla
+  }
 };
 
 Button.Hint = withStyles({

@@ -25,6 +25,7 @@ const handleExit = function (node) {
   });
 };
 
+/* eslint-disable react/destructuring-assignment */
 const Zoom = props => (
   <Transition
     key={ props.key }
@@ -39,5 +40,6 @@ const Zoom = props => (
     { props.children }
   </Transition>
 );
+/* eslint-enable react/destructuring-assignment */
 
 export default Zoom;

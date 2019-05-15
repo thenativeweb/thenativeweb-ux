@@ -23,6 +23,7 @@ const handleExit = function (node) {
   });
 };
 
+/* eslint-disable react/destructuring-assignment */
 const Grow = props => (
   <Transition
     key={ props.key }
@@ -37,5 +38,6 @@ const Grow = props => (
     { props.children }
   </Transition>
 );
+/* eslint-enable react/destructuring-assignment */
 
 export default Grow;

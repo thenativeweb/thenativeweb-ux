@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var styles = function styles(theme) {
   return {
@@ -16,12 +16,12 @@ var styles = function styles(theme) {
       'border-width': '1px',
       'border-style': 'solid',
       color: theme.color.brand.white,
-      'font-family': theme.font.family.default,
+      'font-family': theme.font.family["default"],
       cursor: 'pointer',
       'white-space': 'nowrap',
       overflow: 'hidden',
       'text-overflow': 'ellipsis',
-      'border-radius': theme.components.borderRadius.default,
+      'border-radius': theme.components.borderRadius["default"],
       outline: 'none',
       transition: 'background-color 300ms cubic-bezier(0.190, 1.000, 0.220, 1.000)',
       'will-change': 'background-color',
@@ -50,7 +50,7 @@ var styles = function styles(theme) {
       padding: '7px 11px',
       margin: theme.grid.stepSize,
       'margin-left': 0,
-      'font-size': theme.font.size.default
+      'font-size': theme.font.size["default"]
     },
     SizeS: {
       padding: '7px 11px',
@@ -148,4 +148,4 @@ var styles = function styles(theme) {
 };
 
 var _default = styles;
-exports.default = _default;
+exports["default"] = _default;
