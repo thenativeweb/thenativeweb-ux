@@ -10,7 +10,7 @@ class NotificationsService extends EventEmitter {
     };
   }
 
-  show ({ type, text, duration } = {}, options = { duration: 3000 }) {
+  show ({ type, text } = {}, { duration = 3000 } = {}) {
     if (!type) {
       throw new Error('Type is missing.');
     }
@@ -37,7 +37,7 @@ class NotificationsService extends EventEmitter {
 
       this.state.items.splice(notificationIndex, 1);
       this.emit('changed');
-    }, options.duration);
+    }, duration);
   }
 }
 

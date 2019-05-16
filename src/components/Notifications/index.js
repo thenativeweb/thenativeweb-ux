@@ -46,7 +46,7 @@ class Notifications extends React.PureComponent {
     return ReactDOM.createPortal(
       (
         <div className={ classes.Notifications }>
-          <Transition.Group type='FadeInLeft'component='span'>
+          <Transition.Group type='FadeInLeft' component='span'>
             { services.notifications.state.items.map(notification => (
               <Notification key={ notification.id } type={ notification.type } text={ notification.text } />
             ))}
