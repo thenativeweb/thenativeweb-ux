@@ -21,11 +21,10 @@ const handleExit = function (node) {
   });
 };
 
-/* eslint-disable react/destructuring-assignment */
-const Fade = props => (
+const Fade = ({ children, key, in: fadeIn }) => (
   <Transition
-    key={ props.key }
-    in={ props.in }
+    key={ key }
+    in={ fadeIn }
     appear={ true }
     mountOnEnter={ true }
     unmountOnExit={ true }
@@ -33,9 +32,8 @@ const Fade = props => (
     onExit={ handleExit }
     timeout={ defaults.duration }
   >
-    { props.children }
+    { children }
   </Transition>
 );
-/* eslint-enable react/destructuring-assignment */
 
 export default Fade;

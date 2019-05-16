@@ -8,8 +8,12 @@ const defaultState = {
       cancel: '',
       confirm: ''
     },
-    onCancel () {},
-    onConfirm () {}
+    onCancel () {
+      // Left blank Intentionally
+    },
+    onConfirm () {
+      // Left blank Intentionally
+    }
   }
 };
 
