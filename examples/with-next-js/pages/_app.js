@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'thenativeweb-ux';
+import { ThemeProvider } from '../../../dist';
 import App, { Container } from 'next/app';
 
 class CustomApp extends App {

@@ -186,8 +186,8 @@ class TestApp extends React.Component {
             </section>
             <section>
               <Headline level='2'>Notifications</Headline>
-              <Button id='show-notification-error' onClick={ () => services.notifications.show({ type: 'error', text: 'This is an error!' }) }>Show notification (error)</Button>
-              <Button id='show-notification-success' onClick={ () => services.notifications.show({ type: 'success', text: 'This is a success!' }) }>Show notification (success)</Button>
+              <Button id='show-notification-error' onClick={ () => services.notifications.show({ type: 'error', text: 'This is a notification of type error!' }) }>Show notification (error)</Button>
+              <Button id='show-notification-success' onClick={ () => services.notifications.show({ type: 'success', text: 'This is a notification of type success!' }) }>Show notification (success)</Button>
             </section>
             <section>
               <Headline level='2'>Text</Headline>

@@ -1,25 +1,25 @@
 import NextDocument from 'next/document';
 import React from 'react';
-import { StyleCollector } from 'thenativeweb-ux';
+import { StyleCollector } from '../../../dist';
 
 class CustomDocument extends NextDocument {
-  static async getInitialProps (ctx) {
+  static async getInitialProps (originalContext) {
     const collection = StyleCollector.createCollection();
-    const originalRenderPage = ctx.renderPage;
 
-    /* eslint-disable no-param-reassign */
-    ctx.renderPage = () =>
-      originalRenderPage({
-        enhanceApp: App => props => (
-          <StyleCollector collection={ collection }>
-            <App { ...props } />
-          </StyleCollector>
-        )
-      });
-    /* eslint-enable no-param-reassign */
+    const customContext = {
+      ...originalContext,
+      renderPage () {
+        originalContext.renderPage({
+          enhanceApp: App => props => (
+            <StyleCollector collection={ collection }>
+              <App { ...props } />
+            </StyleCollector>
+          )
+        });
+      }
+    };
 
-    // Run the parent `getInitialProps` using `ctx` that now includes our custom `renderPage`
-    const initialProps = await NextDocument.getInitialProps(ctx);
+    const initialProps = await NextDocument.getInitialProps(customContext);
 
     return {
       ...initialProps,
