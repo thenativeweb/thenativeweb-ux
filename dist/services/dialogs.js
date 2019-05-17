@@ -35,8 +35,10 @@ var defaultState = {
       cancel: '',
       confirm: ''
     },
-    onCancel: function onCancel() {},
-    onConfirm: function onConfirm() {}
+    onCancel: function onCancel() {// Left blank Intentionally
+    },
+    onConfirm: function onConfirm() {// Left blank Intentionally
+    }
   }
 };
 

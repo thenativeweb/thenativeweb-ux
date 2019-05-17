@@ -159,6 +159,18 @@ Object.defineProperty(exports, "View", {
     return _View["default"];
   }
 });
+Object.defineProperty(exports, "classNames", {
+  enumerable: true,
+  get: function get() {
+    return _styles.classNames;
+  }
+});
+Object.defineProperty(exports, "withStyles", {
+  enumerable: true,
+  get: function get() {
+    return _styles.withStyles;
+  }
+});
 
 var _animejs = _interopRequireDefault(require("animejs"));
 
@@ -211,5 +223,7 @@ var _Toggle = _interopRequireDefault(require("./components/Toggle"));
 var _Transition = _interopRequireDefault(require("./components/Transition"));
 
 var _View = _interopRequireDefault(require("./components/View"));
+
+var _styles = require("./styles");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

@@ -32,23 +32,22 @@ var handleExit = function handleExit(node) {
     easing: _defaults["default"].easing
   });
 };
-/* eslint-disable react/destructuring-assignment */
 
-
-var Fade = function Fade(props) {
+var Fade = function Fade(_ref) {
+  var children = _ref.children,
+      key = _ref.key,
+      fadeIn = _ref["in"];
   return _react["default"].createElement(_reactTransitionGroup.Transition, {
-    key: props.key,
-    "in": props["in"],
+    key: key,
+    "in": fadeIn,
     appear: true,
     mountOnEnter: true,
     unmountOnExit: true,
     onEnter: handleEnter,
     onExit: handleExit,
     timeout: _defaults["default"].duration
-  }, props.children);
+  }, children);
 };
-/* eslint-enable react/destructuring-assignment */
-
 
 var _default = Fade;
 exports["default"] = _default;

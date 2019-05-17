@@ -53,12 +53,11 @@ function (_EventEmitter) {
 
       var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           type = _ref.type,
-          text = _ref.text,
-          duration = _ref.duration;
+          text = _ref.text;
 
-      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
-        duration: 3000
-      };
+      var _ref2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+          _ref2$duration = _ref2.duration,
+          duration = _ref2$duration === void 0 ? 3000 : _ref2$duration;
 
       if (!type) {
         throw new Error('Type is missing.');
@@ -86,7 +85,7 @@ function (_EventEmitter) {
         _this2.state.items.splice(notificationIndex, 1);
 
         _this2.emit('changed');
-      }, options.duration);
+      }, duration);
     }
   }]);
 

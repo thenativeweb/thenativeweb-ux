@@ -64,6 +64,7 @@ var Text = function Text(_ref) {
 };
 
 Text.propTypes = {
+  adjust: _propTypes["default"].oneOf(['flex', 'auto']),
   breakLines: _propTypes["default"].bool,
   size: _propTypes["default"].oneOf(['s', 'm'])
 };
