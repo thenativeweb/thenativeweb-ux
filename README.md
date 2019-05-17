@@ -32,10 +32,10 @@ Then, inside your application's `render` function, you need to setup its basic s
 
 The currently available themes are listed in the following table. If you don't specify a theme, the theme `thenativeweb` is selected as default:
 
-| Name | Description |
-|-|-|
+| Name           | Description                              |
+| -------------- | ---------------------------------------- |
 | `thenativeweb` | A theme for the native web applications. |
-| `wolkenkit` | A theme for wolkenkit applications. |
+| `wolkenkit`    | A theme for wolkenkit applications.      |
 
 ### Using components
 
