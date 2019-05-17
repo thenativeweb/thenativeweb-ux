@@ -5,6 +5,7 @@ import {
   BusyIndicator,
   Button,
   CheckBox,
+  classNames,
   ControlGroup,
   Dropdown,
   Form,
@@ -128,6 +129,10 @@ class TestApp extends React.Component {
             <section>
               <Headline level='2'>ControlGroup</Headline>
               <ControlGroup>This is a control group</ControlGroup>
+            </section>
+            <section>
+              <Headline level='2'>classNames</Headline>
+              <div id='classNames' className={ classNames({ custom: true }) }>This div has a custom class name using className.</div>
             </section>
             <section>
               <Headline level='2'>Dialogs</Headline>

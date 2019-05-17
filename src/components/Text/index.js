@@ -52,6 +52,7 @@ const Text = function ({ adjust, breakLines, classes, className, children, id, s
 };
 
 Text.propTypes = {
+  adjust: PropTypes.oneOf([ 'flex', 'auto' ]),
   breakLines: PropTypes.bool,
   size: PropTypes.oneOf([ 's', 'm' ])
 };

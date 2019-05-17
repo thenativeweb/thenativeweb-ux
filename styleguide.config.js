@@ -23,6 +23,10 @@ module.exports = {
     {
       name: 'Components',
       components: 'src/components/*/index.js'
+    },
+    {
+      name: 'Styling Custom Components',
+      content: 'src/styles/Readme.md'
     }
   ],
 
