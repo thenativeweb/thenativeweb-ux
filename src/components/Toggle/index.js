@@ -54,17 +54,19 @@ class Toggle extends React.PureComponent {
   }
 
   handleChangeValue (newValue) {
-    this.props.onChange(newValue);
+    const { onChange } = this.props;
+
+    onChange(newValue);
   }
 
   render () {
-    const { id, classes, className, selectedValue, values, style } = this.props;
+    const { id, classes, className, children, selectedValue, values, style } = this.props;
 
     const componentClasses = classNames(classes.Toggle, className);
 
     return (
       <div id={ id } className={ componentClasses } style={ style }>
-        {values.map(value => this.props.children({
+        {values.map(value => children({
           value,
           isSelected: selectedValue === value,
           changeValue: this.handleChangeValue,
@@ -78,7 +80,9 @@ class Toggle extends React.PureComponent {
 Toggle.defaultProps = {
   values: [ 'yellow', 'red', 'green' ],
   selectedValue: 'yellow',
-  onChange () {},
+  onChange () {
+    // Intentionally left blank
+  },
   children: renderDefaultToggle
 };
 

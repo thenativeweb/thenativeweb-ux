@@ -31,7 +31,9 @@ CheckBox.propTypes = {
 };
 
 CheckBox.defaultProps = {
-  onChange () {}
+  onChange () {
+    // Intentionally left blank
+  }
 };
 
 export default withStyles(styles)(CheckBox);

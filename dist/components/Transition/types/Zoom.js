@@ -1,11 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _animejs = _interopRequireDefault(require("animejs"));
 
@@ -15,40 +13,46 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactTransitionGroup = require("react-transition-group");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 var handleEnter = function handleEnter(node) {
-  (0, _animejs.default)({
+  (0, _animejs["default"])({
     targets: node,
     opacity: [0, 1],
     translateY: ['-10%', 0],
     scale: [0.95, 1],
-    duration: _defaults.default.duration,
-    easing: _defaults.default.easing
+    duration: _defaults["default"].duration,
+    easing: _defaults["default"].easing
   });
 };
 
 var handleExit = function handleExit(node) {
-  (0, _animejs.default)({
+  (0, _animejs["default"])({
     targets: node,
     opacity: [1, 0],
     translateY: [0, '-10%'],
     scale: [1, 0.95],
-    duration: _defaults.default.duration,
-    easing: _defaults.default.easing
+    duration: _defaults["default"].duration,
+    easing: _defaults["default"].easing
   });
 };
+/* eslint-disable react/destructuring-assignment */
+
 
 var Zoom = function Zoom(props) {
-  return _react.default.createElement(_reactTransitionGroup.Transition, {
+  return _react["default"].createElement(_reactTransitionGroup.Transition, {
     key: props.key,
-    in: props.in,
+    "in": props["in"],
     appear: true,
     mountOnEnter: true,
     unmountOnExit: true,
     onEnter: handleEnter,
     onExit: handleExit,
-    timeout: _defaults.default.duration
+    timeout: _defaults["default"].duration
   }, props.children);
 };
+/* eslint-enable react/destructuring-assignment */
+
 
 var _default = Zoom;
-exports.default = _default;
+exports["default"] = _default;

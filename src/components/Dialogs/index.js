@@ -29,10 +29,6 @@ class Dialogs extends React.PureComponent {
   constructor () {
     super();
 
-    this.state = {
-      isVisible: false
-    };
-
     this.handleServiceChanged = this.handleServiceChanged.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.handleCancel = this.handleCancel.bind(this);

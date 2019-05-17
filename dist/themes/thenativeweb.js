@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 var brandColors = {
   dark: '#23232c',
   highlight: '#f09',
@@ -31,18 +31,18 @@ var theme = {
     }
   },
   font: {
-    import: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700|Ubuntu:300,400,500|Ubuntu+Mono',
+    "import": 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700|Ubuntu:300,400,500|Ubuntu+Mono',
     size: {
       xsmall: '12px',
       small: '14px',
-      default: '16px',
+      "default": '16px',
       large: '18px',
       xlarge: '24px',
       code: '15px',
       copytext: '18px'
     },
     family: {
-      default: "\"Source Sans Pro\", Arial, Helvetica, sans-serif",
+      "default": "\"Source Sans Pro\", Arial, Helvetica, sans-serif",
       headline: "\"Ubuntu\", sans-serif",
       code: "\"Ubuntu Mono\", monospace !important"
     }
@@ -67,7 +67,7 @@ var theme = {
   /* Components */
   components: {
     borderRadius: {
-      default: '1px'
+      "default": '1px'
     },
     sidebar: {
       width: '80px'
@@ -94,4 +94,4 @@ var theme = {
   }
 };
 var _default = theme;
-exports.default = _default;
+exports["default"] = _default;

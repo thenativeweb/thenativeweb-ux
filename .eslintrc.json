@@ -1,5 +1,5 @@
 {
-  "extends": "eslint-config-es/2015/client",
+  "extends": "es/browser",
 
   "rules": {
     "no-extra-parens": 0,
@@ -8,9 +8,5 @@
 
   "parserOptions": {
     "sourceType": "module"
-  },
-
-  "plugins": [
-    "react"
-  ]
+  }
 }

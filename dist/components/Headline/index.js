@@ -1,13 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -15,10 +11,14 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var styles = function styles(theme) {
   return {
     Headline: {
-      'font-family': theme.font.family.default,
+      'font-family': theme.font.family["default"],
       opacity: 0.95,
       padding: 0,
       margin: 0
@@ -50,8 +50,8 @@ var Headline = function Headline(_ref) {
       id = _ref.id,
       level = _ref.level,
       style = _ref.style;
-  var componentClasses = (0, _styles.classNames)(classes.Headline, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.Level1, level === '1'), (0, _defineProperty2.default)(_classNames, classes.Level2, level === '2'), _classNames));
-  return _react.default.createElement("div", {
+  var componentClasses = (0, _styles.classNames)(classes.Headline, (_classNames = {}, _defineProperty(_classNames, classes.Level1, level === '1'), _defineProperty(_classNames, classes.Level2, level === '2'), _classNames));
+  return _react["default"].createElement("div", {
     id: id,
     className: componentClasses,
     style: style
@@ -59,7 +59,7 @@ var Headline = function Headline(_ref) {
 };
 
 Headline.propTypes = {
-  level: _propTypes.default.oneOf(['1', '2'])
+  level: _propTypes["default"].oneOf(['1', '2'])
 };
 Headline.defaultProps = {
   level: '1'
@@ -67,4 +67,4 @@ Headline.defaultProps = {
 
 var _default = (0, _styles.withStyles)(styles)(Headline);
 
-exports.default = _default;
+exports["default"] = _default;

@@ -1,31 +1,37 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
-var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
-var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
-
-var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
-
-var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
-var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
+exports["default"] = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 var KEY = {
   ENTER: 13
@@ -35,8 +41,8 @@ var styles = function styles(theme) {
   return {
     TextBox: {
       padding: '9px 12px',
-      'font-size': theme.font.size.default,
-      'font-family': theme.font.family.default,
+      'font-size': theme.font.size["default"],
+      'font-family': theme.font.family["default"],
       width: '100%',
       'box-sizing': 'border-box',
       border: "1px solid",
@@ -47,7 +53,7 @@ var styles = function styles(theme) {
       },
       '&::placeholder': {
         color: theme.color.brand.darkGrey,
-        'font-family': theme.font.family.default,
+        'font-family': theme.font.family["default"],
         'font-size': 'inherit',
         'font-weight': 400,
         opacity: 0.5
@@ -69,20 +75,21 @@ var styles = function styles(theme) {
 var TextBox =
 /*#__PURE__*/
 function (_React$Component) {
-  (0, _inherits2.default)(TextBox, _React$Component);
+  _inherits(TextBox, _React$Component);
 
   function TextBox(props) {
     var _this;
 
-    (0, _classCallCheck2.default)(this, TextBox);
-    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TextBox).call(this, props));
-    _this.handleFocusTimeout = _this.handleFocusTimeout.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-    _this.handleRefChanged = _this.handleRefChanged.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-    _this.handleKeyDown = _this.handleKeyDown.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+    _classCallCheck(this, TextBox);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TextBox).call(this, props));
+    _this.handleFocusTimeout = _this.handleFocusTimeout.bind(_assertThisInitialized(_this));
+    _this.handleRefChanged = _this.handleRefChanged.bind(_assertThisInitialized(_this));
+    _this.handleKeyDown = _this.handleKeyDown.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  (0, _createClass2.default)(TextBox, [{
+  _createClass(TextBox, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this$props = this.props,
@@ -119,9 +126,11 @@ function (_React$Component) {
   }, {
     key: "handleKeyDown",
     value: function handleKeyDown(event) {
+      var onEnter = this.props.onEnter;
+
       switch (event.keyCode) {
         case KEY.ENTER:
-          this.props.onEnter(event);
+          onEnter(event);
           break;
 
         default:
@@ -147,7 +156,7 @@ function (_React$Component) {
           required = _this$props2.required,
           style = _this$props2.style,
           type = _this$props2.type;
-      var componentClasses = (0, _styles.classNames)(classes.TextBox, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.TypePort, type === 'port'), (0, _defineProperty2.default)(_classNames, classes.TypeTime, type === 'time'), (0, _defineProperty2.default)(_classNames, classes.IsDisabled, disabled === true), (0, _defineProperty2.default)(_classNames, classes.IsRequired, required === true), _classNames), className);
+      var componentClasses = (0, _styles.classNames)(classes.TextBox, (_classNames = {}, _defineProperty(_classNames, classes.TypePort, type === 'port'), _defineProperty(_classNames, classes.TypeTime, type === 'time'), _defineProperty(_classNames, classes.IsDisabled, disabled === true), _defineProperty(_classNames, classes.IsRequired, required === true), _classNames), className);
       var inputType;
 
       switch (type) {
@@ -159,7 +168,7 @@ function (_React$Component) {
           inputType = type;
       }
 
-      return _react.default.createElement("input", {
+      return _react["default"].createElement("input", {
         id: id,
         ref: this.handleRefChanged,
         className: componentClasses,
@@ -177,22 +186,23 @@ function (_React$Component) {
       });
     }
   }]);
+
   return TextBox;
-}(_react.default.Component);
+}(_react["default"].Component);
 
 TextBox.propTypes = {
-  autoFocus: _propTypes.default.bool,
-  disabled: _propTypes.default.bool,
-  id: _propTypes.default.string,
-  name: _propTypes.default.string,
-  placeholder: _propTypes.default.string,
-  required: _propTypes.default.bool,
-  type: _propTypes.default.oneOf(['default', 'date', 'port', 'time']),
-  value: _propTypes.default.string,
-  onBlur: _propTypes.default.func,
-  onChange: _propTypes.default.func,
-  onEnter: _propTypes.default.func,
-  onFocus: _propTypes.default.func
+  autoFocus: _propTypes["default"].bool,
+  disabled: _propTypes["default"].bool,
+  id: _propTypes["default"].string,
+  name: _propTypes["default"].string,
+  placeholder: _propTypes["default"].string,
+  required: _propTypes["default"].bool,
+  type: _propTypes["default"].oneOf(['default', 'date', 'port', 'time']),
+  value: _propTypes["default"].string,
+  onBlur: _propTypes["default"].func,
+  onChange: _propTypes["default"].func,
+  onEnter: _propTypes["default"].func,
+  onFocus: _propTypes["default"].func
 };
 TextBox.defaultProps = {
   autoFocus: false,
@@ -200,12 +210,16 @@ TextBox.defaultProps = {
   required: false,
   focusDelay: 0,
   type: 'default',
-  onBlur: function onBlur() {},
-  onChange: function onChange() {},
-  onEnter: function onEnter() {},
-  onFocus: function onFocus() {}
+  onBlur: function onBlur() {// Intentionally left blank
+  },
+  onChange: function onChange() {// Intentionally left blank
+  },
+  onEnter: function onEnter() {// Intentionally left blank
+  },
+  onFocus: function onFocus() {// Intentionally left blank
+  }
 };
 
 var _default = (0, _styles.withStyles)(styles)(TextBox);
 
-exports.default = _default;
+exports["default"] = _default;

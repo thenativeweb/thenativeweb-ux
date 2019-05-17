@@ -23,6 +23,7 @@ const handleExit = function (node) {
   });
 };
 
+/* eslint-disable react/destructuring-assignment */
 const FadeInRight = props => (
   <Transition
     key={ props.key }
@@ -37,5 +38,6 @@ const FadeInRight = props => (
     { props.children }
   </Transition>
 );
+/* eslint-enable react/destructuring-assignment */
 
 export default FadeInRight;

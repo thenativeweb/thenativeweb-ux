@@ -139,9 +139,15 @@ TextArea.defaultProps = {
   focusDelay: 0,
   required: false,
   size: 's',
-  onBlur () {},
-  onChange () {},
-  onFocus () {}
+  onBlur () {
+    // Intentionally left blank
+  },
+  onChange () {
+    // Intentionally left blank
+  },
+  onFocus () {
+    // Intentionally left blank
+  }
 };
 
 export default withStyles(styles)(TextArea);

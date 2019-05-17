@@ -5,13 +5,19 @@ import { classNames, withStyles } from '../../styles';
 const styles = theme => ({
   Text: {
     display: 'block',
-    'flex-grow': 1,
-    'flex-shrink': 1,
     overflow: 'hidden',
     'text-overflow': 'ellipsis',
     'white-space': 'nowrap',
     color: 'inherit',
     'font-family': theme.font.family.default
+  },
+
+  AdjustAuto: {
+  },
+
+  AdjustFlex: {
+    'flex-grow': 1,
+    'flex-shrink': 1
   },
 
   SizeM: {
@@ -29,9 +35,11 @@ const styles = theme => ({
   }
 });
 
-const Text = function ({ breakLines, classes, className, children, id, size, style }) {
+const Text = function ({ adjust, breakLines, classes, className, children, id, size, style }) {
   const componentClasses = classNames(classes.Text, {
     [classes.BreakLines]: breakLines,
+    [classes.AdjustFlex]: adjust === 'flex',
+    [classes.AdjustAuto]: adjust === 'auto',
     [classes.SizeS]: size === 's',
     [classes.SizeM]: size === 'm'
   }, className);
@@ -44,11 +52,13 @@ const Text = function ({ breakLines, classes, className, children, id, size, sty
 };
 
 Text.propTypes = {
+  adjust: PropTypes.oneOf([ 'flex', 'auto' ]),
   breakLines: PropTypes.bool,
   size: PropTypes.oneOf([ 's', 'm' ])
 };
 
 Text.defaultProps = {
+  adjust: 'auto',
   breakLines: false,
   size: 'm'
 };

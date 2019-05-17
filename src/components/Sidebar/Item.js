@@ -94,7 +94,7 @@ const Item = ({ classes, className, iconName, iconUrl, id, isActive = false, isN
   if (isNested) {
     return (
       <div id={ id } className={ componentClasses } onClick={ onClick }>
-        <div className={ classes.Label } >
+        <div className={ classes.Label }>
           { children }
         </div>
       </div>

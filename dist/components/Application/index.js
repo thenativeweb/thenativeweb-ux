@@ -1,11 +1,9 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
@@ -23,10 +21,12 @@ var _View = _interopRequireDefault(require("../View"));
 
 var _styles = require("../../styles");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 var styles = function styles(theme) {
   return {
     '@global': {
-      '@import': "url('".concat(theme.font.import, "')")
+      '@import': "url('".concat(theme.font["import"], "')")
     },
     Application: {
       position: 'absolute !important',
@@ -44,8 +44,8 @@ var Application = function Application(_ref) {
       className = _ref.className,
       style = _ref.style,
       orientation = _ref.orientation;
-  var componentClasses = (0, _classnames.default)(classes.Application, className);
-  return _react.default.createElement(_View.default, {
+  var componentClasses = (0, _classnames["default"])(classes.Application, className);
+  return _react["default"].createElement(_View["default"], {
     className: componentClasses,
     orientation: orientation,
     style: style
@@ -53,20 +53,20 @@ var Application = function Application(_ref) {
 };
 
 Application.propTypes = {
-  className: _propTypes.default.string,
-  orientation: _propTypes.default.oneOf(['horizontal', 'vertical', 'centered']),
-  style: _propTypes.default.object
+  className: _propTypes["default"].string,
+  orientation: _propTypes["default"].oneOf(['horizontal', 'vertical', 'centered']),
+  style: _propTypes["default"].object
 };
 Application.defaultProps = {
   orientation: 'horizontal'
 };
 
 Application.Services = function () {
-  return _react.default.createElement("span", {
+  return _react["default"].createElement("span", {
     suppressHydrationWarning: true
-  }, _react.default.createElement(_Icons.default, null), _react.default.createElement(_Dialogs.default, null), _react.default.createElement(_Notifications.default, null));
+  }, _react["default"].createElement(_Icons["default"], null), _react["default"].createElement(_Dialogs["default"], null), _react["default"].createElement(_Notifications["default"], null));
 };
 
 var _default = (0, _styles.withStyles)(styles)(Application);
 
-exports.default = _default;
+exports["default"] = _default;

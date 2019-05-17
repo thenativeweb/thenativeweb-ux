@@ -24,6 +24,7 @@ import themes from './themes';
 import Toggle from './components/Toggle';
 import Transition from './components/Transition';
 import View from './components/View';
+import { classNames, withStyles } from './styles';
 
 export {
   animate,
@@ -33,6 +34,7 @@ export {
   Button,
   CheckBox,
   ControlGroup,
+  classNames,
   Dropdown,
   Form,
   Headline,
@@ -51,5 +53,6 @@ export {
   ThemeProvider,
   themes,
   Transition,
-  View
+  View,
+  withStyles
 };

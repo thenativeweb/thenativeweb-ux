@@ -23,11 +23,15 @@ class Modal extends React.PureComponent {
   }
 
   componentDidMount () {
-    this.handleVisibility(this.props.isVisible);
+    const { isVisible } = this.props;
+
+    this.handleVisibility(isVisible);
   }
 
   componentDidUpdate () {
-    this.handleVisibility(this.props.isVisible);
+    const { isVisible } = this.props;
+
+    this.handleVisibility(isVisible);
   }
 
   componentWillUnmount () {
@@ -45,10 +49,12 @@ class Modal extends React.PureComponent {
   }
 
   handleKeyDown (event) {
+    const { onCancel, onKeyDown } = this.props;
+
     switch (event.keyCode) {
       case KEY.ESCAPE:
-        if (this.props.onCancel) {
-          this.props.onCancel();
+        if (onCancel) {
+          onCancel();
         }
         break;
       case KEY.ENTER:
@@ -57,12 +63,14 @@ class Modal extends React.PureComponent {
         break;
     }
 
-    this.props.onKeyDown(event.keyCode, event);
+    onKeyDown(event.keyCode, event);
   }
 
   handleBackDropClicked () {
-    if (this.props.onCancel) {
-      this.props.onCancel();
+    const { onCancel } = this.props;
+
+    if (onCancel) {
+      onCancel();
     }
   }
 
@@ -151,8 +159,12 @@ Modal.defaultProps = {
   isVisible: false,
   showHeader: true,
   size: 's',
-  onCancel () {},
-  onKeyDown () {}
+  onCancel () {
+    // Intentionally left blank
+  },
+  onKeyDown () {
+    // Intentionally left blank
+  }
 };
 
 export default withStyles(styles)(Modal);

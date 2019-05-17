@@ -22,8 +22,9 @@ const ControlGroup = ({ className, classes, children, isVisible = true }) => {
   return (
     <div
       className={ componentClasses }
-      children={ children }
-    />
+    >
+      { children }
+    </div>
   );
 };
 
