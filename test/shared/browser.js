@@ -11,7 +11,7 @@ const env = require('./env');
 let browserInstance;
 
 const browser = {
-  async setupPage () {
+  async setupPage ({ autoLoadApp = true } = {}) {
     if (!browserInstance) {
       browserInstance = await puppeteer.launch({ headless: env.HEADLESS });
     }
@@ -19,7 +19,10 @@ const browser = {
     const page = await browserInstance.newPage();
 
     await page.setViewport(env.VIEWPORT);
-    await page.goto(env.APP_URL);
+
+    if (autoLoadApp) {
+      await page.goto(env.APP_URL);
+    }
 
     return page;
   },

@@ -4,7 +4,7 @@
 
 /* eslint-enable strict */
 
-const browser = require('../helpers/browser');
+const browser = require('../../shared/browser');
 
 suite('services/notifications', () => {
   let page;

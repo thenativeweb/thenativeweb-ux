@@ -6,7 +6,7 @@
 
 const env = {
   HEADLESS: true,
-  APP_URL: 'http://localhost:8080/',
+  APP_URL: 'http://localhost:3000/',
   VIEWPORT: { width: 1280, height: 800 }
 };
 

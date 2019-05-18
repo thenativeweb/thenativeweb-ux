@@ -38,7 +38,11 @@ const configuration = {
     ]
   },
 
-  plugins
+  plugins,
+
+  devServer: {
+    port: 3000
+  }
 };
 
 module.exports = configuration;

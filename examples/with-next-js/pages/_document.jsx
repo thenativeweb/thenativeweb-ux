@@ -1,6 +1,6 @@
 import NextDocument from 'next/document';
 import React from 'react';
-import { StyleCollector } from '../../../dist';
+import { StyleCollector } from 'thenativeweb-ux';
 
 class CustomDocument extends NextDocument {
   static async getInitialProps (originalContext) {
@@ -8,15 +8,15 @@ class CustomDocument extends NextDocument {
 
     const customContext = {
       ...originalContext,
-      renderPage () {
+      renderPage: () => (
         originalContext.renderPage({
           enhanceApp: App => props => (
             <StyleCollector collection={ collection }>
               <App { ...props } />
             </StyleCollector>
           )
-        });
-      }
+        })
+      )
     };
 
     const initialProps = await NextDocument.getInitialProps(customContext);

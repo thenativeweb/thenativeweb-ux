@@ -6,7 +6,7 @@
 
 const assert = require('assertthat');
 
-const browser = require('../helpers/browser');
+const browser = require('../../shared/browser');
 
 suite('components/Toggle', () => {
   let page;
