@@ -5,18 +5,18 @@ import Notifications from '../Notifications';
 import PropTypes from 'prop-types';
 import React from 'react';
 import View from '../View';
-import { withStyles } from '../../styles';
+import { createDefaultStyles, withStyles } from '../../styles';
 
 const styles = theme => ({
   '@global': {
-    '@import': `url('${theme.font.import}')`
+    ...createDefaultStyles({ theme })
   },
+
   Application: {
     position: 'absolute !important',
     left: 0,
     top: 0,
-    right: 0,
-    bottom: 0
+    right: 0
   }
 });
 

@@ -9,6 +9,12 @@ Object.defineProperty(exports, "classNames", {
     return _classNames["default"];
   }
 });
+Object.defineProperty(exports, "createDefaultStyles", {
+  enumerable: true,
+  get: function get() {
+    return _createDefaultStyles["default"];
+  }
+});
 Object.defineProperty(exports, "withStyles", {
   enumerable: true,
   get: function get() {
@@ -17,6 +23,8 @@ Object.defineProperty(exports, "withStyles", {
 });
 
 var _classNames = _interopRequireDefault(require("./classNames"));
+
+var _createDefaultStyles = _interopRequireDefault(require("./createDefaultStyles"));
 
 var _withStyles = _interopRequireDefault(require("./withStyles"));
 

@@ -17,8 +17,6 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireDefault(require("react"));
 
-var _View = _interopRequireDefault(require("../View"));
-
 var _styles = require("../../styles");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -32,44 +30,37 @@ var styles = function styles(theme) {
     '@global': _objectSpread({}, (0, _styles.createDefaultStyles)({
       theme: theme
     })),
-    Application: {
-      position: 'absolute !important',
-      left: 0,
-      top: 0,
-      right: 0
-    }
+    Website: {}
   };
 };
 
-var Application = function Application(_ref) {
+var Website = function Website(_ref) {
   var children = _ref.children,
       classes = _ref.classes,
       className = _ref.className,
       style = _ref.style,
-      orientation = _ref.orientation;
-  var componentClasses = (0, _classnames["default"])(classes.Application, className);
-  return _react["default"].createElement(_View["default"], {
+      useDialogs = _ref.useDialogs,
+      useNotifications = _ref.useNotifications;
+  var componentClasses = (0, _classnames["default"])(classes.Website, className);
+  return _react["default"].createElement("div", {
     className: componentClasses,
-    orientation: orientation,
     style: style
-  }, children);
-};
-
-Application.propTypes = {
-  className: _propTypes["default"].string,
-  orientation: _propTypes["default"].oneOf(['horizontal', 'vertical', 'centered']),
-  style: _propTypes["default"].object
-};
-Application.defaultProps = {
-  orientation: 'horizontal'
-};
-
-Application.Services = function () {
-  return _react["default"].createElement("span", {
+  }, _react["default"].createElement("span", {
     suppressHydrationWarning: true
-  }, _react["default"].createElement(_Icons["default"], null), _react["default"].createElement(_Dialogs["default"], null), _react["default"].createElement(_Notifications["default"], null));
+  }, _react["default"].createElement(_Icons["default"], null), useDialogs ? _react["default"].createElement(_Dialogs["default"], null) : null, useNotifications ? _react["default"].createElement(_Notifications["default"], null) : null), children);
 };
 
-var _default = (0, _styles.withStyles)(styles)(Application);
+Website.propTypes = {
+  className: _propTypes["default"].string,
+  style: _propTypes["default"].object,
+  useDialogs: _propTypes["default"].bool,
+  useNotifications: _propTypes["default"].bool
+};
+Website.defaultProps = {
+  useDialogs: false,
+  useNotifications: false
+};
+
+var _default = (0, _styles.withStyles)(styles)(Website);
 
 exports["default"] = _default;

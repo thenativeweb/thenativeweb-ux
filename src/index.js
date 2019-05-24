@@ -24,6 +24,7 @@ import themes from './themes';
 import Toggle from './components/Toggle';
 import Transition from './components/Transition';
 import View from './components/View';
+import Website from './components/Website';
 import { classNames, withStyles } from './styles';
 
 export {
@@ -54,5 +55,6 @@ export {
   themes,
   Transition,
   View,
+  Website,
   withStyles
 };
