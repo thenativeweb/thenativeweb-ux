@@ -1,7 +1,7 @@
 import logos from './logos';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { classNames, withStyles } from '../../styles';
+import { classNames, withStyles, withTheme } from '../../styles';
 
 const styles = theme => ({
   Product: {
@@ -130,4 +130,4 @@ Product.defaultProps = {
   type: 'default'
 };
 
-export default withStyles(styles)(Product);
+export default withStyles(styles)(withTheme(Product));

@@ -1,15 +1,11 @@
 import React from 'react';
-import { ThemeProvider } from 'thenativeweb-ux';
 import App, { Container } from 'next/app';
+import { removeServerSideStyles, ThemeProvider } from 'thenativeweb-ux';
 
 class CustomApp extends App {
   /* eslint-disable class-methods-use-this */
   componentDidMount () {
-    const style = document.getElementById('server-side-styles');
-
-    if (style) {
-      style.parentNode.removeChild(style);
-    }
+    removeServerSideStyles();
   }
   /* eslint-enable class-methods-use-this */
 

@@ -25,7 +25,7 @@ import Toggle from './components/Toggle';
 import Transition from './components/Transition';
 import View from './components/View';
 import Website from './components/Website';
-import { classNames, withStyles } from './styles';
+import { classNames, removeServerSideStyles, withStyles } from './styles';
 
 export {
   animate,
@@ -44,6 +44,7 @@ export {
   Message,
   Modal,
   Product,
+  removeServerSideStyles,
   services,
   Sidebar,
   StyleCollector,

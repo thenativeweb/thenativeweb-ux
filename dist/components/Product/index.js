@@ -137,6 +137,6 @@ Product.defaultProps = {
   type: 'default'
 };
 
-var _default = (0, _styles.withStyles)(styles)(Product);
+var _default = (0, _styles.withStyles)(styles)((0, _styles.withTheme)(Product));
 
 exports["default"] = _default;
