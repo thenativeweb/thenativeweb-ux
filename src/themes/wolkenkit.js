@@ -11,9 +11,7 @@ const theme = merge({}, thenativeweb, {
       midGrey: '#595c62',
       lightGrey: '#eee',
       white: '#fff'
-    },
-
-    interactionFocus: '#363d45'
+    }
   },
 
   components: {

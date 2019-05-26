@@ -62,18 +62,7 @@ const styles = theme => ({
     }
   },
 
-  [theme.device.medium]: {
-    Name: {},
-    CompositeName: {},
-
-    SizeL: {
-      '& $Name, & $CompositeName': {
-        'font-size': theme.font.size.large
-      }
-    }
-  },
-
-  [theme.device.small]: {
+  [theme.breakpoints.down('sm')]: {
     Name: {},
     CompositeName: {},
 

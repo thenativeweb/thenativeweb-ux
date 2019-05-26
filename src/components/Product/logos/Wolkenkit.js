@@ -32,29 +32,27 @@ const styles = theme => ({
     '100%': { transform: 'translate3d(166px, 0, 0)' }
   },
 
+  MovingCloud: {
+    animationName: '$move-cloud',
+    animationTimingFunction: 'linear',
+    animationIterationCount: 'infinite',
+    transform: 'translate3d(0, 0, 0)',
+    willChange: 'transform'
+  },
+
   MovingCloud1: {
-    'animation-name': 'move-cloud',
-    'animation-duration': '50s',
-    'animation-timing-function': 'linear',
-    'animation-iteration-count': 'infinite',
-    'animation-fill-mode': 'both',
+    animationDuration: '50s',
     opacity: 0.9,
     transform: 'translate3d(0, 0, 0)',
-    'will-change': 'transform'
+    willChange: 'transform'
   },
 
   MovingCloud2: {
-    'animation-name': 'move-cloud',
-    'animation-duration': '30s',
-    'animation-timing-function': 'linear',
-    'animation-iteration-count': 'infinite',
-    'animation-fill-mode': 'both',
-    opacity: 0.95,
-    transform: 'translate3d(0, 0, 0)',
-    'will-change': 'transform'
+    animationDuration: '30s',
+    opacity: 0.95
   },
 
-  [theme.device.small]: {
+  [theme.breakpoints.down('sm')]: {
     SizeL: {
       width: '56px',
       height: '56px'
@@ -77,6 +75,14 @@ const Logo = ({ isAnimated, classes, isVisible, size }) => {
     [classes.SizeL]: size === 'l',
     [classes.SizeXL]: size === 'xl'
   });
+
+  const movingCloud1Classes = classNames({
+    [classes.MovingCloud]: isAnimated
+  }, classes.MovingCloud1);
+
+  const movingCloud2Classes = classNames({
+    [classes.MovingCloud]: isAnimated
+  }, classes.MovingCloud2);
 
   return (
     <div className={ componentClasses } role='presentational'>
@@ -119,7 +125,7 @@ const Logo = ({ isAnimated, classes, isVisible, size }) => {
           clipPath='url(#hexa-mask)'
         >
           <path
-            className={ isAnimated ? classes.MovingCloud1 : null }
+            className={ movingCloud1Classes }
             fill='#FFFFFF'
             d='M152.434,145.188c-0.771-0.078-1.485-0.129-2.279-0.129c-6.711,0-12.703,2.877-16.93,7.444
             c-2.572-2.854-6.246-4.675-10.354-4.675c-1.571,0-3.069,0.271-4.483,0.747c-1.994-10.748-11.396-18.89-22.721-18.89
@@ -132,7 +138,7 @@ const Logo = ({ isAnimated, classes, isVisible, size }) => {
             C178.667,124.333,155.334,132.667,152.434,145.188z'
           />
           <path
-            className={ isAnimated ? classes.MovingCloud2 : null }
+            className={ movingCloud2Classes }
             fill='#FFFFFF'
             d='M152.434,155.188c-0.771-0.078-1.485-0.129-2.279-0.129c-6.711,0-12.703,2.877-16.93,7.444
             c-2.572-2.854-6.246-4.675-10.354-4.675c-1.571,0-3.069,0.271-4.483,0.747c-1.994-10.748-11.396-18.89-22.722-18.89
