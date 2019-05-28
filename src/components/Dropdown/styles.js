@@ -2,30 +2,30 @@ const styles = theme => ({
   Dropdown: {
     position: 'relative',
     display: 'flex',
-    'align-items': 'center',
-    'justify-content': 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
     overflow: 'hidden',
     background: theme.color.brand.dark,
     border: theme.color.brand.dark,
-    'font-family': theme.font.family.default,
+    fontFamily: theme.font.family.default,
 
     '& select': {
-      'flex-grow': 1,
-      'flex-shrink': 1,
-      'flex-basis': '100%',
+      flexGrow: 1,
+      flexShrink: 1,
+      flexBasis: '100%',
       background: 'inherit',
-      'font-size': 'inherit',
-      'font-weight': 'inherit',
+      fontSize: 'inherit',
+      fontWeight: 'inherit',
       border: 0,
       color: theme.color.brand.white,
       cursor: 'pointer',
       outline: 'none',
       appearance: 'none',
-      'white-space': 'nowrap',
+      whiteSpace: 'nowrap',
       overflow: 'hidden',
-      'text-overflow': 'ellipsis',
-      'border-radius': theme.components.borderRadius.default,
-      'font-family': 'inherit',
+      textOverflow: 'ellipsis',
+      borderRadius: theme.components.borderRadius.default,
+      fontFamily: 'inherit',
 
       '&:focus': {
         outline: 'none'
@@ -34,25 +34,25 @@ const styles = theme => ({
 
     '&:last-child': {
       '& select': {
-        'margin-right': 0
+        marginRight: 0
       }
     }
   },
 
-  SizeDefault: {
-    margin: '16px',
-    'margin-left': 0,
-    'font-size': theme.font.size.default,
+  SizeSm: {
+    fontSize: theme.font.size.sm,
+    margin: 0,
+    marginRight: '6px',
 
     '& select': {
       padding: '7px 40px 7px 11px'
     }
   },
 
-  SizeS: {
-    'font-size': theme.font.size.small,
-    margin: 0,
-    'margin-right': '6px',
+  SizeMd: {
+    margin: '16px',
+    marginLeft: 0,
+    fontSize: theme.font.size.md,
 
     '& select': {
       padding: '7px 40px 7px 11px'
@@ -64,15 +64,15 @@ const styles = theme => ({
   },
 
   CollapseIcon: {
-    'flex-grow': 0,
-    'flex-shrink': 0,
-    'flex-basis': 'auto',
+    flexGrow: 0,
+    flexShrink: 0,
+    flexBasis: 'auto',
     transform: 'rotate(90deg)',
-    'pointer-events': 'none',
+    pointerEvents: 'none',
     position: 'absolute',
     right: '7px',
     top: '50%',
-    'margin-top': '-8px'
+    marginTop: '-8px'
   }
 });
 

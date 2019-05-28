@@ -28,7 +28,7 @@ const Page = () => (
       <Sidebar.Item iconName='help' isActive={ true } />
       <Link href='/second'><Sidebar.Item iconName='help' /></Link>
     </Sidebar>
-    <View id='index-page' orientation='vertical' adjust='flex' style={{ padding: '20px', border: '#eee solid 1px' }}>
+    <View id='index-page' orientation='vertical' adjust='flex' style={{ padding: '20px' }}>
       <Headline id='headline'>Universally rendered Next.js app</Headline>
       <Link href='/second'><a>Link to second page</a></Link>
       <Link href='/website'><a>Link to website</a></Link>

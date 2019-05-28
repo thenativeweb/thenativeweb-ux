@@ -2,14 +2,14 @@ The `Brand` component displays the *the native web* brand.
 
 ### Resizing the brand
 
-The `Brand` is available in different sizes, `s`, `m`, and `l`. If you don't specify a size, it defaults to `m`.
+The `Brand` is available in different sizes, `sm`, `md`, and `lg`. If you don't specify a size, it defaults to `md`.
 
 ```javascript
-<Brand size='s' />
+<Brand size='sm' />
 <hr />
-<Brand size='m' />
+<Brand size='md' />
 <hr />
-<Brand size='l' />
+<Brand size='lg' />
 ```
 
 ### Minimizing the brand
@@ -17,11 +17,11 @@ The `Brand` is available in different sizes, `s`, `m`, and `l`. If you don't spe
 The `Brand` is available in a minimized version. To use it, set its `type` property to `minimal`.
 
 ```javascript
-<Brand size='s' type='minimal' />
+<Brand size='sm' type='minimal' />
 <hr />
-<Brand size='m' type='minimal' />
+<Brand size='md' type='minimal' />
 <hr />
-<Brand size='l' type='minimal' />
+<Brand size='lg' type='minimal' />
 ```
 
 ### Grayscaling the brand
@@ -29,11 +29,11 @@ The `Brand` is available in a minimized version. To use it, set its `type` prope
 The `Brand` is available in a grayscaled version. To use it, set its `color` property to `monochrome`. The grayscaled version is only available for the minimized `Brand`.
 
 ```javascript
-<Brand size='s' type='minimal' color='monochrome' />
+<Brand size='sm' type='minimal' color='monochrome' />
 <hr />
-<Brand size='m' type='minimal' color='monochrome' />
+<Brand size='md' type='minimal' color='monochrome' />
 <hr />
-<Brand size='l' type='minimal' color='monochrome' />
+<Brand size='lg' type='minimal' color='monochrome' />
 ```
 
 ### Making the brand interactive
@@ -41,17 +41,17 @@ The `Brand` is available in a grayscaled version. To use it, set its `color` pro
 The `Brand` is available as an interactive element. To make it interactive, set its `isInteractive` property to `true`. The interactive version is only available for the minimized `Brand`.
 
 ```javascript
-<Brand size='s' type='minimal' isInteractive={ true } />
+<Brand size='sm' type='minimal' isInteractive={ true } />
 <hr />
-<Brand size='m' type='minimal' isInteractive={ true } />
+<Brand size='md' type='minimal' isInteractive={ true } />
 <hr />
-<Brand size='l' type='minimal' isInteractive={ true } />
+<Brand size='lg' type='minimal' isInteractive={ true } />
 <hr />
-<Brand size='s' type='minimal' color='monochrome' isInteractive={ true } />
+<Brand size='sm' type='minimal' color='monochrome' isInteractive={ true } />
 <hr />
-<Brand size='m' type='minimal' color='monochrome' isInteractive={ true } />
+<Brand size='md' type='minimal' color='monochrome' isInteractive={ true } />
 <hr />
-<Brand size='l' type='minimal' color='monochrome' isInteractive={ true } />
+<Brand size='lg' type='minimal' color='monochrome' isInteractive={ true } />
 ```
 
 ### Pattern
@@ -95,13 +95,13 @@ The `Brand.MadeBy` component displays whom the application was developed by. Swi
 ```javascript
 <View background='dark'>
   <Brand.MadeBy />
-  <Brand.MadeBy size='m' />
-  <Brand.MadeBy size='l'/>
+  <Brand.MadeBy size='md' />
+  <Brand.MadeBy size='lg'/>
 </View>
 
 <Brand.MadeBy color='light' />
-<Brand.MadeBy color='light' size='m' />
-<Brand.MadeBy color='light' size='l' />
+<Brand.MadeBy color='light' size='md' />
+<Brand.MadeBy color='light' size='lg' />
 ```
 
 Optionally, you may provide a partner using the `partner` property.

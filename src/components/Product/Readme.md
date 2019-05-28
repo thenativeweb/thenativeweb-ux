@@ -6,7 +6,7 @@ The `Product` component displays a product's brand. To use it, provide the produ
 
   <hr />
 
-  <Product name='console' size='l' />
+  <Product name='console' size='lg' />
 
   <hr />
 
@@ -21,7 +21,7 @@ The `Product` component displays a product's brand. To use it, provide the produ
 
     <hr />
 
-    <Product name='wolkenkit' size='l'  />
+    <Product name='wolkenkit' size='lg'  />
 
     <hr />
 

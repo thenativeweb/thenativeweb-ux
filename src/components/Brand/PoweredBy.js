@@ -6,31 +6,31 @@ import { classNames, withStyles } from '../../styles';
 const styles = theme => ({
   PoweredBy: {
     display: 'flex',
-    'flex-direction': 'column',
+    flexDirection: 'column',
     overflow: 'hidden',
-    'align-items': 'center',
-    'justify-content': 'center',
-    'font-family': theme.font.family.default,
-    'font-size': theme.font.size.small,
-    'text-align': 'center',
-    'padding-top': theme.grid.stepSize / 2,
-    'padding-bottom': theme.grid.stepSize / 2
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: theme.font.family.default,
+    fontSize: theme.font.size.sm,
+    textAlign: 'center',
+    paddingTop: theme.space(0.5),
+    paddingBottom: theme.space(0.5)
   },
 
   Intro: {
-    'margin-top': theme.grid.stepSize / 2,
-    'margin-bottom': theme.grid.stepSize / 2,
+    marginTop: theme.space(1),
+    marginBottom: theme.space(1),
     color: theme.color.brand.lightGrey
   },
 
-  SizeL: {},
-  SizeM: {}
+  SizeLg: {},
+  SizeMd: {}
 });
 
 const PoweredBy = ({ classes, product, size }) => {
   const componentClasses = classNames(classes.PoweredBy, {
-    [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l'
+    [classes.SizeMd]: size === 'md',
+    [classes.SizeLg]: size === 'lg'
   });
 
   return (
@@ -43,11 +43,11 @@ const PoweredBy = ({ classes, product, size }) => {
 
 PoweredBy.propTypes = {
   product: PropTypes.string,
-  size: PropTypes.oneOf([ 'm', 'l' ])
+  size: PropTypes.oneOf([ 'md', 'lg' ])
 };
 
 PoweredBy.defaultProps = {
-  size: 'm',
+  size: 'md',
   name: undefined
 };
 

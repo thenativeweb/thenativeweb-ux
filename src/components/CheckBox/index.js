@@ -4,7 +4,7 @@ import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   CheckBox: {
-    'font-family': theme.font.family.default
+    fontFamily: theme.font.family.default
   }
 });
 

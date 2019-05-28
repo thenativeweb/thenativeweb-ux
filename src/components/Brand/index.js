@@ -11,8 +11,8 @@ const styles = theme => ({
     width: '100%',
     height: '100%',
     display: 'flex',
-    'align-items': 'center',
-    'justify-content': 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
     background: theme.color.brand.dark
   }
 });
@@ -34,12 +34,12 @@ Brand.PoweredBy = PoweredBy;
 Brand.propTypes = {
   color: PropTypes.oneOf([ 'default', 'monochrome' ]),
   isInteractive: PropTypes.bool,
-  size: PropTypes.oneOf([ 's', 'm', 'l' ]),
+  size: PropTypes.oneOf([ 'sm', 'md', 'lg' ]),
   type: PropTypes.oneOf([ 'full', 'minimal' ])
 };
 
 Brand.defaultProps = {
-  size: 'm',
+  size: 'md',
   type: 'full'
 };
 

@@ -4,28 +4,28 @@ import { classNames, withStyles } from '../../styles';
 
 const styles = theme => ({
   Headline: {
-    'font-family': theme.font.family.default,
+    fontFamily: theme.font.family.default,
     opacity: 0.95,
     padding: 0,
     margin: 0
   },
 
   Level1: {
-    'font-size': theme.font.size.xlarge,
-    'font-weight': 600,
-    'text-align': 'center',
-    'border-bottom': `1px solid ${theme.color.content.border}`,
-    'padding-bottom': theme.grid.stepSize * 2,
-    'margin-bottom': theme.grid.stepSize * 2
+    fontSize: theme.font.size.xl,
+    fontWeight: 600,
+    textAlign: 'center',
+    borderBottom: `1px solid ${theme.color.content.border}`,
+    paddingBottom: `${theme.space(2)}px`,
+    marginBottom: `${theme.space(2)}px`
   },
 
   Level2: {
-    'font-size': theme.font.size.xlarge,
-    'font-weight': 500,
-    'text-align': 'left',
-    'border-bottom': `1px solid ${theme.color.content.border}`,
-    padding: `${theme.grid.stepSize * 2} 0 ${theme.grid.stepSize} 0`,
-    'margin-bottom': (theme.grid.stepSize * 2)
+    fontSize: theme.font.size.xl,
+    fontWeight: 500,
+    textAlign: 'left',
+    borderBottom: `1px solid ${theme.color.content.border}`,
+    padding: `${theme.space(2) * 2} 0 ${theme.space(2)} 0`,
+    marginBottom: `${theme.space(2)}px`
   }
 });
 

@@ -7,14 +7,14 @@ import { withStyles } from '../../styles';
 const styles = theme => ({
   Sidebar: {
     position: 'relative',
-    'flex-grow': 0,
-    'flex-shrink': 0,
+    flexGrow: 0,
+    flexShrink: 0,
     display: 'flex',
-    'flex-direction': 'column',
-    'box-sizing': 'content-box',
-    width: theme.components.sidebar.width,
+    flexDirection: 'column',
+    boxSizing: 'content-box',
+    width: theme.components.Sidebar.width,
     background: theme.color.brand.dark,
-    padding: `${theme.grid.stepSize * 1.5}px 0`
+    padding: `${theme.space(2)}px 0`
   }
 });
 

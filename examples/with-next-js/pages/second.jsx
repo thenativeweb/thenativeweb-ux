@@ -20,7 +20,7 @@ const Page = () => (
       <Link href='/'><Sidebar.Item iconName='help' /></Link>
       <Sidebar.Item iconName='help' isActive={ true } />
     </Sidebar>
-    <View id='second-page' adjust='flex' style={{ padding: '20px', border: '#eee solid 1px' }}>
+    <View id='second-page' adjust='flex' style={{ padding: '20px' }}>
       This page is also rendered universally.
     </View>
   </Application>

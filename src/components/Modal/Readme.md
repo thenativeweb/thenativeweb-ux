@@ -69,7 +69,7 @@ initialState = { isVisible: false };
 initialState = { isVisible: false };
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open medium modal</Button>
-  <Modal header='Medium' size='m' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
+  <Modal header='Medium' size='md' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
     This is a medium modal.
   </Modal>
 </div>
@@ -79,7 +79,7 @@ initialState = { isVisible: false };
 initialState = { isVisible: false };
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open large modal</Button>
-  <Modal header='Large' size='l' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
+  <Modal header='Large' size='lg' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
     This is a large modal.
   </Modal>
 </div>

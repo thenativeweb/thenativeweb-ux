@@ -6,22 +6,22 @@ const styles = theme => ({
   Actions: {
     display: 'flex',
     'border-top': `1px solid ${theme.color.content.border}`,
-    'padding-top': theme.grid.stepSize,
-    'margin-top': theme.grid.stepSize * 2
+    'padding-top': `${theme.space(1)}px`,
+    marginTop: `${theme.space(2)}px`
   },
 
   TypeDefault: {
-    'justify-content': 'flex-end'
+    justifyContent: 'flex-end'
   },
 
   TypeStacked: {
-    'flex-direction': 'column',
-    'justify-content': 'stretch',
-    'margin-bottom': theme.grid.stepSize * 2,
+    flexDirection: 'column',
+    justifyContent: 'stretch',
+    marginBottom: `${theme.space(2)}px`,
 
     '& > *': {
-      'margin-right': 0,
-      'margin-bottom': 0
+      marginRight: 0,
+      marginBottom: 0
     }
   }
 });

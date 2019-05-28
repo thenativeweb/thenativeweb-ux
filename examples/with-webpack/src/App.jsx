@@ -112,7 +112,7 @@ class TestApp extends React.Component {
               </Link>
             </Sidebar.Footer>
           </Sidebar>
-          <View orientation='vertical' scrollable='auto'>
+          <View orientation='vertical' scrollable='auto' style={{ padding: '20px' }}>
             <section><Headline>Test app</Headline></section>
             <section>
               <Headline level='2'>Button</Headline>
@@ -162,8 +162,8 @@ class TestApp extends React.Component {
             </section>
             <section>
               <Headline level='2'>Icon</Headline>
-              <Icon name='help' size='s' />
-              <Icon name='help' size='l' />
+              <Icon name='help' size='sm' />
+              <Icon name='help' size='lg' />
             </section>
             <section>
               <Headline level='2'>Link</Headline>
@@ -178,7 +178,7 @@ class TestApp extends React.Component {
             <section>
               <Headline level='2'>Modal</Headline>
               <Button id='show-modal' onClick={ () => this.setState({ showModal: true }) }>Show modal</Button>
-              <Modal attach='sidebar' size='m' isVisible={ showModal } onCancel={ () => this.setState({ showModal: false }) }>
+              <Modal attach='sidebar' size='md' isVisible={ showModal } onCancel={ () => this.setState({ showModal: false }) }>
                 <Form onSubmit={ () => this.setState({ showModal: false }) }>
                   <Headline level='2'>Headline</Headline>
                   <div id='modal-content'>This is the content of the modal.</div>
@@ -198,7 +198,7 @@ class TestApp extends React.Component {
               <Headline level='2'>Text</Headline>
               <div>
                 <Text>This is medium text</Text>
-                <Text size='s'>This is small text</Text>
+                <Text size='sm'>This is small text</Text>
               </div>
             </section>
             <section>

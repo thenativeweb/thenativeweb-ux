@@ -5,11 +5,11 @@ import { classNames, withStyles } from '../../../styles';
 const styles = theme => ({
   Logo: {
     display: 'flex',
-    'flex-direction': 'column',
+    flexDirection: 'column',
     overflow: 'hidden',
-    'align-items': 'center',
-    'justify-content': 'center',
-    'font-family': theme.font.family.headline,
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: theme.font.family.headline,
     background: theme.color.brand.dark
   },
 
@@ -42,17 +42,17 @@ const styles = theme => ({
     }
   },
 
-  SizeS: {
+  SizeSm: {
     width: '28px',
     height: '28px'
   },
 
-  SizeM: {
+  SizeMd: {
     width: '42px',
     height: '42px'
   },
 
-  SizeL: {
+  SizeLg: {
     width: '112px',
     height: '112px'
   }
@@ -60,9 +60,9 @@ const styles = theme => ({
 
 const Logo = ({ color, classes, size, isInteractive }) => {
   const componentClasses = classNames(classes.Logo, {
-    [classes.SizeS]: size === 's',
-    [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l',
+    [classes.SizeSm]: size === 'sm',
+    [classes.SizeMd]: size === 'md',
+    [classes.SizeLg]: size === 'lg',
     [classes.IsMonochrome]: color === 'monochrome',
     [classes.IsInteractive]: isInteractive
   });
@@ -91,11 +91,11 @@ const Logo = ({ color, classes, size, isInteractive }) => {
 Logo.propTypes = {
   color: PropTypes.oneOf([ 'default', 'monochrome' ]),
   isInteractive: PropTypes.bool,
-  size: PropTypes.oneOf([ 's', 'm', 'l' ])
+  size: PropTypes.oneOf([ 'sm', 'md', 'lg' ])
 };
 
 Logo.defaultProps = {
-  size: 'm',
+  size: 'md',
   isInteractive: false
 };
 

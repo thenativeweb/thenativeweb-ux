@@ -5,25 +5,25 @@ import { classNames, withStyles } from '../../../styles';
 const styles = theme => ({
   Logo: {
     display: 'flex',
-    'flex-direction': 'column',
+    flexDirection: 'column',
     overflow: 'hidden',
-    'align-items': 'center',
-    'justify-content': 'center',
-    'font-family': theme.font.family.headline,
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: theme.font.family.headline,
     background: theme.color.brand.dark
   },
 
-  SizeS: {
+  SizeSm: {
     width: '132px',
     height: '22px'
   },
 
-  SizeM: {
+  SizeMd: {
     width: '264px',
     height: '44px'
   },
 
-  SizeL: {
+  SizeLg: {
     width: '396px',
     height: '66px'
   }
@@ -31,9 +31,9 @@ const styles = theme => ({
 
 const Logo = ({ classes, size }) => {
   const componentClasses = classNames(classes.Logo, {
-    [classes.SizeS]: size === 's',
-    [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l'
+    [classes.SizeSm]: size === 'sm',
+    [classes.SizeMd]: size === 'md',
+    [classes.SizeLg]: size === 'lg'
   });
 
   return (
@@ -102,11 +102,11 @@ const Logo = ({ classes, size }) => {
 };
 
 Logo.propTypes = {
-  size: PropTypes.oneOf([ 's', 'm', 'l' ])
+  size: PropTypes.oneOf([ 'sm', 'md', 'lg' ])
 };
 
 Logo.defaultProps = {
-  size: 'm'
+  size: 'md'
 };
 
 export default withStyles(styles)(Logo);

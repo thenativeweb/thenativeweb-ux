@@ -8,7 +8,7 @@ import React from 'react';
 const styles = {
   ControlGroup: {
     display: 'flex',
-    'margin-bottom': '18px'
+    marginBottom: '18px'
   }
 };
 

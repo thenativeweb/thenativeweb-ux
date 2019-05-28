@@ -1,7 +1,7 @@
 const styles = theme => ({
   '@global': {
     '.thenativeweb-modal--visible': {
-      'pointer-events': 'none'
+      pointerEvents: 'none'
     }
   },
 
@@ -11,11 +11,11 @@ const styles = theme => ({
     top: 0,
     right: 0,
     bottom: 0,
-    'pointer-events': 'none',
-    'z-index': theme.zIndex.modal,
+    pointerEvents: 'none',
+    zIndex: theme.zIndices.modal,
     display: 'flex',
-    'justify-content': 'center',
-    'align-items': 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
   Backdrop: {
@@ -26,42 +26,42 @@ const styles = theme => ({
     right: 0,
     bottom: 0,
     overflow: 'hidden',
-    'z-index': theme.zIndex.modal - 1,
-    'pointer-events': 'none',
+    zIndex: theme.zIndices.modal - 1,
+    pointerEvents: 'none',
     opacity: 0,
     transition: 'opacity 300ms',
-    'will-change': 'opacity'
+    willChange: 'opacity'
   },
 
   IsVisible: {
-    'pointer-events': 'all',
+    pointerEvents: 'all',
     opacity: 1
   },
 
   Chrome: {
     position: 'fixed',
     display: 'flex',
-    'flex-direction': 'column',
+    flexDirection: 'column',
     margin: 0,
     height: '100%',
-    'z-index': theme.zIndex.modal,
+    zIndex: theme.zIndices.modal,
     background: theme.color.brand.white,
     opacity: 0,
-    'pointer-events': 'all',
-    'will-change': 'opacity, transform',
-    'font-family': theme.font.family.default,
-    'box-sizing': 'border-box'
+    pointerEvents: 'all',
+    willChange: 'opacity, transform',
+    fontFamily: theme.font.family.default,
+    boxSizing: 'border-box'
   },
 
-  ChromeSizeS: {
+  ChromeSizeSm: {
     width: '25vw'
   },
 
-  ChromeSizeM: {
+  ChromeSizeMd: {
     width: '61vw'
   },
 
-  ChromeSizeL: {
+  ChromeSizeLg: {
     width: '90vw'
   },
 
@@ -70,7 +70,7 @@ const styles = theme => ({
   },
 
   ChromeAttachedSidebar: {
-    left: theme.components.sidebar.width,
+    left: theme.components.Sidebar.width,
     top: 0
   },
 
@@ -85,7 +85,7 @@ const styles = theme => ({
   },
 
   ChromeAttachedCenter: {
-    'max-width': theme.grid.stepSize * 46,
+    maxWidth: `${theme.space(56)}px`,
     width: 'auto',
     height: 'auto',
     top: 0
@@ -101,16 +101,16 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'space-between',
     position: 'relative',
-    padding: [ theme.grid.stepSize * 2, theme.grid.stepSize * 3 ],
-    'border-bottom': `1px solid ${theme.color.content.border}`
+    padding: `${theme.space(2)}px ${theme.space(4)}px`,
+    borderBottom: `1px solid ${theme.color.content.border}`
   },
 
   HeaderText: {
-    'font-family': theme.font.family.default,
+    fontFamily: theme.font.family.default,
+    fontSize: theme.font.size.xl,
     opacity: 0.95,
-    'font-size': theme.font.size.xlarge,
-    'font-weight': 600,
-    'text-align': 'center'
+    fontWeight: 600,
+    textAlign: 'center'
   },
 
   HeaderCloseButton: {
@@ -120,29 +120,29 @@ const styles = theme => ({
   Content: {
     flexGrow: 1,
     flexShrink: 1,
-    padding: [ theme.grid.stepSize * 2, theme.grid.stepSize * 3 ],
+    padding: `${theme.space(2)}px ${theme.space(4)}px`,
     '-webkit-overflow-scrolling': 'touch',
     overflow: 'auto'
   },
 
   Title: {
-    'text-align': 'center',
+    textAlign: 'center',
     padding: 0,
     margin: 0,
-    'font-weight': 600,
+    fontWeight: 600,
 
     '&::after': {
       content: '',
       display: 'block',
-      'flex-grow': 0,
-      'flex-shrink': 0,
-      'flex-basis': 'auto',
+      flexGrow: 0,
+      flexShrink: 0,
+      flexBasis: 'auto',
       width: '100%',
       height: '1px',
       background: theme.color.brand.dark,
       opacity: 0.1,
-      'margin-top': theme.grid.stepSize * 2,
-      'margin-bottom': theme.grid.stepSize * 2,
+      marginTop: `${theme.space(3)}px`,
+      marginBottom: `${theme.space(3)}px`,
       border: 'none'
     }
   }

@@ -6,12 +6,12 @@ import { classNames, withStyles, withTheme } from '../../styles';
 const styles = theme => ({
   Product: {
     display: 'flex',
-    'flex-direction': 'column',
+    flexDirection: 'column',
     overflow: 'hidden',
-    'align-items': 'center',
-    'justify-content': 'center',
-    'font-family': theme.font.family.headline,
-    'font-weight': 500
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: theme.font.family.headline,
+    fontWeight: 500
   },
 
   IsCollapsed: {
@@ -20,15 +20,16 @@ const styles = theme => ({
     }
   },
 
+  'CompositeName, Name': {
+    textAlign: 'center',
+    marginTop: '3px'
+  },
+
   Name: {
-    'text-align': 'center',
-    'margin-top': '3px',
     color: theme.color.brand.white
   },
 
   CompositeName: {
-    'text-align': 'center',
-    'margin-top': '3px',
     color: theme.color.brand.highlight,
 
     '& span': {
@@ -36,21 +37,21 @@ const styles = theme => ({
     }
   },
 
-  SizeM: {
+  SizeMd: {
     '& $Name, & $CompositeName': {
-      'font-size': theme.font.size.small
+      fontSize: theme.font.size.sm
     }
   },
 
-  SizeL: {
+  SizeLg: {
     '& $Name, & $CompositeName': {
-      'font-size': theme.font.size.large
+      fontSize: theme.font.size.lg
     }
   },
 
-  SizeXL: {
+  SizeXl: {
     '& $Name, & $CompositeName': {
-      'font-size': theme.font.size.xlarge
+      fontSize: theme.font.size.xl
     }
   },
 
@@ -58,7 +59,7 @@ const styles = theme => ({
 
   TypeTypoOnly: {
     '& $Name, & $CompositeName': {
-      'margin-top': 0
+      marginTop: 0
     }
   },
 
@@ -66,15 +67,15 @@ const styles = theme => ({
     Name: {},
     CompositeName: {},
 
-    SizeL: {
+    SizeLg: {
       '& $Name, & $CompositeName': {
-        'font-size': theme.font.size.default
+        fontSize: theme.font.size.md
       }
     },
 
-    SizeXL: {
+    SizeXl: {
       '& $Name, & $CompositeName': {
-        'font-size': theme.font.size.large
+        fontSize: theme.font.size.lg
       }
     }
   }
@@ -82,9 +83,9 @@ const styles = theme => ({
 
 const Product = ({ classes, isAnimated, name, size, theme, type }) => {
   const brandClassNames = classNames(classes.Product, {
-    [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l',
-    [classes.SizeXL]: size === 'xl',
+    [classes.SizeMd]: size === 'md',
+    [classes.SizeLg]: size === 'lg',
+    [classes.SizeXl]: size === 'xl',
     [classes.TypeLogoOnly]: type === 'logo-only',
     [classes.TypeTypoOnly]: type === 'typo-only'
   });
@@ -109,12 +110,12 @@ const Product = ({ classes, isAnimated, name, size, theme, type }) => {
 
 Product.propTypes = {
   name: PropTypes.string,
-  size: PropTypes.oneOf([ 'm', 'l', 'xl' ]),
+  size: PropTypes.oneOf([ 'md', 'lg', 'xl' ]),
   type: PropTypes.oneOf([ 'default', 'typo-only', 'logo-only' ])
 };
 
 Product.defaultProps = {
-  size: 'm',
+  size: 'md',
   name: undefined,
   type: 'default'
 };

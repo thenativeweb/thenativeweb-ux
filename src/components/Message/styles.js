@@ -1,8 +1,8 @@
 const styles = theme => ({
   Message: {
-    padding: '10px 15px',
-    'margin-bottom': theme.grid.stepSize,
-    'font-family': theme.font.family.default
+    padding: `${theme.space(1.5)}px ${theme.space(2)}px`,
+    marginBottom: `${theme.space(1)}px`,
+    fontFamily: theme.font.family.default
   },
 
   TypeError: {
@@ -23,16 +23,16 @@ const styles = theme => ({
 
     '& $IconContainer': {
       display: 'flex',
-      'align-items': 'center',
-      'justify-content': 'center',
-      'flex-grow': 0,
-      'flex-basis': 'auto',
-      'margin-right': theme.grid.stepSize
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexGrow: 0,
+      flexBasis: 'auto',
+      marginRight: `${theme.space(1.5)}px`
     },
 
     '&. $Content': {
-      'flex-grow': 1,
-      'flex-basis': '100%'
+      flexGrow: 1,
+      flexBasis: '100%'
     }
   },
 

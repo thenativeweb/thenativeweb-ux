@@ -6,32 +6,32 @@ const styles = theme => ({
   Text: {
     display: 'block',
     overflow: 'hidden',
-    'text-overflow': 'ellipsis',
-    'white-space': 'nowrap',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
     color: 'inherit',
-    'font-family': theme.font.family.default
+    fontFamily: theme.font.family.default
   },
 
   AdjustAuto: {
   },
 
   AdjustFlex: {
-    'flex-grow': 1,
-    'flex-shrink': 1
+    flexGrow: 1,
+    flexShrink: 1
   },
 
-  SizeM: {
-    padding: '7px 0',
-    'font-size': theme.font.size.default
+  SizeMd: {
+    padding: `${theme.space(1)}px 0`,
+    fontSize: theme.font.size.md
   },
 
-  SizeS: {
-    padding: '7px 0',
-    'font-size': theme.font.size.small
+  SizeSm: {
+    padding: `${theme.space(1)}px 0`,
+    fontSize: theme.font.size.sm
   },
 
   BreakLines: {
-    'white-space': 'normal'
+    whiteSpace: 'normal'
   }
 });
 
@@ -40,8 +40,8 @@ const Text = function ({ adjust, breakLines, classes, className, children, id, s
     [classes.BreakLines]: breakLines,
     [classes.AdjustFlex]: adjust === 'flex',
     [classes.AdjustAuto]: adjust === 'auto',
-    [classes.SizeS]: size === 's',
-    [classes.SizeM]: size === 'm'
+    [classes.SizeSm]: size === 'sm',
+    [classes.SizeMd]: size === 'md'
   }, className);
 
   return (
@@ -54,13 +54,13 @@ const Text = function ({ adjust, breakLines, classes, className, children, id, s
 Text.propTypes = {
   adjust: PropTypes.oneOf([ 'flex', 'auto' ]),
   breakLines: PropTypes.bool,
-  size: PropTypes.oneOf([ 's', 'm' ])
+  size: PropTypes.oneOf([ 'sm', 'md' ])
 };
 
 Text.defaultProps = {
   adjust: 'auto',
   breakLines: false,
-  size: 'm'
+  size: 'md'
 };
 
 export default withStyles(styles)(Text);

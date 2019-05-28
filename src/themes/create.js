@@ -55,13 +55,11 @@ const create = function ({
       import: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700|Ubuntu:300,400,500|Ubuntu+Mono',
 
       size: {
-        xsmall: '12px',
-        small: '14px',
-        default: '16px',
-        large: '18px',
-        xlarge: '24px',
-        code: '15px',
-        copytext: '18px'
+        xs: '12px',
+        sm: '14px',
+        md: '16px',
+        lg: '18px',
+        xl: '24px'
       },
 
       family: {
@@ -79,12 +77,12 @@ const create = function ({
 
     icon: {
       size: {
-        xsmall: '14px',
-        small: '16px',
-        medium: '24px',
-        large: '32px',
-        xlarge: '48px',
-        xxlarge: '64px'
+        xs: '14px',
+        sm: '16px',
+        md: '24px',
+        lg: '32px',
+        xl: '48px',
+        xxl: '64px'
       }
     },
 
@@ -98,7 +96,7 @@ const create = function ({
         default: '1px'
       },
 
-      sidebar: {
+      Sidebar: {
         width: '80px'
       },
 
@@ -115,7 +113,7 @@ const create = function ({
       xlarge: '@media (max-width: 1200px)'
     },
 
-    zIndex: {
+    zIndices: {
       content: 100,
       contentOverlay: 200,
       navigation: 1000,

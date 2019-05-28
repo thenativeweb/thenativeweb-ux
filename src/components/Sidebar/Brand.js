@@ -3,8 +3,8 @@ import { withStyles } from '../../styles';
 
 const styles = theme => ({
   Brand: {
-    'padding-bottom': theme.grid.stepSize * 2,
-    'border-bottom': '1px solid rgba(255, 255, 255, 0.1)'
+    paddingBottom: `${theme.space(2)}px`,
+    borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
   }
 });
 
