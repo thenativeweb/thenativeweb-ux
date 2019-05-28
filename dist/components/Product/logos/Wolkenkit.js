@@ -17,18 +17,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var styles = function styles(theme) {
   return _defineProperty({
-    Logo: {
-      /* Left blank intentionally */
-    },
-    SizeM: {
+    Logo: {},
+    SizeMd: {
       width: '56px',
       height: '56px'
     },
-    SizeL: {
+    SizeLg: {
       width: '120px',
       height: '120px'
     },
-    SizeXL: {
+    SizeXl: {
       width: '220px',
       height: '220px'
     },
@@ -46,32 +44,29 @@ var styles = function styles(theme) {
         transform: 'translate3d(166px, 0, 0)'
       }
     },
+    MovingCloud: {
+      animationName: '$move-cloud',
+      animationTimingFunction: 'linear',
+      animationIterationCount: 'infinite',
+      transform: 'translate3d(0, 0, 0)',
+      willChange: 'transform'
+    },
     MovingCloud1: {
-      'animation-name': 'move-cloud',
-      'animation-duration': '50s',
-      'animation-timing-function': 'linear',
-      'animation-iteration-count': 'infinite',
-      'animation-fill-mode': 'both',
+      animationDuration: '50s',
       opacity: 0.9,
       transform: 'translate3d(0, 0, 0)',
-      'will-change': 'transform'
+      willChange: 'transform'
     },
     MovingCloud2: {
-      'animation-name': 'move-cloud',
-      'animation-duration': '30s',
-      'animation-timing-function': 'linear',
-      'animation-iteration-count': 'infinite',
-      'animation-fill-mode': 'both',
-      opacity: 0.95,
-      transform: 'translate3d(0, 0, 0)',
-      'will-change': 'transform'
+      animationDuration: '30s',
+      opacity: 0.95
     }
-  }, theme.device.small, {
-    SizeL: {
+  }, theme.breakpoints.down('sm'), {
+    SizeLg: {
       width: '56px',
       height: '56px'
     },
-    SizeXL: {
+    SizeXl: {
       width: '100px',
       height: '100px'
     }
@@ -90,7 +85,9 @@ var Logo = function Logo(_ref2) {
     return null;
   }
 
-  var componentClasses = (0, _styles.classNames)(classes.Logo, (_classNames = {}, _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _defineProperty(_classNames, classes.SizeXL, size === 'xl'), _classNames));
+  var componentClasses = (0, _styles.classNames)(classes.Logo, (_classNames = {}, _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _defineProperty(_classNames, classes.SizeXl, size === 'xl'), _classNames));
+  var movingCloud1Classes = (0, _styles.classNames)(_defineProperty({}, classes.MovingCloud, isAnimated), classes.MovingCloud1);
+  var movingCloud2Classes = (0, _styles.classNames)(_defineProperty({}, classes.MovingCloud, isAnimated), classes.MovingCloud2);
   return _react["default"].createElement("div", {
     className: componentClasses,
     role: "presentational"
@@ -116,11 +113,11 @@ var Logo = function Logo(_ref2) {
     className: "moving-clouds",
     clipPath: "url(#hexa-mask)"
   }, _react["default"].createElement("path", {
-    className: isAnimated ? classes.MovingCloud1 : null,
+    className: movingCloud1Classes,
     fill: "#FFFFFF",
     d: "M152.434,145.188c-0.771-0.078-1.485-0.129-2.279-0.129c-6.711,0-12.703,2.877-16.93,7.444 c-2.572-2.854-6.246-4.675-10.354-4.675c-1.571,0-3.069,0.271-4.483,0.747c-1.994-10.748-11.396-18.89-22.721-18.89 c-0.579,0-1.152,0.047-1.722,0.088c-2.461-10.127-11.553-17.653-22.44-17.653c-12.778,0-23.137,10.364-23.137,23.141 c0,0.566,0.039,1.14,0.077,1.693c-4.698,0.159-8.551,3.405-9.836,7.733C36.497,139.111,32,134.549,27,132 c-14.333-7.667-37.666,0.667-40.567,13.188c-0.771-0.078-1.485-0.129-2.278-0.129c-6.711,0-12.704,2.877-16.931,7.444 c-2.572-2.854-6.245-4.675-10.354-4.675c-1.571,0-3.069,0.271-4.483,0.747c-1.995-10.748-11.397-18.89-22.721-18.89 c-0.579,0-1.152,0.047-1.722,0.088c-2.461-10.127-11.553-17.653-22.44-17.653c-12.778,0-23.137,10.364-23.137,23.141 c0,0.566,0.039,1.14,0.077,1.693c-4.698,0.159-8.551,3.405-9.836,7.733C-129.503,139.111-134,134.549-139,132v68.879h332V132 C178.667,124.333,155.334,132.667,152.434,145.188z"
   }), _react["default"].createElement("path", {
-    className: isAnimated ? classes.MovingCloud2 : null,
+    className: movingCloud2Classes,
     fill: "#FFFFFF",
     d: "M152.434,155.188c-0.771-0.078-1.485-0.129-2.279-0.129c-6.711,0-12.703,2.877-16.93,7.444 c-2.572-2.854-6.246-4.675-10.354-4.675c-1.571,0-3.069,0.271-4.483,0.747c-1.994-10.748-11.396-18.89-22.722-18.89 c-0.578,0-1.151,0.047-1.722,0.088c-2.461-10.127-11.554-17.653-22.44-17.653c-12.778,0-23.137,10.364-23.137,23.141 c0,0.566,0.039,1.14,0.077,1.693c-4.698,0.159-8.551,3.405-9.836,7.733C36.497,149.111,32,144.549,27,142 c-14.333-7.667-37.666,0.667-40.567,13.188c-0.771-0.078-1.485-0.129-2.278-0.129c-6.711,0-12.704,2.877-16.931,7.444 c-2.572-2.854-6.245-4.675-10.354-4.675c-1.571,0-3.069,0.271-4.483,0.747c-1.995-10.748-11.397-18.89-22.721-18.89 c-0.579,0-1.152,0.047-1.722,0.088c-2.461-10.127-11.553-17.653-22.44-17.653c-12.778,0-23.137,10.364-23.137,23.141 c0,0.566,0.039,1.14,0.077,1.693c-4.698,0.159-8.551,3.405-9.836,7.733C-129.503,149.111-134,144.549-139,142v68.879h332V142 C178.667,134.333,155.334,142.667,152.434,155.188z"
   }))));
@@ -129,11 +126,11 @@ var Logo = function Logo(_ref2) {
 Logo.propTypes = {
   isAnimated: _propTypes["default"].bool,
   isVisible: _propTypes["default"].bool,
-  size: _propTypes["default"].oneOf(['m', 'l', 'xl'])
+  size: _propTypes["default"].oneOf(['md', 'lg', 'xl'])
 };
 Logo.defaultProps = {
   isVisible: true,
-  size: 'm',
+  size: 'md',
   isAnimated: false
 };
 

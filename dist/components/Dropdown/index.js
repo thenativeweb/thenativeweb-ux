@@ -91,7 +91,7 @@ function (_React$PureComponent) {
           style = _this$props.style,
           value = _this$props.value;
       var isFocused = this.state.isFocused;
-      var dropdownClassNames = (0, _styles2.classNames)(classes.Dropdown, (_classNames = {}, _defineProperty(_classNames, classes.SizeDefault, size === 'default'), _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.IsFocused, isFocused), _classNames));
+      var dropdownClassNames = (0, _styles2.classNames)(classes.Dropdown, (_classNames = {}, _defineProperty(_classNames, classes.SizeSm, size === 'sm'), _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.IsFocused, isFocused), _classNames));
       return _react["default"].createElement("div", {
         id: id,
         className: dropdownClassNames,
@@ -126,10 +126,10 @@ Dropdown.propTypes = {
   options: _propTypes["default"].array.isRequired,
   value: _propTypes["default"].string.isRequired,
   onChange: _propTypes["default"].func.isRequired,
-  size: _propTypes["default"].oneOf(['default', 's'])
+  size: _propTypes["default"].oneOf(['sm', 'md'])
 };
 Dropdown.defaultProps = {
-  size: 'default'
+  size: 'md'
 };
 
 var _default = (0, _styles2.withStyles)(_styles["default"])(Dropdown);

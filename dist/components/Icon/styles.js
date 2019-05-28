@@ -24,41 +24,41 @@ var styles = function styles(theme) {
     ColorWhite: {
       fill: theme.color.brand.white
     },
-    SizeXS: {
-      width: theme.icon.size.xsmall,
-      height: theme.icon.size.xsmall
+    SizeXs: {
+      width: theme.icon.size.xs,
+      height: theme.icon.size.xs
     },
-    SizeS: {
-      width: theme.icon.size.small,
-      height: theme.icon.size.small
+    SizeSm: {
+      width: theme.icon.size.sm,
+      height: theme.icon.size.sm
     },
-    SizeM: {
-      width: theme.icon.size.medium,
-      height: theme.icon.size.medium
+    SizeMd: {
+      width: theme.icon.size.md,
+      height: theme.icon.size.md
     },
-    SizeL: {
-      width: theme.icon.size.large,
-      height: theme.icon.size.large
+    SizeLg: {
+      width: theme.icon.size.lg,
+      height: theme.icon.size.lg
     },
-    SizeXL: {
-      width: theme.icon.size.xlarge,
-      height: theme.icon.size.xlarge
+    SizeXl: {
+      width: theme.icon.size.xl,
+      height: theme.icon.size.xl
     },
-    SizeXXL: {
-      width: theme.icon.size.xxlarge,
-      height: theme.icon.size.xxlarge
+    SizeXxl: {
+      width: theme.icon.size.xxl,
+      height: theme.icon.size.xxl
     },
     TypeInline: {
       display: 'inline-block',
-      'vertical-align': 'middle',
-      'margin-bottom': '0.2em',
-      'margin-left': '0.05em',
-      'margin-right': '0.05em'
+      verticalAlign: 'middle',
+      marginBottom: '0.2em',
+      marginLeft: '0.05em',
+      marginRight: '0.05em'
     },
     TypeFlexAuto: {
-      'flex-grow': 0,
-      'flex-shrink': 0,
-      'flex-basis': 'auto'
+      flexGrow: 0,
+      flexShrink: 0,
+      flexBasis: 'auto'
     }
   };
 };

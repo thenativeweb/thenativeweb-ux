@@ -18,7 +18,7 @@
 
 ```javascript
 <div style={{ display: 'flex', alignItems: 'center' }}>
-  <Button size='s'>Small Button</Button>
+  <Button size='sm'>Small Button</Button>
   <Button>Default Button</Button>
 </div>
 ```

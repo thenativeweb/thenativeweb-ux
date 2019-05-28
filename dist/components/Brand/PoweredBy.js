@@ -21,23 +21,23 @@ var styles = function styles(theme) {
   return {
     PoweredBy: {
       display: 'flex',
-      'flex-direction': 'column',
+      flexDirection: 'column',
       overflow: 'hidden',
-      'align-items': 'center',
-      'justify-content': 'center',
-      'font-family': theme.font.family["default"],
-      'font-size': theme.font.size.small,
-      'text-align': 'center',
-      'padding-top': theme.grid.stepSize / 2,
-      'padding-bottom': theme.grid.stepSize / 2
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: theme.font.family["default"],
+      fontSize: theme.font.size.sm,
+      textAlign: 'center',
+      paddingTop: theme.space(0.5),
+      paddingBottom: theme.space(0.5)
     },
     Intro: {
-      'margin-top': theme.grid.stepSize / 2,
-      'margin-bottom': theme.grid.stepSize / 2,
+      marginTop: theme.space(1),
+      marginBottom: theme.space(1),
       color: theme.color.brand.lightGrey
     },
-    SizeL: {},
-    SizeM: {}
+    SizeLg: {},
+    SizeMd: {}
   };
 };
 
@@ -47,7 +47,7 @@ var PoweredBy = function PoweredBy(_ref) {
   var classes = _ref.classes,
       product = _ref.product,
       size = _ref.size;
-  var componentClasses = (0, _styles.classNames)(classes.PoweredBy, (_classNames = {}, _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _classNames));
+  var componentClasses = (0, _styles.classNames)(classes.PoweredBy, (_classNames = {}, _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _classNames));
   return _react["default"].createElement("div", {
     className: componentClasses
   }, _react["default"].createElement("div", {
@@ -60,10 +60,10 @@ var PoweredBy = function PoweredBy(_ref) {
 
 PoweredBy.propTypes = {
   product: _propTypes["default"].string,
-  size: _propTypes["default"].oneOf(['m', 'l'])
+  size: _propTypes["default"].oneOf(['md', 'lg'])
 };
 PoweredBy.defaultProps = {
-  size: 'm',
+  size: 'md',
   name: undefined
 };
 

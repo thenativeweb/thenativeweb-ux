@@ -23,10 +23,10 @@ var styles = function styles(theme) {
   return {
     MadeBy: {
       overflow: 'hidden',
-      'font-family': theme.font.family["default"],
-      'text-align': 'center',
-      'padding-top': theme.grid.stepSize / 2,
-      'padding-bottom': theme.grid.stepSize / 2
+      fontFamily: theme.font.family["default"],
+      textAlign: 'center',
+      paddingTop: theme.space(1),
+      paddingBottom: theme.space(1)
     },
     ColorDark: {
       color: theme.color.brand.lightGrey
@@ -34,14 +34,14 @@ var styles = function styles(theme) {
     ColorLight: {
       color: theme.color.brand.dark
     },
-    SizeS: {
-      'font-size': theme.font.size.small
+    SizeSm: {
+      fontSize: theme.font.size.sm
     },
-    SizeM: {
-      'font-size': theme.font.size["default"]
+    SizeMd: {
+      fontSize: theme.font.size.md
     },
-    SizeL: {
-      'font-size': theme.font.size.large
+    SizeLg: {
+      fontSize: theme.font.size.lg
     }
   };
 };
@@ -54,7 +54,7 @@ var MadeBy = function MadeBy(_ref) {
       _ref$partner = _ref.partner,
       partner = _ref$partner === void 0 ? [] : _ref$partner,
       size = _ref.size;
-  var componentClasses = (0, _styles.classNames)(classes.MadeBy, (_classNames = {}, _defineProperty(_classNames, classes.ColorDark, color === 'dark'), _defineProperty(_classNames, classes.ColorLight, color === 'light'), _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _classNames));
+  var componentClasses = (0, _styles.classNames)(classes.MadeBy, (_classNames = {}, _defineProperty(_classNames, classes.ColorDark, color === 'dark'), _defineProperty(_classNames, classes.ColorLight, color === 'light'), _defineProperty(_classNames, classes.SizeSm, size === 'sm'), _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _classNames));
   var partners = Array.isArray(partner) ? partner : [partner];
   return _react["default"].createElement("div", {
     className: componentClasses
@@ -80,11 +80,11 @@ var MadeBy = function MadeBy(_ref) {
 MadeBy.propTypes = {
   color: _propTypes["default"].oneOf(['dark', 'light']),
   partner: _propTypes["default"].oneOfType([_propTypes["default"].array, _propTypes["default"].object]),
-  size: _propTypes["default"].oneOf(['s', 'm', 'l'])
+  size: _propTypes["default"].oneOf(['sm', 'md', 'lg'])
 };
 MadeBy.defaultProps = {
   color: 'dark',
-  size: 's',
+  size: 'sm',
   name: undefined
 };
 

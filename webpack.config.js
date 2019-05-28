@@ -11,15 +11,14 @@ const configuration = {
         use: [
           { loader: 'babel-loader' }
         ]
-      },
-      {
-        test: /\.css$/u,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' }
-        ]
       }
     ]
+  },
+
+  resolve: {
+    alias: {
+      'thenativeweb-ux': path.join(__dirname, 'src', 'index.js')
+    }
   }
 };
 

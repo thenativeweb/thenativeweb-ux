@@ -2,7 +2,7 @@ Whenever you would like to display text inside your application, use the `Text` 
 
 ```javascript
 <Text>This is medium text</Text>
-<Text size='s'>This is small text</Text>
+<Text size='sm'>This is small text</Text>
 ```
 
 The component will make sure that text will be abbreviated, if the parent component does not hold enough space…

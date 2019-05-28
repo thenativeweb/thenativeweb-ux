@@ -1,5 +1,7 @@
-```javascript
+```jsx
 initialState = { isVisible: false };
+import { Button } from 'thenativeweb-ux';
+
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open modal</Button>
   <Modal
@@ -13,8 +15,10 @@ initialState = { isVisible: false };
 ```
 ### With Headline
 
-```javascript
+```jsx
 initialState = { isVisible: false };
+import { Button, Headline } from 'thenativeweb-ux';
+
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>With headline and content</Button>
   <Modal isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
@@ -26,8 +30,10 @@ initialState = { isVisible: false };
 
 ### Hiding the header
 
-```javascript
+```jsx
 initialState = { isVisible: false };
+import { Button, Headline } from 'thenativeweb-ux';
+
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Without header</Button>
   <Modal
@@ -43,8 +49,10 @@ initialState = { isVisible: false };
 
 ### Positioning
 
-```javascript
+```jsx
 initialState = { isVisible: false };
+import { Button } from 'thenativeweb-ux';
+
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open modal attached to the right</Button>
   <Modal header='Attached to the right' attach='right' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
@@ -53,8 +61,10 @@ initialState = { isVisible: false };
 </div>
 ```
 
-```javascript
+```jsx
 initialState = { isVisible: false };
+import { Button } from 'thenativeweb-ux';
+
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open modal attached to the center</Button>
   <Modal header='Attached to the center' attach='center' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
@@ -65,8 +75,10 @@ initialState = { isVisible: false };
 
 ### Sizes
 
-```javascript
+```jsx
 initialState = { isVisible: false };
+import { Button } from 'thenativeweb-ux';
+
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open medium modal</Button>
   <Modal header='Medium' size='md' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
@@ -75,8 +87,10 @@ initialState = { isVisible: false };
 </div>
 ```
 
-```javascript
+```jsx
 initialState = { isVisible: false };
+import { Button } from 'thenativeweb-ux';
+
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open large modal</Button>
   <Modal header='Large' size='lg' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>
@@ -85,8 +99,10 @@ initialState = { isVisible: false };
 </div>
 ```
 
-```javascript
+```jsx
 initialState = { isVisible: false };
+import { Button } from 'thenativeweb-ux';
+
 <div>
   <Button onClick={ () => setState({ isVisible: true })}>Open fullscreen modal</Button>
   <Modal header='Fullscreen' size='fullscreen' isVisible={ state.isVisible } onCancel={ () => setState({ isVisible: false })}>

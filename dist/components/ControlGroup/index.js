@@ -22,7 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var styles = {
   ControlGroup: {
     display: 'flex',
-    'margin-bottom': '18px'
+    marginBottom: '18px'
   }
 };
 

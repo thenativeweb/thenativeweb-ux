@@ -4,7 +4,9 @@ As it represents the application root, it positions itself absolutely in its par
 
 Always remember to also use the `Application.Services` component as first child of your `Application` component. Otherwise, some things may not work as expected.
 
-```js
+```jsx
+import { View } from 'thenativeweb-ux';
+
 <div style={{ position: 'relative', width: 640, height: 480 }}>
   <Application>
     <View background='dark'>Sidebar view</View>

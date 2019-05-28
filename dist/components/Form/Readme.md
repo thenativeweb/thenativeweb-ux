@@ -1,5 +1,8 @@
-```javascript
+```jsx
 initialState = { sample: 'foo', checked: false };
+
+import { Button, CheckBox, ControlGroup, Headline, TextBox } from 'thenativeweb-ux';
+
 <Form onSubmit={event => { event.preventDefault(); console.log(state.sample) }}>
   <Headline>Example form</Headline>
   <ControlGroup>
@@ -28,8 +31,10 @@ initialState = { sample: 'foo', checked: false };
 </Form>
 ```
 
-```javascript
+```jsx
 initialState = { sample: 'foo', checked: false };
+import { Button, CheckBox, ControlGroup, Headline, TextBox } from 'thenativeweb-ux';
+
 <Form onSubmit={event => { event.preventDefault(); console.log(state.sample) }}>
   <Headline>Example mobile friendly form</Headline>
   <ControlGroup>

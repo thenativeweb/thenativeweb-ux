@@ -46,7 +46,7 @@ var Button = function Button(_ref2) {
       size = _ref2.size,
       style = _ref2.style,
       type = _ref2.type;
-  var componentClasses = (0, _styles2.classNames)(classes.Button, (_classNames = {}, _defineProperty(_classNames, classes.AdjustFlex, adjust === 'flex'), _defineProperty(_classNames, classes.AdjustAuto, adjust === 'auto'), _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.TypeSubtle, isSubtle === true), _defineProperty(_classNames, classes.TypePrimary, isPrimary === true), _defineProperty(_classNames, classes.TypeIcon, icon), _defineProperty(_classNames, classes.TypeIconOnly, icon && !children), _classNames), className);
+  var componentClasses = (0, _styles2.classNames)(classes.Button, (_classNames = {}, _defineProperty(_classNames, classes.AdjustFlex, adjust === 'flex'), _defineProperty(_classNames, classes.AdjustAuto, adjust === 'auto'), _defineProperty(_classNames, classes.SizeSm, size === 'sm'), _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.TypeSubtle, isSubtle === true), _defineProperty(_classNames, classes.TypePrimary, isPrimary === true), _defineProperty(_classNames, classes.TypeIcon, icon), _defineProperty(_classNames, classes.TypeIconOnly, icon && !children), _classNames), className);
   var buttonType = type || (isPrimary ? 'submit' : 'button');
   /* eslint-disable react/button-has-type */
 
@@ -71,10 +71,10 @@ Button.propTypes = {
   adjust: _propTypes["default"].oneOf(['flex', 'auto']),
   autoFocus: _propTypes["default"].bool,
   icon: _propTypes["default"].string,
-  iconSize: _propTypes["default"].oneOf(['default', 'xs', 's', 'm', 'l']),
+  iconSize: _propTypes["default"].oneOf(['default', 'xs', 'sm', 'md', 'lg']),
   isPrimary: _propTypes["default"].bool,
   isSubtle: _propTypes["default"].bool,
-  size: _propTypes["default"].oneOf(['s', 'm']),
+  size: _propTypes["default"].oneOf(['sm', 'md']),
   type: _propTypes["default"].oneOf(['button', 'submit', 'reset']),
   onClick: _propTypes["default"].func
 };
@@ -82,7 +82,7 @@ Button.defaultProps = {
   adjust: undefined,
   autoFocus: false,
   isPrimary: false,
-  size: 'm',
+  size: 'md',
   type: undefined,
   onClick: function onClick() {// Intentionally left bla
   }

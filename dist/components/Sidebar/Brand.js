@@ -14,8 +14,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var styles = function styles(theme) {
   return {
     Brand: {
-      'padding-bottom': theme.grid.stepSize * 2,
-      'border-bottom': '1px solid rgba(255, 255, 255, 0.1)'
+      paddingBottom: "".concat(theme.space(2), "px"),
+      borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
     }
   };
 };

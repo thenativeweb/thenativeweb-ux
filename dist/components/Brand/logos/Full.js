@@ -19,22 +19,22 @@ var styles = function styles(theme) {
   return {
     Logo: {
       display: 'flex',
-      'flex-direction': 'column',
+      flexDirection: 'column',
       overflow: 'hidden',
-      'align-items': 'center',
-      'justify-content': 'center',
-      'font-family': theme.font.family.headline,
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: theme.font.family.headline,
       background: theme.color.brand.dark
     },
-    SizeS: {
+    SizeSm: {
       width: '132px',
       height: '22px'
     },
-    SizeM: {
+    SizeMd: {
       width: '264px',
       height: '44px'
     },
-    SizeL: {
+    SizeLg: {
       width: '396px',
       height: '66px'
     }
@@ -46,7 +46,7 @@ var Logo = function Logo(_ref) {
 
   var classes = _ref.classes,
       size = _ref.size;
-  var componentClasses = (0, _styles.classNames)(classes.Logo, (_classNames = {}, _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _classNames));
+  var componentClasses = (0, _styles.classNames)(classes.Logo, (_classNames = {}, _defineProperty(_classNames, classes.SizeSm, size === 'sm'), _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _classNames));
   return _react["default"].createElement("div", {
     className: componentClasses,
     role: "presentational"
@@ -108,10 +108,10 @@ var Logo = function Logo(_ref) {
 };
 
 Logo.propTypes = {
-  size: _propTypes["default"].oneOf(['s', 'm', 'l'])
+  size: _propTypes["default"].oneOf(['sm', 'md', 'lg'])
 };
 Logo.defaultProps = {
-  size: 'm'
+  size: 'md'
 };
 
 var _default = (0, _styles.withStyles)(styles)(Logo);

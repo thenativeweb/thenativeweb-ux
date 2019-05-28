@@ -15,7 +15,7 @@ var styles = function styles(theme) {
   return {
     Row: {
       display: 'flex',
-      'margin-bottom': theme.grid.stepSize
+      marginBottom: "".concat(theme.space(2), "px")
     }
   };
 };

@@ -37,21 +37,21 @@ var styles = function styles(theme) {
   return {
     TextArea: {
       padding: '9px 12px',
-      'font-size': theme.font.size["default"],
-      'font-family': theme.font.family["default"],
+      fontSize: theme.font.size.md,
+      fontFamily: theme.font.family["default"],
       width: '100%',
       'box-sizing': 'border-box',
       border: "1px solid",
-      'border-color': theme.color.content.border,
+      borderColor: theme.color.content.border,
       '&:focus': {
         outline: 'none',
-        'border-color': theme.color.interaction.focus
+        borderColor: theme.color.interaction.focus
       },
       '&::placeholder': {
         color: theme.color.brand.darkGrey,
-        'font-family': theme.font.family["default"],
-        'font-size': 'inherit',
-        'font-weight': 400,
+        fontFamily: theme.font.family["default"],
+        fontSize: 'inherit',
+        fontWeight: 400,
         opacity: 0.5
       }
     },
@@ -59,11 +59,11 @@ var styles = function styles(theme) {
       color: theme.color.brand.darkGrey,
       background: theme.color.brand.lightGrey
     },
-    SizeS: {
-      height: theme.grid.stepSize * 8
+    SizeSm: {
+      height: "".concat(theme.space(10), "px")
     },
-    SizeM: {
-      height: theme.grid.stepSize * 14
+    SizeMd: {
+      height: "".concat(theme.space(18), "px")
     }
   };
 };
@@ -137,7 +137,7 @@ function (_React$Component) {
           required = _this$props2.required,
           style = _this$props2.style,
           size = _this$props2.size;
-      var componentClasses = (0, _styles.classNames)(classes.TextArea, (_classNames = {}, _defineProperty(_classNames, classes.IsDisabled, disabled === true), _defineProperty(_classNames, classes.IsRequired, required === true), _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.SizeM, size === 'm'), _classNames), className);
+      var componentClasses = (0, _styles.classNames)(classes.TextArea, (_classNames = {}, _defineProperty(_classNames, classes.IsDisabled, disabled === true), _defineProperty(_classNames, classes.IsRequired, required === true), _defineProperty(_classNames, classes.SizeSm, size === 'sm'), _defineProperty(_classNames, classes.SizeMd, size === 'md'), _classNames), className);
       return _react["default"].createElement("textarea", {
         id: id,
         ref: this.handleRefChanged,
@@ -165,7 +165,7 @@ TextArea.propTypes = {
   name: _propTypes["default"].string,
   placeholder: _propTypes["default"].string,
   required: _propTypes["default"].bool,
-  size: _propTypes["default"].oneOf(['s', 'm']),
+  size: _propTypes["default"].oneOf(['sm', 'md']),
   value: _propTypes["default"].string,
   onBlur: _propTypes["default"].func,
   onChange: _propTypes["default"].func,
@@ -176,7 +176,7 @@ TextArea.defaultProps = {
   disabled: false,
   focusDelay: 0,
   required: false,
-  size: 's',
+  size: 'sm',
   onBlur: function onBlur() {// Intentionally left blank
   },
   onChange: function onChange() {// Intentionally left blank

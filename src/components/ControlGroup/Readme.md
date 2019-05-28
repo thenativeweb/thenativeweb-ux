@@ -1,4 +1,6 @@
-```javascript
+```jsx
+import { Button, Form, TextBox } from 'thenativeweb-ux';
+
 <Form onSubmit={event => { event.preventDefault(); console.log('submitted') }}>
   <ControlGroup>
     <ControlGroup.Item label='First name' adjust='flex'>

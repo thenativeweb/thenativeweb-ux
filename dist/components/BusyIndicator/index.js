@@ -28,28 +28,29 @@ var styles = function styles(theme) {
     },
     BusyIndicator: {
       display: 'flex',
-      'justify-content': 'flex-start',
-      'align-items': 'center',
-      'min-height': 100
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      minHeight: 100
     },
     Pulse: {
-      width: 12,
-      height: 12,
+      width: "".concat(theme.space(1.5), "px"),
+      height: "".concat(theme.space(1.5), "px"),
       marginRight: 3,
-      'border-radius': '50%',
-      'background-color': theme.color.brand.highlight,
-      'animation-iteration-count': 'infinite',
-      'animation-timing-function': 'linear',
-      'animation-name': 'loading-indicator-pulse',
-      'animation-duration': '900ms',
-      'animation-fill-mode': 'both'
+      borderRadius: '50%',
+      backgroundColor: theme.color.brand.highlight,
+      animationIterationCount: 'infinite',
+      animationTimingFunction: 'linear',
+      animationName: '$loading-indicator-pulse',
+      animationDuration: '900ms',
+      animationFillMode: 'both'
     },
     Pulse1: {
-      'animation-delay': '-300ms'
+      animationDelay: '-300ms'
     },
     Pulse2: {
-      'animation-delay': '-150ms'
-    }
+      animationDelay: '-150ms'
+    },
+    Pulse3: {}
   };
 };
 

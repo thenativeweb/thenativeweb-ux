@@ -19,11 +19,11 @@ var styles = function styles(theme) {
   return {
     Logo: {
       display: 'flex',
-      'flex-direction': 'column',
+      flexDirection: 'column',
       overflow: 'hidden',
-      'align-items': 'center',
-      'justify-content': 'center',
-      'font-family': theme.font.family.headline,
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: theme.font.family.headline,
       background: theme.color.brand.dark
     },
     Foreground: {
@@ -51,15 +51,15 @@ var styles = function styles(theme) {
         }
       }
     },
-    SizeS: {
+    SizeSm: {
       width: '28px',
       height: '28px'
     },
-    SizeM: {
+    SizeMd: {
       width: '42px',
       height: '42px'
     },
-    SizeL: {
+    SizeLg: {
       width: '112px',
       height: '112px'
     }
@@ -73,7 +73,7 @@ var Logo = function Logo(_ref) {
       classes = _ref.classes,
       size = _ref.size,
       isInteractive = _ref.isInteractive;
-  var componentClasses = (0, _styles.classNames)(classes.Logo, (_classNames = {}, _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _defineProperty(_classNames, classes.IsMonochrome, color === 'monochrome'), _defineProperty(_classNames, classes.IsInteractive, isInteractive), _classNames));
+  var componentClasses = (0, _styles.classNames)(classes.Logo, (_classNames = {}, _defineProperty(_classNames, classes.SizeSm, size === 'sm'), _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _defineProperty(_classNames, classes.IsMonochrome, color === 'monochrome'), _defineProperty(_classNames, classes.IsInteractive, isInteractive), _classNames));
   return _react["default"].createElement("div", {
     className: componentClasses
   }, _react["default"].createElement("svg", {
@@ -95,10 +95,10 @@ var Logo = function Logo(_ref) {
 Logo.propTypes = {
   color: _propTypes["default"].oneOf(['default', 'monochrome']),
   isInteractive: _propTypes["default"].bool,
-  size: _propTypes["default"].oneOf(['s', 'm', 'l'])
+  size: _propTypes["default"].oneOf(['sm', 'md', 'lg'])
 };
 Logo.defaultProps = {
-  size: 'm',
+  size: 'md',
   isInteractive: false
 };
 

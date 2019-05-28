@@ -43,11 +43,11 @@ var styles = function styles(theme) {
   return {
     Notifications: {
       position: 'fixed',
-      top: theme.grid.stepSize * 2,
-      right: theme.grid.stepSize * 2,
+      top: "".concat(theme.space(3), "px"),
+      right: "".concat(theme.space(3), "px"),
       width: '300px',
-      'z-index': theme.zIndex.overlay,
-      'pointer-events': 'none'
+      zIndex: theme.zIndices.overlay,
+      pointerEvents: 'none'
     }
   };
 };

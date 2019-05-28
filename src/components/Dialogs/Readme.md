@@ -1,5 +1,5 @@
 ```js noeditor
-const services = require('../../services').default;
+import { Button, services } from 'thenativeweb-ux';
 
 initialState = { chosenAction: false };
 

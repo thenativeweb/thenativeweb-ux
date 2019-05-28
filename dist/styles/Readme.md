@@ -1,5 +1,3 @@
-# Styling Custom Components
-
 `thenativeweb-ux` uses [JSS](https://cssinjs.org) and [classnames]() to style its components. If you create custom components, you can use same underlying technologies to create styles using JavaScript.
 
 ```jsx static

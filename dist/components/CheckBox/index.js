@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var styles = function styles(theme) {
   return {
     CheckBox: {
-      'font-family': theme.font.family["default"]
+      fontFamily: theme.font.family["default"]
     }
   };
 };
