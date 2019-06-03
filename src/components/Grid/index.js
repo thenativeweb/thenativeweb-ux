@@ -80,8 +80,6 @@ Grid.propTypes = {
   ])
 };
 
-Grid.displayName = 'Grid';
-
 Grid.Item = Item;
 
 export default withStyles(styles)(Grid);

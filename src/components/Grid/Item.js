@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { classNames, withStyles } from '../../styles';
 
-const columnCount = 13,
+const columnCount = 16,
       columns = [ ...new Array(columnCount) ].map((item, index) => index + 1);
 
 const columnProperties = {
