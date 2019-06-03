@@ -63,9 +63,9 @@ const create = function ({
       },
 
       family: {
-        default: `"Source Sans Pro", Arial, Helvetica, sans-serif`,
-        headline: `"Ubuntu", sans-serif`,
-        code: `"Ubuntu Mono", monospace !important`
+        default: `'Source Sans Pro', Arial, Helvetica, sans-serif`,
+        headline: `'Ubuntu', sans-serif`,
+        code: `'Ubuntu Mono', monospace !important`
       }
     },
 
