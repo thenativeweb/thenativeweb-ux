@@ -57,6 +57,12 @@ Object.defineProperty(exports, "Form", {
     return _Form["default"];
   }
 });
+Object.defineProperty(exports, "Grid", {
+  enumerable: true,
+  get: function get() {
+    return _Grid["default"];
+  }
+});
 Object.defineProperty(exports, "Headline", {
   enumerable: true,
   get: function get() {
@@ -201,6 +207,8 @@ var _ControlGroup = _interopRequireDefault(require("./components/ControlGroup"))
 var _Dropdown = _interopRequireDefault(require("./components/Dropdown"));
 
 var _Form = _interopRequireDefault(require("./components/Form"));
+
+var _Grid = _interopRequireDefault(require("./components/Grid"));
 
 var _Headline = _interopRequireDefault(require("./components/Headline"));
 

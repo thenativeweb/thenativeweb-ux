@@ -8,14 +8,14 @@ const styles = theme => ({
     display: 'block'
   },
 
-  SizeL: {
+  SizeLg: {
     fontSize: 48
-  },
+  }
 });
 
 const MyComponent = function ({ classes, className, children, size }) {
   const componentClasses = classNames(classes.MyComponent, {
-    [classes.SizeL]: size === 'l'
+    [classes.SizeLg]: size === 'lg'
   }, className);
 
   return (
@@ -24,7 +24,6 @@ const MyComponent = function ({ classes, className, children, size }) {
     </div>
   );
 };
-
 
 export default withStyles(styles)(MyComponent);
 ```

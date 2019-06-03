@@ -14,7 +14,7 @@ var createDefaultStyles = function createDefaultStyles() {
   }
 
   return {
-    '@import': "url(\"".concat(theme.font["import"], "\")"),
+    '@import': "url(".concat(theme.font["import"], ")"),
     'body, html': {
       margin: '0',
       padding: '0',

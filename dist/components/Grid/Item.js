@@ -173,6 +173,7 @@ var Item = _react["default"].memo(function () {
       columnStart = _ref2.columnStart,
       columnSpan = _ref2.columnSpan,
       columnEnd = _ref2.columnEnd,
+      id = _ref2.id,
       style = _ref2.style;
 
   var columnClasses = [];
@@ -240,6 +241,7 @@ var Item = _react["default"].memo(function () {
   var componentClasses = (0, _styles.classNames)(classes.Item, columnClasses, className);
   return _react["default"].createElement(component, {
     className: componentClasses,
+    id: id,
     style: style
   }, children);
 });
@@ -249,7 +251,7 @@ Item.propTypes = {
   columnSpan: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number, _propTypes["default"].object]),
   columnStart: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number, _propTypes["default"].object])
 };
-Item.displayName = 'Grid.Item';
+Item.displayName = 'GridItem';
 
 var _default = (0, _styles.withStyles)(styles)(Item);
 

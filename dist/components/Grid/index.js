@@ -32,6 +32,9 @@ var styles = function styles(theme) {
     Columns12: {
       'grid-template-columns': 'repeat(12, [col] 1fr)'
     },
+    Columns15: {
+      'grid-template-columns': 'repeat(15, [col] 1fr)'
+    },
     ColumnGap1: {
       'grid-column-gap': theme.space(1)
     },
@@ -66,11 +69,13 @@ var Grid = _react["default"].memo(function () {
       classes = _ref2.classes,
       columns = _ref2.columns,
       columnGap = _ref2.columnGap,
-      children = _ref2.children;
+      children = _ref2.children,
+      id = _ref2.id;
 
   var componentClasses = (0, _styles.classNames)(classes.Grid, (_classNames = {}, _defineProperty(_classNames, classes["Columns".concat(columns)], columns), _defineProperty(_classNames, classes["ColumnGap".concat(columnGap)], columnGap), _classNames));
   return _react["default"].createElement(component, {
-    className: componentClasses
+    className: componentClasses,
+    id: id
   }, children);
 });
 
