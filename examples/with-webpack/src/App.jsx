@@ -9,6 +9,7 @@ import {
   ControlGroup,
   Dropdown,
   Form,
+  Grid,
   Headline,
   Icon,
   Link,
@@ -159,6 +160,15 @@ class TestApp extends React.Component {
                   <Button>Cancel</Button> <Button id='form-submit' isPrimary={ true }>{ !formSubmitted ? 'Submit' : 'Thanks!' }</Button>
                 </ControlGroup>
               </Form>
+            </section>
+            <section>
+              <Headline level='2'>Grid</Headline>
+              <Grid id='grid'>
+                <Grid.Item columnSpan='6' id='grid-item-span6-first'>First column</Grid.Item>
+                <Grid.Item columnSpan='6' id='grid-item-span6-second'>Second column</Grid.Item>
+                <Grid.Item columnSpan={{ xs: 12, md: 6 }} id='grid-item-span6-responsive-third'>Third column</Grid.Item>
+                <Grid.Item columnSpan={{ xs: 12, md: 6 }} id='grid-item-span6-responsive-fourth'>Fourth column</Grid.Item>
+              </Grid>
             </section>
             <section>
               <Headline level='2'>Icon</Headline>

@@ -117,6 +117,7 @@ const Item = React.memo(({
   columnStart,
   columnSpan,
   columnEnd,
+  id,
   style
 } = {}) => {
   const columnClasses = [];
@@ -169,7 +170,7 @@ const Item = React.memo(({
 
   const componentClasses = classNames(classes.Item, columnClasses, className);
 
-  return React.createElement(component, { className: componentClasses, style }, children);
+  return React.createElement(component, { className: componentClasses, id, style }, children);
 });
 
 Item.propTypes = {
@@ -190,6 +191,6 @@ Item.propTypes = {
   ])
 };
 
-Item.displayName = 'Grid.Item';
+Item.displayName = 'GridItem';
 
 export default withStyles(styles)(Item);

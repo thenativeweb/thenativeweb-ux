@@ -21,6 +21,10 @@ const styles = theme => ({
     'grid-template-columns': 'repeat(12, [col] 1fr)'
   },
 
+  Columns15: {
+    'grid-template-columns': 'repeat(15, [col] 1fr)'
+  },
+
   ColumnGap1: {
     'grid-column-gap': theme.space(1)
   },
@@ -52,14 +56,14 @@ const styles = theme => ({
   }
 });
 
-const Grid = React.memo(({ component = 'div', classes, columns, columnGap, children } = {}) => {
+const Grid = React.memo(({ component = 'div', classes, columns, columnGap, children, id } = {}) => {
   const componentClasses = classNames(classes.Grid, {
     [classes[`Columns${columns}`]]: columns,
     [classes[`ColumnGap${columnGap}`]]: columnGap
   });
 
   return (
-    React.createElement(component, { className: componentClasses }, children)
+    React.createElement(component, { className: componentClasses, id }, children)
   );
 });
 
