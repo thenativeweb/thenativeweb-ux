@@ -25,7 +25,7 @@ StyleCollector.createCollection = function () {
     registry,
     generateId,
     generateStyleTag () {
-      return (<style id='server-side-styles'>{registry.toString()}</style>);
+      return (<style id='server-side-styles' dangerouslySetInnerHTML={{ __html: registry.toString() }} />);
     }
   };
 

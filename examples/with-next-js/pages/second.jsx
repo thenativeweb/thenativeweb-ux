@@ -12,7 +12,7 @@ const Page = () => (
   <Application>
     <Application.Services />
     <Sidebar>
-      <Sidebar.Brand><Product name='my-app' /></Sidebar.Brand>
+      <Sidebar.Brand><Product name='App' /></Sidebar.Brand>
       <Sidebar.Item iconName='account'>
         <Sidebar.Item>You are logged in as Sophie</Sidebar.Item>
         <Sidebar.Item onClick={ () => services.notifications.show({ type: 'success', text: 'You clicked!' }) }>Logout</Sidebar.Item>

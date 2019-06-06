@@ -4,7 +4,7 @@ const createDefaultStyles = function ({ theme } = {}) {
   }
 
   return {
-    '@import': `url(${theme.font.import})`,
+    '@import': `url("${theme.font.import}")`,
 
     'body, html': {
       margin: '0',
