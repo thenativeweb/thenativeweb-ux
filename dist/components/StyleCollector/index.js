@@ -40,8 +40,11 @@ StyleCollector.createCollection = function () {
     generateId: generateId,
     generateStyleTag: function generateStyleTag() {
       return _react["default"].createElement("style", {
-        id: "server-side-styles"
-      }, registry.toString());
+        id: "server-side-styles",
+        dangerouslySetInnerHTML: {
+          __html: registry.toString()
+        }
+      });
     }
   };
   return collector;

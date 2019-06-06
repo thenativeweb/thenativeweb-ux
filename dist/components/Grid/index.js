@@ -87,7 +87,6 @@ Grid.propTypes = {
   columnGap: _propTypes["default"].number,
   columns: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])
 };
-Grid.displayName = 'Grid';
 Grid.Item = _Item["default"];
 
 var _default = (0, _styles.withStyles)(styles)(Grid);
