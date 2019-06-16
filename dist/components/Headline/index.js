@@ -36,7 +36,7 @@ var styles = function styles(theme) {
       fontWeight: 500,
       textAlign: 'left',
       borderBottom: "1px solid ".concat(theme.color.content.border),
-      padding: "".concat(theme.space(2) * 2, " 0 ").concat(theme.space(2), " 0"),
+      padding: "".concat(theme.space(2) * 2, "px 0 ").concat(theme.space(2), "px 0"),
       marginBottom: "".concat(theme.space(2), "px")
     }
   };

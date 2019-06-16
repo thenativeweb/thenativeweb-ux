@@ -13,81 +13,112 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styles = require("../../styles");
 
+var _utils = require("../../styles/utils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var spaceDependentProperties = {
+  columns: function columns(_ref) {
+    var spaceFactor = _ref.spaceFactor;
+    return {
+      'grid-template-columns': "repeat(".concat(spaceFactor, ", [col] minmax(0, 1fr))")
+    };
+  },
+  columnGap: function columnGap(_ref2) {
+    var spaceFactor = _ref2.spaceFactor,
+        theme = _ref2.theme;
+    return {
+      'grid-column-gap': theme.space(spaceFactor)
+    };
+  },
+  rowGap: function rowGap(_ref3) {
+    var spaceFactor = _ref3.spaceFactor,
+        theme = _ref3.theme;
+    return {
+      'grid-row-gap': theme.space(spaceFactor)
+    };
+  }
+};
+
 var styles = function styles(theme) {
-  return _defineProperty({
+  var _objectSpread2;
+
+  return _objectSpread({
     Grid: {
       width: '100%',
       display: 'grid'
-    },
-    Columns2: {
-      'grid-template-columns': 'repeat(2, [col] 1fr)'
-    },
-    Columns3: {
-      'grid-template-columns': 'repeat(3, [col] 1fr)'
-    },
-    Columns12: {
-      'grid-template-columns': 'repeat(12, [col] 1fr)'
-    },
-    Columns15: {
-      'grid-template-columns': 'repeat(15, [col] 1fr)'
-    },
-    ColumnGap1: {
-      'grid-column-gap': theme.space(1)
-    },
-    ColumnGap2: {
-      'grid-column-gap': theme.space(2)
-    },
-    ColumnGap3: {
-      'grid-column-gap': theme.space(3)
-    },
-    ColumnGap4: {
-      'grid-column-gap': theme.space(4)
-    },
-    ColumnGap5: {
-      'grid-column-gap': theme.space(5)
-    },
-    ColumnGap6: {
-      'grid-column-gap': theme.space(8)
     }
-  }, theme.breakpoints.down('xs'), {
+  }, (0, _utils.createSpaceDependentClasses)({
+    theme: theme,
+    definitions: spaceDependentProperties
+  }), (0, _utils.createDefaultSpaceDependantClasses)({
+    theme: theme,
+    definitions: spaceDependentProperties
+  }), (_objectSpread2 = {}, _defineProperty(_objectSpread2, theme.breakpoints.only('xs'), {
     Grid: {
-      display: 'block'
+      'grid-template-columns': "none"
     }
-  });
+  }), _defineProperty(_objectSpread2, theme.breakpoints.up('sm'), _objectSpread({}, (0, _utils.createSpaceDependentClasses)({
+    deviceSize: 'sm',
+    theme: theme,
+    definitions: spaceDependentProperties
+  }))), _defineProperty(_objectSpread2, theme.breakpoints.up('md'), _objectSpread({}, (0, _utils.createSpaceDependentClasses)({
+    deviceSize: 'md',
+    theme: theme,
+    definitions: spaceDependentProperties
+  }))), _defineProperty(_objectSpread2, theme.breakpoints.up('lg'), _objectSpread({}, (0, _utils.createSpaceDependentClasses)({
+    deviceSize: 'lg',
+    theme: theme,
+    definitions: spaceDependentProperties
+  }))), _defineProperty(_objectSpread2, theme.breakpoints.up('xl'), _objectSpread({}, (0, _utils.createSpaceDependentClasses)({
+    deviceSize: 'xl',
+    theme: theme,
+    definitions: spaceDependentProperties
+  }))), _objectSpread2));
 };
 
-var Grid = _react["default"].memo(function () {
-  var _classNames;
+var Grid = function Grid() {
+  var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      _ref4$component = _ref4.component,
+      component = _ref4$component === void 0 ? 'div' : _ref4$component,
+      classes = _ref4.classes,
+      className = _ref4.className,
+      children = _ref4.children,
+      id = _ref4.id,
+      props = _objectWithoutProperties(_ref4, ["component", "classes", "className", "children", "id"]);
 
-  var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      _ref2$component = _ref2.component,
-      component = _ref2$component === void 0 ? 'div' : _ref2$component,
-      classes = _ref2.classes,
-      columns = _ref2.columns,
-      columnGap = _ref2.columnGap,
-      children = _ref2.children,
-      id = _ref2.id;
-
-  var componentClasses = (0, _styles.classNames)(classes.Grid, (_classNames = {}, _defineProperty(_classNames, classes["Columns".concat(columns)], columns), _defineProperty(_classNames, classes["ColumnGap".concat(columnGap)], columnGap), _classNames));
+  var spaceDependentClassNames = (0, _utils.getSpaceDependentClassNamesFromProps)({
+    props: props,
+    classes: classes,
+    definitions: spaceDependentProperties
+  });
+  var componentClasses = (0, _styles.classNames)(classes.Grid, spaceDependentClassNames, className);
   return _react["default"].createElement(component, {
     className: componentClasses,
     id: id
   }, children);
-});
+};
 
 Grid.defaultProps = {
   columns: '12',
-  columnGap: 2
+  columnGap: 2,
+  rowGap: 2
 };
 Grid.propTypes = {
-  columnGap: _propTypes["default"].number,
-  columns: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])
+  columnGap: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number, _propTypes["default"].object]),
+  columns: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number, _propTypes["default"].object]),
+  rowGap: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number, _propTypes["default"].object])
 };
 Grid.Item = _Item["default"];
+Grid.displayName = 'Grid';
 
 var _default = (0, _styles.withStyles)(styles)(Grid);
 
