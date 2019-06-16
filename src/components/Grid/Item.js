@@ -1,111 +1,47 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { classNames, withStyles } from '../../styles';
+import { createDefaultSpaceDependantClasses, createSpaceDependentClasses, getSpaceDependentClassNamesFromProps } from '../../styles/utils';
 
-const columnCount = 16,
-      columns = [ ...new Array(columnCount) ].map((item, index) => index + 1);
-
-const columnProperties = {
-  ColumnStart: column => ({
-    gridColumnStart: column
+const spaceDependentProperties = {
+  columnStart: ({ spaceFactor }) => ({
+    gridColumnStart: spaceFactor
   }),
-  ColumnEnd: column => ({
-    gridColumnEnd: column
+  columnEnd: ({ spaceFactor }) => ({
+    gridColumnEnd: spaceFactor
   }),
-  ColumnSpan: column => ({
-    gridColumnEnd: `span ${column}`
+  columnSpan: ({ spaceFactor }) => ({
+    gridColumnEnd: `span ${spaceFactor}`
   })
-};
-
-const createColumnClasses = function ({ deviceSize, theme } = {}) {
-  if (!theme) {
-    throw new Error('Theme is missing.');
-  }
-
-  const classes = {};
-
-  for (const column of columns) {
-    for (const propertyName of Object.keys(columnProperties)) {
-      classes[`${deviceSize}${propertyName}-${column}`] = columnProperties[propertyName](column);
-    }
-  }
-
-  return classes;
 };
 
 const styles = theme => ({
   Item: {},
 
-  ...createColumnClasses({
-    deviceSize: '',
-    theme,
-    properties: columnProperties
-  }),
+  ...createSpaceDependentClasses({ theme, definitions: spaceDependentProperties }),
+  ...createDefaultSpaceDependantClasses({ theme, definitions: spaceDependentProperties }),
 
-  ...createColumnClasses({
-    deviceSize: 'xs',
-    theme,
-    properties: {
-      ColumnStart: {},
-      ColumnEnd: {},
-      ColumnSpan: {}
+  [theme.breakpoints.only('xs')]: {
+    Item: {
+      gridColumnStart: 'auto',
+      gridColumnEnd: 'auto'
     }
-  }),
-  ...createColumnClasses({
-    deviceSize: 'sm',
-    theme,
-    properties: {
-      ColumnStart: {},
-      ColumnEnd: {},
-      ColumnSpan: {}
-    }
-  }),
-  ...createColumnClasses({
-    deviceSize: 'md',
-    theme,
-    properties: {
-      ColumnStart: {},
-      ColumnEnd: {},
-      ColumnSpan: {}
-    }
-  }),
-  ...createColumnClasses({
-    deviceSize: 'lg',
-    theme,
-    properties: {
-      ColumnStart: {},
-      ColumnEnd: {},
-      ColumnSpan: {}
-    }
-  }),
-  ...createColumnClasses({
-    deviceSize: 'xl',
-    theme,
-    properties: {
-      ColumnStart: {},
-      ColumnEnd: {},
-      ColumnSpan: {}
-    }
-  }),
-
-  [theme.breakpoints.up('xs')]: {
-    ...createColumnClasses({ deviceSize: 'xs', theme, properties: columnProperties })
   },
 
   [theme.breakpoints.up('sm')]: {
-    ...createColumnClasses({ deviceSize: 'sm', theme, properties: columnProperties })
+    ...createSpaceDependentClasses({ deviceSize: 'sm', theme, definitions: spaceDependentProperties })
   },
 
   [theme.breakpoints.up('md')]: {
-    ...createColumnClasses({ deviceSize: 'md', theme, properties: columnProperties })
+    ...createSpaceDependentClasses({ deviceSize: 'md', theme, definitions: spaceDependentProperties })
   },
 
   [theme.breakpoints.up('lg')]: {
-    ...createColumnClasses({ deviceSize: 'lg', theme, properties: columnProperties })
+    ...createSpaceDependentClasses({ deviceSize: 'lg', theme, definitions: spaceDependentProperties })
   },
 
   [theme.breakpoints.up('xl')]: {
-    ...createColumnClasses({ deviceSize: 'xl', theme, properties: columnProperties })
+    ...createSpaceDependentClasses({ deviceSize: 'sm', theme, definitions: spaceDependentProperties })
   }
 });
 
@@ -114,61 +50,12 @@ const Item = React.memo(({
   classes,
   className,
   children,
-  columnStart,
-  columnSpan,
-  columnEnd,
   id,
-  style
+  style,
+  ...props
 } = {}) => {
-  const columnClasses = [];
-
-  const typeOfColumnStart = typeof columnStart;
-  const typeOfColumnEnd = typeof columnEnd;
-  const typeOfColumnSpan = typeof columnSpan;
-
-  switch (typeOfColumnStart) {
-    case 'string':
-    case 'number':
-      columnClasses.push(classes[`ColumnStart-${columnStart}`]);
-      break;
-    case 'object':
-      for (const sizeId of Object.keys(columnStart)) {
-        columnClasses.push(classes[`${sizeId}ColumnStart-${columnStart[sizeId]}`]);
-      }
-      break;
-    default:
-      break;
-  }
-
-  switch (typeOfColumnEnd) {
-    case 'string':
-    case 'number':
-      columnClasses.push(classes[`ColumnEnd-${columnEnd}`]);
-      break;
-    case 'object':
-      for (const sizeId of Object.keys(columnEnd)) {
-        columnClasses.push(classes[`${sizeId}ColumnEnd-${columnEnd[sizeId]}`]);
-      }
-      break;
-    default:
-      break;
-  }
-
-  switch (typeOfColumnSpan) {
-    case 'string':
-    case 'number':
-      columnClasses.push(classes[`ColumnSpan-${columnSpan}`]);
-      break;
-    case 'object':
-      for (const sizeId of Object.keys(columnSpan)) {
-        columnClasses.push(classes[`${sizeId}ColumnSpan-${columnSpan[sizeId]}`]);
-      }
-      break;
-    default:
-      break;
-  }
-
-  const componentClasses = classNames(classes.Item, columnClasses, className);
+  const spaceDependentClassNames = getSpaceDependentClassNamesFromProps({ props, classes, definitions: spaceDependentProperties });
+  const componentClasses = classNames(classes.Item, spaceDependentClassNames, className);
 
   return React.createElement(component, { className: componentClasses, id, style }, children);
 });

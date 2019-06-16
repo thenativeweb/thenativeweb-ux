@@ -18,9 +18,9 @@ The `Grid` component uses the CSS grid layout to create flexible grids. By defau
 </Grid>
 ```
 
-## Odd column count
+### Odd column count
 
-If you want to layout an odd number of items, set the `columns` property to `15`.
+If you want to layout an odd number of items, set the `columns` property to something like `15`.
 
 ```js
 <Grid columns='15'>
@@ -43,6 +43,30 @@ If you want to layout an odd number of items, set the `columns` property to `15`
 </Grid>
 ```
 
+### Responsive column count
+
+It is possible to provide multiple `columns` values depending on the size of the viewport:
+
+```js
+<Grid columns={{ sm: 1, md: 2, lg: 3 }}>
+  <Grid.Item>First Column</Grid.Item>
+  <Grid.Item>Second Column</Grid.Item>
+  <Grid.Item>Third Column</Grid.Item>
+</Grid>
+```
+
+### Colum and row gap
+
+The `columnGap` and the `rowGap` property can be used to control horizontal and vertical gaps between items of the grid:
+
+```js
+<Grid columns='3' columnGap='6' rowGap='6'>
+  <Grid.Item>First Column</Grid.Item>
+  <Grid.Item>Second Column</Grid.Item>
+  <Grid.Item>Third Column</Grid.Item>
+</Grid>
+```
+
 ## Grid.Item
 
 If you need more control when positioning elements inside a `Grid` use the `Grid.Item` component.
@@ -59,13 +83,15 @@ To span an element across multiple columns, set the `columnSpan` property:
 </Grid>
 ```
 
+### Responsive columnSpan
+
 It is possible to provide multiple `columSpan` values depending on the size of the viewport:
 
 ```js
 <Grid>
-  <Grid.Item columnSpan={{ sm: 3, md: 6, lg: 4 }}>Spans 3 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
-  <Grid.Item columnSpan={{ sm: 3, md: 6, lg: 4 }}>Spans 3 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
-  <Grid.Item columnSpan={{ sm: 3, md: 6, lg: 4 }}>Spans 3 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
+  <Grid.Item columnSpan={{ sm: 6, md: 6, lg: 4 }}>Spans 3 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
+  <Grid.Item columnSpan={{ sm: 6, md: 6, lg: 4 }}>Spans 3 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
+  <Grid.Item columnSpan={{ sm: 6, md: 6, lg: 4 }}>Spans 3 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
 </Grid>
 ```
 
