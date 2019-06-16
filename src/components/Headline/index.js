@@ -24,7 +24,7 @@ const styles = theme => ({
     fontWeight: 500,
     textAlign: 'left',
     borderBottom: `1px solid ${theme.color.content.border}`,
-    padding: `${theme.space(2) * 2} 0 ${theme.space(2)} 0`,
+    padding: `${theme.space(2) * 2}px 0 ${theme.space(2)}px 0`,
     marginBottom: `${theme.space(2)}px`
   }
 });
