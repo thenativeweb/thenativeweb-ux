@@ -13,7 +13,7 @@ const createSpaceDependentClasses = function ({ deviceSize = '', theme, definiti
   for (let spaceFactor = 0; spaceFactor < maximumSpaceFactor; spaceFactor++) {
     for (const propertyName of Object.keys(definitions)) {
       const cssAttributes = definitions[propertyName];
-      const className = `${deviceSize}${propertyName}-${spaceFactor}`;
+      const className = `${deviceSize}-${propertyName}-${spaceFactor}`;
 
       classes[className] = typeof cssAttributes === 'function' ? cssAttributes({ spaceFactor, theme }) : cssAttributes;
     }
@@ -65,11 +65,11 @@ const getSpaceDependentClassNamesFromProps = function ({ props, classes, definit
     switch (typeof propertyValue) {
       case 'string':
       case 'number':
-        responsiveClassNames.push(classes[`${propertyName}-${propertyValue}`]);
+        responsiveClassNames.push(classes[`-${propertyName}-${propertyValue}`]);
         break;
       case 'object':
         for (const sizeId of Object.keys(propertyValue)) {
-          responsiveClassNames.push(classes[`${sizeId}${propertyName}-${propertyValue[sizeId]}`]);
+          responsiveClassNames.push(classes[`${sizeId}-${propertyName}-${propertyValue[sizeId]}`]);
         }
         break;
       default:
