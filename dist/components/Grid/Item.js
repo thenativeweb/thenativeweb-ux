@@ -73,7 +73,7 @@ var styles = function styles(theme) {
     theme: theme,
     definitions: spaceDependentProperties
   }))), _defineProperty(_objectSpread2, theme.breakpoints.up('xl'), _objectSpread({}, (0, _utils.createSpaceDependentClasses)({
-    deviceSize: 'sm',
+    deviceSize: 'xl',
     theme: theme,
     definitions: spaceDependentProperties
   }))), _objectSpread2));

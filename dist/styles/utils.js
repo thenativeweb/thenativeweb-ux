@@ -34,7 +34,7 @@ var createSpaceDependentClasses = function createSpaceDependentClasses() {
     for (var _i = 0, _Object$keys = Object.keys(definitions); _i < _Object$keys.length; _i++) {
       var propertyName = _Object$keys[_i];
       var cssAttributes = definitions[propertyName];
-      var className = "".concat(deviceSize).concat(propertyName, "-").concat(spaceFactor);
+      var className = "".concat(deviceSize, "-").concat(propertyName, "-").concat(spaceFactor);
       classes[className] = typeof cssAttributes === 'function' ? cssAttributes({
         spaceFactor: spaceFactor,
         theme: theme
@@ -106,13 +106,13 @@ var getSpaceDependentClassNamesFromProps = function getSpaceDependentClassNamesF
     switch (_typeof(propertyValue)) {
       case 'string':
       case 'number':
-        responsiveClassNames.push(classes["".concat(propertyName, "-").concat(propertyValue)]);
+        responsiveClassNames.push(classes["-".concat(propertyName, "-").concat(propertyValue)]);
         break;
 
       case 'object':
         for (var _i5 = 0, _Object$keys4 = Object.keys(propertyValue); _i5 < _Object$keys4.length; _i5++) {
           var sizeId = _Object$keys4[_i5];
-          responsiveClassNames.push(classes["".concat(sizeId).concat(propertyName, "-").concat(propertyValue[sizeId])]);
+          responsiveClassNames.push(classes["".concat(sizeId, "-").concat(propertyName, "-").concat(propertyValue[sizeId])]);
         }
 
         break;
