@@ -41,7 +41,7 @@ const styles = theme => ({
   },
 
   [theme.breakpoints.up('xl')]: {
-    ...createSpaceDependentClasses({ deviceSize: 'sm', theme, definitions: spaceDependentProperties })
+    ...createSpaceDependentClasses({ deviceSize: 'xl', theme, definitions: spaceDependentProperties })
   }
 });
 
