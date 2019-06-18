@@ -28,7 +28,9 @@ const styles = theme => ({
   [theme.breakpoints.only('xs')]: {
     Grid: {
       'grid-template-columns': `none`
-    }
+    },
+
+    ...createSpaceDependentClasses({ deviceSize: 'xs', theme, definitions: spaceDependentProperties })
   },
 
   [theme.breakpoints.up('sm')]: {
