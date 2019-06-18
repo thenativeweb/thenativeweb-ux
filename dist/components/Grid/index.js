@@ -62,11 +62,15 @@ var styles = function styles(theme) {
   }), (0, _utils.createDefaultSpaceDependantClasses)({
     theme: theme,
     definitions: spaceDependentProperties
-  }), (_objectSpread2 = {}, _defineProperty(_objectSpread2, theme.breakpoints.only('xs'), {
+  }), (_objectSpread2 = {}, _defineProperty(_objectSpread2, theme.breakpoints.only('xs'), _objectSpread({
     Grid: {
       'grid-template-columns': "none"
     }
-  }), _defineProperty(_objectSpread2, theme.breakpoints.up('sm'), _objectSpread({}, (0, _utils.createSpaceDependentClasses)({
+  }, (0, _utils.createSpaceDependentClasses)({
+    deviceSize: 'xs',
+    theme: theme,
+    definitions: spaceDependentProperties
+  }))), _defineProperty(_objectSpread2, theme.breakpoints.up('sm'), _objectSpread({}, (0, _utils.createSpaceDependentClasses)({
     deviceSize: 'sm',
     theme: theme,
     definitions: spaceDependentProperties
