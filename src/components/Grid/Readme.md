@@ -20,7 +20,7 @@ The `Grid` component uses the CSS grid layout to create flexible grids. By defau
 
 ### Column count
 
-If you want to layout an change the number of columns, use the `columns`.
+If you want to adjust the number of columns, use the `columns` property.
 
 ```js
 <Grid columns='3'>
