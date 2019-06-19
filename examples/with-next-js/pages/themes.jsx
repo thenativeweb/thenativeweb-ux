@@ -9,7 +9,7 @@ import {
 const customTheme = themes.extend('thenativeweb', {
   components: {
     CustomComponent: {
-      width: 42
+      width: '42px'
     }
   }
 });

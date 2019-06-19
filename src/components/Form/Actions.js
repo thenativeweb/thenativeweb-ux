@@ -5,8 +5,8 @@ import { classNames, withStyles } from '../../styles';
 const styles = theme => ({
   Actions: {
     display: 'flex',
-    'border-top': `1px solid ${theme.color.content.border}`,
-    'padding-top': `${theme.space(1)}px`,
+    borderTop: `1px solid ${theme.color.content.border}`,
+    paddingTop: `${theme.space(1)}px`,
     marginTop: `${theme.space(2)}px`
   },
 

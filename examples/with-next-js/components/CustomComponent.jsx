@@ -7,7 +7,7 @@ const styles = theme => ({
   },
 
   SizeLg: {
-    fontSize: 24
+    fontSize: '24px'
   }
 });
 

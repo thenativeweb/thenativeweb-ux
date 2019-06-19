@@ -21,7 +21,7 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    minHeight: 100
+    minHeight: '100px'
   },
 
   Pulse: {

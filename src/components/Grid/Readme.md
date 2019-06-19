@@ -18,27 +18,15 @@ The `Grid` component uses the CSS grid layout to create flexible grids. By defau
 </Grid>
 ```
 
-### Odd column count
+### Column count
 
-If you want to layout an odd number of items, set the `columns` property to something like `15`.
+If you want to layout an change the number of columns, use the `columns`.
 
 ```js
-<Grid columns='15'>
+<Grid columns='3'>
   <div>Column 1</div>
   <div>Column 2</div>
   <div>Column 3</div>
-  <div>Column 4</div>
-  <div>Column 5</div>
-  <div>Column 6</div>
-  <div>Column 7</div>
-  <div>Column 8</div>
-  <div>Column 9</div>
-  <div>Column 10</div>
-  <div>Column 11</div>
-  <div>Column 12</div>
-  <div>Column 13</div>
-  <div>Column 14</div>
-  <div>Column 15</div>
   <div>Column 1</div>
 </Grid>
 ```
@@ -77,9 +65,9 @@ To span an element across multiple columns, set the `columnSpan` property:
 
 ```js
 <Grid>
-  <Grid.Item columnSpan='6'>Column from gap 1-7</Grid.Item>
-  <Grid.Item columnSpan='6'>Column from gap 7-13</Grid.Item>
-  <Grid.Item columnSpan='12'>Column from gap 1-13</Grid.Item>
+  <Grid.Item columnSpan='6'>Column from gap 1-6</Grid.Item>
+  <Grid.Item columnSpan='6'>Column from gap 7-12</Grid.Item>
+  <Grid.Item columnSpan='12'>Column from gap 1-12</Grid.Item>
 </Grid>
 ```
 
@@ -101,10 +89,10 @@ Instead of using `columnSpan` you can set the `columnStart` property to specifiy
 
 ```js
 <Grid>
-  <Grid.Item columnStart='1' columnEnd='7'>Column from gap 1-7</Grid.Item>
-  <Grid.Item columnStart='7' columnEnd='13'>Column from gap 7-13</Grid.Item>
-  <Grid.Item columnStart='1' columnEnd='13'>Column from gap 1-13</Grid.Item>
-  <Grid.Item columnStart='10' columnEnd='13'>Fills only the last three columns</Grid.Item>
+  <Grid.Item columnStart='1' columnEnd='6'>Column from gap 1-6</Grid.Item>
+  <Grid.Item columnStart='7' columnEnd='12'>Column from gap 7-12</Grid.Item>
+  <Grid.Item columnStart='1' columnEnd='12'>Column from gap 1-12</Grid.Item>
+  <Grid.Item columnStart='10' columnEnd='12'>Fills only the last three columns</Grid.Item>
 </Grid>
 ```
 
@@ -113,6 +101,6 @@ Again, it is possible to provide multiple `columnStart` and `columnEnd` values d
 
 ```js
 <Grid>
-  <Grid.Item columnStart={{ sm: 1, lg: 4 }} columnEnd={{ sm: 13, lg: 10 }}>Spans across all 12 columns on small devices and from colum 4-10 on large devices.</Grid.Item>
+  <Grid.Item columnStart={{ sm: 1, lg: 4 }} columnEnd={{ sm: 12, lg: 10 }}>Spans across all 12 columns on small devices and from colum 4-10 on large devices.</Grid.Item>
 </Grid>
 ```
