@@ -36,7 +36,7 @@ import { ThemeProvider, View } from 'thenativeweb-ux';
 
       <hr />
 
-      <Product name='wolkenkit' type='typo-only' />
+      <Product name='wolkenkit' type='text-only' />
     </View>
   </ThemeProvider>
 </View>

@@ -62,7 +62,7 @@ var styles = function styles(theme) {
       }
     },
     TypeLogoOnly: {},
-    TypeTypoOnly: {
+    TypeTextOnly: {
       '& $Name, & $CompositeName': {
         marginTop: 0
       }
@@ -92,7 +92,7 @@ var Product = function Product(_ref2) {
       size = _ref2.size,
       theme = _ref2.theme,
       type = _ref2.type;
-  var brandClassNames = (0, _styles.classNames)(classes.Product, (_classNames = {}, _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _defineProperty(_classNames, classes.SizeXl, size === 'xl'), _defineProperty(_classNames, classes.TypeLogoOnly, type === 'logo-only'), _defineProperty(_classNames, classes.TypeTypoOnly, type === 'typo-only'), _classNames));
+  var brandClassNames = (0, _styles.classNames)(classes.Product, (_classNames = {}, _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _defineProperty(_classNames, classes.SizeXl, size === 'xl'), _defineProperty(_classNames, classes.TypeLogoOnly, type === 'logo-only'), _defineProperty(_classNames, classes.TypeTextOnly, type === 'text-only'), _classNames));
 
   var nameComponent = _react["default"].createElement("div", {
     className: classes.Name
@@ -110,7 +110,7 @@ var Product = function Product(_ref2) {
   var Logo = _logos["default"][logoId] || _logos["default"].thenativeweb || null;
   return _react["default"].createElement("div", {
     className: brandClassNames
-  }, type === 'typo-only' ? null : _react["default"].createElement(Logo, {
+  }, type === 'text-only' ? null : _react["default"].createElement(Logo, {
     isAnimated: isAnimated,
     size: size
   }), type === 'logo-only' ? null : nameComponent);
@@ -119,7 +119,7 @@ var Product = function Product(_ref2) {
 Product.propTypes = {
   name: _propTypes["default"].string,
   size: _propTypes["default"].oneOf(['md', 'lg', 'xl']),
-  type: _propTypes["default"].oneOf(['default', 'typo-only', 'logo-only'])
+  type: _propTypes["default"].oneOf(['default', 'text-only', 'logo-only'])
 };
 Product.defaultProps = {
   size: 'md',
