@@ -57,7 +57,7 @@ const styles = theme => ({
 
   TypeLogoOnly: {},
 
-  TypeTypoOnly: {
+  TypeTextOnly: {
     '& $Name, & $CompositeName': {
       marginTop: 0
     }
@@ -87,7 +87,7 @@ const Product = ({ classes, isAnimated, name, size, theme, type }) => {
     [classes.SizeLg]: size === 'lg',
     [classes.SizeXl]: size === 'xl',
     [classes.TypeLogoOnly]: type === 'logo-only',
-    [classes.TypeTypoOnly]: type === 'typo-only'
+    [classes.TypeTextOnly]: type === 'text-only'
   });
 
   let nameComponent = <div className={ classes.Name }>{ name }</div>;
@@ -102,7 +102,7 @@ const Product = ({ classes, isAnimated, name, size, theme, type }) => {
 
   return (
     <div className={ brandClassNames }>
-      { type === 'typo-only' ? null : <Logo isAnimated={ isAnimated } size={ size } /> }
+      { type === 'text-only' ? null : <Logo isAnimated={ isAnimated } size={ size } /> }
       { type === 'logo-only' ? null : nameComponent }
     </div>
   );
@@ -111,7 +111,7 @@ const Product = ({ classes, isAnimated, name, size, theme, type }) => {
 Product.propTypes = {
   name: PropTypes.string,
   size: PropTypes.oneOf([ 'md', 'lg', 'xl' ]),
-  type: PropTypes.oneOf([ 'default', 'typo-only', 'logo-only' ])
+  type: PropTypes.oneOf([ 'default', 'text-only', 'logo-only' ])
 };
 
 Product.defaultProps = {
