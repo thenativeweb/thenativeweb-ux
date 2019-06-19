@@ -15,11 +15,11 @@ const styles = {
 
   Actions: {
     display: 'flex',
-    'flex-direction': 'row',
-    'justify-content': 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
 
     '& *': {
-      'flex-grow': 0,
+      flexGrow: 0,
       'max-width': '200px'
     }
   }

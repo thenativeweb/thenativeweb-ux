@@ -7,6 +7,7 @@ import CheckBox from './components/CheckBox';
 import ControlGroup from './components/ControlGroup';
 import Dropdown from './components/Dropdown';
 import Form from './components/Form';
+import Grid from './components/Grid';
 import Headline from './components/Headline';
 import Icon from './components/Icon';
 import Link from './components/Link';
@@ -38,6 +39,7 @@ export {
   classNames,
   Dropdown,
   Form,
+  Grid,
   Headline,
   Icon,
   Link,

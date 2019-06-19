@@ -6,48 +6,48 @@ import { classNames, withStyles } from '../../styles';
 const styles = theme => ({
   Item: {
     display: 'flex',
-    'flex-direction': 'column',
-    'justify-content': 'flex-end'
+    flexDirection: 'column',
+    justifyContent: 'flex-end'
   },
 
   '&:last-child': {
-    'margin-right': 0
+    marginRight: 0
   },
 
   AdjustFlex: {
-    'flex-grow': 1,
-    'flex-shrink': 1,
-    'flex-basis': '100%'
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: '100%'
   },
 
   AdjustAuto: {
-    'flex-grow': 0,
-    'flex-shrink': 0,
-    'flex-basis': 'auto'
+    flexGrow: 0,
+    flexShrink: 0,
+    flexBasis: 'auto'
   },
 
   Labeled: {
-    'margin-right': '10px'
+    marginRight: '10px'
   },
 
   Label: {
-    'margin-bottom': '6px',
+    marginBottom: '6px',
     color: theme.color.brand.dark,
-    'font-weight': 400,
+    fontWeight: 400,
     display: 'flex',
 
     '& label': {
-      'flex-grow': 1,
-      'flex-shrink': 1
+      flexGrow: 1,
+      flexShrink: 1
     },
 
     '& a': {
       display: 'flex',
-      'flex-grow': 0,
-      'flex-shrink': 0,
-      'flex-basis': 'auto',
-      'align-items': 'center',
-      'justify-content': 'center',
+      flexGrow: 0,
+      flexShrink: 0,
+      flexBasis: 'auto',
+      alignItems: 'center',
+      justifyContent: 'center',
       opacity: 0.75
     },
 
@@ -59,7 +59,7 @@ const styles = theme => ({
 
   TypeCheckBox: {
     '& $Control': {
-      'padding-right': '6px'
+      paddingRight: '6px'
     }
   }
 });

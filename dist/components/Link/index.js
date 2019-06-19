@@ -17,12 +17,12 @@ var styles = function styles(theme) {
   return {
     Link: {
       color: theme.color.brand.highlight,
-      'text-decoration': 'none',
-      'font-weight': 400,
-      'font-family': theme.font.family["default"],
-      'font-size': 'inherit',
+      textDecoration: 'none',
+      fontWeight: 400,
+      fontFamily: theme.font.family["default"],
+      fontSize: 'inherit',
       '&:hover': {
-        'text-decoration': 'none'
+        textDecoration: 'none'
       }
     }
   };

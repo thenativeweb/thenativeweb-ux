@@ -82,9 +82,9 @@ class Modal extends React.PureComponent {
     });
 
     const chromeClasses = classNames(classes.Chrome, {
-      [classes.ChromeSizeS]: size === 's',
-      [classes.ChromeSizeM]: size === 'm',
-      [classes.ChromeSizeL]: size === 'l',
+      [classes.ChromeSizeSm]: size === 'sm',
+      [classes.ChromeSizeMd]: size === 'md',
+      [classes.ChromeSizeLg]: size === 'lg',
       [classes.ChromeSizeFullscreen]: size === 'fullscreen',
       [classes.ChromeAttachedSidebar]: attach === 'sidebar',
       [classes.ChromeAttachedLeft]: attach === 'left',
@@ -150,7 +150,7 @@ Modal.propTypes = {
   attach: PropTypes.oneOf([ 'left', 'right', 'sidebar', 'center' ]),
   header: PropTypes.node,
   showHeader: PropTypes.bool,
-  size: PropTypes.oneOf([ 's', 'm', 'l', 'fullscreen' ]),
+  size: PropTypes.oneOf([ 'sm', 'md', 'lg', 'fullscreen' ]),
   onKeyDown: PropTypes.func
 };
 
@@ -158,7 +158,7 @@ Modal.defaultProps = {
   attach: 'left',
   isVisible: false,
   showHeader: true,
-  size: 's',
+  size: 'sm',
   onCancel () {
     // Intentionally left blank
   },

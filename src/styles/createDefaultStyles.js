@@ -10,7 +10,7 @@ const createDefaultStyles = function ({ theme } = {}) {
       margin: '0',
       padding: '0',
       fontFamily: theme.font.family.default,
-      fontSize: theme.font.size.default,
+      fontSize: theme.font.size.md,
       lineHeight: 1.4
     },
 

@@ -16,18 +16,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var styles = {
-  Logo: {
-    /* Left blank intentionally */
-  },
-  SizeM: {
+  Logo: {},
+  SizeMd: {
     width: '56px',
     height: '56px'
   },
-  SizeL: {
+  SizeLg: {
     width: '120px',
     height: '120px'
   },
-  SizeXL: {
+  SizeXl: {
     width: '200px',
     height: '200px'
   }
@@ -44,7 +42,7 @@ var Logo = function Logo(_ref) {
     return null;
   }
 
-  var componentClasses = (0, _styles.classNames)(classes.Logo, (_classNames = {}, _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _defineProperty(_classNames, classes.SizeXL, size === 'xl'), _classNames));
+  var componentClasses = (0, _styles.classNames)(classes.Logo, (_classNames = {}, _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _defineProperty(_classNames, classes.SizeXl, size === 'xl'), _classNames));
   return _react["default"].createElement("div", {
     className: componentClasses,
     role: "presentational"
@@ -65,11 +63,11 @@ var Logo = function Logo(_ref) {
 
 Logo.propTypes = {
   isVisible: _propTypes["default"].bool,
-  size: _propTypes["default"].oneOf(['m', 'l', 'xl'])
+  size: _propTypes["default"].oneOf(['md', 'lg', 'xl'])
 };
 Logo.defaultProps = {
   isVisible: true,
-  size: 'm'
+  size: 'md'
 };
 
 var _default = (0, _styles.withStyles)(styles)(Logo);

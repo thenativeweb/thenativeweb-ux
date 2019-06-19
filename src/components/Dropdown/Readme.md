@@ -13,7 +13,7 @@ initialState = { selectedValue: '' };
 ```javascript
 initialState = { selectedValue: '' };
 <div style={{ display: 'flex', alignItems: 'center' }}>
-  <Dropdown size='s' emptyLabel='Small' options={[ { value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' } ]} value={ state.selectedValue } onChange={ value => setState({ selectedValue: value })} />
+  <Dropdown size='sm' emptyLabel='Small' options={[ { value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' } ]} value={ state.selectedValue } onChange={ value => setState({ selectedValue: value })} />
   <Dropdown emptyLabel='Default' options={[ { value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' } ]} value={ state.selectedValue } onChange={ value => setState({ selectedValue: value })} />
 </div>
 ```

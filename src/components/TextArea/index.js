@@ -5,23 +5,23 @@ import { classNames, withStyles } from '../../styles';
 const styles = theme => ({
   TextArea: {
     padding: '9px 12px',
-    'font-size': theme.font.size.default,
-    'font-family': theme.font.family.default,
+    fontSize: theme.font.size.md,
+    fontFamily: theme.font.family.default,
     width: '100%',
     'box-sizing': 'border-box',
     border: `1px solid`,
-    'border-color': theme.color.content.border,
+    borderColor: theme.color.content.border,
 
     '&:focus': {
       outline: 'none',
-      'border-color': theme.color.interaction.focus
+      borderColor: theme.color.interaction.focus
     },
 
     '&::placeholder': {
       color: theme.color.brand.darkGrey,
-      'font-family': theme.font.family.default,
-      'font-size': 'inherit',
-      'font-weight': 400,
+      fontFamily: theme.font.family.default,
+      fontSize: 'inherit',
+      fontWeight: 400,
       opacity: 0.5
     }
   },
@@ -31,12 +31,12 @@ const styles = theme => ({
     background: theme.color.brand.lightGrey
   },
 
-  SizeS: {
-    height: theme.grid.stepSize * 8
+  SizeSm: {
+    height: `${theme.space(10)}px`
   },
 
-  SizeM: {
-    height: theme.grid.stepSize * 14
+  SizeMd: {
+    height: `${theme.space(18)}px`
   }
 });
 
@@ -96,8 +96,8 @@ class TextArea extends React.Component {
     const componentClasses = classNames(classes.TextArea, {
       [classes.IsDisabled]: disabled === true,
       [classes.IsRequired]: required === true,
-      [classes.SizeS]: size === 's',
-      [classes.SizeM]: size === 'm'
+      [classes.SizeSm]: size === 'sm',
+      [classes.SizeMd]: size === 'md'
     }, className);
 
     return (
@@ -126,7 +126,7 @@ TextArea.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   required: PropTypes.bool,
-  size: PropTypes.oneOf([ 's', 'm' ]),
+  size: PropTypes.oneOf([ 'sm', 'md' ]),
   value: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
@@ -138,7 +138,7 @@ TextArea.defaultProps = {
   disabled: false,
   focusDelay: 0,
   required: false,
-  size: 's',
+  size: 'sm',
   onBlur () {
     // Intentionally left blank
   },

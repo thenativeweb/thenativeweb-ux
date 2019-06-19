@@ -18,9 +18,9 @@ var styles = function styles(theme) {
       bottom: 0,
       left: 0,
       right: 0,
-      'padding-top': theme.grid.stepSize,
-      'padding-bottom': theme.grid.stepSize,
-      'border-top': '1px solid rgba(255, 255, 255, 0.1)'
+      paddingTop: "".concat(theme.space(2), "px"),
+      paddingBottom: "".concat(theme.space(2), "px"),
+      borderTop: '1px solid rgba(255, 255, 255, 0.1)'
     }
   };
 };

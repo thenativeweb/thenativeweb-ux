@@ -14,11 +14,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var styles = {
   Label: {
     display: 'block',
-    'flex-grow': 1,
-    'flex-shrink': 1,
+    flexGrow: 1,
+    flexShrink: 1,
     overflow: 'hidden',
-    'text-overflow': 'ellipsis',
-    'white-space': 'nowrap',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
     color: 'inherit'
   }
 };

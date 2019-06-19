@@ -18,79 +18,69 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var styles = function styles(theme) {
-  var _ref;
-
-  return _ref = {
+  return _defineProperty({
     Product: {
       display: 'flex',
-      'flex-direction': 'column',
+      flexDirection: 'column',
       overflow: 'hidden',
-      'align-items': 'center',
-      'justify-content': 'center',
-      'font-family': theme.font.family.headline,
-      'font-weight': 500
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: theme.font.family.headline,
+      fontWeight: 500
     },
     IsCollapsed: {
       '& *': {
         animation: 'none'
       }
     },
+    'CompositeName, Name': {
+      textAlign: 'center',
+      marginTop: '3px'
+    },
     Name: {
-      'text-align': 'center',
-      'margin-top': '3px',
       color: theme.color.brand.white
     },
     CompositeName: {
-      'text-align': 'center',
-      'margin-top': '3px',
       color: theme.color.brand.highlight,
       '& span': {
         color: theme.color.brand.white
       }
     },
-    SizeM: {
+    SizeMd: {
       '& $Name, & $CompositeName': {
-        'font-size': theme.font.size.small
+        fontSize: theme.font.size.sm
       }
     },
-    SizeL: {
+    SizeLg: {
       '& $Name, & $CompositeName': {
-        'font-size': theme.font.size.large
+        fontSize: theme.font.size.lg
       }
     },
-    SizeXL: {
+    SizeXl: {
       '& $Name, & $CompositeName': {
-        'font-size': theme.font.size.xlarge
+        fontSize: theme.font.size.xl
       }
     },
     TypeLogoOnly: {},
-    TypeTypoOnly: {
+    TypeTextOnly: {
       '& $Name, & $CompositeName': {
-        'margin-top': 0
+        marginTop: 0
       }
     }
-  }, _defineProperty(_ref, theme.device.medium, {
+  }, theme.breakpoints.down('sm'), {
     Name: {},
     CompositeName: {},
-    SizeL: {
+    SizeLg: {
       '& $Name, & $CompositeName': {
-        'font-size': theme.font.size.large
-      }
-    }
-  }), _defineProperty(_ref, theme.device.small, {
-    Name: {},
-    CompositeName: {},
-    SizeL: {
-      '& $Name, & $CompositeName': {
-        'font-size': theme.font.size["default"]
+        fontSize: theme.font.size.md
       }
     },
-    SizeXL: {
+    SizeXl: {
       '& $Name, & $CompositeName': {
-        'font-size': theme.font.size.large
+        fontSize: theme.font.size.lg
       }
     }
-  }), _ref;
+  });
 };
 
 var Product = function Product(_ref2) {
@@ -102,7 +92,7 @@ var Product = function Product(_ref2) {
       size = _ref2.size,
       theme = _ref2.theme,
       type = _ref2.type;
-  var brandClassNames = (0, _styles.classNames)(classes.Product, (_classNames = {}, _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _defineProperty(_classNames, classes.SizeXL, size === 'xl'), _defineProperty(_classNames, classes.TypeLogoOnly, type === 'logo-only'), _defineProperty(_classNames, classes.TypeTypoOnly, type === 'typo-only'), _classNames));
+  var brandClassNames = (0, _styles.classNames)(classes.Product, (_classNames = {}, _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _defineProperty(_classNames, classes.SizeXl, size === 'xl'), _defineProperty(_classNames, classes.TypeLogoOnly, type === 'logo-only'), _defineProperty(_classNames, classes.TypeTextOnly, type === 'text-only'), _classNames));
 
   var nameComponent = _react["default"].createElement("div", {
     className: classes.Name
@@ -120,7 +110,7 @@ var Product = function Product(_ref2) {
   var Logo = _logos["default"][logoId] || _logos["default"].thenativeweb || null;
   return _react["default"].createElement("div", {
     className: brandClassNames
-  }, type === 'typo-only' ? null : _react["default"].createElement(Logo, {
+  }, type === 'text-only' ? null : _react["default"].createElement(Logo, {
     isAnimated: isAnimated,
     size: size
   }), type === 'logo-only' ? null : nameComponent);
@@ -128,11 +118,11 @@ var Product = function Product(_ref2) {
 
 Product.propTypes = {
   name: _propTypes["default"].string,
-  size: _propTypes["default"].oneOf(['m', 'l', 'xl']),
-  type: _propTypes["default"].oneOf(['default', 'typo-only', 'logo-only'])
+  size: _propTypes["default"].oneOf(['md', 'lg', 'xl']),
+  type: _propTypes["default"].oneOf(['default', 'text-only', 'logo-only'])
 };
 Product.defaultProps = {
-  size: 'm',
+  size: 'md',
   name: undefined,
   type: 'default'
 };

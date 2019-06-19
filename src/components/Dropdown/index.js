@@ -40,8 +40,8 @@ class Dropdown extends React.PureComponent {
     const { isFocused } = this.state;
 
     const dropdownClassNames = classNames(classes.Dropdown, {
-      [classes.SizeDefault]: size === 'default',
-      [classes.SizeS]: size === 's',
+      [classes.SizeSm]: size === 'sm',
+      [classes.SizeMd]: size === 'md',
       [classes.IsFocused]: isFocused
     });
 
@@ -70,11 +70,11 @@ Dropdown.propTypes = {
   options: PropTypes.array.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  size: PropTypes.oneOf([ 'default', 's' ])
+  size: PropTypes.oneOf([ 'sm', 'md' ])
 };
 
 Dropdown.defaultProps = {
-  size: 'default'
+  size: 'md'
 };
 
 export default withStyles(styles)(Dropdown);

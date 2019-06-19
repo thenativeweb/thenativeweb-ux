@@ -8,9 +8,9 @@ exports["default"] = void 0;
 var styles = function styles(theme) {
   return {
     Message: {
-      padding: '10px 15px',
-      'margin-bottom': theme.grid.stepSize,
-      'font-family': theme.font.family["default"]
+      padding: "".concat(theme.space(1.5), "px ").concat(theme.space(2), "px"),
+      marginBottom: "".concat(theme.space(1), "px"),
+      fontFamily: theme.font.family["default"]
     },
     TypeError: {
       background: theme.color.state.error,
@@ -26,15 +26,15 @@ var styles = function styles(theme) {
       display: 'flex',
       '& $IconContainer': {
         display: 'flex',
-        'align-items': 'center',
-        'justify-content': 'center',
-        'flex-grow': 0,
-        'flex-basis': 'auto',
-        'margin-right': theme.grid.stepSize
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexGrow: 0,
+        flexBasis: 'auto',
+        marginRight: "".concat(theme.space(1.5), "px")
       },
       '&. $Content': {
-        'flex-grow': 1,
-        'flex-basis': '100%'
+        flexGrow: 1,
+        flexBasis: '100%'
       }
     },
     IconContainer: {},

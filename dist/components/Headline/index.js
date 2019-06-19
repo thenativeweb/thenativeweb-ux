@@ -18,26 +18,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var styles = function styles(theme) {
   return {
     Headline: {
-      'font-family': theme.font.family["default"],
+      fontFamily: theme.font.family["default"],
       opacity: 0.95,
       padding: 0,
       margin: 0
     },
     Level1: {
-      'font-size': theme.font.size.xlarge,
-      'font-weight': 600,
-      'text-align': 'center',
-      'border-bottom': "1px solid ".concat(theme.color.content.border),
-      'padding-bottom': theme.grid.stepSize * 2,
-      'margin-bottom': theme.grid.stepSize * 2
+      fontSize: theme.font.size.xl,
+      fontWeight: 600,
+      textAlign: 'center',
+      borderBottom: "1px solid ".concat(theme.color.content.border),
+      paddingBottom: "".concat(theme.space(2), "px"),
+      marginBottom: "".concat(theme.space(2), "px")
     },
     Level2: {
-      'font-size': theme.font.size.xlarge,
-      'font-weight': 500,
-      'text-align': 'left',
-      'border-bottom': "1px solid ".concat(theme.color.content.border),
-      padding: "".concat(theme.grid.stepSize * 2, " 0 ").concat(theme.grid.stepSize, " 0"),
-      'margin-bottom': theme.grid.stepSize * 2
+      fontSize: theme.font.size.xl,
+      fontWeight: 500,
+      textAlign: 'left',
+      borderBottom: "1px solid ".concat(theme.color.content.border),
+      padding: "".concat(theme.space(2) * 2, "px 0 ").concat(theme.space(2), "px 0"),
+      marginBottom: "".concat(theme.space(2), "px")
     }
   };
 };

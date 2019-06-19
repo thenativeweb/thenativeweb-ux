@@ -3,21 +3,19 @@ import React from 'react';
 import { classNames, withStyles } from '../../../styles';
 
 const styles = {
-  Logo: {
-    /* Left blank intentionally */
-  },
+  Logo: {},
 
-  SizeM: {
+  SizeMd: {
     width: '56px',
     height: '56px'
   },
 
-  SizeL: {
+  SizeLg: {
     width: '120px',
     height: '120px'
   },
 
-  SizeXL: {
+  SizeXl: {
     width: '200px',
     height: '200px'
   }
@@ -29,9 +27,9 @@ const Logo = ({ classes, isVisible, size }) => {
   }
 
   const componentClasses = classNames(classes.Logo, {
-    [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l',
-    [classes.SizeXL]: size === 'xl'
+    [classes.SizeMd]: size === 'md',
+    [classes.SizeLg]: size === 'lg',
+    [classes.SizeXl]: size === 'xl'
   });
 
   return (
@@ -57,12 +55,12 @@ const Logo = ({ classes, isVisible, size }) => {
 
 Logo.propTypes = {
   isVisible: PropTypes.bool,
-  size: PropTypes.oneOf([ 'm', 'l', 'xl' ])
+  size: PropTypes.oneOf([ 'md', 'lg', 'xl' ])
 };
 
 Logo.defaultProps = {
   isVisible: true,
-  size: 'm'
+  size: 'md'
 };
 
 export default withStyles(styles)(Logo);

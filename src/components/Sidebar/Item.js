@@ -7,7 +7,7 @@ const styles = theme => ({
     position: 'relative',
     flex: '0 0 auto',
     overflow: 'visible',
-    'border-bottom': '1px solid rgba(255, 255, 255, 0.1)',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
     cursor: 'pointer',
 
     '&$IsTopLevel:hover, &$IsClickable:hover, &$IsActive': {
@@ -17,7 +17,7 @@ const styles = theme => ({
 
       '& $Items': {
         opacity: 1,
-        'pointer-events': 'all',
+        pointerEvents: 'all',
         transform: 'translate(0, 0)'
       }
     },
@@ -26,16 +26,16 @@ const styles = theme => ({
 
     '& $Icon': {
       display: 'flex',
-      'justify-content': 'center',
-      'align-items': 'center',
-      'padding-top': theme.grid.stepSize * 2.5,
-      'padding-bottom': theme.grid.stepSize * 2.5,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingTop: `${theme.space(3)}px`,
+      paddingBottom: `${theme.space(3)}px`,
       color: theme.color.brand.white,
 
       '& img': {
         width: '48px',
         height: '48px',
-        'border-radius': '50%'
+        borderRadius: '50%'
       }
     }
   },
@@ -47,12 +47,12 @@ const styles = theme => ({
   IsNested: {
     flex: '1 1 100%',
     cursor: 'default',
-    'white-space': 'nowrap',
+    whiteSpace: 'nowrap',
 
     '& $Label': {
       overflow: 'hidden',
-      'text-overflow': 'ellipsis',
-      margin: `${theme.grid.stepSize * 1.6}px ${theme.grid.stepSize * 2}px`
+      textOverflow: 'ellipsis',
+      margin: `${theme.space(2)}px ${theme.space(3)}px`
     },
 
     '&$IsClickable': {
@@ -66,20 +66,20 @@ const styles = theme => ({
   Items: {
     position: 'absolute',
     top: 0,
-    left: theme.components.sidebar.width,
+    left: theme.components.Sidebar.width,
     display: 'flex',
-    'flex-direction': 'column',
-    'justify-content': 'center',
-    'max-width': theme.grid.stepSize * 40,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    maxWidth: `${theme.space(50)}px`,
     background: theme.color.brand.dark,
-    'z-index': theme.zIndex.overlay,
+    zIndex: theme.zIndices.overlay,
     color: '#848484',
-    'box-shadow': theme.shadow.overlay,
+    boxShadow: theme.shadow.overlay,
     opacity: 0,
-    'pointer-events': 'none',
+    pointerEvents: 'none',
     transform: 'translate(-20px, 0)',
     transition: 'opacity 200ms, transform 300ms cubic-bezier(0.19, 1, 0.22, 1)',
-    'will-change': 'opacity, transform'
+    willChange: 'opacity, transform'
   }
 });
 
@@ -104,7 +104,7 @@ const Item = ({ classes, className, iconName, iconUrl, id, isActive = false, isN
   return (
     <div id={ id } className={ componentClasses }>
       <div className={ classes.Icon } onClick={ onClick }>
-        { iconUrl ? <img src={ iconUrl } /> : <Icon name={ iconName } size='l' color='white' />}
+        { iconUrl ? <img src={ iconUrl } /> : <Icon name={ iconName } size='lg' color='white' />}
       </div>
       <div className={ classes.Items }>
         {

@@ -20,26 +20,26 @@ var styles = function styles(theme) {
     Text: {
       display: 'block',
       overflow: 'hidden',
-      'text-overflow': 'ellipsis',
-      'white-space': 'nowrap',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
       color: 'inherit',
-      'font-family': theme.font.family["default"]
+      fontFamily: theme.font.family["default"]
     },
     AdjustAuto: {},
     AdjustFlex: {
-      'flex-grow': 1,
-      'flex-shrink': 1
+      flexGrow: 1,
+      flexShrink: 1
     },
-    SizeM: {
-      padding: '7px 0',
-      'font-size': theme.font.size["default"]
+    SizeMd: {
+      padding: "".concat(theme.space(1), "px 0"),
+      fontSize: theme.font.size.md
     },
-    SizeS: {
-      padding: '7px 0',
-      'font-size': theme.font.size.small
+    SizeSm: {
+      padding: "".concat(theme.space(1), "px 0"),
+      fontSize: theme.font.size.sm
     },
     BreakLines: {
-      'white-space': 'normal'
+      whiteSpace: 'normal'
     }
   };
 };
@@ -55,7 +55,7 @@ var Text = function Text(_ref) {
       id = _ref.id,
       size = _ref.size,
       style = _ref.style;
-  var componentClasses = (0, _styles.classNames)(classes.Text, (_classNames = {}, _defineProperty(_classNames, classes.BreakLines, breakLines), _defineProperty(_classNames, classes.AdjustFlex, adjust === 'flex'), _defineProperty(_classNames, classes.AdjustAuto, adjust === 'auto'), _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.SizeM, size === 'm'), _classNames), className);
+  var componentClasses = (0, _styles.classNames)(classes.Text, (_classNames = {}, _defineProperty(_classNames, classes.BreakLines, breakLines), _defineProperty(_classNames, classes.AdjustFlex, adjust === 'flex'), _defineProperty(_classNames, classes.AdjustAuto, adjust === 'auto'), _defineProperty(_classNames, classes.SizeSm, size === 'sm'), _defineProperty(_classNames, classes.SizeMd, size === 'md'), _classNames), className);
   return _react["default"].createElement("div", {
     id: id,
     className: componentClasses,
@@ -66,12 +66,12 @@ var Text = function Text(_ref) {
 Text.propTypes = {
   adjust: _propTypes["default"].oneOf(['flex', 'auto']),
   breakLines: _propTypes["default"].bool,
-  size: _propTypes["default"].oneOf(['s', 'm'])
+  size: _propTypes["default"].oneOf(['sm', 'md'])
 };
 Text.defaultProps = {
   adjust: 'auto',
   breakLines: false,
-  size: 'm'
+  size: 'md'
 };
 
 var _default = (0, _styles.withStyles)(styles)(Text);

@@ -19,20 +19,20 @@ var styles = function styles(theme) {
   return {
     Actions: {
       display: 'flex',
-      'border-top': "1px solid ".concat(theme.color.content.border),
-      'padding-top': theme.grid.stepSize,
-      'margin-top': theme.grid.stepSize * 2
+      borderTop: "1px solid ".concat(theme.color.content.border),
+      paddingTop: "".concat(theme.space(1), "px"),
+      marginTop: "".concat(theme.space(2), "px")
     },
     TypeDefault: {
-      'justify-content': 'flex-end'
+      justifyContent: 'flex-end'
     },
     TypeStacked: {
-      'flex-direction': 'column',
-      'justify-content': 'stretch',
-      'margin-bottom': theme.grid.stepSize * 2,
+      flexDirection: 'column',
+      justifyContent: 'stretch',
+      marginBottom: "".concat(theme.space(2), "px"),
       '& > *': {
-        'margin-right': 0,
-        'margin-bottom': 0
+        marginRight: 0,
+        marginBottom: 0
       }
     }
   };

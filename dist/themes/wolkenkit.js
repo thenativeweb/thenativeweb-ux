@@ -21,8 +21,7 @@ var theme = (0, _merge["default"])({}, _thenativeweb["default"], {
       midGrey: '#595c62',
       lightGrey: '#eee',
       white: '#fff'
-    },
-    interactionFocus: '#363d45'
+    }
   },
   components: {
     Pattern: {

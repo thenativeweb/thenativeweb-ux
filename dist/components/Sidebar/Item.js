@@ -21,7 +21,7 @@ var styles = function styles(theme) {
       position: 'relative',
       flex: '0 0 auto',
       overflow: 'visible',
-      'border-bottom': '1px solid rgba(255, 255, 255, 0.1)',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
       cursor: 'pointer',
       '&$IsTopLevel:hover, &$IsClickable:hover, &$IsActive': {
         cursor: 'pointer',
@@ -29,22 +29,22 @@ var styles = function styles(theme) {
         color: theme.color.brand.white,
         '& $Items': {
           opacity: 1,
-          'pointer-events': 'all',
+          pointerEvents: 'all',
           transform: 'translate(0, 0)'
         }
       },
       '& $Label': {},
       '& $Icon': {
         display: 'flex',
-        'justify-content': 'center',
-        'align-items': 'center',
-        'padding-top': theme.grid.stepSize * 2.5,
-        'padding-bottom': theme.grid.stepSize * 2.5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: "".concat(theme.space(3), "px"),
+        paddingBottom: "".concat(theme.space(3), "px"),
         color: theme.color.brand.white,
         '& img': {
           width: '48px',
           height: '48px',
-          'border-radius': '50%'
+          borderRadius: '50%'
         }
       }
     },
@@ -54,11 +54,11 @@ var styles = function styles(theme) {
     IsNested: {
       flex: '1 1 100%',
       cursor: 'default',
-      'white-space': 'nowrap',
+      whiteSpace: 'nowrap',
       '& $Label': {
         overflow: 'hidden',
-        'text-overflow': 'ellipsis',
-        margin: "".concat(theme.grid.stepSize * 1.6, "px ").concat(theme.grid.stepSize * 2, "px")
+        textOverflow: 'ellipsis',
+        margin: "".concat(theme.space(2), "px ").concat(theme.space(3), "px")
       },
       '&$IsClickable': {
         color: theme.color.brand.white
@@ -69,20 +69,20 @@ var styles = function styles(theme) {
     Items: {
       position: 'absolute',
       top: 0,
-      left: theme.components.sidebar.width,
+      left: theme.components.Sidebar.width,
       display: 'flex',
-      'flex-direction': 'column',
-      'justify-content': 'center',
-      'max-width': theme.grid.stepSize * 40,
+      flexDirection: 'column',
+      justifyContent: 'center',
+      maxWidth: "".concat(theme.space(50), "px"),
       background: theme.color.brand.dark,
-      'z-index': theme.zIndex.overlay,
+      zIndex: theme.zIndices.overlay,
       color: '#848484',
-      'box-shadow': theme.shadow.overlay,
+      boxShadow: theme.shadow.overlay,
       opacity: 0,
-      'pointer-events': 'none',
+      pointerEvents: 'none',
       transform: 'translate(-20px, 0)',
       transition: 'opacity 200ms, transform 300ms cubic-bezier(0.19, 1, 0.22, 1)',
-      'will-change': 'opacity, transform'
+      willChange: 'opacity, transform'
     }
   };
 };
@@ -123,7 +123,7 @@ var Item = function Item(_ref) {
     src: iconUrl
   }) : _react["default"].createElement(_Icon["default"], {
     name: iconName,
-    size: "l",
+    size: "lg",
     color: "white"
   })), _react["default"].createElement("div", {
     className: classes.Items

@@ -5,7 +5,7 @@ thenativeweb-ux provides UI components for the native web applications.
 ## Installation
 
 ```shell
-$ npm install thenativeweb-ux
+$ npm install thenativeweb-ux react react-dom
 ```
 
 ## Quick start
@@ -49,9 +49,14 @@ import { Button } from 'thenativeweb-ux';
 
 The complete documentation for all components can be found at [ux.thenativeweb.io](https://ux.thenativeweb.io).
 
-### Running the sample application
+### Running the sample applications
 
-There is a [sample application](examples/with-webpack). To run it, install its dependencies, and use the following command:
+There are two sample applications that demonstrate how `thenativeweb-ux` can be used…
+
+- [with Webpack](examples/with-webpack)
+- [with Next.js](examples/with-next-js)
+
+To run a sample application, install its dependencies, and use the following command:
 
 ```shell
 $ npx roboter serve

@@ -9,23 +9,23 @@ const KEY = {
 const styles = theme => ({
   TextBox: {
     padding: '9px 12px',
-    'font-size': theme.font.size.default,
-    'font-family': theme.font.family.default,
+    fontSize: theme.font.size.md,
+    fontFamily: theme.font.family.default,
     width: '100%',
     'box-sizing': 'border-box',
     border: `1px solid`,
-    'border-color': theme.color.content.border,
+    borderColor: theme.color.content.border,
 
     '&:focus': {
       outline: 'none',
-      'border-color': theme.color.interaction.focus
+      borderColor: theme.color.interaction.focus
     },
 
     '&::placeholder': {
       color: theme.color.brand.darkGrey,
-      'font-family': theme.font.family.default,
-      'font-size': 'inherit',
-      'font-weight': 400,
+      fontFamily: theme.font.family.default,
+      fontSize: 'inherit',
+      fontWeight: 400,
       opacity: 0.5
     }
   },

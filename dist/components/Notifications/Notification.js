@@ -18,9 +18,9 @@ var styles = function styles(theme) {
     Notification: {
       padding: '10px 15px',
       background: theme.color.brand.dark,
-      'box-shadow': theme.shadow.overlay,
-      'margin-bottom': theme.grid.stepSize,
-      'font-family': theme.font.family["default"]
+      boxShadow: theme.shadow.overlay,
+      marginBottom: "".concat(theme.space(1.5), "px"),
+      fontFamily: theme.font.family["default"]
     },
     TypeError: {
       color: theme.color.brand.white,

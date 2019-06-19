@@ -1,5 +1,7 @@
 const path = require('path');
 
+const webpackConfig = require('./webpack.config.js');
+
 module.exports = {
   title: 'the native web UX',
   skipComponentsWithoutExample: true,
@@ -30,11 +32,9 @@ module.exports = {
     }
   ],
 
-  require: [
-    path.join(__dirname, 'src', 'styleguide', 'custom.css')
-  ],
-
   styleguideComponents: {
     Wrapper: path.join(__dirname, 'src', 'styleguide', 'ThemeWrapper.jsx')
-  }
+  },
+
+  webpackConfig
 };

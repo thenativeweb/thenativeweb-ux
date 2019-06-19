@@ -27,7 +27,7 @@ var Icon = function Icon(_ref) {
       size = _ref.size,
       style = _ref.style,
       type = _ref.type;
-  var iconClassNames = (0, _styles2.classNames)(classes.Icon, (_classNames = {}, _defineProperty(_classNames, classes.ColorDefault, color === 'default'), _defineProperty(_classNames, classes.ColorCurrent, color === 'current'), _defineProperty(_classNames, classes.ColorHighlight, color === 'highlight'), _defineProperty(_classNames, classes.ColorWhite, color === 'white'), _defineProperty(_classNames, classes.TypeInline, type === 'inline'), _defineProperty(_classNames, classes.TypeFlexAuto, type === 'flex-auto'), _defineProperty(_classNames, classes.SizeXS, size === 'xs'), _defineProperty(_classNames, classes.SizeS, size === 's'), _defineProperty(_classNames, classes.SizeM, size === 'm'), _defineProperty(_classNames, classes.SizeL, size === 'l'), _defineProperty(_classNames, classes.SizeXL, size === 'xl'), _defineProperty(_classNames, classes.SizeXXL, size === 'xxl'), _classNames), className);
+  var iconClassNames = (0, _styles2.classNames)(classes.Icon, (_classNames = {}, _defineProperty(_classNames, classes.ColorDefault, color === 'default'), _defineProperty(_classNames, classes.ColorCurrent, color === 'current'), _defineProperty(_classNames, classes.ColorHighlight, color === 'highlight'), _defineProperty(_classNames, classes.ColorWhite, color === 'white'), _defineProperty(_classNames, classes.TypeInline, type === 'inline'), _defineProperty(_classNames, classes.TypeFlexAuto, type === 'flex-auto'), _defineProperty(_classNames, classes.SizeXs, size === 'xs'), _defineProperty(_classNames, classes.SizeSm, size === 'sm'), _defineProperty(_classNames, classes.SizeMd, size === 'md'), _defineProperty(_classNames, classes.SizeLg, size === 'lg'), _defineProperty(_classNames, classes.SizeXl, size === 'xl'), _defineProperty(_classNames, classes.SizeXxl, size === 'xxl'), _classNames), className);
   return _react["default"].createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     className: iconClassNames,
@@ -41,12 +41,12 @@ var Icon = function Icon(_ref) {
 Icon.propTypes = {
   name: _propTypes["default"].string.isRequired,
   color: _propTypes["default"].oneOf(['default', 'current', 'highlight', 'white']),
-  size: _propTypes["default"].oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl']),
+  size: _propTypes["default"].oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
   style: _propTypes["default"].object,
   type: _propTypes["default"].oneOf(['default', 'inline', 'flex-auto'])
 };
 Icon.defaultProps = {
-  size: 's',
+  size: 'sm',
   color: 'default',
   type: 'default'
 };

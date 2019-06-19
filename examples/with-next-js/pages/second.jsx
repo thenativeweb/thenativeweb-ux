@@ -12,7 +12,7 @@ const Page = () => (
   <Application>
     <Application.Services />
     <Sidebar>
-      <Sidebar.Brand><Product name='my-app' /></Sidebar.Brand>
+      <Sidebar.Brand><Product name='App' /></Sidebar.Brand>
       <Sidebar.Item iconName='account'>
         <Sidebar.Item>You are logged in as Sophie</Sidebar.Item>
         <Sidebar.Item onClick={ () => services.notifications.show({ type: 'success', text: 'You clicked!' }) }>Logout</Sidebar.Item>
@@ -20,7 +20,7 @@ const Page = () => (
       <Link href='/'><Sidebar.Item iconName='help' /></Link>
       <Sidebar.Item iconName='help' isActive={ true } />
     </Sidebar>
-    <View id='second-page' adjust='flex' style={{ padding: '20px', border: '#eee solid 1px' }}>
+    <View id='second-page' adjust='flex' style={{ padding: '20px' }}>
       This page is also rendered universally.
     </View>
   </Application>

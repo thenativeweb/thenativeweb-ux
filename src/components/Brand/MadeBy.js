@@ -7,10 +7,10 @@ import { classNames, withStyles } from '../../styles';
 const styles = theme => ({
   MadeBy: {
     overflow: 'hidden',
-    'font-family': theme.font.family.default,
-    'text-align': 'center',
-    'padding-top': theme.grid.stepSize / 2,
-    'padding-bottom': theme.grid.stepSize / 2
+    fontFamily: theme.font.family.default,
+    textAlign: 'center',
+    paddingTop: theme.space(1),
+    paddingBottom: theme.space(1)
   },
 
   ColorDark: {
@@ -21,16 +21,16 @@ const styles = theme => ({
     color: theme.color.brand.dark
   },
 
-  SizeS: {
-    'font-size': theme.font.size.small
+  SizeSm: {
+    fontSize: theme.font.size.sm
   },
 
-  SizeM: {
-    'font-size': theme.font.size.default
+  SizeMd: {
+    fontSize: theme.font.size.md
   },
 
-  SizeL: {
-    'font-size': theme.font.size.large
+  SizeLg: {
+    fontSize: theme.font.size.lg
   }
 });
 
@@ -38,9 +38,9 @@ const MadeBy = ({ classes, color, partner = [], size }) => {
   const componentClasses = classNames(classes.MadeBy, {
     [classes.ColorDark]: color === 'dark',
     [classes.ColorLight]: color === 'light',
-    [classes.SizeS]: size === 's',
-    [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l'
+    [classes.SizeSm]: size === 'sm',
+    [classes.SizeMd]: size === 'md',
+    [classes.SizeLg]: size === 'lg'
   });
 
   const partners = Array.isArray(partner) ? partner : [ partner ];
@@ -71,12 +71,12 @@ MadeBy.propTypes = {
     PropTypes.array,
     PropTypes.object
   ]),
-  size: PropTypes.oneOf([ 's', 'm', 'l' ])
+  size: PropTypes.oneOf([ 'sm', 'md', 'lg' ])
 };
 
 MadeBy.defaultProps = {
   color: 'dark',
-  size: 's',
+  size: 'sm',
   name: undefined
 };
 

@@ -30,8 +30,8 @@ const Button = ({
   const componentClasses = classNames(classes.Button, {
     [classes.AdjustFlex]: adjust === 'flex',
     [classes.AdjustAuto]: adjust === 'auto',
-    [classes.SizeS]: size === 's',
-    [classes.SizeM]: size === 'm',
+    [classes.SizeSm]: size === 'sm',
+    [classes.SizeMd]: size === 'md',
     [classes.TypeSubtle]: isSubtle === true,
     [classes.TypePrimary]: isPrimary === true,
     [classes.TypeIcon]: icon,
@@ -61,10 +61,10 @@ Button.propTypes = {
   adjust: PropTypes.oneOf([ 'flex', 'auto' ]),
   autoFocus: PropTypes.bool,
   icon: PropTypes.string,
-  iconSize: PropTypes.oneOf([ 'default', 'xs', 's', 'm', 'l' ]),
+  iconSize: PropTypes.oneOf([ 'default', 'xs', 'sm', 'md', 'lg' ]),
   isPrimary: PropTypes.bool,
   isSubtle: PropTypes.bool,
-  size: PropTypes.oneOf([ 's', 'm' ]),
+  size: PropTypes.oneOf([ 'sm', 'md' ]),
   type: PropTypes.oneOf([ 'button', 'submit', 'reset' ]),
   onClick: PropTypes.func
 };
@@ -73,7 +73,7 @@ Button.defaultProps = {
   adjust: undefined,
   autoFocus: false,
   isPrimary: false,
-  size: 'm',
+  size: 'md',
   type: undefined,
   onClick () {
     // Intentionally left bla

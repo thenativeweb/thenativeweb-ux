@@ -11,12 +11,12 @@ const Icon = ({ classes, className, color, name, size, style, type }) => {
     [classes.ColorWhite]: color === 'white',
     [classes.TypeInline]: type === 'inline',
     [classes.TypeFlexAuto]: type === 'flex-auto',
-    [classes.SizeXS]: size === 'xs',
-    [classes.SizeS]: size === 's',
-    [classes.SizeM]: size === 'm',
-    [classes.SizeL]: size === 'l',
-    [classes.SizeXL]: size === 'xl',
-    [classes.SizeXXL]: size === 'xxl'
+    [classes.SizeXs]: size === 'xs',
+    [classes.SizeSm]: size === 'sm',
+    [classes.SizeMd]: size === 'md',
+    [classes.SizeLg]: size === 'lg',
+    [classes.SizeXl]: size === 'xl',
+    [classes.SizeXxl]: size === 'xxl'
   }, className);
 
   return (
@@ -29,13 +29,13 @@ const Icon = ({ classes, className, color, name, size, style, type }) => {
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
   color: PropTypes.oneOf([ 'default', 'current', 'highlight', 'white' ]),
-  size: PropTypes.oneOf([ 'xs', 's', 'm', 'l', 'xl', 'xxl' ]),
+  size: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl', 'xxl' ]),
   style: PropTypes.object,
   type: PropTypes.oneOf([ 'default', 'inline', 'flex-auto' ])
 };
 
 Icon.defaultProps = {
-  size: 's',
+  size: 'sm',
   color: 'default',
   type: 'default'
 };

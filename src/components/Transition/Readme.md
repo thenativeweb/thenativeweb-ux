@@ -1,9 +1,11 @@
 Transition is a component for animating components while they enter or leave your application. There's a set of built-in types you can use: `Fade`, `FadeInLeft`, `FadeInRight`, `Grow` and `Zoom`. Wrap the component that should be animated and use the boolean `in` property to animate in and out. Please note that you might have to set explicit dimensions to the parent of the animated component in order to prevent a page jumps.
 
-```javascript
+```jsx
 initialState = {
   isBoxVisible: true
  };
+import { CheckBox, ControlGroup, Form, View } from 'thenativeweb-ux';
+
 <div>
   <Form>
     <ControlGroup>
@@ -23,8 +25,9 @@ initialState = {
 
 To transition an array of elements, use the `Transition.Group` component. Please note that you have to set a unique key for each item in order to let React know which element has been added or removed.
 
-```javascript
+```jsx
 initialState = { items: [ 'Thing 1' ] };
+import { Button, View } from 'thenativeweb-ux';
 
 addItem = function () {
   const newItems = [].concat(state.items, 'Thing ' +  (state.items.length + 1));

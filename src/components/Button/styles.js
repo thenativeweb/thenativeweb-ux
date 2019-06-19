@@ -2,26 +2,26 @@ const styles = function (theme) {
   return {
     Button: {
       display: 'flex',
-      'align-items': 'center',
-      'justify-content': 'center',
-      'background-color': theme.color.brand.dark,
-      'border-color': theme.color.brand.dark,
-      'border-width': '1px',
-      'border-style': 'solid',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: theme.color.brand.dark,
+      borderColor: theme.color.brand.dark,
+      borderWidth: '1px',
+      borderStyle: 'solid',
       color: theme.color.brand.white,
-      'font-family': theme.font.family.default,
+      fontFamily: theme.font.family.default,
       cursor: 'pointer',
-      'white-space': 'nowrap',
+      whiteSpace: 'nowrap',
       overflow: 'hidden',
-      'text-overflow': 'ellipsis',
-      'border-radius': theme.components.borderRadius.default,
+      textOverflow: 'ellipsis',
+      borderRadius: theme.components.borderRadius.default,
       outline: 'none',
       transition: 'background-color 300ms cubic-bezier(0.190, 1.000, 0.220, 1.000)',
-      'will-change': 'background-color',
+      willChange: 'background-color',
 
       '&:focus': {
         'background-color': theme.color.brand.highlight,
-        'border-color': theme.color.interaction.focus
+        borderColor: theme.color.interaction.focus
       },
 
       '&:active': {
@@ -30,50 +30,50 @@ const styles = function (theme) {
       },
 
       '&:last-child': {
-        'margin-right': 0
+        marginRight: 0
       }
     },
 
     AdjustFlex: {
-      'flex-grow': 1,
-      'flex-shrink': 1,
-      'flex-basis': '100%'
+      flexGrow: 1,
+      flexShrink: 1,
+      flexBasis: '100%'
     },
 
     AdjustAuto: {
-      'flex-grow': 0,
-      'flex-shrink': 0
+      flexGrow: 0,
+      flexShrink: 0
     },
 
-    SizeM: {
-      padding: '7px 11px',
-      margin: theme.grid.stepSize,
-      'margin-left': 0,
-      'font-size': theme.font.size.default
+    SizeMd: {
+      padding: `${theme.space(1)}px ${theme.space(1.5)}px`,
+      margin: `${theme.space(1)}px`,
+      marginLeft: 0,
+      fontSize: theme.font.size.md
     },
 
-    SizeS: {
-      padding: '7px 11px',
-      'font-size': theme.font.size.small,
+    SizeSm: {
+      padding: `${theme.space(1)}px ${theme.space(1.5)}px`,
+      fontSize: theme.font.size.sm,
       margin: 0,
-      'margin-right': '6px'
+      marginRight: `${theme.space(1)}px`
     },
 
     TypePrimary: {
-      'background-color': theme.color.brand.highlight,
-      'border-color': theme.color.brand.highlight
+      backgroundColor: theme.color.brand.highlight,
+      borderColor: theme.color.brand.highlight
     },
 
     TypeIcon: {
       display: 'flex',
-      'align-items': 'center',
-      'flex-direction': 'row',
-      'line-height': 'normal'
+      alignItems: 'center',
+      flexDirection: 'row',
+      lineHeight: 'normal'
     },
 
     TypeSubtle: {
-      'background-color': 'transparent',
-      'border-color': 'transparent',
+      backgroundColor: 'transparent',
+      borderColor: 'transparent',
       color: theme.color.brand.dark,
 
       '& $Icon': {
@@ -92,7 +92,7 @@ const styles = function (theme) {
         background: 'transparent',
         color: theme.color.brand.highlight,
         border: `1px dotted ${theme.color.interaction.focus} !important`,
-        'border-radius': '2px',
+        borderRadius: '2px',
 
         '& $Icon': {
           fill: theme.color.brand.highlight
@@ -109,20 +109,20 @@ const styles = function (theme) {
     },
 
     TypeIconOnly: {
-      'border-color': 'transparent',
+      borderColor: 'transparent',
       display: 'flex',
-      'align-items': 'center',
-      'justify-content': 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
       margin: 0,
       padding: 0,
       background: 'transparent',
 
       '&:focus': {
-        'border-color': 'transparent',
-        'text-decoration': 'underline',
+        borderColor: 'transparent',
+        textDecoration: 'underline',
         background: 'none',
         border: `1px dotted ${theme.color.interaction.focus} !important`,
-        'border-radius': '2px',
+        borderRadius: '2px',
 
         '& $Icon': {
           fill: theme.color.brand.highlight
@@ -131,7 +131,7 @@ const styles = function (theme) {
 
       '& $Icon': {
         fill: theme.color.brand.dark,
-        'margin-right': 0
+        marginRight: 0
       },
 
       '&:hover': {
@@ -143,22 +143,22 @@ const styles = function (theme) {
       '&:active': {
         '& $Icon': {
           fill: `${theme.color.brand.dark} !important`,
-          'margin-right': 0
+          marginRight: 0
         }
       }
     },
 
     Hint: {
       opacity: 0.5,
-      'font-size': theme.font.size.small,
-      'padding-left': '0.75em'
+      fontSize: theme.font.size.sm,
+      paddingLeft: '0.75em'
     },
 
     Icon: {
-      'flex-grow': 0,
-      'flex-shrink': 0,
-      'flex-basis': 'auto',
-      'margin-right': theme.grid.stepSize,
+      flexGrow: 0,
+      flexShrink: 0,
+      flexBasis: 'auto',
+      marginRight: theme.space(1),
       color: theme.color.brand.white,
       fill: theme.color.brand.white
     }

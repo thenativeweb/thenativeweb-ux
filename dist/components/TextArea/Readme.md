@@ -21,7 +21,7 @@ initialState = { value: 'This TextArea is disabled' };
 initialState = { value: 'This TextArea is medium' };
 <TextArea
   value={ state.value }
-  size='m'
+  size='md'
   onChange={ event => setState({ value: event.target.value })}
 />
 ```

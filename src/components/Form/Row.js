@@ -4,7 +4,7 @@ import { withStyles } from '../../styles';
 const styles = theme => ({
   Row: {
     display: 'flex',
-    'margin-bottom': theme.grid.stepSize
+    marginBottom: `${theme.space(2)}px`
   }
 });
 

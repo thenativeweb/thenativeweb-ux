@@ -145,7 +145,7 @@ function (_React$PureComponent) {
           size = _this$props2.size,
           padding = _this$props2.padding;
       var backdropClasses = (0, _styles2.classNames)(classes.Backdrop, _defineProperty({}, classes.IsVisible, isVisible));
-      var chromeClasses = (0, _styles2.classNames)(classes.Chrome, (_classNames2 = {}, _defineProperty(_classNames2, classes.ChromeSizeS, size === 's'), _defineProperty(_classNames2, classes.ChromeSizeM, size === 'm'), _defineProperty(_classNames2, classes.ChromeSizeL, size === 'l'), _defineProperty(_classNames2, classes.ChromeSizeFullscreen, size === 'fullscreen'), _defineProperty(_classNames2, classes.ChromeAttachedSidebar, attach === 'sidebar'), _defineProperty(_classNames2, classes.ChromeAttachedLeft, attach === 'left'), _defineProperty(_classNames2, classes.ChromeAttachedRight, attach === 'right'), _defineProperty(_classNames2, classes.ChromeAttachedCenter, attach === 'center'), _defineProperty(_classNames2, classes.ChromePaddingNone, padding === 'none'), _classNames2), className);
+      var chromeClasses = (0, _styles2.classNames)(classes.Chrome, (_classNames2 = {}, _defineProperty(_classNames2, classes.ChromeSizeSm, size === 'sm'), _defineProperty(_classNames2, classes.ChromeSizeMd, size === 'md'), _defineProperty(_classNames2, classes.ChromeSizeLg, size === 'lg'), _defineProperty(_classNames2, classes.ChromeSizeFullscreen, size === 'fullscreen'), _defineProperty(_classNames2, classes.ChromeAttachedSidebar, attach === 'sidebar'), _defineProperty(_classNames2, classes.ChromeAttachedLeft, attach === 'left'), _defineProperty(_classNames2, classes.ChromeAttachedRight, attach === 'right'), _defineProperty(_classNames2, classes.ChromeAttachedCenter, attach === 'center'), _defineProperty(_classNames2, classes.ChromePaddingNone, padding === 'none'), _classNames2), className);
       var transitionType;
 
       switch (attach) {
@@ -202,14 +202,14 @@ Modal.propTypes = {
   attach: _propTypes["default"].oneOf(['left', 'right', 'sidebar', 'center']),
   header: _propTypes["default"].node,
   showHeader: _propTypes["default"].bool,
-  size: _propTypes["default"].oneOf(['s', 'm', 'l', 'fullscreen']),
+  size: _propTypes["default"].oneOf(['sm', 'md', 'lg', 'fullscreen']),
   onKeyDown: _propTypes["default"].func
 };
 Modal.defaultProps = {
   attach: 'left',
   isVisible: false,
   showHeader: true,
-  size: 's',
+  size: 'sm',
   onCancel: function onCancel() {// Intentionally left blank
   },
   onKeyDown: function onKeyDown() {// Intentionally left blank

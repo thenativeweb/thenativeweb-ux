@@ -10,18 +10,18 @@ var styles = function styles(theme) {
     View: {
       'box-sizing': 'border-box',
       position: 'relative',
-      'font-family': theme.font.family["default"],
-      'font-size': theme.font.size["default"]
+      fontFamily: theme.font.family["default"],
+      fontSize: theme.font.size.md
     },
     AdjustFlex: {
-      'flex-grow': 1,
-      'flex-shrink': 1,
-      'flex-basis': '0%'
+      flexGrow: 1,
+      flexShrink: 1,
+      flexBasis: '0%'
     },
     AdjustAuto: {
-      'flex-grow': 0,
-      'flex-shrink': 0,
-      'flex-basis': 'auto'
+      flexGrow: 0,
+      flexShrink: 0,
+      flexBasis: 'auto'
     },
     BackgroundDark: {
       background: theme.color.brand.dark,
@@ -34,27 +34,27 @@ var styles = function styles(theme) {
       width: '100%',
       height: '100%',
       display: 'flex',
-      'flex-direction': 'row',
-      'align-items': 'center',
-      'justify-content': 'center'
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center'
     },
     OrientationHorizontal: {
       width: '100%',
       height: '100%',
       display: 'flex',
-      'flex-direction': 'row'
+      flexDirection: 'row'
     },
     OrientationVertical: {
       width: '100%',
       height: '100%',
       display: 'flex',
-      'flex-direction': 'column'
+      flexDirection: 'column'
     },
     AlignItemsCenter: {
-      'align-items': 'center'
+      alignItems: 'center'
     },
     JustifyContentCenter: {
-      'justify-content': 'center'
+      justifyContent: 'center'
     },
     ScrollableNone: {
       overflow: 'hidden'

@@ -14,15 +14,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var styles = function styles(theme) {
   return {
     Divider: {
-      'flex-grow': 0,
-      'flex-shrink': 0,
-      'flex-basis': 'auto',
+      flexGrow: 0,
+      flexShrink: 0,
+      flexBasis: 'auto',
       width: '100%',
       height: '1px',
       background: theme.color.brand.dark,
       opacity: 0.1,
-      'margin-top': '18px',
-      'margin-bottom': '24px',
+      marginTop: "".concat(theme.space(2.5), "px"),
+      marginBottom: "".concat(theme.space(3), "px"),
       border: 'none'
     }
   };

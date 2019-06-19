@@ -1,5 +1,7 @@
-```javascript
+```jsx
 initialState = { selectedValue: 'Option 1' };
+import { Text } from 'thenativeweb-ux';
+
 <div>
   <Toggle
     values={ [ 'Option 1', 'Option 2' ] }
@@ -12,8 +14,10 @@ initialState = { selectedValue: 'Option 1' };
 
 You can provide a custom render function to render custom toggle buttons. The render function will be called for each option and will receive the `value`, `isSelected` and a function called `changeValue` to trigger a value change.
 
-```javascript
+```jsx
 initialState = { selectedValue: 'blue' };
+import { Text } from 'thenativeweb-ux';
+
 <div>
   <Text>Choose a color</Text>
   <Toggle

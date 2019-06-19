@@ -27,8 +27,8 @@ var styles = function styles(theme) {
       width: '100%',
       height: '100%',
       display: 'flex',
-      'align-items': 'center',
-      'justify-content': 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
       background: theme.color.brand.dark
     }
   };
@@ -56,11 +56,11 @@ Brand.PoweredBy = _PoweredBy["default"];
 Brand.propTypes = {
   color: _propTypes["default"].oneOf(['default', 'monochrome']),
   isInteractive: _propTypes["default"].bool,
-  size: _propTypes["default"].oneOf(['s', 'm', 'l']),
+  size: _propTypes["default"].oneOf(['sm', 'md', 'lg']),
   type: _propTypes["default"].oneOf(['full', 'minimal'])
 };
 Brand.defaultProps = {
-  size: 'm',
+  size: 'md',
   type: 'full'
 };
 

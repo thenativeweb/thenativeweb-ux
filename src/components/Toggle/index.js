@@ -8,7 +8,7 @@ const styles = theme => ({
   },
 
   ActiveButton: {
-    'margin-right': 0,
+    marginRight: 0,
     background: theme.color.brand.highlight,
 
     '&:first-child': {
@@ -23,7 +23,7 @@ const styles = theme => ({
   },
 
   Button: {
-    'margin-right': 0,
+    marginRight: 0,
 
     '&:first-child': {
       'border-top-right-radius': 0,
