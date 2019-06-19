@@ -61,13 +61,13 @@ The `Brand.Pattern` component can be used to add a pattern to a container. The p
 ```jsx
 import { ThemeProvider, View } from 'thenativeweb-ux';
 <View>
-  <View orientation='centered' background='dark' style={{ width: 400, height: 200 }}>
+  <View orientation='centered' background='dark' style={{ width: '400px', height: '200px' }}>
     <Brand.Pattern />
     <View>This content is above the pattern…</View>
   </View>
   <hr />
   <ThemeProvider theme='wolkenkit'>
-    <View orientation='centered' background='dark' style={{ width: 400, height: 200 }}>
+    <View orientation='centered' background='dark' style={{ width: '400px', height: '200px' }}>
       <Brand.Pattern />
       <View>This content is above the pattern…</View>
     </View>

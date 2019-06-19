@@ -19,8 +19,8 @@ var styles = function styles(theme) {
   return {
     Actions: {
       display: 'flex',
-      'border-top': "1px solid ".concat(theme.color.content.border),
-      'padding-top': "".concat(theme.space(1), "px"),
+      borderTop: "1px solid ".concat(theme.color.content.border),
+      paddingTop: "".concat(theme.space(1), "px"),
       marginTop: "".concat(theme.space(2), "px")
     },
     TypeDefault: {
