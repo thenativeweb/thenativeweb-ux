@@ -53,8 +53,8 @@ The complete documentation for all components can be found at [ux.thenativeweb.i
 
 There are two sample applications that demonstrate how `thenativeweb-ux` can be used…
 
-- [with Webpack](examples/with-webpack)
-- [with Next.js](examples/with-next-js)
+-   [with Webpack](examples/with-webpack)
+-   [with Next.js](examples/with-next-js)
 
 To run a sample application, install its dependencies, and use the following command:
 
