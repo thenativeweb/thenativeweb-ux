@@ -5,9 +5,21 @@ import { classNames, withStyles } from '../../styles';
 import { createDefaultSpaceDependantClasses, createSpaceDependentClasses, getSpaceDependentClassNamesFromProps } from '../../styles/utils';
 
 const spaceDependentProperties = {
-  columns: ({ spaceFactor }) => ({
-    'grid-template-columns': `repeat(${spaceFactor}, [col] minmax(0, 1fr))`
-  }),
+  columns ({ spaceFactor }) {
+    if (spaceFactor === 0) {
+      return {
+        'grid-template-columns': '1fr 1fr',
+
+        '& > *': {
+          'grid-column': '1 / -1'
+        }
+      };
+    }
+
+    return {
+      'grid-template-columns': `repeat(${spaceFactor}, [col] minmax(0, 1fr))`
+    };
+  },
   columnGap: ({ spaceFactor, theme }) => ({
     'grid-column-gap': theme.space(spaceFactor)
   }),
@@ -26,10 +38,6 @@ const styles = theme => ({
   ...createDefaultSpaceDependantClasses({ theme, definitions: spaceDependentProperties }),
 
   [theme.breakpoints.only('xs')]: {
-    Grid: {
-      'grid-template-columns': `none`
-    },
-
     ...createSpaceDependentClasses({ deviceSize: 'xs', theme, definitions: spaceDependentProperties })
   },
 
@@ -50,7 +58,7 @@ const styles = theme => ({
   }
 });
 
-const Grid = ({ component = 'div', classes, className, children, id, ...props } = {}) => {
+const Grid = ({ component, classes, className, children, id, ...props } = {}) => {
   const spaceDependentClassNames = getSpaceDependentClassNamesFromProps({ props, classes, definitions: spaceDependentProperties });
   const componentClasses = classNames(classes.Grid, spaceDependentClassNames, className);
 
@@ -60,7 +68,8 @@ const Grid = ({ component = 'div', classes, className, children, id, ...props } 
 };
 
 Grid.defaultProps = {
-  columns: '12',
+  component: 'div',
+  columns: { xs: 0, sm: 12 },
   columnGap: 2,
   rowGap: 2
 };
@@ -84,7 +93,5 @@ Grid.propTypes = {
 };
 
 Grid.Item = Item;
-
-Grid.displayName = 'Grid';
 
 export default withStyles(styles)(Grid);

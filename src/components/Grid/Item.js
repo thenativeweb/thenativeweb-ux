@@ -12,7 +12,7 @@ const columnProperties = {
     gridColumnEnd: column + 1
   }),
   ColumnSpan: column => ({
-    gridColumnEnd: `span ${column}`
+    gridColumnStart: `span ${column}`
   })
 };
 
@@ -174,6 +174,6 @@ const Item = React.memo(({
   return React.createElement(component, { className: componentClasses, style, id }, children);
 });
 
-Item.displayName = 'Grid.Item';
+Item.displayName = 'GridItem';
 
 export default withStyles(styles)(Item);
