@@ -9,7 +9,11 @@ const assert = require('assertthat');
 const browser = require('../shared/browser'),
       env = require('../shared/env');
 
-suite('with-next-js/server-side-rendering', () => {
+suite('with-next-js/server-side-rendering', function () {
+  // Next.js needs a little bit more time on the first render of a page.
+  // As this can vary depending on the complexity we give it a little bit more time.
+  this.timeout(5 * 1000);
+
   let page;
 
   setup(async () => {

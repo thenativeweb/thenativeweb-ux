@@ -9,16 +9,18 @@ const assert = require('assertthat');
 const browser = require('../../shared/browser'),
       env = require('../../shared/env');
 
-suite('with-next-js/themes', () => {
+suite('with-next-js/themes', function () {
+  // Next.js needs a little bit more time on the first render of a page.
+  // As this can vary depending on the complexity we give it a little bit more time.
+  this.timeout(5 * 1000);
+
   let page;
 
   teardown(async () => {
     await browser.teardownPage(page);
   });
 
-  suite('extend', function () {
-    this.timeout(5 * 1000);
-
+  suite('extend', () => {
     test('creates a customized theme that can hold additional properties.', async () => {
       page = await browser.setupPage();
 
