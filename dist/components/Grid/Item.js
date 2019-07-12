@@ -43,7 +43,7 @@ var columnProperties = {
   },
   ColumnSpan: function ColumnSpan(column) {
     return {
-      gridColumnEnd: "span ".concat(column)
+      gridColumnStart: "span ".concat(column)
     };
   }
 };
@@ -246,7 +246,7 @@ var Item = _react["default"].memo(function () {
   }, children);
 });
 
-Item.displayName = 'Grid.Item';
+Item.displayName = 'GridItem';
 
 var _default = (0, _styles.withStyles)(styles)(Item);
 

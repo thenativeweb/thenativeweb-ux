@@ -28,6 +28,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var spaceDependentProperties = {
   columns: function columns(_ref) {
     var spaceFactor = _ref.spaceFactor;
+
+    if (spaceFactor === 0) {
+      return {
+        'grid-template-columns': '1fr 1fr',
+        '& > *': {
+          'grid-column': '1 / -1'
+        }
+      };
+    }
+
     return {
       'grid-template-columns': "repeat(".concat(spaceFactor, ", [col] minmax(0, 1fr))")
     };
@@ -62,11 +72,7 @@ var styles = function styles(theme) {
   }), (0, _utils.createDefaultSpaceDependantClasses)({
     theme: theme,
     definitions: spaceDependentProperties
-  }), (_objectSpread2 = {}, _defineProperty(_objectSpread2, theme.breakpoints.only('xs'), _objectSpread({
-    Grid: {
-      'grid-template-columns': "none"
-    }
-  }, (0, _utils.createSpaceDependentClasses)({
+  }), (_objectSpread2 = {}, _defineProperty(_objectSpread2, theme.breakpoints.only('xs'), _objectSpread({}, (0, _utils.createSpaceDependentClasses)({
     deviceSize: 'xs',
     theme: theme,
     definitions: spaceDependentProperties
@@ -91,8 +97,7 @@ var styles = function styles(theme) {
 
 var Grid = function Grid() {
   var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      _ref4$component = _ref4.component,
-      component = _ref4$component === void 0 ? 'div' : _ref4$component,
+      component = _ref4.component,
       classes = _ref4.classes,
       className = _ref4.className,
       children = _ref4.children,
@@ -112,7 +117,11 @@ var Grid = function Grid() {
 };
 
 Grid.defaultProps = {
-  columns: '12',
+  component: 'div',
+  columns: {
+    xs: 0,
+    sm: 12
+  },
   columnGap: 2,
   rowGap: 2
 };
@@ -122,7 +131,6 @@ Grid.propTypes = {
   rowGap: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number, _propTypes["default"].object])
 };
 Grid.Item = _Item["default"];
-Grid.displayName = 'Grid';
 
 var _default = (0, _styles.withStyles)(styles)(Grid);
 
