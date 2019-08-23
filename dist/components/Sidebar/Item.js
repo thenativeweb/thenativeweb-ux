@@ -87,7 +87,7 @@ var styles = function styles(theme) {
   };
 };
 
-var Item = function Item(_ref) {
+var Item = _react["default"].forwardRef(function (_ref, ref) {
   var _classNames;
 
   var classes = _ref.classes,
@@ -114,6 +114,7 @@ var Item = function Item(_ref) {
   }
 
   return _react["default"].createElement("div", {
+    ref: ref,
     id: id,
     className: componentClasses
   }, _react["default"].createElement("div", {
@@ -132,7 +133,7 @@ var Item = function Item(_ref) {
       isNested: true
     });
   })));
-};
+});
 
 var _default = (0, _styles.withStyles)(styles)(Item);
 

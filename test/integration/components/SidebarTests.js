@@ -8,7 +8,11 @@ const assert = require('assertthat');
 
 const browser = require('../../shared/browser');
 
-suite('components/Sidebar', () => {
+suite('components/Sidebar', function () {
+  // Sometimes puppeteer takes a bit more time to start up.
+  // As this can vary we give it a little bit more time.
+  this.timeout(5 * 1000);
+
   let page;
 
   setup(async () => {

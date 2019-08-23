@@ -9,7 +9,11 @@ const assert = require('assertthat');
 const browser = require('../../shared/browser'),
       env = require('../../shared/env');
 
-suite('with-next-js/themes/breakpoints', () => {
+suite('with-next-js/themes/breakpoints', function () {
+  // Next.js needs a little bit more time on the first render of a page.
+  // As this can vary depending on the complexity we give it a little bit more time.
+  this.timeout(5 * 1000);
+
   let page;
 
   teardown(async () => {
@@ -34,9 +38,7 @@ suite('with-next-js/themes/breakpoints', () => {
     assert.that(actual).is.equalTo(innerText);
   };
 
-  suite('only', function () {
-    this.timeout(5 * 1000);
-
+  suite('only', () => {
     test(`'only-xs' creates a query that targets devices smaller than 600px.`, async () => {
       await assertResponsiveContainer({ viewportWidth: 590, innerText: 'OnlyXs' });
     });

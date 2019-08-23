@@ -83,7 +83,7 @@ const styles = theme => ({
   }
 });
 
-const Item = ({ classes, className, iconName, iconUrl, id, isActive = false, isNested = false, children, onClick }) => {
+const Item = React.forwardRef(({ classes, className, iconName, iconUrl, id, isActive = false, isNested = false, children, onClick }, ref) => {
   const componentClasses = classNames(classes.Item, {
     [classes.IsActive]: isActive,
     [classes.IsNested]: isNested,
@@ -102,7 +102,7 @@ const Item = ({ classes, className, iconName, iconUrl, id, isActive = false, isN
   }
 
   return (
-    <div id={ id } className={ componentClasses }>
+    <div ref={ ref } id={ id } className={ componentClasses }>
       <div className={ classes.Icon } onClick={ onClick }>
         { iconUrl ? <img src={ iconUrl } /> : <Icon name={ iconName } size='lg' color='white' />}
       </div>
@@ -113,6 +113,6 @@ const Item = ({ classes, className, iconName, iconUrl, id, isActive = false, isN
       </div>
     </div>
   );
-};
+});
 
 export default withStyles(styles)(Item);

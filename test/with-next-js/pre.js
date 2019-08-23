@@ -58,7 +58,7 @@ module.exports = async function () {
       console.log(data.toString('utf8'));
       /* eslint-enable no-console */
 
-      if (serverOutput.includes('[ info ]  ready on http://localhost:3000')) {
+      if (serverOutput.includes('[ info ]  waiting on http://localhost:3000')) {
         devServerProcess.stdout.removeListener('data', watchServerStart);
 
         return resolve();

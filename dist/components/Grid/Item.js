@@ -13,7 +13,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -43,7 +45,7 @@ var columnProperties = {
   },
   ColumnSpan: function ColumnSpan(column) {
     return {
-      gridColumnEnd: "span ".concat(column)
+      gridColumnStart: "span ".concat(column)
     };
   }
 };
@@ -100,7 +102,7 @@ var styles = function styles(theme) {
     deviceSize: '',
     theme: theme,
     properties: columnProperties
-  }), createColumnClasses({
+  }), {}, createColumnClasses({
     deviceSize: 'xs',
     theme: theme,
     properties: {
@@ -108,7 +110,7 @@ var styles = function styles(theme) {
       ColumnEnd: {},
       ColumnSpan: {}
     }
-  }), createColumnClasses({
+  }), {}, createColumnClasses({
     deviceSize: 'sm',
     theme: theme,
     properties: {
@@ -116,7 +118,7 @@ var styles = function styles(theme) {
       ColumnEnd: {},
       ColumnSpan: {}
     }
-  }), createColumnClasses({
+  }), {}, createColumnClasses({
     deviceSize: 'md',
     theme: theme,
     properties: {
@@ -124,7 +126,7 @@ var styles = function styles(theme) {
       ColumnEnd: {},
       ColumnSpan: {}
     }
-  }), createColumnClasses({
+  }), {}, createColumnClasses({
     deviceSize: 'lg',
     theme: theme,
     properties: {
@@ -132,7 +134,7 @@ var styles = function styles(theme) {
       ColumnEnd: {},
       ColumnSpan: {}
     }
-  }), createColumnClasses({
+  }), {}, createColumnClasses({
     deviceSize: 'xl',
     theme: theme,
     properties: {
@@ -246,7 +248,7 @@ var Item = _react["default"].memo(function () {
   }, children);
 });
 
-Item.displayName = 'Grid.Item';
+Item.displayName = 'GridItem';
 
 var _default = (0, _styles.withStyles)(styles)(Item);
 

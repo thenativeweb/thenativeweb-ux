@@ -1,4 +1,6 @@
-The `Grid` component uses the CSS grid layout to create flexible grids. By default it creates a 12-column layout. Each child will automatically be placed inside the next column. Once all the 12 columns have been filled, the next item will be placed inside a new row but within the first column.
+The `Grid` component uses the CSS grid layout to create flexible grids. By default it creates a 12-column layout. Please note that for `xs` screens a 1-column-layout will be applied. You can adjust this behaviour by using the [`columns` property](#column-count).
+
+Each child will automatically be placed inside the next column. Once all the 12 columns have been filled, the next item will be placed inside a new row but within the first column.
 
 ```js
 <Grid>
@@ -36,10 +38,11 @@ If you want to adjust the number of columns, use the `columns` property.
 It is possible to provide multiple `columns` values depending on the size of the viewport:
 
 ```js
-<Grid columns={{ sm: 1, md: 2, lg: 3 }}>
+<Grid columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
   <Grid.Item>First Column</Grid.Item>
   <Grid.Item>Second Column</Grid.Item>
   <Grid.Item>Third Column</Grid.Item>
+  <Grid.Item>Fourth Column</Grid.Item>
 </Grid>
 ```
 
@@ -77,9 +80,9 @@ It is possible to provide multiple `columSpan` values depending on the size of t
 
 ```js
 <Grid>
-  <Grid.Item columnSpan={{ sm: 6, md: 6, lg: 4 }}>Spans 3 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
-  <Grid.Item columnSpan={{ sm: 6, md: 6, lg: 4 }}>Spans 3 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
-  <Grid.Item columnSpan={{ sm: 6, md: 6, lg: 4 }}>Spans 3 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
+  <Grid.Item columnSpan={{ sm: 12, md: 6, lg: 4 }}>Spans 12 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
+  <Grid.Item columnSpan={{ sm: 12, md: 6, lg: 4 }}>Spans 12 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
+  <Grid.Item columnSpan={{ sm: 12, md: 6, lg: 4 }}>Spans 12 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
 </Grid>
 ```
 
