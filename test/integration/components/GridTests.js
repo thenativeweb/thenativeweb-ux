@@ -9,7 +9,11 @@ const assert = require('assertthat');
 const browser = require('../../shared/browser'),
       env = require('../../shared/env');
 
-suite('components/Grid', () => {
+suite('components/Grid', function () {
+  // Sometimes puppeteer takes a bit more time to start up.
+  // As this can vary we give it a little bit more time.
+  this.timeout(5 * 1000);
+
   let page;
   const defaultGridGrap = 16;
 
