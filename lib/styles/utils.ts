@@ -1,13 +1,12 @@
-import merge from 'lodash/merge';
+import { merge } from 'lodash';
+import { Theme } from '../themes/Theme';
 
-const createSpaceDependentClasses = function ({ deviceSize = '', theme, definitions, maximumSpaceFactor = 16 } = {}) {
-  if (!theme) {
-    throw new Error('Theme is missing.');
-  }
-  if (!definitions) {
-    throw new Error('Definitions are missing.');
-  }
-
+const createSpaceDependentClasses = function (
+  theme: Theme,
+  definitions: {},
+  deviceSize = '',
+  maximumSpaceFactor = 16
+): { [key: string]: string | undefined } {
   const classes = {};
 
   for (let spaceFactor = 0; spaceFactor < maximumSpaceFactor; spaceFactor++) {
@@ -15,14 +14,16 @@ const createSpaceDependentClasses = function ({ deviceSize = '', theme, definiti
       const cssAttributes = definitions[propertyName];
       const className = `${deviceSize}-${propertyName}-${spaceFactor}`;
 
-      classes[className] = typeof cssAttributes === 'function' ? cssAttributes({ spaceFactor, theme }) : cssAttributes;
+      classes[className] = typeof cssAttributes === 'function' ?
+        cssAttributes({ spaceFactor, theme }) :
+        cssAttributes;
     }
   }
 
   return classes;
 };
 
-const createDefaultSpaceDependantClasses = function ({ theme, definitions } = {}) {
+const createDefaultSpaceDependantClasses = function (theme: Theme, definitions = {}) {
   if (!theme) {
     throw new Error('Theme is missing.');
   }

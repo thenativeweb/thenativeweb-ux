@@ -2,7 +2,7 @@ import { merge } from 'lodash';
 import thenativeweb from './thenativeweb';
 
 const theme = merge({}, thenativeweb, {
-  id: 'wolkenkit',
+  name: 'wolkenkit',
   color: {
     brand: {
       dark: '#2f333b',

@@ -1,7 +1,5 @@
 import create from './create';
 
-const theme = create({
-  id: 'thenativeweb'
-});
+const theme = create('thenativeweb');
 
 export default theme;

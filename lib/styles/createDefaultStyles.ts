@@ -1,8 +1,6 @@
-const createDefaultStyles = function ({ theme } = {}) {
-  if (!theme) {
-    throw new Error('Theme is missing');
-  }
+import { Theme } from '../themes/Theme';
 
+const createDefaultStyles = function (theme: Theme): {} {
   return {
     '@import': `url("${theme.font.import}")`,
 

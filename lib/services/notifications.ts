@@ -1,8 +1,21 @@
 import EventEmitter from 'events';
 import uuid from 'uuidv4';
 
+interface Notification {
+  id: string;
+  type: string;
+  text: string;
+  duration: number;
+}
+
+interface State {
+  items: Notification[];
+}
+
 class NotificationsService extends EventEmitter {
-  constructor () {
+  protected state: State;
+
+  public constructor () {
     super();
 
     this.state = {
@@ -10,18 +23,12 @@ class NotificationsService extends EventEmitter {
     };
   }
 
-  show ({ type, text } = {}, { duration = 3000 } = {}) {
-    if (!type) {
-      throw new Error('Type is missing.');
-    }
-    if (!text) {
-      throw new Error('Text is missing.');
-    }
+  public show (type: string, text: string, duration = 3000): void {
     if (!duration) {
       throw new Error('Duration is missing.');
     }
 
-    const notification = {
+    const notification: Notification = {
       id: uuid(),
       type,
       text,
@@ -32,7 +39,7 @@ class NotificationsService extends EventEmitter {
 
     this.emit('changed');
 
-    setTimeout(() => {
+    setTimeout((): void => {
       const notificationIndex = this.state.items.indexOf(notification);
 
       this.state.items.splice(notificationIndex, 1);

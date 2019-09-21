@@ -2,7 +2,7 @@ import { merge } from 'lodash';
 import thenativeweb from './thenativeweb';
 import wolkenkit from './wolkenkit';
 
-const extend = function (themeName: string, customProperties = {}) {
+const extend = function (themeName: string, customProperties = {}): {} {
   if (!themeName) {
     throw new Error('Theme name is missing.');
   }

@@ -1,9 +1,4 @@
-const sizeKeys = [ 'xs', 'sm', 'md', 'lg', 'xl' ];
-
-//               |0px      |600px    |960px    |1280px   |1920px
-// Step          |xs       |sm       |md       |lg       |xl
-//               |---------|---------|---------|---------|---------
-// Device        |   xs    |   sm    |   md    |   lg    |    xl
+import { Breakpoints } from './Breakpoints';
 
 const defaultSteps = {
   xs: 0,
@@ -35,56 +30,76 @@ const createMinMaxWidthRule = function (minWidth: number, maxWidth: number, unit
   return `@media (min-width:${minWidth}${unit}) and (max-width:${maxWidth - 0.02}${unit})`;
 };
 
-const createBreakpoints = function ({ steps = defaultSteps, unit = 'px' } = {}) {
-  const up = size => {
-    const typeOfSize = typeof size;
+const getNextSize = function (size: Size): Size | undefined {
+  if (size === 'xs') {
+    return 'sm';
+  }
+  if (size === 'sm') {
+    return 'md';
+  }
+  if (size === 'md') {
+    return 'lg';
+  }
+  if (size === 'lg') {
+    return 'xl';
+  }
 
-    if (typeOfSize === 'number') {
-      return createMinWidthRule({ minWidth: size, unit });
+  return undefined;
+};
+
+const createBreakpoints = function (steps = defaultSteps, unit = 'px'): Breakpoints {
+  const up = function (size: Size | number): string {
+    if (typeof size === 'number') {
+      return createMinWidthRule(size, unit);
     }
 
     const minWidth = steps[size];
 
-    return createMinWidthRule({ minWidth, unit });
+    return createMinWidthRule(minWidth, unit);
   };
 
-  const down = size => {
-    if (size === 'xl') {
-      // Calling down('xs') means we want to target all devices including xl
+  const down = function (size: Size | number): string {
+    if (typeof size === 'number') {
+      return createMaxWidthRule(size, unit);
+    }
+
+    const nextSize = getNextSize(size);
+
+    if (!nextSize) {
+      // Calling down('xl') means we want to target all devices including xl
       // and all above which is not possible to achieve with a maxWidth query
       // so we're using up('xs') here.
       return up('xs');
     }
 
-    const typeOfSize = typeof size;
+    const maxWidth = steps[nextSize];
 
-    if (typeOfSize === 'number') {
-      return createMaxWidthRule({ maxWidth: size, unit });
-    }
-
-    const indexOfKeyNextInSize = sizeKeys.indexOf(size) + 1;
-    const maxWidth = steps[sizeKeys[indexOfKeyNextInSize]];
-
-    return createMaxWidthRule({ maxWidth, unit });
+    return createMaxWidthRule(maxWidth, unit);
   };
 
-  const between = (lowerSize, upperSize) => {
-    if (upperSize === 'xl') {
+  const between = (lowerSize: Size | number, upperSize: Size | number): string => {
+    if (typeof lowerSize === 'number' && typeof upperSize === 'number') {
+      return createMinMaxWidthRule(lowerSize, upperSize, unit);
+    }
+    if (typeof lowerSize === 'number' || typeof upperSize === 'number') {
+      throw new Error('Lower size and upper size must either both be sizes or numbers.');
+    }
+
+    const nextUpperSize = getNextSize(upperSize);
+
+    if (!nextUpperSize) {
       return up(lowerSize);
     }
 
-    if (typeof lowerSize === 'number' && typeof upperSize === 'number') {
-      return createMinMaxWidthRule({ minWidth: lowerSize, maxWidth: upperSize, unit });
-    }
-
-    const indexOfKeyNextInSize = sizeKeys.indexOf(upperSize) + 1;
     const minWidth = steps[lowerSize];
-    const maxWidth = steps[sizeKeys[indexOfKeyNextInSize]];
+    const maxWidth = steps[nextUpperSize];
 
-    return createMinMaxWidthRule({ minWidth, maxWidth, unit });
+    return createMinMaxWidthRule(minWidth, maxWidth, unit);
   };
 
-  const only = size => between(size, size);
+  const only = function (size: Size): string {
+    return between(size, size);
+  };
 
   return {
     steps,

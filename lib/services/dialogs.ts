@@ -1,5 +1,18 @@
 import EventEmitter from 'events';
 
+interface State {
+  confirm: {
+    isVisible: boolean;
+    title: string;
+    actions: {
+      cancel: string;
+      confirm: string;
+    };
+    onCancel: () => void;
+    onConfirm: () => void;
+  };
+}
+
 const defaultState = {
   confirm: {
     isVisible: false,
@@ -8,56 +21,46 @@ const defaultState = {
       cancel: '',
       confirm: ''
     },
-    onCancel () {
-      // Left blank Intentionally
+
+    onCancel (): void {
+      // Intentionally left blank.
     },
-    onConfirm () {
-      // Left blank Intentionally
+
+    onConfirm (): void {
+      // Intentionally left blank.
     }
   }
 };
 
 class DialogsService extends EventEmitter {
-  constructor () {
+  protected state: State;
+
+  public constructor () {
     super();
 
     this.state = defaultState;
   }
 
-  hideConfirm () {
+  public hideConfirm (): void {
     this.state = defaultState;
     this.emit('changed');
   }
 
-  confirm (options) {
-    return new Promise(resolve => {
-      if (!options) {
-        throw new Error('Options are missing.');
-      }
-      if (!options.title) {
-        throw new Error('Title is missing.');
-      }
-      if (!options.actions) {
-        throw new Error('Actions are missing.');
-      }
-      if (!options.actions.cancel) {
-        throw new Error('Cancel is missing.');
-      }
-      if (!options.actions.confirm) {
-        throw new Error('Confirm is missing.');
-      }
-      const { title, actions } = options;
-
+  public async confirm (
+    title: string,
+    actions: { cancel: string; confirm: string }
+  ): Promise<string> {
+    return new Promise((resolve): void => {
       this.state = {
         confirm: {
           isVisible: true,
           title,
           actions,
-          onConfirm: () => {
+          onConfirm: (): void => {
             this.hideConfirm();
             resolve('confirm');
           },
-          onCancel: () => {
+          onCancel: (): void => {
             this.hideConfirm();
             resolve('cancel');
           }
@@ -65,9 +68,9 @@ class DialogsService extends EventEmitter {
       };
 
       // Delay the rendering for keyboard events not to conflict.
-      setTimeout(() => {
+      setTimeout((): void => {
         this.emit('changed');
-      }, 100);
+      }, 0.1 * 1000);
     });
   }
 }

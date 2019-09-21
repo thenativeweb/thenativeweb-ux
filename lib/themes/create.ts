@@ -1,4 +1,5 @@
 import createBreakpoints from './createBreakpoints';
+import { Theme } from './Theme';
 
 const defaultBrandColors = {
   dark: '#23232c',
@@ -14,18 +15,18 @@ const defaultInteractionColors = {
 };
 
 const create = function (
-  id: string,
+  name: string,
   brandColors = defaultBrandColors,
   interactionColors = defaultInteractionColors,
-  spaceUnit? = 8,
-  ...additionalOptions
-) {
+  spaceUnit = 8,
+  additionalOptions = {}
+): Theme {
   const space = function (factor: number): number {
     return factor * spaceUnit;
   };
 
   const theme = {
-    id,
+    name,
     color: {
       brand: brandColors,
 
@@ -86,7 +87,6 @@ const create = function (
       overlay: '1px 1px 10px rgba(0, 0, 0, 0.25)'
     },
 
-    /* Components */
     components: {
       borderRadius: {
         default: '1px'
@@ -119,9 +119,7 @@ const create = function (
       transfer: 5000
     },
 
-    breakpoints: {
-      ...createBreakpoints()
-    },
+    breakpoints: createBreakpoints(),
 
     ...additionalOptions
   };

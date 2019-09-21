@@ -1,9 +1,9 @@
-const portals = [];
+const portals: { [key: string]: HTMLElement | undefined } = {};
 
-const getPortalRootNode = function (options = {}) {
-  const id = options.id || 'thenativeweb-ux-portal',
-        tag = options.tag || 'span';
-
+const getPortalRootNode = function (
+  id = 'thenativeweb-ux-portal',
+  tag = 'span'
+): HTMLElement {
   let portal = portals[id];
 
   if (!portal) {
