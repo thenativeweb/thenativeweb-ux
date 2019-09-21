@@ -12,8 +12,8 @@
       "email": "matthias.wagler@thenativeweb.io"
     }
   ],
-  "main": "build/lib/index.js",
-  "types": "build/lib/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "build": "docker build -t thenativeweb/ux .",
     "styleguide": "styleguidist server"
@@ -34,10 +34,10 @@
     "@types/lodash": "4.14.138",
     "@types/react": "16.9.2",
     "@types/react-transition-group": "4.2.2",
-    "assertthat": "3.3.0",
-    "puppeteer": "1.19.0",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
+    "assertthat": "4.0.2",
+    "puppeteer": "1.20.0",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
     "react-styleguidist": "9.1.16",
     "roboter": "8.0.0",
     "shelljs": "0.8.3"

@@ -5,7 +5,7 @@ import thenativeweb from '../themes/thenativeweb';
 
 let isFirstRender = true;
 
-export default ({ children }) => {
+export default ({ children }): JSX.Element => {
   const Services = isFirstRender ? Application.Services : React.Fragment;
 
   isFirstRender = false;

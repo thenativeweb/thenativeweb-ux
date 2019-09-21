@@ -24,13 +24,6 @@ const createSpaceDependentClasses = function (
 };
 
 const createDefaultSpaceDependantClasses = function (theme: Theme, definitions = {}) {
-  if (!theme) {
-    throw new Error('Theme is missing.');
-  }
-  if (!definitions) {
-    throw new Error('Definitions are missing.');
-  }
-
   const emptySpaceProperties = {};
 
   for (const propertyName of Object.keys(definitions)) {
@@ -50,14 +43,7 @@ const createDefaultSpaceDependantClasses = function (theme: Theme, definitions =
   return classes;
 };
 
-const getSpaceDependentClassNamesFromProps = function ({ props, classes, definitions } = {}) {
-  if (!classes) {
-    throw new Error('Classes are missing.');
-  }
-  if (!definitions) {
-    throw new Error('Definitions are missing.');
-  }
-
+const getSpaceDependentClassNamesFromProps = function (props, classes, definitions) {
   const responsiveClassNames = [];
 
   for (const propertyName of Object.keys(definitions)) {
