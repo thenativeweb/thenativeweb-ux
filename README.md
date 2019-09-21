@@ -2,6 +2,16 @@
 
 thenativeweb-ux provides UI components for the native web applications.
 
+## Status
+
+| Category         | Status                                                                                                                                                     |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version          | [![npm](https://img.shields.io/npm/v/thenativeweb-ux)](https://www.npmjs.com/package/thenativeweb-ux)                                                      |
+| Dependencies     | ![David](https://img.shields.io/david/thenativeweb/thenativeweb-ux)                                                                                        |
+| Dev dependencies | ![David](https://img.shields.io/david/dev/thenativeweb/thenativeweb-ux)                                                                                    |
+| Build            | [![CircleCI](https://img.shields.io/circleci/build/github/thenativeweb/thenativeweb-ux)](https://circleci.com/gh/thenativeweb/thenativeweb-ux/tree/master) |
+| License          | ![GitHub](https://img.shields.io/github/license/thenativeweb/thenativeweb-ux)                                                                              |
+
 ## Installation
 
 ```shell
@@ -10,7 +20,7 @@ $ npm install thenativeweb-ux react react-dom
 
 ## Quick start
 
-First you need to add a reference to your application. For the minimum setup, you have to reference the components `Application` and `ThemeProvider`, as shown in the following example:
+First you need to add a reference to your application. For the minimum setup, you have to reference the components `Application` and `ThemeProvider`:
 
 ```javascript static
 import { Application, ThemeProvider } from 'thenativeweb-ux';
@@ -51,10 +61,10 @@ The complete documentation for all components can be found at [ux.thenativeweb.i
 
 ### Running the sample applications
 
-There are two sample applications that demonstrate how `thenativeweb-ux` can be used…
+There are sample applications that show how `thenativeweb-ux` can be used with various technologies:
 
--   [with Webpack](examples/with-webpack)
--   [with Next.js](examples/with-next-js)
+- [Webpack](examples/with-webpack)
+- [Next.js](examples/with-next-js)
 
 To run a sample application, install its dependencies, and use the following command:
 
@@ -69,13 +79,3 @@ To build this module use [roboter](https://www.npmjs.com/package/roboter).
 ```shell
 $ npx roboter
 ```
-
-## License
-
-Copyright (c) 2017-2019 the native web.
-
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public License along with this program. If not, see [GNU Licenses](http://www.gnu.org/licenses/).

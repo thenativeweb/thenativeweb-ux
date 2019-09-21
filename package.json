@@ -12,7 +12,8 @@
       "email": "matthias.wagler@thenativeweb.io"
     }
   ],
-  "main": "dist/index.js",
+  "main": "build/lib/index.js",
+  "types": "build/lib/index.d.ts",
   "scripts": {
     "build": "docker build -t thenativeweb/ux .",
     "styleguide": "styleguidist server"
@@ -23,21 +24,21 @@
     "exenv": "1.2.2",
     "jss": "10.0.0-alpha.16",
     "lodash": "4.17.15",
-    "prop-types": "15.7.2",
     "react-jss": "10.0.0-alpha.16",
-    "react-transition-group": "4.2.2",
-    "uuidv4": "4.0.0"
+    "react-transition-group": "4.3.0",
+    "uuidv4": "5.0.1"
   },
   "devDependencies": {
+    "@types/animejs": "3.1.0",
+    "@types/classnames": "2.2.9",
+    "@types/lodash": "4.14.138",
     "assertthat": "3.3.0",
-    "babel-loader": "8.0.6",
     "puppeteer": "1.19.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-styleguidist": "9.1.16",
-    "roboter": "6.1.0",
-    "shelljs": "0.8.3",
-    "webpack": "4.39.2"
+    "roboter": "8.0.0",
+    "shelljs": "0.8.3"
   },
   "peerDependencies": {
     "react": "^16.8.6",
