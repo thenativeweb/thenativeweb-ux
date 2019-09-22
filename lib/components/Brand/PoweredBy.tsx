@@ -1,9 +1,10 @@
 import Product from '../Product';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Theme from '../../themes/Theme';
 import { classNames, withStyles } from '../../styles';
 
-const styles = theme => ({
+const styles = (theme: Theme): any => ({
   PoweredBy: {
     display: 'flex',
     flexDirection: 'column',
@@ -20,7 +21,7 @@ const styles = theme => ({
   Intro: {
     marginTop: theme.space(1),
     marginBottom: theme.space(1),
-    color: theme.color.brand.lightGrey
+    color: theme.colors.brand.lightGrey
   },
 
   SizeLg: {},

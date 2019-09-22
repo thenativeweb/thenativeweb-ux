@@ -31,20 +31,20 @@ const View: React.FunctionComponent<ViewProps> = ({
   const viewClassNames = classNames(
     classes.View,
     {
-      [classes.AdjustAuto]: adjust === 'auto',
-      [classes.AdjustFlex]: adjust === 'flex',
+      [classes.AdjustAuto!]: adjust === 'auto',
+      [classes.AdjustFlex!]: adjust === 'flex',
       /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-      [classes.AlignItemsCenter]: alignItems === 'center',
+      [classes.AlignItemsCenter!]: alignItems === 'center',
       /* eslint-enable @typescript-eslint/no-unnecessary-condition */
-      [classes.BackgroundLight]: background === 'light',
-      [classes.BackgroundDark]: background === 'dark',
+      [classes.BackgroundLight!]: background === 'light',
+      [classes.BackgroundDark!]: background === 'dark',
       /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-      [classes.JustifyContentCenter]: justifyContent === 'center',
+      [classes.JustifyContentCenter!]: justifyContent === 'center',
       /* eslint-enable @typescript-eslint/no-unnecessary-condition */
-      [classes.OrientationCentered]: orientation === 'centered',
-      [classes.OrientationHorizontal]: orientation === 'horizontal',
-      [classes.OrientationVertical]: orientation === 'vertical',
-      [classes.ScrollableAuto]: scrollable === 'auto'
+      [classes.OrientationCentered!]: orientation === 'centered',
+      [classes.OrientationHorizontal!]: orientation === 'horizontal',
+      [classes.OrientationVertical!]: orientation === 'vertical',
+      [classes.ScrollableAuto!]: scrollable === 'auto'
     },
     className
   );

@@ -1,3 +1,5 @@
+import Theme from '../../themes/Theme';
+
 const styles = (theme: Theme): any => ({
   View: {
     'box-sizing': 'border-box',
@@ -19,12 +21,12 @@ const styles = (theme: Theme): any => ({
   },
 
   BackgroundDark: {
-    background: theme.color.brand.dark,
-    color: theme.color.brand.white
+    background: theme.colors.brand.dark,
+    color: theme.colors.brand.white
   },
 
   BackgroundLight: {
-    background: theme.color.brand.lightGrey
+    background: theme.colors.brand.lightGrey
   },
 
   OrientationCentered: {

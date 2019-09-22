@@ -3,6 +3,7 @@ import Dialogs from '../Dialogs';
 import Icons from '../Icons';
 import Notifications from '../Notifications';
 import React from 'react';
+import Theme from '../../themes/Theme';
 import View from '../View';
 import { createDefaultStyles, withStyles } from '../../styles';
 
@@ -31,7 +32,7 @@ const Application: React.FunctionComponent<ApplicationProps> = ({
   classes,
   className,
   style,
-  orientation
+  orientation = 'horizontal'
 }): JSX.Element => {
   const componentClasses = classNames(classes.Application, className);
 
@@ -40,10 +41,6 @@ const Application: React.FunctionComponent<ApplicationProps> = ({
       { children }
     </View>
   );
-};
-
-Application.defaultProps = {
-  orientation: 'horizontal'
 };
 
 Application.Services = (): JSX.Element => (
