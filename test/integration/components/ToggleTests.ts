@@ -1,38 +1,36 @@
-/* eslint-disable strict */
+import assert from 'assertthat';
+import browser from '../../shared/browser';
+import puppeteer from 'puppeteer';
 
-'use strict';
-
-/* eslint-enable strict */
-
-const assert = require('assertthat');
-
-const browser = require('../../shared/browser');
-
-suite('components/Toggle', function () {
-  // Sometimes puppeteer takes a bit more time to start up.
-  // As this can vary we give it a little bit more time.
+suite('Toggle', function (): void {
   this.timeout(5 * 1000);
 
-  let page;
+  let page: puppeteer.Page;
 
-  setup(async () => {
+  setup(async (): Promise<void> => {
     page = await browser.setupPage();
   });
 
-  teardown(async () => {
+  teardown(async (): Promise<void> => {
     await browser.teardownPage(page);
   });
 
-  test('calls onChange when option is clicked.', async () => {
+  test('calls onChange when option is clicked.', async (): Promise<void> => {
     await page.waitForSelector('#toggle');
 
-    let text = await page.$eval('#toggle-value', el => el.innerText);
+    let text = await page.$eval(
+      '#toggle-value',
+      (element: Element): string => element.innerText
+    );
 
     assert.that(text.trim()).is.equalTo('Option 1');
 
     await page.click('#toggle :nth-child(2)');
 
-    text = await page.$eval('#toggle-value', el => el.innerText);
+    text = await page.$eval(
+      '#toggle-value',
+      (element: Element): string => element.innerText
+    );
 
     assert.that(text.trim()).is.equalTo('Option 2');
   });

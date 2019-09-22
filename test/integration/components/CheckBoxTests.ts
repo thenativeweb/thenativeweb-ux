@@ -1,38 +1,36 @@
-/* eslint-disable strict */
+import assert from 'assertthat';
+import browser from '../../shared/browser';
+import puppeteer from 'puppeteer';
 
-'use strict';
-
-/* eslint-enable strict */
-
-const assert = require('assertthat');
-
-const browser = require('../../shared/browser');
-
-suite('components/CheckBox', function () {
-  // Sometimes puppeteer takes a bit more time to start up.
-  // As this can vary we give it a little bit more time.
+suite('CheckBox', function (): void {
   this.timeout(5 * 1000);
 
-  let page;
+  let page: puppeteer.Page;
 
-  setup(async () => {
+  setup(async (): Promise<void> => {
     page = await browser.setupPage();
   });
 
-  teardown(async () => {
+  teardown(async (): Promise<void> => {
     await browser.teardownPage(page);
   });
 
-  test('is clickable.', async () => {
+  test('is clickable.', async (): Promise<void> => {
     await page.waitForSelector('#form-checkbox');
 
-    const initialValue = await page.$eval('#form-checkbox', el => el.checked);
+    const initialValue = await page.$eval(
+      '#form-checkbox',
+      (element: Element): boolean => element.checked
+    );
 
     assert.that(initialValue).is.false();
 
     await page.click('#form-checkbox');
 
-    const newValue = await page.$eval('#form-checkbox', el => el.checked);
+    const newValue = await page.$eval(
+      '#form-checkbox',
+      (element: Element): boolean => element.checked
+    );
 
     assert.that(newValue).is.true();
   });

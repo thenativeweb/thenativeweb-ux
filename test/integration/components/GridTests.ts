@@ -1,30 +1,23 @@
-/* eslint-disable strict */
+import assert from 'assertthat';
+import browser from '../../shared/browser';
+import environment from '../../shared/environment';
+import puppeteer from 'puppeteer';
 
-'use strict';
-
-/* eslint-enable strict */
-
-const assert = require('assertthat');
-
-const browser = require('../../shared/browser'),
-      env = require('../../shared/env');
-
-suite('components/Grid', function () {
-  // Sometimes puppeteer takes a bit more time to start up.
-  // As this can vary we give it a little bit more time.
+suite('Grid', function (): void {
   this.timeout(5 * 1000);
 
-  let page;
+  let page: puppeteer.Page;
+
   const defaultGridGrap = 16;
 
-  teardown(async () => {
+  teardown(async (): Promise<void> => {
     await browser.teardownPage(page);
   });
 
-  suite('components/Grid.Item', () => {
-    test('spans accross multiple columns when columSpan is given.', async () => {
+  suite('Grid.Item', (): void => {
+    test('spans accross multiple columns when columSpan is given.', async (): Promise<void> => {
       page = await browser.setupPage();
-      await page.goto(env.APP_URL);
+      await page.goto(environment.url);
 
       await page.waitForSelector('#grid');
 
@@ -40,9 +33,9 @@ suite('components/Grid', function () {
       assert.that(Math.round(secondItemBoundingBox.width * 2)).is.equalTo(gridWidth - defaultGridGrap);
     });
 
-    test('spans accross multiple columns when a configuration for multiple screen sizes is given.', async () => {
+    test('spans accross multiple columns when a configuration for multiple screen sizes is given.', async (): Promise<void> => {
       page = await browser.setupPage({ viewport: { width: 590, height: 600 }});
-      await page.goto(env.APP_URL);
+      await page.goto(environment.url);
 
       await page.waitForSelector('#grid');
 
@@ -56,7 +49,7 @@ suite('components/Grid', function () {
       await browser.teardownPage(page);
 
       page = await browser.setupPage({ viewport: { width: 1270, height: 600 }});
-      await page.goto(env.APP_URL);
+      await page.goto(environment.url);
 
       const gridOnMdDevice = await page.$('#grid');
       const { width: gridWidthOnMdDevice } = await gridOnMdDevice.boundingBox();

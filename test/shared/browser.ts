@@ -1,35 +1,33 @@
-/* eslint-disable strict */
+import environment from './environment';
+import puppeteer from 'puppeteer';
 
-'use strict';
-
-/* eslint-enable strict */
-
-const puppeteer = require('puppeteer');
-
-const env = require('./env');
-
-let browserInstance;
+let browserInstance: puppeteer.Browser;
 
 const browser = {
-  async setupPage ({ autoLoadApp = true, viewport = env.VIEWPORT } = {}) {
+  async setupPage (
+    autoLoadApplication = true,
+    viewport = environment.viewport
+  ): Promise<puppeteer.Page> {
+    const { headless, url } = environment;
+
     if (!browserInstance) {
-      browserInstance = await puppeteer.launch({ headless: env.HEADLESS });
+      browserInstance = await puppeteer.launch({ headless });
     }
 
     const page = await browserInstance.newPage();
 
     await page.setViewport(viewport);
 
-    if (autoLoadApp) {
-      await page.goto(env.APP_URL);
+    if (autoLoadApplication) {
+      await page.goto(url);
     }
 
     return page;
   },
 
-  async teardownPage (page) {
+  async teardownPage (page: puppeteer.Page): Promise<void> {
     await page.close();
   }
 };
 
-module.exports = browser;
+export default browser;

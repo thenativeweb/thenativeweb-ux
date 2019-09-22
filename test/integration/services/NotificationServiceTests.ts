@@ -1,23 +1,18 @@
-/* eslint-disable strict */
+import browser from '../../shared/browser';
+import puppeteer from 'puppeteer';
 
-'use strict';
+suite('NotificationService', (): void => {
+  let page: puppeteer.Page;
 
-/* eslint-enable strict */
-
-const browser = require('../../shared/browser');
-
-suite('services/notifications', () => {
-  let page;
-
-  setup(async () => {
+  setup(async (): Promise<void> => {
     page = await browser.setupPage();
   });
 
-  teardown(async () => {
+  teardown(async (): Promise<void> => {
     await browser.teardownPage(page);
   });
 
-  test('shows a notification.', async () => {
+  test('shows a notification.', async (): Promise<void> => {
     await page.waitForSelector('#show-notification-error');
 
     await page.click('#show-notification-error');

@@ -1,29 +1,21 @@
-/* eslint-disable strict */
+import assert from 'assertthat';
+import browser from '../../shared/browser';
+import puppeteer from 'puppeteer';
 
-'use strict';
-
-/* eslint-enable strict */
-
-const assert = require('assertthat');
-
-const browser = require('../../shared/browser');
-
-suite('components/Sidebar', function () {
-  // Sometimes puppeteer takes a bit more time to start up.
-  // As this can vary we give it a little bit more time.
+suite('Sidebar', function (): void {
   this.timeout(5 * 1000);
 
-  let page;
+  let page: puppeteer.Page;
 
-  setup(async () => {
+  setup(async (): Promise<void> => {
     page = await browser.setupPage();
   });
 
-  teardown(async () => {
+  teardown(async (): Promise<void> => {
     await browser.teardownPage(page);
   });
 
-  test('is 80px wide.', async () => {
+  test('is 80px wide.', async (): Promise<void> => {
     await page.waitForSelector('#sidebar');
 
     const sidebar = await page.$('#sidebar');
@@ -32,8 +24,8 @@ suite('components/Sidebar', function () {
     assert.that(boundingBox.width).is.equalTo(80);
   });
 
-  suite('components/Sidebar.Item', () => {
-    test('expands on hover and subitems are clickable.', async () => {
+  suite('Sidebar.Item', (): void => {
+    test('expands on hover and subitems are clickable.', async (): Promise<void> => {
       await page.waitForSelector('#sidebar-item-account');
 
       const parentItem = await page.$('#sidebar-item-account');
@@ -46,12 +38,13 @@ suite('components/Sidebar', function () {
 
       const childItem = await page.$('#sidebar-item-logout');
 
-      await new Promise(resolve => {
-        page.once('console', msg => {
-          assert.that(msg.text()).is.equalTo('clicked::clicked::logout');
+      await new Promise((resolve): void => {
+        page.once('console', (message: string): void => {
+          assert.that(message.text()).is.equalTo('clicked::clicked::logout');
 
           resolve();
         });
+
         childItem.click();
       });
     });
