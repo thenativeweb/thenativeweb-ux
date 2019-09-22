@@ -24,16 +24,16 @@ module.exports = {
     },
     {
       name: 'Components',
-      components: 'src/components/*/index.js'
+      components: 'lib/components/*/index.js'
     },
     {
       name: 'Styling Custom Components',
-      content: 'src/styles/Readme.md'
+      content: 'lib/styles/Readme.md'
     }
   ],
 
   styleguideComponents: {
-    Wrapper: path.join(__dirname, 'src', 'styleguide', 'ThemeWrapper.jsx')
+    Wrapper: path.join(__dirname, 'lib', 'styleguide', 'ThemeWrapper.jsx')
   },
 
   webpackConfig
