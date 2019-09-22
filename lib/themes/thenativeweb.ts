@@ -5,12 +5,12 @@ const theme = new Theme({
   spaceUnit: 8,
 
   brandColors: {
-    dark: '#readonly readonly 23232c',
+    dark: '#23232c',
     highlight: '#ff0099',
     darkGrey: '#363d45',
     midGrey: '#595c62',
     lightGrey: '#eeeeee',
-    white: '#fffffff'
+    white: '#ffffff'
   },
 
   interactionColors: {

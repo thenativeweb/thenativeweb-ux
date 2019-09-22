@@ -9,8 +9,8 @@ const theme = new Theme({
     highlight: '#29abe2',
     darkGrey: '#363d45',
     midGrey: '#595c62',
-    lightGrey: '#eee',
-    white: '#fff'
+    lightGrey: '#eeeeee',
+    white: '#ffffff'
   },
 
   interactionColors: {
