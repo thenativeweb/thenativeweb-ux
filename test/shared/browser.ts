@@ -1,7 +1,7 @@
 import environment from './environment';
 import puppeteer from 'puppeteer';
 
-let browserInstance: puppeteer.Browser;
+let browserInstance: puppeteer.Browser | undefined;
 
 const browser = {
   async setupPage (
