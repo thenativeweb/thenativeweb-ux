@@ -8,8 +8,8 @@ module.exports = {
   exampleMode: 'expand',
   theme: {
     color: {
-      link: '#f09',
-      linkHover: '#f09'
+      link: '#ff0099',
+      linkHover: '#ff0099'
     },
     fontFamily: {
       base: '"Source Sans Pro", Arial, Helvetica, sans-serif',
