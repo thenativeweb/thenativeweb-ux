@@ -1,9 +1,21 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles';
 import { classNames, withStyles } from '../../styles';
 
-const View = ({
+interface ViewProps {
+  adjust: 'auto' | 'flex';
+  alignItems: 'center';
+  background: 'dark' | 'light';
+  classes: { [key: string]: string | undefined };
+  className: string;
+  id: string;
+  justifyContent: 'center';
+  orientation: 'horizontal' | 'vertical' | 'centered';
+  scrollable: false | 'auto';
+  style: any;
+}
+
+const View: React.FunctionComponent<ViewProps> = ({
   adjust,
   alignItems,
   background,
@@ -15,34 +27,33 @@ const View = ({
   scrollable,
   style,
   orientation
-}) => {
-  const viewClassNames = classNames(classes.View, {
-    [classes.OrientationCentered]: orientation === 'centered',
-    [classes.OrientationHorizontal]: orientation === 'horizontal',
-    [classes.OrientationVertical]: orientation === 'vertical',
-    [classes.AdjustFlex]: adjust === 'flex',
-    [classes.AdjustAuto]: adjust === 'auto',
-    [classes.AlignItemsCenter]: alignItems === 'center',
-    [classes.BackgroundDark]: background === 'dark',
-    [classes.BackgroundLight]: background === 'light',
-    [classes.JustifyContentCenter]: justifyContent === 'center',
-    [classes.ScrollableAuto]: scrollable === 'auto'
-  }, className);
+}): JSX.Element => {
+  const viewClassNames = classNames(
+    classes.View,
+    {
+      [classes.AdjustAuto]: adjust === 'auto',
+      [classes.AdjustFlex]: adjust === 'flex',
+      /* eslint-disable @typescript-eslint/no-unnecessary-condition */
+      [classes.AlignItemsCenter]: alignItems === 'center',
+      /* eslint-enable @typescript-eslint/no-unnecessary-condition */
+      [classes.BackgroundLight]: background === 'light',
+      [classes.BackgroundDark]: background === 'dark',
+      /* eslint-disable @typescript-eslint/no-unnecessary-condition */
+      [classes.JustifyContentCenter]: justifyContent === 'center',
+      /* eslint-enable @typescript-eslint/no-unnecessary-condition */
+      [classes.OrientationCentered]: orientation === 'centered',
+      [classes.OrientationHorizontal]: orientation === 'horizontal',
+      [classes.OrientationVertical]: orientation === 'vertical',
+      [classes.ScrollableAuto]: scrollable === 'auto'
+    },
+    className
+  );
 
   return (
     <div id={ id } className={ viewClassNames } style={ style }>
       { children }
     </div>
   );
-};
-
-View.propTypes = {
-  adjust: PropTypes.oneOf([ 'auto', 'flex' ]),
-  alignItems: PropTypes.oneOf([ 'center' ]),
-  background: PropTypes.oneOf([ 'dark', 'light' ]),
-  justifyContent: PropTypes.oneOf([ 'center' ]),
-  orientation: PropTypes.oneOf([ 'horizontal', 'vertical', 'centered' ]),
-  scrollable: PropTypes.oneOf([ false, 'auto' ])
 };
 
 export default withStyles(styles)(View);

@@ -2,14 +2,13 @@ import classNames from 'classnames';
 import Dialogs from '../Dialogs';
 import Icons from '../Icons';
 import Notifications from '../Notifications';
-import PropTypes from 'prop-types';
 import React from 'react';
 import View from '../View';
 import { createDefaultStyles, withStyles } from '../../styles';
 
-const styles = theme => ({
+const styles = (theme: Theme): {} => ({
   '@global': {
-    ...createDefaultStyles({ theme })
+    ...createDefaultStyles(theme)
   },
 
   Application: {
@@ -20,7 +19,20 @@ const styles = theme => ({
   }
 });
 
-const Application = ({ children, classes, className, style, orientation }) => {
+interface ApplicationProps {
+  classes: { [key: string]: string | undefined };
+  className: string;
+  orientation: 'horizontal' | 'vertical' | 'centered';
+  style: any;
+}
+
+const Application: React.FunctionComponent<ApplicationProps> = ({
+  children,
+  classes,
+  className,
+  style,
+  orientation
+}): JSX.Element => {
   const componentClasses = classNames(classes.Application, className);
 
   return (
@@ -30,17 +42,11 @@ const Application = ({ children, classes, className, style, orientation }) => {
   );
 };
 
-Application.propTypes = {
-  className: PropTypes.string,
-  orientation: PropTypes.oneOf([ 'horizontal', 'vertical', 'centered' ]),
-  style: PropTypes.object
-};
-
 Application.defaultProps = {
   orientation: 'horizontal'
 };
 
-Application.Services = () => (
+Application.Services = (): JSX.Element => (
   <span suppressHydrationWarning={ true }>
     <Icons />
     <Dialogs />

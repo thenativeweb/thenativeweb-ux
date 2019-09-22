@@ -12,7 +12,7 @@ interface State {
   items: Notification[];
 }
 
-class NotificationsService extends EventEmitter {
+class NotificationService extends EventEmitter {
   protected state: State;
 
   public constructor () {
@@ -48,4 +48,4 @@ class NotificationsService extends EventEmitter {
   }
 }
 
-export default new NotificationsService();
+export default NotificationService;

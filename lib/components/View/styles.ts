@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = (theme: Theme): any => ({
   View: {
     'box-sizing': 'border-box',
     position: 'relative',

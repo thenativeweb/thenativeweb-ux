@@ -1,4 +1,4 @@
-import { Theme } from '../themes/Theme';
+import Theme from '../themes/Theme';
 
 const createDefaultStyles = function (theme: Theme): {} {
   return {

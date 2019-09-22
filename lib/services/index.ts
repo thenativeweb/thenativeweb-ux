@@ -1,9 +1,9 @@
-import dialogs from './dialogs';
+import DialogsService from './DialogService';
 import getPortalRootNode from './getPortalRootNode';
-import notifications from './notifications';
+import NotificationsService from './NotificationService';
 
 export default {
-  dialogs,
+  dialogs: new DialogsService(),
   getPortalRootNode,
-  notifications
+  notifications: new NotificationsService()
 };

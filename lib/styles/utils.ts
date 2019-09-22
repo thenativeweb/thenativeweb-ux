@@ -1,13 +1,15 @@
 import { merge } from 'lodash';
-import { Theme } from '../themes/Theme';
+import Theme from '../themes/Theme';
+
+type CssAttributesFunction = (spaceFactor: number, theme: Theme) => string;
 
 const createSpaceDependentClasses = function (
   theme: Theme,
-  definitions: {},
+  definitions: { [key: string]: string | {} | CssAttributesFunction | undefined },
   deviceSize = '',
   maximumSpaceFactor = 16
 ): { [key: string]: string | undefined } {
-  const classes = {};
+  const classes: Partial<{ [key: string]: string | undefined }> = {};
 
   for (let spaceFactor = 0; spaceFactor < maximumSpaceFactor; spaceFactor++) {
     for (const propertyName of Object.keys(definitions)) {
@@ -15,7 +17,7 @@ const createSpaceDependentClasses = function (
       const className = `${deviceSize}-${propertyName}-${spaceFactor}`;
 
       classes[className] = typeof cssAttributes === 'function' ?
-        cssAttributes({ spaceFactor, theme }) :
+        cssAttributes(spaceFactor, theme) :
         cssAttributes;
     }
   }
@@ -23,27 +25,30 @@ const createSpaceDependentClasses = function (
   return classes;
 };
 
-const createDefaultSpaceDependantClasses = function (theme: Theme, definitions = {}) {
-  const emptySpaceProperties = {};
+const createDefaultSpaceDependantClasses = function (
+  theme: Theme,
+  definitions = {}
+): { [key: string]: string | undefined } {
+  const emptySpaceProperties: Partial<{ [key: string]: string | {} | CssAttributesFunction | undefined }> = {};
 
   for (const propertyName of Object.keys(definitions)) {
     emptySpaceProperties[propertyName] = {};
   }
 
-  let classes = {};
+  let classes: Partial<{ [key: string]: string | undefined }> = {};
 
   for (const deviceSize of [ 'xs', 'sm', 'md', 'lg', 'xl' ]) {
-    classes = merge({}, classes, createSpaceDependentClasses({
-      deviceSize,
+    classes = merge({}, classes, createSpaceDependentClasses(
       theme,
-      definitions: emptySpaceProperties
-    }));
+      emptySpaceProperties,
+      deviceSize,
+    ));
   }
 
   return classes;
 };
 
-const getSpaceDependentClassNamesFromProps = function (props, classes, definitions) {
+const getSpaceDependentClassNamesFromProps = function (props, classes, definitions): string[] {
   const responsiveClassNames = [];
 
   for (const propertyName of Object.keys(definitions)) {

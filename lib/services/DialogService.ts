@@ -32,7 +32,7 @@ const defaultState = {
   }
 };
 
-class DialogsService extends EventEmitter {
+class DialogService extends EventEmitter {
   protected state: State;
 
   public constructor () {
@@ -75,4 +75,4 @@ class DialogsService extends EventEmitter {
   }
 }
 
-export default new DialogsService();
+export default DialogService;
