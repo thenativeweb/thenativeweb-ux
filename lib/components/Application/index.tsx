@@ -1,39 +1,23 @@
 import classNames from 'classnames';
-import Dialogs from '../Dialogs';
-import Icons from '../Icons';
-import Notifications from '../Notifications';
-import React from 'react';
-import Theme from '../../themes/Theme';
+import styles from './styles';
 import View from '../View';
-import { createDefaultStyles, withStyles } from '../../styles';
-
-const styles = (theme: Theme): {} => ({
-  '@global': {
-    ...createDefaultStyles(theme)
-  },
-
-  Application: {
-    position: 'absolute !important',
-    left: 0,
-    top: 0,
-    right: 0
-  }
-});
+import { withStyles } from '../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
 interface ApplicationProps {
-  classes: { [key: string]: string | undefined };
-  className: string;
-  orientation: 'horizontal' | 'vertical' | 'centered';
-  style: any;
+  classes: { [key: string]: string };
+  className?: string;
+  orientation?: 'horizontal' | 'vertical' | 'centered';
+  style?: any;
 }
 
-const Application: React.FunctionComponent<ApplicationProps> = ({
+const Application: FunctionComponent<ApplicationProps> = ({
   children,
   classes,
   className,
   style,
   orientation = 'horizontal'
-}): JSX.Element => {
+}): ReactElement => {
   const componentClasses = classNames(classes.Application, className);
 
   return (
@@ -42,13 +26,5 @@ const Application: React.FunctionComponent<ApplicationProps> = ({
     </View>
   );
 };
-
-Application.Services = (): JSX.Element => (
-  <span suppressHydrationWarning={ true }>
-    <Icons />
-    <Dialogs />
-    <Notifications />
-  </span>
-);
 
 export default withStyles(styles)(Application);

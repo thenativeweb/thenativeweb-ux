@@ -6,7 +6,7 @@ import { Pattern } from './Pattern';
 class Theme {
   public readonly breakpoints: Breakpoints;
 
-  public readonly colors: {
+  public readonly color: {
     brand: BrandColors;
     interaction: InteractionColors;
     content: { background: string; border: string };
@@ -72,7 +72,7 @@ class Theme {
 
     this.breakpoints = new Breakpoints();
 
-    this.colors = {
+    this.color = {
       brand: brandColors,
 
       interaction: {

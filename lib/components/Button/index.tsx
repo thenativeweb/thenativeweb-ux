@@ -1,17 +1,24 @@
 import Icon from '../Icon';
 import Label from '../Label';
 import PropTypes from 'prop-types';
-import React from 'react';
-import styles from './styles.js';
+import styles from './styles';
 import { classNames, withStyles } from '../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const Hint = ({ children, classes }) => (
+interface HintProps {
+  classes: { [key: string]: string };
+}
+
+const Hint: FunctionComponent<HintProps> = ({
+  children,
+  classes
+}): ReactElement => (
   <span className={ classes.Hint }>
     { children }
   </span>
 );
 
-const Button = ({
+const Button: FunctionComponent<ButtonProps> = ({
   autoFocus,
   adjust,
   children,
@@ -26,17 +33,21 @@ const Button = ({
   size,
   style,
   type
-}) => {
-  const componentClasses = classNames(classes.Button, {
-    [classes.AdjustFlex]: adjust === 'flex',
-    [classes.AdjustAuto]: adjust === 'auto',
-    [classes.SizeSm]: size === 'sm',
-    [classes.SizeMd]: size === 'md',
-    [classes.TypeSubtle]: isSubtle === true,
-    [classes.TypePrimary]: isPrimary === true,
-    [classes.TypeIcon]: icon,
-    [classes.TypeIconOnly]: icon && !children
-  }, className);
+}): ReactElement => {
+  const componentClasses = classNames(
+    classes.Button,
+    {
+      [classes.AdjustFlex]: adjust === 'flex',
+      [classes.AdjustAuto]: adjust === 'auto',
+      [classes.SizeSm]: size === 'sm',
+      [classes.SizeMd]: size === 'md',
+      [classes.TypeSubtle]: isSubtle === true,
+      [classes.TypePrimary]: isPrimary === true,
+      [classes.TypeIcon]: icon,
+      [classes.TypeIconOnly]: icon && !children
+    },
+    className
+  );
 
   const buttonType = type || (isPrimary ? 'submit' : 'button');
 

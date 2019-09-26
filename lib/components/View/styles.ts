@@ -21,12 +21,12 @@ const styles = (theme: Theme): any => ({
   },
 
   BackgroundDark: {
-    background: theme.colors.brand.dark,
-    color: theme.colors.brand.white
+    background: theme.color.brand.dark,
+    color: theme.color.brand.white
   },
 
   BackgroundLight: {
-    background: theme.colors.brand.lightGrey
+    background: theme.color.brand.lightGrey
   },
 
   OrientationCentered: {

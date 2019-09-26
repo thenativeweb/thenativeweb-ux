@@ -1,19 +1,19 @@
-import React from 'react';
+import styles from './styles';
 import { classNames, withStyles } from '../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = {
-  Label: {
-    display: 'block',
-    flexGrow: 1,
-    flexShrink: 1,
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    color: 'inherit'
-  }
-};
+interface LabelProps {
+  classes: { [key: string]: string };
+  className?: string;
+  id?: string;
+}
 
-const Label = function ({ children, classes, className, id }) {
+const Label: FunctionComponent<LabelProps> = function ({
+  children,
+  classes,
+  className,
+  id
+}): ReactElement {
   return (
     <div id={ id } className={ classNames(classes.Label, className) }>
       { children }

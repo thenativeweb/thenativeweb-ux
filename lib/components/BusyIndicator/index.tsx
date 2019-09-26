@@ -1,54 +1,18 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import styles from './styles';
 import { classNames, withStyles } from '../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = theme => ({
-  '@keyframes loading-indicator-pulse': {
-    '0%': {
-      transform: 'scale(0.5)'
-    },
+interface BusyIndicatorProps {
+  classes: { [key: string]: string };
+  className?: string;
+  isVisible?: boolean;
+}
 
-    '20%': {
-      transform: 'scale(1)'
-    },
-
-    '100%': {
-      transform: 'scale(0.5)'
-    }
-  },
-
-  BusyIndicator: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    minHeight: '100px'
-  },
-
-  Pulse: {
-    width: `${theme.space(1.5)}px`,
-    height: `${theme.space(1.5)}px`,
-    marginRight: 3,
-    borderRadius: '50%',
-    backgroundColor: theme.color.brand.highlight,
-    animationIterationCount: 'infinite',
-    animationTimingFunction: 'linear',
-    animationName: '$loading-indicator-pulse',
-    animationDuration: '900ms',
-    animationFillMode: 'both'
-  },
-
-  Pulse1: {
-    animationDelay: '-300ms'
-  },
-
-  Pulse2: {
-    animationDelay: '-150ms'
-  },
-
-  Pulse3: {}
-});
-
-const BusyIndicator = ({ classes, className, isVisible }) => {
+const BusyIndicator: FunctionComponent<BusyIndicatorProps> = ({
+  classes,
+  className,
+  isVisible = true
+}): ReactElement | null => {
   if (!isVisible) {
     return null;
   }
@@ -60,14 +24,6 @@ const BusyIndicator = ({ classes, className, isVisible }) => {
       <div className={ classNames(classes.Pulse, classes.Pulse3) } />
     </div>
   );
-};
-
-BusyIndicator.propTypes = {
-  isVisible: PropTypes.bool
-};
-
-BusyIndicator.defaultProps = {
-  isVisible: true
 };
 
 export default withStyles(styles)(BusyIndicator);
