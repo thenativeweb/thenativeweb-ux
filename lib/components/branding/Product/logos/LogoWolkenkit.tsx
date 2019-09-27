@@ -1,9 +1,11 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { classNames, withStyles } from '../../../styles';
+import LogoProps from './LogoProps';
+import { Styles } from 'jss';
+import Theme from '../../../../themes/Theme';
+import { classNames, withStyles } from '../../../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = theme => ({
-  Logo: {},
+const styles = (theme: Theme): Styles => ({
+  LogoWolkenkit: {},
 
   SizeMd: {
     width: '56px',
@@ -63,12 +65,17 @@ const styles = theme => ({
   }
 });
 
-const Logo = ({ isAnimated, classes, isVisible, size }) => {
+const LogoWolkenkit: FunctionComponent<LogoProps> = ({
+  classes,
+  isAnimated = false,
+  isVisible = true,
+  size = 'md'
+}): ReactElement | null => {
   if (!isVisible) {
     return null;
   }
 
-  const componentClasses = classNames(classes.Logo, {
+  const componentClasses = classNames(classes.LogoWolkenkit, {
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg',
     [classes.SizeXl]: size === 'xl'
@@ -154,16 +161,4 @@ const Logo = ({ isAnimated, classes, isVisible, size }) => {
   );
 };
 
-Logo.propTypes = {
-  isAnimated: PropTypes.bool,
-  isVisible: PropTypes.bool,
-  size: PropTypes.oneOf([ 'md', 'lg', 'xl' ])
-};
-
-Logo.defaultProps = {
-  isVisible: true,
-  size: 'md',
-  isAnimated: false
-};
-
-export default withStyles(styles)(Logo);
+export default withStyles(styles)(LogoWolkenkit);

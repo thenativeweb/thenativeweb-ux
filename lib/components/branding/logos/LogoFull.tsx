@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import Theme from 'lib/themes/Theme';
+import { Classes, Styles } from 'jss';
 import { classNames, withStyles } from '../../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = theme => ({
-  Logo: {
+const styles: Styles = (theme: Theme): Styles => ({
+  LogoFull: {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
@@ -29,8 +30,16 @@ const styles = theme => ({
   }
 });
 
-const Logo = ({ classes, size }) => {
-  const componentClasses = classNames(classes.Logo, {
+export interface LogoFullProps {
+  classes: Classes;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const LogoFull: FunctionComponent<LogoFullProps> = ({
+  classes,
+  size = 'md'
+}): ReactElement => {
+  const componentClasses = classNames(classes.LogoFull, {
     [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg'
@@ -101,12 +110,4 @@ const Logo = ({ classes, size }) => {
   );
 };
 
-Logo.propTypes = {
-  size: PropTypes.oneOf([ 'sm', 'md', 'lg' ])
-};
-
-Logo.defaultProps = {
-  size: 'md'
-};
-
-export default withStyles(styles)(Logo);
+export default withStyles(styles)(LogoFull);

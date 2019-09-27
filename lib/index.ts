@@ -1,63 +1,31 @@
-import animate from 'animejs';
-import Application from './components/Application';
-import Brand from './components/Brand';
-import BusyIndicator from './components/BusyIndicator';
-import Button from './components/Button';
-import CheckBox from './components/CheckBox';
-import ControlGroup from './components/ControlGroup';
-import Dropdown from './components/Dropdown';
-import Form from './components/Form';
-import Grid from './components/Grid';
-import Headline from './components/Headline';
-import Icon from './components/Icon';
-import Link from './components/Link';
-import Message from './components/Message';
-import Modal from './components/Modal';
-import Product from './components/Product';
-import services from './services';
-import Sidebar from './components/Sidebar';
-import StyleCollector from './components/StyleCollector';
-import Text from './components/Text';
-import TextArea from './components/TextArea';
-import TextBox from './components/TextBox';
-import ThemeProvider from './components/ThemeProvider';
-import themes from './themes';
-import Toggle from './components/Toggle';
-import Transition from './components/Transition';
-import View from './components/View';
-import Website from './components/Website';
-import { classNames, removeServerSideStyles, withStyles } from './styles';
-
-export {
-  animate,
-  Application,
-  Brand,
-  BusyIndicator,
-  Button,
-  CheckBox,
-  ControlGroup,
-  classNames,
-  Dropdown,
-  Form,
-  Grid,
-  Headline,
-  Icon,
-  Link,
-  Message,
-  Modal,
-  Product,
-  removeServerSideStyles,
-  services,
-  Sidebar,
-  StyleCollector,
-  Text,
-  TextArea,
-  TextBox,
-  Toggle,
-  ThemeProvider,
-  themes,
-  Transition,
-  View,
-  Website,
-  withStyles
-};
+export { default as animate } from 'animejs';
+export { default as Application } from './components/Application';
+export { default as Brand } from './components/branding/Brand';
+export { default as BusyIndicator } from './components/BusyIndicator';
+export { default as Button } from './components/Button';
+export { default as CheckBox } from './components/CheckBox';
+export { default as ControlGroup } from './components/ControlGroup';
+export { default as MadeBy } from './components/branding/MadeBy';
+export { default as Dropdown } from './components/Dropdown';
+export { default as Form } from './components/Form';
+export { default as Grid } from './components/Grid';
+export { default as Headline } from './components/Headline';
+export { default as Icon } from './components/Icon';
+export { default as Link } from './components/Link';
+export { default as Message } from './components/Message';
+export { default as Modal } from './components/Modal';
+export { default as Pattern } from './components/branding/Pattern';
+export { default as Product } from './components/branding/Product';
+export { default as services } from './services';
+export { default as Sidebar } from './components/Sidebar';
+export { default as StyleCollector } from './components/StyleCollector';
+export { default as Text } from './components/Text';
+export { default as TextArea } from './components/TextArea';
+export { default as TextBox } from './components/TextBox';
+export { default as ThemeProvider } from './components/ThemeProvider';
+export { default as themes } from './themes';
+export { default as Toggle } from './components/Toggle';
+export { default as Transition } from './components/Transition';
+export { default as View } from './components/View';
+export { default as Website } from './components/Website';
+export { classNames, removeServerSideStyles, withStyles, useTheme } from './styles';

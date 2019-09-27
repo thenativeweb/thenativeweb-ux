@@ -1,13 +1,7 @@
-import classNames from './classNames';
-import createDefaultStyles from './createDefaultStyles';
-import removeServerSideStyles from './removeServerSideStyles';
-import withStyles from './withStyles';
-import withTheme from './withTheme';
+export { default as classNames } from './classNames';
+export { default as createDefaultStyles } from './createDefaultStyles';
+export { default as removeServerSideStyles } from './removeServerSideStyles';
+export { default as withStyles } from './withStyles';
+export { default as withTheme } from './withTheme';
+export { default as useTheme } from './useTheme';
 
-export {
-  classNames,
-  createDefaultStyles,
-  removeServerSideStyles,
-  withStyles,
-  withTheme
-};
