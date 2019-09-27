@@ -1,6 +1,6 @@
 import { LogoFullProps } from './LogoFull';
 import { Styles } from 'jss';
-import Theme from 'lib/themes/Theme';
+import Theme from '../../../themes/Theme';
 import { classNames, withStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
