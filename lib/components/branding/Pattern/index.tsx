@@ -1,7 +1,7 @@
 import Theme from '../../../themes/Theme';
 import { Classes, Styles } from 'jss';
 import { classNames, withStyles } from '../../../styles';
-import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 
 const styles = (theme: Theme): Styles => ({
   Pattern: {
@@ -22,7 +22,6 @@ const styles = (theme: Theme): Styles => ({
 interface PatternProps {
   classes: Classes;
   className?: 'string';
-  children?: ReactNode;
   type?: 'default';
 }
 

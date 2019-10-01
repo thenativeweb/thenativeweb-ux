@@ -40,7 +40,7 @@ const Link: FunctionComponent<LinkProps> = ({
 }): ReactElement => {
   const brandClassNames = classNames(classes.Link, className);
 
-  if (isExternal === true) {
+  if (isExternal) {
     return (
       <a id={ id } className={ brandClassNames } href={ href } onClick={ onClick } rel='noopener noreferrer' target='_blank'>
         { children }

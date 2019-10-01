@@ -1,2 +1,7 @@
-export { default as LogoFull } from './LogoFull';
-export { default as LogoMinimal } from './LogoMinimal';
+import LogoFull from './LogoFull';
+import LogoMinimal from './LogoMinimal';
+
+export {
+  LogoFull,
+  LogoMinimal
+};

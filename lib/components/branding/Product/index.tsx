@@ -84,13 +84,19 @@ const styles = (theme: Theme): Styles => ({
 
 interface ProductProps {
   classes: Classes;
-  name?: string;
+  name: string;
   isAnimated?: boolean;
   size?: 'md' | 'lg' | 'xl';
   type?: 'default' | 'text-only' | 'logo-only';
 }
 
-const Product: FunctionComponent<ProductProps> = ({ classes, isAnimated, name, size, type }): ReactElement => {
+const Product: FunctionComponent<ProductProps> = ({
+  classes,
+  isAnimated = false,
+  name,
+  size = 'md',
+  type = 'default'
+}): ReactElement => {
   const theme = useTheme();
 
   const brandClassNames = classNames(classes.Product, {

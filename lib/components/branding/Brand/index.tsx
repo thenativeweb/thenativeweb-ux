@@ -4,7 +4,7 @@ import { Classes, Styles } from 'jss';
 import { LogoFull, LogoMinimal } from '../logos';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles: Styles = (theme: Theme): Styles => ({
+const styles = (theme: Theme): Styles => ({
   Brand: {
     width: '100%',
     height: '100%',
@@ -27,7 +27,7 @@ const Brand: FunctionComponent<BrandProps> = ({
   color = 'default',
   classes,
   size = 'md',
-  type,
+  type = 'full',
   isInteractive = false
 }): ReactElement => {
   const Logo = type === 'full' ? LogoFull : LogoMinimal;
