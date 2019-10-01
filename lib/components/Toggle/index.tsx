@@ -81,7 +81,7 @@ Toggle.defaultProps = {
   values: [ 'yellow', 'red', 'green' ],
   selectedValue: 'yellow',
   onChange () {
-    // Intentionally left blank
+    // Intentionally left blank.
   },
   children: renderDefaultToggle
 };

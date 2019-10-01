@@ -170,16 +170,16 @@ TextBox.defaultProps = {
   focusDelay: 0,
   type: 'default',
   onBlur () {
-    // Intentionally left blank
+    // Intentionally left blank.
   },
   onChange () {
-    // Intentionally left blank
+    // Intentionally left blank.
   },
   onEnter () {
-    // Intentionally left blank
+    // Intentionally left blank.
   },
   onFocus () {
-    // Intentionally left blank
+    // Intentionally left blank.
   }
 };
 

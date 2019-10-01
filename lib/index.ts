@@ -1,6 +1,6 @@
 import animate from 'animejs';
 import Application from './components/Application';
-import Brand from './components/Brand';
+import Brand from './components/branding/Brand';
 import BusyIndicator from './components/BusyIndicator';
 import Button from './components/Button';
 import CheckBox from './components/CheckBox';
@@ -11,9 +11,11 @@ import Grid from './components/Grid';
 import Headline from './components/Headline';
 import Icon from './components/Icon';
 import Link from './components/Link';
+import MadeBy from './components/branding/MadeBy';
 import Message from './components/Message';
 import Modal from './components/Modal';
-import Product from './components/Product';
+import Pattern from './components/branding/Pattern';
+import Product from './components/branding/Product';
 import services from './services';
 import Sidebar from './components/Sidebar';
 import StyleCollector from './components/StyleCollector';
@@ -26,7 +28,7 @@ import Toggle from './components/Toggle';
 import Transition from './components/Transition';
 import View from './components/View';
 import Website from './components/Website';
-import { classNames, removeServerSideStyles, withStyles } from './styles';
+import { classNames, createUseStyles, removeServerSideStyles, useTheme, withStyles } from './styles';
 
 export {
   animate,
@@ -34,17 +36,20 @@ export {
   Brand,
   BusyIndicator,
   Button,
+  classNames,
+  createUseStyles,
   CheckBox,
   ControlGroup,
-  classNames,
   Dropdown,
   Form,
   Grid,
   Headline,
   Icon,
   Link,
+  MadeBy,
   Message,
   Modal,
+  Pattern,
   Product,
   removeServerSideStyles,
   services,
@@ -53,11 +58,13 @@ export {
   Text,
   TextArea,
   TextBox,
-  Toggle,
   ThemeProvider,
   themes,
+  Toggle,
   Transition,
   View,
   Website,
-  withStyles
+  withStyles,
+  useTheme
 };
+

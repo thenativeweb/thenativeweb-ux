@@ -1,8 +1,10 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import { LogoFullProps } from './LogoFull';
+import { Styles } from 'jss';
+import Theme from '../../../themes/Theme';
 import { classNames, withStyles } from '../../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = theme => ({
+const styles: Styles = (theme: Theme): Styles => ({
   Logo: {
     display: 'flex',
     flexDirection: 'column',
@@ -58,7 +60,17 @@ const styles = theme => ({
   }
 });
 
-const Logo = ({ color, classes, size, isInteractive }) => {
+interface LogoMinimalProps extends LogoFullProps {
+  color?: 'default' | 'monochrome';
+  isInteractive?: boolean;
+}
+
+const Logo: FunctionComponent<LogoMinimalProps> = ({
+  color = 'default',
+  classes,
+  size = 'md',
+  isInteractive = false
+}): ReactElement => {
   const componentClasses = classNames(classes.Logo, {
     [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
@@ -86,17 +98,6 @@ const Logo = ({ color, classes, size, isInteractive }) => {
       </svg>
     </div>
   );
-};
-
-Logo.propTypes = {
-  color: PropTypes.oneOf([ 'default', 'monochrome' ]),
-  isInteractive: PropTypes.bool,
-  size: PropTypes.oneOf([ 'sm', 'md', 'lg' ])
-};
-
-Logo.defaultProps = {
-  size: 'md',
-  isInteractive: false
 };
 
 export default withStyles(styles)(Logo);

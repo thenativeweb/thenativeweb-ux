@@ -140,13 +140,13 @@ TextArea.defaultProps = {
   required: false,
   size: 'sm',
   onBlur () {
-    // Intentionally left blank
+    // Intentionally left blank.
   },
   onChange () {
-    // Intentionally left blank
+    // Intentionally left blank.
   },
   onFocus () {
-    // Intentionally left blank
+    // Intentionally left blank.
   }
 };
 

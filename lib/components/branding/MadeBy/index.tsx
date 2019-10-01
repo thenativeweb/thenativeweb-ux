@@ -1,10 +1,10 @@
-import Icon from '../Icon';
-import Link from '../Link';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { classNames, withStyles } from '../../styles';
+import Theme from '../../../themes/Theme';
+import { Classes, Styles } from 'jss';
+import { classNames, withStyles } from '../../../styles';
+import { Icon, Link } from '../../..';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = theme => ({
+const styles = (theme: Theme): Styles => ({
   MadeBy: {
     overflow: 'hidden',
     fontFamily: theme.font.family.default,
@@ -34,7 +34,24 @@ const styles = theme => ({
   }
 });
 
-const MadeBy = ({ classes, color, partner = [], size }) => {
+interface Partner {
+  href: string;
+  name: string;
+}
+
+interface MadeByProps {
+  classes: Classes;
+  color?: 'dark' | 'light';
+  partner?: Partner | Partner [];
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const MadeBy: FunctionComponent<MadeByProps> = ({
+  classes,
+  color = 'dark',
+  partner = [],
+  size = 'sm'
+}): ReactElement => {
   const componentClasses = classNames(classes.MadeBy, {
     [classes.ColorDark]: color === 'dark',
     [classes.ColorLight]: color === 'light',
@@ -43,7 +60,7 @@ const MadeBy = ({ classes, color, partner = [], size }) => {
     [classes.SizeLg]: size === 'lg'
   });
 
-  const partners = Array.isArray(partner) ? partner : [ partner ];
+  const partners: Partner [] = Array.isArray(partner) ? partner : [ partner ];
 
   return (
     <div className={ componentClasses }>
@@ -55,29 +72,14 @@ const MadeBy = ({ classes, color, partner = [], size }) => {
 
       <Link href='https://www.thenativeweb.io' isExternal={ true }>the native web</Link>
 
-      { partners.map((item, index) => (
+      { partners.map((item, index): ReactElement => (
         <React.Fragment key={ item.name }>
-          { index === partner.length - 1 ? ' and ' : ', ' }
+          { index === partners.length - 1 ? ' and ' : ', ' }
           <Link href={ item.href } isExternal={ true }>{ item.name }</Link>
         </React.Fragment>
       )) }
     </div>
   );
-};
-
-MadeBy.propTypes = {
-  color: PropTypes.oneOf([ 'dark', 'light' ]),
-  partner: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object
-  ]),
-  size: PropTypes.oneOf([ 'sm', 'md', 'lg' ])
-};
-
-MadeBy.defaultProps = {
-  color: 'dark',
-  size: 'sm',
-  name: undefined
 };
 
 export default withStyles(styles)(MadeBy);

@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { classNames, withStyles } from '../../../styles';
+import LogoProps from './LogoProps';
+import { Styles } from 'jss';
+import { classNames, withStyles } from '../../../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = {
-  Logo: {},
+const styles: Styles = {
+  LogoThenativeWeb: {},
 
   SizeMd: {
     width: '56px',
@@ -21,12 +22,16 @@ const styles = {
   }
 };
 
-const Logo = ({ classes, isVisible, size }) => {
+const LogoThenativeWeb: FunctionComponent<LogoProps> = ({
+  classes,
+  isVisible = true,
+  size = 'md'
+}): ReactElement | null => {
   if (!isVisible) {
     return null;
   }
 
-  const componentClasses = classNames(classes.Logo, {
+  const componentClasses = classNames(classes.LogoThenativeWeb, {
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg',
     [classes.SizeXl]: size === 'xl'
@@ -53,14 +58,4 @@ const Logo = ({ classes, isVisible, size }) => {
   );
 };
 
-Logo.propTypes = {
-  isVisible: PropTypes.bool,
-  size: PropTypes.oneOf([ 'md', 'lg', 'xl' ])
-};
-
-Logo.defaultProps = {
-  isVisible: true,
-  size: 'md'
-};
-
-export default withStyles(styles)(Logo);
+export default withStyles(styles)(LogoThenativeWeb);

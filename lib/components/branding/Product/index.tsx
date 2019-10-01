@@ -1,9 +1,10 @@
-import logos from './logos';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { classNames, withStyles, withTheme } from '../../styles';
+import Theme from '../../../themes/Theme';
+import { Classes, Styles } from 'jss';
+import { classNames, useTheme, withStyles } from '../../../styles';
+import { LogoTheNativeWeb, LogoWolkenkit } from './logos';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = theme => ({
+const styles = (theme: Theme): Styles => ({
   Product: {
     display: 'flex',
     flexDirection: 'column',
@@ -81,7 +82,23 @@ const styles = theme => ({
   }
 });
 
-const Product = ({ classes, isAnimated, name, size, theme, type }) => {
+interface ProductProps {
+  classes: Classes;
+  name: string;
+  isAnimated?: boolean;
+  size?: 'md' | 'lg' | 'xl';
+  type?: 'default' | 'text-only' | 'logo-only';
+}
+
+const Product: FunctionComponent<ProductProps> = ({
+  classes,
+  isAnimated = false,
+  name,
+  size = 'md',
+  type = 'default'
+}): ReactElement => {
+  const theme = useTheme();
+
   const brandClassNames = classNames(classes.Product, {
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg',
@@ -91,14 +108,12 @@ const Product = ({ classes, isAnimated, name, size, theme, type }) => {
   });
 
   let nameComponent = <div className={ classes.Name }>{ name }</div>;
-  let logoId = theme.id;
+  let Logo = LogoTheNativeWeb;
 
-  if (name === 'wolkenkit') {
+  if (theme.name === 'wolkenkit') {
     nameComponent = <div className={ classes.CompositeName }><span>wolken</span>kit</div>;
-    logoId = 'wolkenkit';
+    Logo = LogoWolkenkit;
   }
-
-  const Logo = logos[logoId] || logos.thenativeweb || null;
 
   return (
     <div className={ brandClassNames }>
@@ -108,16 +123,4 @@ const Product = ({ classes, isAnimated, name, size, theme, type }) => {
   );
 };
 
-Product.propTypes = {
-  name: PropTypes.string,
-  size: PropTypes.oneOf([ 'md', 'lg', 'xl' ]),
-  type: PropTypes.oneOf([ 'default', 'text-only', 'logo-only' ])
-};
-
-Product.defaultProps = {
-  size: 'md',
-  name: undefined,
-  type: 'default'
-};
-
-export default withStyles(styles)(withTheme(Product));
+export default withStyles(styles)(Product);

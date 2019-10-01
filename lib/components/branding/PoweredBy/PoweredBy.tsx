@@ -1,10 +1,10 @@
 import Product from '../Product';
-import PropTypes from 'prop-types';
-import React from 'react';
-import Theme from '../../themes/Theme';
-import { classNames, withStyles } from '../../styles';
+import Theme from '../../../themes/Theme';
+import { Classes, Styles } from 'jss';
+import { classNames, withStyles } from '../../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = (theme: Theme): any => ({
+const styles = (theme: Theme): Styles => ({
   PoweredBy: {
     display: 'flex',
     flexDirection: 'column',
@@ -21,14 +21,24 @@ const styles = (theme: Theme): any => ({
   Intro: {
     marginTop: theme.space(1),
     marginBottom: theme.space(1),
-    color: theme.colors.brand.lightGrey
+    color: theme.color.brand.lightGrey
   },
 
   SizeLg: {},
   SizeMd: {}
 });
 
-const PoweredBy = ({ classes, product, size }) => {
+interface PoweredByProps {
+  classes: Classes;
+  product?: 'wolkenkit';
+  size?: 'md' | 'lg';
+}
+
+const PoweredBy: FunctionComponent<PoweredByProps> = ({
+  classes,
+  product,
+  size = 'md'
+}): ReactElement => {
   const componentClasses = classNames(classes.PoweredBy, {
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg'
@@ -40,16 +50,6 @@ const PoweredBy = ({ classes, product, size }) => {
       <Product name={ product } size={ size } />
     </div>
   );
-};
-
-PoweredBy.propTypes = {
-  product: PropTypes.string,
-  size: PropTypes.oneOf([ 'md', 'lg' ])
-};
-
-PoweredBy.defaultProps = {
-  size: 'md',
-  name: undefined
 };
 
 export default withStyles(styles)(PoweredBy);
