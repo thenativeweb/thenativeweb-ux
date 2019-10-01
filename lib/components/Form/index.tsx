@@ -37,7 +37,7 @@ Form.propTypes = {
 
 Form.defaultProps = {
   onSubmit () {
-    // Intentionally left blank
+    // Intentionally left blank.
   }
 };
 

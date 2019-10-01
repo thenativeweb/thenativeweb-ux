@@ -160,10 +160,10 @@ Modal.defaultProps = {
   showHeader: true,
   size: 'sm',
   onCancel () {
-    // Intentionally left blank
+    // Intentionally left blank.
   },
   onKeyDown () {
-    // Intentionally left blank
+    // Intentionally left blank.
   }
 };
 

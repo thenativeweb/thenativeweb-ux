@@ -87,7 +87,7 @@ Button.defaultProps = {
   size: 'md',
   type: undefined,
   onClick () {
-    // Intentionally left bla
+    // Intentionally left blank.
   }
 };
 

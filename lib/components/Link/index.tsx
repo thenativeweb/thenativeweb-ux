@@ -35,7 +35,7 @@ const Link: FunctionComponent<LinkProps> = ({
   isExternal = false,
   href,
   onClick = (): void => {
-    // Left blank intentionally
+    // Intentionally left blank.
   }
 }): ReactElement => {
   const brandClassNames = classNames(classes.Link, className);

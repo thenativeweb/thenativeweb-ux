@@ -32,7 +32,7 @@ CheckBox.propTypes = {
 
 CheckBox.defaultProps = {
   onChange () {
-    // Intentionally left blank
+    // Intentionally left blank.
   }
 };
 
