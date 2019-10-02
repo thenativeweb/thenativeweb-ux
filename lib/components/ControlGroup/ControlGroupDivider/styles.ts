@@ -1,8 +1,8 @@
-import React from 'react';
-import { withStyles } from '../../styles';
+import { Styles } from 'jss';
+import Theme from '../../../themes/Theme';
 
-const styles = theme => ({
-  Divider: {
+const styles: Styles = (theme: Theme): Styles => ({
+  ControlGroupDivider: {
     flexGrow: 0,
     flexShrink: 0,
     flexBasis: 'auto',
@@ -16,10 +16,4 @@ const styles = theme => ({
   }
 });
 
-const Divider = ({ classes }) => (
-  <hr
-    className={ classes.Divider }
-  />
-);
-
-export default withStyles(styles)(Divider);
+export default styles;
