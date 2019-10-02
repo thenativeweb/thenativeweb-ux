@@ -1,14 +1,33 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import Theme from '../../themes/Theme';
+import { Classes, Styles } from 'jss';
 import { classNames, withStyles } from '../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles = theme => ({
+const styles: Styles = (theme: Theme): Styles => ({
   CheckBox: {
     fontFamily: theme.font.family.default
   }
 });
 
-const CheckBox = ({ checked, classes, className, id, name, style, onChange }) => {
+interface CheckBoxProps {
+  classes: Classes;
+  className?: string;
+  checked?: boolean;
+  name?: string;
+  id: string;
+  style?: Styles;
+  onChange?: () => void;
+}
+
+const CheckBox: FunctionComponent<CheckBoxProps> = ({
+  checked,
+  classes,
+  className,
+  id,
+  name,
+  style,
+  onChange
+}): ReactElement => {
   const componentClasses = classNames(classes.CheckBox, className);
 
   return (
@@ -22,18 +41,6 @@ const CheckBox = ({ checked, classes, className, id, name, style, onChange }) =>
       onChange={ onChange }
     />
   );
-};
-
-CheckBox.propTypes = {
-  checked: PropTypes.bool,
-  name: PropTypes.string,
-  onChange: PropTypes.func
-};
-
-CheckBox.defaultProps = {
-  onChange () {
-    // Intentionally left blank.
-  }
 };
 
 export default withStyles(styles)(CheckBox);
