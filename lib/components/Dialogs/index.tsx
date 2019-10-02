@@ -1,32 +1,19 @@
 import Button from '../Button';
+import { Classes } from 'jss';
 import Headline from '../Headline';
 import Modal from '../Modal';
-import React from 'react';
 import services from '../../services';
+import styles from './styles';
 import { withStyles } from '../../styles';
+import React, { ReactElement } from 'react';
 
 const KEY = {
   ENTER: 13,
   ESCAPE: 27
 };
 
-const styles = {
-  Dialogs: {},
-
-  Actions: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-
-    '& *': {
-      flexGrow: 0,
-      'max-width': '200px'
-    }
-  }
-};
-
-class Dialogs extends React.PureComponent {
-  constructor () {
+class Dialogs extends React.PureComponent<null, null> {
+  private constructor () {
     super();
 
     this.handleServiceChanged = this.handleServiceChanged.bind(this);
@@ -35,28 +22,28 @@ class Dialogs extends React.PureComponent {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  componentDidMount () {
+  public componentDidMount (): void {
     services.dialogs.on('changed', this.handleServiceChanged);
   }
 
-  componentWillUnmount () {
+  public componentWillUnmount (): void {
     services.dialogs.removeListener('changed', this.handleServiceChanged);
   }
 
-  handleServiceChanged () {
+  public handleServiceChanged (): void {
     this.forceUpdate();
   }
 
   /* eslint-disable class-methods-use-this */
-  handleCancel () {
+  public handleCancel (): void {
     services.dialogs.state.confirm.onCancel();
   }
 
-  handleConfirm () {
+  public handleConfirm (): void {
     services.dialogs.state.confirm.onConfirm();
   }
 
-  handleKeyDown (key) {
+  public handleKeyDown (key: number): void {
     switch (key) {
       case KEY.ESCAPE:
         services.dialogs.state.confirm.onCancel();
@@ -70,7 +57,7 @@ class Dialogs extends React.PureComponent {
   }
   /* eslint-enable class-methods-use-this */
 
-  render () {
+  public render (): ReactElement {
     const { classes } = this.props;
 
     return (
