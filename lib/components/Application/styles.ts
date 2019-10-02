@@ -2,7 +2,7 @@ import { createDefaultStyles } from '../../styles';
 import { Styles } from 'jss';
 import Theme from '../../themes/Theme';
 
-const styles = (theme: Theme): Styles => ({
+const styles: Styles = (theme: Theme): Styles => ({
   '@global': {
     ...createDefaultStyles(theme)
   },

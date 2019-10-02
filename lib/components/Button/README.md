@@ -39,7 +39,7 @@ Hints can be used for displaying keyboard shortcuts.
 
 ```javascript
 <div>
-  <Button>Small Button <Button.Hint>[Ctrl+Enter]</Button.Hint></Button>
+  <Button>Small Button <ButtonHint>[Ctrl+Enter]</ButtonHint></Button>
 </div>
 ```
 

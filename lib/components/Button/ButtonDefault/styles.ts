@@ -1,6 +1,7 @@
-import Theme from '../../themes/Theme';
+import { Styles } from 'jss';
+import Theme from '../../../themes/Theme';
 
-const styles = (theme: Theme): any => ({
+const styles: Styles = (theme: Theme): Styles => ({
   Button: {
     display: 'flex',
     alignItems: 'center',
@@ -147,12 +148,6 @@ const styles = (theme: Theme): any => ({
         marginRight: 0
       }
     }
-  },
-
-  Hint: {
-    opacity: 0.5,
-    fontSize: theme.font.size.sm,
-    paddingLeft: '0.75em'
   },
 
   Icon: {

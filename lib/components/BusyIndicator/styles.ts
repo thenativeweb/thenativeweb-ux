@@ -1,6 +1,7 @@
+import { Styles } from 'jss';
 import Theme from '../../themes/Theme';
 
-const styles = (theme: Theme): any => ({
+const styles: Styles = (theme: Theme): Styles => ({
   '@keyframes loading-indicator-pulse': {
     '0%': {
       transform: 'scale(0.5)'

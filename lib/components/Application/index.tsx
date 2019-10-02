@@ -1,3 +1,4 @@
+import { Classes } from 'jss';
 import classNames from 'classnames';
 import styles from './styles';
 import View from '../View';
@@ -5,7 +6,7 @@ import { withStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface ApplicationProps {
-  classes: { [key: string]: string };
+  classes: Classes;
   className?: string;
   orientation?: 'horizontal' | 'vertical' | 'centered';
   style?: any;

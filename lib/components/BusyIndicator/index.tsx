@@ -1,9 +1,10 @@
+import { Classes } from 'jss';
 import styles from './styles';
 import { classNames, withStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface BusyIndicatorProps {
-  classes: { [key: string]: string };
+  classes: Classes;
   className?: string;
   isVisible?: boolean;
 }
