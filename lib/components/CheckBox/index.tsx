@@ -1,13 +1,7 @@
-import Theme from '../../themes/Theme';
+import styles from './styles';
 import { Classes, Styles } from 'jss';
 import { classNames, withStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-
-const styles: Styles = (theme: Theme): Styles => ({
-  CheckBox: {
-    fontFamily: theme.font.family.default
-  }
-});
 
 interface CheckBoxProps {
   classes: Classes;
