@@ -23,19 +23,19 @@ class Dialogs extends React.Component<DialogsProps> {
     services.dialogs.removeListener('changed', this.handleServiceChanged);
   }
 
-  public handleServiceChanged = (): void => {
+  protected handleServiceChanged = (): void => {
     this.forceUpdate();
   };
 
-  public handleCancel = (): void => {
+  protected handleCancel = (): void => {
     services.dialogs.state.confirm.onCancel();
   };
 
-  public handleConfirm = (): void => {
+  protected handleConfirm = (): void => {
     services.dialogs.state.confirm.onConfirm();
   };
 
-  public handleKeyDown = (key: number): void => {
+  protected handleKeyDown = (key: number): void => {
     switch (key) {
       case KEY.ESCAPE:
         services.dialogs.state.confirm.onCancel();
