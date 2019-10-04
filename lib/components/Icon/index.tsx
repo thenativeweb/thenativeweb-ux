@@ -3,12 +3,14 @@ import styles from './styles';
 import { classNames, withStyles } from '../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
+export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+
 interface IconProps {
   classes: Classes;
   name: string;
   className?: string;
   color?: 'default' | 'current' | 'highlight' | 'white';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+  size?: IconSize;
   style?: CSSProperties;
   type?: 'default' | 'inline' | 'flex-auto';
 }

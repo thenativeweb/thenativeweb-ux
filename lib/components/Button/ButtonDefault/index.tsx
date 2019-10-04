@@ -1,17 +1,17 @@
-import Icon from '../../Icon';
-import Label from '../../Label';
+import { IconSize } from '../../Icon';
 import styles from './styles';
 import { Classes, Styles } from 'jss';
 import { classNames, withStyles } from '../../../styles';
+import { Icon, Label } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface ButtonProps {
+  classes: Classes;
   adjust?: 'flex' | 'auto';
   autoFocus?: boolean;
-  classes: Classes;
   className?: string;
   icon?: string;
-  iconSize?: 'xs' | 'sm' | 'md' | 'lg';
+  iconSize?: IconSize;
   id?: string;
   isPrimary?: boolean;
   isSubtle?: boolean;
