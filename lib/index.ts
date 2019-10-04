@@ -5,7 +5,6 @@ import BusyIndicator from './components/BusyIndicator';
 import CheckBox from './components/CheckBox';
 import ControlGroup from './components/ControlGroup';
 import Dropdown from './components/Dropdown';
-import Form from './components/Form';
 import Grid from './components/Grid';
 import Headline from './components/Headline';
 import Icon from './components/Icon';
@@ -30,6 +29,7 @@ import View from './components/View';
 import Website from './components/Website';
 import Button, { ButtonHint } from './components/Button';
 import { classNames, createUseStyles, removeServerSideStyles, useTheme, withStyles } from './styles';
+import Form, { FormActions, FormRow } from './components/Form';
 
 export {
   animate,
@@ -44,6 +44,8 @@ export {
   ControlGroup,
   Dropdown,
   Form,
+  FormActions,
+  FormRow,
   Grid,
   Headline,
   Icon,
