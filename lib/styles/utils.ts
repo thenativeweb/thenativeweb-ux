@@ -1,4 +1,6 @@
+import { Classes } from 'jss';
 import { merge } from 'lodash';
+import { ResponsiveSpaceProp } from '../types/ResponsiveSpaceProp';
 import Theme from '../themes/Theme';
 
 type CssAttributesFunction = (spaceFactor: number, theme: Theme) => string;
@@ -48,24 +50,24 @@ const createDefaultSpaceDependantClasses = function (
   return classes;
 };
 
-const getSpaceDependentClassNamesFromProps = function (props, classes, definitions): string[] {
+const getSpaceDependentClassNamesFromProps = function (
+  props: { [key: string]: ResponsiveSpaceProp },
+  definitions: { [key: string]: string | {} | CssAttributesFunction | undefined },
+  classes: Classes,
+): string[] {
   const responsiveClassNames = [];
 
   for (const propertyName of Object.keys(definitions)) {
     const propertyValue = props[propertyName];
 
-    switch (typeof propertyValue) {
-      case 'string':
-      case 'number':
-        responsiveClassNames.push(classes[`-${propertyName}-${propertyValue}`]);
-        break;
-      case 'object':
-        for (const sizeId of Object.keys(propertyValue)) {
+    if (typeof propertyValue === 'string' || typeof propertyValue === 'number') {
+      responsiveClassNames.push(classes[`-${propertyName}-${propertyValue}`]);
+    } else {
+      for (const sizeId of Object.keys(propertyValue)) {
+        if (typeof sizeId === 'string') {
           responsiveClassNames.push(classes[`${sizeId}-${propertyName}-${propertyValue[sizeId]}`]);
         }
-        break;
-      default:
-        break;
+      }
     }
   }
 

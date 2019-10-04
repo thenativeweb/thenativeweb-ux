@@ -39,10 +39,10 @@ It is possible to provide multiple `columns` values depending on the size of the
 
 ```js
 <Grid columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
-  <Grid.Item>First Column</Grid.Item>
-  <Grid.Item>Second Column</Grid.Item>
-  <Grid.Item>Third Column</Grid.Item>
-  <Grid.Item>Fourth Column</Grid.Item>
+  <GridItem>First Column</GridItem>
+  <GridItem>Second Column</GridItem>
+  <GridItem>Third Column</GridItem>
+  <GridItem>Fourth Column</GridItem>
 </Grid>
 ```
 
@@ -52,15 +52,15 @@ The `columnGap` and the `rowGap` property can be used to control horizontal and 
 
 ```js
 <Grid columns='3' columnGap='6' rowGap='6'>
-  <Grid.Item>First Column</Grid.Item>
-  <Grid.Item>Second Column</Grid.Item>
-  <Grid.Item>Third Column</Grid.Item>
+  <GridItem>First Column</GridItem>
+  <GridItem>Second Column</GridItem>
+  <GridItem>Third Column</GridItem>
 </Grid>
 ```
 
-## Grid.Item
+## GridItem
 
-If you need more control when positioning elements inside a `Grid` use the `Grid.Item` component.
+If you need more control when positioning elements inside a `Grid` use the `GridItem` component.
 
 ### columnSpan
 
@@ -68,9 +68,9 @@ To span an element across multiple columns, set the `columnSpan` property:
 
 ```js
 <Grid>
-  <Grid.Item columnSpan='6'>Column from gap 1-6</Grid.Item>
-  <Grid.Item columnSpan='6'>Column from gap 7-12</Grid.Item>
-  <Grid.Item columnSpan='12'>Column from gap 1-12</Grid.Item>
+  <GridItem columnSpan='6'>Column from gap 1-6</GridItem>
+  <GridItem columnSpan='6'>Column from gap 7-12</GridItem>
+  <GridItem columnSpan='12'>Column from gap 1-12</GridItem>
 </Grid>
 ```
 
@@ -80,9 +80,9 @@ It is possible to provide multiple `columSpan` values depending on the size of t
 
 ```js
 <Grid>
-  <Grid.Item columnSpan={{ sm: 12, md: 6, lg: 4 }}>Spans 12 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
-  <Grid.Item columnSpan={{ sm: 12, md: 6, lg: 4 }}>Spans 12 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
-  <Grid.Item columnSpan={{ sm: 12, md: 6, lg: 4 }}>Spans 12 columns on small, 6 on a medium and 4 columns on large devices…</Grid.Item>
+  <GridItem columnSpan={{ sm: 12, md: 6, lg: 4 }}>Spans 12 columns on small, 6 on a medium and 4 columns on large devices…</GridItem>
+  <GridItem columnSpan={{ sm: 12, md: 6, lg: 4 }}>Spans 12 columns on small, 6 on a medium and 4 columns on large devices…</GridItem>
+  <GridItem columnSpan={{ sm: 12, md: 6, lg: 4 }}>Spans 12 columns on small, 6 on a medium and 4 columns on large devices…</GridItem>
 </Grid>
 ```
 
@@ -92,10 +92,10 @@ Instead of using `columnSpan` you can set the `columnStart` property to specifiy
 
 ```js
 <Grid>
-  <Grid.Item columnStart='1' columnEnd='6'>Column from gap 1-6</Grid.Item>
-  <Grid.Item columnStart='7' columnEnd='12'>Column from gap 7-12</Grid.Item>
-  <Grid.Item columnStart='1' columnEnd='12'>Column from gap 1-12</Grid.Item>
-  <Grid.Item columnStart='10' columnEnd='12'>Fills only the last three columns</Grid.Item>
+  <GridItem columnStart='1' columnEnd='6'>Column from gap 1-6</GridItem>
+  <GridItem columnStart='7' columnEnd='12'>Column from gap 7-12</GridItem>
+  <GridItem columnStart='1' columnEnd='12'>Column from gap 1-12</GridItem>
+  <GridItem columnStart='10' columnEnd='12'>Fills only the last three columns</GridItem>
 </Grid>
 ```
 
@@ -104,6 +104,6 @@ Again, it is possible to provide multiple `columnStart` and `columnEnd` values d
 
 ```js
 <Grid>
-  <Grid.Item columnStart={{ sm: 1, lg: 4 }} columnEnd={{ sm: 12, lg: 10 }}>Spans across all 12 columns on small devices and from colum 4-10 on large devices.</Grid.Item>
+  <GridItem columnStart={{ sm: 1, lg: 4 }} columnEnd={{ sm: 12, lg: 10 }}>Spans across all 12 columns on small devices and from colum 4-10 on large devices.</GridItem>
 </Grid>
 ```
