@@ -33,7 +33,7 @@ const defaultState = {
 };
 
 class DialogService extends EventEmitter {
-  protected state: State;
+  public state: State;
 
   public constructor () {
     super();

@@ -1,35 +1,22 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import { Classes } from 'jss';
+import styles from './styles';
 import { classNames, withStyles } from '../../styles';
+import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
-const styles = theme => ({
-  Headline: {
-    fontFamily: theme.font.family.default,
-    opacity: 0.95,
-    padding: 0,
-    margin: 0
-  },
+interface HeadlineProps {
+  classes: Classes;
+  id?: 'string';
+  level?: '1' | '2';
+  style?: CSSProperties;
+}
 
-  Level1: {
-    fontSize: theme.font.size.xl,
-    fontWeight: 600,
-    textAlign: 'center',
-    borderBottom: `1px solid ${theme.color.content.border}`,
-    paddingBottom: `${theme.space(2)}px`,
-    marginBottom: `${theme.space(2)}px`
-  },
-
-  Level2: {
-    fontSize: theme.font.size.xl,
-    fontWeight: 500,
-    textAlign: 'left',
-    borderBottom: `1px solid ${theme.color.content.border}`,
-    padding: `${theme.space(2) * 2}px 0 ${theme.space(2)}px 0`,
-    marginBottom: `${theme.space(2)}px`
-  }
-});
-
-const Headline = ({ classes, children, id, level, style }) => {
+const Headline: FunctionComponent<HeadlineProps> = ({
+  classes,
+  children,
+  id,
+  level = '1',
+  style
+}): ReactElement => {
   const componentClasses = classNames(classes.Headline, {
     [classes.Level1]: level === '1',
     [classes.Level2]: level === '2'
@@ -40,14 +27,6 @@ const Headline = ({ classes, children, id, level, style }) => {
       { children }
     </div>
   );
-};
-
-Headline.propTypes = {
-  level: PropTypes.oneOf([ '1', '2' ])
-};
-
-Headline.defaultProps = {
-  level: '1'
 };
 
 export default withStyles(styles)(Headline);
