@@ -2,7 +2,6 @@ import animate from 'animejs';
 import Application from './components/Application';
 import Brand from './components/branding/Brand';
 import BusyIndicator from './components/BusyIndicator';
-import Button from './components/Button';
 import CheckBox from './components/CheckBox';
 import ControlGroup from './components/ControlGroup';
 import Dropdown from './components/Dropdown';
@@ -10,6 +9,7 @@ import Form from './components/Form';
 import Grid from './components/Grid';
 import Headline from './components/Headline';
 import Icon from './components/Icon';
+import Label from './components/Label';
 import Link from './components/Link';
 import MadeBy from './components/branding/MadeBy';
 import Message from './components/Message';
@@ -28,6 +28,7 @@ import Toggle from './components/Toggle';
 import Transition from './components/Transition';
 import View from './components/View';
 import Website from './components/Website';
+import Button, { ButtonHint } from './components/Button';
 import { classNames, createUseStyles, removeServerSideStyles, useTheme, withStyles } from './styles';
 
 export {
@@ -36,6 +37,7 @@ export {
   Brand,
   BusyIndicator,
   Button,
+  ButtonHint,
   classNames,
   createUseStyles,
   CheckBox,
@@ -45,6 +47,7 @@ export {
   Grid,
   Headline,
   Icon,
+  Label,
   Link,
   MadeBy,
   Message,
