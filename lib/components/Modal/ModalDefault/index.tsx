@@ -72,7 +72,7 @@ const Modal: FunctionComponent<ModalProps> = ({
     }
   }, [ isVisible ]);
 
-  useEffect((): void => {
+  useEffect((): (() => void) => {
     const body = document.querySelector('body');
 
     document.addEventListener('keydown', handleKeyDown);
