@@ -34,21 +34,21 @@
     "@types/lodash": "4.14.138",
     "@types/node": "12.7.5",
     "@types/puppeteer": "1.19.1",
-    "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.0",
+    "@types/react": "16.9.5",
+    "@types/react-dom": "16.9.1",
     "@types/react-transition-group": "4.2.2",
     "@types/shelljs": "0.8.5",
     "assertthat": "4.0.2",
     "puppeteer": "1.20.0",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
+    "react": "16.10.2",
+    "react-dom": "16.10.2",
     "react-styleguidist": "9.1.16",
-    "roboter": "8.1.0",
+    "roboter": "8.1.2",
     "shelljs": "0.8.3"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
   },
   "repository": {
     "type": "git",
