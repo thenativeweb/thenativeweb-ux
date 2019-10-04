@@ -1,41 +1,66 @@
+import { Classes } from 'jss';
 import Icon from '../Icon';
-import PropTypes from 'prop-types';
-import React from 'react';
-import styles from './styles.js';
+import styles from './styles';
 import { classNames, withStyles } from '../../styles';
+import React, { CSSProperties, FormEvent, ReactNode } from 'react';
 
-class Dropdown extends React.PureComponent {
-  constructor (props) {
+interface Option {
+  label: string;
+  value: string;
+}
+
+type DropDownSize = 'sm' | 'md';
+
+interface DropdownProps {
+  classes: Classes;
+  options: Option [];
+  value: string;
+  emptyLabel?: string;
+  id?: string;
+  size?: DropDownSize;
+  style?: CSSProperties;
+  onChange?: (value: string) => void;
+}
+
+interface DropdownState {
+  isFocused: boolean;
+}
+
+class Dropdown extends React.PureComponent<DropdownProps, DropdownState> {
+  public static defaultProps = {
+    size: 'md' as DropDownSize,
+    emptyLabel: 'Choose an option…'
+  };
+
+  public constructor (props: DropdownProps) {
     super(props);
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
 
     this.state = {
       isFocused: false
     };
   }
 
-  handleChange (event) {
+  public handleChange = (event: FormEvent<HTMLSelectElement>): void => {
     const { onChange } = this.props;
 
-    onChange(event.target.value);
-  }
+    if (onChange) {
+      onChange(event.currentTarget.value);
+    }
+  };
 
-  handleFocus () {
+  public handleFocus = (): void => {
     this.setState({
       isFocused: true
     });
-  }
+  };
 
-  handleBlur () {
+  public handleBlur = (): void => {
     this.setState({
       isFocused: false
     });
-  }
+  };
 
-  render () {
+  public render (): ReactNode {
     const { classes, emptyLabel, id, options, size, style, value } = this.props;
     const { isFocused } = this.state;
 
@@ -50,7 +75,7 @@ class Dropdown extends React.PureComponent {
         <select key='commands' value={ value } onChange={ this.handleChange } onFocus={ this.handleFocus } onBlur={ this.handleBlur }>
           { emptyLabel ? <option value='' key='empty-value'>{ emptyLabel }</option> : null }
           {
-            options.map(option => (
+            options.map((option): ReactNode => (
               <option
                 key={ option.value }
                 value={ option.value }
@@ -65,16 +90,5 @@ class Dropdown extends React.PureComponent {
     );
   }
 }
-
-Dropdown.propTypes = {
-  options: PropTypes.array.isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  size: PropTypes.oneOf([ 'sm', 'md' ])
-};
-
-Dropdown.defaultProps = {
-  size: 'md'
-};
 
 export default withStyles(styles)(Dropdown);

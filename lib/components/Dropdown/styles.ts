@@ -1,4 +1,7 @@
-const styles = theme => ({
+import { Styles } from 'jss';
+import Theme from '../../themes/Theme';
+
+const styles = (theme: Theme): Styles => ({
   Dropdown: {
     position: 'relative',
     display: 'flex',
