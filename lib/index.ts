@@ -12,7 +12,6 @@ import Label from './components/Label';
 import Link from './components/Link';
 import MadeBy from './components/branding/MadeBy';
 import Message from './components/Message';
-import Modal from './components/Modal';
 import Pattern from './components/branding/Pattern';
 import Product from './components/branding/Product';
 import services from './services';
@@ -30,6 +29,7 @@ import Website from './components/Website';
 import Button, { ButtonHint } from './components/Button';
 import { classNames, createUseStyles, removeServerSideStyles, useTheme, withStyles } from './styles';
 import Form, { FormActions, FormRow } from './components/Form';
+import Modal, { ModalRow } from './components/Modal';
 
 export {
   animate,
@@ -54,6 +54,7 @@ export {
   MadeBy,
   Message,
   Modal,
+  ModalRow,
   Pattern,
   Product,
   removeServerSideStyles,

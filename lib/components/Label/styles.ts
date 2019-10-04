@@ -1,6 +1,6 @@
-import Theme from '../../themes/Theme';
+import { Styles } from 'jss';
 
-const styles = (theme: Theme): any => ({
+const styles: Styles = {
   Label: {
     display: 'block',
     flexGrow: 1,
@@ -10,6 +10,6 @@ const styles = (theme: Theme): any => ({
     whiteSpace: 'nowrap',
     color: 'inherit'
   }
-});
+};
 
-export default theme;
+export default styles;

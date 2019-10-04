@@ -1,4 +1,7 @@
-const styles = theme => ({
+import { Styles } from 'jss';
+import Theme from '../../../themes/Theme';
+
+const styles = (theme: Theme): Styles => ({
   '@global': {
     '.thenativeweb-modal--visible': {
       pointerEvents: 'none'

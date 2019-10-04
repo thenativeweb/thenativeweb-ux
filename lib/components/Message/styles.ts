@@ -1,4 +1,7 @@
-const styles = theme => ({
+import { Styles } from 'jss';
+import Theme from '../../themes/Theme';
+
+const styles = (theme: Theme): Styles => ({
   Message: {
     padding: `${theme.space(1.5)}px ${theme.space(2)}px`,
     marginBottom: `${theme.space(1)}px`,

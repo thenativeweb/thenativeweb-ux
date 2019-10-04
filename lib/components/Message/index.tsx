@@ -1,16 +1,31 @@
+import { Classes } from 'jss';
 import Icon from '../Icon';
-import PropTypes from 'prop-types';
-import React from 'react';
 import styles from './styles';
 import { classNames, withStyles } from '../../styles';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const Message = ({ children, classes, isVisible, type }) => {
-  const icon = type === 'default' ? null : type;
+interface MessageProps {
+  classes: Classes;
+  isVisible?: boolean;
+  type?: 'default' | 'info' | 'error';
+}
+
+const Message: FunctionComponent<MessageProps> = ({
+  children,
+  classes,
+  isVisible = true,
+  type = 'default'
+}): ReactElement | null => {
+  let iconName;
+
+  if (type !== 'default') {
+    iconName = type;
+  }
 
   const componentClasses = classNames(classes.Message, {
     [classes.TypeInfo]: type === 'info',
     [classes.TypeError]: type === 'error',
-    [classes.WithIcon]: icon !== undefined
+    [classes.WithIcon]: iconName
   });
 
   if (isVisible === false) {
@@ -19,20 +34,14 @@ const Message = ({ children, classes, isVisible, type }) => {
 
   return (
     <div className={ componentClasses }>
-      { icon !== undefined ? <div className={ classes.IconContainer }><Icon className={ classes.Icon } name={ icon } /></div> : null }
+      {
+        iconName ?
+          <div className={ classes.IconContainer }><Icon className={ classes.Icon } name={ iconName } /></div> :
+          null
+      }
       <div className={ classes.Content }>{ children }</div>
     </div>
   );
-};
-
-Message.propTypes = {
-  isVisible: PropTypes.bool,
-  type: PropTypes.oneOf([ 'default', 'info', 'error' ])
-};
-
-Message.defaultProps = {
-  isVisible: true,
-  type: 'default'
 };
 
 export default withStyles(styles)(Message);
