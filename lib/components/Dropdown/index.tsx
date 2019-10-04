@@ -2,7 +2,7 @@ import { Classes } from 'jss';
 import Icon from '../Icon';
 import styles from './styles';
 import { classNames, withStyles } from '../../styles';
-import React, { CSSProperties, FormEvent, ReactNode } from 'react';
+import React, { CSSProperties, FormEvent, ReactElement } from 'react';
 
 interface Option {
   label: string;
@@ -60,7 +60,7 @@ class Dropdown extends React.PureComponent<DropdownProps, DropdownState> {
     });
   };
 
-  public render (): ReactNode {
+  public render (): ReactElement {
     const { classes, emptyLabel, id, options, size, style, value } = this.props;
     const { isFocused } = this.state;
 
@@ -75,7 +75,7 @@ class Dropdown extends React.PureComponent<DropdownProps, DropdownState> {
         <select key='commands' value={ value } onChange={ this.handleChange } onFocus={ this.handleFocus } onBlur={ this.handleBlur }>
           { emptyLabel ? <option value='' key='empty-value'>{ emptyLabel }</option> : null }
           {
-            options.map((option): ReactNode => (
+            options.map((option): ReactElement => (
               <option
                 key={ option.value }
                 value={ option.value }
