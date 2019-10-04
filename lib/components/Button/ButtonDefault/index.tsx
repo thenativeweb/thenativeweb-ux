@@ -30,12 +30,14 @@ const Button: FunctionComponent<ButtonProps> = ({
   id,
   icon,
   iconSize = 'md',
-  onClick,
+  onClick = (): void => {
+    // Intentionally left blank.
+  },
   isPrimary = false,
   isSubtle,
   size = 'md',
   style,
-  type = undefined
+  type = 'button'
 }): ReactElement => {
   const componentClasses = classNames(
     classes.Button,
@@ -52,7 +54,11 @@ const Button: FunctionComponent<ButtonProps> = ({
     className
   );
 
-  const buttonType = type || (isPrimary ? 'submit' : 'button');
+  let buttonType = type;
+
+  if (isPrimary) {
+    buttonType = 'submit';
+  }
 
   /* eslint-disable react/button-has-type */
   return (
