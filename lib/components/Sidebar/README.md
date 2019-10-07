@@ -6,14 +6,14 @@ import { Application, Brand, Product, View } from 'thenativeweb-ux';
 <div style={{ position:'relative', width: 640, height: 480 }}>
   <Application>
     <Sidebar>
-      <Sidebar.Brand><Product name='my-app' /></Sidebar.Brand>
-      <Sidebar.Item iconName='account'>
-        <Sidebar.Item>You are logged in as Sophie</Sidebar.Item>
-        <Sidebar.Item onClick={ () => console.log('Clicked') }>Logout</Sidebar.Item>
-      </Sidebar.Item>
-      <Sidebar.Item iconName='help' isActive={ true } />
-      <Sidebar.Item iconName='help' onClick={ () => console.log('Clicked') } />
-      <Sidebar.Footer><Brand type='minimal' color='monochrome' /></Sidebar.Footer>
+      <SidebarBrand><Product name='my-app' /></SidebarBrand>
+      <SidebarItem iconName='account'>
+        <SidebarItem>You are logged in as Sophie</SidebarItem>
+        <SidebarItem onClick={ () => console.log('Clicked') }>Logout</SidebarItem>
+      </SidebarItem>
+      <SidebarItem iconName='help' isActive={ true } />
+      <SidebarItem iconName='help' onClick={ () => console.log('Clicked') } />
+      <SidebarFooter><Brand type='minimal' color='monochrome' /></SidebarFooter>
     </Sidebar>
     <View adjust='flex' background='light'>My content panel</View>
   </Application>

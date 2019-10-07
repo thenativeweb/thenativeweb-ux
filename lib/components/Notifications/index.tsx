@@ -1,21 +1,10 @@
 import ExecutionEnvironment from 'exenv';
 import Notification from './Notification';
-import React from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import services from '../../services';
 import Transition from '../Transition';
 import { withStyles } from '../../styles';
-
-const styles = theme => ({
-  Notifications: {
-    position: 'fixed',
-    top: `${theme.space(3)}px`,
-    right: `${theme.space(3)}px`,
-    width: '300px',
-    zIndex: theme.zIndices.overlay,
-    pointerEvents: 'none'
-  }
-});
 
 class Notifications extends React.PureComponent {
   constructor () {

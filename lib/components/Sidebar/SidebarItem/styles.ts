@@ -1,8 +1,7 @@
-import Icon from '../Icon';
-import React from 'react';
-import { classNames, withStyles } from '../../styles';
+import { Styles } from 'jss';
+import Theme from '../../../themes/Theme';
 
-const styles = theme => ({
+const styles: Styles = (theme: Theme): Styles => ({
   Item: {
     position: 'relative',
     flex: '0 0 auto',
@@ -83,36 +82,4 @@ const styles = theme => ({
   }
 });
 
-const Item = React.forwardRef(({ classes, className, iconName, iconUrl, id, isActive = false, isNested = false, children, onClick }, ref) => {
-  const componentClasses = classNames(classes.Item, {
-    [classes.IsActive]: isActive,
-    [classes.IsNested]: isNested,
-    [classes.IsTopLevel]: !isNested,
-    [classes.IsClickable]: onClick !== undefined
-  }, className);
-
-  if (isNested) {
-    return (
-      <div id={ id } className={ componentClasses } onClick={ onClick }>
-        <div className={ classes.Label }>
-          { children }
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div ref={ ref } id={ id } className={ componentClasses }>
-      <div className={ classes.Icon } onClick={ onClick }>
-        { iconUrl ? <img src={ iconUrl } /> : <Icon name={ iconName } size='lg' color='white' />}
-      </div>
-      <div className={ classes.Items }>
-        {
-          React.Children.map(children, child => React.cloneElement(child, { isNested: true }))
-        }
-      </div>
-    </div>
-  );
-});
-
-export default withStyles(styles)(Item);
+export default styles;
