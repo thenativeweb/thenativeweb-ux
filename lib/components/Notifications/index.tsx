@@ -1,31 +1,31 @@
+import { Classes } from 'jss';
 import ExecutionEnvironment from 'exenv';
 import Notification from './Notification';
-import React, { FunctionComponent, ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import services from '../../services';
-import Transition from '../Transition';
+import styles from './styles';
+import { TransitionGroup } from '../Transition';
 import { withStyles } from '../../styles';
+import React, { ReactElement } from 'react';
 
-class Notifications extends React.PureComponent {
-  constructor () {
-    super();
+interface NotificationsProps {
+  classes: Classes;
+}
 
-    this.handleServiceChanged = this.handleServiceChanged.bind(this);
-  }
-
-  componentDidMount () {
+class Notifications extends React.PureComponent<NotificationsProps> {
+  public componentDidMount (): void {
     services.notifications.on('changed', this.handleServiceChanged);
   }
 
-  componentWillUnmount () {
+  public componentWillUnmount (): void {
     services.notifications.removeListener('changed', this.handleServiceChanged);
   }
 
-  handleServiceChanged () {
+  protected handleServiceChanged (): void {
     this.forceUpdate();
   }
 
-  render () {
+  public render (): ReactElement | null {
     const { classes } = this.props;
 
     if (!ExecutionEnvironment.canUseDOM) {
@@ -35,11 +35,11 @@ class Notifications extends React.PureComponent {
     return ReactDOM.createPortal(
       (
         <div className={ classes.Notifications }>
-          <Transition.Group type='FadeInLeft' component='span'>
-            { services.notifications.state.items.map(notification => (
+          <TransitionGroup type='FadeInLeft' component='span'>
+            { services.notifications.state.items.map((notification): ReactElement => (
               <Notification key={ notification.id } type={ notification.type } text={ notification.text } />
             ))}
-          </Transition.Group>
+          </TransitionGroup>
         </div>
       ),
       services.getPortalRootNode()
