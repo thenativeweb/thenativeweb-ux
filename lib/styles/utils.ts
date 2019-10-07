@@ -63,10 +63,8 @@ const getSpaceDependentClassNamesFromProps = function (
     if (typeof propertyValue === 'string' || typeof propertyValue === 'number') {
       responsiveClassNames.push(classes[`-${propertyName}-${propertyValue}`]);
     } else {
-      for (const sizeId of Object.keys(propertyValue)) {
-        if (typeof sizeId === 'string') {
-          responsiveClassNames.push(classes[`${sizeId}-${propertyName}-${propertyValue[sizeId]}`]);
-        }
+      for (const [ sizeKey, sizeValue ] of Object.entries(propertyValue)) {
+        responsiveClassNames.push(classes[`${sizeKey}-${propertyName}-${sizeValue}`]);
       }
     }
   }

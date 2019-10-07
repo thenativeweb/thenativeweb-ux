@@ -17,12 +17,14 @@ const columnProperties = {
 };
 
 const createColumnClasses = function ({ deviceSize }: { deviceSize: string }): Styles {
-  const classes = {};
+  const classes: Styles = {};
 
   for (const column of columns) {
-    for (const propertyName of Object.keys(columnProperties)) {
-      classes[`${deviceSize}${propertyName}-${column}`] = columnProperties[propertyName](column);
-    }
+    /* eslint-disable new-cap */
+    classes[`${deviceSize}ColumnStart-${column}`] = columnProperties.ColumnStart(column);
+    classes[`${deviceSize}ColumnEnd-${column}`] = columnProperties.ColumnEnd(column);
+    classes[`${deviceSize}ColumnSpan-${column}`] = columnProperties.ColumnSpan(column);
+    /* eslint-enable new-cap */
   }
 
   return classes;
