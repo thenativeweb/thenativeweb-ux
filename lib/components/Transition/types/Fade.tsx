@@ -1,9 +1,10 @@
 import anime from 'animejs';
 import defaults from './defaults';
-import React from 'react';
 import { Transition } from 'react-transition-group';
+import { TransitionProps } from './TransitionProps';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const handleEnter = function (node) {
+const handleEnter = function (node: HTMLElement): void {
   anime({
     targets: node,
     opacity: [ 0, 1 ],
@@ -12,7 +13,7 @@ const handleEnter = function (node) {
   });
 };
 
-const handleExit = function (node) {
+const handleExit = function (node: HTMLElement): void {
   anime({
     targets: node,
     opacity: [ 1, 0 ],
@@ -21,7 +22,7 @@ const handleExit = function (node) {
   });
 };
 
-const Fade = ({ children, key, in: fadeIn }) => (
+const Fade: FunctionComponent<TransitionProps> = ({ children, key, in: fadeIn }): ReactElement => (
   <Transition
     key={ key }
     in={ fadeIn }

@@ -9,9 +9,9 @@ import { CheckBox, ControlGroup, Form, View } from 'thenativeweb-ux';
 <div>
   <Form>
     <ControlGroup>
-      <ControlGroup.Item label='Show box?'>
+      <ControlGroupItem label='Show box?'>
         <CheckBox id='transition-checkbox' onChange={() => setState({ isBoxVisible: !state.isBoxVisible })} />
-      </ControlGroup.Item>
+      </ControlGroupItem>
     </ControlGroup>
   </Form>
 
@@ -47,11 +47,11 @@ removeItem = function () {
     <Button onClick={ removeItem }>Remove item</Button>
   </View>
   <View>
-    <Transition.Group type='FadeInRight'>
+    <TransitionGroup type='FadeInRight'>
       { state.items.map((item, index) => (
         <View orientation='centered' style={{ width: 100, height: 100, float: 'left', background: 'orange', marginRight: 5, marginBottom: 5 }} key={index}>{item}</View>
       )) }
-    </Transition.Group>
+    </TransitionGroup>
   </View>
 </div>
 ```

@@ -24,6 +24,7 @@ import ThemeProvider from './components/ThemeProvider';
 import themes from './themes';
 import Toggle from './components/Toggle';
 import Transition from './components/Transition';
+import TransitionGroup from './components/TransitionGroup';
 import View from './components/View';
 import Website from './components/Website';
 import Button, { ButtonHint } from './components/Button';
@@ -68,6 +69,7 @@ export {
   themes,
   Toggle,
   Transition,
+  TransitionGroup,
   View,
   Website,
   withStyles,

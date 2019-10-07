@@ -13,7 +13,7 @@ interface State {
 }
 
 class NotificationService extends EventEmitter {
-  protected state: State;
+  public state: State;
 
   public constructor () {
     super();

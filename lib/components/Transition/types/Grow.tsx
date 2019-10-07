@@ -1,9 +1,10 @@
 import anime from 'animejs';
 import defaults from './defaults';
-import React from 'react';
 import { Transition } from 'react-transition-group';
+import { TransitionProps } from './TransitionProps';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const handleEnter = function (node) {
+const handleEnter = function (node: HTMLElement): void {
   anime({
     targets: node,
     opacity: [ 0, 1 ],
@@ -13,7 +14,7 @@ const handleEnter = function (node) {
   });
 };
 
-const handleExit = function (node) {
+const handleExit = function (node: HTMLElement): void {
   anime({
     targets: node,
     opacity: [ 1, 0 ],
@@ -23,11 +24,10 @@ const handleExit = function (node) {
   });
 };
 
-/* eslint-disable react/destructuring-assignment */
-const Grow = props => (
+const Grow: FunctionComponent<TransitionProps> = ({ children, key, in: fadeIn }): ReactElement => (
   <Transition
-    key={ props.key }
-    in={ props.in }
+    key={ key }
+    in={ fadeIn }
     appear={ false }
     mountOnEnter={ true }
     unmountOnExit={ true }
@@ -35,7 +35,7 @@ const Grow = props => (
     onExit={ handleExit }
     timeout={ defaults.duration }
   >
-    { props.children }
+    { children }
   </Transition>
 );
 /* eslint-enable react/destructuring-assignment */

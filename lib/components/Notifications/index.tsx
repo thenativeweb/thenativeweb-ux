@@ -1,10 +1,9 @@
 import { Classes } from 'jss';
-import ExecutionEnvironment from 'exenv';
 import Notification from './Notification';
 import ReactDOM from 'react-dom';
 import services from '../../services';
 import styles from './styles';
-import { TransitionGroup } from '../Transition';
+import { TransitionGroup } from '../..';
 import { withStyles } from '../../styles';
 import React, { ReactElement } from 'react';
 
@@ -21,21 +20,21 @@ class Notifications extends React.PureComponent<NotificationsProps> {
     services.notifications.removeListener('changed', this.handleServiceChanged);
   }
 
-  protected handleServiceChanged (): void {
+  protected handleServiceChanged = (): void => {
     this.forceUpdate();
-  }
+  };
 
   public render (): ReactElement | null {
     const { classes } = this.props;
 
-    if (!ExecutionEnvironment.canUseDOM) {
+    if (!services.excecutionEnvironment.canUseDom) {
       return null;
     }
 
     return ReactDOM.createPortal(
       (
         <div className={ classes.Notifications }>
-          <TransitionGroup type='FadeInLeft' component='span'>
+          <TransitionGroup type='FadeInLeft'>
             { services.notifications.state.items.map((notification): ReactElement => (
               <Notification key={ notification.id } type={ notification.type } text={ notification.text } />
             ))}
