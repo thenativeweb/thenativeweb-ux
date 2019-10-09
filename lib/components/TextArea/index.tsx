@@ -1,54 +1,27 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import styles from './styles';
+import { Classes, Styles } from 'jss';
 import { classNames, withStyles } from '../../styles';
+import React, { ReactElement } from 'react';
 
-const styles = theme => ({
-  TextArea: {
-    padding: '9px 12px',
-    fontSize: theme.font.size.md,
-    fontFamily: theme.font.family.default,
-    width: '100%',
-    'box-sizing': 'border-box',
-    border: `1px solid`,
-    borderColor: theme.color.content.border,
+interface TextAreaProps {
+  classes: Classes;
+  className: string;
+  disabled: boolean;
+  id: string;
+  name: string;
+  placeholder: string;
+  ref: any;
+  required: boolean;
+  size: 'sm' | 'md';
+  style: Styles;
+  value: string;
+  onBlur: () => void;
+  onChange: () => void;
+  onFocus: () => void;
+}
 
-    '&:focus': {
-      outline: 'none',
-      borderColor: theme.color.interaction.focus
-    },
-
-    '&::placeholder': {
-      color: theme.color.brand.darkGrey,
-      fontFamily: theme.font.family.default,
-      fontSize: 'inherit',
-      fontWeight: 400,
-      opacity: 0.5
-    }
-  },
-
-  IsDisabled: {
-    color: theme.color.brand.darkGrey,
-    background: theme.color.brand.lightGrey
-  },
-
-  SizeSm: {
-    height: `${theme.space(10)}px`
-  },
-
-  SizeMd: {
-    height: `${theme.space(18)}px`
-  }
-});
-
-class TextArea extends React.Component {
-  constructor (props) {
-    super(props);
-
-    this.handleFocusTimeout = this.handleFocusTimeout.bind(this);
-    this.handleRefChanged = this.handleRefChanged.bind(this);
-  }
-
-  componentDidMount () {
+class TextArea extends React.Component<TextAreaProps> {
+  public componentDidMount (): void {
     const { autoFocus, focusDelay } = this.props;
 
     if (!autoFocus) {
@@ -62,21 +35,21 @@ class TextArea extends React.Component {
     }
   }
 
-  componentWillUnmount () {
+  public componentWillUnmount (): void {
     clearTimeout(this.focusTimeout);
   }
 
-  handleFocusTimeout () {
+  protected handleFocusTimeout = (): void => {
     if (this.element) {
       this.element.focus();
     }
-  }
+  };
 
-  handleRefChanged (ref) {
+  protected handleRefChanged = (ref: any): void => {
     this.element = ref;
-  }
+  };
 
-  render () {
+  public render (): ReactElement {
     const {
       classes,
       className,
@@ -93,12 +66,16 @@ class TextArea extends React.Component {
       size
     } = this.props;
 
-    const componentClasses = classNames(classes.TextArea, {
-      [classes.IsDisabled]: disabled === true,
-      [classes.IsRequired]: required === true,
-      [classes.SizeSm]: size === 'sm',
-      [classes.SizeMd]: size === 'md'
-    }, className);
+    const componentClasses = classNames(
+      classes.TextArea,
+      {
+        [classes.IsDisabled]: disabled === true,
+        [classes.IsRequired]: required === true,
+        [classes.SizeSm]: size === 'sm',
+        [classes.SizeMd]: size === 'md'
+      },
+      className
+    );
 
     return (
       <textarea
@@ -118,36 +95,5 @@ class TextArea extends React.Component {
     );
   }
 }
-
-TextArea.propTypes = {
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  required: PropTypes.bool,
-  size: PropTypes.oneOf([ 'sm', 'md' ]),
-  value: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func
-};
-
-TextArea.defaultProps = {
-  autoFocus: false,
-  disabled: false,
-  focusDelay: 0,
-  required: false,
-  size: 'sm',
-  onBlur () {
-    // Intentionally left blank.
-  },
-  onChange () {
-    // Intentionally left blank.
-  },
-  onFocus () {
-    // Intentionally left blank.
-  }
-};
 
 export default withStyles(styles)(TextArea);
