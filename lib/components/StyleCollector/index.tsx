@@ -1,7 +1,12 @@
-import React from 'react';
 import { createGenerateId, JssProvider, SheetsRegistry } from 'react-jss';
+import React, { FunctionComponent, ReactElement } from 'react';
 
-const StyleCollector = ({ children, collection }) => {
+interface StyleCollectorProps {
+  collection: any;
+  createCollection: () => ReactElement;
+}
+
+const StyleCollector: FunctionComponent<StyleCollectorProps> = ({ children, collection }): any => {
   if (!collection) {
     throw new Error('Configuration is missing.');
   }
@@ -17,14 +22,14 @@ const StyleCollector = ({ children, collection }) => {
   );
 };
 
-StyleCollector.createCollection = function () {
+StyleCollector.createCollection = (): ReactElement => {
   const registry = new SheetsRegistry();
   const generateId = createGenerateId();
 
   const collector = {
     registry,
     generateId,
-    generateStyleTag () {
+    generateStyleTag (): ReactElement {
       return (<style id='server-side-styles' dangerouslySetInnerHTML={{ __html: registry.toString() }} />);
     }
   };
