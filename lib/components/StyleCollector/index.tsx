@@ -1,4 +1,4 @@
-import { createGenerateId, JssProvider, SheetsRegistry } from 'react-jss';
+import { JssProvider } from 'react-jss';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface StyleCollectorProps {
@@ -6,7 +6,7 @@ interface StyleCollectorProps {
   createCollection: () => ReactElement;
 }
 
-const StyleCollector: FunctionComponent<StyleCollectorProps> = ({ children, collection }): any => {
+const StyleCollector: FunctionComponent<StyleCollectorProps> = ({ children, collection }): ReactElement => {
   if (!collection) {
     throw new Error('Configuration is missing.');
   }
@@ -20,21 +20,6 @@ const StyleCollector: FunctionComponent<StyleCollectorProps> = ({ children, coll
   return (
     <JssProvider registry={ registry } generateId={ generateId }>{ children }</JssProvider>
   );
-};
-
-StyleCollector.createCollection = (): ReactElement => {
-  const registry = new SheetsRegistry();
-  const generateId = createGenerateId();
-
-  const collector = {
-    registry,
-    generateId,
-    generateStyleTag (): ReactElement {
-      return (<style id='server-side-styles' dangerouslySetInnerHTML={{ __html: registry.toString() }} />);
-    }
-  };
-
-  return collector;
 };
 
 export default StyleCollector;
