@@ -4,6 +4,8 @@ import { classNames, withStyles } from '../../styles';
 import React, { ReactElement } from 'react';
 
 interface TextAreaProps {
+  autoFocus: boolean;
+  focusDelay: number;
   classes: Classes;
   className: string;
   disabled: boolean;
@@ -49,7 +51,7 @@ class TextArea extends React.Component<TextAreaProps> {
     this.element = ref;
   };
 
-  public render (): ReactElement {
+  public render (): HTMLTextAreaElement {
     const {
       classes,
       className,
