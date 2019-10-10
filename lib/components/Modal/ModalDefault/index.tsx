@@ -1,14 +1,10 @@
 import { Classes } from 'jss';
 import ReactDOM from 'react-dom';
 import styles from './styles';
+import { TransitionType } from '../../Transition/TransitionType';
 import { Button, services, Transition } from '../../..';
 import { classNames, withStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement, ReactNode, useCallback, useEffect } from 'react';
-
-const KEY = {
-  ENTER: 'Enter',
-  ESCAPE: 'Escape'
-};
 
 interface ModalProps {
   classes: Classes;
@@ -48,10 +44,10 @@ const Modal: FunctionComponent<ModalProps> = ({
 
   const handleKeyDown = useCallback((event: KeyboardEvent): void => {
     switch (event.key) {
-      case KEY.ESCAPE:
+      case 'Escape':
         onCancel();
         break;
-      case KEY.ENTER:
+      case 'Enter':
         break;
       default:
         break;
@@ -100,7 +96,7 @@ const Modal: FunctionComponent<ModalProps> = ({
     className
   );
 
-  let transitionType;
+  let transitionType: TransitionType;
 
   switch (attach) {
     case 'left':
@@ -123,7 +119,6 @@ const Modal: FunctionComponent<ModalProps> = ({
       <div className={ classes.Modal }>
         <div className={ backdropClasses } onClick={ handleBackDropClicked } />
         <Transition type={ transitionType } in={ isVisible }>
-
           <div className={ chromeClasses } role='dialog'>
             {
               showHeader ? (
