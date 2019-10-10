@@ -1,18 +1,15 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import Theme from '../../themes/Theme';
+import { Classes, Styles } from 'jss';
 import { classNames, withStyles } from '../../styles';
+import React, { ChangeEvent, createRef, CSSProperties, FocusEvent, KeyboardEvent, ReactElement } from 'react';
 
-const KEY = {
-  ENTER: 13
-};
-
-const styles = theme => ({
+const styles = (theme: Theme): Styles => ({
   TextBox: {
     padding: '9px 12px',
     fontSize: theme.font.size.md,
     fontFamily: theme.font.family.default,
     width: '100%',
-    'box-sizing': 'border-box',
+    boxSizing: 'border-box',
     border: `1px solid`,
     borderColor: theme.color.content.border,
 
@@ -44,56 +41,89 @@ const styles = theme => ({
   }
 });
 
-class TextBox extends React.Component {
-  constructor (props) {
-    super(props);
+interface TextBoxProps {
+  autoFocus?: boolean;
+  classes: Classes;
+  className?: 'string';
+  disabled?: boolean;
+  focusDelay?: number;
+  id?: string;
+  name?: string;
+  placeholder?: string;
+  required?: boolean;
+  style?: CSSProperties;
+  type?: 'default' | 'date' | 'port' | 'time';
+  value?: string;
+  onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onEnter?: (event: KeyboardEvent<HTMLInputElement>) => void;
+  onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
+}
 
-    this.handleFocusTimeout = this.handleFocusTimeout.bind(this);
-    this.handleRefChanged = this.handleRefChanged.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-  }
+type TextBoxDefaultProps = Pick<TextBoxProps, 'autoFocus' | 'disabled' | 'type' | 'required' | 'focusDelay' | 'onFocus' | 'onChange' | 'onEnter' | 'onBlur'>;
 
-  componentDidMount () {
+class TextBox extends React.Component<TextBoxProps> {
+  public static defaultProps: TextBoxDefaultProps = {
+    autoFocus: false,
+    type: 'default',
+    disabled: false,
+    required: false,
+    focusDelay: 0,
+    onBlur (): void {
+      // Intentionally left blank.
+    },
+    onChange (): void {
+      // Intentionally left blank.
+    },
+    onEnter (): void {
+      // Intentionally left blank.
+    },
+    onFocus (): void {
+      // Intentionally left blank.
+    }
+  };
+
+  public componentDidMount (): void {
     const { autoFocus, focusDelay } = this.props;
 
     if (!autoFocus) {
       return;
     }
 
-    if (this.element) {
-      this.focusTimeout = setTimeout(this.handleFocusTimeout, focusDelay);
-    } else {
+    this.focusTimeout = setTimeout(this.handleFocusTimeout, focusDelay);
+  }
+
+  public componentWillUnmount (): void {
+    if (this.focusTimeout) {
       clearTimeout(this.focusTimeout);
     }
   }
 
-  componentWillUnmount () {
-    clearTimeout(this.focusTimeout);
-  }
+  private readonly elementRef = createRef<HTMLInputElement>();
 
-  handleFocusTimeout () {
-    if (this.element) {
-      this.element.focus();
+  private focusTimeout: number | undefined;
+
+  protected handleFocusTimeout = (): void => {
+    if (this.elementRef.current) {
+      this.elementRef.current.focus();
     }
-  }
+  };
 
-  handleRefChanged (ref) {
-    this.element = ref;
-  }
-
-  handleKeyDown (event) {
+  protected handleKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
     const { onEnter } = this.props;
 
-    switch (event.keyCode) {
-      case KEY.ENTER:
-        onEnter(event);
+    switch (event.key) {
+      case 'Enter':
+        if (onEnter) {
+          onEnter(event);
+        }
         break;
       default:
         break;
     }
-  }
+  };
 
-  render () {
+  public render (): ReactElement {
     const {
       className,
       classes,
@@ -110,12 +140,16 @@ class TextBox extends React.Component {
       type
     } = this.props;
 
-    const componentClasses = classNames(classes.TextBox, {
-      [classes.TypePort]: type === 'port',
-      [classes.TypeTime]: type === 'time',
-      [classes.IsDisabled]: disabled === true,
-      [classes.IsRequired]: required === true
-    }, className);
+    const componentClasses = classNames(
+      classes.TextBox,
+      {
+        [classes.TypePort]: type === 'port',
+        [classes.TypeTime]: type === 'time',
+        [classes.IsDisabled]: disabled === true,
+        [classes.IsRequired]: required === true
+      },
+      className
+    );
 
     let inputType;
 
@@ -130,7 +164,7 @@ class TextBox extends React.Component {
     return (
       <input
         id={ id }
-        ref={ this.handleRefChanged }
+        ref={ this.elementRef }
         className={ componentClasses }
         name={ name }
         value={ value }
@@ -142,45 +176,10 @@ class TextBox extends React.Component {
         required={ required }
         style={ style }
         type={ inputType }
-        disable={ disabled ? 'disabled' : null }
+        disabled={ disabled }
       />
     );
   }
 }
-
-TextBox.propTypes = {
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  required: PropTypes.bool,
-  type: PropTypes.oneOf([ 'default', 'date', 'port', 'time' ]),
-  value: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onEnter: PropTypes.func,
-  onFocus: PropTypes.func
-};
-
-TextBox.defaultProps = {
-  autoFocus: false,
-  disabled: false,
-  required: false,
-  focusDelay: 0,
-  type: 'default',
-  onBlur () {
-    // Intentionally left blank.
-  },
-  onChange () {
-    // Intentionally left blank.
-  },
-  onEnter () {
-    // Intentionally left blank.
-  },
-  onFocus () {
-    // Intentionally left blank.
-  }
-};
 
 export default withStyles(styles)(TextBox);
