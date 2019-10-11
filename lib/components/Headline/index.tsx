@@ -5,7 +5,7 @@ import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface HeadlineProps {
   classes: Classes;
-  id?: 'string';
+  id?: string;
   level?: '1' | '2';
   style?: CSSProperties;
 }

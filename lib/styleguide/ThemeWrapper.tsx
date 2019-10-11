@@ -1,4 +1,4 @@
-import Application from '../components/Application';
+import ApplicationServices from '../components/ApplicationServices';
 import React from 'react';
 import ThemeProvider from '../components/ThemeProvider';
 import thenativeweb from '../themes/thenativeweb';
@@ -6,7 +6,7 @@ import thenativeweb from '../themes/thenativeweb';
 let isFirstRender = true;
 
 const ThemeWrapper: React.FunctionComponent = ({ children }): JSX.Element => {
-  const Services = isFirstRender ? Application.Services : React.Fragment;
+  const Services = isFirstRender ? ApplicationServices : React.Fragment;
 
   isFirstRender = false;
 

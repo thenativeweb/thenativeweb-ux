@@ -6,12 +6,12 @@ import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface GridItemProps {
   classes: Classes;
-  id?: 'string';
-  className?: 'string';
+  id?: string;
+  className?: string;
   columnStart?: ResponsiveSpaceProp;
   columnSpan?: ResponsiveSpaceProp;
   columnEnd?: ResponsiveSpaceProp;
-  component?: 'string';
+  component?: string;
   style: CSSProperties;
 }
 

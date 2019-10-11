@@ -5,11 +5,6 @@ import { withStyles } from '../../styles';
 import { Button, Headline, Modal } from '../..';
 import React, { ReactElement } from 'react';
 
-const KEY = {
-  ENTER: 13,
-  ESCAPE: 27
-};
-
 interface DialogsProps {
   classes: Classes;
 }
@@ -35,12 +30,12 @@ class Dialogs extends React.Component<DialogsProps> {
     services.dialogs.state.confirm.onConfirm();
   };
 
-  protected handleKeyDown = (key: number): void => {
+  protected handleKeyDown = (key: string): void => {
     switch (key) {
-      case KEY.ESCAPE:
+      case 'Escape':
         services.dialogs.state.confirm.onCancel();
         break;
-      case KEY.ENTER:
+      case 'Enter':
         services.dialogs.state.confirm.onConfirm();
         break;
       default:
@@ -58,6 +53,7 @@ class Dialogs extends React.Component<DialogsProps> {
         isVisible={ services.dialogs.state.confirm.isVisible }
         className={ classes.Dialogs }
         onKeyDown={ this.handleKeyDown }
+        onCancel={ this.handleCancel }
       >
         <Headline>
           { services.dialogs.state.confirm.title }

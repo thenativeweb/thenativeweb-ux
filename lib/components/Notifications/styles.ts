@@ -1,5 +1,5 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import Theme from '../../themes/Theme';
 
 const styles: Styles = (theme: Theme): Styles => ({
   Notifications: {

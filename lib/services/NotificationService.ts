@@ -1,9 +1,11 @@
 import EventEmitter from 'events';
 import uuid from 'uuidv4';
 
+export type NotificationType = 'error' | 'success';
+
 interface Notification {
   id: string;
-  type: string;
+  type: NotificationType;
   text: string;
   duration: number;
 }

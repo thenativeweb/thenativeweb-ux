@@ -11,7 +11,7 @@ interface ModalProps {
   isVisible: boolean;
   onCancel: () => void;
   attach?: 'left' | 'right' | 'sidebar' | 'center';
-  className?: 'string';
+  className?: string;
   size?: 'sm' | 'md' | 'lg' | 'fullscreen';
   padding?: 'default' | 'none';
   showHeader?: boolean;

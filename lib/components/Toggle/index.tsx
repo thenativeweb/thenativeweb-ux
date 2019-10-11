@@ -1,89 +1,48 @@
-import Button from '../Button';
-import React from 'react';
+import { Classes } from 'jss';
+import styles from './styles';
 import { classNames, withStyles } from '../../styles';
+import React, { CSSProperties, FunctionComponent, ReactElement, useCallback } from 'react';
+import renderDefaultToggle, { RenderToggleOptions } from './renderDefaultToggle';
 
-const styles = theme => ({
-  Toggle: {
-    display: 'flex'
-  },
-
-  ActiveButton: {
-    marginRight: 0,
-    background: theme.color.brand.highlight,
-
-    '&:first-child': {
-      'border-top-right-radius': 0,
-      'border-bottom-right-radius': 0
-    },
-
-    '&:last-child': {
-      'border-top-left-radius': 0,
-      'border-bottom-left-radius': 0
-    }
-  },
-
-  Button: {
-    marginRight: 0,
-
-    '&:first-child': {
-      'border-top-right-radius': 0,
-      'border-bottom-right-radius': 0
-    },
-
-    '&:last-child': {
-      'border-top-left-radius': 0,
-      'border-bottom-left-radius': 0
-    }
-  }
-});
-
-const renderDefaultToggle = ({ value, isSelected, changeValue, classes }) => (
-  <Button
-    className={ isSelected ? classes.ActiveButton : classes.Button }
-    onClick={ () => changeValue(value) }
-    key={ value }
-  >{ value }
-  </Button>
-);
-
-class Toggle extends React.PureComponent {
-  constructor (props) {
-    super(props);
-
-    this.handleChangeValue = this.handleChangeValue.bind(this);
-  }
-
-  handleChangeValue (newValue) {
-    const { onChange } = this.props;
-
-    onChange(newValue);
-  }
-
-  render () {
-    const { id, classes, className, children, selectedValue, values, style } = this.props;
-
-    const componentClasses = classNames(classes.Toggle, className);
-
-    return (
-      <div id={ id } className={ componentClasses } style={ style }>
-        {values.map(value => children({
-          value,
-          isSelected: selectedValue === value,
-          changeValue: this.handleChangeValue,
-          classes
-        }))}
-      </div>
-    );
-  }
+interface ToggleProps {
+  classes: Classes;
+  values: string [];
+  selectedValue: string;
+  children: ({ value, isSelected, changeValue, classes }: RenderToggleOptions) => ReactElement;
+  className?: string;
+  id?: string;
+  onChange?: (newValue: string) => void;
+  style?: CSSProperties;
 }
 
-Toggle.defaultProps = {
-  values: [ 'yellow', 'red', 'green' ],
-  selectedValue: 'yellow',
-  onChange () {
-    // Intentionally left blank.
-  },
-  children: renderDefaultToggle
+const Toggle: FunctionComponent<ToggleProps> = ({
+  id,
+  classes,
+  className,
+  children = renderDefaultToggle,
+  selectedValue,
+  values,
+  style,
+  onChange
+}): ReactElement => {
+  const handleValueChange = useCallback((newValue: string): void => {
+    if (onChange) {
+      onChange(newValue);
+    }
+  }, []);
+
+  const componentClasses = classNames(classes.Toggle, className);
+
+  return (
+    <div id={ id } className={ componentClasses } style={ style }>
+      {values.map((value): ReactElement => children({
+        value,
+        isSelected: selectedValue === value,
+        changeValue: handleValueChange,
+        classes
+      }))}
+    </div>
+  );
 };
 
 export default withStyles(styles)(Toggle);

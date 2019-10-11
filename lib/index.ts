@@ -28,7 +28,7 @@ import TransitionGroup from './components/TransitionGroup';
 import View from './components/View';
 import Website from './components/Website';
 import Button, { ButtonHint } from './components/Button';
-import { classNames, createUseStyles, removeServerSideStyles, useTheme, withStyles } from './styles';
+import { classNames, createUseStyles, removeServerSideStyles, StyleCollection, useTheme, withStyles } from './styles';
 import Form, { FormActions, FormRow } from './components/Form';
 import Modal, { ModalRow } from './components/Modal';
 
@@ -62,6 +62,7 @@ export {
   services,
   Sidebar,
   StyleCollector,
+  StyleCollection,
   Text,
   TextArea,
   TextBox,

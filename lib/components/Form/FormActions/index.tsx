@@ -5,7 +5,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 
 interface FormActionsProps {
   classes: Classes;
-  className?: 'string';
+  className?: string;
   type?: 'default' | 'stacked';
 }
 

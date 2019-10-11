@@ -8,12 +8,12 @@ import React, { FunctionComponent, ReactElement } from 'react';
 
 interface GridProps {
   classes: Classes;
-  id?: 'string';
-  className?: 'string';
+  id?: string;
+  className?: string;
   columns?: ResponsiveSpaceProp;
   columnGap?: ResponsiveSpaceProp;
   rowGap?: ResponsiveSpaceProp;
-  component?: 'string';
+  component?: string;
 }
 
 const Grid: FunctionComponent<GridProps> = ({

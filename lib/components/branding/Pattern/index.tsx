@@ -21,7 +21,7 @@ const styles = (theme: Theme): Styles => ({
 
 interface PatternProps {
   classes: Classes;
-  className?: 'string';
+  className?: string;
   type?: 'default';
 }
 
