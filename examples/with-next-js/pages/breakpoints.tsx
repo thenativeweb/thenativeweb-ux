@@ -1,10 +1,12 @@
-import React from 'react';
+import { Styles } from 'jss';
+import Theme from '../../../lib/themes/Theme';
+import React, { ReactElement } from 'react';
 import {
   Website,
   withStyles
-} from 'thenativeweb-ux';
+} from '../../../lib';
 
-const styles = theme => ({
+const styles = (theme: Theme): Styles => ({
   OnlyXs: { display: 'none' },
   OnlySm: { display: 'none' },
   OnlyMd: { display: 'none' },
@@ -42,7 +44,7 @@ const styles = theme => ({
   }
 });
 
-const Page = ({ classes }) => (
+const Page = ({ classes }: { classes: any }): ReactElement => (
   <Website>
     <header>Breakpoint tests</header>
     <div id='responsive-container'>

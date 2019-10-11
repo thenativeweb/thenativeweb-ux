@@ -7,7 +7,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 
 interface ControlGroupItemProps {
   classes: Classes;
-  className: string;
+  className?: string;
   adjust: 'flex' | 'auto';
   helpLink: string;
   label: string;

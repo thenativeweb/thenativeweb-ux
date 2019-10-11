@@ -6,7 +6,9 @@ import {
   createSpaceDependentClasses
 } from '../../../styles/utils';
 
-const styles = (theme: Theme): Styles => ({
+export type GridDefaultClassNames = 'Grid';
+
+const styles = (theme: Theme): Styles<GridDefaultClassNames> => ({
   Grid: {
     width: '100%',
     display: 'grid'

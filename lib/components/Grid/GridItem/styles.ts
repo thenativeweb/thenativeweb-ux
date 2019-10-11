@@ -31,7 +31,7 @@ const createColumnClasses = function ({ deviceSize }: { deviceSize: string }): S
 };
 
 const styles = (theme: Theme): Styles => ({
-  Item: {
+  GridItem: {
     width: '100%'
   },
 

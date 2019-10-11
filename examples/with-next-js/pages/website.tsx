@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import React from 'react';
 import {
   Website
-} from 'thenativeweb-ux';
+} from '../../../lib';
+import React, { ReactElement } from 'react';
 
-const Page = () => (
+const Page = (): ReactElement => (
   <Website>
     <header>Universally rendered Next.js website</header>
     <Link href='/'><a>Link to application page</a></Link>

@@ -2,7 +2,9 @@ import { createDefaultStyles } from '../../styles';
 import { Styles } from 'jss';
 import Theme from '../../themes/Theme';
 
-const styles: Styles = (theme: Theme): Styles => ({
+export type ApplicationClassNames = '@global' | 'Application';
+
+const styles = (theme: Theme): Styles<ApplicationClassNames> => ({
   '@global': {
     ...createDefaultStyles(theme)
   },

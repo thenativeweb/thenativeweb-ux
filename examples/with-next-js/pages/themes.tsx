@@ -4,7 +4,7 @@ import {
   ThemeProvider,
   themes,
   Website
-} from 'thenativeweb-ux';
+} from '../../../lib';
 
 const customTheme = themes.extend('thenativeweb', {
   components: {

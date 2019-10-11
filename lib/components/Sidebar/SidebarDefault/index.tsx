@@ -5,7 +5,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 
 interface SidebarProps {
   classes: Classes;
-  id: string | undefined ;
+  id?: string;
 }
 
 const Sidebar: FunctionComponent<SidebarProps> = ({ children, classes, id }): ReactElement => (

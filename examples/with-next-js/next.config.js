@@ -1,18 +1,11 @@
 const path = require('path');
 
-module.exports = {
-  webpack (config) {
-    const customizedConfig = {
-      ...config,
-      resolve: {
-        ...config.resolve,
-        alias: {
-          ...config.resolve.alias,
-          'thenativeweb-ux': path.resolve(__dirname, '..', '..', 'dist')
-        }
-      }
-    };
+const libraryEntryPointPath = path.resolve(__dirname, '..', '..', 'lib');
 
-    return customizedConfig;
+module.exports = {
+  webpack (configuration) {
+    configuration.module.rules[0].include.push(libraryEntryPointPath);
+
+    return configuration;
   }
 };

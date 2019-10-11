@@ -6,16 +6,26 @@ import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
 
 interface SidebarItemProps {
   classes: Classes;
-  className: string;
-  iconName: string;
-  iconUrl: string;
-  id: string | undefined;
-  isActive: boolean;
-  isNested: boolean;
-  onClick: () => void;
+  className?: string;
+  iconName?: string;
+  iconUrl?: string;
+  id?: string | undefined;
+  isActive?: boolean;
+  isNested?: boolean;
+  onClick?: () => void;
 }
 
-const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({ classes, className, iconName, iconUrl, id, isActive = false, isNested = false, children, onClick }, ref): ReactElement => {
+const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
+  classes,
+  className,
+  iconName,
+  iconUrl,
+  id,
+  isActive = false,
+  isNested = false,
+  children,
+  onClick
+}, ref): ReactElement => {
   const componentClasses = classNames(
     classes.Item,
     {
@@ -40,7 +50,8 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({ cla
   return (
     <div ref={ ref as any } id={ id } className={ componentClasses }>
       <div className={ classes.Icon } onClick={ onClick }>
-        { iconUrl ? <img src={ iconUrl } /> : <Icon name={ iconName } size='lg' color='white' />}
+        { iconUrl ? <img src={ iconUrl } /> : null }
+        { iconName ? <Icon name={ iconName } size='lg' color='white' /> : null }
       </div>
       <div className={ classes.Items }>
         {

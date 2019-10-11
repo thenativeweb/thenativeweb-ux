@@ -1,11 +1,10 @@
-import { Classes } from 'jss';
 import { ResponsiveSpaceProp } from '../../../types/ResponsiveSpaceProp';
 import styles from './styles';
-import { classNames, withStyles } from '../../../styles';
+import Theme from '../../../themes/Theme';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface GridItemProps {
-  classes: Classes;
   id?: string;
   className?: string;
   columnStart?: ResponsiveSpaceProp;
@@ -15,9 +14,10 @@ interface GridItemProps {
   style: CSSProperties;
 }
 
+const useStyles = createUseStyles<Theme, string>(styles);
+
 const GridItem: FunctionComponent<GridItemProps> = React.memo(({
   component = 'div',
-  classes,
   className,
   children,
   columnStart,
@@ -26,6 +26,7 @@ const GridItem: FunctionComponent<GridItemProps> = React.memo(({
   id,
   style
 }): ReactElement => {
+  const classes = useStyles();
   const columnClasses = [];
 
   if (typeof columnStart === 'object') {
@@ -57,4 +58,4 @@ const GridItem: FunctionComponent<GridItemProps> = React.memo(({
   return React.createElement(component, { className: componentClasses, style, id }, children);
 });
 
-export default withStyles(styles)(GridItem);
+export default GridItem;

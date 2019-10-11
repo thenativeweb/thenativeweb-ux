@@ -1,20 +1,22 @@
-import { Classes } from 'jss';
 import { NotificationType } from '../../../services/NotificationService';
-import styles from './styles';
-import { classNames, withStyles } from '../../../styles';
+import Theme from '../../../themes/Theme';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { ClassNames } from './styles';
 
 interface NotificationProps {
-  classes: Classes;
   type: NotificationType;
   text: string;
 }
 
+const useStyles = createUseStyles<Theme, ClassNames>(styles);
+
 const Notification: FunctionComponent<NotificationProps> = ({
-  classes,
   type,
   text
 }): ReactElement => {
+  const classes = useStyles();
+
   const componentClasses = classNames(classes.Notification, {
     [classes.TypeError]: type === 'error',
     [classes.TypeSuccess]: type === 'success'
@@ -27,4 +29,4 @@ const Notification: FunctionComponent<NotificationProps> = ({
   );
 };
 
-export default withStyles(styles)(Notification);
+export default Notification;

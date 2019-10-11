@@ -1,24 +1,25 @@
-import { Classes } from 'jss';
 import classNames from 'classnames';
-import styles from './styles';
+import { createUseStyles } from '../../styles';
+import Theme from '../../themes/Theme';
 import View from '../View';
-import { withStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { ApplicationClassNames } from './styles';
 
 interface ApplicationProps {
-  classes: Classes;
   className?: string;
   orientation?: 'horizontal' | 'vertical' | 'centered';
   style?: any;
 }
 
+const useStyles = createUseStyles<Theme, ApplicationClassNames>(styles);
+
 const Application: FunctionComponent<ApplicationProps> = ({
   children,
-  classes,
   className,
   style,
   orientation = 'horizontal'
 }): ReactElement => {
+  const classes = useStyles();
   const componentClasses = classNames(classes.Application, className);
 
   return (
@@ -28,4 +29,4 @@ const Application: FunctionComponent<ApplicationProps> = ({
   );
 };
 
-export default withStyles(styles)(Application);
+export default Application;

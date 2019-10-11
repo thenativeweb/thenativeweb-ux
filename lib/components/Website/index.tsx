@@ -1,20 +1,29 @@
+import { Classes } from 'jss';
 import classNames from 'classnames';
 import Dialogs from '../Dialogs';
 import Icons from '../Icons';
 import Notifications from '../Notifications';
 import PropTypes from 'prop-types';
-import React from 'react';
-import { createDefaultStyles, withStyles } from '../../styles';
+import styles from './styles';
+import { withStyles } from '../../styles';
+import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
-const styles = theme => ({
-  '@global': {
-    ...createDefaultStyles({ theme })
-  },
+interface WebsiteProps {
+  classes: Classes;
+  className?: string;
+  style?: CSSProperties;
+  useDialogs?: boolean;
+  useNotifications?: boolean;
+}
 
-  Website: {}
-});
-
-const Website = ({ children, classes, className, style, useDialogs, useNotifications }) => {
+const Website: FunctionComponent<WebsiteProps> = ({
+  children,
+  classes,
+  className,
+  style,
+  useDialogs = false,
+  useNotifications = false
+}): ReactElement => {
   const componentClasses = classNames(classes.Website, className);
 
   return (

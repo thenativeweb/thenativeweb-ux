@@ -28,6 +28,7 @@
     "uuidv4": "5.0.1"
   },
   "devDependencies": {
+    "@babel/runtime-corejs2": "7.6.3",
     "@types/animejs": "3.1.0",
     "@types/classnames": "2.2.9",
     "@types/lodash": "4.14.138",

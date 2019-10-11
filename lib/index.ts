@@ -1,9 +1,9 @@
 import animate from 'animejs';
 import Application from './components/Application';
+import ApplicationServices from './components/ApplicationServices';
 import Brand from './components/branding/Brand';
 import BusyIndicator from './components/BusyIndicator';
 import CheckBox from './components/CheckBox';
-import ControlGroup from './components/ControlGroup';
 import Dropdown from './components/Dropdown';
 import Grid from './components/Grid';
 import Headline from './components/Headline';
@@ -15,7 +15,6 @@ import Message from './components/Message';
 import Pattern from './components/branding/Pattern';
 import Product from './components/branding/Product';
 import services from './services';
-import Sidebar from './components/Sidebar';
 import StyleCollector from './components/StyleCollector';
 import Text from './components/Text';
 import TextArea from './components/TextArea';
@@ -28,13 +27,16 @@ import TransitionGroup from './components/TransitionGroup';
 import View from './components/View';
 import Website from './components/Website';
 import Button, { ButtonHint } from './components/Button';
-import { classNames, createUseStyles, removeServerSideStyles, StyleCollection, useTheme, withStyles } from './styles';
+import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme, withStyles } from './styles';
+import ControlGroup, { ControlGroupDivider, ControlGroupItem } from './components/ControlGroup';
 import Form, { FormActions, FormRow } from './components/Form';
 import Modal, { ModalRow } from './components/Modal';
+import Sidebar, { SidebarBrand, SidebarFooter, SidebarItem } from './components/Sidebar';
 
 export {
   animate,
   Application,
+  ApplicationServices,
   Brand,
   BusyIndicator,
   Button,
@@ -43,6 +45,8 @@ export {
   createUseStyles,
   CheckBox,
   ControlGroup,
+  ControlGroupDivider,
+  ControlGroupItem,
   Dropdown,
   Form,
   FormActions,
@@ -61,8 +65,11 @@ export {
   removeServerSideStyles,
   services,
   Sidebar,
+  SidebarBrand,
+  SidebarFooter,
+  SidebarItem,
   StyleCollector,
-  StyleCollection,
+  ServerSideStyles,
   Text,
   TextArea,
   TextBox,

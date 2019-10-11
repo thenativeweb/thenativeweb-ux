@@ -2,9 +2,10 @@ import { Classes } from 'jss';
 import { getSpaceDependentClassNamesFromProps } from '../../../styles/utils';
 import { ResponsiveSpaceProp } from '../../../types/ResponsiveSpaceProp';
 import spaceDependentProperties from './spaceDependentProperties';
-import styles from './styles';
-import { classNames, withStyles } from '../../../styles';
+import Theme from '../../../themes/Theme';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { GridDefaultClassNames } from './styles';
 
 interface GridProps {
   classes: Classes;
@@ -16,8 +17,9 @@ interface GridProps {
   component?: string;
 }
 
+const useStyles = createUseStyles<Theme, GridDefaultClassNames>(styles);
+
 const Grid: FunctionComponent<GridProps> = ({
-  classes,
   className,
   columns = { xs: 0, sm: 12 },
   columnGap = 2,
@@ -26,6 +28,8 @@ const Grid: FunctionComponent<GridProps> = ({
   children,
   id
 }): ReactElement => {
+  const classes = useStyles();
+
   const spaceDependentClassNames = getSpaceDependentClassNamesFromProps(
     {
       columns,
@@ -43,4 +47,4 @@ const Grid: FunctionComponent<GridProps> = ({
   );
 };
 
-export default withStyles(styles)(Grid);
+export default Grid;

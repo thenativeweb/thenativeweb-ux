@@ -68,7 +68,7 @@ const MadeBy: FunctionComponent<MadeByProps> = ({
         Made with <Icon name='heart' color='highlight' type='inline' /> by
       </span>
 
-      { ' ' }
+      &nbsp;
 
       <Link href='https://www.thenativeweb.io' isExternal={ true }>the native web</Link>
 

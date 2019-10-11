@@ -6,8 +6,8 @@ import React, { FunctionComponent, ReactElement } from 'react';
 
 interface ControlGroupProps {
   classes: Classes;
-  className: string;
-  isVisible: boolean;
+  className?: string;
+  isVisible?: boolean;
 }
 
 const ControlGroup: FunctionComponent<ControlGroupProps> = ({
