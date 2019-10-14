@@ -33,7 +33,7 @@ module.exports = {
     },
     {
       name: 'Styling Custom Components',
-      content: 'lib/styles/Readme.md'
+      content: 'lib/styles/README.md'
     }
   ],
 
