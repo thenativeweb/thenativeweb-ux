@@ -19,9 +19,9 @@ suite('Sidebar', function (): void {
     await page.waitForSelector('#sidebar');
 
     const sidebar = await page.$('#sidebar');
-    const boundingBox = await sidebar.boundingBox();
+    const boundingBox = await sidebar!.boundingBox();
 
-    assert.that(boundingBox.width).is.equalTo(80);
+    assert.that(boundingBox!.width).is.equalTo(80);
   });
 
   suite('Sidebar.Item', (): void => {
@@ -30,7 +30,7 @@ suite('Sidebar', function (): void {
 
       const parentItem = await page.$('#sidebar-item-account');
 
-      await parentItem.hover();
+      await parentItem!.hover();
 
       await page.waitForSelector('#sidebar-item-logout', {
         visible: true
@@ -38,14 +38,14 @@ suite('Sidebar', function (): void {
 
       const childItem = await page.$('#sidebar-item-logout');
 
-      await new Promise((resolve): void => {
-        page.once('console', (message: string): void => {
+      await new Promise(async (resolve): Promise<void> => {
+        page.once('console', (message): void => {
           assert.that(message.text()).is.equalTo('clicked::clicked::logout');
 
           resolve();
         });
 
-        childItem.click();
+        await childItem!.click();
       });
     });
   });

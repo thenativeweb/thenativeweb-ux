@@ -1,6 +1,6 @@
 import path from 'path';
 import shell from 'shelljs';
-import { spawn } from 'child_process';
+import { ChildProcess, spawn } from 'child_process';
 
 /* eslint-disable @typescript-eslint/no-floating-promises */
 (async (): Promise<void> => {
@@ -29,29 +29,29 @@ import { spawn } from 'child_process';
     }
   }
 
-  await new Promise(resolve => {
-    let serverOutput;
-    let devServerProcess,
-        logErrors,
-        watchServerStart;
+  await new Promise((resolve): void => {
+    let serverOutput: string;
+    let devServerProcess: ChildProcess | undefined,
+        logErrors: (err: Error) => void,
+        watchServerStart: (data: any) => void;
 
-    const cleanUpOnExit = function () {
-      devServerProcess.stdout.removeListener('data', watchServerStart);
-      devServerProcess.stderr.removeListener('data', logErrors);
-
+    const cleanUpOnExit = function (): void {
       if (devServerProcess) {
+        devServerProcess.stdout!.removeListener('data', watchServerStart);
+        devServerProcess.stderr!.removeListener('data', logErrors);
+
         process.kill(-devServerProcess.pid);
         devServerProcess = undefined;
       }
     };
 
-    logErrors = err => {
+    logErrors = (err): void => {
       /* eslint-disable no-console */
-      console.log(err.toString('utf8'));
+      console.log(err.toString());
       /* eslint-enable no-console */
     };
 
-    watchServerStart = data => {
+    watchServerStart = (data): void => {
       serverOutput += data;
 
       /* eslint-disable no-console */
@@ -59,7 +59,9 @@ import { spawn } from 'child_process';
       /* eslint-enable no-console */
 
       if (serverOutput.includes('[ info ]  waiting on http://localhost:3000')) {
-        devServerProcess.stdout.removeListener('data', watchServerStart);
+        if (devServerProcess) {
+          devServerProcess.stdout!.removeListener('data', watchServerStart);
+        }
 
         return resolve();
       }
@@ -69,8 +71,8 @@ import { spawn } from 'child_process';
       detached: true,
       cwd: nextJsExampleRoot
     });
-    devServerProcess.stdout.on('data', watchServerStart);
-    devServerProcess.stderr.on('data', logErrors);
+    devServerProcess.stdout!.on('data', watchServerStart);
+    devServerProcess.stderr!.on('data', logErrors);
 
     process.once('exit', cleanUpOnExit);
     process.once('SIGINT', cleanUpOnExit);
