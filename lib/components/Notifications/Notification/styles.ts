@@ -1,12 +1,12 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
-export type ClassNames =
+export type NotificationClassNames =
   'Notification' |
   'TypeError' |
   'TypeSuccess';
 
-const styles = (theme: Theme): Styles<ClassNames> => ({
+const styles = (theme: Theme): Styles<NotificationClassNames> => ({
   Notification: {
     padding: '10px 15px',
     background: theme.color.brand.dark,

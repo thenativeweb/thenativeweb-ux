@@ -1,12 +1,11 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { classNames, withStyles } from '../../styles';
+import { Theme } from '../..';
+import { classNames, createUseStyles } from '../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
+import styles, { IconClassNames } from './styles';
 
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
 interface IconProps {
-  classes: Classes;
   name: string;
   className?: string;
   color?: 'default' | 'current' | 'highlight' | 'white';
@@ -15,8 +14,9 @@ interface IconProps {
   type?: 'default' | 'inline' | 'flex-auto';
 }
 
+const useStyles = createUseStyles<Theme, IconClassNames>(styles);
+
 const Icon: FunctionComponent<IconProps> = ({
-  classes,
   name,
   className,
   color = 'default',
@@ -24,6 +24,7 @@ const Icon: FunctionComponent<IconProps> = ({
   style,
   type = 'default'
 }): ReactElement => {
+  const classes = useStyles();
   const iconClassNames = classNames(
     classes.Icon,
     {
@@ -50,4 +51,4 @@ const Icon: FunctionComponent<IconProps> = ({
   );
 };
 
-export default withStyles(styles)(Icon);
+export default Icon;

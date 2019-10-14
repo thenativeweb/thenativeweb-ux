@@ -1,22 +1,24 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { classNames, withStyles } from '../../styles';
+import { Theme } from '../..';
+import { classNames, createUseStyles } from '../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
+import styles, { HeadlineClassNames } from './styles';
 
 interface HeadlineProps {
-  classes: Classes;
   id?: string;
   level?: '1' | '2';
   style?: CSSProperties;
 }
 
+const useStyles = createUseStyles<Theme, HeadlineClassNames>(styles);
+
 const Headline: FunctionComponent<HeadlineProps> = ({
-  classes,
   children,
   id,
   level = '1',
   style
 }): ReactElement => {
+  const classes = useStyles();
+
   const componentClasses = classNames(classes.Headline, {
     [classes.Level1]: level === '1',
     [classes.Level2]: level === '2'
@@ -29,4 +31,4 @@ const Headline: FunctionComponent<HeadlineProps> = ({
   );
 };
 
-export default withStyles(styles)(Headline);
+export default Headline;

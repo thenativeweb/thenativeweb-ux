@@ -1,12 +1,11 @@
 import { IconSize } from '../../Icon';
-import styles from './styles';
-import { Classes, Styles } from 'jss';
-import { classNames, withStyles } from '../../../styles';
-import { Icon, Label } from '../../..';
+import { Styles } from 'jss';
+import { classNames, createUseStyles } from '../../../styles';
+import { Icon, Label, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { ButtonClassNames } from './styles';
 
 interface ButtonProps {
-  classes: Classes;
   adjust?: 'flex' | 'auto';
   autoFocus?: boolean;
   className?: string;
@@ -21,11 +20,12 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
+const useStyles = createUseStyles<Theme, ButtonClassNames>(styles);
+
 const Button: FunctionComponent<ButtonProps> = ({
   autoFocus = false,
   adjust = undefined,
   children,
-  classes,
   className,
   id,
   icon,
@@ -39,6 +39,8 @@ const Button: FunctionComponent<ButtonProps> = ({
   style,
   type = 'button'
 }): ReactElement => {
+  const classes = useStyles();
+
   const componentClasses = classNames(
     classes.Button,
     {
@@ -71,10 +73,10 @@ const Button: FunctionComponent<ButtonProps> = ({
       onClick={ onClick }
     >
       { icon ? <Icon className={ classes.Icon } name={ icon } size={ iconSize } /> : null }
-      { children ? <Label className={ classes.Label }>{ children }</Label> : null }
+      { children ? <Label>{ children }</Label> : null }
     </button>
   );
   /* eslint-enable react/button-has-type */
 };
 
-export default withStyles(styles)(Button);
+export default Button;

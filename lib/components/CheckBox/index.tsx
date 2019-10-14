@@ -1,10 +1,10 @@
-import styles from './styles';
-import { Classes, Styles } from 'jss';
-import { classNames, withStyles } from '../../styles';
+import { Styles } from 'jss';
+import { Theme } from '../..';
+import { classNames, createUseStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { CheckBoxClassNames } from './styles';
 
 interface CheckBoxProps {
-  classes: Classes;
   className?: string;
   checked?: boolean;
   name?: string;
@@ -13,15 +13,17 @@ interface CheckBoxProps {
   onChange?: () => void;
 }
 
+const useStyles = createUseStyles<Theme, CheckBoxClassNames>(styles);
+
 const CheckBox: FunctionComponent<CheckBoxProps> = ({
   checked,
-  classes,
   className,
   id,
   name,
   style,
   onChange
 }): ReactElement => {
+  const classes = useStyles();
   const componentClasses = classNames(classes.CheckBox, className);
 
   return (
@@ -37,4 +39,4 @@ const CheckBox: FunctionComponent<CheckBoxProps> = ({
   );
 };
 
-export default withStyles(styles)(CheckBox);
+export default CheckBox;

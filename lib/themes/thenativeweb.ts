@@ -1,6 +1,6 @@
-import Theme from './Theme';
+import createTheme from './createTheme';
 
-const theme = new Theme({
+const theme = createTheme({
   name: 'thenativeweb',
   spaceUnit: 8,
 

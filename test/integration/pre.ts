@@ -74,7 +74,7 @@ import { spawn } from 'child_process';
       process.once('SIGTERM', cleanUpOnExit);
     });
   } catch (ex) {
-    console.log('bla');
+    console.log(ex);
   }
 })();
 /* eslint-enable @typescript-eslint/no-floating-promises */

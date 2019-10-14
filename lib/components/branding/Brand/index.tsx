@@ -1,35 +1,25 @@
-import Theme from '../../../themes/Theme';
-import { withStyles } from '../../../styles';
-import { Classes, Styles } from 'jss';
+import { createUseStyles } from '../../../styles';
+import { Theme } from '../../..';
 import { LogoFull, LogoMinimal } from '../logos';
 import React, { FunctionComponent, ReactElement } from 'react';
-
-const styles = (theme: Theme): Styles => ({
-  Brand: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: theme.color.brand.dark
-  }
-});
+import styles, { BrandClassNames } from './styles';
 
 interface BrandProps {
-  classes: Classes;
   color?: 'default' | 'monochrome';
   size?: 'sm' | 'md' | 'lg';
   type?: 'full' | 'minimal';
   isInteractive?: boolean;
 }
 
+const useStyles = createUseStyles<Theme, BrandClassNames>(styles);
+
 const Brand: FunctionComponent<BrandProps> = ({
   color = 'default',
-  classes,
   size = 'md',
   type = 'full',
   isInteractive = false
 }): ReactElement => {
+  const classes = useStyles();
   const Logo = type === 'full' ? LogoFull : LogoMinimal;
 
   return (
@@ -39,4 +29,4 @@ const Brand: FunctionComponent<BrandProps> = ({
   );
 };
 
-export default withStyles(styles)(Brand);
+export default Brand;

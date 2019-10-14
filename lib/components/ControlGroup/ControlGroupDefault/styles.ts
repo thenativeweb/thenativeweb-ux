@@ -1,9 +1,12 @@
 import { Styles } from 'jss';
+import { Theme } from '../../..';
 
-const styles: Styles = (): Styles => ({
+export type ControlGroupClassNames = 'ControlGroup';
+
+const styles = (theme: Theme): Styles<ControlGroupClassNames> => ({
   ControlGroup: {
     display: 'flex',
-    marginBottom: '18px'
+    marginBottom: theme.space(2)
   }
 });
 

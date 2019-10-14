@@ -1,29 +1,29 @@
-import { Classes } from 'jss';
 import classNames from 'classnames';
+import { createUseStyles } from '../../styles';
 import Dialogs from '../Dialogs';
 import Icons from '../Icons';
 import Notifications from '../Notifications';
-import PropTypes from 'prop-types';
-import styles from './styles';
-import { withStyles } from '../../styles';
+import { Theme } from '../../themes';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
+import styles, { WebsiteClassNames } from './styles';
 
 interface WebsiteProps {
-  classes: Classes;
   className?: string;
   style?: CSSProperties;
   useDialogs?: boolean;
   useNotifications?: boolean;
 }
 
+const useStyles = createUseStyles<Theme, WebsiteClassNames>(styles);
+
 const Website: FunctionComponent<WebsiteProps> = ({
   children,
-  classes,
   className,
   style,
   useDialogs = false,
   useNotifications = false
 }): ReactElement => {
+  const classes = useStyles();
   const componentClasses = classNames(classes.Website, className);
 
   return (
@@ -39,16 +39,4 @@ const Website: FunctionComponent<WebsiteProps> = ({
   );
 };
 
-Website.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  useDialogs: PropTypes.bool,
-  useNotifications: PropTypes.bool
-};
-
-Website.defaultProps = {
-  useDialogs: false,
-  useNotifications: false
-};
-
-export default withStyles(styles)(Website);
+export default Website;

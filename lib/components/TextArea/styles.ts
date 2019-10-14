@@ -1,7 +1,13 @@
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles: Styles = (theme: Theme): Styles => ({
+export type TextAreaClassNames =
+  'TextArea' |
+  'IsDisabled' |
+  'SizeSm' |
+  'SizeMd';
+
+const styles = (theme: Theme): Styles<TextAreaClassNames> => ({
   TextArea: {
     padding: '9px 12px',
     fontSize: theme.font.size.md,

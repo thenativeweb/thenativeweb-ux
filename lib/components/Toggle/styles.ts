@@ -1,7 +1,12 @@
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles = (theme: Theme): Styles => ({
+export type ToggleClassNames =
+  'Toggle' |
+  'ActiveButton' |
+  'Button';
+
+const styles = (theme: Theme): Styles<ToggleClassNames> => ({
   Toggle: {
     display: 'flex'
   },

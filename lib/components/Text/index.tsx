@@ -1,28 +1,30 @@
-import styles from './styles';
-import { Classes, Styles } from 'jss';
-import { classNames, withStyles } from '../../styles';
+import { Styles } from 'jss';
+import { Theme } from '../..';
+import { classNames, createUseStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { TextClassNames } from './styles';
 
 interface TextProps {
-  adjust: 'flex' | 'auto';
-  breakLines: boolean;
-  classes: Classes;
-  className: string;
-  id: string | undefined;
-  size: 'sm' | 'md';
-  style: Styles;
+  adjust?: 'flex' | 'auto';
+  breakLines?: boolean;
+  className?: string;
+  id?: string;
+  size?: 'sm' | 'md';
+  style?: Styles;
 }
+
+const useStyles = createUseStyles<Theme, TextClassNames>(styles);
 
 const Text: FunctionComponent<TextProps> = ({
   adjust = 'auto',
   breakLines = false,
-  classes,
   className,
   children,
   id,
   size = 'md',
   style
 }): ReactElement => {
+  const classes = useStyles();
   const componentClasses = classNames(
     classes.Text,
     {
@@ -42,4 +44,4 @@ const Text: FunctionComponent<TextProps> = ({
   );
 };
 
-export default withStyles(styles)(Text);
+export default Text;

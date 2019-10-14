@@ -46,10 +46,13 @@ class DialogService extends EventEmitter {
     this.emit('changed');
   }
 
-  public async confirm (
-    title: string,
-    actions: { cancel: string; confirm: string }
-  ): Promise<string> {
+  public async confirm ({
+    title,
+    actions
+  }: {
+    title: string;
+    actions: { cancel: string; confirm: string };
+  }): Promise<string> {
     return new Promise((resolve): void => {
       this.state = {
         confirm: {

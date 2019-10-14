@@ -1,13 +1,11 @@
-import { Classes } from 'jss';
 import ReactDOM from 'react-dom';
-import styles from './styles';
 import { TransitionType } from '../../Transition/TransitionType';
-import { Button, services, Transition } from '../../..';
-import { classNames, withStyles } from '../../../styles';
+import { Button, services, Theme, Transition } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement, ReactNode, useCallback, useEffect } from 'react';
+import styles, { ModalClassNames } from './styles';
 
 interface ModalProps {
-  classes: Classes;
   isVisible: boolean;
   onCancel: () => void;
   attach?: 'left' | 'right' | 'sidebar' | 'center';
@@ -19,9 +17,10 @@ interface ModalProps {
   onKeyDown?: (key: string, event: KeyboardEvent) => void;
 }
 
+const useStyles = createUseStyles<Theme, ModalClassNames>(styles);
+
 const Modal: FunctionComponent<ModalProps> = ({
   attach = 'left',
-  classes,
   className,
   children,
   header = null,
@@ -34,6 +33,7 @@ const Modal: FunctionComponent<ModalProps> = ({
     // Intentionally left blank.
   }
 }): ReactElement | null => {
+  const classes = useStyles();
   const backdropClasses = classNames(classes.Backdrop, {
     [classes.IsVisible]: isVisible
   });
@@ -125,7 +125,6 @@ const Modal: FunctionComponent<ModalProps> = ({
                 <div className={ classes.Header }>
                   <div className={ classes.HeaderText }>{ header }</div>
                   <Button
-                    className={ classes.HeaderCloseButton }
                     isSubtle={ true }
                     icon='close'
                     onClick={ handleBackDropClicked }
@@ -144,4 +143,4 @@ const Modal: FunctionComponent<ModalProps> = ({
   );
 };
 
-export default withStyles(styles)(Modal);
+export default Modal;

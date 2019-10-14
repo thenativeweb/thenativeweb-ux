@@ -1,8 +1,13 @@
 const path = require('path');
 
+const reactDocgenTypescript = require('react-docgen-typescript');
+
 const webpackConfig = require('./webpack.config.js');
 
 module.exports = {
+  propsParser: reactDocgenTypescript.withDefaultConfig({
+    savePropValueAsString: true
+  }).parse,
   title: 'the native web UX',
   skipComponentsWithoutExample: true,
   exampleMode: 'expand',
@@ -24,7 +29,7 @@ module.exports = {
     },
     {
       name: 'Components',
-      components: 'lib/components/*/index.js'
+      components: 'lib/components/*/index.tsx'
     },
     {
       name: 'Styling Custom Components',
@@ -33,7 +38,7 @@ module.exports = {
   ],
 
   styleguideComponents: {
-    Wrapper: path.join(__dirname, 'lib', 'styleguide', 'ThemeWrapper.jsx')
+    Wrapper: path.join(__dirname, 'lib', 'styleguide', 'ThemeWrapper.tsx')
   },
 
   webpackConfig

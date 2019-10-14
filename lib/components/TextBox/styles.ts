@@ -1,7 +1,13 @@
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles = (theme: Theme): Styles => ({
+export type TextBoxClassNames =
+  'TextBox' |
+  'IsDisabled' |
+  'TypePort' |
+  'TypeTime';
+
+const styles = (theme: Theme): Styles<TextBoxClassNames> => ({
   TextBox: {
     padding: '9px 12px',
     fontSize: theme.font.size.md,

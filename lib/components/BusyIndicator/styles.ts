@@ -1,7 +1,15 @@
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles: Styles = (theme: Theme): Styles => ({
+export type BusyIndicatorClassNames =
+  '@keyframes loading-indicator-pulse' |
+  'BusyIndicator' |
+  'Pulse' |
+  'Pulse1' |
+  'Pulse2' |
+  'Pulse3';
+
+const styles = (theme: Theme): Styles<BusyIndicatorClassNames> => ({
   '@keyframes loading-indicator-pulse': {
     '0%': {
       transform: 'scale(0.5)'

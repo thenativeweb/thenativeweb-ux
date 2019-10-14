@@ -1,18 +1,18 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { withStyles } from '../../../styles';
+import { createUseStyles } from '../../../styles';
+import { Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { ControlGroupDividerClassNames } from './styles';
 
-interface ControlGroupDividerProps {
-  classes: Classes;
-}
+const useStyles = createUseStyles<Theme, ControlGroupDividerClassNames>(styles);
 
-const ControlGroupDivider: FunctionComponent<ControlGroupDividerProps> = ({
-  classes
-}): ReactElement => (
-  <hr
-    className={ classes.ControlGroupDivider }
-  />
-);
+const ControlGroupDivider: FunctionComponent = (): ReactElement => {
+  const classes = useStyles();
 
-export default withStyles(styles)(ControlGroupDivider);
+  return (
+    <hr
+      className={ classes.ControlGroupDivider }
+    />
+  );
+};
+
+export default ControlGroupDivider;

@@ -1,21 +1,21 @@
-import { Classes } from 'jss';
-import classNames from 'classnames';
-import injectSheet from 'react-jss';
-import styles from './styles';
+import { Theme } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { ControlGroupClassNames } from './styles';
 
 interface ControlGroupProps {
-  classes: Classes;
   className?: string;
   isVisible?: boolean;
 }
 
+const useStyles = createUseStyles<Theme, ControlGroupClassNames>(styles);
+
 const ControlGroup: FunctionComponent<ControlGroupProps> = ({
   className,
-  classes,
   children,
   isVisible = true
 }): ReactElement | null => {
+  const classes = useStyles();
   const componentClasses = classNames(classes.ControlGroup, className);
 
   if (!isVisible) {
@@ -31,4 +31,4 @@ const ControlGroup: FunctionComponent<ControlGroupProps> = ({
   );
 };
 
-export default injectSheet(styles)(ControlGroup);
+export default ControlGroup;

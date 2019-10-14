@@ -1,20 +1,22 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { classNames, withStyles } from '../../../styles';
+import { Theme } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { FormActionsClassNames } from './styles';
 
 interface FormActionsProps {
-  classes: Classes;
   className?: string;
   type?: 'default' | 'stacked';
 }
 
+const useStyles = createUseStyles<Theme, FormActionsClassNames>(styles);
+
 const FormActions: FunctionComponent<FormActionsProps> = ({
   children,
-  classes,
   className,
   type = 'default'
 }): ReactElement => {
+  const classes = useStyles();
+
   const componentClasses = classNames(
     classes.FormActions,
     {
@@ -29,4 +31,4 @@ const FormActions: FunctionComponent<FormActionsProps> = ({
   );
 };
 
-export default withStyles(styles)(FormActions);
+export default FormActions;

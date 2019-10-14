@@ -1,24 +1,9 @@
-import Theme from '../../themes/Theme';
-import { Classes, Styles } from 'jss';
-import { classNames, withStyles } from '../../styles';
+import { Theme } from '../..';
+import { classNames, createUseStyles } from '../../styles';
 import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode } from 'react';
-
-const styles = (theme: Theme): Styles => ({
-  Link: {
-    color: theme.color.brand.highlight,
-    textDecoration: 'none',
-    fontWeight: 400,
-    fontFamily: theme.font.family.default,
-    fontSize: 'inherit',
-
-    '&:hover': {
-      textDecoration: 'none'
-    }
-  }
-});
+import styles, { LinkClassNames } from './styles';
 
 interface LinkProps {
-  classes: Classes;
   className?: string;
   isExternal?: boolean;
   href?: string;
@@ -27,8 +12,9 @@ interface LinkProps {
   children?: ReactNode;
 }
 
+const useStyles = createUseStyles<Theme, LinkClassNames>(styles);
+
 const Link: FunctionComponent<LinkProps> = ({
-  classes,
   id,
   className,
   children,
@@ -38,6 +24,7 @@ const Link: FunctionComponent<LinkProps> = ({
     // Intentionally left blank.
   }
 }): ReactElement => {
+  const classes = useStyles();
   const brandClassNames = classNames(classes.Link, className);
 
   if (isExternal) {
@@ -55,4 +42,4 @@ const Link: FunctionComponent<LinkProps> = ({
   );
 };
 
-export default withStyles(styles)(Link);
+export default Link;

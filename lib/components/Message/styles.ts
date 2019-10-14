@@ -1,7 +1,16 @@
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles = (theme: Theme): Styles => ({
+export type MessageClassNames =
+  'Message' |
+  'TypeError' |
+  'TypeInfo' |
+  'WithIcon' |
+  'Icon' |
+  'IconContainer' |
+  'Content';
+
+const styles = (theme: Theme): Styles<MessageClassNames> => ({
   Message: {
     padding: `${theme.space(1.5)}px ${theme.space(2)}px`,
     marginBottom: `${theme.space(1)}px`,

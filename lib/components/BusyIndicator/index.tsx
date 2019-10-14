@@ -1,19 +1,21 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { classNames, withStyles } from '../../styles';
+import { Theme } from '../..';
+import { classNames, createUseStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { BusyIndicatorClassNames } from './styles';
 
 interface BusyIndicatorProps {
-  classes: Classes;
   className?: string;
   isVisible?: boolean;
 }
 
+const useStyles = createUseStyles<Theme, BusyIndicatorClassNames>(styles);
+
 const BusyIndicator: FunctionComponent<BusyIndicatorProps> = ({
-  classes,
   className,
   isVisible = true
 }): ReactElement | null => {
+  const classes = useStyles();
+
   if (!isVisible) {
     return null;
   }
@@ -27,4 +29,4 @@ const BusyIndicator: FunctionComponent<BusyIndicatorProps> = ({
   );
 };
 
-export default withStyles(styles)(BusyIndicator);
+export default BusyIndicator;

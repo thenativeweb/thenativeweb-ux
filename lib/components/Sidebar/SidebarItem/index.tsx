@@ -1,11 +1,10 @@
-import { Classes } from 'jss';
 import Icon from '../../Icon';
-import styles from './styles';
-import { classNames, withStyles } from '../../../styles';
+import { Theme } from '../../../themes';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
+import styles, { SidebarItemClassNames } from './styles';
 
 interface SidebarItemProps {
-  classes: Classes;
   className?: string;
   iconName?: string;
   iconUrl?: string;
@@ -15,8 +14,9 @@ interface SidebarItemProps {
   onClick?: () => void;
 }
 
+const useStyles = createUseStyles<Theme, SidebarItemClassNames>(styles);
+
 const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
-  classes,
   className,
   iconName,
   iconUrl,
@@ -26,8 +26,9 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
   children,
   onClick
 }, ref): ReactElement => {
+  const classes = useStyles();
   const componentClasses = classNames(
-    classes.Item,
+    classes.SidebarItem,
     {
       [classes.IsActive]: isActive,
       [classes.IsNested]: isNested,
@@ -62,4 +63,4 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
   );
 });
 
-export default withStyles(styles)(SidebarItem);
+export default SidebarItem;

@@ -1,8 +1,10 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
-const styles: Styles = (theme: Theme): Styles => ({
-  Footer: {
+export type SidebarFooterClassNames = 'SidebarFooter';
+
+const styles = (theme: Theme): Styles<SidebarFooterClassNames> => ({
+  SidebarFooter: {
     position: 'absolute',
     bottom: 0,
     left: 0,

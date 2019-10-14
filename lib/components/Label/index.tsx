@@ -1,19 +1,21 @@
 import styles from './styles';
-import { classNames, withStyles } from '../../styles';
+import { classNames, createUseStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface LabelProps {
-  classes: { [key: string]: string };
   className?: string;
   id?: string;
 }
 
+const useStyles = createUseStyles(styles);
+
 const Label: FunctionComponent<LabelProps> = function ({
   children,
-  classes,
   className,
   id
 }): ReactElement {
+  const classes = useStyles();
+
   return (
     <div id={ id } className={ classNames(classes.Label, className) }>
       { children }
@@ -21,4 +23,4 @@ const Label: FunctionComponent<LabelProps> = function ({
   );
 };
 
-export default withStyles(styles)(Label);
+export default Label;

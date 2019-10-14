@@ -1,9 +1,9 @@
-`thenativeweb-ux` uses [JSS](https://cssinjs.org) and [classnames]() to style its components. If you create custom components, you can use same underlying technologies to create styles using JavaScript.
+`thenativeweb-ux` uses [JSS](https://cssinjs.org) and [classnames](https://github.com/JedWatson/classnames) to style its components. If you create custom components, you can use same underlying technologies to create styles using JavaScript.
 
 ```jsx static
-import { classNames, withStyles } from 'thenativeweb-ux';
+import { classNames, createUseStyles } from 'thenativeweb-ux';
 
-const styles = theme => ({
+const useStyles = createUseStyles(theme => ({
   MyComponent: {
     display: 'block'
   },
@@ -11,9 +11,10 @@ const styles = theme => ({
   SizeLg: {
     fontSize: 48
   }
-});
+}));
 
-const MyComponent = function ({ classes, className, children, size }) {
+const MyComponent = function ({ className, children, size }) {
+  const classes = useStyles();
   const componentClasses = classNames(classes.MyComponent, {
     [classes.SizeLg]: size === 'lg'
   }, className);
@@ -25,5 +26,5 @@ const MyComponent = function ({ classes, className, children, size }) {
   );
 };
 
-export default withStyles(styles)(MyComponent);
+export default MyComponent;
 ```

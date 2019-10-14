@@ -1,6 +1,6 @@
 import { Styles } from 'jss';
 
-const styles: Styles = {
+const styles: Styles<'Dialogs' | 'Actions'> = {
   Dialogs: {},
 
   Actions: {

@@ -1,7 +1,9 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
-const styles: Styles = (theme: Theme): Styles => ({
+export type ButtonHintClassNames = 'ButtonHint';
+
+const styles = (theme: Theme): Styles<ButtonHintClassNames> => ({
   ButtonHint: {
     opacity: 0.5,
     fontSize: theme.font.size.sm,

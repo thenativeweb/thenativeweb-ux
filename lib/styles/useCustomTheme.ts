@@ -1,4 +1,4 @@
-import Theme from '../themes/Theme';
+import { Theme } from '../themes/Theme';
 import { useTheme } from 'react-jss';
 
 const useCustomTheme = function (): Theme {

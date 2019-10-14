@@ -1,8 +1,18 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
-const styles: Styles = (theme: Theme): Styles => ({
-  Item: {
+export type SidebarItemClassNames =
+  'SidebarItem' |
+  'IsActive' |
+  'IsClickable' |
+  'IsTopLevel' |
+  'IsNested' |
+  'Icon' |
+  'Label' |
+  'Items';
+
+const styles = (theme: Theme): Styles<SidebarItemClassNames> => ({
+  SidebarItem: {
     position: 'relative',
     flex: '0 0 auto',
     overflow: 'visible',

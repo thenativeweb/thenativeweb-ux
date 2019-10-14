@@ -1,7 +1,17 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
-const styles: Styles = (theme: Theme): Styles => ({
+export type ControlGroupItemClassNames =
+  'ControlGroupItem' |
+  '&:last-child' |
+  'AdjustFlex' |
+  'AdjustAuto' |
+  'Labeled' |
+  'Label' |
+  'Control' |
+  'TypeCheckBox';
+
+const styles = (theme: Theme): Styles<ControlGroupItemClassNames> => ({
   ControlGroupItem: {
     display: 'flex',
     flexDirection: 'column',

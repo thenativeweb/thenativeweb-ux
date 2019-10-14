@@ -1,6 +1,6 @@
 import spaceDependentProperties from './spaceDependentProperties';
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 import {
   createDefaultSpaceDependantClasses,
   createSpaceDependentClasses
@@ -14,27 +14,54 @@ const styles = (theme: Theme): Styles<GridDefaultClassNames> => ({
     display: 'grid'
   },
 
-  ...createSpaceDependentClasses(theme, spaceDependentProperties),
-  ...createDefaultSpaceDependantClasses(theme, spaceDependentProperties),
+  ...createSpaceDependentClasses({
+    theme,
+    definitions: spaceDependentProperties
+  }),
+
+  ...createDefaultSpaceDependantClasses({
+    theme,
+    definitions: spaceDependentProperties
+  }),
 
   [theme.breakpoints.only('xs')]: {
-    ...createSpaceDependentClasses(theme, spaceDependentProperties, 'xs')
+    ...createSpaceDependentClasses({
+      theme,
+      definitions: spaceDependentProperties,
+      deviceSize: 'xs'
+    })
   },
 
   [theme.breakpoints.up('sm')]: {
-    ...createSpaceDependentClasses(theme, spaceDependentProperties, 'sm')
+    ...createSpaceDependentClasses({
+      theme,
+      definitions: spaceDependentProperties,
+      deviceSize: 'sm'
+    })
   },
 
   [theme.breakpoints.up('md')]: {
-    ...createSpaceDependentClasses(theme, spaceDependentProperties, 'md')
+    ...createSpaceDependentClasses({
+      theme,
+      definitions: spaceDependentProperties,
+      deviceSize: 'md'
+    })
   },
 
   [theme.breakpoints.up('lg')]: {
-    ...createSpaceDependentClasses(theme, spaceDependentProperties, 'lg')
+    ...createSpaceDependentClasses({
+      theme,
+      definitions: spaceDependentProperties,
+      deviceSize: 'lg'
+    })
   },
 
   [theme.breakpoints.up('xl')]: {
-    ...createSpaceDependentClasses(theme, spaceDependentProperties, 'xl')
+    ...createSpaceDependentClasses({
+      theme,
+      definitions: spaceDependentProperties,
+      deviceSize: 'xl'
+    })
   }
 });
 

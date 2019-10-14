@@ -1,7 +1,22 @@
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles: Styles = (theme: Theme): Styles => ({
+export type IconClassNames =
+  'Icon' |
+  'ColorDefault' |
+  'ColorCurrent' |
+  'ColorHighlight' |
+  'ColorWhite' |
+  'SizeXs' |
+  'SizeSm' |
+  'SizeMd' |
+  'SizeLg' |
+  'SizeXl' |
+  'SizeXxl' |
+  'TypeInline' |
+  'TypeFlexAuto';
+
+const styles = (theme: Theme): Styles<IconClassNames> => ({
   Icon: {
     '& a': {
       fill: 'currentColor'

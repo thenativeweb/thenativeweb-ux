@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { createUseStyles } from '../../styles';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 import View from '../View';
 import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { ApplicationClassNames } from './styles';

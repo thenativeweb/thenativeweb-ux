@@ -19,10 +19,10 @@ import { View } from 'thenativeweb-ux';
 Optionally, you may provide a partner using the `partner` property.
 
 ```jsx
-import { ThemeProvider, View } from 'thenativeweb-ux';
+import { themes, ThemeProvider, View } from 'thenativeweb-ux';
 
 <View>
-  <ThemeProvider theme='wolkenkit'>
+  <ThemeProvider theme={ themes.wolkenkit }>
     <View background='dark'>
       <MadeBy partner={{ name: 'Intuity', href: 'https://www.intuity.de'}} />
     </View>

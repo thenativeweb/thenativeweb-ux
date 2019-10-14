@@ -1,5 +1,5 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
 const columnCount = 13,
       columns = [ ...new Array(columnCount) ].map((item, index): number => index + 1);

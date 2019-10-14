@@ -1,16 +1,18 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { withStyles } from '../../../styles';
+import { createUseStyles } from '../../../styles';
+import { Theme } from '../../../themes';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { SidebarBrandClassNames } from './styles';
 
-interface SidebarBrandProps {
-  classes: Classes;
-}
+const useStyles = createUseStyles<Theme, SidebarBrandClassNames>(styles);
 
-const SidebarBrand: FunctionComponent<SidebarBrandProps> = ({ children, classes }): ReactElement => (
-  <div className={ classes.Brand }>
-    { children }
-  </div>
-);
+const SidebarBrand: FunctionComponent = ({ children }): ReactElement => {
+  const classes = useStyles();
 
-export default withStyles(styles)(SidebarBrand);
+  return (
+    <div className={ classes.SidebarBrand }>
+      { children }
+    </div>
+  );
+};
+
+export default SidebarBrand;

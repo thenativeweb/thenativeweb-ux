@@ -1,17 +1,18 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { withStyles } from '../../../styles';
+import { createUseStyles } from '../../../styles';
+import { Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { FormRowClassNames } from './styles';
 
-interface FormRowProps {
-  classes: Classes;
-}
+const useStyles = createUseStyles<Theme, FormRowClassNames>(styles);
 
-const Row: FunctionComponent<FormRowProps> = ({
-  children,
-  classes
-}): ReactElement => (
-  <div className={ classes.FormRow }>{ children }</div>
-);
+const FormRow: FunctionComponent = ({
+  children
+}): ReactElement => {
+  const classes = useStyles();
 
-export default withStyles(styles)(Row);
+  return (
+    <div className={ classes.FormRow }>{ children }</div>
+  );
+};
+
+export default FormRow;

@@ -1,7 +1,9 @@
-import { Style } from 'jss';
-import Theme from '../../themes/Theme';
+import { Styles } from 'jss';
+import { Theme } from '../..';
 
-const styles = (theme: Theme): Style => ({
+export type HeadlineClassNames = 'Headline' | 'Level1' | 'Level2';
+
+const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
   Headline: {
     fontFamily: theme.font.family.default,
     opacity: 0.95,

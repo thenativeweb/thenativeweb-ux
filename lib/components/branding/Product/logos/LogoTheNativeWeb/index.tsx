@@ -1,32 +1,16 @@
-import LogoProps from './LogoProps';
-import { Styles } from 'jss';
-import { classNames, withStyles } from '../../../../styles';
+import LogoProps from '../LogoProps';
+import styles from './styles';
+import { classNames, createUseStyles } from '../../../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles: Styles = {
-  LogoThenativeWeb: {},
-
-  SizeMd: {
-    width: '56px',
-    height: '56px'
-  },
-
-  SizeLg: {
-    width: '120px',
-    height: '120px'
-  },
-
-  SizeXl: {
-    width: '200px',
-    height: '200px'
-  }
-};
+const useStyles = createUseStyles(styles);
 
 const LogoThenativeWeb: FunctionComponent<LogoProps> = ({
-  classes,
   isVisible = true,
   size = 'md'
 }): ReactElement | null => {
+  const classes = useStyles();
+
   if (!isVisible) {
     return null;
   }
@@ -58,4 +42,4 @@ const LogoThenativeWeb: FunctionComponent<LogoProps> = ({
   );
 };
 
-export default withStyles(styles)(LogoThenativeWeb);
+export default LogoThenativeWeb;

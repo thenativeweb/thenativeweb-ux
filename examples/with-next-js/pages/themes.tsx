@@ -1,24 +1,18 @@
-import CustomComponent from '../components/CustomComponent.jsx';
-import React from 'react';
+import CustomComponent from '../components/CustomComponent';
+import customTheme from '../themes/customTheme';
 import {
+  Button,
   ThemeProvider,
-  themes,
   Website
 } from '../../../lib';
+import React, { ReactElement } from 'react';
 
-const customTheme = themes.extend('thenativeweb', {
-  components: {
-    CustomComponent: {
-      width: '42px'
-    }
-  }
-});
-
-const Page = () => (
+const Page = (): ReactElement => (
   <ThemeProvider theme={ customTheme }>
     <Website>
       <header>Themes</header>
       <CustomComponent id='custom-component' size='lg'>This is a custom component</CustomComponent>
+      <Button>This is a custom button</Button>
     </Website>
   </ThemeProvider>
 );

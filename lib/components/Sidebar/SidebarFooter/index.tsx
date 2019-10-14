@@ -1,16 +1,18 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { withStyles } from '../../../styles';
+import { createUseStyles } from '../../../styles';
+import { Theme } from '../../../themes';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { SidebarFooterClassNames } from './styles';
 
-interface SidebarFooterProps {
-  classes: Classes;
-}
+const useStyles = createUseStyles<Theme, SidebarFooterClassNames>(styles);
 
-const SidebarFooter: FunctionComponent<SidebarFooterProps> = ({ children, classes }): ReactElement => (
-  <div className={ classes.Footer }>
-    { children }
-  </div>
-);
+const SidebarFooter: FunctionComponent = ({ children }): ReactElement => {
+  const classes = useStyles();
 
-export default withStyles(styles)(SidebarFooter);
+  return (
+    <div className={ classes.SidebarFooter }>
+      { children }
+    </div>
+  );
+};
+
+export default SidebarFooter;

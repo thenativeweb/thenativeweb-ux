@@ -1,19 +1,20 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { withStyles } from '../../../styles';
+import { createUseStyles } from '../../../styles';
+import { Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { ButtonHintClassNames } from './styles';
 
-interface ButtonHintProps {
-  classes: Classes;
-}
+const useStyles = createUseStyles<Theme, ButtonHintClassNames>(styles);
 
-const ButtonHint: FunctionComponent<ButtonHintProps> = ({
-  children,
-  classes
-}): ReactElement => (
-  <span className={ classes.ButtonHint }>
-    { children }
-  </span>
-);
+const ButtonHint: FunctionComponent = ({
+  children
+}): ReactElement => {
+  const classes = useStyles();
 
-export default withStyles(styles)(ButtonHint);
+  return (
+    <span className={ classes.ButtonHint }>
+      { children }
+    </span>
+  );
+};
+
+export default ButtonHint;

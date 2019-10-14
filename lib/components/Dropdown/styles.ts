@@ -1,7 +1,9 @@
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles = (theme: Theme): Styles => ({
+export type DropdownClassNames = 'Dropdown' | 'SizeSm' | 'SizeMd' | 'IsFocused' | 'CollapseIcon';
+
+const styles = (theme: Theme): Styles<DropdownClassNames> => ({
   Dropdown: {
     position: 'relative',
     display: 'flex',

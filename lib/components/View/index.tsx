@@ -1,12 +1,12 @@
-import styles from './styles';
-import { classNames, withStyles } from '../../styles';
+import { Theme } from '../..';
+import { classNames, createUseStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { ViewClassNames } from './styles';
 
 interface ViewProps {
   adjust?: 'auto' | 'flex';
   alignItems?: 'center';
   background?: 'dark' | 'light';
-  classes: { [key: string]: string };
   className?: string;
   id?: string;
   justifyContent?: 'center';
@@ -15,12 +15,13 @@ interface ViewProps {
   style?: any;
 }
 
+const useStyles = createUseStyles<Theme, ViewClassNames>(styles);
+
 const View: FunctionComponent<ViewProps> = ({
   adjust,
   alignItems,
   background,
   children,
-  classes,
   className,
   id,
   justifyContent,
@@ -28,6 +29,7 @@ const View: FunctionComponent<ViewProps> = ({
   style,
   orientation
 }): ReactElement => {
+  const classes = useStyles();
   const viewClassNames = classNames(
     classes.View,
     {
@@ -52,4 +54,4 @@ const View: FunctionComponent<ViewProps> = ({
   );
 };
 
-export default withStyles(styles)(View);
+export default View;

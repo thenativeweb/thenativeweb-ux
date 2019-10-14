@@ -1,6 +1,6 @@
 import { createDefaultStyles } from '../../styles';
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
 export type ApplicationClassNames = '@global' | 'Application';
 

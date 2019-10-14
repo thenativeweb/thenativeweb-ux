@@ -1,21 +1,23 @@
-import { Classes } from 'jss';
 import Icon from '../Icon';
-import styles from './styles';
-import { classNames, withStyles } from '../../styles';
+import { Theme } from '../..';
+import { classNames, createUseStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
+import styles, { MessageClassNames } from './styles';
 
 interface MessageProps {
-  classes: Classes;
   isVisible?: boolean;
   type?: 'default' | 'info' | 'error';
 }
 
+const useStyles = createUseStyles<Theme, MessageClassNames>(styles);
+
 const Message: FunctionComponent<MessageProps> = ({
   children,
-  classes,
   isVisible = true,
   type = 'default'
 }): ReactElement | null => {
+  const classes = useStyles();
+
   let iconName;
 
   if (type !== 'default') {
@@ -44,4 +46,4 @@ const Message: FunctionComponent<MessageProps> = ({
   );
 };
 
-export default withStyles(styles)(Message);
+export default Message;

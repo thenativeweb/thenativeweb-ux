@@ -1,7 +1,19 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../../themes/Theme';
 
-const styles: Styles = (theme: Theme): Styles => ({
+export type ButtonClassNames =
+  'Button' |
+  'AdjustFlex' |
+  'AdjustAuto' |
+  'SizeMd' |
+  'SizeSm' |
+  'TypePrimary' |
+  'TypeIcon' |
+  'TypeSubtle' |
+  'TypeIconOnly' |
+  'Icon';
+
+const styles = (theme: Theme): Styles<ButtonClassNames> => ({
   Button: {
     display: 'flex',
     alignItems: 'center',

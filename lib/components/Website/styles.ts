@@ -1,8 +1,10 @@
 import { createDefaultStyles } from '../../styles';
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles = (theme: Theme): Styles => ({
+export type WebsiteClassNames = '@global' | 'Website';
+
+const styles = (theme: Theme): Styles<WebsiteClassNames> => ({
   '@global': {
     ...createDefaultStyles(theme)
   },

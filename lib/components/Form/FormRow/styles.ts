@@ -1,7 +1,9 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
-const styles = (theme: Theme): Styles => ({
+export type FormRowClassNames = 'FormRow';
+
+const styles = (theme: Theme): Styles<FormRowClassNames> => ({
   FormRow: {
     display: 'flex',
     marginBottom: `${theme.space(2)}px`

@@ -1,8 +1,10 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
-const styles = (theme: Theme): Styles => ({
-  Actions: {
+export type FormActionsClassNames = 'FormActions' | 'TypeDefault' | 'TypeStacked';
+
+const styles = (theme: Theme): Styles<FormActionsClassNames> => ({
+  FormActions: {
     display: 'flex',
     borderTop: `1px solid ${theme.color.content.border}`,
     paddingTop: `${theme.space(1)}px`,

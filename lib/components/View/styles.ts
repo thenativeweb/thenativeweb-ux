@@ -1,8 +1,23 @@
-import Theme from '../../themes/Theme';
+import { Styles } from 'jss';
+import { Theme } from '../..';
 
-const styles = (theme: Theme): any => ({
+export type ViewClassNames =
+  'View' |
+  'AdjustFlex' |
+  'AdjustAuto' |
+  'BackgroundDark' |
+  'BackgroundLight' |
+  'OrientationCentered' |
+  'OrientationHorizontal'|
+  'OrientationVertical'|
+  'AlignItemsCenter'|
+  'JustifyContentCenter' |
+  'ScrollableNone' |
+  'ScrollableAuto';
+
+const styles = (theme: Theme): Styles<ViewClassNames> => ({
   View: {
-    'box-sizing': 'border-box',
+    boxSizing: 'border-box',
     position: 'relative',
     fontFamily: theme.font.family.default,
     fontSize: theme.font.size.md

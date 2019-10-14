@@ -1,7 +1,15 @@
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles: Styles = (theme: Theme): Styles => ({
+export type TextClassNames =
+  'Text' |
+  'AdjustAuto' |
+  'AdjustFlex' |
+  'SizeMd' |
+  'SizeSm' |
+  'BreakLines';
+
+const styles = (theme: Theme): Styles<TextClassNames> => ({
   Text: {
     display: 'block',
     overflow: 'hidden',

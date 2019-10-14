@@ -1,10 +1,9 @@
-import { Classes } from 'jss';
-import Icon from '../Icon';
-import styles from './styles';
-import { classNames, withStyles } from '../../styles';
-import React, { CSSProperties, FormEvent, ReactElement } from 'react';
+import { classNames, createUseStyles } from '../../styles';
+import { Icon, Theme } from '../..';
+import React, { CSSProperties, FormEvent, FunctionComponent, ReactElement, useCallback, useState } from 'react';
+import styles, { DropdownClassNames } from './styles';
 
-interface Option {
+export interface DropdownOption {
   label: string;
   value: string;
 }
@@ -12,8 +11,7 @@ interface Option {
 type DropDownSize = 'sm' | 'md';
 
 interface DropdownProps {
-  classes: Classes;
-  options: Option [];
+  options: DropdownOption [];
   value: string;
   emptyLabel?: string;
   id?: string;
@@ -22,73 +20,56 @@ interface DropdownProps {
   onChange?: (value: string) => void;
 }
 
-interface DropdownState {
-  isFocused: boolean;
-}
+const useStyles = createUseStyles<Theme, DropdownClassNames>(styles);
 
-class Dropdown extends React.PureComponent<DropdownProps, DropdownState> {
-  public static defaultProps = {
-    size: 'md' as DropDownSize,
-    emptyLabel: 'Choose an option…'
-  };
+const Dropdown: FunctionComponent<DropdownProps> = ({
+  emptyLabel = 'Choose an option…',
+  id,
+  options,
+  size = 'md',
+  style,
+  value,
+  onChange
+}): ReactElement => {
+  const classes = useStyles();
 
-  public constructor (props: DropdownProps) {
-    super(props);
-
-    this.state = {
-      isFocused: false
-    };
-  }
-
-  public handleChange = (event: FormEvent<HTMLSelectElement>): void => {
-    const { onChange } = this.props;
-
+  const handleChange = useCallback((event: FormEvent<HTMLSelectElement>): void => {
     if (onChange) {
       onChange(event.currentTarget.value);
     }
-  };
+  }, [ onChange ]);
 
-  public handleFocus = (): void => {
-    this.setState({
-      isFocused: true
-    });
-  };
+  const [ isFocused, setIsFocused ] = useState(false);
 
-  public handleBlur = (): void => {
-    this.setState({
-      isFocused: false
-    });
-  };
+  const dropdownClassNames = classNames(classes.Dropdown, {
+    [classes.SizeSm]: size === 'sm',
+    [classes.SizeMd]: size === 'md',
+    [classes.IsFocused]: isFocused
+  });
 
-  public render (): ReactElement {
-    const { classes, emptyLabel, id, options, size, style, value } = this.props;
-    const { isFocused } = this.state;
+  return (
+    <div id={ id } className={ dropdownClassNames } style={ style }>
+      <select
+        value={ value }
+        onChange={ handleChange }
+        onFocus={ (): void => setIsFocused(true) }
+        onBlur={ (): void => setIsFocused(false) }
+      >
+        { emptyLabel ? <option value='' key='empty-value'>{ emptyLabel }</option> : null }
+        {
+          options.map((option): ReactElement => (
+            <option
+              key={ option.value }
+              value={ option.value }
+            >
+              {option.label}
+            </option>
+          ))
+        }
+      </select>
+      <Icon key='icon' color='white' className={ classes.CollapseIcon } name='expand' />
+    </div>
+  );
+};
 
-    const dropdownClassNames = classNames(classes.Dropdown, {
-      [classes.SizeSm]: size === 'sm',
-      [classes.SizeMd]: size === 'md',
-      [classes.IsFocused]: isFocused
-    });
-
-    return (
-      <div id={ id } className={ dropdownClassNames } style={ style }>
-        <select key='commands' value={ value } onChange={ this.handleChange } onFocus={ this.handleFocus } onBlur={ this.handleBlur }>
-          { emptyLabel ? <option value='' key='empty-value'>{ emptyLabel }</option> : null }
-          {
-            options.map((option): ReactElement => (
-              <option
-                key={ option.value }
-                value={ option.value }
-              >
-                {option.label}
-              </option>
-            ))
-          }
-        </select>
-        <Icon key='icon' color='white' className={ classes.CollapseIcon } name='expand' />
-      </div>
-    );
-  }
-}
-
-export default withStyles(styles)(Dropdown);
+export default Dropdown;

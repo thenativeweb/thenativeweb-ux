@@ -1,6 +1,6 @@
 import { ResponsiveSpaceFactor } from '../../../types/ResponsiveSpaceFactor';
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
 const spaceDependentProperties = {
   columns ({ spaceFactor }: { spaceFactor: ResponsiveSpaceFactor }): Styles {

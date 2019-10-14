@@ -1,12 +1,19 @@
 import { Styles } from 'jss';
-import Theme from '../../../lib/themes/Theme';
-import React, { ReactElement } from 'react';
 import {
-  Website,
-  withStyles
+  createUseStyles,
+  Theme,
+  Website
 } from '../../../lib';
+import React, { ReactElement } from 'react';
 
-const styles = (theme: Theme): Styles => ({
+type ClassNames =
+  'OnlyXs' |
+  'OnlySm' |
+  'OnlyMd' |
+  'OnlyLg' |
+  'OnlyXl';
+
+const useStyles = createUseStyles<Theme, ClassNames>((theme: Theme): Styles<ClassNames> => ({
   OnlyXs: { display: 'none' },
   OnlySm: { display: 'none' },
   OnlyMd: { display: 'none' },
@@ -42,29 +49,33 @@ const styles = (theme: Theme): Styles => ({
       display: 'block'
     }
   }
-});
+}));
 
-const Page = ({ classes }: { classes: any }): ReactElement => (
-  <Website>
-    <header>Breakpoint tests</header>
-    <div id='responsive-container'>
-      <div className={ classes.OnlyXs }>
-        OnlyXs
-      </div>
-      <div className={ classes.OnlySm }>
-        OnlySm
-      </div>
-      <div className={ classes.OnlyMd }>
-        OnlyMd
-      </div>
-      <div className={ classes.OnlyLg }>
-        OnlyLg
-      </div>
-      <div className={ classes.OnlyXl }>
-        OnlyXl
-      </div>
-    </div>
-  </Website>
-);
+const Page = (): ReactElement => {
+  const classes = useStyles();
 
-export default withStyles(styles)(Page);
+  return (
+    <Website>
+      <header>Breakpoint tests</header>
+      <div id='responsive-container'>
+        <div className={ classes.OnlyXs }>
+          OnlyXs
+        </div>
+        <div className={ classes.OnlySm }>
+          OnlySm
+        </div>
+        <div className={ classes.OnlyMd }>
+          OnlyMd
+        </div>
+        <div className={ classes.OnlyLg }>
+          OnlyLg
+        </div>
+        <div className={ classes.OnlyXl }>
+          OnlyXl
+        </div>
+      </div>
+    </Website>
+  );
+};
+
+export default Page;

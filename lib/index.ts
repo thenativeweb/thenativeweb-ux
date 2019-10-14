@@ -5,7 +5,6 @@ import Brand from './components/branding/Brand';
 import BusyIndicator from './components/BusyIndicator';
 import CheckBox from './components/CheckBox';
 import Dropdown from './components/Dropdown';
-import Grid from './components/Grid';
 import Headline from './components/Headline';
 import Icon from './components/Icon';
 import Label from './components/Label';
@@ -20,7 +19,6 @@ import Text from './components/Text';
 import TextArea from './components/TextArea';
 import TextBox from './components/TextBox';
 import ThemeProvider from './components/ThemeProvider';
-import themes from './themes';
 import Toggle from './components/Toggle';
 import Transition from './components/Transition';
 import TransitionGroup from './components/TransitionGroup';
@@ -30,8 +28,10 @@ import Button, { ButtonHint } from './components/Button';
 import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme, withStyles } from './styles';
 import ControlGroup, { ControlGroupDivider, ControlGroupItem } from './components/ControlGroup';
 import Form, { FormActions, FormRow } from './components/Form';
+import Grid, { GridItem } from './components/Grid';
 import Modal, { ModalRow } from './components/Modal';
 import Sidebar, { SidebarBrand, SidebarFooter, SidebarItem } from './components/Sidebar';
+import themes, { Theme } from './themes';
 
 export {
   animate,
@@ -52,6 +52,7 @@ export {
   FormActions,
   FormRow,
   Grid,
+  GridItem,
   Headline,
   Icon,
   Label,
@@ -74,6 +75,7 @@ export {
   TextArea,
   TextBox,
   ThemeProvider,
+  Theme,
   themes,
   Toggle,
   Transition,

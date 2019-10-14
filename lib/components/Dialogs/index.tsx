@@ -1,36 +1,29 @@
-import { Classes } from 'jss';
+import { createUseStyles } from '../../styles';
 import services from '../../services';
 import styles from './styles';
-import { withStyles } from '../../styles';
+import useForceUpdate from '../useForceUpdate';
 import { Button, Headline, Modal } from '../..';
-import React, { ReactElement } from 'react';
+import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
 
-interface DialogsProps {
-  classes: Classes;
-}
+const useStyles = createUseStyles(styles);
 
-class Dialogs extends React.Component<DialogsProps> {
-  public componentDidMount (): void {
-    services.dialogs.on('changed', this.handleServiceChanged);
-  }
+const Dialogs: FunctionComponent = (): ReactElement => {
+  const classes = useStyles();
+  const forceUpdate = useForceUpdate();
 
-  public componentWillUnmount (): void {
-    services.dialogs.removeListener('changed', this.handleServiceChanged);
-  }
+  const handleServiceChanged = useCallback((): void => {
+    forceUpdate();
+  }, []);
 
-  protected handleServiceChanged = (): void => {
-    this.forceUpdate();
-  };
-
-  protected handleCancel = (): void => {
+  const handleCancel = useCallback((): void => {
     services.dialogs.state.confirm.onCancel();
-  };
+  }, []);
 
-  protected handleConfirm = (): void => {
+  const handleConfirm = useCallback((): void => {
     services.dialogs.state.confirm.onConfirm();
-  };
+  }, []);
 
-  protected handleKeyDown = (key: string): void => {
+  const handleKeyDown = useCallback((key: string): void => {
     switch (key) {
       case 'Escape':
         services.dialogs.state.confirm.onCancel();
@@ -41,34 +34,38 @@ class Dialogs extends React.Component<DialogsProps> {
       default:
         break;
     }
-  };
+  }, []);
 
-  public render (): ReactElement {
-    const { classes } = this.props;
+  useEffect((): () => void => {
+    services.dialogs.on('changed', handleServiceChanged);
 
-    return (
-      <Modal
-        attach='center'
-        showHeader={ false }
-        isVisible={ services.dialogs.state.confirm.isVisible }
-        className={ classes.Dialogs }
-        onKeyDown={ this.handleKeyDown }
-        onCancel={ this.handleCancel }
-      >
-        <Headline>
-          { services.dialogs.state.confirm.title }
-        </Headline>
-        <div className={ classes.Actions }>
-          <Button adjust='auto' onClick={ this.handleCancel }>
-            { services.dialogs.state.confirm.actions.cancel }
-          </Button>
-          <Button adjust='flex' onClick={ this.handleConfirm } isPrimary={ true } autoFocus={ true }>
-            { services.dialogs.state.confirm.actions.confirm }
-          </Button>
-        </div>
-      </Modal>
-    );
-  }
-}
+    return (): void => {
+      services.dialogs.removeListener('changed', handleServiceChanged);
+    };
+  }, []);
 
-export default withStyles(styles)(Dialogs);
+  return (
+    <Modal
+      attach='center'
+      showHeader={ false }
+      isVisible={ services.dialogs.state.confirm.isVisible }
+      className={ classes.Dialogs }
+      onKeyDown={ handleKeyDown }
+      onCancel={ handleCancel }
+    >
+      <Headline>
+        { services.dialogs.state.confirm.title }
+      </Headline>
+      <div className={ classes.Actions }>
+        <Button adjust='auto' onClick={ handleCancel }>
+          { services.dialogs.state.confirm.actions.cancel }
+        </Button>
+        <Button adjust='flex' onClick={ handleConfirm } isPrimary={ true } autoFocus={ true }>
+          { services.dialogs.state.confirm.actions.confirm }
+        </Button>
+      </div>
+    </Modal>
+  );
+};
+
+export default Dialogs;

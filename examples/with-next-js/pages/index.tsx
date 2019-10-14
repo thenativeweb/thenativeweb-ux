@@ -26,7 +26,7 @@ const Page = (): ReactElement => (
       <SidebarBrand><Product name='App' /></SidebarBrand>
       <SidebarItem iconName='account'>
         <SidebarItem>You are logged in as Sophie</SidebarItem>
-        <SidebarItem onClick={ (): void => services.notifications.show('success', 'You clicked!') }>Logout</SidebarItem>
+        <SidebarItem onClick={ (): void => services.notifications.show({ type: 'success', text: 'You clicked!' }) }>Logout</SidebarItem>
       </SidebarItem>
       <SidebarItem iconName='help' isActive={ true } />
       <Link href='/second'><SidebarItem iconName='help' /></Link>

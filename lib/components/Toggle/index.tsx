@@ -1,23 +1,23 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { classNames, withStyles } from '../../styles';
+import { Theme } from '../../themes';
+import { classNames, createUseStyles } from '../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement, useCallback } from 'react';
 import renderDefaultToggle, { RenderToggleOptions } from './renderDefaultToggle';
+import styles, { ToggleClassNames } from './styles';
 
 interface ToggleProps {
-  classes: Classes;
   values: string [];
   selectedValue: string;
-  children: ({ value, isSelected, changeValue, classes }: RenderToggleOptions) => ReactElement;
+  children?: ({ value, isSelected, changeValue, classes }: RenderToggleOptions) => ReactElement;
   className?: string;
   id?: string;
   onChange?: (newValue: string) => void;
   style?: CSSProperties;
 }
 
+const useStyles = createUseStyles<Theme, ToggleClassNames>(styles);
+
 const Toggle: FunctionComponent<ToggleProps> = ({
   id,
-  classes,
   className,
   children = renderDefaultToggle,
   selectedValue,
@@ -25,6 +25,7 @@ const Toggle: FunctionComponent<ToggleProps> = ({
   style,
   onChange
 }): ReactElement => {
+  const classes = useStyles();
   const handleValueChange = useCallback((newValue: string): void => {
     if (onChange) {
       onChange(newValue);
@@ -45,4 +46,4 @@ const Toggle: FunctionComponent<ToggleProps> = ({
   );
 };
 
-export default withStyles(styles)(Toggle);
+export default Toggle;

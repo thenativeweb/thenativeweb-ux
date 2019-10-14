@@ -1,44 +1,18 @@
-import Theme from '../../../themes/Theme';
-import { Classes, Styles } from 'jss';
-import { classNames, withStyles } from '../../../styles';
+import { Theme } from '../../../..';
+import { classNames, createUseStyles } from '../../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-
-const styles: Styles = (theme: Theme): Styles => ({
-  LogoFull: {
-    display: 'flex',
-    flexDirection: 'column',
-    overflow: 'hidden',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily: theme.font.family.headline,
-    background: theme.color.brand.dark
-  },
-
-  SizeSm: {
-    width: '132px',
-    height: '22px'
-  },
-
-  SizeMd: {
-    width: '264px',
-    height: '44px'
-  },
-
-  SizeLg: {
-    width: '396px',
-    height: '66px'
-  }
-});
+import styles, { LogoFullClassNames } from './styles';
 
 export interface LogoFullProps {
-  classes: Classes;
   size?: 'sm' | 'md' | 'lg';
 }
 
+const useStyles = createUseStyles<Theme, LogoFullClassNames>(styles);
+
 const LogoFull: FunctionComponent<LogoFullProps> = ({
-  classes,
   size = 'md'
 }): ReactElement => {
+  const classes = useStyles();
   const componentClasses = classNames(classes.LogoFull, {
     [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
@@ -110,4 +84,4 @@ const LogoFull: FunctionComponent<LogoFullProps> = ({
   );
 };
 
-export default withStyles(styles)(LogoFull);
+export default LogoFull;

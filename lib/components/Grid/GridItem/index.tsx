@@ -1,6 +1,6 @@
 import { ResponsiveSpaceProp } from '../../../types/ResponsiveSpaceProp';
 import styles from './styles';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
@@ -11,7 +11,7 @@ interface GridItemProps {
   columnSpan?: ResponsiveSpaceProp;
   columnEnd?: ResponsiveSpaceProp;
   component?: string;
-  style: CSSProperties;
+  style?: CSSProperties;
 }
 
 const useStyles = createUseStyles<Theme, string>(styles);

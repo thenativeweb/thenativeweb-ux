@@ -1,64 +1,21 @@
-import { LogoFullProps } from './LogoFull';
-import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
-import { classNames, withStyles } from '../../../styles';
+import { LogoFullProps } from '../LogoFull';
+import styles from './styles';
+import { Theme } from '../../../..';
+import { classNames, createUseStyles } from '../../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const styles: Styles = (theme: Theme): Styles => ({
-  Logo: {
-    display: 'flex',
-    flexDirection: 'column',
-    overflow: 'hidden',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily: theme.font.family.headline,
-    background: theme.color.brand.dark
-  },
+type LogoMinimalClassNames =
+  'LogoMinimal' |
+  'Foreground' |
+  'Background' |
+  'Logo' |
+  'IsMonochrome' |
+  'IsInteractive' |
+  'SizeSm' |
+  'SizeMd' |
+  'SizeLg';
 
-  Foreground: {
-    fill: '#FFFFFF'
-  },
-
-  Background: {
-    fill: '#FF0099'
-  },
-
-  IsMonochrome: {
-    '& $Background': {
-      fill: theme.color.brand.white
-    },
-    '& $Foreground': {
-      fill: theme.color.brand.dark
-    }
-  },
-
-  IsInteractive: {
-    cursor: 'pointer',
-    '&:hover': {
-      '& $Background': {
-        fill: '#FF0099'
-      },
-      '& $Foreground': {
-        fill: theme.color.brand.white
-      }
-    }
-  },
-
-  SizeSm: {
-    width: '28px',
-    height: '28px'
-  },
-
-  SizeMd: {
-    width: '42px',
-    height: '42px'
-  },
-
-  SizeLg: {
-    width: '112px',
-    height: '112px'
-  }
-});
+const useStyles = createUseStyles<Theme, LogoMinimalClassNames>(styles);
 
 interface LogoMinimalProps extends LogoFullProps {
   color?: 'default' | 'monochrome';
@@ -67,10 +24,11 @@ interface LogoMinimalProps extends LogoFullProps {
 
 const Logo: FunctionComponent<LogoMinimalProps> = ({
   color = 'default',
-  classes,
   size = 'md',
   isInteractive = false
 }): ReactElement => {
+  const classes = useStyles();
+
   const componentClasses = classNames(classes.Logo, {
     [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
@@ -100,4 +58,4 @@ const Logo: FunctionComponent<LogoMinimalProps> = ({
   );
 };
 
-export default withStyles(styles)(Logo);
+export default Logo;

@@ -1,38 +1,8 @@
-import Theme from '../../../themes/Theme';
-import { Classes, Styles } from 'jss';
-import { classNames, withStyles } from '../../../styles';
+import { Theme } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import { Icon, Link } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
-
-const styles = (theme: Theme): Styles => ({
-  MadeBy: {
-    overflow: 'hidden',
-    fontFamily: theme.font.family.default,
-    textAlign: 'center',
-    paddingTop: theme.space(1),
-    paddingBottom: theme.space(1)
-  },
-
-  ColorDark: {
-    color: theme.color.brand.lightGrey
-  },
-
-  ColorLight: {
-    color: theme.color.brand.dark
-  },
-
-  SizeSm: {
-    fontSize: theme.font.size.sm
-  },
-
-  SizeMd: {
-    fontSize: theme.font.size.md
-  },
-
-  SizeLg: {
-    fontSize: theme.font.size.lg
-  }
-});
+import styles, { MadeByClassNames } from './styles';
 
 interface Partner {
   href: string;
@@ -40,18 +10,19 @@ interface Partner {
 }
 
 interface MadeByProps {
-  classes: Classes;
   color?: 'dark' | 'light';
   partner?: Partner | Partner [];
   size?: 'sm' | 'md' | 'lg';
 }
 
+const useStyles = createUseStyles<Theme, MadeByClassNames>(styles);
+
 const MadeBy: FunctionComponent<MadeByProps> = ({
-  classes,
   color = 'dark',
   partner = [],
   size = 'sm'
 }): ReactElement => {
+  const classes = useStyles();
   const componentClasses = classNames(classes.MadeBy, {
     [classes.ColorDark]: color === 'dark',
     [classes.ColorLight]: color === 'light',
@@ -64,7 +35,7 @@ const MadeBy: FunctionComponent<MadeByProps> = ({
 
   return (
     <div className={ componentClasses }>
-      <span className={ classes.Intro }>
+      <span>
         Made with <Icon name='heart' color='highlight' type='inline' /> by
       </span>
 
@@ -82,4 +53,4 @@ const MadeBy: FunctionComponent<MadeByProps> = ({
   );
 };
 
-export default withStyles(styles)(MadeBy);
+export default MadeBy;

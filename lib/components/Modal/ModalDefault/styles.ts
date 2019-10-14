@@ -1,7 +1,27 @@
 import { Styles } from 'jss';
-import Theme from '../../../themes/Theme';
+import { Theme } from '../../..';
 
-const styles = (theme: Theme): Styles => ({
+export type ModalClassNames =
+  '@global' |
+  'Modal' |
+  'Backdrop' |
+  'IsVisible' |
+  'Chrome' |
+  'ChromeSizeSm' |
+  'ChromeSizeMd' |
+  'ChromeSizeLg' |
+  'ChromeSizeFullscreen' |
+  'ChromeAttachedSidebar' |
+  'ChromeAttachedLeft' |
+  'ChromeAttachedRight' |
+  'ChromeAttachedCenter' |
+  'ChromePaddingNone' |
+  'Header' |
+  'HeaderText' |
+  'Content' |
+  'Title';
+
+const styles = (theme: Theme): Styles<ModalClassNames> => ({
   '@global': {
     '.thenativeweb-modal--visible': {
       pointerEvents: 'none'
@@ -114,10 +134,6 @@ const styles = (theme: Theme): Styles => ({
     opacity: 0.95,
     fontWeight: 600,
     textAlign: 'center'
-  },
-
-  HeaderCloseButton: {
-
   },
 
   Content: {

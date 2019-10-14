@@ -4,7 +4,7 @@ Transition is a component for animating components while they enter or leave you
 initialState = {
   isBoxVisible: true
  };
-import { CheckBox, ControlGroup, Form, View } from 'thenativeweb-ux';
+import { CheckBox, ControlGroup, ControlGroupItem, Form, View } from 'thenativeweb-ux';
 
 <div>
   <Form>
@@ -27,7 +27,7 @@ To transition an array of elements, use the `Transition.Group` component. Please
 
 ```jsx
 initialState = { items: [ 'Thing 1' ] };
-import { Button, View } from 'thenativeweb-ux';
+import { Button, TransitionGroup, View } from 'thenativeweb-ux';
 
 addItem = function () {
   const newItems = [].concat(state.items, 'Thing ' +  (state.items.length + 1));

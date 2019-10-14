@@ -1,22 +1,23 @@
-import { Classes } from 'jss';
-import styles from './styles';
-import { classNames, withStyles } from '../../../styles';
+import { Theme } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FormEvent, FunctionComponent, ReactElement } from 'react';
+import styles, { FormClassNames } from './styles';
 
 interface FormProps {
-  classes: Classes;
   className?: string;
   onSubmit?: (event: FormEvent) => void;
 }
 
+const useStyles = createUseStyles<Theme, FormClassNames>(styles);
+
 const Form: FunctionComponent<FormProps> = ({
   children,
-  classes,
   className,
   onSubmit = (): void => {
     // Intentionally left blank.
   }
 }): ReactElement => {
+  const classes = useStyles();
   const componentClasses = classNames(classes.Form, className);
 
   return (
@@ -26,4 +27,4 @@ const Form: FunctionComponent<FormProps> = ({
   );
 };
 
-export default withStyles(styles)(Form);
+export default Form;

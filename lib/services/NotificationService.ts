@@ -25,7 +25,15 @@ class NotificationService extends EventEmitter {
     };
   }
 
-  public show (type: NotificationType, text: string, duration = 3000): void {
+  public show ({
+    type = 'success',
+    text,
+    duration = 3000
+  }: {
+    type: NotificationType;
+    text: string;
+    duration?: number;
+  }): void {
     if (!duration) {
       throw new Error('Duration is missing.');
     }

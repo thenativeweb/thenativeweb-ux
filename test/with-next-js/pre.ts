@@ -1,9 +1,9 @@
-const { spawn } = require('child_process'),
-      path = require('path');
+import path from 'path';
+import shell from 'shelljs';
+import { spawn } from 'child_process';
 
-const shell = require('shelljs');
-
-module.exports = async function () {
+/* eslint-disable @typescript-eslint/no-floating-promises */
+(async (): Promise<void> => {
   const projectRoot = path.join(__dirname, '..', '..');
   const nextJsExampleRoot = path.join(projectRoot, 'examples', 'with-next-js');
 
@@ -76,4 +76,5 @@ module.exports = async function () {
     process.once('SIGINT', cleanUpOnExit);
     process.once('SIGTERM', cleanUpOnExit);
   });
-};
+})();
+/* eslint-enable @typescript-eslint/no-floating-promises */

@@ -1,16 +1,23 @@
-import { Classes } from 'jss';
 import { merge } from 'lodash';
+import { ResponsiveSpaceFactor } from '../types/ResponsiveSpaceFactor';
 import { ResponsiveSpaceProp } from '../types/ResponsiveSpaceProp';
-import Theme from '../themes/Theme';
+import { Styles } from 'jss';
+import { Theme } from '../themes/Theme';
 
-type CssAttributesFunction = (spaceFactor: number, theme: Theme) => string;
+type CssAttributesFunction = ({ spaceFactor, theme }: { spaceFactor: ResponsiveSpaceFactor; theme: Theme }) => Styles;
+type ClassDefinitions = Partial<{ [key: string]: {} | CssAttributesFunction }>;
 
-const createSpaceDependentClasses = function (
-  theme: Theme,
-  definitions: { [key: string]: string | {} | CssAttributesFunction | undefined },
+const createSpaceDependentClasses = function ({
+  theme,
+  definitions,
   deviceSize = '',
   maximumSpaceFactor = 16
-): { [key: string]: string | undefined } {
+}: {
+  theme: Theme;
+  definitions: ClassDefinitions;
+  deviceSize?: string;
+  maximumSpaceFactor?: number;
+}): { [key: string]: string | undefined } {
   const classes: Partial<{ [key: string]: string | undefined }> = {};
 
   for (let spaceFactor = 0; spaceFactor < maximumSpaceFactor; spaceFactor++) {
@@ -19,7 +26,7 @@ const createSpaceDependentClasses = function (
       const className = `${deviceSize}-${propertyName}-${spaceFactor}`;
 
       classes[className] = typeof cssAttributes === 'function' ?
-        cssAttributes(spaceFactor, theme) :
+        cssAttributes({ spaceFactor, theme }) :
         cssAttributes;
     }
   }
@@ -27,11 +34,14 @@ const createSpaceDependentClasses = function (
   return classes;
 };
 
-const createDefaultSpaceDependantClasses = function (
-  theme: Theme,
+const createDefaultSpaceDependantClasses = function ({
+  theme,
   definitions = {}
-): { [key: string]: string | undefined } {
-  const emptySpaceProperties: Partial<{ [key: string]: string | {} | CssAttributesFunction | undefined }> = {};
+}: {
+  theme: Theme;
+  definitions: ClassDefinitions;
+}): { [key: string]: string | undefined } {
+  const emptySpaceProperties: Partial<{ [key: string]: {} | CssAttributesFunction }> = {};
 
   for (const propertyName of Object.keys(definitions)) {
     emptySpaceProperties[propertyName] = {};
@@ -40,21 +50,25 @@ const createDefaultSpaceDependantClasses = function (
   let classes: Partial<{ [key: string]: string | undefined }> = {};
 
   for (const deviceSize of [ 'xs', 'sm', 'md', 'lg', 'xl' ]) {
-    classes = merge({}, classes, createSpaceDependentClasses(
+    classes = merge({}, classes, createSpaceDependentClasses({
       theme,
-      emptySpaceProperties,
-      deviceSize,
-    ));
+      definitions: emptySpaceProperties,
+      deviceSize
+    }));
   }
 
   return classes;
 };
 
-const getSpaceDependentClassNamesFromProps = function (
-  props: { [key: string]: ResponsiveSpaceProp },
-  definitions: { [key: string]: string | {} | CssAttributesFunction | undefined },
-  classes: Classes,
-): string[] {
+const getSpaceDependentClassNamesFromProps = function ({
+  props,
+  definitions,
+  classes
+}: {
+  props: { [key: string]: ResponsiveSpaceProp };
+  definitions: { [key: string]: {} | CssAttributesFunction };
+  classes: any;
+}): string[] {
   const responsiveClassNames = [];
 
   for (const propertyName of Object.keys(definitions)) {

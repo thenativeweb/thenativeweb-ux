@@ -1,7 +1,9 @@
 import { Styles } from 'jss';
-import Theme from '../../themes/Theme';
+import { Theme } from '../..';
 
-const styles: Styles = (theme: Theme): Styles => ({
+export type CheckBoxClassNames = 'CheckBox';
+
+const styles = (theme: Theme): Styles<CheckBoxClassNames> => ({
   CheckBox: {
     fontFamily: theme.font.family.default
   }
