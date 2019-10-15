@@ -1,6 +1,7 @@
-import { act } from 'react-dom/test-utils';
+import act from '../../shared/act';
 import assert from 'assertthat';
 import Button from '../../../lib/components/Button/ButtonDefault';
+import { click } from '../../shared/eventDispatchers';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
@@ -18,7 +19,6 @@ suite('ButtonDefault component', (): void => {
   });
 
   test('REACTDOM - it shows the expected text when clicked.', async (): Promise<void> => {
-    /* eslint-disable @typescript-eslint/no-floating-promises */
     let clicked = false;
 
     const onClick = (): void => {
@@ -34,10 +34,9 @@ suite('ButtonDefault component', (): void => {
     assert.that(button.textContent).is.equalTo('SUBSCRIBE TO BASIC');
 
     act((): void => {
-      button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      click(button);
     });
 
     assert.that(clicked).is.true();
-    /* eslint-enable @typescript-eslint/no-floating-promises */
   });
 });
