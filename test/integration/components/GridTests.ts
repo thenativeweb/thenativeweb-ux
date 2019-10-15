@@ -15,7 +15,7 @@ suite('Grid', function (): void {
   });
 
   suite('Grid.Item', (): void => {
-    test('spans accross multiple columns when columSpan is given.', async (): Promise<void> => {
+    test('spans across multiple columns when columSpan is given.', async (): Promise<void> => {
       page = await browser.setupPage();
       await page.goto(environment.url);
 
@@ -33,7 +33,7 @@ suite('Grid', function (): void {
       assert.that(Math.round(secondItemBoundingBox.width * 2)).is.equalTo(gridWidth - defaultGridGrap);
     });
 
-    test('spans accross multiple columns when a configuration for multiple screen sizes is given.', async (): Promise<void> => {
+    test('spans across multiple columns when a configuration for multiple screen sizes is given.', async (): Promise<void> => {
       page = await browser.setupPage({ viewport: { width: 590, height: 600 }});
       await page.goto(environment.url);
 

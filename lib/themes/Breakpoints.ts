@@ -1,3 +1,5 @@
+import { Size } from './Size';
+
 const defaultSteps = {
   xs: 0,
   sm: 600,

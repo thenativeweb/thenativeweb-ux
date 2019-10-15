@@ -17,7 +17,7 @@ interface ButtonProps {
   size?: 'sm' | 'md';
   style?: Styles;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 const useStyles = createUseStyles<Theme, ButtonClassNames>(styles);
