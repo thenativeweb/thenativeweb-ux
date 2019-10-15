@@ -1,5 +1,5 @@
-import { Icon, Link, Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { Icon, Link, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { MadeByClassNames } from './styles';
 
