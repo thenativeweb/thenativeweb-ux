@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import shell from 'shelljs';
 import { ChildProcess, spawn } from 'child_process';
@@ -9,7 +8,7 @@ import { ChildProcess, spawn } from 'child_process';
     const projectRoot = path.join(__dirname, '..', '..'),
           webpackExampleRoot = path.join(projectRoot, 'examples', 'with-webpack');
 
-    await fs.promises.rmdir(path.join(projectRoot, 'dist'), { recursive: true });
+    shell.rm('-rf', path.join(projectRoot, 'dist'));
 
     let childProcess = shell.exec('npx roboter build', { cwd: projectRoot });
 
