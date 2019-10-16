@@ -6,7 +6,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { ButtonClassNames } from './styles';
 
 interface ButtonProps {
-  adjust?: 'flex' | 'auto';
+  adjust?: 'flex' | 'auto' | undefined;
   autoFocus?: boolean;
   className?: string;
   icon?: string;
@@ -24,7 +24,7 @@ const useStyles = createUseStyles<Theme, ButtonClassNames>(styles);
 
 const Button: FunctionComponent<ButtonProps> = ({
   autoFocus = false,
-  adjust = undefined,
+  adjust,
   children,
   className,
   id,
