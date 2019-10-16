@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
 
-suite('Headline component', (): void => {
+suite('Headline', (): void => {
   let container: Element;
 
   setup((): void => {
@@ -17,7 +17,7 @@ suite('Headline component', (): void => {
     document.body.removeChild(container);
   });
 
-  test('REACTDOM - Level 1 is set correct.', async (): Promise<void> => {
+  test('renders level 1 headlines.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(<ThemeProvider><Headline level='1'>This is a headline, Level1</Headline></ThemeProvider>, container);
     });
@@ -26,11 +26,11 @@ suite('Headline component', (): void => {
     const classesWithJSSIDs = headline.className;
 
     assert.that(headline.textContent).is.equalTo('This is a headline, Level1');
-    assert.that(classesWithJSSIDs.indexOf('Level1')).is.greaterThan(-1);
-    assert.that(classesWithJSSIDs.indexOf('Level2')).is.equalTo(-1);
+    assert.that(classesWithJSSIDs).is.containing('Level1');
+    assert.that(classesWithJSSIDs).is.not.containing('Level2');
   });
 
-  test('REACTDOM - Level 2 is set correct.', async (): Promise<void> => {
+  test('renders level 2 headlines.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(<ThemeProvider><Headline level='2'>This is a headline, Level2</Headline></ThemeProvider>, container);
     });
@@ -38,12 +38,11 @@ suite('Headline component', (): void => {
     const headline = container.getElementsByTagName('div')[0];
     const classesWithJSSIDs = headline.className;
 
-    assert.that(headline.textContent).is.equalTo('This is a headline, Level2');
-    assert.that(classesWithJSSIDs.indexOf('Level2')).is.greaterThan(-1);
-    assert.that(classesWithJSSIDs.indexOf('Level1')).is.equalTo(-1);
+    assert.that(classesWithJSSIDs).is.containing('Level2');
+    assert.that(classesWithJSSIDs).is.not.containing('Level1');
   });
 
-  test('REACTDOM - Level 1 as default is set correct, when no level was given.', async (): Promise<void> => {
+  test('renders level 1 headlines as default if no level is given.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(<ThemeProvider><Headline>This is a headline, Level1 as default.</Headline></ThemeProvider>, container);
     });
@@ -51,33 +50,19 @@ suite('Headline component', (): void => {
     const headline = container.getElementsByTagName('div')[0];
     const classesWithJSSIDs = headline.className;
 
-    assert.that(headline.textContent).is.equalTo('This is a headline, Level1 as default.');
-    assert.that(classesWithJSSIDs.indexOf('Level1')).is.greaterThan(-1);
-    assert.that(classesWithJSSIDs.indexOf('Level2')).is.equalTo(-1);
+    assert.that(classesWithJSSIDs).is.containing('Level1');
+    assert.that(classesWithJSSIDs).is.not.containing('Level2');
   });
 
-  test('REACTDOM - Level 1 as default is set correct, when undefined level was given.', async (): Promise<void> => {
+  test('sets the ID correctly.', async (): Promise<void> => {
     act((): void => {
-      ReactDOM.render(<ThemeProvider><Headline level={ undefined }>This is a headline, Level1 when undefined was given.</Headline></ThemeProvider>, container);
+      ReactDOM.render(<ThemeProvider><Headline id='some-id'>This is a headline with some-id.</Headline></ThemeProvider>, container);
     });
 
-    const headline = container.getElementsByTagName('div')[0];
-    const classesWithJSSIDs = headline.className;
-
-    assert.that(headline.textContent).is.equalTo('This is a headline, Level1 when undefined was given.');
-    assert.that(classesWithJSSIDs.indexOf('Level1')).is.greaterThan(-1);
-    assert.that(classesWithJSSIDs.indexOf('Level2')).is.equalTo(-1);
-  });
-
-  test('REACTDOM - Id is set correct.', async (): Promise<void> => {
-    act((): void => {
-      ReactDOM.render(<ThemeProvider><Headline id='111'>This is a headline, Level1 when undefined was given.</Headline></ThemeProvider>, container);
-    });
-
-    const headline = document.getElementById('111');
+    const headline = document.getElementById('some-id');
 
     assert.that(headline).is.not.null();
 
-    assert.that(headline && headline.id).is.equalTo('111');
+    assert.that(headline && headline.id).is.equalTo('some-id');
   });
 });
