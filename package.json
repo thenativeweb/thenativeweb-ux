@@ -54,7 +54,7 @@
     "roboter": "8.2.0",
     "shelljs": "0.8.3",
     "ts-loader": "6.2.0",
-    "webpack": "4.41.1"
+    "webpack": "4.41.2"
   },
   "peerDependencies": {
     "react": "^16.10.2",
