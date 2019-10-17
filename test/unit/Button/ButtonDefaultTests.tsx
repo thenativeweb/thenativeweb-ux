@@ -18,7 +18,7 @@ suite('Button', (): void => {
     document.body.removeChild(container);
   });
 
-  test('takes function and runs it if clicked.', async (): Promise<void> => {
+  test('takes onClick function and runs it if clicked.', async (): Promise<void> => {
     let clicked = false;
 
     const onClick = (): void => {
@@ -26,7 +26,7 @@ suite('Button', (): void => {
     };
 
     act((): void => {
-      ReactDOM.render(<ThemeProvider><Button onClick={ onClick }>SUBSCRIBE TO BASIC</Button></ThemeProvider>, container);
+      ReactDOM.render(<ThemeProvider><Button onClick={ onClick }>Click me</Button></ThemeProvider>, container);
     });
 
     const button = container.getElementsByTagName('button')[0];
@@ -38,17 +38,17 @@ suite('Button', (): void => {
     assert.that(clicked).is.true();
   });
 
-  test('renders children correctly.', async (): Promise<void> => {
+  test('takes text as children and renders them as textContent.', async (): Promise<void> => {
     act((): void => {
-      ReactDOM.render(<ThemeProvider><Button>SUBSCRIBE TO BASIC</Button></ThemeProvider>, container);
+      ReactDOM.render(<ThemeProvider><Button>Click me</Button></ThemeProvider>, container);
     });
 
     const button = container.getElementsByTagName('button')[0];
 
-    assert.that(button.textContent).is.equalTo('SUBSCRIBE TO BASIC');
+    assert.that(button.textContent).is.equalTo('Click me');
   });
 
-  test('has correct classes set for prop adjust.', async (): Promise<void> => {
+  test('sets classes for prop adjust.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -67,7 +67,7 @@ suite('Button', (): void => {
     assert.that(buttonAdjustNotSet.className).is.not.containingAllOf([ 'AdjustAuto', 'AdjustFlex' ]);
   });
 
-  test('has correct classes set for prop size.', async (): Promise<void> => {
+  test('sets classes for prop size.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>

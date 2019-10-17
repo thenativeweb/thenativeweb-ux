@@ -6,7 +6,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { ButtonClassNames } from './styles';
 
 interface ButtonProps {
-  adjust?: 'flex' | 'auto' | undefined;
+  adjust?: 'flex' | 'auto';
   autoFocus?: boolean;
   className?: string;
   icon?: string;
