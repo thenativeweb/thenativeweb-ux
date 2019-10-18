@@ -25,8 +25,8 @@ jobs:
             nvm alias default v12.10.0
       - restore_cache:
           keys:
-            - node-modules-{{ checksum "package.json" }}
-            - node-modules-
+            - node-modules-{{ checksum "package.json" }}-v2
+            - node-modules-v2
       - run: |
             export NVM_DIR="/opt/circleci/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -35,7 +35,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: node-modules-{{ checksum "package.json" }}
+          key: node-modules-{{ checksum "package.json" }}-v2
       - run: |
             export NVM_DIR="/opt/circleci/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
