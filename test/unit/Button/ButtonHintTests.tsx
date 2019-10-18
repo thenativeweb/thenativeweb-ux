@@ -1,6 +1,5 @@
 import act from '../../shared/act';
 import assert from 'assertthat';
-import Button from '../../../lib/components/Button/ButtonDefault';
 import ButtonHint from '../../../lib/components/Button/ButtonHint';
 import React from 'react';
 import ReactDOM from 'react-dom';
