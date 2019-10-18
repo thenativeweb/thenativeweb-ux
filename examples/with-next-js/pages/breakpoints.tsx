@@ -3,7 +3,7 @@ import {
   createUseStyles,
   Theme,
   Website
-} from '../../../build/lib';
+} from '../../../lib';
 import React, { ReactElement } from 'react';
 
 type ClassNames =
@@ -67,7 +67,7 @@ const Page = (): ReactElement => {
         <div id='md' className={ classes.OnlyMd }>
           OnlyMd
         </div>
-        <div  id='lg' className={ classes.OnlyLg }>
+        <div id='lg' className={ classes.OnlyLg }>
           OnlyLg
         </div>
         <div id='xl' className={ classes.OnlyXl }>

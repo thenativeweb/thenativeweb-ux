@@ -9,7 +9,7 @@ suite('themes/breakpoints', (): void => {
     await browser.teardownPage(page);
   });
 
-  const assertElementVisibility= async function ({ viewportWidth, visibleSelectors, hiddenSelectors }: {
+  const assertElementVisibility = async function ({ viewportWidth, visibleSelectors, hiddenSelectors }: {
     viewportWidth: number;
     visibleSelectors: string[];
     hiddenSelectors: string[];

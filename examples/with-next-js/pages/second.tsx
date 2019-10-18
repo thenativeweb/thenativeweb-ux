@@ -8,7 +8,7 @@ import {
   SidebarBrand,
   SidebarItem,
   View
-} from '../../../build/lib';
+} from '../../../lib';
 import React, { ReactElement } from 'react';
 
 const Page = (): ReactElement => (

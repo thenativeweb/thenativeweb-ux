@@ -1,9 +1,9 @@
 import axios from 'axios';
 import buntstift from 'buntstift';
 import { oneLine } from 'common-tags';
+import path from 'path';
 import retry from 'async-retry';
 import shell from 'shelljs';
-import path from 'path';
 
 const nginx = {
   async start (): Promise<void> {

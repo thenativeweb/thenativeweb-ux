@@ -1,6 +1,6 @@
 import App from 'next/app';
 import React, { ReactElement } from 'react';
-import { removeServerSideStyles, ThemeProvider } from '../../../build/lib';
+import { removeServerSideStyles, ThemeProvider } from '../../../lib';
 
 class CustomApp extends App {
   /* eslint-disable class-methods-use-this */
