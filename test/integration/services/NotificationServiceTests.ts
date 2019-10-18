@@ -1,8 +1,9 @@
 import browser from '../../shared/browser';
-import puppeteer from 'puppeteer';
+import environment from '../../shared/environment';
+import { Page } from 'puppeteer';
 
-suite('NotificationService', (): void => {
-  let page: puppeteer.Page;
+suite('services/NotificationService', (): void => {
+  let page: Page;
 
   setup(async (): Promise<void> => {
     page = await browser.setupPage();
@@ -13,6 +14,7 @@ suite('NotificationService', (): void => {
   });
 
   test('shows a notification.', async (): Promise<void> => {
+    await page.goto(`${environment.url}/components/`);
     await page.waitForSelector('#show-notification-error');
 
     await page.click('#show-notification-error');

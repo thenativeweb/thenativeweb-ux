@@ -10,7 +10,7 @@ import {
   SidebarBrand,
   SidebarItem,
   View
-} from '../../../lib';
+} from '../../../build/lib';
 import React, { ReactElement } from 'react';
 
 const log = function (message: any): void {

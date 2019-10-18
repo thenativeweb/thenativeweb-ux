@@ -1,19 +1,15 @@
 import assert from 'assertthat';
 import browser from '../shared/browser';
-import env from '../shared/environment';
+import environment from '../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('with-next-js/server-side-rendering', function (): void {
-  // Next.js needs a little bit more time on the first render of a page.
-  // As this can vary depending on the complexity we give it a little bit more time.
-  this.timeout(15 * 1000);
-
+suite('with-next-js/server-side-rendering', (): void => {
   let page: Page;
 
   setup(async (): Promise<void> => {
-    page = await browser.setupPage(false);
+    page = await browser.setupPage();
     await page.setJavaScriptEnabled(false);
-    await page.goto(env.url);
+    await page.goto(environment.url);
   });
 
   teardown(async (): Promise<void> => {

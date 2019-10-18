@@ -1,8 +1,9 @@
 import assert from 'assertthat';
 import browser from '../../shared/browser';
+import environment from '../../shared/environment';
 import puppeteer from 'puppeteer';
 
-suite('classNames', (): void => {
+suite('styles/classNames', (): void => {
   let page: puppeteer.Page;
 
   setup(async (): Promise<void> => {
@@ -14,6 +15,7 @@ suite('classNames', (): void => {
   });
 
   test('creates classes.', async (): Promise<void> => {
+    await page.goto(`${environment.url}/components/`);
     const hasCustomClass = await page.$eval(
       '#classNames',
       (element: Element): boolean => element.classList.contains('custom')

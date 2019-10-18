@@ -3,7 +3,7 @@ import {
   createUseStyles,
   Theme,
   Website
-} from '../../../lib';
+} from '../../../build/lib';
 import React, { ReactElement } from 'react';
 
 type ClassNames =
@@ -58,19 +58,19 @@ const Page = (): ReactElement => {
     <Website>
       <header>Breakpoint tests</header>
       <div id='responsive-container'>
-        <div className={ classes.OnlyXs }>
+        <div id='xs' className={ classes.OnlyXs }>
           OnlyXs
         </div>
-        <div className={ classes.OnlySm }>
+        <div id='sm' className={ classes.OnlySm }>
           OnlySm
         </div>
-        <div className={ classes.OnlyMd }>
+        <div id='md' className={ classes.OnlyMd }>
           OnlyMd
         </div>
-        <div className={ classes.OnlyLg }>
+        <div  id='lg' className={ classes.OnlyLg }>
           OnlyLg
         </div>
-        <div className={ classes.OnlyXl }>
+        <div id='xl' className={ classes.OnlyXl }>
           OnlyXl
         </div>
       </div>

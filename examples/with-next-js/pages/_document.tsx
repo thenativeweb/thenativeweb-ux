@@ -1,7 +1,7 @@
 import { RenderPageResult } from 'next/dist/next-server/lib/utils';
 import NextDocument, { DocumentContext, DocumentInitialProps } from 'next/document';
 import React, { ReactElement } from 'react';
-import { ServerSideStyles, StyleCollector } from '../../../lib';
+import { ServerSideStyles, StyleCollector } from '../../../build/lib';
 
 class CustomDocument extends NextDocument {
   public static async getInitialProps (originalContext: DocumentContext): Promise<DocumentInitialProps> {
