@@ -26,7 +26,12 @@ suite('Button', (): void => {
     };
 
     act((): void => {
-      ReactDOM.render(<ThemeProvider><Button onClick={ onClick }>Click me</Button></ThemeProvider>, container);
+      ReactDOM.render(
+        <ThemeProvider>
+          <Button onClick={ onClick }>Click me</Button>
+        </ThemeProvider>,
+        container
+      );
     });
 
     const button = container.getElementsByTagName('button')[0];
@@ -40,7 +45,12 @@ suite('Button', (): void => {
 
   test('takes text as children and renders them as textContent.', async (): Promise<void> => {
     act((): void => {
-      ReactDOM.render(<ThemeProvider><Button>Click me</Button></ThemeProvider>, container);
+      ReactDOM.render(
+        <ThemeProvider>
+          <Button>Click me</Button>
+        </ThemeProvider>,
+        container
+      );
     });
 
     const button = container.getElementsByTagName('button')[0];
@@ -52,9 +62,9 @@ suite('Button', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Button adjust='auto'>Button AdjustAuto</Button>
-          <Button adjust='flex'>Button AdjustFlex</Button>
-          <Button>Button AdjustUndefined</Button>
+          <Button adjust='auto'>Click me</Button>
+          <Button adjust='flex'>Click me</Button>
+          <Button>Click me</Button>
         </ThemeProvider>, container
       );
     });
@@ -71,9 +81,9 @@ suite('Button', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Button size='sm'>Button SizeSm</Button>
-          <Button size='md'>Button SizeMd</Button>
-          <Button>Button SizeNotSet</Button>
+          <Button size='sm'>Click me</Button>
+          <Button size='md'>Click me</Button>
+          <Button>Click me</Button>
         </ThemeProvider>, container
       );
     });
@@ -85,5 +95,37 @@ suite('Button', (): void => {
     assert.that(buttonSizeMd.className).is.containing('SizeMd');
     assert.that(buttonSizeNotSet.className).is.containing('SizeMd');
     assert.that(buttonSizeNotSet.className).is.not.containing('SizeSm');
+  });
+
+  test('renders primary buttons.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Button isPrimary={ true }>Click me</Button>
+        </ThemeProvider>, container
+      );
+    });
+
+    const button = document.getElementsByTagName('button')[0];
+
+    assert.that(button.className).is.containing('TypePrimary');
+    assert.that(button.type).is.equalTo('submit');
+  });
+
+  test('renders default buttons if no prop is given.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Button>Click me</Button>
+        </ThemeProvider>, container
+      );
+    });
+
+    const button = document.getElementsByTagName('button')[0];
+
+    assert.that(button.className).is.not.containingAllOf([ 'TypePrimary', 'isSubtle', 'SizeSm', 'TypeIcon', 'TypeIconOnly' ]);
+    assert.that(button.className).is.containing([ 'SizeMd' ]);
+    assert.that(button.type).is.equalTo('button');
+    assert.that(button.autofocus).is.not.true();
   });
 });
