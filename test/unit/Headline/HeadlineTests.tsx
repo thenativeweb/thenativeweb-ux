@@ -19,7 +19,12 @@ suite('Headline', (): void => {
 
   test('renders level 1 headlines.', async (): Promise<void> => {
     act((): void => {
-      ReactDOM.render(<ThemeProvider><Headline level='1'>This is a headline, Level1</Headline></ThemeProvider>, container);
+      ReactDOM.render(
+        <ThemeProvider>
+          <Headline level='1'>This is a headline, Level1</Headline>
+        </ThemeProvider>,
+        container
+      );
     });
 
     const headline = container.getElementsByTagName('div')[0];
@@ -32,7 +37,12 @@ suite('Headline', (): void => {
 
   test('renders level 2 headlines.', async (): Promise<void> => {
     act((): void => {
-      ReactDOM.render(<ThemeProvider><Headline level='2'>This is a headline, Level2</Headline></ThemeProvider>, container);
+      ReactDOM.render(
+        <ThemeProvider>
+          <Headline level='2'>This is a headline, Level2</Headline>
+        </ThemeProvider>,
+        container
+      );
     });
 
     const headline = container.getElementsByTagName('div')[0];
@@ -44,7 +54,12 @@ suite('Headline', (): void => {
 
   test('renders level 1 headlines as default if no level is given.', async (): Promise<void> => {
     act((): void => {
-      ReactDOM.render(<ThemeProvider><Headline>This is a headline, Level1 as default.</Headline></ThemeProvider>, container);
+      ReactDOM.render(
+        <ThemeProvider>
+          <Headline>This is a headline, Level1 as default.</Headline>
+        </ThemeProvider>,
+        container
+      );
     });
 
     const headline = container.getElementsByTagName('div')[0];
@@ -56,7 +71,12 @@ suite('Headline', (): void => {
 
   test('sets the ID correctly.', async (): Promise<void> => {
     act((): void => {
-      ReactDOM.render(<ThemeProvider><Headline id='some-id'>This is a headline with some-id.</Headline></ThemeProvider>, container);
+      ReactDOM.render(
+        <ThemeProvider>
+          <Headline id='some-id'>This is a headline with some-id.</Headline>
+        </ThemeProvider>,
+        container
+      );
     });
 
     const headline = document.getElementById('some-id');
