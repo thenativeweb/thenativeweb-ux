@@ -24,7 +24,7 @@ const useStyles = createUseStyles<Theme, ButtonClassNames>(styles);
 
 const Button: FunctionComponent<ButtonProps> = ({
   autoFocus = false,
-  adjust = undefined,
+  adjust,
   children,
   className,
   id,
