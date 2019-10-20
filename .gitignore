@@ -5,6 +5,7 @@
 # Build artefacts
 *build/
 .next/
+examples/with-next-js/out
 
 # OS generated files and folders
 .DS_Store
