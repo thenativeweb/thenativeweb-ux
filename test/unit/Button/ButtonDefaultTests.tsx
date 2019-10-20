@@ -97,6 +97,25 @@ suite('Button', (): void => {
     assert.that(buttonSizeNotSet.className).is.not.containing('SizeSm');
   });
 
+  test('renders given type.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Button type='submit'>Click me</Button>
+          <Button type='button'>Click me</Button>
+          <Button type='reset'>Click me</Button>
+        </ThemeProvider>, container
+      );
+    });
+
+    const buttons = Array.prototype.slice.call(document.getElementsByTagName('button'));
+    const [ buttonTypeSubmit, buttonTypeButton, buttonTypeReset ] = buttons;
+
+    assert.that(buttonTypeSubmit.type).is.equalTo('submit');
+    assert.that(buttonTypeButton.type).is.equalTo('button');
+    assert.that(buttonTypeReset.type).is.equalTo('reset');
+  });
+
   test('renders primary buttons.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
@@ -123,9 +142,33 @@ suite('Button', (): void => {
 
     const button = document.getElementsByTagName('button')[0];
 
-    assert.that(button.className).is.not.containingAllOf([ 'TypePrimary', 'isSubtle', 'SizeSm', 'TypeIcon', 'TypeIconOnly' ]);
+    assert.that(button.className).is.not.containingAllOf(
+      [
+        'TypePrimary',
+        'isSubtle',
+        'SizeSm',
+        'TypeIcon',
+        'TypeIconOnly'
+      ]
+    );
     assert.that(button.className).is.containing([ 'SizeMd' ]);
     assert.that(button.type).is.equalTo('button');
     assert.that(button.autofocus).is.not.true();
+  });
+
+  test('renders icon inside.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Button icon='icon-name'>Click me</Button>
+        </ThemeProvider>, container
+      );
+    });
+
+    const button = document.getElementsByTagName('button')[0];
+
+    const svg = button.children[0].nodeName;
+
+    assert.that(svg).is.equalTo('svg');
   });
 });
