@@ -4,7 +4,7 @@ import CheckBox from '../../../lib/components/CheckBox';
 import { click } from '../../shared/eventDispatchers';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
-import React, { useState } from 'react';
+import React from 'react';
 
 suite('CheckBox', (): void => {
   let container: Element;
