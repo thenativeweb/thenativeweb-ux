@@ -11,7 +11,7 @@ interface ViewProps {
   id?: string;
   justifyContent?: 'center';
   orientation?: 'horizontal' | 'vertical' | 'centered';
-  scrollable?: false | 'auto';
+  scrollable?: 'auto';
   style?: any;
 }
 
