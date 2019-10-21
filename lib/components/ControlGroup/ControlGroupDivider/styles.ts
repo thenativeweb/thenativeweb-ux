@@ -10,7 +10,7 @@ const styles = (theme: Theme): Styles<ControlGroupDividerClassNames> => ({
     flexBasis: 'auto',
     width: '100%',
     height: '1px',
-    background: theme.color.brand.dark,
+    background: theme.color.brand.grayDark,
     opacity: 0.1,
     marginTop: `${theme.space(2.5)}px`,
     marginBottom: `${theme.space(3)}px`,

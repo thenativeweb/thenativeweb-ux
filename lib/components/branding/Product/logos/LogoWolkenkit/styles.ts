@@ -31,7 +31,7 @@ const styles = (theme: Theme): Styles<LogoWolkenkitClassNames> => ({
   },
 
   Box: {
-    fill: theme.color.brand.dark
+    fill: theme.color.brand.grayDark
   },
 
   '@keyframes move-cloud': {

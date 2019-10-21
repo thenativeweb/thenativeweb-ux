@@ -9,7 +9,7 @@ export type NotificationClassNames =
 const styles = (theme: Theme): Styles<NotificationClassNames> => ({
   Notification: {
     padding: '10px 15px',
-    background: theme.color.brand.dark,
+    background: theme.color.brand.grayDark,
     boxShadow: theme.shadow.overlay,
     marginBottom: `${theme.space(1.5)}px`,
     fontFamily: theme.font.family.default

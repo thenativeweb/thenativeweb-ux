@@ -10,8 +10,8 @@ const styles = (theme: Theme): Styles<DropdownClassNames> => ({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
-    background: theme.color.brand.dark,
-    border: theme.color.brand.dark,
+    background: theme.color.brand.grayDark,
+    border: theme.color.brand.grayDark,
     fontFamily: theme.font.family.default,
 
     '& select': {

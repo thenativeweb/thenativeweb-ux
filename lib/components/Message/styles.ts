@@ -27,7 +27,7 @@ const styles = (theme: Theme): Styles<MessageClassNames> => ({
   },
 
   TypeInfo: {
-    background: theme.color.brand.lightGrey
+    background: theme.color.brand.grayLight
   },
 
   WithIcon: {
