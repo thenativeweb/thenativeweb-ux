@@ -43,7 +43,8 @@ suite('View', (): void => {
         'OrientationCentered',
         'OrientationHorizontal',
         'OrientationVertical',
-        'ScrollableAuto'
+        'ScrollableAuto',
+        'ScrollableNone'
       ]
     );
   });
@@ -151,19 +152,24 @@ suite('View', (): void => {
     assert.that(horizontal.className).is.containing('OrientationHorizontal');
   });
 
-  test('sets classes for defined prop scrollable.', async (): Promise<void> => {
+  test('sets classes for defined prop isScrollable.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <View scrollable='auto'>View</View>
+          <View isScrollable={ true }>View</View>
+          <View isScrollable={ false }>View</View>
         </ThemeProvider>,
         container
       );
     });
 
-    const view = container.querySelector('div');
+    const view = toArray(container.querySelectorAll('div'));
+    const [ truthy, falsy ] = view;
 
-    assert.that(view).is.not.null();
-    assert.that(view!.className).is.containing('ScrollableAuto');
+    assert.that(truthy).is.not.undefined();
+    assert.that(truthy.className).is.containing('ScrollableAuto');
+
+    assert.that(falsy).is.not.undefined();
+    assert.that(falsy.className).is.containing('ScrollableNone');
   });
 });
