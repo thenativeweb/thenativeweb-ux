@@ -3,9 +3,8 @@ import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
+import { toArray } from '../../shared/toArray';
 import View from '../../../lib/components/View';
-
-const makeArray = (arrayLike: NodeListOf<HTMLElement>): any[] => Array.prototype.slice.call(arrayLike);
 
 suite('View', (): void => {
   let container: Element;
@@ -32,9 +31,8 @@ suite('View', (): void => {
     const view = container.querySelector('div');
 
     assert.that(view).is.not.null();
-
-    assert.that(view && view.className).is.containing('View');
-    assert.that(view && view.className).is.not.containingAllOf(
+    assert.that(view!.className).is.containing('View');
+    assert.that(view!.className).is.not.containingAllOf(
       [
         'AdjustAuto',
         'AdjustFlex',
@@ -61,16 +59,16 @@ suite('View', (): void => {
       );
     });
 
-    const view = makeArray(container.querySelectorAll('div'));
-    const [ adjustAuto, adjustFlex ] = view;
+    const view = toArray(container.querySelectorAll('div'));
+    const [ auto, flex ] = view;
 
-    assert.that(adjustAuto).is.not.undefined();
-    assert.that(adjustFlex).is.not.undefined();
+    assert.that(auto).is.not.undefined();
+    assert.that(auto.className).is.containing('AdjustAuto');
+    assert.that(auto.className).is.not.containing('AdjustFlex');
 
-    assert.that(adjustAuto && adjustAuto.className).is.containing('AdjustAuto');
-    assert.that(adjustAuto && adjustAuto.className).is.not.containing('AdjustFlex');
-    assert.that(adjustFlex && adjustFlex.className).is.containing('AdjustFlex');
-    assert.that(adjustFlex && adjustFlex.className).is.not.containing('AdjustAuto');
+    assert.that(flex).is.not.undefined();
+    assert.that(flex.className).is.containing('AdjustFlex');
+    assert.that(flex.className).is.not.containing('AdjustAuto');
   });
 
   test('sets classes for defined prop alignItems.', async (): Promise<void> => {
@@ -86,8 +84,7 @@ suite('View', (): void => {
     const view = container.querySelector('div');
 
     assert.that(view).is.not.null();
-
-    assert.that(view && view.className).is.containing('AlignItemsCenter');
+    assert.that(view!.className).is.containing('AlignItemsCenter');
   });
 
   test('sets classes for defined prop background.', async (): Promise<void> => {
@@ -101,19 +98,19 @@ suite('View', (): void => {
       );
     });
 
-    const view = makeArray(container.querySelectorAll('div'));
-    const [ backgroundDark, backgroundLight ] = view;
+    const view = toArray(container.querySelectorAll('div'));
+    const [ dark, light ] = view;
 
-    assert.that(backgroundDark).is.not.undefined();
-    assert.that(backgroundLight).is.not.undefined();
+    assert.that(dark).is.not.undefined();
+    assert.that(dark.className).is.containing('BackgroundDark');
+    assert.that(dark.className).is.not.containing('BackgroundLight');
 
-    assert.that(backgroundDark.className).is.containing('BackgroundDark');
-    assert.that(backgroundDark.className).is.not.containing('BackgroundLight');
-    assert.that(backgroundLight.className).is.containing('BackgroundLight');
-    assert.that(backgroundLight.className).is.not.containing('BackgroundDark');
+    assert.that(light).is.not.undefined();
+    assert.that(light.className).is.containing('BackgroundLight');
+    assert.that(light.className).is.not.containing('BackgroundDark');
   });
 
-  test('sets classes for prop justifyContent.', async (): Promise<void> => {
+  test('sets classes for defined prop justifyContent.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -126,8 +123,7 @@ suite('View', (): void => {
     const view = container.querySelector('div');
 
     assert.that(view).is.not.null();
-
-    assert.that(view && view.className).is.containing('JustifyContentCenter');
+    assert.that(view!.className).is.containing('JustifyContentCenter');
   });
 
   test('sets classes for defined prop orientation.', async (): Promise<void> => {
@@ -142,25 +138,20 @@ suite('View', (): void => {
       );
     });
 
-    const view = makeArray(container.querySelectorAll('div'));
-    const [ orientationCentered, orientationVertical, orientationHorizontal ] = view;
+    const view = toArray(container.querySelectorAll('div'));
+    const [ centered, vertical, horizontal ] = view;
 
-    assert.that(orientationCentered).is.not.undefined();
-    assert.that(orientationVertical).is.not.undefined();
-    assert.that(orientationHorizontal).is.not.undefined();
+    assert.that(centered).is.not.undefined();
+    assert.that(centered.className).is.containing('OrientationCentered');
 
-    assert.that(orientationCentered.className).is.containing('OrientationCentered');
-    assert.that(orientationCentered.className).is.not.containing('OrientationVertical');
-    assert.that(orientationCentered.className).is.not.containing('OrientationHorizontal');
-    assert.that(orientationVertical.className).is.containing('OrientationVertical');
-    assert.that(orientationVertical.className).is.not.containing('OrientationCentered');
-    assert.that(orientationVertical.className).is.not.containing('OrientationHorizontal');
-    assert.that(orientationHorizontal.className).is.containing('OrientationHorizontal');
-    assert.that(orientationHorizontal.className).is.not.containing('OrientationCentered');
-    assert.that(orientationHorizontal.className).is.not.containing('OrientationVertical');
+    assert.that(vertical).is.not.undefined();
+    assert.that(vertical.className).is.containing('OrientationVertical');
+
+    assert.that(horizontal).is.not.undefined();
+    assert.that(horizontal.className).is.containing('OrientationHorizontal');
   });
 
-  test('sets classes for prop scrollable.', async (): Promise<void> => {
+  test('sets classes for defined prop scrollable.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -173,7 +164,6 @@ suite('View', (): void => {
     const view = container.querySelector('div');
 
     assert.that(view).is.not.null();
-
-    assert.that(view && view.className).is.containing('ScrollableAuto');
+    assert.that(view!.className).is.containing('ScrollableAuto');
   });
 });

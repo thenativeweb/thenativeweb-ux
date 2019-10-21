@@ -11,7 +11,7 @@ interface ViewProps {
   id?: string;
   justifyContent?: 'center';
   orientation?: 'horizontal' | 'vertical' | 'centered';
-  scrollable?: 'auto';
+  isScrollable?: true | false;
   style?: any;
 }
 
@@ -25,7 +25,7 @@ const View: FunctionComponent<ViewProps> = ({
   className,
   id,
   justifyContent,
-  scrollable,
+  isScrollable,
   style,
   orientation
 }): ReactElement => {
@@ -42,7 +42,8 @@ const View: FunctionComponent<ViewProps> = ({
       [classes.OrientationCentered]: orientation === 'centered',
       [classes.OrientationHorizontal]: orientation === 'horizontal',
       [classes.OrientationVertical]: orientation === 'vertical',
-      [classes.ScrollableAuto]: scrollable === 'auto'
+      [classes.ScrollableAuto]: isScrollable,
+      [classes.ScrollableNone]: !isScrollable
     },
     className
   );
