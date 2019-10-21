@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
 import View from '../../../lib/components/View';
 
+const makeArray = (arrayLike: NodeListOf<HTMLElement>): any[] => Array.prototype.slice.call(arrayLike);
+
 suite('View', (): void => {
   let container: Element;
 
@@ -17,7 +19,7 @@ suite('View', (): void => {
     document.body.removeChild(container);
   });
 
-  test('renders default views.', async (): Promise<void> => {
+  test('renders although no props has been defined.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -27,10 +29,12 @@ suite('View', (): void => {
       );
     });
 
-    const view = container.getElementsByTagName('div')[0];
+    const view = container.querySelector('div');
 
-    assert.that(view.className).is.containing('View');
-    assert.that(view.className).is.not.containingAllOf(
+    assert.that(view).is.not.null();
+
+    assert.that(view && view.className).is.containing('View');
+    assert.that(view && view.className).is.not.containingAllOf(
       [
         'AdjustAuto',
         'AdjustFlex',
@@ -46,7 +50,7 @@ suite('View', (): void => {
     );
   });
 
-  test('sets classes for prop adjust.', async (): Promise<void> => {
+  test('sets classes for defined prop adjust.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -57,16 +61,19 @@ suite('View', (): void => {
       );
     });
 
-    const view = Array.prototype.slice.call(container.getElementsByTagName('div'));
+    const view = makeArray(container.querySelectorAll('div'));
     const [ adjustAuto, adjustFlex ] = view;
 
-    assert.that(adjustAuto.className).is.containing('AdjustAuto');
-    assert.that(adjustAuto.className).is.not.containing('AdjustFlex');
-    assert.that(adjustFlex.className).is.containing('AdjustFlex');
-    assert.that(adjustFlex.className).is.not.containing('AdjustAuto');
+    assert.that(adjustAuto).is.not.undefined();
+    assert.that(adjustFlex).is.not.undefined();
+
+    assert.that(adjustAuto && adjustAuto.className).is.containing('AdjustAuto');
+    assert.that(adjustAuto && adjustAuto.className).is.not.containing('AdjustFlex');
+    assert.that(adjustFlex && adjustFlex.className).is.containing('AdjustFlex');
+    assert.that(adjustFlex && adjustFlex.className).is.not.containing('AdjustAuto');
   });
 
-  test('sets classes for prop alignItems.', async (): Promise<void> => {
+  test('sets classes for defined prop alignItems.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -76,12 +83,14 @@ suite('View', (): void => {
       );
     });
 
-    const view = container.getElementsByTagName('div')[0];
+    const view = container.querySelector('div');
 
-    assert.that(view.className).is.containing('AlignItemsCenter');
+    assert.that(view).is.not.null();
+
+    assert.that(view && view.className).is.containing('AlignItemsCenter');
   });
 
-  test('sets classes for prop background.', async (): Promise<void> => {
+  test('sets classes for defined prop background.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -92,8 +101,11 @@ suite('View', (): void => {
       );
     });
 
-    const view = Array.prototype.slice.call(container.getElementsByTagName('div'));
+    const view = makeArray(container.querySelectorAll('div'));
     const [ backgroundDark, backgroundLight ] = view;
+
+    assert.that(backgroundDark).is.not.undefined();
+    assert.that(backgroundLight).is.not.undefined();
 
     assert.that(backgroundDark.className).is.containing('BackgroundDark');
     assert.that(backgroundDark.className).is.not.containing('BackgroundLight');
@@ -111,12 +123,14 @@ suite('View', (): void => {
       );
     });
 
-    const view = container.getElementsByTagName('div')[0];
+    const view = container.querySelector('div');
 
-    assert.that(view.className).is.containing('JustifyContentCenter');
+    assert.that(view).is.not.null();
+
+    assert.that(view && view.className).is.containing('JustifyContentCenter');
   });
 
-  test('sets classes for prop orientation.', async (): Promise<void> => {
+  test('sets classes for defined prop orientation.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -128,8 +142,12 @@ suite('View', (): void => {
       );
     });
 
-    const view = Array.prototype.slice.call(container.getElementsByTagName('div'));
+    const view = makeArray(container.querySelectorAll('div'));
     const [ orientationCentered, orientationVertical, orientationHorizontal ] = view;
+
+    assert.that(orientationCentered).is.not.undefined();
+    assert.that(orientationVertical).is.not.undefined();
+    assert.that(orientationHorizontal).is.not.undefined();
 
     assert.that(orientationCentered.className).is.containing('OrientationCentered');
     assert.that(orientationCentered.className).is.not.containing('OrientationVertical');
@@ -152,8 +170,10 @@ suite('View', (): void => {
       );
     });
 
-    const view = container.getElementsByTagName('div')[0];
+    const view = container.querySelector('div');
 
-    assert.that(view.className).is.containing('ScrollableAuto');
+    assert.that(view).is.not.null();
+
+    assert.that(view && view.className).is.containing('ScrollableAuto');
   });
 });
