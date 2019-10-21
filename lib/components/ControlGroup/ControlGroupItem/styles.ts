@@ -40,7 +40,7 @@ const styles = (theme: Theme): Styles<ControlGroupItemClassNames> => ({
 
   Label: {
     marginBottom: '6px',
-    color: theme.color.brand.dark,
+    color: theme.color.brand.grayDark,
     fontWeight: 400,
     display: 'flex',
 

@@ -5,16 +5,15 @@ const theme = createTheme({
   spaceUnit: 8,
 
   brandColors: {
-    dark: '#23232c',
-    highlight: '#ff0099',
-    darkGrey: '#363d45',
-    midGrey: '#595c62',
-    lightGrey: '#eeeeee',
+    highlight: '#dd0099',
+    grayDark: '#222222',
+    gray: '#363d45',
+    grayLight: '#e5e6eb',
     white: '#ffffff'
   },
 
   interactionColors: {
-    focus: '#363d45'
+    focus: '#222222'
   },
 
   pattern: {

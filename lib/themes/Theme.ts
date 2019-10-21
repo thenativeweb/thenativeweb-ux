@@ -1,5 +1,7 @@
 import { BrandColors } from './BrandColors';
 import Breakpoints from './Breakpoints';
+import { DivisionColors } from './DivisionColors';
+import { FontSizes } from './FontSizes';
 import { InteractionColors } from './InteractionColors';
 import { Pattern } from './Pattern';
 
@@ -8,6 +10,7 @@ export interface Theme {
 
   readonly color: {
     brand: BrandColors;
+    division: DivisionColors;
     interaction: InteractionColors;
     content: { background: string; border: string };
     copytext: string;
@@ -30,12 +33,8 @@ export interface Theme {
 
   readonly font: {
     import: string;
-    size: { xs: string; sm: string; md: string; lg: string; xl: string };
+    size: FontSizes;
     family: { default: string; headline: string; code: string };
-  };
-
-  readonly grid: {
-    stepSize: number;
   };
 
   readonly icon: {

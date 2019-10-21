@@ -12,7 +12,7 @@ const styles = (theme: Theme): Styles<SidebarClassNames> => ({
     flexDirection: 'column',
     boxSizing: 'content-box',
     width: theme.components.Sidebar.width,
-    background: theme.color.brand.dark,
+    background: theme.color.brand.grayDark,
     padding: `${theme.space(2)}px 0`
   }
 });

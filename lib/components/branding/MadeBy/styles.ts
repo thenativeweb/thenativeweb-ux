@@ -19,11 +19,11 @@ const styles = (theme: Theme): Styles<MadeByClassNames> => ({
   },
 
   ColorDark: {
-    color: theme.color.brand.lightGrey
+    color: theme.color.brand.grayLight
   },
 
   ColorLight: {
-    color: theme.color.brand.dark
+    color: theme.color.brand.grayDark
   },
 
   SizeSm: {

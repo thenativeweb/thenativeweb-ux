@@ -1,5 +1,6 @@
 Use this component as a basic building block to create application layouts using the power of flexbox.
 
+import { themes } from 'thenativeweb-ux';
 ```javascript
 <View orientation='vertical' justifyContent='center' style={{ height: '200px' }}>
   <View style={{ background: 'gold' }}>View</View>

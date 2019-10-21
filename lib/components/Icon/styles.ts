@@ -24,7 +24,7 @@ const styles = (theme: Theme): Styles<IconClassNames> => ({
   },
 
   ColorDefault: {
-    fill: theme.color.brand.dark
+    fill: theme.color.brand.grayDark
   },
 
   ColorCurrent: {

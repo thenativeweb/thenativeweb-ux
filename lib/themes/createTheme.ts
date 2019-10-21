@@ -1,5 +1,6 @@
 import { BrandColors } from './BrandColors';
 import Breakpoints from './Breakpoints';
+import { FontSizes } from './FontSizes';
 import { InteractionColors } from './InteractionColors';
 import { Pattern } from './Pattern';
 import { Theme } from './Theme';
@@ -9,13 +10,23 @@ const createTheme = ({
   spaceUnit,
   brandColors,
   interactionColors,
-  pattern
+  pattern,
+  fontSizes = {
+    xxs: '11px',
+    xs: '12px',
+    sm: '14px',
+    md: '16px',
+    lg: '18px',
+    xl: '24px',
+    xxl: '36px'
+  }
 }: {
   name: string;
   spaceUnit: number;
   brandColors: BrandColors;
   interactionColors: InteractionColors;
   pattern: Pattern;
+  fontSizes?: FontSizes;
 }, custom?: any): Theme => {
   const theme: Theme = {
     name,
@@ -33,16 +44,25 @@ const createTheme = ({
 
       content: {
         background: brandColors.white,
-        border: brandColors.lightGrey
+        border: brandColors.grayLight
       },
 
-      copytext: brandColors.dark,
+      copytext: brandColors.grayDark,
 
       backdrop: 'rgba(0, 0, 0, 0.5)',
 
       state: {
         error: '#e7415d',
         success: '#27ae60'
+      },
+
+      division: {
+        company: '#dd0099',
+        concepts: '#ffcc00',
+        learning: '#880088',
+        services: '#ff7700',
+        technologies: '#66aa22',
+        wolkenkit: '#00aaff'
       }
     },
 
@@ -68,23 +88,13 @@ const createTheme = ({
     font: {
       import: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700|Ubuntu:300,400,500|Ubuntu+Mono',
 
-      size: {
-        xs: '12px',
-        sm: '14px',
-        md: '16px',
-        lg: '18px',
-        xl: '24px'
-      },
+      size: fontSizes,
 
       family: {
         default: `'Source Sans Pro', Arial, Helvetica, sans-serif`,
         headline: `'Ubuntu', sans-serif`,
         code: `'Ubuntu Mono', monospace !important`
       }
-    },
-
-    grid: {
-      stepSize: 10
     },
 
     icon: {

@@ -20,7 +20,7 @@ const styles = (theme: Theme): Styles<PoweredByClassNames> => ({
   Intro: {
     marginTop: theme.space(1),
     marginBottom: theme.space(1),
-    color: theme.color.brand.lightGrey
+    color: theme.color.brand.grayLight
   }
 });
 

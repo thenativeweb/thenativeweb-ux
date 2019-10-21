@@ -20,7 +20,7 @@ const styles = (theme: Theme): Styles<LogoMinimalClassNames> => ({
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: theme.font.family.headline,
-    background: theme.color.brand.dark
+    background: theme.color.brand.grayDark
   },
 
   Logo: {
@@ -30,7 +30,7 @@ const styles = (theme: Theme): Styles<LogoMinimalClassNames> => ({
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: theme.font.family.headline,
-    background: theme.color.brand.dark
+    background: theme.color.brand.grayDark
   },
 
   Foreground: {
@@ -46,7 +46,7 @@ const styles = (theme: Theme): Styles<LogoMinimalClassNames> => ({
       fill: theme.color.brand.white
     },
     '& $Foreground': {
-      fill: theme.color.brand.dark
+      fill: theme.color.brand.grayDark
     }
   },
 

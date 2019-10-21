@@ -80,7 +80,7 @@ const styles = (theme: Theme): Styles<SidebarItemClassNames> => ({
     flexDirection: 'column',
     justifyContent: 'center',
     maxWidth: `${theme.space(50)}px`,
-    background: theme.color.brand.dark,
+    background: theme.color.brand.grayDark,
     zIndex: theme.zIndices.overlay,
     color: '#848484',
     boxShadow: theme.shadow.overlay,
