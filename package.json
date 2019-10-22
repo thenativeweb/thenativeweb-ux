@@ -53,7 +53,7 @@
     "jsdom": "15.1.1",
     "next": "9.1.1",
     "puppeteer": "1.20.0",
-    "react": "16.10.2",
+    "react": "16.11.0",
     "react-docgen-typescript": "1.15.0",
     "react-dom": "16.10.2",
     "react-styleguidist": "9.2.0",
