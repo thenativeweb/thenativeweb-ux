@@ -3,7 +3,7 @@ import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
-import { toArray } from '../../shared/toArray';
+import toArray from '../../shared/toArray';
 import View from '../../../lib/components/View';
 
 suite('View', (): void => {

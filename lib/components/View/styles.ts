@@ -3,15 +3,13 @@ import { Theme } from '../..';
 
 export type ViewClassNames =
   'View' |
-  'AdjustFlex' |
-  'AdjustAuto' |
+  'ResizeFlexible' |
+  'ResizeNone' |
   'BackgroundDark' |
   'BackgroundLight' |
-  'OrientationCentered' |
-  'OrientationHorizontal'|
-  'OrientationVertical'|
-  'AlignItemsCenter'|
-  'JustifyContentCenter' |
+  'FlowHorizontal'|
+  'FlowVertical'|
+  'ContentCenter' |
   'ScrollableNone' |
   'ScrollableAuto';
 
@@ -23,13 +21,13 @@ const styles = (theme: Theme): Styles<ViewClassNames> => ({
     fontSize: theme.font.size.md
   },
 
-  AdjustFlex: {
+  ResizeFlexible: {
     flexGrow: 1,
     flexShrink: 1,
     flexBasis: '0%'
   },
 
-  AdjustAuto: {
+  ResizeNone: {
     flexGrow: 0,
     flexShrink: 0,
     flexBasis: 'auto'
@@ -44,39 +42,27 @@ const styles = (theme: Theme): Styles<ViewClassNames> => ({
     background: theme.color.brand.lightGrey
   },
 
-  OrientationCentered: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'row',
+  ContentCenter: {
     alignItems: 'center',
     justifyContent: 'center'
   },
 
-  OrientationHorizontal: {
+  FlowHorizontal: {
     width: '100%',
     height: '100%',
     display: 'flex',
     flexDirection: 'row'
   },
 
-  OrientationVertical: {
+  FlowVertical: {
     width: '100%',
     height: '100%',
     display: 'flex',
     flexDirection: 'column'
   },
 
-  AlignItemsCenter: {
-    alignItems: 'center'
-  },
-
-  JustifyContentCenter: {
-    justifyContent: 'center'
-  },
-
   ScrollableNone: {
-    overflow: 'hidden'
+    overflow: 'visible'
   },
 
   ScrollableAuto: {

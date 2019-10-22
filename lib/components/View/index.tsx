@@ -4,44 +4,40 @@ import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { ViewClassNames } from './styles';
 
 interface ViewProps {
-  adjust?: 'auto' | 'flex';
-  alignItems?: 'center';
-  background?: 'dark' | 'light';
+  background: 'dark' | 'light';
   className?: string;
   id?: string;
-  justifyContent?: 'center';
-  orientation?: 'horizontal' | 'vertical' | 'centered';
-  isScrollable?: boolean;
+  itemsFlow: 'horizontal' | 'vertical';
+  isCentered: boolean;
+  isRezisable?: boolean;
+  isScrollable: boolean;
   style?: any;
 }
 
 const useStyles = createUseStyles<Theme, ViewClassNames>(styles);
 
 const View: FunctionComponent<ViewProps> = ({
-  adjust,
-  alignItems,
-  background,
+  background = 'light',
   children,
   className,
   id,
-  justifyContent,
-  isScrollable,
-  style,
-  orientation
+  itemsFlow = 'horizontal',
+  isCentered = false,
+  isRezisable = true,
+  isScrollable = false,
+  style
 }): ReactElement => {
   const classes = useStyles();
-  const viewClassNames = classNames(
+  const componentClasses = classNames(
     classes.View,
     {
-      [classes.AdjustAuto]: adjust === 'auto',
-      [classes.AdjustFlex]: adjust === 'flex',
-      [classes.AlignItemsCenter]: alignItems === 'center',
+      [classes.ResizeFlexible]: isRezisable,
+      [classes.ResizeNone]: !isRezisable,
       [classes.BackgroundLight]: background === 'light',
       [classes.BackgroundDark]: background === 'dark',
-      [classes.JustifyContentCenter]: justifyContent === 'center',
-      [classes.OrientationCentered]: orientation === 'centered',
-      [classes.OrientationHorizontal]: orientation === 'horizontal',
-      [classes.OrientationVertical]: orientation === 'vertical',
+      [classes.ContentCenter]: isCentered,
+      [classes.FlowHorizontal]: itemsFlow === 'horizontal',
+      [classes.FlowVertical]: itemsFlow === 'vertical',
       [classes.ScrollableAuto]: isScrollable,
       [classes.ScrollableNone]: !isScrollable
     },
@@ -49,7 +45,7 @@ const View: FunctionComponent<ViewProps> = ({
   );
 
   return (
-    <div id={ id } className={ viewClassNames } style={ style }>
+    <div id={ id } className={ componentClasses } style={ style }>
       { children }
     </div>
   );
