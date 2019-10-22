@@ -4,13 +4,13 @@ import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { ViewClassNames } from './styles';
 
 interface ViewProps {
-  background: 'dark' | 'light';
+  background?: 'dark' | 'light';
   className?: string;
   id?: string;
-  itemsFlow: 'horizontal' | 'vertical';
-  isCentered: boolean;
-  isRezisable?: boolean;
-  isScrollable: boolean;
+  direction?: 'horizontal' | 'vertical';
+  content?: 'start' | 'center';
+  isResizable?: boolean;
+  isScrollable?: boolean;
   style?: any;
 }
 
@@ -21,9 +21,9 @@ const View: FunctionComponent<ViewProps> = ({
   children,
   className,
   id,
-  itemsFlow = 'horizontal',
-  isCentered = false,
-  isRezisable = true,
+  direction = 'horizontal',
+  content = 'start',
+  isResizable = true,
   isScrollable = false,
   style
 }): ReactElement => {
@@ -31,13 +31,13 @@ const View: FunctionComponent<ViewProps> = ({
   const componentClasses = classNames(
     classes.View,
     {
-      [classes.ResizeFlexible]: isRezisable,
-      [classes.ResizeNone]: !isRezisable,
+      [classes.ResizeFlexible]: isResizable,
+      [classes.ResizeNone]: !isResizable,
       [classes.BackgroundLight]: background === 'light',
       [classes.BackgroundDark]: background === 'dark',
-      [classes.ContentCenter]: isCentered,
-      [classes.FlowHorizontal]: itemsFlow === 'horizontal',
-      [classes.FlowVertical]: itemsFlow === 'vertical',
+      [classes.ContentCenter]: content === 'center',
+      [classes.DirectionHorizontal]: direction === 'horizontal',
+      [classes.DirectionVertical]: direction === 'vertical',
       [classes.ScrollableAuto]: isScrollable,
       [classes.ScrollableNone]: !isScrollable
     },

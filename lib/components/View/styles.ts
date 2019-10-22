@@ -7,8 +7,8 @@ export type ViewClassNames =
   'ResizeNone' |
   'BackgroundDark' |
   'BackgroundLight' |
-  'FlowHorizontal'|
-  'FlowVertical'|
+  'DirectionHorizontal'|
+  'DirectionVertical'|
   'ContentCenter' |
   'ScrollableNone' |
   'ScrollableAuto';
@@ -47,14 +47,14 @@ const styles = (theme: Theme): Styles<ViewClassNames> => ({
     justifyContent: 'center'
   },
 
-  FlowHorizontal: {
+  DirectionHorizontal: {
     width: '100%',
     height: '100%',
     display: 'flex',
     flexDirection: 'row'
   },
 
-  FlowVertical: {
+  DirectionVertical: {
     width: '100%',
     height: '100%',
     display: 'flex',

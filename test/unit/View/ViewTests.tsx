@@ -34,8 +34,8 @@ suite('View', (): void => {
     assert.that(view!.className).is.containing('View');
     assert.that(view!.className).is.not.containingAllOf(
       [
-        'AdjustAuto',
-        'AdjustFlex',
+        'ResizeFlexible',
+        'ResizeNone',
         'AlignItemsCenter',
         'BackgroundLight',
         'BackgroundDark',
