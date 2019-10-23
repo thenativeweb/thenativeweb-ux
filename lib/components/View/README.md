@@ -1,7 +1,7 @@
 Use this component as a basic building block to create application layouts using the power of flexbox.
 
 ```javascript
-<View itemsFlow='vertical' content='center' style={{ height: '200px' }}>
+<View direction='vertical' contentPosition='centered' style={{ height: '200px' }}>
   <View style={{ background: 'gold' }}>View</View>
   <View style={{ background: 'orange' }}>View</View>
   <View style={{ background: 'green' }}>View</View>

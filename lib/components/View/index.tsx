@@ -8,7 +8,7 @@ interface ViewProps {
   className?: string;
   id?: string;
   direction?: 'horizontal' | 'vertical';
-  content?: 'start' | 'center';
+  contentPosition?: 'aligned' | 'centered';
   isResizable?: boolean;
   isScrollable?: boolean;
   style?: any;
@@ -22,7 +22,7 @@ const View: FunctionComponent<ViewProps> = ({
   className,
   id,
   direction = 'horizontal',
-  content = 'start',
+  contentPosition = 'aligned',
   isResizable = true,
   isScrollable = false,
   style
@@ -35,7 +35,7 @@ const View: FunctionComponent<ViewProps> = ({
       [classes.ResizeNone]: !isResizable,
       [classes.BackgroundLight]: background === 'light',
       [classes.BackgroundDark]: background === 'dark',
-      [classes.ContentCenter]: content === 'center',
+      [classes.ContentCenter]: contentPosition === 'centered',
       [classes.DirectionHorizontal]: direction === 'horizontal',
       [classes.DirectionVertical]: direction === 'vertical',
       [classes.ScrollableAuto]: isScrollable,
