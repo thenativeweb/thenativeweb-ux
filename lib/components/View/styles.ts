@@ -3,8 +3,8 @@ import { Theme } from '../..';
 
 export type ViewClassNames =
   'View' |
-  'ResizeFlexible' |
-  'ResizeNone' |
+  'AdaptToContent' |
+  'AdaptToParent' |
   'BackgroundDark' |
   'BackgroundLight' |
   'DirectionHorizontal'|
@@ -21,16 +21,14 @@ const styles = (theme: Theme): Styles<ViewClassNames> => ({
     fontSize: theme.font.size.md
   },
 
-  ResizeFlexible: {
-    flexGrow: 1,
-    flexShrink: 1,
-    flexBasis: '0%'
+  AdaptToContent: {
+    display: 'flex',
+    flex: '0 1'
   },
 
-  ResizeNone: {
-    flexGrow: 0,
-    flexShrink: 0,
-    flexBasis: 'auto'
+  AdaptToParent: {
+    display: 'flex',
+    flexGrow: '1'
   },
 
   BackgroundDark: {

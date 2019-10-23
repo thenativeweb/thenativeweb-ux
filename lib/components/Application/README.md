@@ -7,10 +7,10 @@ Always remember to also use the `ApplicationServices` component as first child o
 ```jsx
 import { View } from 'thenativeweb-ux';
 
-<div style={{ position: 'relative', width: 640, height: 480 }}>
+<div style={{ position: 'relative', width: '100%', height: 480 }}>
   <Application>
-    <View background='dark'>Sidebar view</View>
-    <View background='light' isResizable={ false }>Content view</View>
+    <View background='light'>Sidebar view</View>
+    <View background='dark' adaptSpaceOf='parent'>Content view</View>
   </Application>
 </div>
 ```

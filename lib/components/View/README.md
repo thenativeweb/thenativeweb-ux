@@ -10,26 +10,26 @@ import { themes } from 'thenativeweb-ux';
 ```
 
 ```javascript
-<View itemsFlow='vertical' style={{ height: '200px' }}>
-  <View adjust='flex' style={{ background: 'gold' }}>View(adjust: flex)</View>
+<View direction='vertical' style={{ height: '200px' }}>
+  <View style={{ background: 'gold' }}>View</View>
   <View style={{ background: 'orange' }}>View</View>
   <View style={{ background: 'green' }}>View</View>
 </View>
 ```
 
 ```javascript
-<View itemsFlow='horizontal'>
-  <View adjust='flex' style={{ background: 'gold' }}>adjust:flex</View>
-  <View style={{ background: 'orange' }}>adjust:auto</View>
-  <View adjust='flex' style={{ background: 'green' }}>adjust:flex</View>
+<View direction='horizontal'>
+  <View style={{ background: 'gold' }} adaptSpaceOf='parent'>expand</View>
+  <View style={{ background: 'orange' }} adaptSpaceOf='content'>as little space as needed</View>
+  <View style={{ background: 'green' }} adaptSpaceOf='parent'>expand</View>
 </View>
 ```
 
 ## Scrolling
 
 ```javascript
-<View itemsFlow='vertical' isScrollable={ true } style={{  height: '200px'  }}>
-  <View isResizable={ false } style={{ height: 600, background: 'orange' }}>View</View>
-  <View isResizable={ false } style={{ height: 600, background: 'orange' }}>View</View>
+<View direction='vertical' isScrollable={ true } style={{  height: '200px'  }}>
+  <View style={{ height: 600, background: 'orange' }}>View</View>
+  <View style={{ height: 600, background: 'green' }}>View</View>
 </View>
 ```

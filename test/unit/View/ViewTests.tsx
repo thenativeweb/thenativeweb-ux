@@ -34,8 +34,8 @@ suite('View', (): void => {
     assert.that(view!.className).is.containing('View');
     assert.that(view!.className).is.not.containingAllOf(
       [
-        'ResizeFlexible',
-        'ResizeNone',
+        'AdaptParent',
+        'AdaptContent',
         'BackgroundLight',
         'BackgroundDark',
         'ContentCenter',
@@ -105,25 +105,25 @@ suite('View', (): void => {
     assert.that(view!.className).is.containing('ContentCenter');
   });
 
-  test('sets classes for defined prop isResizable.', async (): Promise<void> => {
+  test('sets classes for defined prop adaptSpaceOf.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <View isResizable={ false }>View</View>
-          <View isResizable={ true }>View</View>
+          <View adaptSpaceOf='content'>View</View>
+          <View adaptSpaceOf='parent'>View</View>
         </ThemeProvider>,
         container
       );
     });
 
     const view = toArray(container.querySelectorAll('div'));
-    const [ none, flexible ] = view;
+    const [ content, parent ] = view;
 
-    assert.that(none).is.not.undefined();
-    assert.that(none.className).is.containing('ResizeNone');
+    assert.that(content).is.not.undefined();
+    assert.that(content.className).is.containing('AdaptToContent');
 
-    assert.that(flexible).is.not.undefined();
-    assert.that(flexible.className).is.containing('ResizeFlexible');
+    assert.that(parent).is.not.undefined();
+    assert.that(parent.className).is.containing('AdaptToParent');
   });
 
   test('sets classes for defined prop isScrollable.', async (): Promise<void> => {

@@ -10,7 +10,7 @@ interface ViewProps {
   id?: string;
   direction?: 'horizontal' | 'vertical';
   contentPosition?: 'aligned' | 'centered';
-  isResizable?: boolean;
+  adaptSpaceOf?: 'content' | 'parent';
   isScrollable?: boolean;
   style?: any;
 }
@@ -24,7 +24,7 @@ const View: FunctionComponent<ViewProps> = ({
   id,
   direction = 'horizontal',
   contentPosition = 'aligned',
-  isResizable = true,
+  adaptSpaceOf = 'content',
   isScrollable = false,
   style
 }): ReactElement => {
@@ -32,8 +32,8 @@ const View: FunctionComponent<ViewProps> = ({
   const componentClasses = classNames(
     classes.View,
     {
-      [classes.ResizeFlexible]: isResizable,
-      [classes.ResizeNone]: !isResizable,
+      [classes.AdaptToContent]: adaptSpaceOf === 'content',
+      [classes.AdaptToParent]: adaptSpaceOf === 'parent',
       [classes.BackgroundLight]: background === 'light',
       [classes.BackgroundDark]: background === 'dark',
       [classes.ContentCenter]: contentPosition === 'centered',
