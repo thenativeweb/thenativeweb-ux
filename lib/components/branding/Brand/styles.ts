@@ -10,7 +10,7 @@ const styles = (theme: Theme): Styles => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: theme.color.brand.dark
+    background: theme.color.brand.grayDark
   }
 });
 

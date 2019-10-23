@@ -1,10 +1,9 @@
 import assert from 'assertthat';
 import browser from '../../shared/browser';
+import environment from '../../shared/environment';
 import puppeteer from 'puppeteer';
 
-suite('Sidebar', function (): void {
-  this.timeout(5 * 1000);
-
+suite('components/Sidebar', (): void => {
   let page: puppeteer.Page;
 
   setup(async (): Promise<void> => {
@@ -16,6 +15,7 @@ suite('Sidebar', function (): void {
   });
 
   test('is 80px wide.', async (): Promise<void> => {
+    await page.goto(`${environment.url}/components/`);
     await page.waitForSelector('#sidebar');
 
     const sidebar = await page.$('#sidebar');
@@ -24,8 +24,9 @@ suite('Sidebar', function (): void {
     assert.that(boundingBox!.width).is.equalTo(80);
   });
 
-  suite('Sidebar.Item', (): void => {
+  suite('SidebarItem', (): void => {
     test('expands on hover and subitems are clickable.', async (): Promise<void> => {
+      await page.goto(`${environment.url}/components/`);
       await page.waitForSelector('#sidebar-item-account');
 
       const parentItem = await page.$('#sidebar-item-account');

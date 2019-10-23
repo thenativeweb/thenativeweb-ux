@@ -1,8 +1,7 @@
 export interface BrandColors {
-  dark: string;
+  gray: string;
+  grayDark: string;
+  grayLight: string;
   highlight: string;
-  darkGrey: string;
-  midGrey: string;
-  lightGrey: string;
   white: string;
 }

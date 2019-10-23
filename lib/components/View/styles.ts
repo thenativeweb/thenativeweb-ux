@@ -34,12 +34,12 @@ const styles = (theme: Theme): Styles<ViewClassNames> => ({
   },
 
   BackgroundDark: {
-    background: theme.color.brand.dark,
+    background: theme.color.brand.grayDark,
     color: theme.color.brand.white
   },
 
   BackgroundLight: {
-    background: theme.color.brand.lightGrey
+    background: theme.color.brand.grayLight
   },
 
   ContentCenter: {

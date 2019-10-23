@@ -15,7 +15,7 @@ const styles = (theme: Theme): Styles<LogoFullClassNames> => ({
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: theme.font.family.headline,
-    background: theme.color.brand.dark
+    background: theme.color.brand.grayDark
   },
 
   SizeSm: {

@@ -18,8 +18,8 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: theme.color.brand.dark,
-    borderColor: theme.color.brand.dark,
+    backgroundColor: theme.color.brand.grayDark,
+    borderColor: theme.color.brand.grayDark,
     borderWidth: '1px',
     borderStyle: 'solid',
     color: theme.color.brand.white,
@@ -39,7 +39,7 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
     },
 
     '&:active': {
-      'background-color': theme.color.brand.dark,
+      'background-color': theme.color.brand.grayDark,
       opacity: 0.9
     },
 
@@ -88,10 +88,10 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
   TypeSubtle: {
     backgroundColor: 'transparent',
     borderColor: 'transparent',
-    color: theme.color.brand.dark,
+    color: theme.color.brand.grayDark,
 
     '& $Icon': {
-      fill: theme.color.brand.dark
+      fill: theme.color.brand.grayDark
     },
 
     '&:hover': {
@@ -114,10 +114,10 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
     },
 
     '&:active': {
-      color: theme.color.brand.dark,
+      color: theme.color.brand.grayDark,
 
       '& $Icon': {
-        fill: `${theme.color.brand.dark} !important`
+        fill: `${theme.color.brand.grayDark} !important`
       }
     }
   },
@@ -144,7 +144,7 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
     },
 
     '& $Icon': {
-      fill: theme.color.brand.dark,
+      fill: theme.color.brand.grayDark,
       marginRight: 0
     },
 
@@ -156,7 +156,7 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
 
     '&:active': {
       '& $Icon': {
-        fill: `${theme.color.brand.dark} !important`,
+        fill: `${theme.color.brand.grayDark} !important`,
         marginRight: 0
       }
     }

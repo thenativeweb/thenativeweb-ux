@@ -23,7 +23,7 @@ const styles = (theme: Theme): Styles<TextAreaClassNames> => ({
     },
 
     '&::placeholder': {
-      color: theme.color.brand.darkGrey,
+      color: theme.color.brand.gray,
       fontFamily: theme.font.family.default,
       fontSize: 'inherit',
       fontWeight: 400,
@@ -32,8 +32,8 @@ const styles = (theme: Theme): Styles<TextAreaClassNames> => ({
   },
 
   IsDisabled: {
-    color: theme.color.brand.darkGrey,
-    background: theme.color.brand.lightGrey
+    color: theme.color.brand.gray,
+    background: theme.color.brand.grayLight
   },
 
   SizeSm: {

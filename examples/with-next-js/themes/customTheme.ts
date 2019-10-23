@@ -5,11 +5,10 @@ const customTheme = createTheme({
   spaceUnit: 8,
 
   brandColors: {
-    dark: '#2f333b',
+    grayDark: '#2f333b',
     highlight: '#48BB78',
-    darkGrey: '#363d45',
-    midGrey: '#595c62',
-    lightGrey: '#eeeeee',
+    gray: '#363d45',
+    grayLight: '#eeeeee',
     white: '#ffffff'
   },
 

@@ -1,14 +1,15 @@
 import environment from './environment';
-import puppeteer from 'puppeteer';
+import puppeteer, { Browser, Page } from 'puppeteer';
 
-let browserInstance: puppeteer.Browser | undefined;
+let browserInstance: Browser | undefined;
 
 const browser = {
-  async setupPage (
-    autoLoadApplication = true,
+  async setupPage ({
     viewport = environment.viewport
-  ): Promise<puppeteer.Page> {
-    const { headless, url } = environment;
+  }: {
+    viewport?: { width: number; height: number };
+  } = {}): Promise<Page> {
+    const { headless } = environment;
 
     if (!browserInstance) {
       browserInstance = await puppeteer.launch({ headless });
@@ -18,14 +19,10 @@ const browser = {
 
     await page.setViewport(viewport);
 
-    if (autoLoadApplication) {
-      await page.goto(url);
-    }
-
     return page;
   },
 
-  async teardownPage (page: puppeteer.Page): Promise<void> {
+  async teardownPage (page: Page): Promise<void> {
     await page.close();
   }
 };
