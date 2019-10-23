@@ -31,7 +31,7 @@ const Page = (): ReactElement => (
       <SidebarItem iconName='help' isActive={ true } />
       <Link href='/second'><SidebarItem iconName='help' /></Link>
     </Sidebar>
-    <View id='index-page' orientation='vertical' adjust='flex' style={{ padding: '20px' }}>
+    <View id='index-page' direction='vertical' isResizable={ true } style={{ padding: '20px' }}>
       <Headline id='headline'>Universally rendered Next.js app</Headline>
       <Link href='/second'><a>Link to second page</a></Link>
       <Link href='/website'><a>Link to website</a></Link>

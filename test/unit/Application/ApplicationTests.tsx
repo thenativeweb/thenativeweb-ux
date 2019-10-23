@@ -4,6 +4,7 @@ import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
+import toArray from '../../shared/toArray';
 
 suite('Application', (): void => {
   let container: Element;
@@ -17,7 +18,7 @@ suite('Application', (): void => {
     document.body.removeChild(container);
   });
 
-  test('renders default applications.', async (): Promise<void> => {
+  test('renders although no prop has been defined.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -27,29 +28,46 @@ suite('Application', (): void => {
       );
     });
 
-    const application = container.getElementsByTagName('div')[0];
+    const application = container.querySelector('div');
 
-    assert.that(application.className).is.containing('Application');
-    assert.that(application.className).is.containing('OrientationHorizontal');
+    assert.that(application).is.not.null();
+    assert.that(application!.className).is.containingAllOf([ 'Application', 'DirectionHorizontal' ]);
   });
 
-  test('sets classes for prop orientation.', async (): Promise<void> => {
+  test('sets classes for prop direction.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Application orientation='horizontal'>Application</Application>
-          <Application orientation='vertical'>Application</Application>
-          <Application orientation='centered'>Application</Application>
+          <Application direction='horizontal'>Application</Application>
+          <Application direction='vertical'>Application</Application>
         </ThemeProvider>,
         container
       );
     });
 
-    const application = Array.prototype.slice.call(container.getElementsByTagName('div'));
-    const [ typeHorizontal, typeVertical, typeCentered ] = application;
+    const application = toArray(container.querySelectorAll('div'));
+    const [ horizontal, vertical ] = application;
 
-    assert.that(typeHorizontal.className).is.containing('OrientationHorizontal');
-    assert.that(typeVertical.className).is.containing('OrientationVertical');
-    assert.that(typeCentered.className).is.containing('OrientationCentered');
+    assert.that(horizontal).is.not.undefined();
+    assert.that(horizontal.className).is.containing('DirectionHorizontal');
+
+    assert.that(vertical).is.not.undefined();
+    assert.that(vertical.className).is.containing('DirectionVertical');
+  });
+
+  test('sets classes for prop contentPosition.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Application contentPosition='centered'>Application</Application>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const application = container.querySelector('div');
+
+    assert.that(application).is.not.null();
+    assert.that(application!.className).is.containing('ContentCenter');
   });
 });

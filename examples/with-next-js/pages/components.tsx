@@ -115,7 +115,7 @@ class TestApp extends React.Component<{}, TestAppState> {
     } = this.state;
 
     return (
-      <Application orientation='horizontal'>
+      <Application>
         <ApplicationServices />
         <Sidebar id='sidebar'>
           <SidebarBrand><Product name='App' /></SidebarBrand>
@@ -133,7 +133,7 @@ class TestApp extends React.Component<{}, TestAppState> {
             </Link>
           </SidebarFooter>
         </Sidebar>
-        <View orientation='vertical' scrollable='auto' style={{ padding: '20px' }}>
+        <View direction='vertical' style={{ padding: '20px' }}>
           <section><Headline>Test app</Headline></section>
           <section>
             <Headline level='2'>Button</Headline>
@@ -273,7 +273,7 @@ class TestApp extends React.Component<{}, TestAppState> {
 
             <View style={{ width: 200, height: 200 }}>
               <Transition type='FadeInRight' in={ isBoxVisible }>
-                <View style={{ width: 200, height: 200, background: 'orange', textAlign: 'center' }} orientation='centered'><span>This box will be animated in and out using `FadeInRight`.</span></View>
+                <View style={{ width: 200, height: 200, background: 'orange', textAlign: 'center' }} direction='horizontal' contentPosition='centered'><span>This box will be animated in and out using `FadeInRight`.</span></View>
               </Transition>
             </View>
           </section>

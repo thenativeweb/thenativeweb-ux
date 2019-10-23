@@ -1,11 +1,12 @@
 import { Theme } from '../..';
 import { classNames, createUseStyles } from '../../styles';
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
 import styles, { ViewClassNames } from './styles';
 
 interface ViewProps {
   background?: 'dark' | 'light';
   className?: string;
+  children?: ReactNode;
   id?: string;
   direction?: 'horizontal' | 'vertical';
   contentPosition?: 'aligned' | 'centered';

@@ -36,56 +36,15 @@ suite('View', (): void => {
       [
         'ResizeFlexible',
         'ResizeNone',
-        'AlignItemsCenter',
         'BackgroundLight',
         'BackgroundDark',
-        'JustifyContentCenter',
-        'OrientationCentered',
-        'OrientationHorizontal',
-        'OrientationVertical',
+        'ContentCenter',
+        'DirectionHorizontal',
+        'DirectionVertical',
         'ScrollableAuto',
         'ScrollableNone'
       ]
     );
-  });
-
-  test('sets classes for defined prop adjust.', async (): Promise<void> => {
-    act((): void => {
-      ReactDOM.render(
-        <ThemeProvider>
-          <View adjust='auto'>View</View>
-          <View adjust='flex'>View</View>
-        </ThemeProvider>,
-        container
-      );
-    });
-
-    const view = toArray(container.querySelectorAll('div'));
-    const [ auto, flex ] = view;
-
-    assert.that(auto).is.not.undefined();
-    assert.that(auto.className).is.containing('AdjustAuto');
-    assert.that(auto.className).is.not.containing('AdjustFlex');
-
-    assert.that(flex).is.not.undefined();
-    assert.that(flex.className).is.containing('AdjustFlex');
-    assert.that(flex.className).is.not.containing('AdjustAuto');
-  });
-
-  test('sets classes for defined prop alignItems.', async (): Promise<void> => {
-    act((): void => {
-      ReactDOM.render(
-        <ThemeProvider>
-          <View alignItems='center'>View</View>
-        </ThemeProvider>,
-        container
-      );
-    });
-
-    const view = container.querySelector('div');
-
-    assert.that(view).is.not.null();
-    assert.that(view!.className).is.containing('AlignItemsCenter');
   });
 
   test('sets classes for defined prop background.', async (): Promise<void> => {
@@ -104,18 +63,37 @@ suite('View', (): void => {
 
     assert.that(dark).is.not.undefined();
     assert.that(dark.className).is.containing('BackgroundDark');
-    assert.that(dark.className).is.not.containing('BackgroundLight');
 
     assert.that(light).is.not.undefined();
     assert.that(light.className).is.containing('BackgroundLight');
-    assert.that(light.className).is.not.containing('BackgroundDark');
   });
 
-  test('sets classes for defined prop justifyContent.', async (): Promise<void> => {
+  test('sets classes for defined prop direction.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <View justifyContent='center'>View</View>
+          <View direction='vertical'>View</View>
+          <View direction='horizontal'>View</View>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const view = toArray(container.querySelectorAll('div'));
+    const [ vertical, horizontal ] = view;
+
+    assert.that(vertical).is.not.undefined();
+    assert.that(vertical.className).is.containing('DirectionVertical');
+
+    assert.that(horizontal).is.not.undefined();
+    assert.that(horizontal.className).is.containing('DirectionHorizontal');
+  });
+
+  test('sets classes for defined prop contentPosition.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <View contentPosition='centered'>View</View>
         </ThemeProvider>,
         container
       );
@@ -124,32 +102,28 @@ suite('View', (): void => {
     const view = container.querySelector('div');
 
     assert.that(view).is.not.null();
-    assert.that(view!.className).is.containing('JustifyContentCenter');
+    assert.that(view!.className).is.containing('ContentCenter');
   });
 
-  test('sets classes for defined prop orientation.', async (): Promise<void> => {
+  test('sets classes for defined prop isResizable.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <View orientation='centered'>View</View>
-          <View orientation='vertical'>View</View>
-          <View orientation='horizontal'>View</View>
+          <View isResizable={ false }>View</View>
+          <View isResizable={ true }>View</View>
         </ThemeProvider>,
         container
       );
     });
 
     const view = toArray(container.querySelectorAll('div'));
-    const [ centered, vertical, horizontal ] = view;
+    const [ none, flexible ] = view;
 
-    assert.that(centered).is.not.undefined();
-    assert.that(centered.className).is.containing('OrientationCentered');
+    assert.that(none).is.not.undefined();
+    assert.that(none.className).is.containing('ResizeNone');
 
-    assert.that(vertical).is.not.undefined();
-    assert.that(vertical.className).is.containing('OrientationVertical');
-
-    assert.that(horizontal).is.not.undefined();
-    assert.that(horizontal.className).is.containing('OrientationHorizontal');
+    assert.that(flexible).is.not.undefined();
+    assert.that(flexible.className).is.containing('ResizeFlexible');
   });
 
   test('sets classes for defined prop isScrollable.', async (): Promise<void> => {

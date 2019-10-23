@@ -7,7 +7,8 @@ import styles, { ApplicationClassNames } from './styles';
 
 interface ApplicationProps {
   className?: string;
-  orientation?: 'horizontal' | 'vertical' | 'centered';
+  direction?: 'horizontal' | 'vertical';
+  contentPosition?: 'aligned' | 'centered';
   style?: any;
 }
 
@@ -17,13 +18,14 @@ const Application: FunctionComponent<ApplicationProps> = ({
   children,
   className,
   style,
-  orientation = 'horizontal'
+  direction = 'horizontal',
+  contentPosition = 'aligned'
 }): ReactElement => {
   const classes = useStyles();
   const componentClasses = classNames(classes.Application, className);
 
   return (
-    <View className={ componentClasses } orientation={ orientation } style={ style }>
+    <View className={ componentClasses } direction={ direction } contentPosition={ contentPosition } style={ style }>
       { children }
     </View>
   );

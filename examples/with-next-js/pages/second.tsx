@@ -23,7 +23,7 @@ const Page = (): ReactElement => (
       <Link href='/'><SidebarItem iconName='help' /></Link>
       <SidebarItem iconName='help' isActive={ true } />
     </Sidebar>
-    <View id='second-page' adjust='flex' style={{ padding: '20px' }}>
+    <View id='second-page' style={{ padding: '20px' }}>
       This page is also rendered universally.
     </View>
   </Application>
