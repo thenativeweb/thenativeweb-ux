@@ -18,7 +18,7 @@ suite('CheckBox', (): void => {
     document.body.removeChild(container);
   });
 
-  test('renders default checkboxes.', async (): Promise<void> => {
+  test('renders although no property has been defined.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -28,14 +28,43 @@ suite('CheckBox', (): void => {
       );
     });
 
-    const checkbox = document.getElementsByTagName('input')[0];
+    const checkbox = container.querySelector('input');
 
-    assert.that(checkbox.type).is.equalTo('checkbox');
-    assert.that(checkbox.id).is.equalTo('some-id');
-    assert.that(checkbox.className).is.containing('CheckBox');
+    assert.that(checkbox).is.not.null();
+    assert.that(checkbox!.type).is.equalTo('checkbox');
+    assert.that(checkbox!.id).is.equalTo('some-id');
+    assert.that(checkbox!.className).is.containing('CheckBox');
   });
 
-  test('takes onChange function and runs it if checked.', async (): Promise<void> => {
+  test('toggles property checked if clicked.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <CheckBox id='some-id' />
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const checkbox = container.querySelector('input');
+
+    assert.that(checkbox).is.not.null();
+    assert.that(checkbox!.checked).is.false();
+
+    act((): void => {
+      click(checkbox!);
+    });
+
+    assert.that(checkbox!.checked).is.true();
+
+    act((): void => {
+      click(checkbox!);
+    });
+
+    assert.that(checkbox!.checked).is.false();
+  });
+
+  test('takes onChange function and runs it if property checked has been toggled.', async (): Promise<void> => {
     let doSomething = false;
 
     const onChange = (): void => {
@@ -51,39 +80,12 @@ suite('CheckBox', (): void => {
       );
     });
 
-    const checkbox = document.getElementsByTagName('input')[0];
+    const checkbox = container.querySelector('input');
 
     act((): void => {
-      click(checkbox);
+      click(checkbox!);
     });
 
     assert.that(doSomething).is.true();
-  });
-
-  test('toggles prop checked if clicked.', async (): Promise<void> => {
-    act((): void => {
-      ReactDOM.render(
-        <ThemeProvider>
-          <CheckBox id='some-id' />
-        </ThemeProvider>,
-        container
-      );
-    });
-
-    const checkbox = document.getElementsByTagName('input')[0];
-
-    assert.that(checkbox.checked).is.false();
-
-    act((): void => {
-      click(checkbox);
-    });
-
-    assert.that(checkbox.checked).is.true();
-
-    act((): void => {
-      click(checkbox);
-    });
-
-    assert.that(checkbox.checked).is.false();
   });
 });
