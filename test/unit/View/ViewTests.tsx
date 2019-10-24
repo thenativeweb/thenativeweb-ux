@@ -18,7 +18,7 @@ suite('View', (): void => {
     document.body.removeChild(container);
   });
 
-  test('renders although no props has been defined.', async (): Promise<void> => {
+  test('renders although no properties has been defined.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -47,7 +47,7 @@ suite('View', (): void => {
     );
   });
 
-  test('sets classes for defined prop background.', async (): Promise<void> => {
+  test('sets classes for defined property background.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -68,7 +68,7 @@ suite('View', (): void => {
     assert.that(light.className).is.containing('BackgroundLight');
   });
 
-  test('sets classes for defined prop direction.', async (): Promise<void> => {
+  test('sets classes for defined property direction.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -89,7 +89,7 @@ suite('View', (): void => {
     assert.that(horizontal.className).is.containing('DirectionHorizontal');
   });
 
-  test('sets classes for defined prop contentPosition.', async (): Promise<void> => {
+  test('sets classes for defined property contentPosition.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -105,7 +105,7 @@ suite('View', (): void => {
     assert.that(view!.className).is.containing('ContentCenter');
   });
 
-  test('sets classes for defined prop adaptSpaceOf.', async (): Promise<void> => {
+  test('sets classes for defined property adaptSpaceOf.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -126,7 +126,7 @@ suite('View', (): void => {
     assert.that(parent.className).is.containing('AdaptToParent');
   });
 
-  test('sets classes for defined prop isScrollable.', async (): Promise<void> => {
+  test('sets classes for defined property isScrollable.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
