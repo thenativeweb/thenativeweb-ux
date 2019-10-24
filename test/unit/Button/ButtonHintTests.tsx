@@ -17,7 +17,7 @@ suite('ButtonHint', (): void => {
     document.body.removeChild(container);
   });
 
-  test('sets ButtonHint class.', async (): Promise<void> => {
+  test('renders.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -27,8 +27,9 @@ suite('ButtonHint', (): void => {
       );
     });
 
-    const buttonHint = container.getElementsByTagName('span')[0];
+    const buttonHint = container.querySelector('span');
 
-    assert.that(buttonHint.className).is.containing('ButtonHint');
+    assert.that(buttonHint).is.not.null();
+    assert.that(buttonHint!.className).is.containing('ButtonHint');
   });
 });
