@@ -28,7 +28,7 @@ suite('Button', (): void => {
       );
     });
 
-    const button = document.querySelector('button');
+    const button = container.querySelector('button');
 
     assert.that(button).is.not.null();
     assert.that(button!.className).is.not.containingAllOf(
@@ -58,7 +58,7 @@ suite('Button', (): void => {
       );
     });
 
-    const buttons = toArray(document.querySelectorAll('button'));
+    const buttons = toArray(container.querySelectorAll('button'));
     const [ auto, flex ] = buttons;
 
     assert.that(auto).is.not.undefined();
@@ -78,7 +78,7 @@ suite('Button', (): void => {
       );
     });
 
-    const buttons = toArray(document.querySelectorAll('button'));
+    const buttons = toArray(container.querySelectorAll('button'));
     const [ sm, md ] = buttons;
 
     assert.that(sm).is.not.undefined();
@@ -88,7 +88,7 @@ suite('Button', (): void => {
     assert.that(md.className).is.containing('SizeMd');
   });
 
-  test('is of defined type.', async (): Promise<void> => {
+  test('sets defined property type.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -99,7 +99,7 @@ suite('Button', (): void => {
       );
     });
 
-    const buttons = toArray(document.querySelectorAll('button'));
+    const buttons = toArray(container.querySelectorAll('button'));
     const [ submit, button, reset ] = buttons;
 
     assert.that(submit).is.not.undefined();
@@ -121,7 +121,7 @@ suite('Button', (): void => {
       );
     });
 
-    const button = document.querySelector('button');
+    const button = container.querySelector('button');
 
     assert.that(button).is.not.null();
     assert.that(button!.className).is.containing('TypePrimary');
@@ -164,7 +164,7 @@ suite('Button', (): void => {
       );
     });
 
-    const button = document.querySelector('button');
+    const button = container.querySelector('button');
 
     assert.that(button).is.not.null();
     assert.that(button!.className).is.containing('TypeIcon');
@@ -184,7 +184,7 @@ suite('Button', (): void => {
       );
     });
 
-    const button = document.querySelector('button');
+    const button = container.querySelector('button');
 
     assert.that(button).is.not.null();
     assert.that(button!.className).is.containing('TypeIconOnly');
