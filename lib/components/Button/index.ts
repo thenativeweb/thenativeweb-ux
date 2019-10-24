@@ -1,5 +1,5 @@
-import ButtonDefault from './ButtonDefault';
+import Button from './Button';
 import ButtonHint from './ButtonHint';
 
-export default ButtonDefault;
+export default Button;
 export { ButtonHint };
