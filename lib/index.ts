@@ -85,4 +85,3 @@ export {
   withStyles,
   useTheme
 };
-
