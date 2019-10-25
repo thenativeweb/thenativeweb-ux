@@ -4,6 +4,7 @@ import Headline from '../../../lib/components/Headline';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
+import toArray from '../../shared/toArray';
 
 suite('Headline', (): void => {
   let container: Element;
@@ -17,72 +18,58 @@ suite('Headline', (): void => {
     document.body.removeChild(container);
   });
 
-  test('renders level 1 headlines.', async (): Promise<void> => {
+  test('renders although no property has been defined.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Headline level='1'>This is a headline, Level1</Headline>
+          <Headline>I am a headline.</Headline>
         </ThemeProvider>,
         container
       );
     });
 
-    const headline = container.getElementsByTagName('div')[0];
-    const classesWithJSSIDs = headline.className;
-
-    assert.that(headline.textContent).is.equalTo('This is a headline, Level1');
-    assert.that(classesWithJSSIDs).is.containing('Level1');
-    assert.that(classesWithJSSIDs).is.not.containing('Level2');
-  });
-
-  test('renders level 2 headlines.', async (): Promise<void> => {
-    act((): void => {
-      ReactDOM.render(
-        <ThemeProvider>
-          <Headline level='2'>This is a headline, Level2</Headline>
-        </ThemeProvider>,
-        container
-      );
-    });
-
-    const headline = container.getElementsByTagName('div')[0];
-    const classesWithJSSIDs = headline.className;
-
-    assert.that(classesWithJSSIDs).is.containing('Level2');
-    assert.that(classesWithJSSIDs).is.not.containing('Level1');
-  });
-
-  test('renders level 1 headlines as default if no level is given.', async (): Promise<void> => {
-    act((): void => {
-      ReactDOM.render(
-        <ThemeProvider>
-          <Headline>This is a headline, Level1 as default.</Headline>
-        </ThemeProvider>,
-        container
-      );
-    });
-
-    const headline = container.getElementsByTagName('div')[0];
-    const classesWithJSSIDs = headline.className;
-
-    assert.that(classesWithJSSIDs).is.containing('Level1');
-    assert.that(classesWithJSSIDs).is.not.containing('Level2');
-  });
-
-  test('sets the ID correctly.', async (): Promise<void> => {
-    act((): void => {
-      ReactDOM.render(
-        <ThemeProvider>
-          <Headline id='some-id'>This is a headline with some-id.</Headline>
-        </ThemeProvider>,
-        container
-      );
-    });
-
-    const headline = document.getElementById('some-id');
+    const headline = container.querySelector('div');
 
     assert.that(headline).is.not.null();
+    assert.that(headline!.className).is.containing('Level1');
+    assert.that(headline!.className).is.not.containing('Level2');
+    assert.that(headline!.textContent).is.equalTo('I am a headline.');
+  });
 
-    assert.that(headline && headline.id).is.equalTo('some-id');
+  test('renders defined property level.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Headline level='1'>I am a headline.</Headline>
+          <Headline level='2'>I am a headline.</Headline>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const headline = toArray(container.querySelectorAll('div'));
+    const [ one, two ] = headline;
+
+    assert.that(one).is.not.undefined();
+    assert.that(one.className).is.containing('Level1');
+
+    assert.that(two).is.not.undefined();
+    assert.that(two.className).is.containing('Level2');
+  });
+
+  test('sets defined id.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Headline id='some-id'>I am a headline.</Headline>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const headline = document.querySelector('#some-id');
+
+    assert.that(headline).is.not.null();
+    assert.that(headline!.id).is.equalTo('some-id');
   });
 });
