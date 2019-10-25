@@ -1,6 +1,6 @@
 import act from '../../shared/act';
 import assert from 'assertthat';
-import Dropdown, { DropdownOption } from '../../../lib/components/Dropdown';
+import Dropdown from '../../../lib/components/Dropdown';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
@@ -39,7 +39,7 @@ suite('Dropdown', (): void => {
     const dropdown = container.querySelector('div');
 
     assert.that(dropdown).is.not.null();
-    assert.that(dropdown!.className).is.containingAllOf(['Dropdown', 'SizeMd']);
-    assert.that(dropdown!.className).is.not.containingAllOf(['Dropdown', 'SizeSm', 'IsFocused' ,'CollapseIcon']);
+    assert.that(dropdown!.className).is.containingAllOf([ 'Dropdown', 'SizeMd' ]);
+    assert.that(dropdown!.className).is.not.containingAllOf([ 'Dropdown', 'SizeSm', 'IsFocused', 'CollapseIcon' ]);
   });
 });
