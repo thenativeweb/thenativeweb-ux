@@ -21,7 +21,7 @@ suite('components/layout/Container', (): void => {
 
       const scrollHeight = await page.$eval('#container', (element: Element): number => element.scrollHeight);
 
-      assert.that(scrollHeight).is.equalTo(442);
+      assert.that(scrollHeight).is.greaterThan(440);
     });
   });
 });
