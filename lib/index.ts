@@ -1,9 +1,9 @@
 import animate from 'animejs';
 import Application from './components/Application';
-import ApplicationServices from './components/ApplicationServices';
 import Brand from './components/branding/Brand';
 import BusyIndicator from './components/BusyIndicator';
 import CheckBox from './components/CheckBox';
+import { Container } from './components/layout/Container';
 import Dropdown from './components/Dropdown';
 import Headline from './components/Headline';
 import Icon from './components/Icon';
@@ -36,7 +36,6 @@ import themes, { Theme } from './themes';
 export {
   animate,
   Application,
-  ApplicationServices,
   Brand,
   BusyIndicator,
   Button,
@@ -44,6 +43,7 @@ export {
   classNames,
   createUseStyles,
   CheckBox,
+  Container,
   ControlGroup,
   ControlGroupDivider,
   ControlGroupItem,

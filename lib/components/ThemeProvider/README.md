@@ -1,26 +1,27 @@
 ThemeProvider is a used to set the theme for nested compoents. It is required at the top level of your application. It can be nested so that one part of your component tree can have a different theme than other parts of your application.
 
 ```jsx
-import { Application,
-Button,
-Brand,
-Dropdown,
-Headline,
-Icon,
-Product,
-Link,
-Sidebar,
-SidebarBrand,
-SidebarItem,
-ThemeProvider,
-SidebarFooter,
-themes,
-View
+import {
+  Application,
+  Button,
+  Brand,
+  Container,
+  Dropdown,
+  Headline,
+  Icon,
+  Product,
+  Link,
+  Sidebar,
+  SidebarBrand,
+  SidebarItem,
+  ThemeProvider,
+  SidebarFooter,
+  themes
 } from 'thenativeweb-ux';
 
 <div style={{ position: 'relative', width: 640, height: 480 }}>
   <ThemeProvider theme={ themes.wolkenkit }>
-    <Application>
+    <Application useNotification={ false } useDialogs={ false }>
       <Sidebar>
         <SidebarBrand><Product name='my-app' /></SidebarBrand>
         <SidebarItem iconName='account'>
@@ -35,7 +36,7 @@ View
           </Link>
         </SidebarFooter>
       </Sidebar>
-      <View adjust='flex' style={{ padding: '20px', border: '#eee solid 1px' }}>
+      <div style={{ padding: '20px', border: '#eee solid 1px' }}>
         <Headline>An wolkenkit themed application</Headline>
         <Button onClick={ () => console.log('clicked') }>Click me!</Button>
         <Dropdown options={[ { value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' } ]} value={ 'bar' } onChange={ () => {}} />
@@ -43,7 +44,7 @@ View
         <div>
           This is an icon… <Icon name='heart' color='highlight' />
         </div>
-      </View>
+      </div>
     </Application>
   </ThemeProvider>
 </div>

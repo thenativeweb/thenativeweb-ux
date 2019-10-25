@@ -1,19 +1,17 @@
 import Link from 'next/link';
 import {
   Application,
-  ApplicationServices,
+  Container,
   Product,
   services,
   Sidebar,
   SidebarBrand,
-  SidebarItem,
-  View
+  SidebarItem
 } from '../../../lib';
 import React, { ReactElement } from 'react';
 
 const Page = (): ReactElement => (
   <Application>
-    <ApplicationServices />
     <Sidebar>
       <SidebarBrand><Product name='App' /></SidebarBrand>
       <SidebarItem iconName='account'>
@@ -23,9 +21,11 @@ const Page = (): ReactElement => (
       <Link href='/'><SidebarItem iconName='help' /></Link>
       <SidebarItem iconName='help' isActive={ true } />
     </Sidebar>
-    <View id='second-page' adjust='flex' style={{ padding: '20px' }}>
-      This page is also rendered universally.
-    </View>
+    <Container id='second-page' isScrollable={ true } vertical='stretch' horizontal='stretch' style={{ padding: '20px' }}>
+      <div>
+        This page is also rendered universally.
+      </div>
+    </Container>
   </Application>
 );
 

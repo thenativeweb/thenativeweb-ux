@@ -1,33 +1,33 @@
 The `MadeBy` component displays whom the application was developed by. Switch the `color` property to `light` if you would like to place it on a `light` background.
 
 ```jsx
-import { View } from 'thenativeweb-ux';
+import { Container } from 'thenativeweb-ux';
 
-<View>
-  <View background='dark'>
+<div>
+  <Container background='dark'>
     <MadeBy />
     <MadeBy size='md' />
     <MadeBy size='lg'/>
-  </View>
+  </Container>
 
   <MadeBy color='light' />
   <MadeBy color='light' size='md' />
   <MadeBy color='light' size='lg' />
-</View>
+</div>
 ```
 
 Optionally, you may provide a partner using the `partner` property.
 
 ```jsx
-import { themes, ThemeProvider, View } from 'thenativeweb-ux';
+import { themes, ThemeProvider, Container } from 'thenativeweb-ux';
 
-<View>
+<div>
   <ThemeProvider theme={ themes.wolkenkit }>
-    <View background='dark'>
+    <Container background='dark'>
       <MadeBy partner={{ name: 'Intuity', href: 'https://www.intuity.de'}} />
-    </View>
+    </Container>
   </ThemeProvider>
 
   <MadeBy partner={{ name: 'Intuity', href: 'https://www.intuity.de'}}  color='light' />
-</View>
+</div>
 ```

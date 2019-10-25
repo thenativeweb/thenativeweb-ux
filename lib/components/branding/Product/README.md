@@ -1,43 +1,41 @@
 The `Product` component displays a product's brand. To use it, provide the product's name using the `name` property. Additionally, you may set a `size` as explained previously.
 
 ```jsx
-import { ThemeProvider, View } from 'thenativeweb-ux';
+import { Container, ThemeProvider, themes } from 'thenativeweb-ux';
 
-<View>
-  <View background='dark'>
+<div>
+  <Container background='dark'>
     <Product name='console' />
-
-    <hr />
-
-    <Product name='console' size='lg' />
-
-    <hr />
-
-    <Product name='console' size='xl' />
-  </View>
-
+  </Container>
   <hr />
-
-  <ThemeProvider theme='wolkenkit'>
-    <View background='dark'>
+  <Container background='dark'>
+    <Product name='console' size='lg' />
+  </Container>
+  <hr />
+  <Container background='dark'>
+    <Product name='console' size='xl' />
+  </Container>
+  <hr />
+  <ThemeProvider theme={ themes.wolkenkit }>
+    <Container background='dark'>
       <Product name='console' />
-
-      <hr />
-
+    </Container>
+    <hr />
+    <Container background='dark'>
       <Product name='wolkenkit' size='lg'  />
-
-      <hr />
-
+    </Container>
+    <hr />
+    <Container background='dark'>
       <Product name='wolkenkit' size='xl' isAnimated={ true }  />
-
-      <hr />
-
+    </Container>
+    <hr />
+    <Container background='dark'>
       <Product name='wolkenkit' type='logo-only' />
-
-      <hr />
-
+    </Container>
+    <hr />
+    <Container background='dark'>
       <Product name='wolkenkit' type='text-only' />
-    </View>
+    </Container>
   </ThemeProvider>
-</View>
+</div>
 ```
