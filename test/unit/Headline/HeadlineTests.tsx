@@ -18,7 +18,7 @@ suite('Headline', (): void => {
     document.body.removeChild(container);
   });
 
-  test('renders althoug no property has been defined.', async (): Promise<void> => {
+  test('renders although no property has been defined.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
