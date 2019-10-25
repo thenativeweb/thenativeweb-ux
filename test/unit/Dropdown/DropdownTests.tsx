@@ -40,5 +40,6 @@ suite('Dropdown', (): void => {
 
     assert.that(dropdown).is.not.null();
     assert.that(dropdown!.className).is.containingAllOf(['Dropdown', 'SizeMd']);
+    assert.that(dropdown!.className).is.not.containingAllOf(['Dropdown', 'SizeSm', 'IsFocused' ,'CollapseIcon']);
   });
 });
