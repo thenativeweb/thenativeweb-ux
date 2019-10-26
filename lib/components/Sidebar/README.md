@@ -4,7 +4,7 @@ The `Sidebar` should be used to handle navigation when building an application l
 import { Application, Brand, Product, Sidebar, SidebarBrand, SidebarItem, SidebarFooter, View } from 'thenativeweb-ux';
 
 <div style={{ position:'relative', width: 640, height: 480 }}>
-  <Application useNotification={ false } use>
+  <Application useNotification={ false } useDialogs={ false }>
     <Sidebar>
       <SidebarBrand><Product name='my-app' /></SidebarBrand>
       <SidebarItem iconName='account'>
