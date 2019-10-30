@@ -27,6 +27,7 @@ const Container: FunctionComponent<ContainerProps> = ({
   style
 }): ReactElement => {
   const classes = useStyles();
+  const child: any = React.Children.only(children);
   const componentClassNames = classNames(
     classes.Container,
     {
@@ -48,7 +49,7 @@ const Container: FunctionComponent<ContainerProps> = ({
 
   return (
     <div id={ id } className={ componentClassNames } style={ style }>
-      { children }
+      { child }
     </div>
   );
 };
