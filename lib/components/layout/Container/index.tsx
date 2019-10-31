@@ -12,6 +12,7 @@ interface ContainerProps {
   isScrollable?: boolean;
   vertical?: 'top' | 'center' | 'bottom' | 'stretch';
   style?: CSSProperties;
+  isRow?: boolean;
 }
 
 const useStyles = createUseStyles<Theme, ContainerClassNames>(styles);
@@ -23,11 +24,11 @@ const Container: FunctionComponent<ContainerProps> = ({
   id,
   horizontal = 'center',
   isScrollable = false,
+  isRow = false,
   vertical = 'center',
   style
 }): ReactElement => {
   const classes = useStyles();
-  const child: any = React.Children.only(children);
   const componentClassNames = classNames(
     classes.Container,
     {
@@ -39,6 +40,7 @@ const Container: FunctionComponent<ContainerProps> = ({
       [classes.HorizontalRight]: horizontal === 'right',
       [classes.HorizontalStretch]: horizontal === 'stretch',
       [classes.IsScrollable]: isScrollable,
+      [classes.IsRow]: isRow,
       [classes.VerticalCenter]: vertical === 'center',
       [classes.VerticalStretch]: vertical === 'stretch',
       [classes.VerticalTop]: vertical === 'top',
@@ -49,7 +51,9 @@ const Container: FunctionComponent<ContainerProps> = ({
 
   return (
     <div id={ id } className={ componentClassNames } style={ style }>
-      { child }
+      <div>
+        { children }
+      </div>
     </div>
   );
 };

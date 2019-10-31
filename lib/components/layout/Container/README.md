@@ -57,3 +57,23 @@ initialState = { vertical: 'center', horizontal: 'center' };
   </div>
 </Container>
 ```
+
+### Setting Items to flow in a Row
+
+```javascript
+import { ControlGroup, ControlGroupItem, Dropdown } from 'thenativeweb-ux';
+
+initialState = { isRow: 'column' };
+
+<div>
+  <ControlGroup>
+    <ControlGroupItem label='direction'>
+      <Dropdown options={[ { value: 'column', label: 'column' }, { value: 'row', label: 'row'}]} onChange={ value => setState({ isRow: value  })}/>
+    </ControlGroupItem>
+  </ControlGroup>
+  <Container isRow={ state.isRow === 'row' ? true : false } style={{ height: 200 }}>
+    <div style={{ background: 'gold' }}>I'm a child and my direction is `{state.isRow}`.</div>
+    <div style={{ background: 'orange' }}>I'm a child and my direction is `{state.isRow}`.</div>
+  </Container>
+</div>
+```
