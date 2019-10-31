@@ -5,7 +5,7 @@ As it represents the application root, it positions itself absolutely in its par
 ```jsx
 import { Container } from 'thenativeweb-ux';
 
-<div style={{ position: 'relative', width: 640, height: 480 }}>
+<div style={{ position: 'relative', width: '100%', height: 480 }}>
   <Application>
     <Container background='dark'>Sidebar view</Container>
     <Container background='white'>Content view</Container>

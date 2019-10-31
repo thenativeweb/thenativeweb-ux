@@ -7,6 +7,7 @@ import { Container, ThemeProvider, themes } from 'thenativeweb-ux';
     <Pattern />
     <div>This content is above the pattern…</div>
   </Container>
+  <hr/>
   <ThemeProvider theme={ themes.wolkenkit }>
     <Container orientation='centered' background='dark' style={{ height: '200px' }}>
       <Pattern />

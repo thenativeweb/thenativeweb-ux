@@ -14,10 +14,10 @@ import { Container, ThemeProvider, themes } from 'thenativeweb-ux';
 
   <ThemeProvider theme={ themes.wolkenkit}>
     <div>
-      <Container orientation='centered'>
+      <Container>
         <BusyIndicator />
       </Container>
-      <Container background='dark' orientation='centered'>
+      <Container background='dark'>
         <BusyIndicator />
       </Container>
     </div>

@@ -6,34 +6,22 @@ import { Container, ThemeProvider, themes } from 'thenativeweb-ux';
 <div>
   <Container background='dark'>
     <Product name='console' />
-  </Container>
-  <hr />
-  <Container background='dark'>
+    <hr />
     <Product name='console' size='lg' />
-  </Container>
-  <hr />
-  <Container background='dark'>
+    <hr />
     <Product name='console' size='xl' />
   </Container>
   <hr />
   <ThemeProvider theme={ themes.wolkenkit }>
     <Container background='dark'>
       <Product name='console' />
-    </Container>
-    <hr />
-    <Container background='dark'>
+      <hr />
       <Product name='wolkenkit' size='lg'  />
-    </Container>
-    <hr />
-    <Container background='dark'>
+      <hr />
       <Product name='wolkenkit' size='xl' isAnimated={ true }  />
-    </Container>
-    <hr />
-    <Container background='dark'>
+      <hr />
       <Product name='wolkenkit' type='logo-only' />
-    </Container>
-    <hr />
-    <Container background='dark'>
+      <hr />
       <Product name='wolkenkit' type='text-only' />
     </Container>
   </ThemeProvider>

@@ -47,6 +47,7 @@ suite('layout/Container', (): void => {
         'HorizontalLeft',
         'HorizontalRight',
         'HorizontalStretch',
+        'IsRow',
         'IsScrollable',
         'VerticalStretch',
         'VerticalTop',
@@ -157,5 +158,23 @@ suite('layout/Container', (): void => {
     const containerDiv = container.querySelector('#some-id');
 
     assert.that(containerDiv!.className).is.containing('IsScrollable');
+  });
+
+  test('sets classes for defined property isRow.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Container id='some-id' isRow={ true }>
+            <div>Child</div>
+            <div>Child</div>
+          </Container>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const containerDiv = container.querySelector('#some-id');
+
+    assert.that(containerDiv!.className).is.containing('IsRow');
   });
 });
