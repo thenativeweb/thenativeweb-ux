@@ -29,8 +29,7 @@ import {
   TextArea,
   TextBox,
   Toggle,
-  Transition,
-  View
+  Transition
 } from '../../../lib';
 import React, { FormEvent, ReactElement } from 'react';
 
@@ -271,11 +270,11 @@ class TestApp extends React.Component<{}, TestAppState> {
                 </ControlGroup>
               </Form>
 
-              <View style={{ width: 200, height: 200 }}>
+              <div style={{ width: 200, height: 200 }}>
                 <Transition type='FadeInRight' in={ isBoxVisible }>
-                  <View style={{ width: 200, height: 200, background: 'orange', textAlign: 'center' }} orientation='centered'><span>This box will be animated in and out using `FadeInRight`.</span></View>
+                  <Container style={{ width: 200, height: 200, background: 'orange', textAlign: 'center' }}>This box will be animated in and out using `FadeInRight`.</Container>
                 </Transition>
-              </View>
+              </div>
             </section>
           </div>
         </Container>

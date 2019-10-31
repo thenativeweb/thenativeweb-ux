@@ -4,7 +4,7 @@ Transition is a component for animating components while they enter or leave you
 initialState = {
   isBoxVisible: true
  };
-import { CheckBox, ControlGroup, ControlGroupItem, Form, View } from 'thenativeweb-ux';
+import { CheckBox, Container, ControlGroup, ControlGroupItem, Form } from 'thenativeweb-ux';
 
 <div>
   <Form>
@@ -15,11 +15,11 @@ import { CheckBox, ControlGroup, ControlGroupItem, Form, View } from 'thenativew
     </ControlGroup>
   </Form>
 
-  <View style={{ width: 200, height: 200}}>
+  <div style={{ width: 200, height: 200}}>
     <Transition type='FadeInRight' in={ state.isBoxVisible }>
-      <View style={{ width: 200, height: 200, background: 'orange', textAlign: 'center' }} orientation='centered'><span>This box will be animated in and out using `FadeInRight`.</span></View>
+      <Container style={{ width: 200, height: 200, background: 'orange', textAlign: 'center' }}>This box will be animated in and out using `FadeInRight`.</Container>
     </Transition>
-  </View>
+  </div>
 </div>
 ```
 
@@ -27,7 +27,7 @@ To transition an array of elements, use the `Transition.Group` component. Please
 
 ```jsx
 initialState = { items: [ 'Thing 1' ] };
-import { Button, TransitionGroup, View } from 'thenativeweb-ux';
+import { Button, Container, TransitionGroup } from 'thenativeweb-ux';
 
 addItem = function () {
   const newItems = [].concat(state.items, 'Thing ' +  (state.items.length + 1));
@@ -42,17 +42,17 @@ removeItem = function () {
 };
 
 <div>
-  <View orientation='horizontal'>
+  <Container isRow={ true } horizontal='left' vertical='top'>
     <Button onClick={ addItem }>Add item</Button>
     <Button onClick={ removeItem }>Remove item</Button>
-  </View>
-  <View>
+  </Container>
+  <Container isRow={ true } horizontal='left' vertical='top'>
     <TransitionGroup type='FadeInRight'>
       { state.items.map((item, index) => (
-        <View orientation='centered' style={{ width: 100, height: 100, float: 'left', background: 'orange', marginRight: 5, marginBottom: 5 }} key={index}>{item}</View>
+        <Container style={{ width: 100, height: 100, float: 'left', background: 'orange', marginRight: 5, marginBottom: 5 }} key={index}>{item}</Container>
       )) }
     </TransitionGroup>
-  </View>
+  </Container>
 </div>
 ```
 
