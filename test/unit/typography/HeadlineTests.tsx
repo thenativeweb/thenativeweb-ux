@@ -1,12 +1,12 @@
 import act from '../../shared/act';
 import assert from 'assertthat';
-import Headline from '../../../lib/components/Headline';
+import Headline from '../../../lib/components/typography/Headline';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
 import toArray from '../../shared/toArray';
 
-suite('Headline', (): void => {
+suite('typography/Headline', (): void => {
   let container: Element;
 
   setup((): void => {
