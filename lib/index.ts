@@ -7,7 +7,7 @@ import CheckBox from './components/CheckBox';
 import Dropdown from './components/Dropdown';
 import Headline from './components/Headline';
 import Icon from './components/Icon';
-import Label from './components/Label';
+import Label from './components/typography/Label';
 import Link from './components/Link';
 import MadeBy from './components/branding/MadeBy';
 import Message from './components/Message';
