@@ -1,5 +1,5 @@
 import { Styles } from 'jss';
-import { Theme } from '../..';
+import { Theme } from '../../..';
 
 export type TextClassNames =
   'Text' |

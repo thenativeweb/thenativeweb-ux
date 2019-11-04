@@ -15,7 +15,7 @@ import Pattern from './components/branding/Pattern';
 import Product from './components/branding/Product';
 import services from './services';
 import StyleCollector from './components/StyleCollector';
-import Text from './components/Text';
+import Text from './components/typography/Text';
 import TextArea from './components/TextArea';
 import TextBox from './components/TextBox';
 import ThemeProvider from './components/ThemeProvider';
