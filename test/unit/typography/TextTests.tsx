@@ -1,10 +1,9 @@
 import act from '../../shared/act';
 import assert from 'assertthat';
-import Text from '../../../lib/components/typography/Text';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Text from '../../../lib/components/typography/Text';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
-import toArray from '../../shared/toArray';
 
 suite('typography/Text', (): void => {
   let container: Element;
