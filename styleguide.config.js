@@ -36,6 +36,10 @@ module.exports = {
       components: 'lib/components/branding/**/index.tsx'
     },
     {
+      name: 'Typography',
+      components: 'lib/components/typography/**/index.tsx'
+    },
+    {
       name: 'Components',
       components: 'lib/components/*/index.tsx'
     },

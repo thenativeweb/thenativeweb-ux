@@ -1,5 +1,5 @@
 import styles from './styles';
-import { classNames, createUseStyles } from '../../styles';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface LabelProps {
