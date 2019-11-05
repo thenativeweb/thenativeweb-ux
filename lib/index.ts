@@ -5,7 +5,7 @@ import Brand from './components/branding/Brand';
 import BusyIndicator from './components/BusyIndicator';
 import CheckBox from './components/CheckBox';
 import Dropdown from './components/Dropdown';
-import Headline from './components/Headline';
+import Headline from './components/typography/Headline';
 import Icon from './components/Icon';
 import Label from './components/typography/Label';
 import Link from './components/Link';
