@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
 
-suite('typography/Label', (): void => {
+suite('Label', (): void => {
   let container: Element;
 
   setup((): void => {
