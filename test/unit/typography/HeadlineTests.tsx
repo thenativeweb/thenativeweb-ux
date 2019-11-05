@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
 import toArray from '../../shared/toArray';
 
-suite('typography/Headline', (): void => {
+suite('Headline', (): void => {
   let container: Element;
 
   setup((): void => {
