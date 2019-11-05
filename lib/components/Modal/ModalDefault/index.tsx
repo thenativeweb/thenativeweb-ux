@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { TransitionType } from '../../Transition/TransitionType';
+import { TransitionType } from '../../animation/Transition/TransitionType';
 import { Button, services, Theme, Transition } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement, ReactNode, useCallback, useEffect } from 'react';

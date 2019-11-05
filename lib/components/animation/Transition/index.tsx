@@ -3,7 +3,7 @@ import types from './types';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface TransitionProps {
-  type: TransitionType;
+  type?: TransitionType;
   in?: boolean;
 }
 
