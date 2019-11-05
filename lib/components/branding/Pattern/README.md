@@ -1,18 +1,16 @@
-The `Pattern` component can be used to add a pattern to a container. The pattern will be positioned absolute inside the parent container.
+The `Pattern` component can be used to add a pattern to a block element. The pattern will be positioned absolute inside the parent, so make sure to set it's position to relative.
 
 ```jsx
-import { ThemeProvider, themes, View } from 'thenativeweb-ux';
-<View>
-  <View orientation='centered' background='dark' style={{ width: '400px', height: '200px' }}>
+import { ThemeProvider, themes } from 'thenativeweb-ux';
+<div>
+  <div style={{ position: 'relative', background: 'black', height: '200px' }}>
     <Pattern />
-    <View>This content is above the pattern…</View>
-  </View>
-  <hr />
+  </div>
+  <hr/>
   <ThemeProvider theme={ themes.wolkenkit }>
-    <View orientation='centered' background='dark' style={{ width: '400px', height: '200px' }}>
+    <div style={{ position: 'relative', background: 'black', height: '200px' }}>
       <Pattern />
-      <View>This content is above the pattern…</View>
-    </View>
+    </div>
   </ThemeProvider>
-</View>
+</div>
 ```

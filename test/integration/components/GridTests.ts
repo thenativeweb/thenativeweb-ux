@@ -27,8 +27,8 @@ suite('components/Grid', (): void => {
       const secondItem = await page.$('#grid-item-span6-second');
       const secondItemBoundingBox = await secondItem!.boundingBox();
 
-      assert.that(Math.round(firstItemBoundingBox!.width * 2)).is.equalTo(gridBoundingBox!.width - defaultGridGrap);
-      assert.that(Math.round(secondItemBoundingBox!.width * 2)).is.equalTo(gridBoundingBox!.width - defaultGridGrap);
+      assert.that(Math.round(firstItemBoundingBox!.width * 2)).is.equalTo(Math.round(gridBoundingBox!.width - defaultGridGrap));
+      assert.that(Math.round(secondItemBoundingBox!.width * 2)).is.equalTo(Math.round(gridBoundingBox!.width - defaultGridGrap));
     });
 
     test('spans across multiple columns when a configuration for multiple screen sizes is given.', async (): Promise<void> => {
