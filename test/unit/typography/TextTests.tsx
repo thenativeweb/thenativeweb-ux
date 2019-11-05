@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import Text from '../../../lib/components/typography/Text';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
 
-suite('typography/Text', (): void => {
+suite('Text', (): void => {
   let container: Element;
 
   setup((): void => {
