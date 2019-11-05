@@ -6,13 +6,13 @@ import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface ContainerProps {
   className?: string;
+  children?: ReactElement | string | null;
   background?: Background;
   id?: string;
   horizontal?: 'left' | 'center' | 'right'| 'stretch';
   isScrollable?: boolean;
   vertical?: 'top' | 'center' | 'bottom' | 'stretch';
   style?: CSSProperties;
-  isRow?: boolean;
 }
 
 const useStyles = createUseStyles<Theme, ContainerClassNames>(styles);
@@ -24,7 +24,6 @@ const Container: FunctionComponent<ContainerProps> = ({
   id,
   horizontal = 'center',
   isScrollable = false,
-  isRow = false,
   vertical = 'center',
   style
 }): ReactElement => {
@@ -40,7 +39,6 @@ const Container: FunctionComponent<ContainerProps> = ({
       [classes.HorizontalRight]: horizontal === 'right',
       [classes.HorizontalStretch]: horizontal === 'stretch',
       [classes.IsScrollable]: isScrollable,
-      [classes.IsRow]: isRow,
       [classes.VerticalCenter]: vertical === 'center',
       [classes.VerticalStretch]: vertical === 'stretch',
       [classes.VerticalTop]: vertical === 'top',
@@ -51,9 +49,7 @@ const Container: FunctionComponent<ContainerProps> = ({
 
   return (
     <div id={ id } className={ componentClassNames } style={ style }>
-      <div>
-        { children }
-      </div>
+      { children }
     </div>
   );
 };

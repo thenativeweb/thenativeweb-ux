@@ -4,16 +4,16 @@ The `Product` component displays a product's brand. To use it, provide the produ
 import { Container, ThemeProvider, themes } from 'thenativeweb-ux';
 
 <div>
-  <Container background='dark'>
+  <div style={{ background: 'rgb(34, 34, 34)'}}>
     <Product name='console' />
     <hr />
     <Product name='console' size='lg' />
     <hr />
     <Product name='console' size='xl' />
-  </Container>
+  </div>
   <hr />
   <ThemeProvider theme={ themes.wolkenkit }>
-    <Container background='dark'>
+    <div style={{ background: 'rgb(47, 51, 59)'}}>
       <Product name='console' />
       <hr />
       <Product name='wolkenkit' size='lg'  />
@@ -23,7 +23,7 @@ import { Container, ThemeProvider, themes } from 'thenativeweb-ux';
       <Product name='wolkenkit' type='logo-only' />
       <hr />
       <Product name='wolkenkit' type='text-only' />
-    </Container>
+    </div>
   </ThemeProvider>
 </div>
 ```
