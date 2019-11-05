@@ -1,1 +1,1 @@
-export type Background = 'dark' | 'gray' | 'none';
+export type Background = 'dark' | 'light' | 'none';

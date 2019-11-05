@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import ThemeProvider from '../../../lib/components/ThemeProvider';
 import toArray from '../../shared/toArray';
 
-suite('layout/Container', (): void => {
+suite('Container', (): void => {
   let container: Element;
 
   setup((): void => {
@@ -43,7 +43,7 @@ suite('layout/Container', (): void => {
     assert.that(containerDiv!.className).is.not.containingAllOf(
       [
         'BackgroundDark',
-        'BackgroundGray',
+        'BackgroundLight',
         'HorizontalLeft',
         'HorizontalRight',
         'HorizontalStretch',
@@ -61,7 +61,7 @@ suite('layout/Container', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Container id='some-id' background='gray'>
+          <Container id='some-id' background='light'>
             <div>Container</div>
           </Container>
           <Container id='some-id' background='dark'>
@@ -78,7 +78,7 @@ suite('layout/Container', (): void => {
     const containerDiv = toArray(container.querySelectorAll('#some-id'));
     const [ gray, dark, none ] = containerDiv;
 
-    assert.that(gray.className).is.containing('BackgroundGray');
+    assert.that(gray.className).is.containing('BackgroundLight');
     assert.that(dark.className).is.containing('BackgroundDark');
     assert.that(none.className).is.containing('BackgroundNone');
   });

@@ -21,7 +21,7 @@ import {
 
 <div style={{ position: 'relative', width: 640, height: 480 }}>
   <ThemeProvider theme={ themes.wolkenkit }>
-    <Application useNotification={ false } useDialogs={ false }>
+    <Application useNotifications={ false } useDialogs={ false }>
       <Sidebar>
         <SidebarBrand><Product name='my-app' /></SidebarBrand>
         <SidebarItem iconName='account'>

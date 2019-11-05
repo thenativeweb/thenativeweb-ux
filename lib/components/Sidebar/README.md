@@ -4,7 +4,7 @@ The `Sidebar` should be used to handle navigation when building an application l
 import { Application, Brand, Container, Product, Sidebar, SidebarBrand, SidebarItem, SidebarFooter } from 'thenativeweb-ux';
 
 <div style={{ position:'relative', width: 640, height: 480 }}>
-  <Application useNotification={ false } useDialogs={ false }>
+  <Application useNotifications={ false } useDialogs={ false }>
     <Sidebar>
       <SidebarBrand><Product name='my-app' /></SidebarBrand>
       <SidebarItem iconName='account'>
@@ -15,7 +15,7 @@ import { Application, Brand, Container, Product, Sidebar, SidebarBrand, SidebarI
       <SidebarItem iconName='help' onClick={ () => console.log('Clicked') } />
       <SidebarFooter><Brand type='minimal' color='monochrome' /></SidebarFooter>
     </Sidebar>
-    <Container background='gray'>My content panel</Container>
+    <Container background='light'>My content panel</Container>
   </Application>
 </div>
 ```

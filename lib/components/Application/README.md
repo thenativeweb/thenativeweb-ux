@@ -8,7 +8,7 @@ import { Container } from 'thenativeweb-ux';
 <div style={{ position: 'relative', width: '100%', height: 480 }}>
   <Application>
     <Container background='dark'>Sidebar view</Container>
-    <Container background='white'>Content view</Container>
+    <Container background='none'>Content view</Container>
   </Application>
 </div>
 ```

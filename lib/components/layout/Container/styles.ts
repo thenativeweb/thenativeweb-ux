@@ -4,7 +4,7 @@ import { Theme } from '../../..';
 export type ContainerClassNames =
   'Container' |
   'BackgroundDark' |
-  'BackgroundGray' |
+  'BackgroundLight' |
   'BackgroundNone' |
   'HorizontalLeft' |
   'HorizontalCenter'|
@@ -37,7 +37,7 @@ const styles = (theme: Theme): Styles<ContainerClassNames> => ({
     color: theme.color.brand.white
   },
 
-  BackgroundGray: {
+  BackgroundLight: {
     background: theme.color.brand.grayLight
   },
 
@@ -50,7 +50,8 @@ const styles = (theme: Theme): Styles<ContainerClassNames> => ({
   // in combination with the 'display: flex' of the parent.
   // This will make sure the container is scrollable.
   // For a detailed explanation see
-  // https://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container?answertab=active#tab-top
+  // https://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-
+  // item-that-is-overflowing-container?answertab=active#tab-top
 
   HorizontalLeft: {
     // We're not using alignItems: 'flex-start' here but an auto margin, see comment above.

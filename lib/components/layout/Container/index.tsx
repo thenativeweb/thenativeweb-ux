@@ -32,7 +32,7 @@ const Container: FunctionComponent<ContainerProps> = ({
     classes.Container,
     {
       [classes.BackgroundDark]: background === 'dark',
-      [classes.BackgroundGray]: background === 'gray',
+      [classes.BackgroundLight]: background === 'light',
       [classes.BackgroundNone]: background === 'none',
       [classes.HorizontalLeft]: horizontal === 'left',
       [classes.HorizontalCenter]: horizontal === 'center',

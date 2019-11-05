@@ -37,11 +37,11 @@ initialState = { vertical: 'center', horizontal: 'center' };
   <Container background='dark' style={{ height: 100 }}>
     <div style={{ background: 'gold' }}>I'm a child on dark background.</div>
   </Container>
-  <Container background='gray' style={{ height: 100 }}>
-    <div style={{ background: 'gold' }}>I'm a child on gray background.</div>
+  <Container background='light' style={{ height: 100 }}>
+    <div style={{ background: 'gold' }}>I'm a child on light background.</div>
   </Container>
-  <Container background='white' style={{ height: 100 }}>
-    <div style={{ background: 'gold' }}>I'm a child on white background.</div>
+  <Container background='none' style={{ height: 100 }}>
+    <div style={{ background: 'gold' }}>I'm a child on a transparent background.</div>
   </Container>
 </div>
 ```

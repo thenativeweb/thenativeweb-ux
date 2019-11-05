@@ -11,7 +11,7 @@ suite('components/layout/Container', (): void => {
   });
 
   suite('isScrollable', (): void => {
-    test('causes the container to be scrollable when viewport is smaller than the parent.', async (): Promise<void> => {
+    test('causes the container to be scrollable if set to true and the viewport is smaller than the parent.', async (): Promise<void> => {
       page = await browser.setupPage({
         viewport: { width: 600, height: 250 }
       });
