@@ -1,13 +1,16 @@
 import classNames from 'classnames';
 import { createUseStyles } from '../../styles';
+import Dialogs from '../Dialogs';
+import Icons from '../Icons';
+import Notifications from '../Notifications';
 import { Theme } from '../..';
-import View from '../View';
 import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { ApplicationClassNames } from './styles';
 
 interface ApplicationProps {
   className?: string;
-  orientation?: 'horizontal' | 'vertical' | 'centered';
+  useDialogs?: boolean;
+  useNotifications?: boolean;
   style?: any;
 }
 
@@ -17,15 +20,24 @@ const Application: FunctionComponent<ApplicationProps> = ({
   children,
   className,
   style,
-  orientation = 'horizontal'
+  useDialogs = true,
+  useNotifications = true
 }): ReactElement => {
   const classes = useStyles();
   const componentClasses = classNames(classes.Application, className);
 
   return (
-    <View className={ componentClasses } orientation={ orientation } style={ style }>
-      { children }
-    </View>
+    <div className={ componentClasses } style={ style }>
+      <span suppressHydrationWarning={ true }>
+        <Icons />
+        { useDialogs ? <Dialogs /> : null }
+        { useNotifications ? <Notifications /> : null }
+      </span>
+
+      <div className={ classes.ApplicationLayout }>
+        { children }
+      </div>
+    </div>
   );
 };
 

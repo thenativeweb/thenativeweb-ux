@@ -28,6 +28,14 @@ module.exports = {
       content: 'README.md'
     },
     {
+      name: 'Layout',
+      components: 'lib/components/layout/**/index.tsx'
+    },
+    {
+      name: 'Branding',
+      components: 'lib/components/branding/**/index.tsx'
+    },
+    {
       name: 'Typography',
       components: 'lib/components/typography/**/index.tsx'
     },

@@ -23,7 +23,7 @@ interface DropdownProps {
 const useStyles = createUseStyles<Theme, DropdownClassNames>(styles);
 
 const Dropdown: FunctionComponent<DropdownProps> = ({
-  emptyLabel = 'Choose an option…',
+  emptyLabel,
   id,
   options,
   size = 'md',

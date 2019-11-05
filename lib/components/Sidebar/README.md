@@ -1,10 +1,10 @@
 The `Sidebar` should be used to handle navigation when building an application layout using the `Application` component. Its also responsible for applying a consistent branding across the native web applications.
 
 ```jsx
-import { Application, Brand, Product, Sidebar, SidebarBrand, SidebarItem, SidebarFooter, View } from 'thenativeweb-ux';
+import { Application, Brand, Container, Product, Sidebar, SidebarBrand, SidebarItem, SidebarFooter } from 'thenativeweb-ux';
 
 <div style={{ position:'relative', width: 640, height: 480 }}>
-  <Application>
+  <Application useNotifications={ false } useDialogs={ false }>
     <Sidebar>
       <SidebarBrand><Product name='my-app' /></SidebarBrand>
       <SidebarItem iconName='account'>
@@ -15,7 +15,7 @@ import { Application, Brand, Product, Sidebar, SidebarBrand, SidebarItem, Sideba
       <SidebarItem iconName='help' onClick={ () => console.log('Clicked') } />
       <SidebarFooter><Brand type='minimal' color='monochrome' /></SidebarFooter>
     </Sidebar>
-    <View adjust='flex' background='light'>My content panel</View>
+    <Container background='light'>My content panel</Container>
   </Application>
 </div>
 ```

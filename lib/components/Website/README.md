@@ -1,6 +1,6 @@
-The `Website` component acts as your root component when  building a content-driven, grid-based communication website. It will make sure the most basic things like fonts are available to you.
+The `Website` component acts as your root component when building a content-driven, grid-based communication website. It will make sure the most basic things like fonts are available to you.
 
-If you're building an interaction-driven, flexbox-based appliction layout use the `Application` component as your root component instead.
+If you're building an interaction-driven application use the `Application` component as your root component instead.
 
 ```js
 <Website>

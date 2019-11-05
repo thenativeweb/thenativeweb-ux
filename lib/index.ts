@@ -1,9 +1,9 @@
 import animate from 'animejs';
 import Application from './components/Application';
-import ApplicationServices from './components/ApplicationServices';
 import Brand from './components/branding/Brand';
 import BusyIndicator from './components/BusyIndicator';
 import CheckBox from './components/CheckBox';
+import { Container } from './components/layout/Container';
 import Dropdown from './components/Dropdown';
 import Headline from './components/typography/Headline';
 import Icon from './components/Icon';
@@ -22,7 +22,6 @@ import ThemeProvider from './components/ThemeProvider';
 import Toggle from './components/Toggle';
 import Transition from './components/Transition';
 import TransitionGroup from './components/TransitionGroup';
-import View from './components/View';
 import Website from './components/Website';
 import Button, { ButtonHint } from './components/Button';
 import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme, withStyles } from './styles';
@@ -36,7 +35,6 @@ import themes, { Theme } from './themes';
 export {
   animate,
   Application,
-  ApplicationServices,
   Brand,
   BusyIndicator,
   Button,
@@ -44,6 +42,7 @@ export {
   classNames,
   createUseStyles,
   CheckBox,
+  Container,
   ControlGroup,
   ControlGroupDivider,
   ControlGroupItem,
@@ -80,7 +79,6 @@ export {
   Toggle,
   Transition,
   TransitionGroup,
-  View,
   Website,
   withStyles,
   useTheme
