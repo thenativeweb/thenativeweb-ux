@@ -61,7 +61,7 @@
     "react-docgen-typescript": "1.15.1",
     "react-dom": "16.11.0",
     "react-styleguidist": "10.2.0",
-    "roboter": "9.0.7",
+    "roboter": "9.1.0",
     "shelljs": "0.8.3",
     "ts-loader": "6.2.1",
     "webpack": "4.41.2"
