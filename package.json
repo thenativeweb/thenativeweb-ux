@@ -36,7 +36,7 @@
     "uuidv4": "5.0.1"
   },
   "devDependencies": {
-    "@babel/runtime-corejs2": "7.7.1",
+    "@babel/runtime-corejs2": "7.7.2",
     "@types/animejs": "3.1.0",
     "@types/async-retry": "1.4.1",
     "@types/classnames": "2.2.9",
