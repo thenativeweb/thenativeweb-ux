@@ -14,6 +14,10 @@ import Message from './components/Message';
 import Pattern from './components/branding/Pattern';
 import Product from './components/branding/Product';
 import services from './services';
+import Sidebar from './components/layout/Sidebar';
+import SidebarBrand from './components/layout/SidebarBrand';
+import SidebarFooter from './components/layout/SidebarFooter';
+import SidebarItem from './components/layout/SidebarItem';
 import StyleCollector from './components/StyleCollector';
 import Text from './components/typography/Text';
 import TextArea from './components/TextArea';
@@ -29,7 +33,6 @@ import ControlGroup, { ControlGroupDivider, ControlGroupItem } from './component
 import Form, { FormActions, FormRow } from './components/Form';
 import Grid, { GridItem } from './components/Grid';
 import Modal, { ModalRow } from './components/Modal';
-import Sidebar, { SidebarBrand, SidebarFooter, SidebarItem } from './components/Sidebar';
 import themes, { Theme } from './themes';
 
 export {

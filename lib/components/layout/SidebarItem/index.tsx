@@ -56,7 +56,7 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
       </div>
       <div className={ classes.Items }>
         {
-          React.Children.map(children, (child: ReactNode): ReactElement => React.cloneElement(child as ReactElement, { isNested: true }))
+          React.Children.map(children, (child: ReactNode): ReactElement => React.cloneElement(child as ReactElement, { isnested: 'true' }))
         }
       </div>
     </div>
