@@ -18,3 +18,21 @@ update_configs:
         dependency_type: "direct"
         update_type: "all"
     version_requirement_updates: "increase_versions"
+
+  - package_manager: "javascript"
+    directory: "/examples/with-next-js"
+    update_schedule: "live"
+    default_reviewers:
+    - "thenativeweb/wolkenkit-dev"
+    default_assignees:
+    - "goloroden"
+    - "mattwagl"
+    - "vaalllaa"
+    - "yeldiRium"
+    default_labels:
+    - "Dependencies"
+    allowed_updates:
+    - match:
+        dependency_type: "direct"
+        update_type: "all"
+    version_requirement_updates: "increase_versions"

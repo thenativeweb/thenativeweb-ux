@@ -3,7 +3,9 @@ import browser from '../shared/browser';
 import environment from '../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('with-next-js/server-side-rendering', (): void => {
+suite('with-next-js/server-side-rendering', function (): void {
+  this.timeout(5 * 1000);
+
   let page: Page;
 
   setup(async (): Promise<void> => {

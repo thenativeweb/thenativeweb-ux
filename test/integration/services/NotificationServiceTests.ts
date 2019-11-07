@@ -2,7 +2,9 @@ import browser from '../../shared/browser';
 import environment from '../../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('services/NotificationService', (): void => {
+suite('services/NotificationService', function (): void {
+  this.timeout(5 * 1000);
+
   let page: Page;
 
   setup(async (): Promise<void> => {

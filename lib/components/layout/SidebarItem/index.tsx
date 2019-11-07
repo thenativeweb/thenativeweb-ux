@@ -1,4 +1,5 @@
 import Icon from '../../Icon';
+import { isDomNode } from '../../../utils/isDomNode';
 import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
@@ -56,7 +57,16 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
       </div>
       <div className={ classes.Items }>
         {
-          React.Children.map(children, (child: ReactNode): ReactElement => React.cloneElement(child as ReactElement, { isNested: true }))
+          React.Children.map(
+            children,
+            (child): ReactNode => {
+              if (isDomNode(child)) {
+                return child;
+              }
+
+              return React.cloneElement(child as ReactElement, { isNested: true });
+            }
+          )
         }
       </div>
     </div>

@@ -3,7 +3,9 @@ import browser from '../../shared/browser';
 import environment from '../../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('themes', (): void => {
+suite('themes', function (): void {
+  this.timeout(5 * 1000);
+
   let page: Page;
 
   teardown(async (): Promise<void> => {

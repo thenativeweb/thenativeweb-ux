@@ -3,7 +3,9 @@ import browser from '../../shared/browser';
 import environment from '../../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('components/Grid', (): void => {
+suite('components/Grid', function (): void {
+  this.timeout(5 * 1000);
+
   let page: Page;
 
   const defaultGridGrap = 16;

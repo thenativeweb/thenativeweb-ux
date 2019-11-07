@@ -1,11 +1,12 @@
 {
   "name": "with-next-js",
   "version": "1.0.0",
+  "dependencies": {
+    "next": "9.1.2"
+  },
+  "devDependencies": {},
   "scripts": {
     "dev": "next dev",
     "export": "next build && next export"
-  },
-  "dependencies": {
-    "next": "9.1.1"
   }
 }
