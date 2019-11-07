@@ -1,7 +1,7 @@
 import animate from 'animejs';
 import Application from './components/Application';
 import Brand from './components/branding/Brand';
-import BusyIndicator from './components/BusyIndicator';
+import BusyIndicator from './components/feedback/BusyIndicator';
 import CheckBox from './components/CheckBox';
 import { Container } from './components/layout/Container';
 import Dropdown from './components/Dropdown';
