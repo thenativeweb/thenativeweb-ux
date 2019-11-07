@@ -1,11 +1,10 @@
 import act from '../../shared/act';
 import assert from 'assertthat';
-import Button from '../../../lib/components/Button/Button';
 import { click } from '../../shared/eventDispatchers';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ThemeProvider from '../../../lib/components/ThemeProvider';
 import toArray from '../../shared/toArray';
+import { Button, ThemeProvider } from '../../../lib';
 
 suite('Button', (): void => {
   let container: Element;

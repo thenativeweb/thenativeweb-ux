@@ -1,5 +1,5 @@
-import { classNames, createUseStyles } from '../../styles';
-import { Icon, Theme } from '../..';
+import { classNames, createUseStyles } from '../../../styles';
+import { Icon, Theme } from '../../..';
 import React, { CSSProperties, FormEvent, FunctionComponent, ReactElement, useCallback, useState } from 'react';
 import styles, { DropdownClassNames } from './styles';
 

@@ -1,9 +1,8 @@
 import act from '../../shared/act';
 import assert from 'assertthat';
-import Dropdown from '../../../lib/components/Dropdown';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ThemeProvider from '../../../lib/components/ThemeProvider';
+import { Dropdown, ThemeProvider } from '../../../lib';
 
 suite('Dropdown', (): void => {
   let container: Element;
