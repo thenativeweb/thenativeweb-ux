@@ -2,7 +2,9 @@ import browser from '../../shared/browser';
 import environment from '../../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('themes/breakpoints', (): void => {
+suite('themes/breakpoints', function (): void {
+  this.timeout(5 * 1000);
+
   let page: Page;
 
   teardown(async (): Promise<void> => {

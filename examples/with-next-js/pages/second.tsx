@@ -22,7 +22,7 @@ const Page = (): ReactElement => (
       <SidebarItem iconName='help' isActive={ true } />
     </Sidebar>
     <Container id='second-page' isScrollable={ true } vertical='stretch' horizontal='stretch' style={{ padding: '20px' }}>
-        This page is also rendered universally.
+      This page is also rendered universally.
     </Container>
   </Application>
 );

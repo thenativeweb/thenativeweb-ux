@@ -1,10 +1,12 @@
 import assert from 'assertthat';
 import browser from '../../shared/browser';
 import environment from '../../shared/environment';
-import puppeteer from 'puppeteer';
+import { Page } from 'puppeteer';
 
-suite('styles/classNames', (): void => {
-  let page: puppeteer.Page;
+suite('styles/classNames', function (): void {
+  this.timeout(5 * 1000);
+
+  let page: Page;
 
   setup(async (): Promise<void> => {
     page = await browser.setupPage();
