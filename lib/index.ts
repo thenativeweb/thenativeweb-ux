@@ -12,7 +12,7 @@ import Icon from './components/Icon';
 import Label from './components/typography/Label';
 import Link from './components/Link';
 import MadeBy from './components/branding/MadeBy';
-import Message from './components/Message';
+import Message from './components/feedback/Message';
 import Pattern from './components/branding/Pattern';
 import Product from './components/branding/Product';
 import services from './services';
