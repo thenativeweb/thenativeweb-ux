@@ -1,6 +1,6 @@
 import { Styles } from 'jss';
-import { Theme } from '../..';
-import { classNames, createUseStyles } from '../../styles';
+import { Theme } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { CheckBoxClassNames } from './styles';
 

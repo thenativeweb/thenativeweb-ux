@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import { createUseStyles } from '../../styles';
-import Dialogs from '../Dialogs';
-import Icons from '../Icons';
-import Notifications from '../Notifications';
-import { Theme } from '../..';
+import { createUseStyles } from '../../../styles';
+import Dialogs from '../../Dialogs';
+import Icons from '../../Icons';
+import Notifications from '../../Notifications';
+import { Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { ApplicationClassNames } from './styles';
 

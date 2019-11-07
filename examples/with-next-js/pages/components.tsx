@@ -1,4 +1,4 @@
-import { DropdownOption } from '../../../lib/components/Dropdown';
+import { DropdownOption } from '../../../lib/components/input/Dropdown';
 import {
   Application,
   Brand,

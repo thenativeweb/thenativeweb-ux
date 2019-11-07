@@ -1,11 +1,10 @@
 import act from '../../shared/act';
-import Application from '../../../lib/components/Application';
 import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ThemeProvider from '../../../lib/components/ThemeProvider';
+import { ButtonHint, ThemeProvider } from '../../../lib';
 
-suite('Application', (): void => {
+suite('ButtonHint', (): void => {
   let container: Element;
 
   setup((): void => {
@@ -17,18 +16,19 @@ suite('Application', (): void => {
     document.body.removeChild(container);
   });
 
-  test('renders default applications.', async (): Promise<void> => {
+  test('renders.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Application>Application</Application>
+          <ButtonHint>Click me</ButtonHint>
         </ThemeProvider>,
         container
       );
     });
 
-    const application = container.querySelector('div');
+    const buttonHint = container.querySelector('span');
 
-    assert.that(application!.className).is.containing('Application');
+    assert.that(buttonHint).is.not.null();
+    assert.that(buttonHint!.className).is.containing('ButtonHint');
   });
 });
