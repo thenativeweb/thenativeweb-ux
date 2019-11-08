@@ -16,7 +16,7 @@ suite('breakpoints', function (): void {
     visibleSelectors: string[];
     hiddenSelectors: string[];
   }): Promise<void> {
-    const url = environment.getIntegrationTestUrl('/breakpoints');
+    const url = environment.getIntegrationTestUrl('/integration/themes/breakpoints');
 
     page = await browser.setupPage({
       viewport: { width: viewportWidth, height: 600 }

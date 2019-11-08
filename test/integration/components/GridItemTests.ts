@@ -3,7 +3,7 @@ import { browser } from '../../shared/browser';
 import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('Grid', function (): void {
+suite('GridItem', function (): void {
   this.timeout(environment.integrationTestTimeOut);
 
   let page: Page;
@@ -14,9 +14,9 @@ suite('Grid', function (): void {
     await browser.teardownPage(page);
   });
 
-  suite('GridItem', (): void => {
-    test('spans across multiple columns when columSpan is given.', async (): Promise<void> => {
-      const url = environment.getIntegrationTestUrl('/components');
+  suite('columnSpan', (): void => {
+    test('spans the GridItem across multiple columns of the parent Grid.', async (): Promise<void> => {
+      const url = environment.getIntegrationTestUrl('/integration/components/layout/gridItem');
 
       page = await browser.setupPage();
       await page.goto(url);
@@ -35,8 +35,8 @@ suite('Grid', function (): void {
       assert.that(Math.round(secondItemBoundingBox!.width * 2)).is.equalTo(Math.round(gridBoundingBox!.width - defaultGridGrap));
     });
 
-    test('spans across multiple columns when a configuration for multiple screen sizes is given.', async (): Promise<void> => {
-      const url = environment.getIntegrationTestUrl('/components');
+    test('spans GridItems across multiple columns using repsonsive properties.', async (): Promise<void> => {
+      const url = environment.getIntegrationTestUrl('/integration/components/layout/gridItem');
 
       page = await browser.setupPage({ viewport: { width: 590, height: 600 }});
 
@@ -53,7 +53,9 @@ suite('Grid', function (): void {
       await browser.teardownPage(page);
 
       page = await browser.setupPage({ viewport: { width: 1270, height: 600 }});
+
       await page.goto(url);
+      await page.waitForSelector('#grid');
 
       const gridOnMdDevice = await page.$('#grid');
       const gridOnMdDeviceBoundingBox = await gridOnMdDevice!.boundingBox();

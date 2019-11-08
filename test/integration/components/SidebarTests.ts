@@ -17,7 +17,7 @@ suite('Sidebar', function (): void {
   });
 
   test('is 80px wide.', async (): Promise<void> => {
-    const url = environment.getIntegrationTestUrl('/components');
+    const url = environment.getIntegrationTestUrl('/integration/components/layout/sidebar');
 
     await page.goto(url);
     await page.waitForSelector('#sidebar');
@@ -26,34 +26,5 @@ suite('Sidebar', function (): void {
     const boundingBox = await sidebar!.boundingBox();
 
     assert.that(boundingBox!.width).is.equalTo(80);
-  });
-
-  suite('SidebarItem', (): void => {
-    test('expands on hover and subitems are clickable.', async (): Promise<void> => {
-      const url = environment.getIntegrationTestUrl('/components');
-
-      await page.goto(url);
-      await page.waitForSelector('#sidebar-item-account');
-
-      const parentItem = await page.$('#sidebar-item-account');
-
-      await parentItem!.hover();
-
-      await page.waitForSelector('#sidebar-item-logout', {
-        visible: true
-      });
-
-      const childItem = await page.$('#sidebar-item-logout');
-
-      await new Promise(async (resolve): Promise<void> => {
-        page.once('console', (message): void => {
-          assert.that(message.text()).is.equalTo('clicked::clicked::logout');
-
-          resolve();
-        });
-
-        await childItem!.click();
-      });
-    });
   });
 });

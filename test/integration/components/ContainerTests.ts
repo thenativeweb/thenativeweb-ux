@@ -14,7 +14,7 @@ suite('Container', function (): void {
 
   suite('isScrollable', (): void => {
     test('causes the container to be scrollable if set to true and the viewport is smaller than the container.', async (): Promise<void> => {
-      const url = environment.getIntegrationTestUrl('/integration/layout/container/isScrollableTrue');
+      const url = environment.getIntegrationTestUrl('/integration/components/layout/container/isScrollableTrue');
 
       page = await browser.setupPage({
         viewport: { width: 600, height: 250 }
@@ -34,7 +34,7 @@ suite('Container', function (): void {
 
     test('causes the child to be partially hidden it larger than the container.', async (): Promise<void> => {
       page = await browser.setupPage();
-      const url = environment.getIntegrationTestUrl('/integration/layout/container/isScrollableFalse');
+      const url = environment.getIntegrationTestUrl('/integration/components/layout/container/isScrollableFalse');
 
       await page.goto(url);
       await page.waitForSelector('#container');
