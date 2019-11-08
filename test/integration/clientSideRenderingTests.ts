@@ -3,7 +3,7 @@ import { browser } from '../shared/browser';
 import { environment } from '../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('with-next-js/client-side-rendering', function (): void {
+suite('client-side-rendering', function (): void {
   this.timeout(environment.integrationTestTimeOut);
 
   let page: Page;
@@ -17,7 +17,9 @@ suite('with-next-js/client-side-rendering', function (): void {
   });
 
   test('takes over once server side rendering is complete.', async (): Promise<void> => {
-    await page.goto(`${environment.baseUrl}`);
+    const url = environment.getIntegrationTestUrl();
+
+    await page.goto(url);
     const button = await page.$('#button');
 
     await new Promise(async (resolve): Promise<void> => {
@@ -32,7 +34,9 @@ suite('with-next-js/client-side-rendering', function (): void {
   });
 
   test('removes server side rendered styles.', async (): Promise<void> => {
-    await page.goto(`${environment.baseUrl}`);
+    const url = environment.getIntegrationTestUrl();
+
+    await page.goto(url);
     await page.waitForSelector('#index-page');
     const styleTag = await page.$('#server-side-styles');
 

@@ -2,7 +2,7 @@ import { browser } from '../../shared/browser';
 import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('themes/breakpoints', function (): void {
+suite('breakpoints', function (): void {
   this.timeout(environment.integrationTestTimeOut);
 
   let page: Page;
@@ -16,11 +16,13 @@ suite('themes/breakpoints', function (): void {
     visibleSelectors: string[];
     hiddenSelectors: string[];
   }): Promise<void> {
+    const url = environment.getIntegrationTestUrl('/breakpoints');
+
     page = await browser.setupPage({
       viewport: { width: viewportWidth, height: 600 }
     });
 
-    await page.goto(`${environment.baseUrl}/breakpoints/`);
+    await page.goto(url);
 
     for (const selector of visibleSelectors) {
       await page.waitForSelector(selector, {

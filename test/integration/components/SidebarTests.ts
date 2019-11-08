@@ -3,7 +3,7 @@ import { browser } from '../../shared/browser';
 import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
 
-suite('components/Sidebar', function (): void {
+suite('Sidebar', function (): void {
   this.timeout(environment.integrationTestTimeOut);
 
   let page: Page;
@@ -17,7 +17,9 @@ suite('components/Sidebar', function (): void {
   });
 
   test('is 80px wide.', async (): Promise<void> => {
-    await page.goto(`${environment.baseUrl}/components/`);
+    const url = environment.getIntegrationTestUrl('/components');
+
+    await page.goto(url);
     await page.waitForSelector('#sidebar');
 
     const sidebar = await page.$('#sidebar');
@@ -28,7 +30,9 @@ suite('components/Sidebar', function (): void {
 
   suite('SidebarItem', (): void => {
     test('expands on hover and subitems are clickable.', async (): Promise<void> => {
-      await page.goto(`${environment.baseUrl}/components/`);
+      const url = environment.getIntegrationTestUrl('/components');
+
+      await page.goto(url);
       await page.waitForSelector('#sidebar-item-account');
 
       const parentItem = await page.$('#sidebar-item-account');

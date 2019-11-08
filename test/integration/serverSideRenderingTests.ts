@@ -9,9 +9,11 @@ suite('with-next-js/server-side-rendering', function (): void {
   let page: Page;
 
   setup(async (): Promise<void> => {
+    const url = environment.getIntegrationTestUrl();
+
     page = await browser.setupPage();
     await page.setJavaScriptEnabled(false);
-    await page.goto(environment.baseUrl);
+    await page.goto(url);
   });
 
   teardown(async (): Promise<void> => {
