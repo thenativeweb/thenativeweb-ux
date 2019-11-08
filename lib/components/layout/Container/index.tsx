@@ -39,6 +39,7 @@ const Container: FunctionComponent<ContainerProps> = ({
       [classes.HorizontalRight]: horizontal === 'right',
       [classes.HorizontalStretch]: horizontal === 'stretch',
       [classes.IsScrollable]: isScrollable,
+      [classes.IsNotScrollable]: !isScrollable,
       [classes.VerticalCenter]: vertical === 'center',
       [classes.VerticalStretch]: vertical === 'stretch',
       [classes.VerticalTop]: vertical === 'top',
