@@ -57,10 +57,10 @@ const Dialogs: FunctionComponent = (): ReactElement => {
         { services.dialogs.state.confirm.title }
       </Headline>
       <div className={ classes.Actions }>
-        <Button adjust='auto' onClick={ handleCancel }>
+        <Button id='dialogs-confirm-action-cancel' adjust='auto' onClick={ handleCancel }>
           { services.dialogs.state.confirm.actions.cancel }
         </Button>
-        <Button adjust='flex' onClick={ handleConfirm } isPrimary={ true } autoFocus={ true }>
+        <Button id='dialogs-confirm-action-confirm' adjust='flex' onClick={ handleConfirm } isPrimary={ true } autoFocus={ true }>
           { services.dialogs.state.confirm.actions.confirm }
         </Button>
       </div>

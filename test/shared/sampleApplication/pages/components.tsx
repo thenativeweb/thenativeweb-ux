@@ -17,7 +17,6 @@ import {
   Message,
   Modal,
   Product,
-  services,
   Sidebar,
   SidebarBrand,
   Text,
@@ -27,21 +26,6 @@ import {
   Transition
 } from '../../../../lib';
 import React, { FormEvent, ReactElement } from 'react';
-
-const handleShowConfirmClicked = async function (): Promise<void> {
-  const action = await services.dialogs.confirm({
-    title: 'Blah',
-    actions: {
-      cancel: 'Cancel',
-      confirm: 'Make it so!'
-    }
-  });
-
-  services.notifications.show({
-    type: 'success',
-    text: `You triggered the ${action} action.`
-  });
-};
 
 const log = function (msg: any): void {
   /* eslint-disable no-console */
@@ -137,10 +121,6 @@ class TestApp extends React.Component<{}, TestAppState> {
               <div id='classNames' className={ classNames({ custom: true }) }>This div has a custom class name using className.</div>
             </section>
             <section>
-              <Headline level='2'>Dialogs</Headline>
-              <Button id='show-confirm' onClick={ handleShowConfirmClicked }>Show confirm</Button>
-            </section>
-            <section>
               <Headline level='2'>Dropdown</Headline>
               <Dropdown value={ dropdownOptionSelected } options={ dropdownOptions } onChange={ (value): void => this.setState({ dropdownOptionSelected: value }) } />
             </section>
@@ -190,21 +170,6 @@ class TestApp extends React.Component<{}, TestAppState> {
                   </FormActions>
                 </Form>
               </Modal>
-            </section>
-            <section>
-              <Headline level='2'>Notifications</Headline>
-              <Button
-                id='show-notification-error'
-                onClick={ (): void => services.notifications.show({ type: 'error', text: 'This is a notification of type error!' }) }
-              >
-                Show notification (error)
-              </Button>
-              <Button
-                id='show-notification-success'
-                onClick={ (): void => services.notifications.show({ type: 'success', text: 'This is a notification of type success!' }) }
-              >
-                Show notification (success)
-              </Button>
             </section>
             <section>
               <Headline level='2'>Text</Headline>
