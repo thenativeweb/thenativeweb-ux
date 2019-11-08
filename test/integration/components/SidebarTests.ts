@@ -1,10 +1,10 @@
 import assert from 'assertthat';
-import browser from '../../shared/browser';
-import environment from '../../shared/environment';
+import { browser } from '../../shared/browser';
+import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
 
 suite('components/Sidebar', function (): void {
-  this.timeout(5 * 1000);
+  this.timeout(environment.integrationTestTimeOut);
 
   let page: Page;
 
@@ -17,7 +17,7 @@ suite('components/Sidebar', function (): void {
   });
 
   test('is 80px wide.', async (): Promise<void> => {
-    await page.goto(`${environment.url}/components/`);
+    await page.goto(`${environment.baseUrl}/components/`);
     await page.waitForSelector('#sidebar');
 
     const sidebar = await page.$('#sidebar');
@@ -28,7 +28,7 @@ suite('components/Sidebar', function (): void {
 
   suite('SidebarItem', (): void => {
     test('expands on hover and subitems are clickable.', async (): Promise<void> => {
-      await page.goto(`${environment.url}/components/`);
+      await page.goto(`${environment.baseUrl}/components/`);
       await page.waitForSelector('#sidebar-item-account');
 
       const parentItem = await page.$('#sidebar-item-account');

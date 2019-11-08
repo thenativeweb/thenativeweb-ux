@@ -1,12 +1,10 @@
 import assert from 'assertthat';
-import browser from '../shared/browser';
-import environment from '../shared/environment';
+import { browser } from '../shared/browser';
+import { environment } from '../shared/environment';
 import { Page } from 'puppeteer';
 
 suite('with-next-js/client-side-rendering', function (): void {
-  // Next.js needs a little bit more time on the first render of a page.
-  // As this can vary depending on the complexity we give it a little bit more time.
-  this.timeout(15 * 1000);
+  this.timeout(environment.integrationTestTimeOut);
 
   let page: Page;
 
@@ -19,7 +17,7 @@ suite('with-next-js/client-side-rendering', function (): void {
   });
 
   test('takes over once server side rendering is complete.', async (): Promise<void> => {
-    await page.goto(`${environment.url}`);
+    await page.goto(`${environment.baseUrl}`);
     const button = await page.$('#button');
 
     await new Promise(async (resolve): Promise<void> => {
@@ -34,7 +32,7 @@ suite('with-next-js/client-side-rendering', function (): void {
   });
 
   test('removes server side rendered styles.', async (): Promise<void> => {
-    await page.goto(`${environment.url}`);
+    await page.goto(`${environment.baseUrl}`);
     await page.waitForSelector('#index-page');
     const styleTag = await page.$('#server-side-styles');
 

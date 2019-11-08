@@ -1,4 +1,4 @@
-import environment from './environment';
+import { environment } from './environment';
 import puppeteer, { Browser, Page } from 'puppeteer';
 
 let browserInstance: Browser | undefined;
@@ -9,10 +9,13 @@ const browser = {
   }: {
     viewport?: { width: number; height: number };
   } = {}): Promise<Page> {
-    const { headless } = environment;
+    const { headless, slowMo } = environment;
 
     if (!browserInstance) {
-      browserInstance = await puppeteer.launch({ headless });
+      browserInstance = await puppeteer.launch({
+        headless,
+        slowMo
+      });
     }
 
     const page = await browserInstance.newPage();
@@ -27,4 +30,4 @@ const browser = {
   }
 };
 
-export default browser;
+export { browser };

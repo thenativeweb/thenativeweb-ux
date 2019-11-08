@@ -1,4 +1,4 @@
-import nginx from '../shared/containers/nginx';
+import { nginx } from '../shared/containers/nginx';
 
 /* eslint-disable @typescript-eslint/no-floating-promises */
 (async function (): Promise<void> {

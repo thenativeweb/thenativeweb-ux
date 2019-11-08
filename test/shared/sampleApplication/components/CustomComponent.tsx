@@ -1,5 +1,5 @@
 import { Styles } from 'jss';
-import { classNames, createUseStyles, Theme } from '../../../lib';
+import { classNames, createUseStyles, Theme } from '../../../../lib';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 const useStyles = createUseStyles<Theme, 'CustomComponent' | 'SizeLg'>((theme: Theme): Styles => ({

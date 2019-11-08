@@ -4,7 +4,7 @@ import {
   Button,
   ThemeProvider,
   Website
-} from '../../../lib';
+} from '../../../../lib';
 import React, { ReactElement } from 'react';
 
 const Page = (): ReactElement => (

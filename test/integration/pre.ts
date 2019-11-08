@@ -1,11 +1,11 @@
-import nginx from '../shared/containers/nginx';
+import buntstift from 'buntstift';
+import { nginx } from '../shared/containers/nginx';
 import path from 'path';
 import shell from 'shelljs';
 
 /* eslint-disable @typescript-eslint/no-floating-promises */
 (async (): Promise<void> => {
   const projectRoot = path.join(__dirname, '..', '..');
-  const nextJsExampleRoot = path.join(projectRoot, 'examples', 'with-next-js');
 
   // Remove temporary build folder from previous tests.
   shell.rm('-rf', [
@@ -17,28 +17,29 @@ import shell from 'shelljs';
   let childProcess = shell.exec('npx roboter build', { cwd: projectRoot });
 
   if (childProcess.code !== 0) {
-    throw new Error('Failed to create build.');
-  }
+    buntstift.error('Failed to create build.');
 
-  // Install the depencencies of the Next.js example.
-  if (!shell.test('-d', path.join(nextJsExampleRoot, 'node_modules'))) {
-    childProcess = shell.exec('npm install', { cwd: nextJsExampleRoot });
-
-    if (childProcess.code !== 0) {
-      throw new Error('Failed to install example dependencies.');
-    }
+    buntstift.exit(1);
   }
 
   // Build a static export of the Next.js example that we can then serve
   // using nginx. If we would run the Next.js app as a server,
   // Next.js compiles pages lazily. This would result in higher and unpredicatable
   // timeouts for the tests.
-  childProcess = shell.exec('npm run export', { cwd: nextJsExampleRoot });
+  childProcess = shell.exec('npm run export-sample-application', { cwd: projectRoot });
 
   if (childProcess.code !== 0) {
-    throw new Error('Failed to create static export from Next.js example.');
+    buntstift.error('Failed to create static export from Next.js sample application.');
+
+    buntstift.exit(1);
   }
 
-  await nginx.start();
+  try {
+    await nginx.start();
+  } catch {
+    buntstift.error('Failed to serve sample application for integration tests.');
+    buntstift.exit(1);
+  }
 })();
+
 /* eslint-enable @typescript-eslint/no-floating-promises */

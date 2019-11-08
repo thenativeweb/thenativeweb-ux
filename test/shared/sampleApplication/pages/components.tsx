@@ -1,4 +1,4 @@
-import { DropdownOption } from '../../../lib/components/input/Dropdown';
+import { DropdownOption } from '../../../../lib/components/input/Dropdown';
 import {
   Application,
   Brand,
@@ -30,7 +30,7 @@ import {
   TextBox,
   Toggle,
   Transition
-} from '../../../lib';
+} from '../../../../lib';
 import React, { FormEvent, ReactElement } from 'react';
 
 const handleShowConfirmClicked = async function (): Promise<void> {

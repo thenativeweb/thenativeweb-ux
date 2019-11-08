@@ -1,9 +1,9 @@
-import browser from '../../shared/browser';
-import environment from '../../shared/environment';
+import { browser } from '../../shared/browser';
+import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
 
 suite('themes/breakpoints', function (): void {
-  this.timeout(5 * 1000);
+  this.timeout(environment.integrationTestTimeOut);
 
   let page: Page;
 
@@ -20,7 +20,7 @@ suite('themes/breakpoints', function (): void {
       viewport: { width: viewportWidth, height: 600 }
     });
 
-    await page.goto(`${environment.url}/breakpoints/`);
+    await page.goto(`${environment.baseUrl}/breakpoints/`);
 
     for (const selector of visibleSelectors) {
       await page.waitForSelector(selector, {
