@@ -13,7 +13,7 @@ const log = function (msg: any): void {
 
 const handleShowConfirmClicked = async function (): Promise<void> {
   const action = await services.dialogs.confirm({
-    title: 'Blah',
+    title: 'Would you like to confirm this action?',
     actions: {
       cancel: 'Cancel',
       confirm: 'Confirm!'
