@@ -1,4 +1,4 @@
-import { viewport as defaultViewport, headless, slowMo} from './environment';
+import { viewport as defaultViewport, headless, slowMotion } from './environment';
 import puppeteer, { Browser, Page } from 'puppeteer';
 
 let browserInstance: Browser | undefined;
@@ -12,7 +12,7 @@ const browser = {
     if (!browserInstance) {
       browserInstance = await puppeteer.launch({
         headless,
-        slowMo
+        slowMo: slowMotion
       });
     }
 

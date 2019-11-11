@@ -23,7 +23,7 @@ const viewport = { width: 1280, height: 800 };
 const headless = !debugModeEnabled;
 
 // Slow down puppeteer operations by the specified amount of milliseconds.
-const slowMo = debugModeEnabled ? 250 : 0;
+const slowMotion = debugModeEnabled ? 250 : 0;
 
 export {
   integrationTestTimeOut,
@@ -31,5 +31,5 @@ export {
   getIntegrationTestUrl,
   viewport,
   headless,
-  slowMo
+  slowMotion
 };
