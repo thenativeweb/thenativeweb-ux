@@ -19,7 +19,6 @@ const getIntegrationTestUrl = function (absolutePagePath = '/'): string {
 
 const viewport = { width: 1280, height: 800 };
 
-// Turn off headless mode to see what the Puppeteer is acutally doing.
 const headless = !debugModeEnabled;
 
 // Slow down puppeteer operations by the specified amount of milliseconds.
