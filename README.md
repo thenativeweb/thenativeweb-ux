@@ -89,7 +89,7 @@ The second option is to verify that all the pupeteer commands are executed succe
 $ DEBUG=true npx roboter test --type integration
 ```
 
-This mode makes most sense if you also limit tests that should be run using mocha's 'only' option.
+This mode makes most sense if you also limit tests that should be run using mocha's `only` option.
 
 ## Running the build
 
