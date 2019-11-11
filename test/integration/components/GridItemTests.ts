@@ -1,10 +1,10 @@
 import assert from 'assertthat';
 import { browser } from '../../shared/browser';
-import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
 suite('GridItem', function (): void {
-  this.timeout(environment.integrationTestTimeOut);
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
@@ -15,8 +15,8 @@ suite('GridItem', function (): void {
   });
 
   suite('columnSpan', (): void => {
-    test('spans the GridItem across multiple columns of the parent Grid.', async (): Promise<void> => {
-      const url = environment.getIntegrationTestUrl('/integration/components/layout/gridItem');
+    test('spans the GridItem across multiple columns of the parent grid.', async (): Promise<void> => {
+      const url = getIntegrationTestUrl('/integration/components/layout/gridItem');
 
       page = await browser.setupPage();
       await page.goto(url);
@@ -36,7 +36,7 @@ suite('GridItem', function (): void {
     });
 
     test('spans GridItems across multiple columns using repsonsive properties.', async (): Promise<void> => {
-      const url = environment.getIntegrationTestUrl('/integration/components/layout/gridItem');
+      const url = getIntegrationTestUrl('/integration/components/layout/gridItem');
 
       page = await browser.setupPage({ viewport: { width: 590, height: 600 }});
 

@@ -1,9 +1,9 @@
 import { browser } from '../../shared/browser';
-import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
 suite('notifications', function (): void {
-  this.timeout(environment.integrationTestTimeOut);
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
@@ -16,7 +16,7 @@ suite('notifications', function (): void {
   });
 
   test('shows a notification.', async (): Promise<void> => {
-    const url = environment.getIntegrationTestUrl('/integration/services/notifications');
+    const url = getIntegrationTestUrl('/integration/services/notifications');
 
     await page.goto(url);
     await page.waitForSelector('#show-notification-error');

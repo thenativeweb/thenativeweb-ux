@@ -1,16 +1,14 @@
-import { environment } from './environment';
+import { viewport as defaultViewport, headless, slowMo} from './environment';
 import puppeteer, { Browser, Page } from 'puppeteer';
 
 let browserInstance: Browser | undefined;
 
 const browser = {
   async setupPage ({
-    viewport = environment.viewport
+    viewport = defaultViewport
   }: {
     viewport?: { width: number; height: number };
   } = {}): Promise<Page> {
-    const { headless, slowMo } = environment;
-
     if (!browserInstance) {
       browserInstance = await puppeteer.launch({
         headless,

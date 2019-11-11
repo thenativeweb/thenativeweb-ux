@@ -1,19 +1,19 @@
 import axios from 'axios';
 import buntstift from 'buntstift';
-import { environment } from '../environment';
 import { oneLine } from 'common-tags';
 import path from 'path';
 import retry from 'async-retry';
 import shell from 'shelljs';
+import { getIntegrationTestUrl, integrationTestPort } from '../environment';
 
 const nginx = {
   async start (): Promise<void> {
-    const url = environment.getIntegrationTestUrl();
+    const url = getIntegrationTestUrl();
 
     const childProcess = shell.exec(oneLine`
       docker run
         -d
-        -p ${environment.integrationTestPort}:80
+        -p ${integrationTestPort}:80
         -v ${path.join(__dirname, '..', '..', '..', 'test', 'shared', 'sampleApplication', 'out')}:/usr/share/nginx/html
         --name test-nginx
         nginx:1.17.4-alpine

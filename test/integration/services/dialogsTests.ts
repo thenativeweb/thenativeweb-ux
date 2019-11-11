@@ -1,10 +1,10 @@
 import assert from 'assertthat';
 import { browser } from '../../shared/browser';
-import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
 suite('dialogs', function (): void {
-  this.timeout(environment.integrationTestTimeOut);
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
@@ -18,7 +18,7 @@ suite('dialogs', function (): void {
 
   suite('confirm', (): void => {
     test('shows a confirm dialog and resolves once the confirm action has been clicked.', async (): Promise<void> => {
-      const url = environment.getIntegrationTestUrl('/integration/services/dialogs');
+      const url = getIntegrationTestUrl('/integration/services/dialogs');
 
       await page.goto(url);
       await page.waitForSelector('#show-confirm');
@@ -45,7 +45,7 @@ suite('dialogs', function (): void {
     });
 
     test('shows a confirm dialog and resolves once the cancel action has been clicked.', async (): Promise<void> => {
-      const url = environment.getIntegrationTestUrl('/integration/services/dialogs');
+      const url = getIntegrationTestUrl('/integration/services/dialogs');
 
       await page.goto(url);
       await page.waitForSelector('#show-confirm');

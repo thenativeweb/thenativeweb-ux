@@ -1,10 +1,10 @@
 import assert from 'assertthat';
 import { browser } from '../../shared/browser';
-import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
 suite('Container', function (): void {
-  this.timeout(environment.integrationTestTimeOut);
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
@@ -14,7 +14,7 @@ suite('Container', function (): void {
 
   suite('isScrollable', (): void => {
     test('causes the container to be scrollable if set to true and the viewport is smaller than the container.', async (): Promise<void> => {
-      const url = environment.getIntegrationTestUrl('/integration/components/layout/container/isScrollableTrue');
+      const url = getIntegrationTestUrl('/integration/components/layout/container/isScrollableTrue');
 
       page = await browser.setupPage({
         viewport: { width: 600, height: 250 }
@@ -32,9 +32,9 @@ suite('Container', function (): void {
       assert.that(overflow).is.equalTo('auto');
     });
 
-    test('causes the child to be partially hidden it larger than the container.', async (): Promise<void> => {
+    test('causes the child to be partially hidden if larger than the container.', async (): Promise<void> => {
       page = await browser.setupPage();
-      const url = environment.getIntegrationTestUrl('/integration/components/layout/container/isScrollableFalse');
+      const url = getIntegrationTestUrl('/integration/components/layout/container/isScrollableFalse');
 
       await page.goto(url);
       await page.waitForSelector('#container');

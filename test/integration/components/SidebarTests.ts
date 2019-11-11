@@ -1,10 +1,10 @@
 import assert from 'assertthat';
 import { browser } from '../../shared/browser';
-import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
 suite('Sidebar', function (): void {
-  this.timeout(environment.integrationTestTimeOut);
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
@@ -17,7 +17,7 @@ suite('Sidebar', function (): void {
   });
 
   test('is 80px wide.', async (): Promise<void> => {
-    const url = environment.getIntegrationTestUrl('/integration/components/layout/sidebar');
+    const url = getIntegrationTestUrl('/integration/components/layout/sidebar');
 
     await page.goto(url);
     await page.waitForSelector('#sidebar');

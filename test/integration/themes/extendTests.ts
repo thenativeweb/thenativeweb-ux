@@ -1,10 +1,10 @@
 import assert from 'assertthat';
 import { browser } from '../../shared/browser';
-import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
 suite('extend', function (): void {
-  this.timeout(environment.integrationTestTimeOut);
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
@@ -13,7 +13,7 @@ suite('extend', function (): void {
   });
 
   test('creates a customized theme that can hold additional properties.', async (): Promise<void> => {
-    const url = environment.getIntegrationTestUrl('/themes');
+    const url = getIntegrationTestUrl('/themes');
 
     page = await browser.setupPage();
 

@@ -1,9 +1,9 @@
 import { browser } from '../../shared/browser';
-import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
 suite('breakpoints', function (): void {
-  this.timeout(environment.integrationTestTimeOut);
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
@@ -16,7 +16,7 @@ suite('breakpoints', function (): void {
     visibleSelectors: string[];
     hiddenSelectors: string[];
   }): Promise<void> {
-    const url = environment.getIntegrationTestUrl('/integration/themes/breakpoints');
+    const url = getIntegrationTestUrl('/integration/themes/breakpoints');
 
     page = await browser.setupPage({
       viewport: { width: viewportWidth, height: 600 }

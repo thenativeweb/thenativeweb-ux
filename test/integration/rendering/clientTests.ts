@@ -1,17 +1,17 @@
 import assert from 'assertthat';
 import { browser } from '../../shared/browser';
-import { environment } from '../../shared/environment';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
 suite('Client', function (): void {
-  this.timeout(environment.integrationTestTimeOut);
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
   setup(async (): Promise<void> => {
     page = await browser.setupPage();
 
-    const url = environment.getIntegrationTestUrl('/integration/rendering/clientSide');
+    const url = getIntegrationTestUrl('/integration/rendering/clientSide');
 
     await page.goto(url);
   });
