@@ -24,8 +24,8 @@ const nginx = {
     }
 
     try {
-      // We only do 3 retries here as nginx starts pretty fast.
-      // Otherwise we wait for a very long time if nginx does not serve the files correctly.
+      // We only do 3 retries here as nginx starts pretty fast. Otherwise we
+      // wait for a very long time if nginx does not serve the files correctly.
       await retry(async (): Promise<void> => await axios.get(url), { retries: 3 });
     } catch (ex) {
       buntstift.info(ex.message);

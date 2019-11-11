@@ -12,8 +12,8 @@ import shell from 'shelljs';
     path.join(projectRoot, 'build')
   ]);
 
-  // Create a build via roboter, so
-  // that the test application always uses the the latest version.
+  // Create a build via roboter, so that the test application always uses the
+  // latest version.
   let childProcess = shell.exec('npx roboter build', { cwd: projectRoot });
 
   if (childProcess.code !== 0) {
@@ -22,10 +22,10 @@ import shell from 'shelljs';
     buntstift.exit(1);
   }
 
-  // Build a static export of the Next.js example that we can then serve
-  // using nginx. If we would run the Next.js app as a server,
-  // Next.js compiles pages lazily. This would result in higher and unpredicatable
-  // timeouts for the tests.
+  // Build a static export of the Next.js example that we can then serve using
+  // nginx. If we would run the Next.js app as a server, Next.js compiles pages
+  // lazily. This would result in higher and unpredicatable timeouts for the
+  // tests.
   childProcess = shell.exec('npm run export-sample-application', { cwd: projectRoot });
 
   if (childProcess.code !== 0) {

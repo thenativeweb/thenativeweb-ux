@@ -9,7 +9,7 @@ const integrationTestTimeOut = debugModeEnabled ? defaultIntegrationTestTimeout 
 const getIntegrationTestUrl = function (absolutePagePath = '/'): string {
   let path = absolutePagePath;
 
-  // If we provide a path without a trailing slash, we add it to satisfy nginx
+  // If we provide a path without a trailing slash, we add it to satisfy nginx.
   if (absolutePagePath !== '/' && !absolutePagePath.endsWith('/')) {
     path = `${absolutePagePath}/`;
   }
@@ -22,7 +22,7 @@ const viewport = { width: 1280, height: 800 };
 // Turn off headless mode to see what the Puppeteer is acutally doing.
 const headless = !debugModeEnabled;
 
-// Slow down Puppeteer operations by the specified amount of milliseconds
+// Slow down puppeteer operations by the specified amount of milliseconds.
 const slowMo = debugModeEnabled ? 250 : 0;
 
 export {
