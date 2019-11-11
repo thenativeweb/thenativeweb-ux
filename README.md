@@ -61,7 +61,11 @@ The complete documentation for all components can be found at [ux.thenativeweb.i
 
 ### Viewing the Next.js sample application
 
-The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how `thenativeweb-ux` can be used from within a Next.js project.
+The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how `thenativeweb-ux` can be used from within a Next.js project. To run the sample application use the following command:
+
+```shell
+$ npm run start-sample-application
+```
 
 ### Debugging integration tests
 
@@ -79,7 +83,7 @@ Then you can point your browser to the failing test page and verify if it render
 
 #### 2. Running the tests with UI and in slow motion
 
-The second option is to verify that all the pupeteer commands are executed succesfully which is much easier to do when puppeteer is not running in headless mode. Set the environment variable `DEBUG` to `true`. This will start Puppeteer in non-headless mode and slow down each operation.
+The second option is to verify that all the pupeteer commands are executed succesfully which is much easier to do when puppeteer is not running in headless mode. Set the environment variable `DEBUG` to `true`. This will start puppeteer in non-headless mode and slow down each operation.
 
 ```shell
 $ DEBUG=true npx roboter test --type integration
