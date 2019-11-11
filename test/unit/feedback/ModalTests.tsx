@@ -1,10 +1,10 @@
 import act from '../../shared/act';
 import assert from 'assertthat';
 import { click } from '../../shared/eventDispatchers';
+import getPortalRootNode from '../../../lib/services/getPortalRootNode';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Modal, ThemeProvider } from '../../../lib';
-import getPortalRootNode from '../../../lib/services/getPortalRootNode';
 
 suite('Modal', (): void => {
   let container: Element;
@@ -28,14 +28,14 @@ suite('Modal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Modal isVisible={ true } onCancel={ onCancel } />
+          <Modal className='Modal-for-testing-1' isVisible={ true } onCancel={ onCancel } />
         </ThemeProvider>,
         container
       );
     });
 
-    const modal = getPortalRootNode().querySelector<HTMLElement>('[class^=Modal]');
-    const backdrop = modal!.querySelector<HTMLElement>('[class^=Backdrop]');
+    const modal = getPortalRootNode().querySelector<HTMLElement>('.Modal-for-testing-1');
+    const backdrop = getPortalRootNode().querySelector<HTMLElement>('[class^=Backdrop]');
 
     assert.that(modal).is.not.null();
 
@@ -44,5 +44,22 @@ suite('Modal', (): void => {
     });
 
     assert.that(canceled).is.true();
+  });
+
+  test('returns null if isVisible is set to false.', async (): Promise<void> => {
+    const onCancel = (): void => {};
+
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Modal className='Modal-for-testing-2' isVisible={ false } onCancel={ onCancel } />
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const modal = getPortalRootNode().querySelector<HTMLElement>('.Modal-for-testing-2');
+
+    assert.that(modal).is.null();
   });
 });
