@@ -13,7 +13,7 @@ interface ModalProps {
   size?: 'sm' | 'md' | 'lg' | 'fullscreen';
   padding?: 'default' | 'none';
   showHeader?: boolean;
-  header?: ReactNode;
+  header?: string;
   onKeyDown?: (key: string, event: KeyboardEvent) => void;
 }
 
