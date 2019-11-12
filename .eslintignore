@@ -1,3 +1,2 @@
-examples/with-next-js/node_modules
-examples/with-next-js/out
-examples/with-next-js/.next
+test/shared/sampleApplication/out
+test/shared/sampleApplication/.next

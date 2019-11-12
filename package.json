@@ -52,6 +52,7 @@
     "common-tags": "1.8.0",
     "jsdom": "15.2.1",
     "next": "9.1.3",
+    "processenv": "2.0.1",
     "puppeteer": "2.0.0",
     "react": "16.11.0",
     "react-docgen-typescript": "1.15.1",
@@ -68,7 +69,9 @@
   },
   "scripts": {
     "build": "docker build -t thenativeweb/ux .",
-    "styleguide": "styleguidist server"
+    "styleguide": "styleguidist server",
+    "start-sample-application": "cd test/shared/sampleApplication && npx next dev",
+    "export-sample-application": "cd test/shared/sampleApplication && npx next build && npx next export"
   },
   "repository": {
     "type": "git",

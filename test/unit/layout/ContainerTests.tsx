@@ -147,7 +147,10 @@ suite('Container', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Container id='some-id' isScrollable={ true }>
+          <Container className='container' isScrollable={ true }>
+            <div>Container</div>
+          </Container>
+          <Container className='container' isScrollable={ false }>
             <div>Container</div>
           </Container>
         </ThemeProvider>,
@@ -155,8 +158,9 @@ suite('Container', (): void => {
       );
     });
 
-    const containerDiv = container.querySelector('#some-id');
+    const [ scrollable, nonScrollable ] = toArray(container.querySelectorAll('.container'));
 
-    assert.that(containerDiv!.className).is.containing('IsScrollable');
+    assert.that(scrollable.className).is.containing('IsScrollable');
+    assert.that(nonScrollable.className).is.containing('IsNotScrollable');
   });
 });

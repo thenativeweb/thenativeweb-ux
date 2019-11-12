@@ -3,7 +3,7 @@ import {
   createUseStyles,
   Theme,
   Website
-} from '../../../lib';
+} from '../../../../../../lib';
 import React, { ReactElement } from 'react';
 
 type ClassNames =

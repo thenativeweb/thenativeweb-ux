@@ -1,10 +1,10 @@
 import assert from 'assertthat';
-import browser from '../../shared/browser';
-import environment from '../../shared/environment';
+import { browser } from '../../shared/browser';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
-suite('themes', function (): void {
-  this.timeout(5 * 1000);
+suite('extend', function (): void {
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
@@ -12,16 +12,16 @@ suite('themes', function (): void {
     await browser.teardownPage(page);
   });
 
-  suite('extend', (): void => {
-    test('creates a customized theme that can hold additional properties.', async (): Promise<void> => {
-      page = await browser.setupPage();
+  test('creates a customized theme that can hold additional properties.', async (): Promise<void> => {
+    const url = getIntegrationTestUrl('/themes');
 
-      await page.goto(`${environment.url}/themes/`);
+    page = await browser.setupPage();
 
-      const customComponent = await page.$('#custom-component');
-      const boundingBox = await customComponent!.boundingBox();
+    await page.goto(url);
 
-      assert.that(boundingBox!.width).is.equalTo(42);
-    });
+    const customComponent = await page.$('#custom-component');
+    const boundingBox = await customComponent!.boundingBox();
+
+    assert.that(boundingBox!.width).is.equalTo(42);
   });
 });

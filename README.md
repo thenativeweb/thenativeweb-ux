@@ -59,18 +59,37 @@ import { Button } from 'thenativeweb-ux';
 
 The complete documentation for all components can be found at [ux.thenativeweb.io](https://ux.thenativeweb.io).
 
-### Running the sample applications
+### Viewing the Next.js sample application
 
-There are sample applications that show how `thenativeweb-ux` can be used with various technologies:
-
-- [Webpack](examples/with-webpack)
-- [Next.js](examples/with-next-js)
-
-To run a sample application, install its dependencies, and use the following command:
+The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how `thenativeweb-ux` can be used from within a Next.js project. To run the sample application use the following command:
 
 ```shell
-$ npx roboter serve
+$ npm run start-sample-application
 ```
+
+### Debugging integration tests
+
+This project uses [puppeteer](https://github.com/GoogleChrome/puppeteer) to verify that components render correctly inside a browser. By default these tests are run in headless mode. As debugging integration tests in headless mode can be painful there are two options to debug integration tests visually.
+
+#### 1. Viewing the failing test page in a browser
+
+The first option to debug a failing integration test is to view the failing test page in a browser without running the tests. Therefore you need to run the sample application using the following command:
+
+```shell
+$ npm run start-sample-application
+```
+
+Then you can point your browser to the failing test page and verify if it renders correctly.
+
+#### 2. Running the tests with UI and in slow motion
+
+The second option is to verify that all the pupeteer commands are executed succesfully which is much easier to do when puppeteer is not running in headless mode. Set the environment variable `DEBUG` to `true`. This will start puppeteer in non-headless mode and slow down each operation.
+
+```shell
+$ DEBUG=true npx roboter test --type integration
+```
+
+This mode makes most sense if you also limit tests that should be run using mocha's `only` option.
 
 ## Running the build
 

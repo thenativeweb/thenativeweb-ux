@@ -1,7 +1,6 @@
-import { DropdownOption } from '../../../lib/components/input/Dropdown';
+import { DropdownOption } from '../../../../lib/components/input/Dropdown';
 import {
   Application,
-  Brand,
   BusyIndicator,
   Button,
   CheckBox,
@@ -12,41 +11,21 @@ import {
   Dropdown,
   Form,
   FormActions,
-  Grid,
-  GridItem,
   Headline,
   Icon,
   Link,
   Message,
   Modal,
   Product,
-  services,
   Sidebar,
   SidebarBrand,
-  SidebarFooter,
-  SidebarItem,
   Text,
   TextArea,
   TextBox,
   Toggle,
   Transition
-} from '../../../lib';
+} from '../../../../lib';
 import React, { FormEvent, ReactElement } from 'react';
-
-const handleShowConfirmClicked = async function (): Promise<void> {
-  const action = await services.dialogs.confirm({
-    title: 'Blah',
-    actions: {
-      cancel: 'Cancel',
-      confirm: 'Make it so!'
-    }
-  });
-
-  services.notifications.show({
-    type: 'success',
-    text: `You triggered the ${action} action.`
-  });
-};
 
 const log = function (msg: any): void {
   /* eslint-disable no-console */
@@ -115,29 +94,16 @@ class TestApp extends React.Component<{}, TestAppState> {
 
     return (
       <Application>
-        <Sidebar id='sidebar'>
+        <Sidebar>
           <SidebarBrand><Product name='App' /></SidebarBrand>
-          <SidebarItem iconName='account' id='sidebar-item-account'>
-            <SidebarItem>
-              Authenticated as (anonymous)
-            </SidebarItem>
-            <SidebarItem id='sidebar-item-logout' onClick={ (): void => log('clicked::clicked::logout') }>
-              Logout
-            </SidebarItem>
-          </SidebarItem>
-          <SidebarFooter>
-            <Link href='https://www.thenativeweb.io' isExternal={ true }>
-              <Brand type='minimal' color='monochrome' isInteractive={ true } />
-            </Link>
-          </SidebarFooter>
         </Sidebar>
         <Container isScrollable={ true } vertical='stretch' horizontal='stretch' style={{ padding: '20px' }}>
           <div>
-            <section><Headline>Test app</Headline></section>
+            <section><Headline>Components</Headline></section>
             <section>
               <Headline level='2'>Button</Headline>
               <Button id='button' onClick={ (): void => this.setState({ buttonClicked: true }) }>{ !buttonClicked ? 'Click me' : 'Thanks!' }</Button>
-              <Button id='button-with-icon' icon='heart' onClick={ (): void => log('button-with-icon::clicked') }>Subtle Button</Button>
+              <Button id='button-with-icon' icon='heart' onClick={ (): void => log('button-with-icon::clicked') }>Button with icon</Button>
               <Button id='button-icon-only' icon='heart' onClick={ (): void => log('button-subtle::clicked') } />
               <Button id='button-subtle' isSubtle={ true } onClick={ (): void => log('button-subtle::clicked') }>Subtle Button</Button>
               <Button id='button-subtle' isSubtle={ true } icon='heart' onClick={ (): void => log('button-subtle-with-icon::clicked') }>Subtle Button with icon</Button>
@@ -153,10 +119,6 @@ class TestApp extends React.Component<{}, TestAppState> {
             <section>
               <Headline level='2'>classNames</Headline>
               <div id='classNames' className={ classNames({ custom: true }) }>This div has a custom class name using className.</div>
-            </section>
-            <section>
-              <Headline level='2'>Dialogs</Headline>
-              <Button id='show-confirm' onClick={ handleShowConfirmClicked }>Show confirm</Button>
             </section>
             <section>
               <Headline level='2'>Dropdown</Headline>
@@ -179,15 +141,6 @@ class TestApp extends React.Component<{}, TestAppState> {
                   <Button>Cancel</Button> <Button id='form-submit' isPrimary={ true }>{ !formSubmitted ? 'Submit' : 'Thanks!' }</Button>
                 </ControlGroup>
               </Form>
-            </section>
-            <section>
-              <Headline level='2'>Grid</Headline>
-              <Grid id='grid'>
-                <GridItem columnSpan='6' id='grid-item-span6-first'>First column</GridItem>
-                <GridItem columnSpan='6' id='grid-item-span6-second'>Second column</GridItem>
-                <GridItem columnSpan={{ xs: 12, md: 6 }} id='grid-item-span6-responsive-third'>Third column</GridItem>
-                <GridItem columnSpan={{ xs: 12, md: 6 }} id='grid-item-span6-responsive-fourth'>Fourth column</GridItem>
-              </Grid>
             </section>
             <section>
               <Headline level='2'>Icon</Headline>
@@ -217,21 +170,6 @@ class TestApp extends React.Component<{}, TestAppState> {
                   </FormActions>
                 </Form>
               </Modal>
-            </section>
-            <section>
-              <Headline level='2'>Notifications</Headline>
-              <Button
-                id='show-notification-error'
-                onClick={ (): void => services.notifications.show({ type: 'error', text: 'This is a notification of type error!' }) }
-              >
-                Show notification (error)
-              </Button>
-              <Button
-                id='show-notification-success'
-                onClick={ (): void => services.notifications.show({ type: 'success', text: 'This is a notification of type success!' }) }
-              >
-                Show notification (success)
-              </Button>
             </section>
             <section>
               <Headline level='2'>Text</Headline>

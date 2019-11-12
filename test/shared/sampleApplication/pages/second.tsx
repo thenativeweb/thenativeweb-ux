@@ -7,7 +7,7 @@ import {
   Sidebar,
   SidebarBrand,
   SidebarItem
-} from '../../../lib';
+} from '../../../../lib';
 import React, { ReactElement } from 'react';
 
 const Page = (): ReactElement => (

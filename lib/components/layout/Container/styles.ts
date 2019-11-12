@@ -11,6 +11,7 @@ export type ContainerClassNames =
   'HorizontalRight' |
   'HorizontalStretch' |
   'IsScrollable' |
+  'IsNotScrollable' |
   'VerticalTop' |
   'VerticalCenter'|
   'VerticalBottom' |
@@ -24,7 +25,6 @@ const styles = (theme: Theme): Styles<ContainerClassNames> => ({
     fontSize: theme.font.size.md,
     display: 'flex',
     flexDirection: 'column',
-    overflow: 'hidden',
     width: '100%',
     height: '100%',
 
@@ -109,6 +109,10 @@ const styles = (theme: Theme): Styles<ContainerClassNames> => ({
   IsScrollable: {
     overflow: 'auto',
     '-webkit-overflow-scrolling': 'touch'
+  },
+
+  IsNotScrollable: {
+    overflow: 'hidden'
   }
 });
 

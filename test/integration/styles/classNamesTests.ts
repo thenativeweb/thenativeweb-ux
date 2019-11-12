@@ -1,10 +1,10 @@
 import assert from 'assertthat';
-import browser from '../../shared/browser';
-import environment from '../../shared/environment';
+import { browser } from '../../shared/browser';
 import { Page } from 'puppeteer';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
 
-suite('styles/classNames', function (): void {
-  this.timeout(5 * 1000);
+suite('classNames', function (): void {
+  this.timeout(integrationTestTimeOut);
 
   let page: Page;
 
@@ -17,7 +17,9 @@ suite('styles/classNames', function (): void {
   });
 
   test('creates classes.', async (): Promise<void> => {
-    await page.goto(`${environment.url}/components/`);
+    const url = getIntegrationTestUrl('/components');
+
+    await page.goto(url);
     const hasCustomClass = await page.$eval(
       '#classNames',
       (element: Element): boolean => element.classList.contains('custom')

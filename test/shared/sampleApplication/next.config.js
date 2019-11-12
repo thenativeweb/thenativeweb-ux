@@ -1,6 +1,6 @@
 const path = require('path');
 
-const libraryEntryPointPath = path.resolve(__dirname, '..', '..', 'lib');
+const libraryEntryPointPath = path.resolve(__dirname, '..', '..', '..', 'lib');
 
 module.exports = {
   // We dont't want Next.js to create pages like components.html but components/index.html.

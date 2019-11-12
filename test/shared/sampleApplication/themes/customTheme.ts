@@ -1,4 +1,4 @@
-import createTheme from '../../../lib/themes/createTheme';
+import createTheme from '../../../../lib/themes/createTheme';
 
 const customTheme = createTheme({
   name: 'custom',

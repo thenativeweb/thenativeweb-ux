@@ -4,23 +4,33 @@ import { oneLine } from 'common-tags';
 import path from 'path';
 import retry from 'async-retry';
 import shell from 'shelljs';
+import { getIntegrationTestUrl, integrationTestPort } from '../environment';
 
 const nginx = {
   async start (): Promise<void> {
-    shell.exec(oneLine`
+    const url = getIntegrationTestUrl();
+
+    const childProcess = shell.exec(oneLine`
       docker run
         -d
-        -p 3000:80
-        -v ${path.join(__dirname, '..', '..', '..', 'examples', 'with-next-js', 'out')}:/usr/share/nginx/html
+        -p ${integrationTestPort}:80
+        -v ${path.join(__dirname, '..', '..', '..', 'test', 'shared', 'sampleApplication', 'out')}:/usr/share/nginx/html
         --name test-nginx
         nginx:1.17.4-alpine
     `);
 
+    if (childProcess.code !== 0) {
+      throw new Error('Failed to run nginx docker container.');
+    }
+
     try {
-      await retry(async (): Promise<void> => await axios.get('http://localhost:3000/'));
+      // We only do 3 retries here as nginx starts pretty fast. Otherwise we
+      // wait for a very long time if nginx does not serve the files correctly.
+      await retry(async (): Promise<void> => await axios.get(url), { retries: 3 });
     } catch (ex) {
       buntstift.info(ex.message);
       buntstift.error('Failed to connect to nginx.');
+
       throw ex;
     }
   },
@@ -33,4 +43,4 @@ const nginx = {
   }
 };
 
-export default nginx;
+export { nginx };

@@ -1,18 +1,16 @@
 import {
-  Application,
   Container
-} from '../../../../../../lib';
+} from '../../../../../../../../lib';
 import React, { ReactElement } from 'react';
 
 export default (): ReactElement => (
-  <Application>
-    <div id='sidebar' />
+  <div>
     <Container id='container' vertical='center' horizontal='center' isScrollable={ true }>
       <div style={{ background: 'gold', width: 400 }}>
-        <div style={{ background: 'gold', height: 20 }}>I am very large so my parent is scrollable.</div>
+        <div style={{ background: 'red', height: 20 }} />
         <div style={{ background: 'gold', height: 400 }} />
-        <div style={{ background: 'gold', height: 20 }}>This is the end.</div>
+        <div style={{ background: 'green', height: 20 }} />
       </div>
     </Container>
-  </Application>
+  </div>
 );

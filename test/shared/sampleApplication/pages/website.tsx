@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import {
   Website
-} from '../../../lib';
+} from '../../../../lib';
 import React, { ReactElement } from 'react';
 
 const Page = (): ReactElement => (
