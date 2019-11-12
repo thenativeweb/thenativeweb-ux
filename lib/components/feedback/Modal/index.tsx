@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import { TransitionType } from '../../animation/Transition/TransitionType';
 import { Button, services, Theme, Transition } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
-import React, { FunctionComponent, ReactElement, ReactNode, useCallback, useEffect } from 'react';
+import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
 import styles, { ModalClassNames } from './styles';
 
 interface ModalProps {
