@@ -1,7 +1,6 @@
 # Node.js folders
 *coverage/
 *node_modules/
-report*
 
 # Build artefacts
 *build/
