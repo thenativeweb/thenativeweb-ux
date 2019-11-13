@@ -2,8 +2,8 @@ import act from '../../shared/act';
 import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ControlGroupItem, ThemeProvider } from '../../../lib';
 import toArray from '../../shared/toArray';
+import { ControlGroupItem, ThemeProvider } from '../../../lib';
 
 suite('ControlGroupItem', (): void => {
   let container: Element;
