@@ -1,7 +1,7 @@
 import { Styles } from 'jss';
-import { Theme } from '../../themes';
-import useAutoFocus from '../useAutoFocus';
-import { classNames, createUseStyles } from '../../styles';
+import { Theme } from '../../../themes';
+import useAutoFocus from '../../useAutoFocus';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { ChangeEvent, FocusEvent, FunctionComponent, ReactElement } from 'react';
 import styles, { TextAreaClassNames } from './styles';
 

@@ -26,7 +26,7 @@ import SidebarFooter from './components/layout/SidebarFooter';
 import SidebarItem from './components/layout/SidebarItem';
 import StyleCollector from './components/StyleCollector';
 import Text from './components/typography/Text';
-import TextArea from './components/TextArea';
+import TextArea from './components/input/TextArea';
 import TextBox from './components/TextBox';
 import ThemeProvider from './components/ThemeProvider';
 import Toggle from './components/Toggle';
