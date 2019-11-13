@@ -6,6 +6,9 @@ import Button from './components/input/Button';
 import ButtonHint from './components/input/ButtonHint';
 import CheckBox from './components/input/CheckBox';
 import { Container } from './components/layout/Container';
+import ControlGroup from './components/forms/ControlGroup';
+import ControlGroupDivider from './components/forms/ControlGroupDivider';
+import ControlGroupItem from './components/forms/ControlGroupItem';
 import Dropdown from './components/input/Dropdown';
 import Grid from './components/layout/Grid';
 import GridItem from './components/layout/GridItem';
@@ -34,7 +37,6 @@ import Transition from './components/animation/Transition';
 import TransitionGroup from './components/animation/TransitionGroup';
 import Website from './components/Website';
 import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme, withStyles } from './styles';
-import ControlGroup, { ControlGroupDivider, ControlGroupItem } from './components/ControlGroup';
 import Form, { FormActions, FormRow } from './components/Form';
 import themes, { Theme } from './themes';
 
