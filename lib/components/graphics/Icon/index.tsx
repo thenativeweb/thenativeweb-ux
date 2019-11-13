@@ -1,5 +1,5 @@
-import { Theme } from '../..';
-import { classNames, createUseStyles } from '../../styles';
+import { Theme } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 import styles, { IconClassNames } from './styles';
 
