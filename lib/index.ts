@@ -15,6 +15,8 @@ import Label from './components/typography/Label';
 import Link from './components/Link';
 import LogoFull from './components/graphics/LogoFull';
 import LogoMinimal from './components/graphics/LogoMinimal';
+import LogoTheNativeWeb from './components/graphics/LogoTheNativeWeb';
+import LogoWolkenkit from './components/graphics/LogoWolkenkit';
 import MadeBy from './components/branding/MadeBy';
 import Message from './components/feedback/Message';
 import Modal from './components/feedback/Modal';
@@ -66,6 +68,8 @@ export {
   Link,
   LogoFull,
   LogoMinimal,
+  LogoTheNativeWeb,
+  LogoWolkenkit,
   MadeBy,
   Message,
   Modal,
