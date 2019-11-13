@@ -2,8 +2,8 @@ import act from '../../shared/act';
 import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { TextBox, ThemeProvider } from '../../../lib';
 import toArray from '../../shared/toArray';
+import { TextBox, ThemeProvider } from '../../../lib';
 
 suite('TextBox', (): void => {
   let container: Element;
