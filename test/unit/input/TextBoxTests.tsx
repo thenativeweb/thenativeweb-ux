@@ -51,7 +51,7 @@ suite('TextBox', (): void => {
     assert.that(textBox).is.not.null();
   });
 
-  test('sets classes and property on DOM Elment if disabled is set to true.', async (): Promise<void> => {
+  test('sets classes and property on DOM element if disabled is set to true.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -67,7 +67,7 @@ suite('TextBox', (): void => {
     assert.that(textBox!.className).is.containing('IsDisabled');
   });
 
-  test('sets property on DOM Elment if required is set to true.', async (): Promise<void> => {
+  test('sets property on DOM element if required is set to true.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -82,7 +82,7 @@ suite('TextBox', (): void => {
     assert.that(textBox!.required).is.true();
   });
 
-  test('sets placeholder on DOM Element if defined.', async (): Promise<void> => {
+  test('sets placeholder on DOM element if defined.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -97,7 +97,7 @@ suite('TextBox', (): void => {
     assert.that(textBox!.placeholder).is.equalTo('This is a placeholder.');
   });
 
-  test('sets actual content on DOM Element if value is defined.', async (): Promise<void> => {
+  test('sets actual content on DOM element if value is defined.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -112,7 +112,7 @@ suite('TextBox', (): void => {
     assert.that(textBox!.value).is.equalTo('This is a value.');
   });
 
-  test('sets type on DOM Element if is defined.', async (): Promise<void> => {
+  test('sets type on DOM element if is defined.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
