@@ -43,7 +43,6 @@ suite('TextArea', (): void => {
     const textArea = container.querySelectorAll('#some-id');
 
     assert.that(textArea).is.not.null();
-
   });
 
   test('sets classes for defined property size.', async (): Promise<void> => {
