@@ -1,6 +1,5 @@
 import { createUseStyles } from '../../../styles';
-import { Theme } from '../../..';
-import { LogoFull, LogoMinimal } from '../logos';
+import { LogoFull, LogoMinimal, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { BrandClassNames } from './styles';
 

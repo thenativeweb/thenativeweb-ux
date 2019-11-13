@@ -13,6 +13,8 @@ import Headline from './components/typography/Headline';
 import Icon from './components/graphics/Icon';
 import Label from './components/typography/Label';
 import Link from './components/Link';
+import LogoFull from './components/graphics/LogoFull';
+import LogoMinimal from './components/graphics/LogoMinimal';
 import MadeBy from './components/branding/MadeBy';
 import Message from './components/feedback/Message';
 import Modal from './components/feedback/Modal';
@@ -62,6 +64,8 @@ export {
   Icon,
   Label,
   Link,
+  LogoFull,
+  LogoMinimal,
   MadeBy,
   Message,
   Modal,
