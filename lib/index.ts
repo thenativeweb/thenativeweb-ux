@@ -15,6 +15,8 @@ import Label from './components/typography/Label';
 import Link from './components/Link';
 import MadeBy from './components/branding/MadeBy';
 import Message from './components/feedback/Message';
+import Modal from './components/feedback/Modal';
+import ModalRow from './components/feedback/ModalRow';
 import Pattern from './components/branding/Pattern';
 import Product from './components/branding/Product';
 import services from './services';
@@ -34,7 +36,6 @@ import Website from './components/Website';
 import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme, withStyles } from './styles';
 import ControlGroup, { ControlGroupDivider, ControlGroupItem } from './components/ControlGroup';
 import Form, { FormActions, FormRow } from './components/Form';
-import Modal, { ModalRow } from './components/Modal';
 import themes, { Theme } from './themes';
 
 export {

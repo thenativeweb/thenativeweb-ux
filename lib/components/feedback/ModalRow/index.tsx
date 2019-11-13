@@ -1,20 +1,14 @@
+import { Classes } from 'jss';
 import { createUseStyles } from '../../../styles';
 import { Theme } from '../../..';
-import { Classes, Styles } from 'jss';
 import React, { FunctionComponent, ReactElement } from 'react';
-
-const styles = (theme: Theme): Styles<'ModalRow'> => ({
-  ModalRow: {
-    display: 'flex',
-    marginBottom: `${theme.space(2)}px`
-  }
-});
+import styles, { ModalRowClassNames } from './styles';
 
 interface ModalRowProps {
   classes: Classes;
 }
 
-const useStyles = createUseStyles<Theme, 'ModalRow'>(styles);
+const useStyles = createUseStyles<Theme, ModalRowClassNames>(styles);
 
 const ModalRow: FunctionComponent<ModalRowProps> = ({
   children
