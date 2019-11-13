@@ -5,10 +5,10 @@ import styles, { ControlGroupItemClassNames } from './styles';
 
 interface ControlGroupItemProps {
   className?: string;
+  children: ReactElement;
   adjust?: 'flex' | 'auto';
   helpLink?: string;
-  label: string;
-  isVisible?: boolean;
+  label?: string;
 }
 
 const useStyles = createUseStyles<Theme, ControlGroupItemClassNames>(styles);
