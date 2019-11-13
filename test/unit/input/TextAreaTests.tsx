@@ -61,7 +61,7 @@ suite('TextArea', (): void => {
     assert.that(medium.className).is.containing('SizeMd');
   });
 
-  test('sets classes and property in DOM Element if disabled is set to true.', async (): Promise<void> => {
+  test('sets classes and property in DOM element if disabled is set to true.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>

@@ -27,7 +27,7 @@ import SidebarItem from './components/layout/SidebarItem';
 import StyleCollector from './components/StyleCollector';
 import Text from './components/typography/Text';
 import TextArea from './components/input/TextArea';
-import TextBox from './components/TextBox';
+import TextBox from './components/input/TextBox';
 import ThemeProvider from './components/ThemeProvider';
 import Toggle from './components/Toggle';
 import Transition from './components/animation/Transition';
