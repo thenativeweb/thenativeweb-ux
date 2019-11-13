@@ -10,7 +10,7 @@ import Dropdown from './components/input/Dropdown';
 import Grid from './components/layout/Grid';
 import GridItem from './components/layout/GridItem';
 import Headline from './components/typography/Headline';
-import Icon from './components/Icon';
+import Icon from './components/graphics/Icon';
 import Label from './components/typography/Label';
 import Link from './components/Link';
 import MadeBy from './components/branding/MadeBy';

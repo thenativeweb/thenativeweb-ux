@@ -1,4 +1,4 @@
-import { IconSize } from '../../Icon';
+import { IconSize } from '../../graphics/Icon';
 import { Styles } from 'jss';
 import { classNames, createUseStyles } from '../../../styles';
 import { Icon, Label, Theme } from '../../..';

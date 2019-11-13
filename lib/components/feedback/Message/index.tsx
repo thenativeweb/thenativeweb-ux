@@ -1,4 +1,4 @@
-import Icon from '../../Icon';
+import Icon from '../../graphics/Icon';
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';

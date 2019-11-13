@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { createUseStyles } from '../../styles';
 import Dialogs from '../Dialogs';
-import Icons from '../Icons';
+import Icons from '../graphics/Icons';
 import Notifications from '../Notifications';
 import { Theme } from '../../themes';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
