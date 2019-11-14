@@ -11,4 +11,4 @@ const styles = (theme: Theme): Styles<ButtonHintClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

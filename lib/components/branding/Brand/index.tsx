@@ -1,8 +1,8 @@
 import { createUseStyles } from '../../../styles';
 import { Theme } from '../../..';
+import { BrandClassNames, styles } from './styles';
 import { LogoFull, LogoMinimal } from '../logos';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { BrandClassNames } from './styles';
 
 interface BrandProps {
   color?: 'default' | 'monochrome';
@@ -29,4 +29,4 @@ const Brand: FunctionComponent<BrandProps> = ({
   );
 };
 
-export default Brand;
+export { Brand };

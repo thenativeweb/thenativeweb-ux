@@ -172,4 +172,4 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

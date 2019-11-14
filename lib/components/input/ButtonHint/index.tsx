@@ -1,7 +1,7 @@
 import { createUseStyles } from '../../../styles';
 import { Theme } from '../../..';
+import { ButtonHintClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { ButtonHintClassNames } from './styles';
 
 const useStyles = createUseStyles<Theme, ButtonHintClassNames>(styles);
 
@@ -17,4 +17,4 @@ const ButtonHint: FunctionComponent = ({
   );
 };
 
-export default ButtonHint;
+export { ButtonHint };

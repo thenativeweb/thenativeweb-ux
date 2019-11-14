@@ -1,9 +1,9 @@
 import { IconSize } from '../../graphics/Icon';
 import { Styles } from 'jss';
+import { ButtonClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
 import { Icon, Label, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { ButtonClassNames } from './styles';
 
 interface ButtonProps {
   adjust?: 'flex' | 'auto';
@@ -79,4 +79,4 @@ const Button: FunctionComponent<ButtonProps> = ({
   /* eslint-enable react/button-has-type */
 };
 
-export default Button;
+export { Button };
