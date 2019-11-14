@@ -1,7 +1,7 @@
 import { Theme } from '../..';
 import { classNames, createUseStyles } from '../../styles';
+import { LinkClassNames, styles } from './styles';
 import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode } from 'react';
-import styles, { LinkClassNames } from './styles';
 
 interface LinkProps {
   className?: string;
@@ -42,4 +42,4 @@ const Link: FunctionComponent<LinkProps> = ({
   );
 };
 
-export default Link;
+export { Link };

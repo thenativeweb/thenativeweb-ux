@@ -72,4 +72,4 @@ const styles = (theme: Theme): Styles<ControlGroupItemClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

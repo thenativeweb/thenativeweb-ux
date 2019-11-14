@@ -1,7 +1,7 @@
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { PatternClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { PatternClassNames } from './styles';
 
 interface PatternProps {
   className?: string;
@@ -23,4 +23,4 @@ const Pattern: FunctionComponent<PatternProps> = ({ children, className, type = 
   return <div className={ componentClasses }>{ children }</div>;
 };
 
-export default Pattern;
+export { Pattern };

@@ -2,7 +2,7 @@ import { Styles } from 'jss';
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { TextClassNames } from './styles';
+import { styles, TextClassNames } from './styles';
 
 interface TextProps {
   adjust?: 'flex' | 'auto';
@@ -44,4 +44,4 @@ const Text: FunctionComponent<TextProps> = ({
   );
 };
 
-export default Text;
+export { Text };

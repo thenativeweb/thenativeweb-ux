@@ -15,4 +15,4 @@ const styles = (theme: Theme): Styles<SidebarFooterClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

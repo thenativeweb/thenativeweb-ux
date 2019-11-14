@@ -81,4 +81,4 @@ const styles = (theme: Theme): Styles<DropdownClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

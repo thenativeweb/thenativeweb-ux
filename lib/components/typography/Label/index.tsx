@@ -1,5 +1,5 @@
-import styles from './styles';
 import { classNames, createUseStyles } from '../../../styles';
+import { LabelClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface LabelProps {
@@ -7,7 +7,7 @@ interface LabelProps {
   id?: string;
 }
 
-const useStyles = createUseStyles(styles);
+const useStyles = createUseStyles<LabelClassNames>(styles);
 
 const Label: FunctionComponent<LabelProps> = function ({
   children,
@@ -23,4 +23,4 @@ const Label: FunctionComponent<LabelProps> = function ({
   );
 };
 
-export default Label;
+export { Label };

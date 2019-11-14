@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom';
 import { TransitionType } from '../../animation/Transition/TransitionType';
-import { Button, services, Theme, Transition } from '../../..';
+import { Button, excecutionEnvironment, getPortalRootNode, Theme, Transition } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { ModalClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
-import styles, { ModalClassNames } from './styles';
 
 interface ModalProps {
   isVisible: boolean;
@@ -110,7 +110,7 @@ const Modal: FunctionComponent<ModalProps> = ({
       transitionType = 'Zoom';
   }
 
-  if (!services.excecutionEnvironment.canUseDom) {
+  if (!excecutionEnvironment.canUseDom) {
     return null;
   }
 
@@ -139,8 +139,8 @@ const Modal: FunctionComponent<ModalProps> = ({
         </Transition>
       </div>
     ),
-    services.getPortalRootNode()
+    getPortalRootNode()
   );
 };
 
-export default Modal;
+export { Modal };

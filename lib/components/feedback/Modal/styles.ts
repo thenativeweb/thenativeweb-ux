@@ -167,4 +167,4 @@ const styles = (theme: Theme): Styles<ModalClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

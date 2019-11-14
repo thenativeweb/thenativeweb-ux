@@ -1,7 +1,7 @@
 import { classNames, createUseStyles } from '../../../styles';
+import { DropdownClassNames, styles } from './styles';
 import { Icon, Theme } from '../../..';
 import React, { CSSProperties, FormEvent, FunctionComponent, ReactElement, useCallback, useState } from 'react';
-import styles, { DropdownClassNames } from './styles';
 
 export interface DropdownOption {
   label: string;
@@ -72,4 +72,4 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
   );
 };
 
-export default Dropdown;
+export { Dropdown };

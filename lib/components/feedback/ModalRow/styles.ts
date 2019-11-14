@@ -11,4 +11,4 @@ const styles = (theme: Theme): Styles<'ModalRow'> => ({
   }
 });
 
-export default styles;
+export { styles };

@@ -9,4 +9,4 @@ const styles = (theme: Theme): Styles<CheckBoxClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

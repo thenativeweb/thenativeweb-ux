@@ -30,4 +30,4 @@ const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

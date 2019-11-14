@@ -39,4 +39,4 @@ const styles = (theme: Theme): Styles<MadeByClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

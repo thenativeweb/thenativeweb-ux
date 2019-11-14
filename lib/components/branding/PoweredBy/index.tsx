@@ -1,7 +1,7 @@
-import Product from '../Product';
+import { Product } from '../Product';
 import { createUseStyles, Theme } from '../../..';
+import { PoweredByClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { PoweredByClassNames } from './styles';
 
 interface PoweredByProps {
   product?: 'wolkenkit';
@@ -24,4 +24,4 @@ const PoweredBy: FunctionComponent<PoweredByProps> = ({
   );
 };
 
-export default PoweredBy;
+export { PoweredBy };

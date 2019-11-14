@@ -10,4 +10,4 @@ const styles = (theme: Theme): Styles<SidebarBrandClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

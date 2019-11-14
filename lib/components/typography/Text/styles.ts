@@ -42,4 +42,4 @@ const styles = (theme: Theme): Styles<TextClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

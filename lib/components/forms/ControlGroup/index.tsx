@@ -1,7 +1,7 @@
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { ControlGroupClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { ControlGroupClassNames } from './styles';
 
 interface ControlGroupProps {
   className?: string;
@@ -31,4 +31,4 @@ const ControlGroup: FunctionComponent<ControlGroupProps> = ({
   );
 };
 
-export default ControlGroup;
+export { ControlGroup };

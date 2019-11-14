@@ -1,7 +1,7 @@
 import { createUseStyles } from '../../../styles';
 import { Theme } from '../../..';
+import { ControlGroupDividerClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { ControlGroupDividerClassNames } from './styles';
 
 const useStyles = createUseStyles<Theme, ControlGroupDividerClassNames>(styles);
 
@@ -15,4 +15,4 @@ const ControlGroupDivider: FunctionComponent = (): ReactElement => {
   );
 };
 
-export default ControlGroupDivider;
+export { ControlGroupDivider };

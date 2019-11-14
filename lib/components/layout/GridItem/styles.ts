@@ -76,4 +76,4 @@ const styles = (theme: Theme): Styles => ({
   }
 });
 
-export default styles;
+export { styles };

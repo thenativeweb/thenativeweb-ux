@@ -1,9 +1,9 @@
-import Icon from '../../graphics/Icon';
+import { Icon } from '../../..';
 import { isDomNode } from '../../../utils/isDomNode';
 import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
-import styles, { SidebarItemClassNames } from './styles';
+import { SidebarItemClassNames, styles } from './styles';
 
 interface SidebarItemProps {
   className?: string;
@@ -73,4 +73,4 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
   );
 });
 
-export default SidebarItem;
+export { SidebarItem };

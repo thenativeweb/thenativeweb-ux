@@ -2,8 +2,7 @@ import act from '../../shared/act';
 import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SidebarBrand from '../../../lib/components/layout/SidebarBrand';
-import ThemeProvider from '../../../lib/components/ThemeProvider';
+import { SidebarBrand, ThemeProvider } from '../../../lib';
 
 suite('SidebarBrand', (): void => {
   let container: Element;

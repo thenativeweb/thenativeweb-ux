@@ -53,4 +53,4 @@ const styles = (theme: Theme): Styles<MessageClassNames> => ({
   Content: {}
 });
 
-export default styles;
+export { styles };

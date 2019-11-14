@@ -32,4 +32,4 @@ const spaceDependentProperties = {
   })
 };
 
-export default spaceDependentProperties;
+export { spaceDependentProperties };

@@ -1,7 +1,7 @@
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { IconClassNames, styles } from './styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
-import styles, { IconClassNames } from './styles';
 
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
@@ -51,4 +51,4 @@ const Icon: FunctionComponent<IconProps> = ({
   );
 };
 
-export default Icon;
+export { Icon };

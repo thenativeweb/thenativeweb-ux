@@ -1,8 +1,7 @@
 import { createUseStyles } from '../../styles';
-import services from '../../services';
 import styles from './styles';
 import useForceUpdate from '../useForceUpdate';
-import { Button, Headline, Modal } from '../..';
+import { Button, dialogs, Headline, Modal } from '../..';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
 
 const useStyles = createUseStyles(styles);
@@ -16,20 +15,20 @@ const Dialogs: FunctionComponent = (): ReactElement => {
   }, []);
 
   const handleCancel = useCallback((): void => {
-    services.dialogs.state.confirm.onCancel();
+    dialogs.state.confirm.onCancel();
   }, []);
 
   const handleConfirm = useCallback((): void => {
-    services.dialogs.state.confirm.onConfirm();
+    dialogs.state.confirm.onConfirm();
   }, []);
 
   const handleKeyDown = useCallback((key: string): void => {
     switch (key) {
       case 'Escape':
-        services.dialogs.state.confirm.onCancel();
+        dialogs.state.confirm.onCancel();
         break;
       case 'Enter':
-        services.dialogs.state.confirm.onConfirm();
+        dialogs.state.confirm.onConfirm();
         break;
       default:
         break;
@@ -37,10 +36,10 @@ const Dialogs: FunctionComponent = (): ReactElement => {
   }, []);
 
   useEffect((): () => void => {
-    services.dialogs.on('changed', handleServiceChanged);
+    dialogs.on('changed', handleServiceChanged);
 
     return (): void => {
-      services.dialogs.removeListener('changed', handleServiceChanged);
+      dialogs.removeListener('changed', handleServiceChanged);
     };
   }, []);
 
@@ -48,20 +47,20 @@ const Dialogs: FunctionComponent = (): ReactElement => {
     <Modal
       attach='center'
       showHeader={ false }
-      isVisible={ services.dialogs.state.confirm.isVisible }
+      isVisible={ dialogs.state.confirm.isVisible }
       className={ classes.Dialogs }
       onKeyDown={ handleKeyDown }
       onCancel={ handleCancel }
     >
       <Headline>
-        { services.dialogs.state.confirm.title }
+        { dialogs.state.confirm.title }
       </Headline>
       <div className={ classes.Actions }>
         <Button id='dialogs-confirm-action-cancel' adjust='auto' onClick={ handleCancel }>
-          { services.dialogs.state.confirm.actions.cancel }
+          { dialogs.state.confirm.actions.cancel }
         </Button>
         <Button id='dialogs-confirm-action-confirm' adjust='flex' onClick={ handleConfirm } isPrimary={ true } autoFocus={ true }>
-          { services.dialogs.state.confirm.actions.confirm }
+          { dialogs.state.confirm.actions.confirm }
         </Button>
       </div>
     </Modal>

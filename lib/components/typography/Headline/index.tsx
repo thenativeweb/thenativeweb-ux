@@ -1,7 +1,7 @@
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { HeadlineClassNames, styles } from './styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
-import styles, { HeadlineClassNames } from './styles';
 
 interface HeadlineProps {
   id?: string;
@@ -31,4 +31,4 @@ const Headline: FunctionComponent<HeadlineProps> = ({
   );
 };
 
-export default Headline;
+export { Headline };

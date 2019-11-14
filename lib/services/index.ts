@@ -3,9 +3,13 @@ import ExecutionEnvironmentService from './ExecutionEnvironmentService';
 import getPortalRootNode from './getPortalRootNode';
 import NotificationsService from './NotificationService';
 
-export default {
-  dialogs: new DialogsService(),
-  excecutionEnvironment: new ExecutionEnvironmentService(),
+const dialogs = new DialogsService();
+const excecutionEnvironment = new ExecutionEnvironmentService();
+const notifications = new NotificationsService();
+
+export {
+  dialogs,
+  excecutionEnvironment,
   getPortalRootNode,
-  notifications: new NotificationsService()
+  notifications
 };

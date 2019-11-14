@@ -1,7 +1,7 @@
 import {
   Application,
   Button,
-  services
+  dialogs
 } from '../../../../../../lib';
 import React, { ReactElement } from 'react';
 
@@ -12,7 +12,7 @@ const log = function (msg: any): void {
 };
 
 const handleShowConfirmClicked = async function (): Promise<void> {
-  const action = await services.dialogs.confirm({
+  const action = await dialogs.confirm({
     title: 'Would you like to confirm this action?',
     actions: {
       cancel: 'Cancel',

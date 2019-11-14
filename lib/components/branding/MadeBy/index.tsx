@@ -1,7 +1,7 @@
 import { classNames, createUseStyles } from '../../../styles';
 import { Icon, Link, Theme } from '../../..';
+import { MadeByClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { MadeByClassNames } from './styles';
 
 interface Partner {
   href: string;
@@ -52,4 +52,4 @@ const MadeBy: FunctionComponent<MadeByProps> = ({
   );
 };
 
-export default MadeBy;
+export { MadeBy };

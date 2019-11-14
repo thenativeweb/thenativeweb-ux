@@ -2,8 +2,7 @@ import act from '../../shared/act';
 import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Text from '../../../lib/components/typography/Text';
-import ThemeProvider from '../../../lib/components/ThemeProvider';
+import { Text, ThemeProvider } from '../../../lib';
 
 suite('Text', (): void => {
   let container: Element;
