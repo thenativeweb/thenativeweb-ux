@@ -8,4 +8,4 @@ const useForceUpdate = (): () => void => {
   };
 };
 
-export default useForceUpdate;
+export { useForceUpdate };

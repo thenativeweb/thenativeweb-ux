@@ -1,10 +1,10 @@
 import { createUseStyles } from '../../styles';
-import Notification from './Notification';
+import { Notification } from './Notification';
 import ReactDOM from 'react-dom';
-import useForceUpdate from '../useForceUpdate';
+import { useForceUpdate } from '../useForceUpdate';
 import { excecutionEnvironment, getPortalRootNode, notifications } from '../../services';
+import { NotificationsClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
-import styles, { NotificationsClassNames } from './styles';
 import { Theme, TransitionGroup } from '../..';
 
 const useStyles = createUseStyles<Theme, NotificationsClassNames>(styles);
@@ -43,4 +43,4 @@ const Notifications: FunctionComponent = (): ReactElement | null => {
   );
 };
 
-export default Notifications;
+export { Notifications };

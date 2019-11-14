@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import { createUseStyles } from '../../styles';
-import Dialogs from '../Dialogs';
-import Icons from '../graphics/Icons';
-import Notifications from '../Notifications';
+import { Dialogs } from '../Dialogs';
+import { Icons } from '../graphics/Icons';
+import { Notifications } from '../Notifications';
 import { Theme } from '../../themes';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
-import styles, { WebsiteClassNames } from './styles';
+import { styles, WebsiteClassNames } from './styles';
 
 interface WebsiteProps {
   className?: string;
@@ -39,4 +39,4 @@ const Website: FunctionComponent<WebsiteProps> = ({
   );
 };
 
-export default Website;
+export { Website };

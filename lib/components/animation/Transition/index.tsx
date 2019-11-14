@@ -1,5 +1,5 @@
 import { TransitionType } from './TransitionType';
-import types from './types';
+import { types } from './types';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface TransitionProps {
@@ -21,4 +21,4 @@ const Transition: FunctionComponent<TransitionProps> = ({
   );
 };
 
-export default Transition;
+export { Transition };

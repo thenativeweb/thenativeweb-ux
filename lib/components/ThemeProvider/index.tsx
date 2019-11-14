@@ -11,4 +11,4 @@ const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({ theme = themes.t
   <JssThemeProvider theme={ theme }>{children}</JssThemeProvider>
 );
 
-export default ThemeProvider;
+export { ThemeProvider };

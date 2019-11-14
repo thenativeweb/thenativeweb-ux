@@ -1,5 +1,5 @@
 import anime from 'animejs';
-import defaults from './defaults';
+import { defaults } from './defaults';
 import { Transition } from 'react-transition-group';
 import { TransitionProps } from './TransitionProps';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -40,4 +40,4 @@ const Grow: FunctionComponent<TransitionProps> = ({ children, key, in: fadeIn })
 );
 /* eslint-enable react/destructuring-assignment */
 
-export default Grow;
+export { Grow };

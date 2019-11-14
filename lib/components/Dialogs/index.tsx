@@ -1,6 +1,6 @@
 import { createUseStyles } from '../../styles';
-import styles from './styles';
-import useForceUpdate from '../useForceUpdate';
+import { styles } from './styles';
+import { useForceUpdate } from '../useForceUpdate';
 import { Button, dialogs, Headline, Modal } from '../..';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
 
@@ -67,4 +67,4 @@ const Dialogs: FunctionComponent = (): ReactElement => {
   );
 };
 
-export default Dialogs;
+export { Dialogs };

@@ -109,4 +109,4 @@ const Icons = (): ReactElement => (
   </svg>
 );
 
-export default Icons;
+export { Icons };

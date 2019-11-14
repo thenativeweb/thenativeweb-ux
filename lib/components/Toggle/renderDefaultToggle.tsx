@@ -18,4 +18,4 @@ const renderDefaultToggle = ({ value, isSelected, changeValue, classes }: Render
   </Button>
 );
 
-export default renderDefaultToggle;
+export { renderDefaultToggle };
