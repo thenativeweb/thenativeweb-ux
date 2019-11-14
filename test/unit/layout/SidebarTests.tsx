@@ -1,4 +1,4 @@
-import act from '../../shared/act';
+import { act } from '../../shared/act';
 import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';

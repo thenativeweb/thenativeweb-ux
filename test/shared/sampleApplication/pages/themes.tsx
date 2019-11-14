@@ -1,5 +1,5 @@
 import { CustomComponent } from '../components/CustomComponent';
-import customTheme from '../themes/customTheme';
+import { customTheme } from '../themes/customTheme';
 import {
   Button,
   ThemeProvider,

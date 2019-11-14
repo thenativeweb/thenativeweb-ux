@@ -1,5 +1,5 @@
 import { BrandColors } from './BrandColors';
-import Breakpoints from './Breakpoints';
+import { Breakpoints } from './Breakpoints';
 import { DivisionColors } from './DivisionColors';
 import { FontSizes } from './FontSizes';
 import { InteractionColors } from './InteractionColors';

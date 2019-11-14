@@ -1,8 +1,8 @@
-import act from '../../shared/act';
+import { act } from '../../shared/act';
 import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import toArray from '../../shared/toArray';
+import { toArray } from '../../shared/toArray';
 import { Container, ThemeProvider } from '../../../lib';
 
 suite('Container', (): void => {
