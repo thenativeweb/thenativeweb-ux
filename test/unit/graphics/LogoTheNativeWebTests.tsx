@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import toArray from '../../shared/toArray';
 import { LogoTheNativeWeb, ThemeProvider } from '../../../lib';
 
-suite('LogoThenativeWeb', (): void => {
+suite('LogoTheNativeWeb', (): void => {
   let container: Element;
 
   setup((): void => {

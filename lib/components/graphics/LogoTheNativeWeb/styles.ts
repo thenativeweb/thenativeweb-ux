@@ -1,8 +1,8 @@
 import { Styles } from 'jss';
 
-export type LogoThenativeWebClassNames = 'LogoTheNativeWeb' | 'SizeMd' | 'SizeLg' | 'SizeXl';
+export type LogoTheNativeWebClassNames = 'LogoTheNativeWeb' | 'SizeMd' | 'SizeLg' | 'SizeXl';
 
-const styles: Styles<LogoThenativeWebClassNames> = {
+const styles: Styles<LogoTheNativeWebClassNames> = {
   LogoTheNativeWeb: {},
 
   SizeMd: {
