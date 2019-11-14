@@ -1,19 +1,8 @@
 import { LogoFullProps } from '../LogoFull';
-import styles from './styles';
-import { Theme } from '../../../..';
-import { classNames, createUseStyles } from '../../../../styles';
+import { Theme } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-
-type LogoMinimalClassNames =
-  'LogoMinimal' |
-  'Foreground' |
-  'Background' |
-  'Logo' |
-  'IsMonochrome' |
-  'IsInteractive' |
-  'SizeSm' |
-  'SizeMd' |
-  'SizeLg';
+import styles, { LogoMinimalClassNames } from './styles';
 
 const useStyles = createUseStyles<Theme, LogoMinimalClassNames>(styles);
 
@@ -29,7 +18,7 @@ const Logo: FunctionComponent<LogoMinimalProps> = ({
 }): ReactElement => {
   const classes = useStyles();
 
-  const componentClasses = classNames(classes.Logo, {
+  const componentClasses = classNames(classes.LogoMinimal, {
     [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg',

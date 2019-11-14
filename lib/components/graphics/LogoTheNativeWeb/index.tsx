@@ -1,11 +1,11 @@
 import LogoProps from '../LogoProps';
 import styles from './styles';
-import { classNames, createUseStyles } from '../../../../../styles';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 const useStyles = createUseStyles(styles);
 
-const LogoThenativeWeb: FunctionComponent<LogoProps> = ({
+const LogoTheNativeWeb: FunctionComponent<LogoProps> = ({
   isVisible = true,
   size = 'md'
 }): ReactElement | null => {
@@ -15,7 +15,7 @@ const LogoThenativeWeb: FunctionComponent<LogoProps> = ({
     return null;
   }
 
-  const componentClasses = classNames(classes.LogoThenativeWeb, {
+  const componentClasses = classNames(classes.LogoTheNativeWeb, {
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg',
     [classes.SizeXl]: size === 'xl'
@@ -42,4 +42,4 @@ const LogoThenativeWeb: FunctionComponent<LogoProps> = ({
   );
 };
 
-export default LogoThenativeWeb;
+export default LogoTheNativeWeb;
