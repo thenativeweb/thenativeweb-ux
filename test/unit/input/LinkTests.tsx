@@ -3,7 +3,6 @@ import assert from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, ThemeProvider } from '../../../lib';
-import { AssertionError } from 'assert';
 
 suite('Link', (): void => {
   let container: Element;
