@@ -1,12 +1,21 @@
-import { createUseStyles } from '../../styles';
+import { getPortalRootNode } from '../../services';
 import { styles } from './styles';
 import { useForceUpdate } from '../useForceUpdate';
 import { Button, dialogs, Headline, Modal } from '../..';
+import { classNames, createUseStyles } from '../../styles';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
 
 const useStyles = createUseStyles(styles);
 
-const Dialogs: FunctionComponent = (): ReactElement => {
+interface DialogsProps {
+  className?: string;
+  portalRootNode?: HTMLElement;
+}
+
+const Dialogs: FunctionComponent<DialogsProps> = ({
+  className,
+  portalRootNode = getPortalRootNode()
+}): ReactElement => {
   const classes = useStyles();
   const forceUpdate = useForceUpdate();
 
@@ -45,10 +54,11 @@ const Dialogs: FunctionComponent = (): ReactElement => {
 
   return (
     <Modal
+      portalRootNode={ portalRootNode }
       attach='center'
       showHeader={ false }
       isVisible={ dialogs.state.confirm.isVisible }
-      className={ classes.Dialogs }
+      className={ classNames(classes.Dialogs, className) }
       onKeyDown={ handleKeyDown }
       onCancel={ handleCancel }
     >
