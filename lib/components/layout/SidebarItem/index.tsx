@@ -1,4 +1,4 @@
-import Icon from '../../Icon';
+import Icon from '../../graphics/Icon';
 import { isDomNode } from '../../../utils/isDomNode';
 import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
