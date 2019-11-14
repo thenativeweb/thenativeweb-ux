@@ -1,6 +1,5 @@
-import { Theme } from '../../..';
 import { classNames, createUseStyles, useTheme } from '../../../styles';
-import { LogoTheNativeWeb, LogoWolkenkit } from './logos';
+import { LogoTheNativeWeb, LogoWolkenkit, Theme } from '../../..';
 import { ProducClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 

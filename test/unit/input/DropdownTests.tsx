@@ -16,7 +16,7 @@ suite('Dropdown', (): void => {
     document.body.removeChild(container);
   });
 
-  test('renders although only required properties have been defined.', async (): Promise<void> => {
+  test('renders with required properties.', async (): Promise<void> => {
     const options = [
       {
         label: 'random-label',

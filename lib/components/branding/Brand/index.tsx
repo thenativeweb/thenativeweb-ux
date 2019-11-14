@@ -1,7 +1,6 @@
 import { createUseStyles } from '../../../styles';
-import { Theme } from '../../..';
 import { BrandClassNames, styles } from './styles';
-import { LogoFull, LogoMinimal } from '../logos';
+import { LogoFull, LogoMinimal, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface BrandProps {

@@ -1,11 +1,10 @@
 import { Styles } from 'jss';
-import { Theme } from '../../../..';
+import { Theme } from '../../..';
 
-type LogoMinimalClassNames =
+export type LogoMinimalClassNames =
   'LogoMinimal' |
   'Foreground' |
   'Background' |
-  'Logo' |
   'IsMonochrome' |
   'IsInteractive' |
   'SizeSm' |
@@ -14,16 +13,6 @@ type LogoMinimalClassNames =
 
 const styles = (theme: Theme): Styles<LogoMinimalClassNames> => ({
   LogoMinimal: {
-    display: 'flex',
-    flexDirection: 'column',
-    overflow: 'hidden',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily: theme.font.family.headline,
-    background: theme.color.brand.grayDark
-  },
-
-  Logo: {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',

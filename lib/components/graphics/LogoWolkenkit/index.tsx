@@ -1,6 +1,6 @@
 import LogoProps from '../LogoProps';
-import { Theme } from '../../../../..';
-import { classNames, createUseStyles } from '../../../../../styles';
+import { Theme } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 import styles, { LogoWolkenkitClassNames } from './styles';
 

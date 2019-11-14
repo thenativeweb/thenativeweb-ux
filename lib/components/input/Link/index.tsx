@@ -1,15 +1,14 @@
-import { Theme } from '../..';
-import { classNames, createUseStyles } from '../../styles';
+import { Theme } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
 import { LinkClassNames, styles } from './styles';
-import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode } from 'react';
+import React, { FunctionComponent, MouseEvent, ReactElement } from 'react';
 
 interface LinkProps {
   className?: string;
   isExternal?: boolean;
-  href?: string;
+  href: string;
   id?: string;
   onClick?: (event: MouseEvent) => void;
-  children?: ReactNode;
 }
 
 const useStyles = createUseStyles<Theme, LinkClassNames>(styles);
