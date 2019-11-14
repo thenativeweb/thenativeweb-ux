@@ -1,4 +1,4 @@
-import processenv from 'processenv';
+import { processenv } from 'processenv';
 
 const integrationTestPort = 3000;
 const debugModeEnabled = processenv('DEBUG', false);
