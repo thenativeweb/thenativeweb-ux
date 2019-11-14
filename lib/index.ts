@@ -15,7 +15,7 @@ import GridItem from './components/layout/GridItem';
 import Headline from './components/typography/Headline';
 import Icon from './components/graphics/Icon';
 import Label from './components/typography/Label';
-import Link from './components/Link';
+import Link from './components/input/Link';
 import LogoFull from './components/graphics/LogoFull';
 import LogoMinimal from './components/graphics/LogoMinimal';
 import LogoTheNativeWeb from './components/graphics/LogoTheNativeWeb';

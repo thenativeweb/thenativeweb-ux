@@ -40,6 +40,14 @@ module.exports = {
       components: 'lib/components/typography/**/index.tsx'
     },
     {
+      name: 'Input',
+      components: 'lib/components/input/**/index.tsx'
+    },
+    {
+      name: 'Feedback',
+      components: 'lib/components/feedback/**/index.tsx'
+    },
+    {
       name: 'Components',
       components: 'lib/components/*/index.tsx'
     },
