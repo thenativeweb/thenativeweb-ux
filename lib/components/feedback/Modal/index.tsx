@@ -14,6 +14,7 @@ interface ModalProps {
   padding?: 'default' | 'none';
   showHeader?: boolean;
   header?: string;
+  portalRootNode?: HTMLElement;
   onKeyDown?: (key: string, event: KeyboardEvent) => void;
 }
 
@@ -28,6 +29,7 @@ const Modal: FunctionComponent<ModalProps> = ({
   showHeader = true,
   size = 'sm',
   padding = 'default',
+  portalRootNode = getPortalRootNode(),
   onCancel,
   onKeyDown = (): void => {
     // Intentionally left blank.
@@ -139,7 +141,7 @@ const Modal: FunctionComponent<ModalProps> = ({
         </Transition>
       </div>
     ),
-    getPortalRootNode()
+    portalRootNode
   );
 };
 
