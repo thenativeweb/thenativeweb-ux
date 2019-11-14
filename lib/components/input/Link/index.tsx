@@ -9,7 +9,6 @@ interface LinkProps {
   href: string;
   id?: string;
   onClick?: (event: MouseEvent) => void;
-  children: ReactNode;
 }
 
 const useStyles = createUseStyles<Theme, LinkClassNames>(styles);
