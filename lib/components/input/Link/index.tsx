@@ -1,6 +1,6 @@
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
-import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode } from 'react';
+import React, { FunctionComponent, MouseEvent, ReactElement } from 'react';
 import styles, { LinkClassNames } from './styles';
 
 interface LinkProps {
