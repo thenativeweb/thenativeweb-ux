@@ -2,7 +2,7 @@ A `Container` can be used to position a single child component on a horizontal a
 
 ```javascript
 <Container style={{ height: 100 }}>
-  <div style={{ background: 'gold' }}>I'm a centered child.</div>
+  <div style={{ background: 'deeppink' }}>I'm a centered child.</div>
 </Container>
 ```
 
@@ -25,7 +25,7 @@ initialState = { vertical: 'center', horizontal: 'center' };
     </ControlGroupItem>
   </ControlGroup>
   <Container vertical={ state.vertical } horizontal={ state.horizontal } style={{ height: 200 }}>
-    <div style={{ background: 'gold' }}>I'm a child with vertical set to `{state.vertical}` and horizontal set to `{state.horizontal}`.</div>
+    <div style={{ background: 'deeppink' }}>I'm a child with vertical set to `{state.vertical}` and horizontal set to `{state.horizontal}`.</div>
   </Container>
 </div>
 ```
@@ -35,13 +35,13 @@ initialState = { vertical: 'center', horizontal: 'center' };
 ```javascript
 <div>
   <Container background='dark' style={{ height: 100 }}>
-    <div style={{ background: 'gold' }}>I'm a child on dark background.</div>
+    <div style={{ background: 'deeppink' }}>I'm a child on dark background.</div>
   </Container>
   <Container background='light' style={{ height: 100 }}>
-    <div style={{ background: 'gold' }}>I'm a child on light background.</div>
+    <div style={{ background: 'deeppink' }}>I'm a child on light background.</div>
   </Container>
   <Container background='none' style={{ height: 100 }}>
-    <div style={{ background: 'gold' }}>I'm a child on a transparent background.</div>
+    <div style={{ background: 'deeppink' }}>I'm a child on a transparent background.</div>
   </Container>
 </div>
 ```
@@ -50,9 +50,9 @@ initialState = { vertical: 'center', horizontal: 'center' };
 
 ```javascript
 <Container background='dark' style={{ height: 200 }} isScrollable={ true }>
-  <div style={{ background: 'gold', width: 400 }}>
+  <div style={{ background: 'deeppink', width: 400 }}>
     I am very large so my parent is scrollable.
-    <div style={{ background: 'gold', height: 400 }} />
+    <div style={{ background: 'deeppink', height: 400 }} />
     This is the end.
   </div>
 </Container>
