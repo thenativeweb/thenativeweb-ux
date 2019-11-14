@@ -9,4 +9,4 @@ const styles = (theme: Theme): Styles<FormClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

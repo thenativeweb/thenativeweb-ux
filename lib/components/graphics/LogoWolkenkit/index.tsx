@@ -1,8 +1,8 @@
-import LogoProps from '../LogoProps';
+import { LogoProps } from '../LogoProps';
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { LogoWolkenkitClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { LogoWolkenkitClassNames } from './styles';
 
 const useStyles = createUseStyles<Theme, LogoWolkenkitClassNames>(styles);
 
@@ -103,4 +103,4 @@ const LogoWolkenkit: FunctionComponent<LogoProps> = ({
   );
 };
 
-export default LogoWolkenkit;
+export { LogoWolkenkit };

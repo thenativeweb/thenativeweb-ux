@@ -1,11 +1,11 @@
-import DialogsService from './DialogService';
-import ExecutionEnvironmentService from './ExecutionEnvironmentService';
-import getPortalRootNode from './getPortalRootNode';
-import NotificationsService from './NotificationService';
+import { DialogService } from './DialogService';
+import { ExecutionEnvironmentService } from './ExecutionEnvironmentService';
+import { getPortalRootNode } from './getPortalRootNode';
+import { NotificationService } from './NotificationService';
 
-const dialogs = new DialogsService();
+const dialogs = new DialogService();
 const excecutionEnvironment = new ExecutionEnvironmentService();
-const notifications = new NotificationsService();
+const notifications = new NotificationService();
 
 export {
   dialogs,

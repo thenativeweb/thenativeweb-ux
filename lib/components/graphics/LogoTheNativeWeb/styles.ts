@@ -21,4 +21,4 @@ const styles: Styles<LogoTheNativeWebClassNames> = {
   }
 };
 
-export default styles;
+export { styles };

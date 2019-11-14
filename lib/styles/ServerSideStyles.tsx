@@ -19,4 +19,4 @@ class ServerSideStyles {
   }
 }
 
-export default ServerSideStyles;
+export { ServerSideStyles };

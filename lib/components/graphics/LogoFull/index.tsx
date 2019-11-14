@@ -1,7 +1,7 @@
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { LogoFullClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { LogoFullClassNames } from './styles';
 
 export interface LogoFullProps {
   size?: 'sm' | 'md' | 'lg';
@@ -84,4 +84,4 @@ const LogoFull: FunctionComponent<LogoFullProps> = ({
   );
 };
 
-export default LogoFull;
+export { LogoFull };

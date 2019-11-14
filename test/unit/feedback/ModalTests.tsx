@@ -1,7 +1,7 @@
 import act from '../../shared/act';
 import assert from 'assertthat';
 import { click } from '../../shared/eventDispatchers';
-import getPortalRootNode from '../../../lib/services/getPortalRootNode';
+import { getPortalRootNode } from '../../../lib/services/getPortalRootNode';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import toArray from '../../shared/toArray';

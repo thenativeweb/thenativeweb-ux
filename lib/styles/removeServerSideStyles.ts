@@ -11,4 +11,4 @@ const removeServerSideStyles = function (): void {
   style.parentNode.removeChild(style);
 };
 
-export default removeServerSideStyles;
+export { removeServerSideStyles };

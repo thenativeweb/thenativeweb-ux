@@ -1,3 +1,3 @@
 import { createUseStyles } from 'react-jss';
 
-export default createUseStyles;
+export { createUseStyles };

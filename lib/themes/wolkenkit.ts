@@ -1,6 +1,6 @@
-import createTheme from './createTheme';
+import { createTheme } from './createTheme';
 
-const theme = createTheme({
+const wolkenkit = createTheme({
   name: 'wolkenkit',
   spaceUnit: 8,
 
@@ -22,4 +22,4 @@ const theme = createTheme({
   }
 });
 
-export default theme;
+export { wolkenkit };

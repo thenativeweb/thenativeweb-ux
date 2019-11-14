@@ -18,4 +18,4 @@ const getPortalRootNode = function (
   return portal;
 };
 
-export default getPortalRootNode;
+export { getPortalRootNode };

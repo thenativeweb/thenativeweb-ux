@@ -16,10 +16,10 @@ import { Headline } from './components/typography/Headline';
 import { Icon } from './components/graphics/Icon';
 import { Label } from './components/typography/Label';
 import { Link } from './components/input/Link';
-import LogoFull from './components/graphics/LogoFull';
-import LogoMinimal from './components/graphics/LogoMinimal';
-import LogoTheNativeWeb from './components/graphics/LogoTheNativeWeb';
-import LogoWolkenkit from './components/graphics/LogoWolkenkit';
+import { LogoFull } from './components/graphics/LogoFull';
+import { LogoMinimal } from './components/graphics/LogoMinimal';
+import { LogoTheNativeWeb } from './components/graphics/LogoTheNativeWeb';
+import { LogoWolkenkit } from './components/graphics/LogoWolkenkit';
 import { MadeBy } from './components/branding/MadeBy';
 import { Message } from './components/feedback/Message';
 import { Modal } from './components/feedback/Modal';
@@ -39,10 +39,10 @@ import { Toggle } from './components/Toggle';
 import { Transition } from './components/animation/Transition';
 import { TransitionGroup } from './components/animation/TransitionGroup';
 import { Website } from './components/Website';
-import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme, withStyles } from './styles';
+import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme } from './styles';
 import { dialogs, excecutionEnvironment, getPortalRootNode, notifications } from './services';
-import Form, { FormActions, FormRow } from './components/Form';
-import themes, { Theme } from './themes';
+import { Form, FormActions, FormRow } from './components/Form';
+import { Theme, themes } from './themes';
 
 export {
   animate,
@@ -99,6 +99,5 @@ export {
   Transition,
   TransitionGroup,
   Website,
-  withStyles,
   useTheme
 };

@@ -10,4 +10,4 @@ const styles = (theme: Theme): Styles<FormRowClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

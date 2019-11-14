@@ -1,5 +1,5 @@
-import LogoProps from '../LogoProps';
-import styles from './styles';
+import { LogoProps } from '../LogoProps';
+import { styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
@@ -42,4 +42,4 @@ const LogoTheNativeWeb: FunctionComponent<LogoProps> = ({
   );
 };
 
-export default LogoTheNativeWeb;
+export { LogoTheNativeWeb };

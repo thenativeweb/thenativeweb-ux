@@ -27,4 +27,4 @@ const styles = (theme: Theme): Styles<FormActionsClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

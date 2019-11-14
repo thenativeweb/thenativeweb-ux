@@ -26,5 +26,5 @@ const MyComponent = function ({ className, children, size }) {
   );
 };
 
-export default MyComponent;
+export { MyComponent };
 ```

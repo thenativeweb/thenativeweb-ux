@@ -22,4 +22,4 @@ const createDefaultStyles = function (theme: Theme): {} {
   };
 };
 
-export default createDefaultStyles;
+export { createDefaultStyles };

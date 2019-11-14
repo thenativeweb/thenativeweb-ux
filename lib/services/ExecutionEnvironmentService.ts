@@ -10,4 +10,4 @@ class ExecutionEnvironmentService {
   }
 }
 
-export default ExecutionEnvironmentService;
+export { ExecutionEnvironmentService };

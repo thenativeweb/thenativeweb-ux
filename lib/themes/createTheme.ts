@@ -1,5 +1,5 @@
 import { BrandColors } from './BrandColors';
-import Breakpoints from './Breakpoints';
+import { Breakpoints } from './Breakpoints';
 import { FontSizes } from './FontSizes';
 import { InteractionColors } from './InteractionColors';
 import { Pattern } from './Pattern';
@@ -130,4 +130,4 @@ const createTheme = ({
   return theme;
 };
 
-export default createTheme;
+export { createTheme };
