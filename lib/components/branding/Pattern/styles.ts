@@ -21,4 +21,4 @@ const styles = (theme: Theme): Styles<PatternClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

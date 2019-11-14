@@ -58,4 +58,4 @@ class NotificationService extends EventEmitter {
   }
 }
 
-export default NotificationService;
+export { NotificationService };

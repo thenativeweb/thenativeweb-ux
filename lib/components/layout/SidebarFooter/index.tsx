@@ -1,7 +1,7 @@
 import { createUseStyles } from '../../../styles';
 import { Theme } from '../../../themes';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { SidebarFooterClassNames } from './styles';
+import { SidebarFooterClassNames, styles } from './styles';
 
 const useStyles = createUseStyles<Theme, SidebarFooterClassNames>(styles);
 
@@ -15,4 +15,4 @@ const SidebarFooter: FunctionComponent = ({ children }): ReactElement => {
   );
 };
 
-export default SidebarFooter;
+export { SidebarFooter };

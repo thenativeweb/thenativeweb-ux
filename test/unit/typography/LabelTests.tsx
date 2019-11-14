@@ -1,9 +1,8 @@
-import act from '../../shared/act';
+import { act } from '../../shared/act';
 import assert from 'assertthat';
-import Label from '../../../lib/components/typography/Label';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ThemeProvider from '../../../lib/components/ThemeProvider';
+import { Label, ThemeProvider } from '../../../lib';
 
 suite('Label', (): void => {
   let container: Element;

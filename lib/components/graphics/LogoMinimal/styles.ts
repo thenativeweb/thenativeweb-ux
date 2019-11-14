@@ -67,4 +67,4 @@ const styles = (theme: Theme): Styles<LogoMinimalClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

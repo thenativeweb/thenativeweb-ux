@@ -1,5 +1,5 @@
 import anime from 'animejs';
-import defaults from './defaults';
+import { defaults } from './defaults';
 import { Transition } from 'react-transition-group';
 import { TransitionProps } from './TransitionProps';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -37,4 +37,4 @@ const Fade: FunctionComponent<TransitionProps> = ({ children, key, in: fadeIn })
   </Transition>
 );
 
-export default Fade;
+export { Fade };

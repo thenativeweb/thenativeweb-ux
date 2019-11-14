@@ -1,4 +1,4 @@
-import spaceDependentProperties from './spaceDependentProperties';
+import { spaceDependentProperties } from './spaceDependentProperties';
 import { Styles } from 'jss';
 import { Theme } from '../../..';
 import {
@@ -65,4 +65,4 @@ const styles = (theme: Theme): Styles<GridDefaultClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

@@ -1,10 +1,9 @@
-import act from '../../shared/act';
+import { act } from '../../shared/act';
 import assert from 'assertthat';
-import { Container } from '../../../lib/components/layout/Container';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ThemeProvider from '../../../lib/components/ThemeProvider';
-import toArray from '../../shared/toArray';
+import { toArray } from '../../shared/toArray';
+import { Container, ThemeProvider } from '../../../lib';
 
 suite('Container', (): void => {
   let container: Element;

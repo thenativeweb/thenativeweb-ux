@@ -45,4 +45,4 @@ const styles = (theme: Theme): Styles<TextBoxClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

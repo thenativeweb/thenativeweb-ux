@@ -1,7 +1,7 @@
 import { createUseStyles } from '../../../styles';
 import { Theme } from '../../../themes';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { SidebarClassNames } from './styles';
+import { SidebarClassNames, styles } from './styles';
 
 interface SidebarProps {
   id?: string;
@@ -19,4 +19,4 @@ const Sidebar: FunctionComponent<SidebarProps> = ({ children, id }): ReactElemen
   );
 };
 
-export default Sidebar;
+export { Sidebar };

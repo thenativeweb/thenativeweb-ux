@@ -1,7 +1,7 @@
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { FormClassNames, styles } from './styles';
 import React, { FormEvent, FunctionComponent, ReactElement } from 'react';
-import styles, { FormClassNames } from './styles';
 
 interface FormProps {
   className?: string;
@@ -27,4 +27,4 @@ const Form: FunctionComponent<FormProps> = ({
   );
 };
 
-export default Form;
+export { Form };

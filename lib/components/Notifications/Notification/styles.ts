@@ -26,4 +26,4 @@ const styles = (theme: Theme): Styles<NotificationClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

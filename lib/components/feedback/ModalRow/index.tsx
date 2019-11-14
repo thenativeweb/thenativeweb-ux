@@ -1,8 +1,8 @@
 import { Classes } from 'jss';
 import { createUseStyles } from '../../../styles';
 import { Theme } from '../../..';
+import { ModalRowClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { ModalRowClassNames } from './styles';
 
 interface ModalRowProps {
   classes: Classes;
@@ -20,4 +20,4 @@ const ModalRow: FunctionComponent<ModalRowProps> = ({
   );
 };
 
-export default ModalRow;
+export { ModalRow };

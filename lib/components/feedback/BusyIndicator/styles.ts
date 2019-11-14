@@ -55,4 +55,4 @@ const styles = (theme: Theme): Styles<BusyIndicatorClassNames> => ({
   Pulse3: {}
 });
 
-export default styles;
+export { styles };

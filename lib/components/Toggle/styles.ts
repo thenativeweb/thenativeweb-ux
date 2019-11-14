@@ -41,4 +41,4 @@ const styles = (theme: Theme): Styles<ToggleClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

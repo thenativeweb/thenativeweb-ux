@@ -1,7 +1,7 @@
 import { classNames, createUseStyles, useTheme } from '../../../styles';
 import { LogoTheNativeWeb, LogoWolkenkit, Theme } from '../../..';
+import { ProducClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { ProducClassNames } from './styles';
 
 interface ProductProps {
   name?: string;
@@ -45,4 +45,4 @@ const Product: FunctionComponent<ProductProps> = ({
   );
 };
 
-export default Product;
+export { Product };

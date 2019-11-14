@@ -1,9 +1,8 @@
-import act from '../../shared/act';
+import { act } from '../../shared/act';
 import assert from 'assertthat';
-import GridItem from '../../../lib/components/layout/GridItem';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ThemeProvider from '../../../lib/components/ThemeProvider';
+import { GridItem, ThemeProvider } from '../../../lib';
 
 suite('GridItem', (): void => {
   let container: Element;

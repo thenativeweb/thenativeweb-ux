@@ -1,5 +1,5 @@
 import { ResponsiveSpaceProp } from '../../../types/ResponsiveSpaceProp';
-import styles from './styles';
+import { styles } from './styles';
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
@@ -58,4 +58,4 @@ const GridItem: FunctionComponent<GridItemProps> = React.memo(({
   return React.createElement(component, { className: componentClasses, style, id }, children);
 });
 
-export default GridItem;
+export { GridItem };

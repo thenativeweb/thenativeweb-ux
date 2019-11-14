@@ -1,7 +1,7 @@
 import { createUseStyles } from '../../../styles';
 import { Theme } from '../../../themes';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { SidebarBrandClassNames } from './styles';
+import { SidebarBrandClassNames, styles } from './styles';
 
 const useStyles = createUseStyles<Theme, SidebarBrandClassNames>(styles);
 
@@ -15,4 +15,4 @@ const SidebarBrand: FunctionComponent = ({ children }): ReactElement => {
   );
 };
 
-export default SidebarBrand;
+export { SidebarBrand };

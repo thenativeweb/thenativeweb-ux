@@ -1,9 +1,9 @@
-import act from '../../shared/act';
+import { act } from '../../shared/act';
 import assert from 'assertthat';
 import { click } from '../../shared/eventDispatchers';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import toArray from '../../shared/toArray';
+import { toArray } from '../../shared/toArray';
 import { Button, ThemeProvider } from '../../../lib';
 
 suite('Button', (): void => {

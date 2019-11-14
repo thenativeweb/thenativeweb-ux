@@ -92,4 +92,4 @@ const styles = (theme: Theme): Styles<SidebarItemClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

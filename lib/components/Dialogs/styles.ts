@@ -15,4 +15,4 @@ const styles: Styles<'Dialogs' | 'Actions'> = {
   }
 };
 
-export default styles;
+export { styles };

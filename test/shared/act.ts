@@ -6,4 +6,4 @@ const act = (callback: () => void | undefined): void => {
   /* eslint-enable @typescript-eslint/no-floating-promises */
 };
 
-export default act;
+export { act };

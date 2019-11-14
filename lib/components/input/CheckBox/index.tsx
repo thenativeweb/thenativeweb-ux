@@ -1,8 +1,8 @@
 import { Styles } from 'jss';
 import { Theme } from '../../..';
+import { CheckBoxClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { CheckBoxClassNames } from './styles';
 
 interface CheckBoxProps {
   className?: string;
@@ -39,4 +39,4 @@ const CheckBox: FunctionComponent<CheckBoxProps> = ({
   );
 };
 
-export default CheckBox;
+export { CheckBox };

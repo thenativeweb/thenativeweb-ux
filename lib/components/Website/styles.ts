@@ -12,4 +12,4 @@ const styles = (theme: Theme): Styles<WebsiteClassNames> => ({
   Website: {}
 });
 
-export default styles;
+export { styles };

@@ -18,4 +18,4 @@ const styles = (theme: Theme): Styles<ControlGroupDividerClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

@@ -1,10 +1,9 @@
-import act from '../../shared/act';
+import { act } from '../../shared/act';
 import assert from 'assertthat';
 import { click } from '../../shared/eventDispatchers';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SidebarItem from '../../../lib/components/layout/SidebarItem';
-import ThemeProvider from '../../../lib/components/ThemeProvider';
+import { SidebarItem, ThemeProvider } from '../../../lib';
 
 suite('SidebarItem', (): void => {
   let container: Element;

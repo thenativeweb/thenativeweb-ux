@@ -5,4 +5,4 @@ const useCustomTheme = function (): Theme {
   return useTheme() as Theme;
 };
 
-export default useCustomTheme;
+export { useCustomTheme as useTheme };

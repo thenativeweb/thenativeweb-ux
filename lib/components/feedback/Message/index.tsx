@@ -1,8 +1,7 @@
-import Icon from '../../graphics/Icon';
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { Icon, Theme } from '../../..';
+import { MessageClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { MessageClassNames } from './styles';
 
 interface MessageProps {
   isVisible?: boolean;
@@ -48,4 +47,4 @@ const Message: FunctionComponent<MessageProps> = ({
   );
 };
 
-export default Message;
+export { Message };

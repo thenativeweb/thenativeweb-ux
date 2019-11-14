@@ -1,10 +1,10 @@
 import { createUseStyles } from '../../styles';
-import Notification from './Notification';
+import { Notification } from './Notification';
 import ReactDOM from 'react-dom';
-import services from '../../services';
-import useForceUpdate from '../useForceUpdate';
+import { useForceUpdate } from '../useForceUpdate';
+import { excecutionEnvironment, getPortalRootNode, notifications } from '../../services';
+import { NotificationsClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
-import styles, { NotificationsClassNames } from './styles';
 import { Theme, TransitionGroup } from '../..';
 
 const useStyles = createUseStyles<Theme, NotificationsClassNames>(styles);
@@ -13,7 +13,7 @@ const Notifications: FunctionComponent = (): ReactElement | null => {
   const classes = useStyles();
   const forceUpdate = useForceUpdate();
 
-  if (!services.excecutionEnvironment.canUseDom) {
+  if (!excecutionEnvironment.canUseDom) {
     return null;
   }
 
@@ -22,10 +22,10 @@ const Notifications: FunctionComponent = (): ReactElement | null => {
   }, []);
 
   useEffect((): () => void => {
-    services.notifications.on('changed', handleServiceChanged);
+    notifications.on('changed', handleServiceChanged);
 
     return (): void => {
-      services.notifications.removeListener('changed', handleServiceChanged);
+      notifications.removeListener('changed', handleServiceChanged);
     };
   }, []);
 
@@ -33,14 +33,14 @@ const Notifications: FunctionComponent = (): ReactElement | null => {
     (
       <div className={ classes.Notifications }>
         <TransitionGroup type='FadeInLeft'>
-          { services.notifications.state.items.map((notification): ReactElement => (
+          { notifications.state.items.map((notification): ReactElement => (
             <Notification key={ notification.id } type={ notification.type } text={ notification.text } />
           ))}
         </TransitionGroup>
       </div>
     ),
-    services.getPortalRootNode()
+    getPortalRootNode()
   );
 };
 
-export default Notifications;
+export { Notifications };

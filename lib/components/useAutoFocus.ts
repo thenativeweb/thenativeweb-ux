@@ -26,4 +26,4 @@ const useAutoFocus = <TRef extends HTMLTextAreaElement | HTMLInputElement>({ isE
   return elementRef;
 };
 
-export default useAutoFocus;
+export { useAutoFocus };

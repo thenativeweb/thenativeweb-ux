@@ -1,10 +1,10 @@
 import { getSpaceDependentClassNamesFromProps } from '../../../styles/utils';
 import { ResponsiveSpaceProp } from '../../../types/ResponsiveSpaceProp';
-import spaceDependentProperties from './spaceDependentProperties';
+import { spaceDependentProperties } from './spaceDependentProperties';
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { GridDefaultClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { GridDefaultClassNames } from './styles';
 
 interface GridProps {
   id?: string;
@@ -45,4 +45,4 @@ const Grid: FunctionComponent<GridProps> = ({
   );
 };
 
-export default Grid;
+export { Grid };

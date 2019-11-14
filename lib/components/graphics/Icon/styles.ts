@@ -84,4 +84,4 @@ const styles = (theme: Theme): Styles<IconClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

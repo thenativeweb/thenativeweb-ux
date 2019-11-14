@@ -1,8 +1,8 @@
 import { Theme } from '../../../themes';
-import useAutoFocus from '../../useAutoFocus';
+import { useAutoFocus } from '../../useAutoFocus';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { ChangeEvent, CSSProperties, FocusEvent, FunctionComponent, KeyboardEvent, ReactElement, useCallback } from 'react';
-import styles, { TextBoxClassNames } from './styles';
+import { styles, TextBoxClassNames } from './styles';
 
 interface TextBoxProps {
   autoFocus?: boolean;
@@ -102,4 +102,4 @@ const TextBox: FunctionComponent<TextBoxProps> = ({
   );
 };
 
-export default TextBox;
+export { TextBox };

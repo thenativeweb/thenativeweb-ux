@@ -78,4 +78,4 @@ class DialogService extends EventEmitter {
   }
 }
 
-export default DialogService;
+export { DialogService };

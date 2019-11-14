@@ -1,4 +1,4 @@
-export default interface LogoProps {
+export interface LogoProps {
   isAnimated?: boolean;
   isVisible?: boolean;
   size?: 'md' | 'lg' | 'xl';

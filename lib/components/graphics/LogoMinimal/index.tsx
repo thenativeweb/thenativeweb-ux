@@ -1,8 +1,8 @@
 import { LogoFullProps } from '../LogoFull';
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { LogoMinimalClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { LogoMinimalClassNames } from './styles';
 
 const useStyles = createUseStyles<Theme, LogoMinimalClassNames>(styles);
 
@@ -11,7 +11,7 @@ interface LogoMinimalProps extends LogoFullProps {
   isInteractive?: boolean;
 }
 
-const Logo: FunctionComponent<LogoMinimalProps> = ({
+const LogoMinimal: FunctionComponent<LogoMinimalProps> = ({
   color = 'default',
   size = 'md',
   isInteractive = false
@@ -47,4 +47,4 @@ const Logo: FunctionComponent<LogoMinimalProps> = ({
   );
 };
 
-export default Logo;
+export { LogoMinimal };

@@ -27,4 +27,4 @@ const styles = (theme: Theme): Styles<ApplicationClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

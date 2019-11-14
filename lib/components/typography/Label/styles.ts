@@ -14,4 +14,4 @@ const styles: Styles<LabelClassNames> = {
   }
 };
 
-export default styles;
+export { styles };

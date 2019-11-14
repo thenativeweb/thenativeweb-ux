@@ -73,4 +73,4 @@ const styles = (theme: Theme): Styles<LogoWolkenkitClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

@@ -1,7 +1,7 @@
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { FormActionsClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { FormActionsClassNames } from './styles';
 
 interface FormActionsProps {
   className?: string;
@@ -31,4 +31,4 @@ const FormActions: FunctionComponent<FormActionsProps> = ({
   );
 };
 
-export default FormActions;
+export { FormActions };

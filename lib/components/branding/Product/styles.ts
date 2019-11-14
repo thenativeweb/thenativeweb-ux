@@ -89,4 +89,4 @@ const styles = (theme: Theme): Styles<ProducClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

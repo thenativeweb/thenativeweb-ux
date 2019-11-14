@@ -34,4 +34,4 @@ const styles = (theme: Theme): Styles<LogoFullClassNames> => ({
   }
 });
 
-export default styles;
+export { styles };

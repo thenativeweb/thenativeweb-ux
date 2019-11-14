@@ -1,9 +1,9 @@
 import { Styles } from 'jss';
 import { Theme } from '../../../themes';
-import useAutoFocus from '../../useAutoFocus';
+import { useAutoFocus } from '../../useAutoFocus';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { ChangeEvent, FocusEvent, FunctionComponent, ReactElement } from 'react';
-import styles, { TextAreaClassNames } from './styles';
+import { styles, TextAreaClassNames } from './styles';
 
 interface TextAreaProps {
   autoFocus?: boolean;
@@ -78,4 +78,4 @@ const TextArea: FunctionComponent<TextAreaProps> = ({
   );
 };
 
-export default TextArea;
+export { TextArea };

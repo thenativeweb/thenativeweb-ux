@@ -1,11 +1,10 @@
-import classNames from 'classnames';
-import { createUseStyles } from '../../../styles';
-import Dialogs from '../../Dialogs';
-import Icons from '../../graphics/Icons';
-import Notifications from '../../Notifications';
+import { Dialogs } from '../../Dialogs';
+import { Icons } from '../../graphics/Icons';
+import { Notifications } from '../../Notifications';
 import { Theme } from '../../..';
+import { ApplicationClassNames, styles } from './styles';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { ApplicationClassNames } from './styles';
 
 interface ApplicationProps {
   className?: string;
@@ -41,4 +40,4 @@ const Application: FunctionComponent<ApplicationProps> = ({
   );
 };
 
-export default Application;
+export { Application };

@@ -48,6 +48,13 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
     }
   },
 
+  Icon: {
+    flexGrow: 0,
+    flexShrink: 0,
+    flexBasis: 'auto',
+    marginRight: theme.space(1)
+  },
+
   AdjustFlex: {
     flexGrow: 1,
     flexShrink: 1,
@@ -82,7 +89,13 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
-    lineHeight: 'normal'
+    lineHeight: 'normal',
+
+    // The fill color is applied as nested rule which increases specificity of
+    // the selector. It therefore overrides the default fill color of the icon.
+    '& $Icon': {
+      fill: theme.color.brand.white
+    }
   },
 
   TypeSubtle: {
@@ -160,16 +173,7 @@ const styles = (theme: Theme): Styles<ButtonClassNames> => ({
         marginRight: 0
       }
     }
-  },
-
-  Icon: {
-    flexGrow: 0,
-    flexShrink: 0,
-    flexBasis: 'auto',
-    marginRight: theme.space(1),
-    color: theme.color.brand.white,
-    fill: theme.color.brand.white
   }
 });
 
-export default styles;
+export { styles };

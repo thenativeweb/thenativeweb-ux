@@ -1,7 +1,7 @@
 import { Theme } from '../../..';
+import { BusyIndicatorClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { BusyIndicatorClassNames } from './styles';
 
 interface BusyIndicatorProps {
   className?: string;
@@ -29,4 +29,4 @@ const BusyIndicator: FunctionComponent<BusyIndicatorProps> = ({
   );
 };
 
-export default BusyIndicator;
+export { BusyIndicator };

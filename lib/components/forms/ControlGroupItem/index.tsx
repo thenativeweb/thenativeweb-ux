@@ -1,7 +1,7 @@
 import { CheckBox, Icon, Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
+import { ControlGroupItemClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { ControlGroupItemClassNames } from './styles';
 
 interface ControlGroupItemProps {
   className?: string;
@@ -95,4 +95,4 @@ const ControlGroupItem: FunctionComponent<ControlGroupItemProps> = ({
   );
 };
 
-export default ControlGroupItem;
+export { ControlGroupItem };

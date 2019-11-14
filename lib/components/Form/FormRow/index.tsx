@@ -1,7 +1,7 @@
 import { createUseStyles } from '../../../styles';
 import { Theme } from '../../..';
+import { FormRowClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import styles, { FormRowClassNames } from './styles';
 
 const useStyles = createUseStyles<Theme, FormRowClassNames>(styles);
 
@@ -15,4 +15,4 @@ const FormRow: FunctionComponent = ({
   );
 };
 
-export default FormRow;
+export { FormRow };

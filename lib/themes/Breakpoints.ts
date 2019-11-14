@@ -117,4 +117,4 @@ class Breakpoints {
   }
 }
 
-export default Breakpoints;
+export { Breakpoints };

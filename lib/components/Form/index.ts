@@ -1,9 +1,9 @@
-import FormActions from './FormActions';
-import FormDefault from './FormDefault';
-import FormRow from './FormRow';
+import { Form } from './Form';
+import { FormActions } from './FormActions';
+import { FormRow } from './FormRow';
 
-export default FormDefault;
 export {
+  Form,
   FormActions,
   FormRow
 };

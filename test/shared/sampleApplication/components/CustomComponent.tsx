@@ -40,4 +40,4 @@ const CustomComponent: FunctionComponent<CustomComponentProps> = ({
   );
 };
 
-export default CustomComponent;
+export { CustomComponent };
