@@ -29,7 +29,7 @@
     "lodash": "4.17.15",
     "react-jss": "10.0.0",
     "react-transition-group": "4.3.0",
-    "uuidv4": "5.0.1"
+    "uuidv4": "6.0.0"
   },
   "devDependencies": {
     "@babel/runtime-corejs2": "7.7.2",
@@ -45,10 +45,10 @@
     "@types/react-dom": "16.9.4",
     "@types/react-transition-group": "4.2.3",
     "@types/shelljs": "0.8.6",
-    "assertthat": "4.0.2",
+    "assertthat": "5.0.2",
     "async-retry": "1.2.3",
     "axios": "0.19.0",
-    "buntstift": "2.0.1",
+    "buntstift": "3.0.0",
     "common-tags": "1.8.0",
     "jsdom": "15.2.1",
     "next": "9.1.3",
