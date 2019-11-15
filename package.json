@@ -45,7 +45,7 @@
     "@types/react-dom": "16.9.4",
     "@types/react-transition-group": "4.2.3",
     "@types/shelljs": "0.8.6",
-    "assertthat": "4.0.2",
+    "assertthat": "5.0.2",
     "async-retry": "1.2.3",
     "axios": "0.19.0",
     "buntstift": "2.0.1",
