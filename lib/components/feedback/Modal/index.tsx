@@ -29,7 +29,7 @@ const Modal: FunctionComponent<ModalProps> = ({
   showHeader = true,
   size = 'sm',
   padding = 'default',
-  portalRootNode = getPortalRootNode(),
+  portalRootNode,
   onCancel,
   onKeyDown = (): void => {
     // Intentionally left blank.
@@ -141,7 +141,7 @@ const Modal: FunctionComponent<ModalProps> = ({
         </Transition>
       </div>
     ),
-    portalRootNode
+    portalRootNode || getPortalRootNode()
   );
 };
 

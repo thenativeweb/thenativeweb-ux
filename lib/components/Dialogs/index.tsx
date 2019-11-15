@@ -1,8 +1,8 @@
-import { getPortalRootNode } from '../../services';
 import { styles } from './styles';
 import { useForceUpdate } from '../useForceUpdate';
 import { Button, dialogs, Headline, Modal } from '../..';
 import { classNames, createUseStyles } from '../../styles';
+import { excecutionEnvironment, getPortalRootNode } from '../../services';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
 
 const useStyles = createUseStyles(styles);
@@ -14,7 +14,7 @@ interface DialogsProps {
 
 const Dialogs: FunctionComponent<DialogsProps> = ({
   className,
-  portalRootNode = getPortalRootNode()
+  portalRootNode
 }): ReactElement => {
   const classes = useStyles();
   const forceUpdate = useForceUpdate();
@@ -54,8 +54,8 @@ const Dialogs: FunctionComponent<DialogsProps> = ({
 
   return (
     <Modal
-      portalRootNode={ portalRootNode }
       attach='center'
+      portalRootNode={ excecutionEnvironment.canUseDom ? portalRootNode || getPortalRootNode() : undefined }
       showHeader={ false }
       isVisible={ dialogs.state.confirm.isVisible }
       className={ classNames(classes.Dialogs, className) }
