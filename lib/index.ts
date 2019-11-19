@@ -35,7 +35,7 @@ import { Text } from './components/typography/Text';
 import { TextArea } from './components/input/TextArea';
 import { TextBox } from './components/input/TextBox';
 import { ThemeProvider } from './components/roots/ThemeProvider';
-import { Toggle } from './components/Toggle';
+import { Toggle } from './components/input/Toggle';
 import { Transition } from './components/animation/Transition';
 import { TransitionGroup } from './components/animation/TransitionGroup';
 import { Website } from './components/roots/Website';
