@@ -4,7 +4,7 @@
     "declaration": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "lib": [ "dom", "ES2018" ],
+    "lib": [ "dom", "ES2020" ],
     "module": "CommonJS",
     "outDir": "build",
     "resolveJsonModule": true,
