@@ -27,7 +27,7 @@ suite('Website', (): void => {
     });
 
     const website = container.querySelector('div');
-console.log(website)
+
     assert.that(website!.className).is.containing('Website');
   });
 });
