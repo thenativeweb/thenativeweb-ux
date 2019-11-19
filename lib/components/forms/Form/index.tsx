@@ -21,9 +21,9 @@ const Form: FunctionComponent<FormProps> = ({
   const componentClasses = classNames(classes.Form, className);
 
   return (
-    <div className={ componentClasses } onSubmit={ onSubmit }>
+    <form className={ componentClasses } onSubmit={ onSubmit }>
       { children }
-    </div>
+    </form>
   );
 };
 
