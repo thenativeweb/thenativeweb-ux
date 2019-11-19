@@ -1,5 +1,5 @@
 import { JssProvider } from 'react-jss';
-import { ServerSideStyles } from '../../styles';
+import { ServerSideStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface StyleCollectorProps {
