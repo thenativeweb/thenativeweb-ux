@@ -24,10 +24,10 @@ import { Button, CheckBox, ControlGroup, ControlGroupItem, Headline, TextBox } f
       />
     </ControlGroupItem>
   </ControlGroup>
-  <Form.Actions>
+  <FormActions>
     <Button isPrimary={ true }>Submit</Button>
     <Button>Cancel</Button>
-  </Form.Actions>
+  </FormActions>
 </Form>
 ```
 
@@ -56,9 +56,9 @@ import { Button, CheckBox, ControlGroup, Headline, TextBox } from 'thenativeweb-
       />
     </ControlGroupItem>
   </ControlGroup>
-  <Form.Actions type='stacked'>
+  <FormActions type='stacked'>
     <Button isPrimary={ true }>Submit</Button>
     <Button>Cancel</Button>
-  </Form.Actions>
+  </FormActions>
 </Form>
 ```

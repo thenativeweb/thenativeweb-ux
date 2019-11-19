@@ -10,6 +10,9 @@ import { ControlGroup } from './components/forms/ControlGroup';
 import { ControlGroupDivider } from './components/forms/ControlGroupDivider';
 import { ControlGroupItem } from './components/forms/ControlGroupItem';
 import { Dropdown } from './components/input/Dropdown';
+import { Form } from './components/forms/Form';
+import { FormActions } from './components/forms/FormActions';
+import { FormRow } from './components/forms/FormRow';
 import { Grid } from './components/layout/Grid';
 import { GridItem } from './components/layout/GridItem';
 import { Headline } from './components/typography/Headline';
@@ -41,7 +44,6 @@ import { TransitionGroup } from './components/animation/TransitionGroup';
 import { Website } from './components/roots/Website';
 import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme } from './styles';
 import { dialogs, excecutionEnvironment, getPortalRootNode, notifications } from './services';
-import { Form, FormActions, FormRow } from './components/Form';
 import { Theme, themes } from './themes';
 
 export {
