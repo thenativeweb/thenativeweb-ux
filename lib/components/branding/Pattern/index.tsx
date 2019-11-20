@@ -5,18 +5,14 @@ import React, { FunctionComponent, ReactElement } from 'react';
 
 interface PatternProps {
   className?: string;
-  type?: 'default';
 }
 
 const useStyles = createUseStyles<Theme, PatternClassNames>(styles);
 
-const Pattern: FunctionComponent<PatternProps> = ({ children, className, type = 'default' }): ReactElement => {
+const Pattern: FunctionComponent<PatternProps> = ({ children, className }): ReactElement => {
   const classes = useStyles();
   const componentClasses = classNames(
     classes.Pattern,
-    {
-      [classes.TypeDefault]: type
-    },
     className
   );
 
