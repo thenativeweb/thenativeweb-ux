@@ -1,6 +1,6 @@
 import { act } from '../../shared/act';
 import { assert } from 'assertthat';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { toArray } from '../../shared/toArray';
 import { MadeBy, ThemeProvider } from '../../../lib';
@@ -70,7 +70,7 @@ suite('MadeBy', (): void => {
     assert.that(dark.className).is.containing('ColorDark');
   });
 
-  test('inserts links according to defined partners.', async (): Promise<void> => {
+  test('inserts links according to defined property partner.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -81,10 +81,7 @@ suite('MadeBy', (): void => {
     });
 
     const links = toArray(container.querySelectorAll('a'));
-
-    const partner = links.filter((link) => (
-      link.textContent === 'some-name'
-    ));
+    const partner = links.filter((link): boolean => link.textContent === 'some-name');
 
     assert.that(partner).is.not.null();
   });
