@@ -2,8 +2,8 @@ import { act } from '../../shared/act';
 import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Brand, ThemeProvider } from '../../../lib';
 import { toArray } from '../../shared/toArray';
+import { Brand, ThemeProvider } from '../../../lib';
 
 suite('Brand', (): void => {
   let container: Element;
