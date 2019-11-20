@@ -47,7 +47,7 @@ suite('Brand', (): void => {
     assert.that(logo!.className).is.containing('IsMonochrome');
   });
 
-  test('inserts Logos according to defined type.', async (): Promise<void> => {
+  test('inserts logos according to defined type.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -67,7 +67,7 @@ suite('Brand', (): void => {
     assert.that(full).is.not.null();
   });
 
-  test('pass through defined property size.', async (): Promise<void> => {
+  test('passes through defined property size.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
@@ -87,7 +87,7 @@ suite('Brand', (): void => {
     assert.that(large.className).is.containing('SizeLg');
   });
 
-  test('pass through defined property isInteractive.', async (): Promise<void> => {
+  test('passes through defined property isInteractive.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
