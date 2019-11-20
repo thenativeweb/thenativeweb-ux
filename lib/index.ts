@@ -28,6 +28,7 @@ import { Message } from './components/feedback/Message';
 import { Modal } from './components/feedback/Modal';
 import { ModalRow } from './components/feedback/ModalRow';
 import { Pattern } from './components/branding/Pattern';
+import { PoweredBy } from './components/branding/PoweredBy';
 import { Product } from './components/branding/Product';
 import { Sidebar } from './components/layout/Sidebar';
 import { SidebarBrand } from './components/layout/SidebarBrand';
@@ -83,6 +84,7 @@ export {
   ModalRow,
   notifications,
   Pattern,
+  PoweredBy,
   Product,
   removeServerSideStyles,
   Sidebar,

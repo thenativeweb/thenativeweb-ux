@@ -1,6 +1,6 @@
-import { Product } from '../Product';
-import { createUseStyles, Theme } from '../../..';
+import { createUseStyles } from '../../../styles';
 import { PoweredByClassNames, styles } from './styles';
+import { Product, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface PoweredByProps {
