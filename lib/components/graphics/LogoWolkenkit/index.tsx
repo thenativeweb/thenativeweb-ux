@@ -24,11 +24,11 @@ const LogoWolkenkit: FunctionComponent<LogoProps> = ({
   });
 
   const movingCloud1Classes = classNames({
-    [classes.MovingCloud]: isAnimated
+    [classes.MovingCloudAnimated]: isAnimated
   }, classes.MovingCloud1);
 
   const movingCloud2Classes = classNames({
-    [classes.MovingCloud]: isAnimated
+    [classes.MovingCloudAnimated]: isAnimated
   }, classes.MovingCloud2);
 
   return (
