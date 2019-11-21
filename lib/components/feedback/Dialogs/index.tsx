@@ -1,8 +1,8 @@
 import { styles } from './styles';
-import { useForceUpdate } from '../useForceUpdate';
-import { Button, dialogs, Headline, Modal } from '../..';
-import { classNames, createUseStyles } from '../../styles';
-import { excecutionEnvironment, getPortalRootNode } from '../../services';
+import { useForceUpdate } from '../../useForceUpdate';
+import { Button, dialogs, Headline, Modal } from '../../..';
+import { classNames, createUseStyles } from '../../../styles';
+import { excecutionEnvironment, getPortalRootNode } from '../../../services';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
 
 const useStyles = createUseStyles(styles);
