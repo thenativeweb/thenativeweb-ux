@@ -2,8 +2,7 @@ import { Styles } from 'jss';
 import { Theme } from '../../..';
 
 export type PatternClassNames =
-  'Pattern' |
-  'TypeDefault';
+  'Pattern';
 
 const styles = (theme: Theme): Styles<PatternClassNames> => ({
   Pattern: {
@@ -12,10 +11,7 @@ const styles = (theme: Theme): Styles<PatternClassNames> => ({
     top: 0,
     right: 0,
     bottom: 0,
-    backgroundSize: '300px 300px'
-  },
-
-  TypeDefault: {
+    backgroundSize: '300px 300px',
     backgroundImage: theme.components.Pattern.backgroundImage,
     opacity: theme.components.Pattern.opacity
   }

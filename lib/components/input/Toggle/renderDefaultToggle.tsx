@@ -1,4 +1,4 @@
-import { Button } from '../..';
+import { Button } from '../../..';
 import { Classes } from 'jss';
 import React, { ReactElement } from 'react';
 

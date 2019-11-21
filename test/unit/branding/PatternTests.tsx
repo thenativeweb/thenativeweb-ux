@@ -2,9 +2,9 @@ import { act } from '../../shared/act';
 import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Sidebar, ThemeProvider } from '../../../lib';
+import { Pattern, ThemeProvider } from '../../../lib';
 
-suite('Sidebar', (): void => {
+suite('Pattern', (): void => {
   let container: Element;
 
   setup((): void => {
@@ -20,15 +20,15 @@ suite('Sidebar', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Sidebar id='some-id'>Sidebar</Sidebar>
+          <Pattern>This is a pattern.</Pattern>
         </ThemeProvider>,
         container
       );
     });
 
-    const sidebar = container.querySelector('div');
+    const pattern = container.querySelector('div');
 
-    assert.that(sidebar!.id).is.equalTo('some-id');
-    assert.that(sidebar!.className).is.containing('Sidebar');
+    assert.that(pattern!.className).is.containing('Pattern');
+    assert.that(pattern!.textContent).is.equalTo('This is a pattern.');
   });
 });

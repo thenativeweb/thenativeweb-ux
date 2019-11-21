@@ -3,9 +3,9 @@ import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { toArray } from '../../shared/toArray';
-import { LogoMinimal, ThemeProvider } from '../../../lib';
+import { MadeBy, ThemeProvider } from '../../../lib';
 
-suite('LogoMinimal', (): void => {
+suite('MadeBy', (): void => {
   let container: Element;
 
   setup((): void => {
@@ -21,31 +21,31 @@ suite('LogoMinimal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <LogoMinimal />
+          <MadeBy />
         </ThemeProvider>,
         container
       );
     });
 
-    const logo = container.querySelector('div');
+    const madeBy = container.querySelector('div');
 
-    assert.that(logo!.className).is.containingAllOf([ 'LogoMinimal', 'SizeMd' ]);
+    assert.that(madeBy!.className).is.containingAllOf([ 'MadeBy', 'ColorDark', 'SizeSm' ]);
   });
 
   test('sets classes for defined property size.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <LogoMinimal size='sm' />
-          <LogoMinimal size='md' />
-          <LogoMinimal size='lg' />
+          <MadeBy size='sm' />
+          <MadeBy size='md' />
+          <MadeBy size='lg' />
         </ThemeProvider>,
         container
       );
     });
 
-    const logos = toArray(container.querySelectorAll('div'));
-    const [ small, medium, large ] = logos;
+    const madeBys = toArray(container.querySelectorAll('[class^=MadeBy]'));
+    const [ small, medium, large ] = madeBys;
 
     assert.that(small.className).is.containing('SizeSm');
     assert.that(medium.className).is.containing('SizeMd');
@@ -56,35 +56,33 @@ suite('LogoMinimal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <LogoMinimal color='default' />
-          <LogoMinimal color='monochrome' />
+          <MadeBy color='light' />
+          <MadeBy color='dark' />
         </ThemeProvider>,
         container
       );
     });
 
-    const logos = toArray(container.querySelectorAll('div'));
-    const [ standard, monochrome ] = logos;
+    const madeBys = toArray(container.querySelectorAll('[class^=MadeBy]'));
+    const [ light, dark ] = madeBys;
 
-    assert.that(standard.className).is.not.containing('IsMonochrome');
-    assert.that(monochrome.className).is.containing('IsMonochrome');
+    assert.that(light.className).is.containing('ColorLight');
+    assert.that(dark.className).is.containing('ColorDark');
   });
 
-  test('sets classes for defined property isInteractive.', async (): Promise<void> => {
+  test('inserts links according to defined property partner.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <LogoMinimal isInteractive={ true } />
-          <LogoMinimal isInteractive={ false } />
+          <MadeBy partner={{ href: '/some-link', name: 'some-name' }} />
         </ThemeProvider>,
         container
       );
     });
 
-    const logos = toArray(container.querySelectorAll('div'));
-    const [ isInteractive, notInteractive ] = logos;
+    const links = toArray(container.querySelectorAll('a'));
+    const partner = links.filter((link): boolean => link.textContent === 'some-name');
 
-    assert.that(isInteractive.className).is.containing('IsInteractive');
-    assert.that(notInteractive.className).is.not.containing('IsInteractive');
+    assert.that(partner).is.not.null();
   });
 });

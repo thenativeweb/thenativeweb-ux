@@ -3,9 +3,9 @@ import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { toArray } from '../../shared/toArray';
-import { LogoWolkenkit, ThemeProvider } from '../../../lib';
+import { PoweredBy, ThemeProvider } from '../../../lib';
 
-suite('LogoWolkenkit', (): void => {
+suite('PoweredBy', (): void => {
   let container: Element;
 
   setup((): void => {
@@ -21,49 +21,46 @@ suite('LogoWolkenkit', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <LogoWolkenkit />
+          <PoweredBy />
         </ThemeProvider>,
         container
       );
     });
 
-    const logo = container.querySelector('div');
+    const poweredBy = container.querySelector('div');
 
-    assert.that(logo!.className).is.containingAllOf([ 'LogoWolkenkit', 'SizeMd' ]);
+    assert.that(poweredBy!.className).is.containing('PoweredBy');
   });
 
-  test('sets classes for defined property size.', async (): Promise<void> => {
+  test('passes through defined property size.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <LogoWolkenkit size='md' />
-          <LogoWolkenkit size='lg' />
-          <LogoWolkenkit size='xl' />
+          <PoweredBy size='md' />
+          <PoweredBy size='lg' />
         </ThemeProvider>,
         container
       );
     });
 
-    const logos = toArray(container.querySelectorAll('div'));
-    const [ medium, large, xLarge ] = logos;
+    const [ medium, large ] = toArray(container.querySelectorAll('[class^=Product]'));
 
     assert.that(medium.className).is.containing('SizeMd');
     assert.that(large.className).is.containing('SizeLg');
-    assert.that(xLarge.className).is.containing('SizeXl');
   });
 
-  test('returns null if isVisible is set to false.', async (): Promise<void> => {
+  test('passes through defined property product.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <LogoWolkenkit isVisible={ false } />
+          <PoweredBy product='wolkenkit' />
         </ThemeProvider>,
         container
       );
     });
 
-    const logo = container.querySelector('div');
+    const wolkenkit = container.querySelector('[class^=LogoWolkenkit]');
 
-    assert.that(logo).is.null();
+    assert.that(wolkenkit).is.not.null();
   });
 });

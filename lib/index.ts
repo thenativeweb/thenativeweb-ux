@@ -10,6 +10,9 @@ import { ControlGroup } from './components/forms/ControlGroup';
 import { ControlGroupDivider } from './components/forms/ControlGroupDivider';
 import { ControlGroupItem } from './components/forms/ControlGroupItem';
 import { Dropdown } from './components/input/Dropdown';
+import { Form } from './components/forms/Form';
+import { FormActions } from './components/forms/FormActions';
+import { FormRow } from './components/forms/FormRow';
 import { Grid } from './components/layout/Grid';
 import { GridItem } from './components/layout/GridItem';
 import { Headline } from './components/typography/Headline';
@@ -25,23 +28,23 @@ import { Message } from './components/feedback/Message';
 import { Modal } from './components/feedback/Modal';
 import { ModalRow } from './components/feedback/ModalRow';
 import { Pattern } from './components/branding/Pattern';
+import { PoweredBy } from './components/branding/PoweredBy';
 import { Product } from './components/branding/Product';
 import { Sidebar } from './components/layout/Sidebar';
 import { SidebarBrand } from './components/layout/SidebarBrand';
 import { SidebarFooter } from './components/layout/SidebarFooter';
 import { SidebarItem } from './components/layout/SidebarItem';
-import { StyleCollector } from './components/StyleCollector';
+import { StyleCollector } from './components/roots/StyleCollector';
 import { Text } from './components/typography/Text';
 import { TextArea } from './components/input/TextArea';
 import { TextBox } from './components/input/TextBox';
-import { ThemeProvider } from './components/ThemeProvider';
-import { Toggle } from './components/Toggle';
+import { ThemeProvider } from './components/roots/ThemeProvider';
+import { Toggle } from './components/input/Toggle';
 import { Transition } from './components/animation/Transition';
 import { TransitionGroup } from './components/animation/TransitionGroup';
-import { Website } from './components/Website';
+import { Website } from './components/roots/Website';
 import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme } from './styles';
 import { dialogs, excecutionEnvironment, getPortalRootNode, notifications } from './services';
-import { Form, FormActions, FormRow } from './components/Form';
 import { Theme, themes } from './themes';
 
 export {
@@ -81,6 +84,7 @@ export {
   ModalRow,
   notifications,
   Pattern,
+  PoweredBy,
   Product,
   removeServerSideStyles,
   Sidebar,

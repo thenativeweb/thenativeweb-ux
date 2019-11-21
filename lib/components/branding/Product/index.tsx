@@ -32,7 +32,7 @@ const Product: FunctionComponent<ProductProps> = ({
   let nameComponent = <div className={ classes.Name }>{ name }</div>;
   let Logo = LogoTheNativeWeb;
 
-  if (theme.name === 'wolkenkit') {
+  if (theme.name === 'wolkenkit' || name === 'wolkenkit') {
     nameComponent = <div className={ classes.CompositeName }><span>wolken</span>kit</div>;
     Logo = LogoWolkenkit;
   }

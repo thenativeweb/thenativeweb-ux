@@ -1,4 +1,4 @@
-import buntstift from 'buntstift';
+import { buntstift } from 'buntstift';
 import { nginx } from '../shared/containers/nginx';
 import path from 'path';
 import shell from 'shelljs';

@@ -2,9 +2,9 @@ import { act } from '../../shared/act';
 import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Sidebar, ThemeProvider } from '../../../lib';
+import { FormRow, ThemeProvider } from '../../../lib';
 
-suite('Sidebar', (): void => {
+suite('FormRow', (): void => {
   let container: Element;
 
   setup((): void => {
@@ -20,15 +20,14 @@ suite('Sidebar', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Sidebar id='some-id'>Sidebar</Sidebar>
+          <FormRow />
         </ThemeProvider>,
         container
       );
     });
 
-    const sidebar = container.querySelector('div');
+    const formRow = container.querySelector('div');
 
-    assert.that(sidebar!.id).is.equalTo('some-id');
-    assert.that(sidebar!.className).is.containing('Sidebar');
+    assert.that(formRow!.className).is.containing('FormRow');
   });
 });

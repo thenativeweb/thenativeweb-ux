@@ -1,5 +1,5 @@
-import { Theme } from '../../themes';
-import { classNames, createUseStyles } from '../../styles';
+import { Theme } from '../../../themes';
+import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement, useCallback } from 'react';
 import { renderDefaultToggle, RenderToggleOptions } from './renderDefaultToggle';
 import { styles, ToggleClassNames } from './styles';

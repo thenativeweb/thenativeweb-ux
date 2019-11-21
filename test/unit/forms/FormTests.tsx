@@ -2,9 +2,10 @@ import { act } from '../../shared/act';
 import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BusyIndicator, ThemeProvider } from '../../../lib';
+import { submit } from '../../shared/eventDispatchers';
+import { Form, ThemeProvider } from '../../../lib';
 
-suite('BusyIndicator', (): void => {
+suite('Form', (): void => {
   let container: Element;
 
   setup((): void => {
@@ -20,29 +21,39 @@ suite('BusyIndicator', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <BusyIndicator />
+          <Form />
         </ThemeProvider>,
         container
       );
     });
 
-    const busy = container.querySelector('div');
+    const form = container.querySelector('form');
 
-    assert.that(busy!.className).is.containing('BusyIndicator');
+    assert.that(form!.className).is.containing('Form');
   });
 
-  test('returns null if property isVisible is set to false.', async (): Promise<void> => {
+  test('takes onSubmit function and runs it if submitted.', async (): Promise<void> => {
+    let submitted = false;
+
+    const onSubmit = (): void => {
+      submitted = true;
+    };
+
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <BusyIndicator isVisible={ false } />
+          <Form onSubmit={ onSubmit } />
         </ThemeProvider>,
         container
       );
     });
 
-    const busy = container.querySelector('div');
+    const form = container.querySelector('form');
 
-    assert.that(busy).is.null();
+    act((): void => {
+      submit(form!);
+    });
+
+    assert.that(submitted).is.true();
   });
 });

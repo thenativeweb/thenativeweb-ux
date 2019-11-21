@@ -1,5 +1,5 @@
 import { act } from '../../shared/act';
-import assert from 'assertthat';
+import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Text, ThemeProvider } from '../../../lib';

@@ -1,5 +1,5 @@
-import EventEmitter from 'events';
-import uuid from 'uuidv4';
+import { EventEmitter } from 'events';
+import { uuid } from 'uuidv4';
 
 export type NotificationType = 'error' | 'success';
 

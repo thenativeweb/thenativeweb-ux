@@ -8,7 +8,7 @@ export type LogoWolkenkitClassNames =
   'SizeXl' |
   'Box' |
   '@keyframes move-cloud' |
-  'MovingCloud' |
+  'MovingCloudAnimated' |
   'MovingCloud1' |
   'MovingCloud2';
 
@@ -40,7 +40,7 @@ const styles = (theme: Theme): Styles<LogoWolkenkitClassNames> => ({
     '100%': { transform: 'translate3d(166px, 0, 0)' }
   },
 
-  MovingCloud: {
+  MovingCloudAnimated: {
     animationName: '$move-cloud',
     animationTimingFunction: 'linear',
     animationIterationCount: 'infinite',

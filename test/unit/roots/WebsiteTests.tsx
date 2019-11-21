@@ -2,9 +2,9 @@ import { act } from '../../shared/act';
 import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Sidebar, ThemeProvider } from '../../../lib';
+import { ThemeProvider, Website } from '../../../lib';
 
-suite('Sidebar', (): void => {
+suite('Website', (): void => {
   let container: Element;
 
   setup((): void => {
@@ -16,19 +16,18 @@ suite('Sidebar', (): void => {
     document.body.removeChild(container);
   });
 
-  test('renders although no property has been defined.', async (): Promise<void> => {
+  test('renders.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Sidebar id='some-id'>Sidebar</Sidebar>
+          <Website>Website</Website>
         </ThemeProvider>,
         container
       );
     });
 
-    const sidebar = container.querySelector('div');
+    const website = container.querySelector('div');
 
-    assert.that(sidebar!.id).is.equalTo('some-id');
-    assert.that(sidebar!.className).is.containing('Sidebar');
+    assert.that(website!.className).is.containing('Website');
   });
 });
