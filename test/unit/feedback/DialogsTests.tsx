@@ -1,5 +1,5 @@
 import { act } from '../../shared/act';
-import assert from 'assertthat';
+import { assert } from 'assertthat';
 import { click } from '../../shared/eventDispatchers';
 import { Dialogs } from '../../../lib/components/Dialogs';
 import React from 'react';
