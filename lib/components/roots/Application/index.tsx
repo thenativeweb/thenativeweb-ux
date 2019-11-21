@@ -1,9 +1,6 @@
-import { Dialogs } from '../../Dialogs';
-import { Icons } from '../../graphics/Icons';
-import { Notifications } from '../../Notifications';
-import { Theme } from '../../..';
 import { ApplicationClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
+import { Dialogs, Icons, Notifications, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface ApplicationProps {

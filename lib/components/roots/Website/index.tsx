@@ -1,9 +1,6 @@
 import classNames from 'classnames';
 import { createUseStyles } from '../../../styles';
-import { Dialogs } from '../../Dialogs';
-import { Icons } from '../../graphics/Icons';
-import { Notifications } from '../../Notifications';
-import { Theme } from '../../../themes';
+import { Dialogs, Icons, Notifications, Theme } from '../../..';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 import { styles, WebsiteClassNames } from './styles';
 

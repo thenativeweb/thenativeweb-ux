@@ -1,15 +1,23 @@
-import { createUseStyles } from '../../styles';
 import { Notification } from './Notification';
 import ReactDOM from 'react-dom';
-import { useForceUpdate } from '../useForceUpdate';
-import { excecutionEnvironment, getPortalRootNode, notifications } from '../../services';
+import { useForceUpdate } from '../../useForceUpdate';
+import { classNames, createUseStyles } from '../../../styles';
+import { excecutionEnvironment, getPortalRootNode, notifications } from '../../../services';
 import { NotificationsClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
-import { Theme, TransitionGroup } from '../..';
+import { Theme, TransitionGroup } from '../../..';
 
 const useStyles = createUseStyles<Theme, NotificationsClassNames>(styles);
 
-const Notifications: FunctionComponent = (): ReactElement | null => {
+interface NotificationsProps {
+  className?: string;
+  portalRootNode?: HTMLElement;
+}
+
+const Notifications: FunctionComponent<NotificationsProps> = ({
+  className,
+  portalRootNode
+}): ReactElement | null => {
   const classes = useStyles();
   const forceUpdate = useForceUpdate();
 
@@ -31,7 +39,7 @@ const Notifications: FunctionComponent = (): ReactElement | null => {
 
   return ReactDOM.createPortal(
     (
-      <div className={ classes.Notifications }>
+      <div className={ classNames(classes.Notifications, className) }>
         <TransitionGroup type='FadeInLeft'>
           { notifications.state.items.map((notification): ReactElement => (
             <Notification key={ notification.id } type={ notification.type } text={ notification.text } />
@@ -39,7 +47,7 @@ const Notifications: FunctionComponent = (): ReactElement | null => {
         </TransitionGroup>
       </div>
     ),
-    getPortalRootNode()
+    portalRootNode || getPortalRootNode()
   );
 };
 
