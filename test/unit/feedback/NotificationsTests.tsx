@@ -1,10 +1,8 @@
 import { act } from '../../shared/act';
 import { assert } from 'assertthat';
-import { click } from '../../shared/eventDispatchers';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { notifications, Notifications, ThemeProvider } from '../../../lib';
-import { notStrictEqual } from 'assert';
 
 suite('Notifications', (): void => {
   let container: HTMLElement,
