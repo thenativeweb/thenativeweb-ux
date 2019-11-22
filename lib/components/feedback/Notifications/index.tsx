@@ -1,4 +1,5 @@
 import { Notification } from './Notification';
+import { NotificationService } from '../../../services/NotificationService';
 import ReactDOM from 'react-dom';
 import { useForceUpdate } from '../../useForceUpdate';
 import { classNames, createUseStyles } from '../../../styles';
@@ -12,10 +13,12 @@ const useStyles = createUseStyles<Theme, NotificationsClassNames>(styles);
 interface NotificationsProps {
   className?: string;
   portalRootNode?: HTMLElement;
+  notificationService?: NotificationService;
 }
 
 const Notifications: FunctionComponent<NotificationsProps> = ({
   className,
+  notificationService = notifications,
   portalRootNode
 }): ReactElement | null => {
   const classes = useStyles();
@@ -30,10 +33,10 @@ const Notifications: FunctionComponent<NotificationsProps> = ({
   }, []);
 
   useEffect((): () => void => {
-    notifications.on('changed', handleServiceChanged);
+    notificationService.on('changed', handleServiceChanged);
 
     return (): void => {
-      notifications.removeListener('changed', handleServiceChanged);
+      notificationService.removeListener('changed', handleServiceChanged);
     };
   }, []);
 
@@ -41,7 +44,7 @@ const Notifications: FunctionComponent<NotificationsProps> = ({
     (
       <div className={ classNames(classes.Notifications, className) }>
         <TransitionGroup type='FadeInLeft'>
-          { notifications.state.items.map((notification): ReactElement => (
+          { notificationService.state.items.map((notification): ReactElement => (
             <Notification key={ notification.id } type={ notification.type } text={ notification.text } />
           ))}
         </TransitionGroup>
