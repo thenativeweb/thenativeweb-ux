@@ -9,7 +9,7 @@ import { Container } from './components/layout/Container';
 import { ControlGroup } from './components/forms/ControlGroup';
 import { ControlGroupDivider } from './components/forms/ControlGroupDivider';
 import { ControlGroupItem } from './components/forms/ControlGroupItem';
-import { Dialogs } from './components/Dialogs';
+import { Dialogs } from './components/feedback/Dialogs';
 import { Dropdown } from './components/input/Dropdown';
 import { Form } from './components/forms/Form';
 import { FormActions } from './components/forms/FormActions';

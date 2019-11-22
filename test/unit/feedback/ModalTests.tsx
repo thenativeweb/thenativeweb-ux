@@ -1,22 +1,26 @@
 import { act } from '../../shared/act';
 import { assert } from 'assertthat';
 import { click } from '../../shared/eventDispatchers';
-import { getPortalRootNode } from '../../../lib/services/getPortalRootNode';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { toArray } from '../../shared/toArray';
 import { Modal, ThemeProvider } from '../../../lib';
 
 suite('Modal', (): void => {
-  let container: Element;
+  let container: HTMLElement,
+      portalRootNode: HTMLElement;
 
   setup((): void => {
     container = document.createElement('div');
     document.body.appendChild(container);
+
+    portalRootNode = document.createElement('div');
+    document.body.appendChild(portalRootNode);
   });
 
   teardown((): void => {
     document.body.removeChild(container);
+    document.body.removeChild(portalRootNode);
   });
 
   test('renders with only required properties.', async (): Promise<void> => {
@@ -29,14 +33,14 @@ suite('Modal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Modal className='Modal-for-testing-1' isVisible={ true } onCancel={ onCancel } />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-1' isVisible={ true } onCancel={ onCancel } />
         </ThemeProvider>,
         container
       );
     });
 
-    const modal = getPortalRootNode().querySelector<HTMLElement>('.Modal-for-testing-1');
-    const backdrop = getPortalRootNode().querySelector<HTMLElement>('[class^=Backdrop]');
+    const modal = portalRootNode.querySelector<HTMLElement>('.Modal-for-testing-1');
+    const backdrop = portalRootNode.querySelector<HTMLElement>('[class^=Backdrop]');
 
     assert.that(modal).is.not.null();
 
@@ -53,13 +57,13 @@ suite('Modal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Modal className='Modal-for-testing-2' isVisible={ false } onCancel={ onCancel } />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-2' isVisible={ false } onCancel={ onCancel } />
         </ThemeProvider>,
         container
       );
     });
 
-    const modal = getPortalRootNode().querySelector<HTMLElement>('.Modal-for-testing-2');
+    const modal = portalRootNode.querySelector<HTMLElement>('.Modal-for-testing-2');
 
     assert.that(modal).is.null();
   });
@@ -70,16 +74,16 @@ suite('Modal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Modal className='Modal-for-testing-3' isVisible={ true } onCancel={ onCancel } attach='left' />
-          <Modal className='Modal-for-testing-3' isVisible={ true } onCancel={ onCancel } attach='right' />
-          <Modal className='Modal-for-testing-3' isVisible={ true } onCancel={ onCancel } attach='sidebar' />
-          <Modal className='Modal-for-testing-3' isVisible={ true } onCancel={ onCancel } attach='center' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-3' isVisible={ true } onCancel={ onCancel } attach='left' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-3' isVisible={ true } onCancel={ onCancel } attach='right' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-3' isVisible={ true } onCancel={ onCancel } attach='sidebar' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-3' isVisible={ true } onCancel={ onCancel } attach='center' />
         </ThemeProvider>,
         container
       );
     });
 
-    const modal = toArray(getPortalRootNode().querySelectorAll<HTMLElement>('.Modal-for-testing-3'));
+    const modal = toArray(portalRootNode.querySelectorAll<HTMLElement>('.Modal-for-testing-3'));
     const [ left, right, sidebar, center ] = modal;
 
     assert.that(left.className).is.containing('ChromeAttachedLeft');
@@ -94,16 +98,16 @@ suite('Modal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Modal className='Modal-for-testing-4' isVisible={ true } onCancel={ onCancel } size='sm' />
-          <Modal className='Modal-for-testing-4' isVisible={ true } onCancel={ onCancel } size='md' />
-          <Modal className='Modal-for-testing-4' isVisible={ true } onCancel={ onCancel } size='lg' />
-          <Modal className='Modal-for-testing-4' isVisible={ true } onCancel={ onCancel } size='fullscreen' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-4' isVisible={ true } onCancel={ onCancel } size='sm' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-4' isVisible={ true } onCancel={ onCancel } size='md' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-4' isVisible={ true } onCancel={ onCancel } size='lg' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-4' isVisible={ true } onCancel={ onCancel } size='fullscreen' />
         </ThemeProvider>,
         container
       );
     });
 
-    const modal = toArray(getPortalRootNode().querySelectorAll<HTMLElement>('.Modal-for-testing-4'));
+    const modal = toArray(portalRootNode.querySelectorAll<HTMLElement>('.Modal-for-testing-4'));
     const [ small, medium, large, fullscreen ] = modal;
 
     assert.that(small.className).is.containing('ChromeSizeSm');
@@ -118,14 +122,14 @@ suite('Modal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Modal className='Modal-for-testing-5' isVisible={ true } onCancel={ onCancel } padding='default' />
-          <Modal className='Modal-for-testing-5' isVisible={ true } onCancel={ onCancel } padding='none' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-5' isVisible={ true } onCancel={ onCancel } padding='default' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-5' isVisible={ true } onCancel={ onCancel } padding='none' />
         </ThemeProvider>,
         container
       );
     });
 
-    const [ standard, none ] = toArray(getPortalRootNode().querySelectorAll<HTMLElement>('.Modal-for-testing-5'));
+    const [ standard, none ] = toArray(portalRootNode.querySelectorAll<HTMLElement>('.Modal-for-testing-5'));
 
     assert.that(standard.className).is.not.containing('ChromePaddingNone');
     assert.that(none.className).is.containing('ChromePaddingNone');
@@ -137,18 +141,18 @@ suite('Modal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Modal className='Modal-for-testing-6' isVisible={ true } onCancel={ onCancel } showHeader={ true } header='Hello, this is a Header.' />
-          <Modal className='Modal-for-testing-7' isVisible={ true } onCancel={ onCancel } showHeader={ false } />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-6' isVisible={ true } onCancel={ onCancel } showHeader={ true } header='Hello, this is a Header.' />
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-7' isVisible={ true } onCancel={ onCancel } showHeader={ false } />
         </ThemeProvider>,
         container
       );
     });
 
-    const show = getPortalRootNode().querySelector<HTMLElement>('.Modal-for-testing-6 [class^=HeaderText]');
+    const show = portalRootNode.querySelector<HTMLElement>('.Modal-for-testing-6 [class^=HeaderText]');
 
     assert.that(show!.textContent).is.equalTo('Hello, this is a Header.');
 
-    const hide = getPortalRootNode().querySelector<HTMLElement>('.Modal-for-testing-7 [class^=Header]');
+    const hide = portalRootNode.querySelector<HTMLElement>('.Modal-for-testing-7 [class^=Header]');
 
     assert.that(hide).is.null();
   });
@@ -159,7 +163,7 @@ suite('Modal', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Modal className='Modal-for-testing-8' isVisible={ true } onCancel={ onCancel }>
+          <Modal portalRootNode={ portalRootNode } className='Modal-for-testing-8' isVisible={ true } onCancel={ onCancel }>
             I am a modal.
           </Modal>
         </ThemeProvider>,
@@ -167,7 +171,7 @@ suite('Modal', (): void => {
       );
     });
 
-    const show = getPortalRootNode().querySelector<HTMLElement>('.Modal-for-testing-8');
+    const show = portalRootNode.querySelector<HTMLElement>('.Modal-for-testing-8');
 
     assert.that(show!.textContent).is.equalTo('I am a modal.');
   });
