@@ -3,7 +3,7 @@ import { uuid } from 'uuidv4';
 
 export type NotificationType = 'error' | 'success';
 
-interface Notification {
+export interface Notification {
   id: string;
   type: NotificationType;
   text: string;
@@ -25,6 +25,28 @@ class NotificationService extends EventEmitter {
     };
   }
 
+  public addNotification ({ type, text, duration }: { type: NotificationType; text: string; duration: number }): Notification {
+    const notification: Notification = {
+      id: uuid(),
+      type,
+      text,
+      duration
+    };
+
+    this.state.items.unshift(notification);
+
+    this.emit('changed');
+
+    return notification;
+  }
+
+  public removeNotification (notification: Notification): void {
+    const notificationIndex = this.state.items.indexOf(notification);
+
+    this.state.items.splice(notificationIndex, 1);
+    this.emit('changed');
+  }
+
   public show ({
     type = 'success',
     text,
@@ -38,22 +60,10 @@ class NotificationService extends EventEmitter {
       throw new Error('Duration is missing.');
     }
 
-    const notification: Notification = {
-      id: uuid(),
-      type,
-      text,
-      duration
-    };
-
-    this.state.items.unshift(notification);
-
-    this.emit('changed');
+    const notification = this.addNotification({ type, text, duration });
 
     setTimeout((): void => {
-      const notificationIndex = this.state.items.indexOf(notification);
-
-      this.state.items.splice(notificationIndex, 1);
-      this.emit('changed');
+      this.removeNotification(notification);
     }, duration);
   }
 }

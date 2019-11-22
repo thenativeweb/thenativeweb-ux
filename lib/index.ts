@@ -9,6 +9,7 @@ import { Container } from './components/layout/Container';
 import { ControlGroup } from './components/forms/ControlGroup';
 import { ControlGroupDivider } from './components/forms/ControlGroupDivider';
 import { ControlGroupItem } from './components/forms/ControlGroupItem';
+import { Dialogs } from './components/Dialogs';
 import { Dropdown } from './components/input/Dropdown';
 import { Form } from './components/forms/Form';
 import { FormActions } from './components/forms/FormActions';
@@ -17,6 +18,7 @@ import { Grid } from './components/layout/Grid';
 import { GridItem } from './components/layout/GridItem';
 import { Headline } from './components/typography/Headline';
 import { Icon } from './components/graphics/Icon';
+import { Icons } from './components/graphics/Icons';
 import { Label } from './components/typography/Label';
 import { Link } from './components/input/Link';
 import { LogoFull } from './components/graphics/LogoFull';
@@ -27,6 +29,7 @@ import { MadeBy } from './components/branding/MadeBy';
 import { Message } from './components/feedback/Message';
 import { Modal } from './components/feedback/Modal';
 import { ModalRow } from './components/feedback/ModalRow';
+import { Notifications } from './components/feedback/Notifications';
 import { Pattern } from './components/branding/Pattern';
 import { PoweredBy } from './components/branding/PoweredBy';
 import { Product } from './components/branding/Product';
@@ -62,6 +65,7 @@ export {
   ControlGroupDivider,
   ControlGroupItem,
   dialogs,
+  Dialogs,
   Dropdown,
   excecutionEnvironment,
   Form,
@@ -72,6 +76,7 @@ export {
   GridItem,
   Headline,
   Icon,
+  Icons,
   Label,
   Link,
   LogoFull,
@@ -83,6 +88,7 @@ export {
   Modal,
   ModalRow,
   notifications,
+  Notifications,
   Pattern,
   PoweredBy,
   Product,
