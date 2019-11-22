@@ -1,6 +1,6 @@
-import { NotificationType } from '../../../services/NotificationService';
-import { Theme } from '../../..';
-import { classNames, createUseStyles } from '../../../styles';
+import { NotificationType } from '../../../../services/NotificationService';
+import { Theme } from '../../../..';
+import { classNames, createUseStyles } from '../../../../styles';
 import { NotificationClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
