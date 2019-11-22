@@ -20,8 +20,8 @@
       "email": "valentina.rotkin@thenativeweb.io"
     }
   ],
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "build/lib/index.js",
+  "types": "build/lib/index.d.ts",
   "dependencies": {
     "animejs": "3.1.0",
     "classnames": "2.2.6",
