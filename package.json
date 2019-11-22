@@ -27,7 +27,9 @@
     "classnames": "2.2.6",
     "jss": "10.0.0",
     "lodash": "4.17.15",
+    "react-element-to-jsx-string": "14.1.0",
     "react-jss": "10.0.0",
+    "react-syntax-highlighter": "11.0.2",
     "react-transition-group": "4.3.0",
     "uuidv4": "6.0.0"
   },
@@ -43,6 +45,7 @@
     "@types/puppeteer": "2.0.0",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.4",
+    "@types/react-syntax-highlighter": "11.0.2",
     "@types/react-transition-group": "4.2.3",
     "@types/shelljs": "0.8.6",
     "assertthat": "5.0.2",
