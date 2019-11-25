@@ -11,7 +11,7 @@ suite('Notifications', (): void => {
       notificationService: NotificationService,
       portalRootNode: HTMLElement;
 
-  setup((): void => {
+  setup(async (): Promise<void> => {
     container = document.createElement('div');
     document.body.appendChild(container);
 
@@ -21,7 +21,7 @@ suite('Notifications', (): void => {
     notificationService = new NotificationService();
   });
 
-  teardown((): void => {
+  teardown(async (): Promise<void> => {
     document.body.removeChild(container);
     document.body.removeChild(portalRootNode);
   });

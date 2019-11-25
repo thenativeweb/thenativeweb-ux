@@ -7,12 +7,12 @@ import { ButtonHint, ThemeProvider } from '../../../lib';
 suite('ButtonHint', (): void => {
   let container: Element;
 
-  setup((): void => {
+  setup(async (): Promise<void> => {
     container = document.createElement('div');
     document.body.appendChild(container);
   });
 
-  teardown((): void => {
+  teardown(async (): Promise<void> => {
     document.body.removeChild(container);
   });
 

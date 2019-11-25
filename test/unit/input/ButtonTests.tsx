@@ -9,12 +9,12 @@ import { Button, ThemeProvider } from '../../../lib';
 suite('Button', (): void => {
   let container: Element;
 
-  setup((): void => {
+  setup(async (): Promise<void> => {
     container = document.createElement('div');
     document.body.appendChild(container);
   });
 
-  teardown((): void => {
+  teardown(async (): Promise<void> => {
     document.body.removeChild(container);
   });
 
