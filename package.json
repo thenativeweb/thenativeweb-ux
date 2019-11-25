@@ -64,9 +64,7 @@
     "react-dom": "^16.10.2"
   },
   "scripts": {
-    "build": "docker build -t thenativeweb/ux .",
-    "styleguide": "styleguidist server",
-    "start-sample-application": "cd test/shared/sampleApplication && npx next dev",
+    "start-sample-application": "cd test/shared/sampleApplication && npx next",
     "export-sample-application": "cd test/shared/sampleApplication && npx next build && npx next export"
   },
   "repository": {

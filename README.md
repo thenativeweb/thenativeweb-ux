@@ -15,24 +15,22 @@ thenativeweb-ux provides UI components for the native web applications.
 ## Installation
 
 ```shell
-$ npm install thenativeweb-ux react react-dom
+$ npm install thenativeweb-ux
 ```
 
 ## Quick start
 
-First you need to add a reference to your application. For the minimum setup, you have to reference the components `Application` and `ThemeProvider`:
+First you need to add a reference to your application. For a minimum setup, you have to reference the components `Application` and `ThemeProvider`:
 
-```javascript static
+```javascript
 import { Application, ThemeProvider } from 'thenativeweb-ux';
 ```
 
-Then, inside your application's `render` function, you need to setup its basic structure. Using the `ThemeProvider`, you have to provide a theme you want to use for your application:
+Then, inside your application's `render` function, setup the basic structure by wrapping the `Application` component inside a `ThemeProvider`.:
 
-```jsx static
-<ThemeProvider theme='thenativeweb'>
+```jsx
+<ThemeProvider>
   <Application>
-    <Application.Services />
-
     {
       // ...
     }
@@ -40,28 +38,22 @@ Then, inside your application's `render` function, you need to setup its basic s
 </ThemeProvider>
 ```
 
-The currently available themes are listed in the following table. If you don't specify a theme, the theme `thenativeweb` is selected as default:
+By default, the `ThemeProvider` will create a *the native web* theme, but you can also select other themes. Currently, the following themes are available:
 
-| Name           | Description                              |
-| -------------- | ---------------------------------------- |
-| `thenativeweb` | A theme for the native web applications. |
-| `wolkenkit`    | A theme for wolkenkit applications.      |
+- `thenativeweb`
+- `wolkenkit`
 
 ### Using components
 
-Afterwards, you can use any component. Of course, you still need to reference them. E.g., to use the `Button` component, use the following code:
+Besides setting up the application itself, you may also use a variety of components. To use a component, you need to add a reference to it. E.g., to use the `Button` component, add the following line to your code:
 
-```javascript static
+```javascript
 import { Button } from 'thenativeweb-ux';
 ```
 
-### Viewing the documentation
-
-The complete documentation for all components can be found at [ux.thenativeweb.io](https://ux.thenativeweb.io).
-
 ### Viewing the Next.js sample application
 
-The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how `thenativeweb-ux` can be used from within a Next.js project. To run the sample application use the following command:
+The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how the various components can be used from within a Next.js project. To run the sample application use the following command:
 
 ```shell
 $ npm run start-sample-application
@@ -71,25 +63,25 @@ $ npm run start-sample-application
 
 This project uses [puppeteer](https://github.com/GoogleChrome/puppeteer) to verify that components render correctly inside a browser. By default these tests are run in headless mode. As debugging integration tests in headless mode can be painful there are two options to debug integration tests visually.
 
-#### 1. Viewing the failing test page in a browser
+#### Viewing failing test pages in a browser
 
-The first option to debug a failing integration test is to view the failing test page in a browser without running the tests. Therefore you need to run the sample application using the following command:
+First, to debug a failing integration test, you can have a look at the failing test page in a browser without running the tests. For that run the sample application using the following command:
 
 ```shell
 $ npm run start-sample-application
 ```
 
-Then you can point your browser to the failing test page and verify if it renders correctly.
+Then point your browser to the failing test page and verify if it renders correctly.
 
-#### 2. Running the tests with UI and in slow motion
+#### Running tests with a UI and in slow motion
 
-The second option is to verify that all the pupeteer commands are executed succesfully which is much easier to do when puppeteer is not running in headless mode. Set the environment variable `DEBUG` to `true`. This will start puppeteer in non-headless mode and slow down each operation.
+Second, verifying that all the puppeteer commands are executed succesfully, it is much easier to do when puppeteer is not running in headless mode. To disable headless mode, set the environment variable `DEBUG` to `true`. This will start puppeteer in non-headless mode and slow down each operation:
 
 ```shell
 $ DEBUG=true npx roboter test --type integration
 ```
 
-This mode makes most sense if you also limit tests that should be run using mocha's `only` option.
+This makes most sense if you also limit tests that should be run using mocha's `only` option.
 
 ## Running the build
 
