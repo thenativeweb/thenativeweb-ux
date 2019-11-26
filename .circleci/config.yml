@@ -50,6 +50,13 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/workspace
+      - run: |
+            set +e
+            export NVM_DIR="/opt/circleci/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+            nvm install v12.13.0
+            nvm alias default v12.13.0
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/workspace/.npmrc
       - run: npx roboter build
       - run: npm publish
