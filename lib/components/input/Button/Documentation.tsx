@@ -1,15 +1,14 @@
 import { ComponentPreview } from '../../../components/documentation/ComponentPreview';
-import { Styleguide } from '../../../layouts/Styleguide';
-import { Button, ButtonHint, Headline } from '../../..';
+import { Button, ButtonHint, Headline, notifications } from '../../..';
 import React, { ReactElement } from 'react';
 
 const Documentation = (): ReactElement => (
-  <Styleguide>
+  <React.Fragment>
     <Headline>Button</Headline>
 
     <ComponentPreview>
       <div>
-        <Button onClick={ (): void => alert('clicked') }>Click me!</Button>
+        <Button onClick={ (): void => notifications.show({ type: 'success', text: 'clicked' }) }>Click me!</Button>
       </div>
     </ComponentPreview>
 
@@ -75,7 +74,7 @@ const Documentation = (): ReactElement => (
         <Button icon='heart' />
       </div>
     </ComponentPreview>
-  </Styleguide>
+  </React.Fragment>
 );
 
 export { Documentation };

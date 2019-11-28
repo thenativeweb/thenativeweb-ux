@@ -67,6 +67,8 @@
     "react-dom": "^16.10.2"
   },
   "scripts": {
+    "start-styleguide": "cd styleguide && npx next --port 6060",
+    "build-styleguide": "cd styleguide && npx next build && npx next export",
     "start-sample-application": "cd test/shared/sampleApplication && npx next",
     "export-sample-application": "cd test/shared/sampleApplication && npx next build && npx next export"
   },
