@@ -10,7 +10,7 @@ suite('Modal', (): void => {
   let container: HTMLElement,
       portalRootNode: HTMLElement;
 
-  setup((): void => {
+  setup(async (): Promise<void> => {
     container = document.createElement('div');
     document.body.appendChild(container);
 
@@ -18,7 +18,7 @@ suite('Modal', (): void => {
     document.body.appendChild(portalRootNode);
   });
 
-  teardown((): void => {
+  teardown(async (): Promise<void> => {
     document.body.removeChild(container);
     document.body.removeChild(portalRootNode);
   });

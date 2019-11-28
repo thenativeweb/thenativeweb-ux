@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "0.14.0",
+  "version": "0.15.2",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -20,8 +20,8 @@
       "email": "valentina.rotkin@thenativeweb.io"
     }
   ],
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "build/lib/index.js",
+  "types": "build/lib/index.d.ts",
   "dependencies": {
     "animejs": "3.1.0",
     "classnames": "2.2.6",
@@ -34,16 +34,16 @@
     "uuidv4": "6.0.0"
   },
   "devDependencies": {
-    "@babel/runtime-corejs2": "7.7.2",
+    "@babel/runtime-corejs2": "7.7.4",
     "@types/animejs": "3.1.0",
     "@types/async-retry": "1.4.1",
     "@types/classnames": "2.2.9",
     "@types/common-tags": "1.8.0",
     "@types/jsdom": "12.2.4",
     "@types/lodash": "4.14.149",
-    "@types/node": "12.12.11",
+    "@types/node": "12.12.14",
     "@types/puppeteer": "2.0.0",
-    "@types/react": "16.9.11",
+    "@types/react": "16.9.13",
     "@types/react-dom": "16.9.4",
     "@types/react-syntax-highlighter": "11.0.2",
     "@types/react-transition-group": "4.2.3",
@@ -59,7 +59,7 @@
     "puppeteer": "2.0.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "roboter": "9.2.4",
+    "roboter": "9.2.5",
     "shelljs": "0.8.3"
   },
   "peerDependencies": {
@@ -67,9 +67,7 @@
     "react-dom": "^16.10.2"
   },
   "scripts": {
-    "build": "docker build -t thenativeweb/ux .",
-    "styleguide": "styleguidist server",
-    "start-sample-application": "cd test/shared/sampleApplication && npx next dev",
+    "start-sample-application": "cd test/shared/sampleApplication && npx next",
     "export-sample-application": "cd test/shared/sampleApplication && npx next build && npx next export"
   },
   "repository": {
