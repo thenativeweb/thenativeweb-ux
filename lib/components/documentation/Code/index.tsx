@@ -8,15 +8,15 @@
 //
 // SyntaxHighlighter.registerLanguage('jsx', jsx);
 
-import { createUseStyles } from '../../../styles';
 import { prismStyles } from './prismStyles';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { Theme } from '../../../themes';
+import { classNames, createUseStyles } from '../../../styles';
 import { CodeClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface CodeProps {
-  children: string;
+  children: string | undefined | null;
   language?: 'javascript' | 'jsx';
   className?: string;
   type?: 'inline' | 'block';
@@ -24,15 +24,19 @@ interface CodeProps {
 
 const useStyles = createUseStyles<Theme, CodeClassNames>(styles);
 
-const Code: FunctionComponent<CodeProps> = ({ children, language = 'javascript', type = 'block' }): ReactElement => {
+const Code: FunctionComponent<CodeProps> = ({ children, className, language = 'javascript', type = 'block' }): ReactElement | null => {
   const classes = useStyles();
+
+  if (!children) {
+    return null;
+  }
 
   if (type === 'inline') {
     return <code>{ children }</code>;
   }
 
   return (
-    <pre className={ classes.Code }>
+    <pre className={ classNames(classes.Code, className) }>
       <SyntaxHighlighter style={ prismStyles } language={ language }>{ children }</SyntaxHighlighter>
     </pre>
   );

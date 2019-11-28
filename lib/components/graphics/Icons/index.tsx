@@ -18,6 +18,10 @@ const Icons = (): ReactElement => (
       <polygon points='14.2,1.3 5.4,11.6 1.7,8.3 0.3,9.7 5.6,14.4 15.8,2.7' />
     </symbol>
 
+    <symbol viewBox='0 0 24 24' id='icon-show-source-code-xml'>
+      <path d='M24 10.935v2.131l-8 3.947v-2.23l5.64-2.783-5.64-2.79v-2.223l8 3.948zm-16 3.848l-5.64-2.783 5.64-2.79v-2.223l-8 3.948v2.131l8 3.947v-2.23zm7.047-10.783h-2.078l-4.011 16h2.073l4.016-16z' />
+    </symbol>
+
     <symbol viewBox='0 0 24 24' id='icon-chevron'>
       <path d='M7,6l2.038-2L17,12l-7.962,8L7,18.001L13,12L7,6z' />
     </symbol>

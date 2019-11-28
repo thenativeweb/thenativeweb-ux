@@ -1,11 +1,12 @@
 import { Button } from '../../..';
 import { Code } from '../Code';
-import { createUseStyles } from '../../../styles';
-import reactElementToJSXString from 'react-element-to-jsx-string';
-import { styles } from './styles';
+import { formatAsPrettyString } from '../formatAsPrettyString';
+import { Theme } from '../../../themes';
+import { classNames, createUseStyles } from '../../../styles';
+import { ComponentPreviewClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement, useState } from 'react';
 
-const useStyles = createUseStyles(styles);
+const useStyles = createUseStyles<Theme, ComponentPreviewClassNames>(styles);
 
 interface ComponentPreviewProps {
   className?: string;
@@ -13,36 +14,33 @@ interface ComponentPreviewProps {
 
 const ComponentPreview: FunctionComponent<ComponentPreviewProps> = ({ children }): ReactElement => {
   const classes = useStyles();
-  const [ isCodeVisible, setIsCodeVisible ] = useState(false);
-
-  //
-  // const previewAsString = ReactDOMServer.renderToStaticMarkup(<ThemeProvider>{ children }</ThemeProvider>);
+  const [ isCodeVisible, setIsCodeVisible ] = useState(true);
+  const codePanelClassNames = classNames(classes.CodePanel, {
+    [classes.CodePanelIsExpanded]: isCodeVisible
+  });
 
   return (
     <div
       className={ classes.ComponentPreview }
     >
-      <div className={ classes.Preview }>
-        { children }
+      <div className={ classes.Content }>
+        <div className={ codePanelClassNames }>
+          <Button
+            isSubtle={ true }
+            className={ classes.CodePanelToggleButton }
+            icon='expand'
+            onClick={ (): void => setIsCodeVisible(!isCodeVisible) }
+          />
+
+          <Code className={ classes.Code } language='jsx'>
+            { formatAsPrettyString(children) }
+          </Code>
+        </div>
+
+        <div className={ classes.PreviewPanel }>
+          { children }
+        </div>
       </div>
-
-      <Button
-        isSubtle={ true }
-        icon={ isCodeVisible ? 'expand' : 'chevron' }
-        onClick={ (): void => setIsCodeVisible(!isCodeVisible) }
-      >
-        Source Code
-      </Button>
-
-      {
-        isCodeVisible ?
-          (
-            <Code language='jsx'>
-              { reactElementToJSXString(children, { showFunctions: false }) }
-            </Code>
-          ) :
-          null
-      }
     </div>
   );
 };

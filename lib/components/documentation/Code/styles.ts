@@ -12,14 +12,13 @@ const styles = (theme: Theme): Styles<CodeClassNames> => ({
     },
 
     '& code': {
-      marginTop: theme.space(3),
-      marginBottom: theme.space(6),
       border: 0,
       display: 'block',
       color: '#abb2bf',
-      background: '#282c34',
+      background: theme.color.brand.grayDark,
       padding: [ theme.space(2), theme.space(3) ],
-      overflowX: 'auto'
+      overflowX: 'auto',
+      maxWidth: '800px'
     }
   }
 });

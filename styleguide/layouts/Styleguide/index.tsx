@@ -16,7 +16,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
   const classes = useStyles();
 
   return (
-    <Website className={ classes.Styleguide }>
+    <Website className={ classes.Styleguide } useNotifications={ true } useDialogs={ true }>
       <div className={ classes.NavigationDesktop }>
         <Sidebar>
           <Link href='/'><SidebarBrand><Product name='ux' /></SidebarBrand></Link>

@@ -14,18 +14,20 @@ const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
   Level1: {
     fontSize: theme.font.size.xl,
     fontWeight: 600,
-    textAlign: 'center',
     borderBottom: `1px solid ${theme.color.content.border}`,
-    paddingBottom: `${theme.space(2)}px`,
-    marginBottom: `${theme.space(2)}px`
+    padding: `${theme.space(4)}px 0 ${theme.space(2)}px 0`,
+    marginBottom: `${theme.space(2)}px`,
+
+    '&:first-child': {
+      paddingTop: 0
+    }
   },
 
   Level2: {
-    fontSize: theme.font.size.xl,
-    fontWeight: 500,
+    fontSize: theme.font.size.lg,
+    fontWeight: 600,
     textAlign: 'left',
-    borderBottom: `1px solid ${theme.color.content.border}`,
-    padding: `${theme.space(2) * 2}px 0 ${theme.space(2)}px 0`,
+    padding: `${theme.space(4)}px 0 ${theme.space(1)}px 0`,
     marginBottom: `${theme.space(2)}px`
   }
 });

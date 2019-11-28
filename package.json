@@ -27,7 +27,7 @@
     "classnames": "2.2.6",
     "jss": "10.0.0",
     "lodash": "4.17.15",
-    "react-element-to-jsx-string": "14.1.0",
+    "pretty-format": "24.9.0",
     "react-jss": "10.0.0",
     "react-syntax-highlighter": "11.0.2",
     "react-transition-group": "4.3.0",

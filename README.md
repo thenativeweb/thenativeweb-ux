@@ -51,9 +51,17 @@ Besides setting up the application itself, you may also use a variety of compone
 import { Button } from 'thenativeweb-ux';
 ```
 
+### Viewing the styleguide
+
+You can run the [styleguide](styleguide) that demonstrates the various components and their usage on your local machine. To run the styleguide use the following command:
+
+```shell
+$ npm run start-styleguide
+```
+
 ### Viewing the Next.js sample application
 
-The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how the various components can be used from within a Next.js project. To run the sample application use the following command:
+The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how components can be used from within a Next.js project. To run the sample application use the following command:
 
 ```shell
 $ npm run start-sample-application
