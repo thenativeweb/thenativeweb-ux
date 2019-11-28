@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "0.14.0",
+  "version": "0.15.2",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -39,7 +39,7 @@
     "@types/common-tags": "1.8.0",
     "@types/jsdom": "12.2.4",
     "@types/lodash": "4.14.149",
-    "@types/node": "12.12.12",
+    "@types/node": "12.12.14",
     "@types/puppeteer": "2.0.0",
     "@types/react": "16.9.13",
     "@types/react-dom": "16.9.4",

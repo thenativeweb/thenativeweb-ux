@@ -38,10 +38,10 @@ Then, inside your application's `render` function, setup the basic structure by 
 </ThemeProvider>
 ```
 
-By default, the `ThemeProvider` will create a *the native web* theme, but you can also select other themes. Currently, the following themes are available:
+By default, the `ThemeProvider` will create a _the native web_ theme, but you can also select other themes. Currently, the following themes are available:
 
-- `thenativeweb`
-- `wolkenkit`
+-   `thenativeweb`
+-   `wolkenkit`
 
 ### Using components
 
