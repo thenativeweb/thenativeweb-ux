@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/thenativeweb/thenativeweb-ux/compare/v1.0.1...1.0.2) (2019-11-29)
+
+
+### Bug Fixes
+
+* Compile TypeScript before releasing. ([#148](https://github.com/thenativeweb/thenativeweb-ux/issues/148)) ([c110251](https://github.com/thenativeweb/thenativeweb-ux/commit/c11025143cc3a8e7f42a808253daf05791147e6d))
+
 ## [1.0.1](https://github.com/thenativeweb/thenativeweb-ux/compare/v1.0.0...v1.0.1) (2019-11-29)
 
 
