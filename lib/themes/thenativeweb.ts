@@ -8,6 +8,7 @@ const thenativeweb = createTheme({
     highlight: '#dd0099',
     grayDark: '#222222',
     gray: '#363d45',
+    grayModest: '#999999',
     grayLight: '#e5e6eb',
     white: '#ffffff'
   },
