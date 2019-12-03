@@ -17,7 +17,9 @@ import { FormRow } from './components/forms/FormRow';
 import { Grid } from './components/layout/Grid';
 import { GridItem } from './components/layout/GridItem';
 import { Headline } from './components/typography/Headline';
+import { Icon } from './components/graphics/Icon';
 import { Icons } from './components/graphics/Icons';
+import { IconSize } from './types/IconSize';
 import { Label } from './components/typography/Label';
 import { Link } from './components/input/Link';
 import { LogoFull } from './components/graphics/LogoFull';
@@ -47,7 +49,6 @@ import { TransitionGroup } from './components/animation/TransitionGroup';
 import { Website } from './components/roots/Website';
 import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme } from './styles';
 import { dialogs, excecutionEnvironment, getPortalRootNode, notifications } from './services';
-import { Icon, IconSize } from './components/graphics/Icon';
 import { Theme, themes } from './themes';
 
 export {
