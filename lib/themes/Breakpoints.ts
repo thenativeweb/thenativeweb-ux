@@ -9,7 +9,7 @@ const defaultSteps = {
 };
 
 class Breakpoints {
-  private readonly steps: {
+  public readonly steps: {
     xs: number;
     sm: number;
     md: number;

@@ -1,8 +1,7 @@
-import { IconSize } from '../../graphics/Icon';
 import { Styles } from 'jss';
 import { ButtonClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
-import { Icon, Label, Theme } from '../../..';
+import { Icon, IconSize, Label, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface ButtonProps {
