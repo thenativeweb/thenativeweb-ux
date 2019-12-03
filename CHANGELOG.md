@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.2...1.0.3) (2019-12-03)
+
+
+### Bug Fixes
+
+* Adjust theming for website needs. ([#153](https://github.com/thenativeweb/thenativeweb-ux/issues/153)) ([31c1294](https://github.com/thenativeweb/thenativeweb-ux/commit/31c129460f8afddb1b95c62f85075208108a7026))
+
 ## [1.0.2](https://github.com/thenativeweb/thenativeweb-ux/compare/v1.0.1...1.0.2) (2019-11-29)
 
 
