@@ -52,7 +52,9 @@ suite('Modal', (): void => {
   });
 
   test('returns null if isVisible is set to false.', async (): Promise<void> => {
-    const onCancel = (): void => {};
+    const onCancel = (): void => {
+      // Intentionally left blank.
+    };
 
     act((): void => {
       ReactDOM.render(
@@ -69,7 +71,9 @@ suite('Modal', (): void => {
   });
 
   test('sets classes for defined property attach.', async (): Promise<void> => {
-    const onCancel = (): void => {};
+    const onCancel = (): void => {
+      // Intentionally left blank.
+    };
 
     act((): void => {
       ReactDOM.render(
@@ -93,7 +97,9 @@ suite('Modal', (): void => {
   });
 
   test('sets classes for defined property size.', async (): Promise<void> => {
-    const onCancel = (): void => {};
+    const onCancel = (): void => {
+      // Intentionally left blank.
+    };
 
     act((): void => {
       ReactDOM.render(
@@ -117,7 +123,9 @@ suite('Modal', (): void => {
   });
 
   test('sets classes for defined property padding.', async (): Promise<void> => {
-    const onCancel = (): void => {};
+    const onCancel = (): void => {
+      // Intentionally left blank.
+    };
 
     act((): void => {
       ReactDOM.render(
@@ -136,7 +144,9 @@ suite('Modal', (): void => {
   });
 
   test('inserts defined text for header if property showHeader is set to true.', async (): Promise<void> => {
-    const onCancel = (): void => {};
+    const onCancel = (): void => {
+      // Intentionally left blank.
+    };
 
     act((): void => {
       ReactDOM.render(
@@ -158,7 +168,9 @@ suite('Modal', (): void => {
   });
 
   test('inserts defined children as content.', async (): Promise<void> => {
-    const onCancel = (): void => {};
+    const onCancel = (): void => {
+      // Intentionally left blank.
+    };
 
     act((): void => {
       ReactDOM.render(
