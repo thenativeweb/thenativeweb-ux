@@ -31,6 +31,7 @@ import { Message } from './components/feedback/Message';
 import { Modal } from './components/feedback/Modal';
 import { ModalRow } from './components/feedback/ModalRow';
 import { Notifications } from './components/feedback/Notifications';
+import { Paragraph } from './components/typography/Paragraph';
 import { Pattern } from './components/branding/Pattern';
 import { PoweredBy } from './components/branding/PoweredBy';
 import { Product } from './components/branding/Product';
@@ -91,6 +92,7 @@ export {
   ModalRow,
   notifications,
   Notifications,
+  Paragraph,
   Pattern,
   PoweredBy,
   Product,

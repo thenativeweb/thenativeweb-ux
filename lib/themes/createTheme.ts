@@ -75,7 +75,11 @@ const createTheme = ({
         width: '80px'
       },
 
-      Pattern: pattern
+      Pattern: pattern,
+
+      Paragraph: {
+        maxWidth: '800px'
+      }
     },
 
     devices: {

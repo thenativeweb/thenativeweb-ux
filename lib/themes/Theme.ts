@@ -22,6 +22,9 @@ export interface Theme {
     borderRadius: { default: string };
     Sidebar: { width: string };
     Pattern: Pattern;
+    Paragraph: {
+      maxWidth: string;
+    };
   };
 
   readonly devices: {

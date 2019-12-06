@@ -22,7 +22,7 @@ const styles = (theme: Theme): Styles<ComponentPreviewClassNames> => ({
   },
 
   Content: {
-    marginTop: theme.space(4),
+    marginTop: theme.space(2),
     position: 'relative',
     display: 'flex'
   },

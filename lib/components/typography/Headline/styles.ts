@@ -27,8 +27,7 @@ const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
     fontSize: theme.font.size.lg,
     fontWeight: 600,
     textAlign: 'left',
-    padding: `${theme.space(4)}px 0 ${theme.space(1)}px 0`,
-    marginBottom: `${theme.space(2)}px`
+    padding: `${theme.space(3)}px 0 ${theme.space(1)}px 0`
   }
 });
 

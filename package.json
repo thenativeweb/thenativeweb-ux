@@ -25,6 +25,7 @@
   "dependencies": {
     "animejs": "3.1.0",
     "classnames": "2.2.6",
+    "color": "3.1.2",
     "jss": "10.0.0",
     "lodash": "4.17.15",
     "pretty-format": "24.9.0",
@@ -38,6 +39,7 @@
     "@types/animejs": "3.1.0",
     "@types/async-retry": "1.4.1",
     "@types/classnames": "2.2.9",
+    "@types/color": "3.0.0",
     "@types/common-tags": "1.8.0",
     "@types/jsdom": "12.2.4",
     "@types/lodash": "4.14.149",
