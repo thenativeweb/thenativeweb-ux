@@ -67,7 +67,10 @@ const styles = (theme: Theme): Styles<ControlGroupItemClassNames> => ({
 
   TypeCheckBox: {
     '& $Control': {
-      paddingRight: '6px'
+      paddingRight: '6px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
     }
   }
 });
