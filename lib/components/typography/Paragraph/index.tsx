@@ -1,8 +1,8 @@
 import { Styles } from 'jss';
+import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { ParagraphClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
-import { Text, Theme } from '../../..';
 
 interface ParagraphProps {
   className?: string;
@@ -25,9 +25,9 @@ const Paragraph: FunctionComponent<ParagraphProps> = ({
   );
 
   return (
-    <Text id={ id } className={ componentClasses } style={ style } breakLines={ true }>
+    <p id={ id } className={ componentClasses } style={ style }>
       { children }
-    </Text>
+    </p>
   );
 };
 

@@ -18,7 +18,7 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
   },
 
   Content: {
-    padding: theme.space(4),
+    padding: theme.space(6),
     marginLeft: theme.components.Sidebar.width
   }
 });

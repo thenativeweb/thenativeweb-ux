@@ -9,6 +9,7 @@
 // SyntaxHighlighter.registerLanguage('jsx', jsx);
 
 import { prismStyles } from './prismStyles';
+import { stripIndent } from 'common-tags';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
@@ -37,7 +38,7 @@ const Code: FunctionComponent<CodeProps> = ({ children, className, language = 'j
 
   return (
     <pre className={ classNames(classes.Code, className) }>
-      <SyntaxHighlighter style={ prismStyles } language={ language }>{ children }</SyntaxHighlighter>
+      <SyntaxHighlighter style={ prismStyles } language={ language }>{ stripIndent(children) }</SyntaxHighlighter>
     </pre>
   );
 };

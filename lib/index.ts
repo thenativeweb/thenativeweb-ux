@@ -5,6 +5,7 @@ import { BusyIndicator } from './components/feedback/BusyIndicator';
 import { Button } from './components/input/Button';
 import { ButtonHint } from './components/input/ButtonHint';
 import { CheckBox } from './components/input/CheckBox';
+import { Code } from './components/documentation/Code';
 import { Container } from './components/layout/Container';
 import { ControlGroup } from './components/forms/ControlGroup';
 import { ControlGroupDivider } from './components/forms/ControlGroupDivider';
@@ -49,7 +50,7 @@ import { Transition } from './components/animation/Transition';
 import { TransitionGroup } from './components/animation/TransitionGroup';
 import { Website } from './components/roots/Website';
 import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme } from './styles';
-import { dialogs, excecutionEnvironment, getPortalRootNode, notifications } from './services';
+import { dialogs, excecutionEnvironment, getPortalRootNode, notifications, slugify } from './services';
 import { Theme, themes } from './themes';
 
 export {
@@ -62,6 +63,7 @@ export {
   classNames,
   createUseStyles,
   CheckBox,
+  Code,
   Container,
   ControlGroup,
   ControlGroupDivider,
@@ -101,6 +103,7 @@ export {
   SidebarBrand,
   SidebarFooter,
   SidebarItem,
+  slugify,
   StyleCollector,
   ServerSideStyles,
   Text,

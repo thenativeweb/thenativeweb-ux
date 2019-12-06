@@ -10,7 +10,7 @@ const Documentation = (): ReactElement => (
       flexible grids. By default it creates a 12-column layout. Please note
       that for <code>xs</code> screens a 1-column-layout will be applied. You
       can adjust this behaviour by using
-      the <code><Link href='#columns'>columns</Link></code> property.
+      the <code><Link href='#column-count'>columns</Link></code> property.
     </Paragraph>
 
     <Paragraph>
@@ -36,7 +36,7 @@ const Documentation = (): ReactElement => (
       </Grid>
     </ComponentPreview>
 
-    <Headline level='2' id='columns'>Column count</Headline>
+    <Headline level='2'>Column count</Headline>
     <Paragraph>
       If you want to adjust the number of columns, use
       the <code>columns</code> property.
