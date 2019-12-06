@@ -22,6 +22,7 @@ const Page = (): ReactElement => (
     <ul>
       <li><NextLink href='/components/layout/container'>Container</NextLink></li>
       <li><NextLink href='/components/layout/grid'>Grid</NextLink></li>
+      <li><NextLink href='/components/layout/sidebar'>Sidebar</NextLink></li>
     </ul>
 
     <Headline level='3'>Branding</Headline>

@@ -11,7 +11,7 @@ const Documentation = (): ReactElement => {
       <Headline>Container</Headline>
 
       <Paragraph>
-      A <code>Container</code> can be used to position a single child
+        A <code>Container</code> can be used to position a single child
         component on a horizontal and vertical axis. The most common use case
         this component is to center a child both horizontally and vertically
         which is the default option.
