@@ -1,9 +1,7 @@
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { IconClassNames, styles } from './styles';
+import { IconSize, Theme } from '../../..';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
-
-export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
 interface IconProps {
   name: string;

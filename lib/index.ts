@@ -19,6 +19,7 @@ import { GridItem } from './components/layout/GridItem';
 import { Headline } from './components/typography/Headline';
 import { Icon } from './components/graphics/Icon';
 import { Icons } from './components/graphics/Icons';
+import { IconSize } from './types/IconSize';
 import { Label } from './components/typography/Label';
 import { Link } from './components/input/Link';
 import { LogoFull } from './components/graphics/LogoFull';
@@ -76,6 +77,7 @@ export {
   GridItem,
   Headline,
   Icon,
+  IconSize,
   Icons,
   Label,
   Link,

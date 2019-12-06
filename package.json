@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "0.15.2",
+  "version": "1.0.3",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -43,23 +43,24 @@
     "@types/lodash": "4.14.149",
     "@types/node": "12.12.14",
     "@types/puppeteer": "2.0.0",
-    "@types/react": "16.9.13",
+    "@types/react": "16.9.14",
     "@types/react-dom": "16.9.4",
     "@types/react-syntax-highlighter": "11.0.2",
     "@types/react-transition-group": "4.2.3",
     "@types/shelljs": "0.8.6",
-    "assertthat": "5.0.2",
+    "assertthat": "5.1.0",
     "async-retry": "1.2.3",
     "axios": "0.19.0",
     "buntstift": "3.0.0",
     "common-tags": "1.8.0",
     "jsdom": "15.2.1",
     "next": "9.1.4",
-    "processenv": "3.0.0",
+    "processenv": "3.0.1",
     "puppeteer": "2.0.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "roboter": "9.2.5",
+    "roboter": "10.0.0",
+    "semantic-release-configuration": "1.0.6",
     "shelljs": "0.8.3"
   },
   "peerDependencies": {
