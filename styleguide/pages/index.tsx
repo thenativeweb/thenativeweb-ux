@@ -16,6 +16,7 @@ const Page = (): ReactElement => (
     <ul>
       <li><NextLink href='/components/roots/application'>Application</NextLink></li>
       <li><NextLink href='/components/roots/website'>Website</NextLink></li>
+      <li><NextLink href='/components/roots/themeprovider'>ThemeProvider</NextLink></li>
     </ul>
 
     <Headline level='3'>Layout</Headline>
