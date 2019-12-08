@@ -27,6 +27,13 @@ const Page = (): ReactElement => (
     </ul>
 
     <Headline level='3'>Branding</Headline>
+    <ul>
+      <li><NextLink href='/components/branding/brand'>Brand</NextLink></li>
+      <li><NextLink href='/components/branding/madeby'>MadeBy</NextLink></li>
+      <li><NextLink href='/components/branding/pattern'>Pattern</NextLink></li>
+      <li><NextLink href='/components/branding/poweredby'>PoweredBy</NextLink></li>
+      <li><NextLink href='/components/branding/product'>Product</NextLink></li>
+    </ul>
 
     <Headline level='3'>Typography</Headline>
     <ul>

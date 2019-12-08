@@ -36,7 +36,15 @@ const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
     overflow: 'auto',
     flexGrow: 1,
     border: `1px solid ${theme.color.brand.grayLight}`,
-    padding: theme.space(2)
+    padding: theme.space(2),
+
+    '& hr': {
+      background: theme.color.brand.grayLight,
+      margin: `${theme.space(2)}px -${theme.space(2)}px`,
+      height: '1px',
+      borderStyle: 'solid',
+      border: '0'
+    }
   },
 
   CodePanel: {

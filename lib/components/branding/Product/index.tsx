@@ -33,8 +33,10 @@ const Product: FunctionComponent<ProductProps> = ({
   let Logo = LogoTheNativeWeb;
 
   if (theme.name === 'wolkenkit' || name === 'wolkenkit') {
-    nameComponent = <div className={ classes.CompositeName }><span>wolken</span>kit</div>;
     Logo = LogoWolkenkit;
+  }
+  if (theme.name === 'wolkenkit' || name === 'wolkenkit') {
+    nameComponent = <div className={ classes.CompositeName }><span>wolken</span>kit</div>;
   }
 
   return (

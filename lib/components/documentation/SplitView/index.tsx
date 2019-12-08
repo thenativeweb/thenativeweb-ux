@@ -11,12 +11,12 @@ interface ComponentPreviewProps {
   children: [ ReactNode, ReactNode ];
 }
 
-const SplitView: FunctionComponent<ComponentPreviewProps> = ({ children }): ReactElement | null => {
+const SplitView: FunctionComponent<ComponentPreviewProps> = ({ children, className }): ReactElement | null => {
   const classes = useStyles();
   const [ isCodeVisible, setIsCodeVisible ] = useState(true);
   const componentClasses = classNames(classes.SplitView, {
     [classes.SplitViewWithCodeVisible]: isCodeVisible
-  });
+  }, className);
 
   if (!Array.isArray(children)) {
     return null;
