@@ -14,7 +14,7 @@ const styles = (theme: Theme): Styles<CodeClassNames> => ({
     '& code': {
       border: 0,
       display: 'block',
-      color: '#abb2bf',
+      color: '#e5e6eb',
       background: theme.color.brand.grayDark,
       padding: [ theme.space(2), theme.space(3) ],
       overflowX: 'auto',

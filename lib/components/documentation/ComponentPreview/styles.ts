@@ -3,7 +3,8 @@ import { Theme } from '../../../themes';
 
 export type ComponentPreviewClassNames =
   'ComponentPreview' |
-  'BackgroundDark';
+  'BackgroundDark'|
+  'Code';
 
 const styles = (theme: Theme): Styles<ComponentPreviewClassNames> => ({
   ComponentPreview: {
@@ -11,6 +12,12 @@ const styles = (theme: Theme): Styles<ComponentPreviewClassNames> => ({
 
   BackgroundDark: {
     background: theme.color.brand.grayDark
+  },
+
+  Code: {
+    '& code': {
+      maxWidth: 'none'
+    }
   }
 });
 

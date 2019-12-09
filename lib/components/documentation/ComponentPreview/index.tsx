@@ -24,7 +24,7 @@ const ComponentPreview: FunctionComponent<ComponentPreviewProps> = ({ background
 
   return (
     <SplitView className={ componentClasses }>
-      <Code language='jsx'>
+      <Code language='jsx' className={ classes.Code }>
         { formatAsPrettyString(children) }
       </Code>
 

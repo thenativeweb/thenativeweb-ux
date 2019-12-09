@@ -12,7 +12,7 @@ const prismStyles = {
     color: '#5c6370'
   },
   punctuation: {
-    color: '#c5c8c6'
+    color: '#999999'
   },
   '.namespace': {
     opacity: '.7'
@@ -21,13 +21,13 @@ const prismStyles = {
     color: '#98c379'
   },
   keyword: {
-    color: '#98c379'
+    color: '#c678dd'
   },
   tag: {
     color: '#98c379'
   },
   'class-name': {
-    color: '#e06c75'
+    color: '#e052b6'
   },
   boolean: {
     color: '#99CC99'
@@ -36,10 +36,10 @@ const prismStyles = {
     color: '#99CC99'
   },
   symbol: {
-    color: '#e06c75'
+    color: '#e052b6'
   },
   deleted: {
-    color: '#e06c75'
+    color: '#e052b6'
   },
   number: {
     color: '#c678dd'
@@ -51,7 +51,7 @@ const prismStyles = {
     color: '#98c379'
   },
   string: {
-    color: '#c5c8c6'
+    color: '#98c379'
   },
   char: {
     color: '#98c379'
