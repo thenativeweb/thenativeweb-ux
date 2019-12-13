@@ -55,7 +55,11 @@ const Page = (): ReactElement => (
     <ul>
       <li><NextLink href='/components/input/button'>Button</NextLink></li>
       <li><NextLink href='/components/input/checkbox'>CheckBox</NextLink></li>
+      <li><NextLink href='/components/input/dropdown'>Dropdown</NextLink></li>
+      <li><NextLink href='/components/input/link'>Link</NextLink></li>
+      <li><NextLink href='/components/input/textarea'>TextArea</NextLink></li>
       <li><NextLink href='/components/input/textbox'>TextBox</NextLink></li>
+      <li><NextLink href='/components/input/toggle'>Toggle</NextLink></li>
     </ul>
 
     <Headline level='3'>Forms</Headline>

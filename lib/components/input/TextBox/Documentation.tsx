@@ -1,4 +1,5 @@
 import { ComponentPreview } from '../../../components/documentation/ComponentPreview';
+import { Property } from '../../../components/documentation/Property';
 import { Headline, notifications, TextBox } from '../../..';
 import React, { ReactElement, useState } from 'react';
 
@@ -23,35 +24,39 @@ const Documentation = (): ReactElement => {
         />
       </ComponentPreview>
 
-      <Headline level='2'>Type: port</Headline>
+      <Headline level='2'>Types</Headline>
 
       <ComponentPreview>
-        <TextBox
-          value={ port }
-          type='port'
-          placeholder='3000'
-          onChange={ (event): void => setPort(event.target.value) }
-        />
-      </ComponentPreview>
+        <React.Fragment>
+          <Property name='type' value='port' />
 
-      <Headline level='2'>Type: time</Headline>
+          <TextBox
+            value={ port }
+            type='port'
+            placeholder='3000'
+            onChange={ (event): void => setPort(event.target.value) }
+          />
 
-      <ComponentPreview>
-        <TextBox
-          value={ time }
-          type='time'
-          onChange={ (event): void => setTime(event.target.value) }
-        />
-      </ComponentPreview>
+          <hr />
 
-      <Headline level='2'>Type: date</Headline>
+          <Property name='type' value='time' />
 
-      <ComponentPreview>
-        <TextBox
-          value={ date }
-          type='date'
-          onChange={ (event): void => setDate(event.target.value) }
-        />
+          <TextBox
+            value={ time }
+            type='time'
+            onChange={ (event): void => setTime(event.target.value) }
+          />
+
+          <hr />
+
+          <Property name='type' value='date' />
+
+          <TextBox
+            value={ date }
+            type='date'
+            onChange={ (event): void => setDate(event.target.value) }
+          />
+        </React.Fragment>
       </ComponentPreview>
 
       <Headline level='2'>Disabled</Headline>
