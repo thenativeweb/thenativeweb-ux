@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.3...1.0.4) (2019-12-13)
+
+
+### Bug Fixes
+
+* Update roboter and introduce nullish coalescing operators. ([#167](https://github.com/thenativeweb/thenativeweb-ux/issues/167)) ([8c8e0d1](https://github.com/thenativeweb/thenativeweb-ux/commit/8c8e0d103269315931dd876ad79402bcf31c38a3)), closes [#166](https://github.com/thenativeweb/thenativeweb-ux/issues/166)
+
 ## [1.0.3](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.2...1.0.3) (2019-12-03)
 
 
