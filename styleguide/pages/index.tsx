@@ -63,6 +63,10 @@ const Page = (): ReactElement => (
     </ul>
 
     <Headline level='3'>Forms</Headline>
+    <ul>
+      <li><NextLink href='/components/forms/controlgroup'>ControlGroup</NextLink></li>
+      <li><NextLink href='/components/forms/form'>Form</NextLink></li>
+    </ul>
 
     <Headline level='3'>Feedback</Headline>
 

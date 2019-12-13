@@ -15,9 +15,10 @@ const styles = (theme: Theme): Styles<ParagraphClassNames> => ({
 
     '& code': {
       fontFamily: theme.font.family.code,
-      padding: '0.2em 0.25em',
+      padding: '0.125em 0.2em',
+      fontSize: '95%',
       backgroundColor: color(theme.color.brand.gray).
-        fade(0.9).
+        fade(0.92).
         rgb().
         string(),
       borderRadius: 0,

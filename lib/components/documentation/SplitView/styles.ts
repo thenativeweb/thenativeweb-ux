@@ -38,7 +38,7 @@ const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
     border: `1px solid ${theme.color.brand.grayLight}`,
     padding: theme.space(2),
 
-    '& hr': {
+    '& hr:not([class])': {
       background: theme.color.brand.grayLight,
       margin: `${theme.space(2)}px -${theme.space(2)}px`,
       height: '1px',
