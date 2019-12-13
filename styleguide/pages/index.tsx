@@ -69,6 +69,11 @@ const Page = (): ReactElement => (
     </ul>
 
     <Headline level='3'>Feedback</Headline>
+    <ul>
+      <li><NextLink href='/components/feedback/busyindicator'>BusyIndicator</NextLink></li>
+      <li><NextLink href='/components/feedback/message'>Message</NextLink></li>
+      <li><NextLink href='/components/feedback/modal'>Modal</NextLink></li>
+    </ul>
 
     <Headline level='3'>Animation</Headline>
     <ul>
