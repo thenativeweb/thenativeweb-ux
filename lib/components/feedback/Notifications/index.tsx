@@ -50,7 +50,7 @@ const Notifications: FunctionComponent<NotificationsProps> = ({
         </TransitionGroup>
       </div>
     ),
-    portalRootNode || getPortalRootNode()
+    portalRootNode ?? getPortalRootNode()
   );
 };
 
