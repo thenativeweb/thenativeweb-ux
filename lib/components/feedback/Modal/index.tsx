@@ -141,7 +141,7 @@ const Modal: FunctionComponent<ModalProps> = ({
         </Transition>
       </div>
     ),
-    portalRootNode || getPortalRootNode()
+    portalRootNode ?? getPortalRootNode()
   );
 };
 

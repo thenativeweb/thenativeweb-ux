@@ -40,7 +40,7 @@ const Headline: FunctionComponent<HeadlineProps> = ({
     `h${level}`,
     {
       className: componentClasses,
-      id: id || slug,
+      id: id ?? slug,
       style
     },
     [
@@ -50,7 +50,7 @@ const Headline: FunctionComponent<HeadlineProps> = ({
           {
             className: classes.Permalink,
             'aria-hidden': true,
-            href: `#${id || slug}`,
+            href: `#${id ?? slug}`,
             key: 'permalink'
           },
           '#'

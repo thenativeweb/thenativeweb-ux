@@ -58,7 +58,7 @@ const Dialogs: FunctionComponent<DialogsProps> = ({
   return (
     <Modal
       attach='center'
-      portalRootNode={ excecutionEnvironment.canUseDom ? portalRootNode || getPortalRootNode() : undefined }
+      portalRootNode={ excecutionEnvironment.canUseDom ? portalRootNode ?? getPortalRootNode() : undefined }
       showHeader={ false }
       isVisible={ dialogService.state.confirm.isVisible }
       className={ classNames(classes.Dialogs, className) }
