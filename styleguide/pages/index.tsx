@@ -43,6 +43,13 @@ const Page = (): ReactElement => (
     </ul>
 
     <Headline level='3'>Graphics</Headline>
+    <ul>
+      <li><NextLink href='/components/graphics/icon'>Icon</NextLink></li>
+      <li><NextLink href='/components/graphics/logofull'>LogoFull</NextLink></li>
+      <li><NextLink href='/components/graphics/logominimal'>LogoMinimal</NextLink></li>
+      <li><NextLink href='/components/graphics/logothenativeweb'>LogoTheNativeWeb</NextLink></li>
+      <li><NextLink href='/components/graphics/logowolkenkit'>LogoWolkenkit</NextLink></li>
+    </ul>
 
     <Headline level='3'>Input</Headline>
     <ul>
