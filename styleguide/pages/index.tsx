@@ -83,9 +83,14 @@ const Page = (): ReactElement => (
 
     <Headline level='2'>Services</Headline>
     <ul>
+      <li><NextLink href='/services/dialogs'>dialogs</NextLink></li>
       <li><NextLink href='/services/notifications'>notifications</NextLink></li>
     </ul>
 
+    <Headline level='2'>Styles</Headline>
+    <ul>
+      <li><NextLink href='/styles/creatingcustomcomponents'>Creating custom components</NextLink></li>
+    </ul>
   </React.Fragment>
 );
 

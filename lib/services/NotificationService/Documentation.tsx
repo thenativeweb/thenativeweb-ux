@@ -1,5 +1,5 @@
-import { SplitView } from '../../../components/documentation/SplitView';
-import { Button, Code, Headline, notifications, Paragraph } from '../../..';
+import { SplitView } from '../../components/documentation/SplitView';
+import { Button, Code, Headline, notifications, Paragraph } from '../..';
 import React, { ReactElement } from 'react';
 
 const Documentation = (): ReactElement => (
@@ -12,9 +12,11 @@ const Documentation = (): ReactElement => (
       for a short period of time and won&aops;t be persisted.
     </Paragraph>
 
+    <Headline level='2'>Showing a notification</Headline>
+
     <Paragraph>
       To add a notifiction to the stack, use the <code>show</code> function of
-      the notifications service:
+      the <code>notifications</code> service:
     </Paragraph>
 
     <SplitView>
@@ -28,7 +30,8 @@ const Documentation = (): ReactElement => (
           }
         >
           Show Notification
-        </Button>`}
+        </Button>
+      `}
       </Code>
 
       <Button
@@ -61,7 +64,8 @@ const Documentation = (): ReactElement => (
           }
         >
           Show Notification
-        </Button>`}
+        </Button>
+      `}
       </Code>
       <React.Fragment>
         <Button

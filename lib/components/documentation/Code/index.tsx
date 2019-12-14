@@ -18,7 +18,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 
 interface CodeProps {
   children: string | undefined | null;
-  language?: 'javascript' | 'jsx';
+  language?: 'javascript' | 'jsx' | 'typescript' | 'tsx';
   className?: string;
   type?: 'inline' | 'block';
 }
