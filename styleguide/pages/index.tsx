@@ -1,5 +1,5 @@
-import NextLink from 'next/link';
 import {
+  Code,
   Headline,
   Paragraph
 } from '../../lib';
@@ -8,89 +8,59 @@ import React, { ReactElement } from 'react';
 const Page = (): ReactElement => (
   <React.Fragment>
     <Headline>thenativeweb-ux</Headline>
-    <Paragraph>thenativeweb-ux provides UI components for the native web applications.</Paragraph>
+    <Paragraph>
+      thenativeweb-ux provides UI components for the native web applications.
+    </Paragraph>
 
-    <Headline level='2'>Components</Headline>
+    <Headline level='2'>Quick start</Headline>
 
-    <Headline level='3'>Roots</Headline>
-    <ul>
-      <li><NextLink href='/components/roots/application'>Application</NextLink></li>
-      <li><NextLink href='/components/roots/website'>Website</NextLink></li>
-      <li><NextLink href='/components/roots/themeprovider'>ThemeProvider</NextLink></li>
-    </ul>
+    <Paragraph>
+      First you need to add a reference to your application. For a minimum
+      setup, you have to reference the two root
+      components <code>Application</code> and <code>ThemeProvider</code>:
+    </Paragraph>
 
-    <Headline level='3'>Layout</Headline>
-    <ul>
-      <li><NextLink href='/components/layout/container'>Container</NextLink></li>
-      <li><NextLink href='/components/layout/grid'>Grid</NextLink></li>
-      <li><NextLink href='/components/layout/sidebar'>Sidebar</NextLink></li>
-    </ul>
+    <Code language='tsx'>{`
+      import { Application, ThemeProvider } from 'thenativeweb-ux';
+    `}
+    </Code>
 
-    <Headline level='3'>Branding</Headline>
-    <ul>
-      <li><NextLink href='/components/branding/brand'>Brand</NextLink></li>
-      <li><NextLink href='/components/branding/madeby'>MadeBy</NextLink></li>
-      <li><NextLink href='/components/branding/pattern'>Pattern</NextLink></li>
-      <li><NextLink href='/components/branding/poweredby'>PoweredBy</NextLink></li>
-      <li><NextLink href='/components/branding/product'>Product</NextLink></li>
-    </ul>
+    <Paragraph>
+      Then, inside your application&apos;s <code>render</code> function, setup
+      the basic structure by wrapping the <code>Application</code> component
+      inside a <code>ThemeProvider</code>.:
+    </Paragraph>
 
-    <Headline level='3'>Typography</Headline>
-    <ul>
-      <li><NextLink href='/components/typography/headline'>Headline</NextLink></li>
-      <li><NextLink href='/components/typography/paragraph'>Paragraph</NextLink></li>
-      <li><NextLink href='/components/typography/text'>Text</NextLink></li>
-    </ul>
+    <Code language='tsx'>{`
+      <ThemeProvider>
+        <Application>
+          {
+            // ...
+          }
+        </Application>
+      </ThemeProvider>
+    `}
+    </Code>
 
-    <Headline level='3'>Graphics</Headline>
-    <ul>
-      <li><NextLink href='/components/graphics/icon'>Icon</NextLink></li>
-      <li><NextLink href='/components/graphics/logofull'>LogoFull</NextLink></li>
-      <li><NextLink href='/components/graphics/logominimal'>LogoMinimal</NextLink></li>
-      <li><NextLink href='/components/graphics/logothenativeweb'>LogoTheNativeWeb</NextLink></li>
-      <li><NextLink href='/components/graphics/logowolkenkit'>LogoWolkenkit</NextLink></li>
-    </ul>
+    <Paragraph>
+      By default, the <code>ThemeProvider</code> will create
+      a <i>the native web</i> theme. The following themes are
+      available: <code>thenativeweb</code> and <code>wolkenkit</code>.
+    </Paragraph>
 
-    <Headline level='3'>Input</Headline>
-    <ul>
-      <li><NextLink href='/components/input/button'>Button</NextLink></li>
-      <li><NextLink href='/components/input/checkbox'>CheckBox</NextLink></li>
-      <li><NextLink href='/components/input/dropdown'>Dropdown</NextLink></li>
-      <li><NextLink href='/components/input/link'>Link</NextLink></li>
-      <li><NextLink href='/components/input/textarea'>TextArea</NextLink></li>
-      <li><NextLink href='/components/input/textbox'>TextBox</NextLink></li>
-      <li><NextLink href='/components/input/toggle'>Toggle</NextLink></li>
-    </ul>
+    <Headline level='2'>Using components</Headline>
 
-    <Headline level='3'>Forms</Headline>
-    <ul>
-      <li><NextLink href='/components/forms/controlgroup'>ControlGroup</NextLink></li>
-      <li><NextLink href='/components/forms/form'>Form</NextLink></li>
-    </ul>
+    <Paragraph>
+      Besides setting up the application itself, you may also use a variety of
+      components. To use a component, you need to add a reference to it.
+      E.g., to use the <code>Button</code> component, add the following
+      line to your code:
+    </Paragraph>
 
-    <Headline level='3'>Feedback</Headline>
-    <ul>
-      <li><NextLink href='/components/feedback/busyindicator'>BusyIndicator</NextLink></li>
-      <li><NextLink href='/components/feedback/message'>Message</NextLink></li>
-      <li><NextLink href='/components/feedback/modal'>Modal</NextLink></li>
-    </ul>
-
-    <Headline level='3'>Animation</Headline>
-    <ul>
-      <li><NextLink href='/components/animation/transition'>Transition</NextLink></li>
-      <li><NextLink href='/components/animation/transitiongroup'>TransitionGroup</NextLink></li>
-    </ul>
-
-    <Headline level='2'>Services</Headline>
-    <ul>
-      <li><NextLink href='/services/dialogs'>dialogs</NextLink></li>
-      <li><NextLink href='/services/notifications'>notifications</NextLink></li>
-    </ul>
-
-    <Headline level='2'>Styles</Headline>
-    <ul>
-      <li><NextLink href='/styles/creatingcustomcomponents'>Creating custom components</NextLink></li>
-    </ul>
+    <Code language='tsx'>{`
+      import { Button } from 'thenativeweb-ux';
+    `}
+    </Code>
   </React.Fragment>
 );
 

@@ -11,44 +11,10 @@ thenativeweb-ux provides UI components for the native web applications.
 | Dev dependencies | ![David](https://img.shields.io/david/dev/thenativeweb/thenativeweb-ux)                                                                                    |
 | Build            | ![GitHub Actions](https://github.com/thenativeweb/thenativeweb-ux/workflows/Release/badge.svg?branch=master) |
 | License          | ![GitHub](https://img.shields.io/github/license/thenativeweb/thenativeweb-ux)                                                                              |
-
 ## Installation
 
 ```shell
 $ npm install thenativeweb-ux
-```
-
-## Quick start
-
-First you need to add a reference to your application. For a minimum setup, you have to reference the components `Application` and `ThemeProvider`:
-
-```javascript
-import { Application, ThemeProvider } from 'thenativeweb-ux';
-```
-
-Then, inside your application's `render` function, setup the basic structure by wrapping the `Application` component inside a `ThemeProvider`.:
-
-```jsx
-<ThemeProvider>
-  <Application>
-    {
-      // ...
-    }
-  </Application>
-</ThemeProvider>
-```
-
-By default, the `ThemeProvider` will create a _the native web_ theme, but you can also select other themes. Currently, the following themes are available:
-
--   `thenativeweb`
--   `wolkenkit`
-
-### Using components
-
-Besides setting up the application itself, you may also use a variety of components. To use a component, you need to add a reference to it. E.g., to use the `Button` component, add the following line to your code:
-
-```javascript
-import { Button } from 'thenativeweb-ux';
 ```
 
 ### Viewing the styleguide
