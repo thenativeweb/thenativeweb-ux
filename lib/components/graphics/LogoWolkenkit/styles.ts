@@ -3,6 +3,7 @@ import { Theme } from '../../..';
 
 export type LogoWolkenkitClassNames =
   'LogoWolkenkit' |
+  'SizeSm' |
   'SizeMd' |
   'SizeLg' |
   'SizeXl' |
@@ -14,6 +15,11 @@ export type LogoWolkenkitClassNames =
 
 const styles = (theme: Theme): Styles<LogoWolkenkitClassNames> => ({
   LogoWolkenkit: {},
+
+  SizeSm: {
+    width: '36px',
+    height: '36px'
+  },
 
   SizeMd: {
     width: '56px',

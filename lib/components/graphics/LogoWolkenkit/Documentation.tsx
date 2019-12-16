@@ -13,6 +13,12 @@ const Documentation = (): ReactElement => (
 
         <hr />
 
+        <Property name='size' value='sm' />
+
+        <Container style={{ height: 100 }} background='dark'><LogoWolkenkit size='sm' /></Container>
+
+        <hr />
+
         <Property name='size' value='md' />
 
         <Container style={{ height: 100 }} background='dark'><LogoWolkenkit size='md' /></Container>

@@ -9,7 +9,8 @@ import React, { ReactElement } from 'react';
 type NavigationClassNames = 'Navigation';
 
 const useStyles = createUseStyles<NavigationClassNames>({
-  Navigation: {}
+  Navigation: {
+  }
 });
 
 const Navigation = (): ReactElement => {

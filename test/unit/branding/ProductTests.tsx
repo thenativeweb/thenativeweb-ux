@@ -36,6 +36,7 @@ suite('Product', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
+          <Product size='sm' />
           <Product size='md' />
           <Product size='lg' />
           <Product size='xl' />
@@ -45,8 +46,9 @@ suite('Product', (): void => {
     });
 
     const products = toArray(container.querySelectorAll('[class^=Product]'));
-    const [ medium, large, xLarge ] = products;
+    const [ small, medium, large, xLarge ] = products;
 
+    assert.that(small.className).is.containing('SizeSm');
     assert.that(medium.className).is.containing('SizeMd');
     assert.that(large.className).is.containing('SizeLg');
     assert.that(xLarge.className).is.containing('SizeXl');

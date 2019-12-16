@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 const Icons = (): ReactElement => (
-  <svg xmlns='http://www.w3.org/2000/svg' role='presentational' style={{ display: 'none' }}>
+  <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' style={{ display: 'none' }}>
     <symbol viewBox='0 0 1440 200' preserveAspectRatio='none' id='mask-plane'>
       <polygon points='0 0 1440 200 0 200' />
     </symbol>

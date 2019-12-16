@@ -1,9 +1,14 @@
 import { Styles } from 'jss';
 
-export type LogoTheNativeWebClassNames = 'LogoTheNativeWeb' | 'SizeMd' | 'SizeLg' | 'SizeXl';
+export type LogoTheNativeWebClassNames = 'LogoTheNativeWeb' | 'SizeSm' | 'SizeMd' | 'SizeLg' | 'SizeXl';
 
 const styles: Styles<LogoTheNativeWebClassNames> = {
   LogoTheNativeWeb: {},
+
+  SizeSm: {
+    width: '36px',
+    height: '36px'
+  },
 
   SizeMd: {
     width: '56px',

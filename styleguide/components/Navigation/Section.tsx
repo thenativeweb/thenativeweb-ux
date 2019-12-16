@@ -19,11 +19,15 @@ type SectionClassNames =
   'Chapters';
 
 const useStyles = createUseStyles<Theme, SectionClassNames>((theme: Theme): Styles => ({
-  Section: {},
+  Section: {
+    '&:first-child': {
+      marginTop: theme.space(1.5)
+    }
+  },
 
   Title: {
     display: 'flex',
-    padding: [ theme.space(2), theme.space(2), theme.space(2), theme.space(2) ],
+    padding: [ theme.space(1), theme.space(2), theme.space(1), theme.space(2) ],
     margin: 0,
     lineHeight: 1,
     cursor: 'pointer',

@@ -16,13 +16,14 @@ const LogoTheNativeWeb: FunctionComponent<LogoProps> = ({
   }
 
   const componentClasses = classNames(classes.LogoTheNativeWeb, {
+    [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg',
     [classes.SizeXl]: size === 'xl'
   });
 
   return (
-    <div className={ componentClasses } role='presentational'>
+    <div className={ componentClasses } aria-hidden='true'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 112'>
         <g>
           <path fill='#FFFFFF' d='M99,80.9l-43.1,24.9L12.8,80.9V31.1L55.9,6.2L99,31.1V80.9z' />

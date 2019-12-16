@@ -1,3 +1,5 @@
+import { Footer } from '../../components/Footer';
+import MobileToggle from '../../components/Navigation/MobileToggle';
 import { Navigation } from '../../components/Navigation';
 import NextLink from 'next/link';
 import {
@@ -11,17 +13,21 @@ import {
   Theme,
   Website
 } from '../../../lib';
-import React, { FunctionComponent, ReactElement, useState } from 'react';
+import React, { FunctionComponent, ReactElement, useCallback, useState } from 'react';
 import { StyleguideClassNames, styles } from './styles';
 
 const useStyles = createUseStyles<Theme, StyleguideClassNames>(styles);
 
 const Styleguide: FunctionComponent = ({ children }): ReactElement => {
   const classes = useStyles();
-  const [ isNavigationVisible, setIsNavigationVisible ] = useState(true);
+  const [ isNavigationVisible, setIsNavigationVisible ] = useState(false);
   const componentClasses = classNames(classes.Styleguide, {
     [classes.WithNavigationVisible]: isNavigationVisible
   });
+
+  const toggleNavigation = useCallback((): void => {
+    setIsNavigationVisible(!isNavigationVisible);
+  }, [ isNavigationVisible ]);
 
   return (
     <Website
@@ -29,25 +35,40 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
       useNotifications={ true }
       useDialogs={ true }
     >
-      <div className={ classes.NavigationDesktop }>
+      <div className={ classes.SidebarDesktop }>
         <Sidebar>
           <NextLink href='/'>
             <Link href='/'>
-              <SidebarBrand><Product name='ux' /></SidebarBrand>
+              <SidebarBrand>
+                <Product name='ux' />
+              </SidebarBrand>
             </Link>
           </NextLink>
           <SidebarItem
             iconName='menu'
-            onClick={ (): void => setIsNavigationVisible(!isNavigationVisible) }
+            onClick={ toggleNavigation }
             isActive={ isNavigationVisible }
           />
         </Sidebar>
       </div>
+
+      <div className={ classes.TopbarMobile }>
+        <Product name='ux' size='sm' />
+      </div>
+
+      <MobileToggle
+        isVisible={ isNavigationVisible }
+        onClick={ toggleNavigation }
+      />
+
       <div className={ classes.NavigationPanel }>
         <Navigation />
       </div>
+
       <div className={ classes.Content }>
         { children }
+
+        <Footer />
       </div>
     </Website>
   );

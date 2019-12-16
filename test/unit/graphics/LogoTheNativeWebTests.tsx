@@ -36,6 +36,7 @@ suite('LogoTheNativeWeb', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
+          <LogoTheNativeWeb size='sm' />
           <LogoTheNativeWeb size='md' />
           <LogoTheNativeWeb size='lg' />
           <LogoTheNativeWeb size='xl' />
@@ -45,8 +46,9 @@ suite('LogoTheNativeWeb', (): void => {
     });
 
     const logos = toArray(container.querySelectorAll('div'));
-    const [ medium, large, xLarge ] = logos;
+    const [ small, medium, large, xLarge ] = logos;
 
+    assert.that(small.className).is.containing('SizeSm');
     assert.that(medium.className).is.containing('SizeMd');
     assert.that(large.className).is.containing('SizeLg');
     assert.that(xLarge.className).is.containing('SizeXl');

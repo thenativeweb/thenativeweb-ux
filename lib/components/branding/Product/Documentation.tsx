@@ -1,4 +1,5 @@
 import { ComponentPreview } from '../../../components/documentation/ComponentPreview';
+import { Property } from '../../documentation/Property';
 import { Headline, Paragraph, Product, ThemeProvider, themes } from '../../..';
 import React, { ReactElement } from 'react';
 
@@ -13,9 +14,24 @@ const Documentation = (): ReactElement => (
     <ComponentPreview background='dark' useAllThemes={ true }>
       <React.Fragment>
         <Product name='console' />
+
         <hr />
+
+        <Property name='size' value='sm' />
+        <Product name='console' size='sm' />
+
+        <hr />
+
+        <Property name='size' value='md' />
+        <Product name='console' size='md' />
+
+        <hr />
+
+        <Property name='size' value='lg' />
         <Product name='console' size='lg' />
         <hr />
+
+        <Property name='size' value='xl' />
         <Product name='console' size='xl' />
       </React.Fragment>
     </ComponentPreview>

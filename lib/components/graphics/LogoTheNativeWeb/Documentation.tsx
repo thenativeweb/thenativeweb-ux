@@ -13,6 +13,12 @@ const Documentation = (): ReactElement => (
 
         <hr />
 
+        <Property name='size' value='sm' />
+
+        <LogoTheNativeWeb size='sm' />
+
+        <hr />
+
         <Property name='size' value='md' />
 
         <LogoTheNativeWeb size='md' />

@@ -6,10 +6,12 @@ export type StyleguideClassNames =
   'Styleguide' |
   'WithNavigationVisible' |
   'NavigationPanel' |
-  'NavigationDesktop';
+  'SidebarDesktop'|
+  'TopbarMobile';
 
-const navigationPanelWidthSmall = '20vw';
-const navigationPanelWidthMedium = '300px';
+const navigationPanelWidthXs = '75vw';
+const navigationPanelWidthSm = '200px';
+const navigationPanelWidthMd = '300px';
 
 const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
   Styleguide: {
@@ -23,7 +25,8 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     }
   },
 
-  NavigationDesktop: {
+  SidebarDesktop: {
+    zIndex: theme.zIndices.navigation,
     position: 'fixed',
     top: 0,
     left: 0,
@@ -32,10 +35,15 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     display: 'flex'
   },
 
+  TopbarMobile: {
+    background: theme.color.brand.grayDark,
+    padding: [ theme.space(1), theme.space(1) ]
+  },
+
   NavigationPanel: {
+    zIndex: theme.zIndices.navigation,
     position: 'fixed',
     top: 0,
-    left: theme.components.Sidebar.width,
     width: '0px',
     height: '100%',
     overflow: 'hidden',
@@ -45,25 +53,71 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
   },
 
   Content: {
-    padding: theme.space(6),
-    marginLeft: theme.components.Sidebar.width,
     transition: 'margin-left 200ms'
   },
 
   [theme.breakpoints.up('xs')]: {
+    SidebarDesktop: {
+      display: 'none'
+    },
+
+    TopbarMobile: {
+      display: 'flex'
+    },
+
     NavigationPanel: {
+      left: 0,
+      width: '0px',
+
       '& > *': {
-        width: navigationPanelWidthSmall
+        width: navigationPanelWidthXs
       }
+    },
+
+    Content: {
+      padding: [ theme.space(2.5), theme.space(4) ]
     },
 
     WithNavigationVisible: {
       '& $NavigationPanel': {
-        width: navigationPanelWidthSmall
+        width: navigationPanelWidthXs
       },
 
       '& $Content': {
-        marginLeft: `calc(${navigationPanelWidthSmall} + ${theme.components.Sidebar.width})`
+        marginLeft: 0
+      }
+    }
+  },
+
+  [theme.breakpoints.up('sm')]: {
+    SidebarDesktop: {
+      display: 'flex'
+    },
+
+    TopbarMobile: {
+      display: 'none'
+    },
+
+    NavigationPanel: {
+      left: theme.components.Sidebar.width,
+
+      '& > *': {
+        width: navigationPanelWidthSm
+      }
+    },
+
+    Content: {
+      padding: theme.space(6),
+      marginLeft: theme.components.Sidebar.width
+    },
+
+    WithNavigationVisible: {
+      '& $NavigationPanel': {
+        width: navigationPanelWidthSm
+      },
+
+      '& $Content': {
+        marginLeft: `calc(${navigationPanelWidthSm} + ${theme.components.Sidebar.width})`
       }
     }
   },
@@ -71,17 +125,17 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
   [theme.breakpoints.up('md')]: {
     NavigationPanel: {
       '& > *': {
-        width: navigationPanelWidthMedium
+        width: navigationPanelWidthMd
       }
     },
 
     WithNavigationVisible: {
       '& $NavigationPanel': {
-        width: navigationPanelWidthMedium
+        width: navigationPanelWidthMd
       },
 
       '& $Content': {
-        marginLeft: `calc(${navigationPanelWidthMedium} + ${theme.components.Sidebar.width})`
+        marginLeft: `calc(${navigationPanelWidthMd} + ${theme.components.Sidebar.width})`
       }
     }
   }
