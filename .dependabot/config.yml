@@ -10,7 +10,6 @@ update_configs:
     - "goloroden"
     - "mattwagl"
     - "vaalllaa"
-    - "yeldiRium"
     default_labels:
     - "Dependencies"
     commit_message:
