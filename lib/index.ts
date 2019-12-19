@@ -49,7 +49,7 @@ import { Toggle } from './components/input/Toggle';
 import { Transition } from './components/animation/Transition';
 import { TransitionGroup } from './components/animation/TransitionGroup';
 import { Website } from './components/roots/Website';
-import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useTheme } from './styles';
+import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useDevice, useTheme } from './styles';
 import { dialogs, excecutionEnvironment, getPortalRootNode, notifications, slugify } from './services';
 import { Theme, themes } from './themes';
 
@@ -116,5 +116,6 @@ export {
   Transition,
   TransitionGroup,
   Website,
+  useDevice,
   useTheme
 };
