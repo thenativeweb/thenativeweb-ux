@@ -1,7 +1,9 @@
 import { Chapter } from './Chapter';
+import color from 'color';
 import { isDomNode } from '../../../lib/utils/isDomNode';
 import { Page } from './Page';
 import { Styles } from 'jss';
+import { useRouteChange } from './useRouteChange';
 import { useRouter } from 'next/router';
 import {
   classNames, createUseStyles, Icon, Link, Theme
@@ -20,8 +22,10 @@ type SectionClassNames =
 
 const useStyles = createUseStyles<Theme, SectionClassNames>((theme: Theme): Styles => ({
   Section: {
+    position: 'relative',
+
     '&:first-child': {
-      marginTop: theme.space(1.5)
+      paddingTop: theme.space(1.5)
     }
   },
 
@@ -50,6 +54,17 @@ const useStyles = createUseStyles<Theme, SectionClassNames>((theme: Theme): Styl
   },
 
   IsExpanded: {
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      top: theme.space(6.75),
+      bottom: '0.5em',
+      left: theme.space(2) + 6,
+      width: 2,
+      background: color(theme.color.brand.grayDark).alpha(0.1).toString(),
+      zIndex: theme.zIndices.contentOverlay
+    },
+
     '& $Title': {
       paddingBottom: theme.space(1)
     },
@@ -76,6 +91,15 @@ const useStyles = createUseStyles<Theme, SectionClassNames>((theme: Theme): Styl
   },
 
   HasPages: {
+    '&:after': {
+      top: theme.space(4.2),
+      bottom: '0'
+    },
+
+    '&$IsActive:after': {
+      background: color(theme.color.brand.grayDark).alpha(0.5).rgb().toString()
+    },
+
     '& $Chapters': {}
   },
 
@@ -89,15 +113,21 @@ const useStyles = createUseStyles<Theme, SectionClassNames>((theme: Theme): Styl
 
   [theme.breakpoints.up('xs')]: {
     Title: {
-      fontSize: theme.font.size.md
-    }
-  },
-
-  [theme.breakpoints.up('md')]: {
-    Title: {
       fontSize: theme.font.size.lg
     }
   }
+
+  // [theme.breakpoints.up('xs')]: {
+  //   Title: {
+  //     fontSize: theme.font.size.md
+  //   }
+  // },
+
+  // [theme.breakpoints.up('md')]: {
+  //   Title: {
+  //     fontSize: theme.font.size.lg
+  //   }
+  // }
 }));
 
 interface SectionProps {
@@ -106,15 +136,20 @@ interface SectionProps {
 }
 
 const Section: FunctionComponent<SectionProps> = ({ children, title }): ReactElement => {
+  const classes = useStyles();
   const router = useRouter();
   const path = `/${title.toLocaleLowerCase()}`;
-  const isActive = router.asPath.startsWith(path);
+  let isActive = router.asPath.startsWith(path);
+
+  const [ isExpanded, setIsExpanded ] = useState(isActive);
 
   let hasChapters = false,
       hasPages = false;
 
-  const classes = useStyles();
-  const [ isExpanded, setIsExpanded ] = useState(isActive);
+  useRouteChange((url): void => {
+    isActive = url.startsWith(path);
+    setIsExpanded(isActive);
+  });
 
   const handleClick = useCallback((event: MouseEvent): void => {
     event.preventDefault();
@@ -158,11 +193,19 @@ const Section: FunctionComponent<SectionProps> = ({ children, title }): ReactEle
             }
 
             if (
-              (child as ReactElement).type === Chapter ||
-              (child as ReactElement).type === Page
+              (child as ReactElement).type === Chapter
             ) {
               return React.cloneElement(child as any, {
                 path
+              });
+            }
+
+            if (
+              (child as ReactElement).type === Page
+            ) {
+              return React.cloneElement(child as any, {
+                path,
+                level: 2
               });
             }
           })

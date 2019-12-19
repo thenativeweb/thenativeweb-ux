@@ -48,7 +48,6 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     height: '100%',
     overflow: 'hidden',
     background: theme.color.brand.white,
-    borderRight: `1px solid ${theme.color.brand.grayLight}`,
     transition: 'width 200ms'
   },
 
@@ -99,6 +98,7 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     },
 
     NavigationPanel: {
+      borderRight: `1px solid ${theme.color.brand.grayLight}`,
       left: theme.components.Sidebar.width,
 
       '& > *': {

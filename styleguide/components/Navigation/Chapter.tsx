@@ -1,6 +1,8 @@
+import color from 'color';
 import { isDomNode } from '../../../lib/utils/isDomNode';
 import { Page } from './Page';
 import { Styles } from 'jss';
+import { useRouteChange } from './useRouteChange';
 import { useRouter } from 'next/router';
 import {
   classNames, createUseStyles, Icon, Link, Theme
@@ -17,6 +19,7 @@ type ChapterClassNames =
 
 const useStyles = createUseStyles<Theme, ChapterClassNames>((theme: Theme): Styles => ({
   Chapter: {
+    position: 'relative'
   },
 
   Title: {
@@ -60,6 +63,18 @@ const useStyles = createUseStyles<Theme, ChapterClassNames>((theme: Theme): Styl
   },
 
   IsActive: {
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      top: theme.space(1),
+      bottom: 0,
+      left: theme.space(2) + 6,
+      width: 2,
+      background: color(theme.color.brand.grayDark).alpha(0.5).rgb().toString(),
+      zIndex: theme.zIndices.contentOverlay + 1,
+      opacity: 0.9
+    },
+
     '& $Title': {
       color: theme.color.brand.grayDark,
       fontWeight: 600,
@@ -81,12 +96,6 @@ const useStyles = createUseStyles<Theme, ChapterClassNames>((theme: Theme): Styl
 
   [theme.breakpoints.up('xs')]: {
     Title: {
-      fontSize: theme.font.size.sm
-    }
-  },
-
-  [theme.breakpoints.up('md')]: {
-    Title: {
       fontSize: theme.font.size.md
     }
   }
@@ -99,13 +108,17 @@ interface ChapterProps {
 }
 
 const Chapter: FunctionComponent<ChapterProps> = ({ children, title, path }): ReactElement => {
+  const classes = useStyles();
   const router = useRouter();
   const chapterPath = `${path}/${title.toLocaleLowerCase()}`;
+  let isActive = router.asPath.startsWith(chapterPath);
 
-  const isActive = router.asPath.startsWith(chapterPath);
-
-  const classes = useStyles();
   const [ isExpanded, setIsExpanded ] = useState(isActive);
+
+  useRouteChange((url): void => {
+    isActive = url.startsWith(chapterPath);
+    setIsExpanded(isActive);
+  });
 
   const handleClick = useCallback((event: MouseEvent): void => {
     event.preventDefault();

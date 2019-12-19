@@ -9,17 +9,26 @@ import React, { FunctionComponent, ReactElement } from 'react';
 
 type PageClassNames =
   'Page' |
+  'Level2' |
+  'Level3' |
   'IsActive';
 
 const useStyles = createUseStyles<Theme, PageClassNames>((theme: Theme): Styles => ({
   Page: {
     display: 'block',
-    padding: [ theme.space(0.5), theme.space(2), theme.space(0.5), theme.space(6) ],
     color: theme.color.brand.gray,
 
     '&:hover': {
       color: theme.color.brand.highlight
     }
+  },
+
+  Level2: {
+    padding: [ theme.space(0.5), theme.space(2), theme.space(0.5), theme.space(4.5) ]
+  },
+
+  Level3: {
+    padding: [ theme.space(0.5), theme.space(2), theme.space(0.5), theme.space(6) ]
   },
 
   IsActive: {
@@ -39,24 +48,30 @@ const useStyles = createUseStyles<Theme, PageClassNames>((theme: Theme): Styles 
 
   [theme.breakpoints.up('xs')]: {
     Page: {
-      fontSize: theme.font.size.sm
-    }
-  },
-
-  [theme.breakpoints.up('md')]: {
-    Page: {
       fontSize: theme.font.size.md
     }
   }
+
+  // [theme.breakpoints.up('xs')]: {
+  //   Page: {
+  //     fontSize: theme.font.size.sm
+  //   }
+  // },
+
+  // [theme.breakpoints.up('md')]: {
+  //   Page: {
+  //     fontSize: theme.font.size.md
+  //   }
+  // }
 }));
 
 interface PageProps {
-  isActive?: boolean;
+  level?: number;
   title: string;
   path?: string;
 }
 
-const Page: FunctionComponent<PageProps> = ({ title, path }): ReactElement => {
+const Page: FunctionComponent<PageProps> = ({ title, level = 3, path }): ReactElement => {
   const router = useRouter();
   const pagePath = `${path}/${title.toLocaleLowerCase().replace(/ /ug, '')}${router.asPath.endsWith('/') ? '/' : ''}`;
   const isActive = router.asPath === pagePath;
@@ -64,7 +79,9 @@ const Page: FunctionComponent<PageProps> = ({ title, path }): ReactElement => {
   const classes = useStyles();
 
   const componentClasses = classNames(classes.Page, {
-    [classes.IsActive]: isActive
+    [classes.IsActive]: isActive,
+    [classes.Level2]: level === 2,
+    [classes.Level3]: level === 3
   });
 
   return (
