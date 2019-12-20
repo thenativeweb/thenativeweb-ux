@@ -64,5 +64,10 @@ export interface Theme {
 
   space: (factor: number) => number;
 
+  readonly ease: {
+    outCirc: string;
+    outExpo: string;
+  };
+
   readonly custom: any;
 }

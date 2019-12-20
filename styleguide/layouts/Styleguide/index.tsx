@@ -62,7 +62,11 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
       </div>
 
       <div className={ classes.TopbarMobile }>
-        <Product name='ux' size='sm' />
+        <NextLink href='/'>
+          <Link href='/'>
+            <Product name='ux' size='sm' />
+          </Link>
+        </NextLink>
       </div>
 
       <MobileToggle

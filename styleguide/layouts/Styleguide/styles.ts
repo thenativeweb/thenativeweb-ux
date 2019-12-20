@@ -48,14 +48,14 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     height: '100%',
     overflow: 'hidden',
     background: theme.color.brand.white,
-    transition: 'width 200ms'
+    transition: `width 200ms, transform 300ms ${theme.ease.outCirc}, opacity 300ms ${theme.ease.outCirc}`
   },
 
   Content: {
     transition: 'margin-left 200ms'
   },
 
-  [theme.breakpoints.up('xs')]: {
+  [theme.breakpoints.only('xs')]: {
     SidebarDesktop: {
       display: 'none'
     },
@@ -66,7 +66,9 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
 
     NavigationPanel: {
       left: 0,
-      width: '0px',
+      opacity: 0,
+      transform: 'translate(-50%,0)',
+      width: navigationPanelWidthXs,
 
       '& > *': {
         width: navigationPanelWidthXs
@@ -79,7 +81,8 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
 
     WithNavigationVisible: {
       '& $NavigationPanel': {
-        width: navigationPanelWidthXs
+        opacity: 1,
+        transform: 'translate(0,0)'
       },
 
       '& $Content': {
