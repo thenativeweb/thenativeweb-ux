@@ -1,7 +1,8 @@
 import { Footer } from '../../components/Footer';
 import MobileToggle from '../../components/Navigation/MobileToggle';
-import { Navigation } from '../../components/Navigation';
+import { navigation } from '../../configuration/navigation';
 import NextLink from 'next/link';
+import { PageNavigation } from '../../components/Navigation/PageNavigation';
 import { useRouteChange } from '../../components/Navigation/useRouteChange';
 import {
   classNames,
@@ -75,7 +76,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
       />
 
       <div className={ classes.NavigationPanel }>
-        <Navigation />
+        <PageNavigation pageTree={ navigation } />
       </div>
 
       <div className={ classes.Content }>
