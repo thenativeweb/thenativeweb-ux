@@ -4,6 +4,7 @@ export type PageNavigationClassNames = 'PageNavigation';
 
 const styles: Styles = {
   PageNavigation: {
+    position: 'relative'
   }
 };
 

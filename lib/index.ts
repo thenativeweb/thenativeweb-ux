@@ -18,9 +18,11 @@ import { FormRow } from './components/forms/FormRow';
 import { Grid } from './components/layout/Grid';
 import { GridItem } from './components/layout/GridItem';
 import { Headline } from './components/typography/Headline';
+import { HighlightText } from './components/feedback/HighlightText';
 import { Icon } from './components/graphics/Icon';
 import { Icons } from './components/graphics/Icons';
 import { IconSize } from './types/IconSize';
+import { Keywords } from './components/feedback/Keywords';
 import { Label } from './components/typography/Label';
 import { Link } from './components/input/Link';
 import { LogoFull } from './components/graphics/LogoFull';
@@ -32,6 +34,8 @@ import { Message } from './components/feedback/Message';
 import { Modal } from './components/feedback/Modal';
 import { ModalRow } from './components/feedback/ModalRow';
 import { Notifications } from './components/feedback/Notifications';
+import { PageTree } from './model/PageTree';
+import { PageTreeItem } from './model/PageTree/PageTreeItem';
 import { Paragraph } from './components/typography/Paragraph';
 import { Pattern } from './components/branding/Pattern';
 import { PoweredBy } from './components/branding/PoweredBy';
@@ -79,9 +83,11 @@ export {
   Grid,
   GridItem,
   Headline,
+  HighlightText,
   Icon,
   IconSize,
   Icons,
+  Keywords,
   Label,
   Link,
   LogoFull,
@@ -94,6 +100,8 @@ export {
   ModalRow,
   notifications,
   Notifications,
+  PageTree,
+  PageTreeItem,
   Paragraph,
   Pattern,
   PoweredBy,

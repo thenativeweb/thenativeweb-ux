@@ -3,6 +3,7 @@ import MobileToggle from '../../components/Navigation/MobileToggle';
 import { navigation } from '../../configuration/navigation';
 import NextLink from 'next/link';
 import { PageNavigation } from '../../components/Navigation/PageNavigation';
+import { PageTree } from '../../../lib/model/PageTree';
 import { useRouteChange } from '../../components/Navigation/useRouteChange';
 import {
   classNames,
@@ -24,10 +25,12 @@ const useStyles = createUseStyles<Theme, StyleguideClassNames>(styles);
 const Styleguide: FunctionComponent = ({ children }): ReactElement => {
   const classes = useStyles();
   const device = useDevice();
-  const [ isNavigationVisible, setIsNavigationVisible ] = useState(false);
+  const [ isNavigationVisible, setIsNavigationVisible ] = useState(true);
   const componentClasses = classNames(classes.Styleguide, {
     [classes.WithNavigationVisible]: isNavigationVisible
   });
+
+  const pageTree = new PageTree({ items: navigation });
 
   const toggleNavigation = useCallback((): void => {
     setIsNavigationVisible(!isNavigationVisible);
@@ -76,7 +79,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
       />
 
       <div className={ classes.NavigationPanel }>
-        <PageNavigation pageTree={ navigation } />
+        <PageNavigation pageTree={ pageTree } />
       </div>
 
       <div className={ classes.Content }>

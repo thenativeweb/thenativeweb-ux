@@ -1,30 +1,19 @@
 import { Chapter } from '../Chapter';
-import {
-  createUseStyles
-} from '../../../../lib';
 import { Page } from '../Page';
+import { PageSearch } from '../PageSearch';
 import { Section } from '../Section';
+import {
+  createUseStyles, PageTree, PageTreeItem
+} from '../../../../lib';
 import { PageNavigationClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-interface Item {
-  title: string;
-  keywords?: undefined | string [];
-  children?: Item [];
-}
-
-interface Section {
-  title: string; children: Item [];
-}
-
-type PageTree = Section[];
-
-const renderChapterOrPages = (item: Item): ReactElement => {
+const renderChapterOrPages = (item: PageTreeItem): ReactElement => {
   if (item.children) {
     return (
-      <Chapter title={ item.title } key={ item.title }>
+      <Chapter title={ item.title } key={ item.path }>
         {
-          item.children.map((page: Item): ReactElement => (
+          item.children.map((page: PageTreeItem): ReactElement => (
             <Page title={ page.title } key={ page.title } />
           ))
         }
@@ -37,10 +26,10 @@ const renderChapterOrPages = (item: Item): ReactElement => {
   );
 };
 
-const renderSection = (section: Section): ReactElement => (
-  <Section title={ section.title } key={ section.title }>
+const renderSection = (section: PageTreeItem): ReactElement => (
+  <Section title={ section.title } key={ section.path }>
     {
-      section.children.map((chapterOrPage): ReactElement => renderChapterOrPages(chapterOrPage))
+      section.children?.map((chapterOrPage): ReactElement => renderChapterOrPages(chapterOrPage))
     }
   </Section>
 );
@@ -56,8 +45,9 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({ pageTree }): R
 
   return (
     <div className={ classes.PageNavigation }>
+      <PageSearch pageTree={ pageTree } />
       {
-        pageTree.map((section): ReactElement => renderSection(section))
+        pageTree.items.map((section): ReactElement => renderSection(section))
       }
     </div>
   );
