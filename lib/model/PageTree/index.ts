@@ -1,6 +1,6 @@
 import { PageTreeItem } from './PageTreeItem';
-import { slugify } from '../../services';
 import { PageTreeSearch } from './PageTreeSearch';
+import { slugify } from '../../services';
 
 class PageTree {
   private readonly originalItem: PageTreeItem [];
@@ -26,6 +26,8 @@ class PageTree {
     const itemsWithMetadata = items.map((item): PageTreeItem => {
       const slug = slugify(item.title);
       const breadcrumbsForItem = [ ...breadcrumbs, item.title ];
+      const breadcrumbsAsString = breadcrumbsForItem.join(' ');
+      const keywordsAsString = item.keywords?.join(' ');
 
       if (item.children) {
         return {
@@ -41,7 +43,9 @@ class PageTree {
         ...item,
         slug,
         path: `${path}/${slug}`,
-        breadcrumbs: breadcrumbsForItem
+        breadcrumbs: breadcrumbsForItem,
+        breadcrumbsAsString,
+        keywordsAsString
       };
     });
 

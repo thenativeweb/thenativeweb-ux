@@ -8,6 +8,7 @@ const Documentation = (): ReactElement => {
   const [ port, setPort ] = useState('');
   const [ time, setTime ] = useState('');
   const [ date, setDate ] = useState('');
+  const [ search, setSearch ] = useState('');
 
   return (
     <React.Fragment>
@@ -55,6 +56,16 @@ const Documentation = (): ReactElement => {
             value={ date }
             type='date'
             onChange={ (event): void => setDate(event.target.value) }
+          />
+
+          <hr />
+
+          <Property name='type' value='search' />
+
+          <TextBox
+            value={ search }
+            type='search'
+            onChange={ (event): void => setSearch(event.target.value) }
           />
         </React.Fragment>
       </ComponentPreview>

@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import {
   classNames, createUseStyles, Link, Theme
-} from '../../../../lib';
+} from '../../../../../lib';
 import { PageClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 

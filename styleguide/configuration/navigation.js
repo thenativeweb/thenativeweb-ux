@@ -45,9 +45,12 @@ const navigation = [
       { title: 'Form' }
     ]},
     { title: 'Feedback', children: [
+      { title: 'Breadcrumbs' },
       { title: 'BusyIndicator', keywords: [ 'loading' ]},
+      { title: 'HighlightText' },
       { title: 'Message' },
-      { title: 'Modal' }
+      { title: 'Modal' },
+      { title: 'Tags' }
     ]},
     { title: 'Animation', children: [
       { title: 'Transition' },

@@ -1,6 +1,6 @@
 import color from 'color';
 import { Styles } from 'jss';
-import { Theme } from '../../../../lib';
+import { Theme } from '../../../../../lib';
 
 export type ChapterClassNames =
   'Chapter' |

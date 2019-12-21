@@ -1,11 +1,11 @@
 import { Chapter } from '../Chapter';
-import { isDomNode } from '../../../../lib/utils/isDomNode';
+import { isDomNode } from '../../../../../lib/utils/isDomNode';
 import { Page } from '../Page';
-import { useRouteChange } from '../useRouteChange';
+import { useRouteChange } from '../../useRouteChange';
 import { useRouter } from 'next/router';
 import {
   classNames, createUseStyles, Icon, Link, Theme
-} from '../../../../lib';
+} from '../../../../../lib';
 import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode, useCallback, useState } from 'react';
 import { SectionClassNames, styles } from './styles';
 

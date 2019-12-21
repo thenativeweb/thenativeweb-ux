@@ -1,6 +1,7 @@
 import animate from 'animejs';
 import { Application } from './components/roots/Application';
 import { Brand } from './components/branding/Brand';
+import { Breadcrumbs } from './components/feedback/Breadcrumbs';
 import { BusyIndicator } from './components/feedback/BusyIndicator';
 import { Button } from './components/input/Button';
 import { ButtonHint } from './components/input/ButtonHint';
@@ -22,7 +23,6 @@ import { HighlightText } from './components/feedback/HighlightText';
 import { Icon } from './components/graphics/Icon';
 import { Icons } from './components/graphics/Icons';
 import { IconSize } from './types/IconSize';
-import { Keywords } from './components/feedback/Keywords';
 import { Label } from './components/typography/Label';
 import { Link } from './components/input/Link';
 import { LogoFull } from './components/graphics/LogoFull';
@@ -45,6 +45,7 @@ import { SidebarBrand } from './components/layout/SidebarBrand';
 import { SidebarFooter } from './components/layout/SidebarFooter';
 import { SidebarItem } from './components/layout/SidebarItem';
 import { StyleCollector } from './components/roots/StyleCollector';
+import { Tags } from './components/feedback/Tags';
 import { Text } from './components/typography/Text';
 import { TextArea } from './components/input/TextArea';
 import { TextBox } from './components/input/TextBox';
@@ -61,6 +62,7 @@ export {
   animate,
   Application,
   Brand,
+  Breadcrumbs,
   BusyIndicator,
   Button,
   ButtonHint,
@@ -87,7 +89,6 @@ export {
   Icon,
   IconSize,
   Icons,
-  Keywords,
   Label,
   Link,
   LogoFull,
@@ -114,6 +115,7 @@ export {
   slugify,
   StyleCollector,
   ServerSideStyles,
+  Tags,
   Text,
   TextArea,
   TextBox,

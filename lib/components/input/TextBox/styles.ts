@@ -5,7 +5,8 @@ export type TextBoxClassNames =
   'TextBox' |
   'IsDisabled' |
   'TypePort' |
-  'TypeTime';
+  'TypeTime' |
+  'TypeSearch';
 
 const styles = (theme: Theme): Styles<TextBoxClassNames> => ({
   TextBox: {
@@ -42,6 +43,9 @@ const styles = (theme: Theme): Styles<TextBoxClassNames> => ({
 
   TypeTime: {
     width: '7em'
+  },
+
+  TypeSearch: {
   }
 });
 

@@ -28,11 +28,10 @@ class PageTreeSearch {
       let occurences = 0;
 
       for (const pattern of patterns) {
-        // Todo: Add more metadata to model in order to search for it here.
-        // pattern.test(item.keywordsAsString) ||
-        // pattern.test(item.breadcrumbsAsString)
         if (
-          pattern.test(item.title)
+          pattern.test(item.title) ||
+          pattern.test(item.keywordsAsString!) ||
+          pattern.test(item.breadcrumbsAsString!)
         ) {
           occurences += 1;
         }
@@ -49,8 +48,6 @@ class PageTreeSearch {
 
     for (const item of items) {
       if (item.children) {
-        flattenedItems.push({ ...item, children: undefined });
-
         flattenedItems.push(...this.flattenItems(item.children));
       } else {
         flattenedItems.push({ ...item });
