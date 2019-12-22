@@ -39,6 +39,7 @@ const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
   },
 
   PreviewPanel: {
+    position: 'relative',
     maxHeight: '50vh',
     overflow: 'auto',
     flexGrow: 1,

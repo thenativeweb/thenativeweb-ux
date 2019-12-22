@@ -1,5 +1,5 @@
 import { Styles } from 'jss';
-import { Theme } from '../../../../../lib';
+import { Theme } from '../../../..';
 
 export type SearchResultsClassNames =
   'SearchResults' |

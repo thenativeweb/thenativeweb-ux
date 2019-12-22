@@ -1,4 +1,4 @@
-import { PageTreeItem } from '../..';
+import { PageTreeItem } from '../../..';
 
 class PageTreeSearch {
   private readonly originalItems: PageTreeItem [];

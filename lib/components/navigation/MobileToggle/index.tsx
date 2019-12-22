@@ -1,17 +1,43 @@
-import classNames from 'classnames';
-import { createUseStyles, Icon, Theme, Transition } from '../../../../lib';
+import { classNames, createUseStyles } from '../../../styles';
+import { Icon, Theme, Transition } from '../../..';
 import { MobileToggleClassNames, styles } from './styles';
 import React, { Fragment, FunctionComponent, ReactElement, useEffect } from 'react';
 
 const useStyles = createUseStyles<Theme, MobileToggleClassNames>(styles);
 
 interface MobileToggleProps {
+  position?: 'fixed' | 'absolute';
+  isResponsive?: boolean;
   isVisible: boolean;
   onClick: () => void;
 }
 
-const MobileToggle: FunctionComponent<MobileToggleProps> = ({ isVisible, onClick }): ReactElement => {
+const MobileToggle: FunctionComponent<MobileToggleProps> = ({
+  isResponsive = true,
+  isVisible,
+  position = 'fixed',
+  onClick
+}): ReactElement => {
   const classes = useStyles();
+
+  const backdropClasses = classNames(
+    classes.MobileToggle, {
+      [classes.IsVisible]: isVisible,
+      [classes.PositionFixed]: position === 'fixed',
+      [classes.PositionAbsolute]: position === 'absolute',
+      [classes.IsResponsive]: isResponsive,
+      [classes.IsNotResponsive]: !isResponsive
+    }
+  );
+  const toggleClasses = classNames(
+    classes.Toggle, {
+      [classes.IsVisible]: isVisible,
+      [classes.PositionFixed]: position === 'fixed',
+      [classes.PositionAbsolute]: position === 'absolute',
+      [classes.IsResponsive]: isResponsive,
+      [classes.IsNotResponsive]: !isResponsive
+    }
+  );
 
   useEffect((): void => {
     const { body } = document;
@@ -25,10 +51,10 @@ const MobileToggle: FunctionComponent<MobileToggleProps> = ({ isVisible, onClick
 
   return (
     <Fragment>
-      <div className={ classNames(classes.MobileToggle, { [classes.IsVisible]: isVisible }) }>
+      <div className={ backdropClasses }>
         <div onClick={ onClick } className={ classes.Backdrop } />
       </div>
-      <div onClick={ onClick } className={ classes.Toggle }>
+      <div onClick={ onClick } className={ toggleClasses }>
         <div className={ classes.IconContainer }>
           <Transition in={ isVisible } type='Fade'>
             <Icon
@@ -52,4 +78,4 @@ const MobileToggle: FunctionComponent<MobileToggleProps> = ({ isVisible, onClick
   );
 };
 
-export default MobileToggle;
+export { MobileToggle };

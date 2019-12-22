@@ -1,10 +1,11 @@
 import { Chapter } from './Chapter';
+import { createUseStyles } from '../../../styles';
 import { Page } from './Page';
 import { SearchResults } from './SearchResults';
 import { Section } from './Section';
 import {
-  createUseStyles, HorizontalBar, PageTree, PageTreeItem, TextBox, Theme
-} from '../../../../lib';
+  HorizontalBar, PageTree, PageTreeItem, TextBox, Theme
+} from '../../..';
 import { PageNavigationClassNames, styles } from './styles';
 import React, { ChangeEvent, FunctionComponent, ReactElement, ReactNode, useEffect, useState } from 'react';
 

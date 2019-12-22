@@ -1,23 +1,23 @@
 import { Footer } from '../../components/Footer';
-import MobileToggle from '../../components/Navigation/MobileToggle';
 import { navigation } from '../../configuration/navigation';
 import NextLink from 'next/link';
-import { PageNavigation } from '../../components/Navigation/PageNavigation';
-import { PageTree } from '../../../lib/model/PageTree';
-import { useRouteChange } from '../../components/Navigation/useRouteChange';
 import {
   Button,
   classNames,
   createUseStyles,
   HorizontalBar,
   Link,
+  MobileToggle,
   NonIdealState,
+  PageNavigation,
+  PageTree,
   Product,
   Sidebar,
   SidebarBrand,
   SidebarItem,
   Theme,
   useDevice,
+  useRouteChange,
   Website
 } from '../../../lib';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect, useState } from 'react';

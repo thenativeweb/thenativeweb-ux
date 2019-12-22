@@ -1,22 +1,27 @@
 import { Styles } from 'jss';
-import { Theme } from '../../../../lib';
+import { Theme } from '../../..';
 
 export type MobileToggleClassNames =
+  '@global' |
   'MobileToggle' |
+  'IsResponsive' |
+  'IsNotResponsive' |
   'IsVisible' |
+  'PositionAbsolute' |
+  'PositionFixed' |
   'Backdrop' |
   'Toggle' |
   'IconContainer' |
   'NavIcon';
 
-const styles = (theme: Theme): Styles => ({
+const styles = (theme: Theme): Styles<MobileToggleClassNames> => ({
   '@global': {
     '.tnw-ux-prevent-body-scroll': {
       overflow: 'hidden'
     }
   },
+
   MobileToggle: {
-    position: 'fixed',
     zIndex: theme.zIndices.content,
     top: 0,
     right: 0,
@@ -26,6 +31,20 @@ const styles = (theme: Theme): Styles => ({
   },
 
   IsVisible: {},
+
+  IsResponsive: {},
+
+  PositionAbsolute: {
+    '&$Toggle': {
+      position: 'absolute'
+    }
+  },
+
+  PositionFixed: {
+    '&$Toggle': {
+      position: 'fixed'
+    }
+  },
 
   Backdrop: {
     position: 'absolute',
@@ -66,15 +85,31 @@ const styles = (theme: Theme): Styles => ({
     transform: 'translate(-50%, -50%)'
   },
 
-  [theme.breakpoints.down('xs')]: {
-    Toggle: {
-      display: 'flex',
-      pointerEvents: 'auto'
+  IsNotResponsive: {
+    '&IsVisible': {
+      '&$Backdrop': {
+        visibility: 'visible',
+        pointerEvents: 'auto'
+      }
     },
 
-    IsVisible: {
-      '& $Backdrop': {
-        visibility: 'visible',
+    '&$Toggle': {
+      display: 'flex',
+      pointerEvents: 'auto'
+    }
+  },
+
+  [theme.breakpoints.down('xs')]: {
+    IsResponsive: {
+      '&IsVisible': {
+        '& $Backdrop': {
+          visibility: 'visible',
+          pointerEvents: 'auto'
+        }
+      },
+
+      '&$Toggle': {
+        display: 'flex',
         pointerEvents: 'auto'
       }
     }

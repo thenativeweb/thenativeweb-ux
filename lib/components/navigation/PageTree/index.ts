@@ -1,6 +1,6 @@
 import { PageTreeItem } from './PageTreeItem';
 import { PageTreeSearch } from './PageTreeSearch';
-import { slugify } from '../../services';
+import { slugify } from '../../../services';
 
 class PageTree {
   private readonly originalItem: PageTreeItem [];
@@ -9,14 +9,11 @@ class PageTree {
 
   public readonly items: PageTreeItem [];
 
-  private expandedPaths: string [];
-
   private readonly treeSearch: PageTreeSearch;
 
   public constructor ({ items, basePath = '' }: { items: PageTreeItem []; basePath?: string }) {
     this.originalItem = items;
     this.basePath = basePath;
-    this.expandedPaths = [];
 
     this.items = this.buildMetaData(this.originalItem, basePath, []);
     this.treeSearch = new PageTreeSearch(this.items);
@@ -55,10 +52,6 @@ class PageTree {
   public search (query: string): PageTreeItem [] {
     return this.treeSearch.query(query);
   }
-
-  // Todo: Handle selection here in central place.
-  // public expandPath () {}
-  // public isPathExpandend () {}
 }
 
 export { PageTree };

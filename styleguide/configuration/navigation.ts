@@ -53,6 +53,10 @@ const navigation = [
       { title: 'NonIdealState' },
       { title: 'Tags' }
     ]},
+    { title: 'Navigation', children: [
+      { title: 'MobileToggle' },
+      { title: 'PageNavigation' }
+    ]},
     { title: 'Animation', children: [
       { title: 'Transition' },
       { title: 'TransitionGroup' }

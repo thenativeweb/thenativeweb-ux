@@ -8,6 +8,7 @@ const customTheme = createTheme({
     grayDark: '#2f333b',
     highlight: '#48BB78',
     gray: '#363d45',
+    grayModest: '#999999',
     grayLight: '#eeeeee',
     white: '#ffffff'
   },

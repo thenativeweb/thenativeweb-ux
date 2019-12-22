@@ -32,12 +32,14 @@ import { LogoTheNativeWeb } from './components/graphics/LogoTheNativeWeb';
 import { LogoWolkenkit } from './components/graphics/LogoWolkenkit';
 import { MadeBy } from './components/branding/MadeBy';
 import { Message } from './components/feedback/Message';
+import { MobileToggle } from './components/navigation/MobileToggle';
 import { Modal } from './components/feedback/Modal';
 import { ModalRow } from './components/feedback/ModalRow';
 import { NonIdealState } from './components/feedback/NonIdealState';
 import { Notifications } from './components/feedback/Notifications';
-import { PageTree } from './model/PageTree';
-import { PageTreeItem } from './model/PageTree/PageTreeItem';
+import { PageNavigation } from './components/navigation/PageNavigation';
+import { PageTree } from './components/navigation/PageTree';
+import { PageTreeItem } from './components/navigation/PageTree/PageTreeItem';
 import { Paragraph } from './components/typography/Paragraph';
 import { Pattern } from './components/branding/Pattern';
 import { PoweredBy } from './components/branding/PoweredBy';
@@ -55,6 +57,7 @@ import { ThemeProvider } from './components/roots/ThemeProvider';
 import { Toggle } from './components/input/Toggle';
 import { Transition } from './components/animation/Transition';
 import { TransitionGroup } from './components/animation/TransitionGroup';
+import { useRouteChange } from './components/navigation/useRouteChange';
 import { Website } from './components/roots/Website';
 import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useDevice, useTheme } from './styles';
 import { dialogs, excecutionEnvironment, getPortalRootNode, notifications, slugify } from './services';
@@ -100,11 +103,13 @@ export {
   LogoWolkenkit,
   MadeBy,
   Message,
+  MobileToggle,
   Modal,
   ModalRow,
   NonIdealState,
   notifications,
   Notifications,
+  PageNavigation,
   PageTree,
   PageTreeItem,
   Paragraph,
@@ -131,5 +136,6 @@ export {
   TransitionGroup,
   Website,
   useDevice,
-  useTheme
+  useTheme,
+  useRouteChange
 };

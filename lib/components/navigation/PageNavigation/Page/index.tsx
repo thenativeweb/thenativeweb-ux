@@ -1,8 +1,9 @@
+import { createUseStyles } from '../../../../styles';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import {
-  classNames, createUseStyles, Link, Theme
-} from '../../../../../lib';
+  classNames, Link, Theme
+} from '../../../..';
 import { PageClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 

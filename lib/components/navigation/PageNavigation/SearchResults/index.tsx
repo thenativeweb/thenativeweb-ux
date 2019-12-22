@@ -1,5 +1,6 @@
+import { createUseStyles } from '../../../../styles';
 import NextLink from 'next/link';
-import { Breadcrumbs, createUseStyles, HighlightText, Link, PageTreeItem, Tags, Theme } from '../../../../../lib';
+import { Breadcrumbs, HighlightText, Link, PageTreeItem, Tags, Theme } from '../../../..';
 import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { SearchResultsClassNames, styles } from './styles';
 
