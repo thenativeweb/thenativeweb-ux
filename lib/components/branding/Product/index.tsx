@@ -36,7 +36,7 @@ const Product: FunctionComponent<ProductProps> = ({
   if (theme.name === 'wolkenkit' || name === 'wolkenkit') {
     Logo = LogoWolkenkit;
   }
-  if (theme.name === 'wolkenkit' || name === 'wolkenkit') {
+  if ((theme.name === 'wolkenkit' && !name) || name === 'wolkenkit') {
     nameComponent = <div className={ classes.CompositeName }><span>wolken</span>kit</div>;
   }
 

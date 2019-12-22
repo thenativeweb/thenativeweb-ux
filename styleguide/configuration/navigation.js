@@ -9,6 +9,7 @@ const navigation = [
     { title: 'Layout', children: [
       { title: 'Container' },
       { title: 'Grid' },
+      { title: 'HorizontalBar' },
       { title: 'Sidebar', keywords: [ 'menu', 'navigation' ]}
     ]},
     { title: 'Branding', children: [
@@ -41,7 +42,6 @@ const navigation = [
     ]},
     { title: 'Forms', children: [
       { title: 'ControlGroup' },
-      { title: 'CheckBox' },
       { title: 'Form' }
     ]},
     { title: 'Feedback', children: [
@@ -50,6 +50,7 @@ const navigation = [
       { title: 'HighlightText' },
       { title: 'Message' },
       { title: 'Modal' },
+      { title: 'NonIdealState' },
       { title: 'Tags' }
     ]},
     { title: 'Animation', children: [

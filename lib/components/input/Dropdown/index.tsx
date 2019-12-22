@@ -15,6 +15,7 @@ interface DropdownProps {
   value: string;
   emptyLabel?: string;
   id?: string;
+  isSubtle?: boolean;
   size?: DropDownSize;
   style?: CSSProperties;
   onChange?: (value: string) => void;
@@ -26,6 +27,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
   emptyLabel,
   id,
   options,
+  isSubtle = false,
   size = 'md',
   style,
   value,
@@ -44,6 +46,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
   const dropdownClassNames = classNames(classes.Dropdown, {
     [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
+    [classes.IsSubtle]: isSubtle === true,
     [classes.IsFocused]: isFocused
   });
 
@@ -67,7 +70,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
           ))
         }
       </select>
-      <Icon key='icon' color='white' className={ classes.CollapseIcon } name='expand' />
+      <Icon key='icon' color='current' className={ classes.CollapseIcon } name='expand' />
     </div>
   );
 };

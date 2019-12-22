@@ -10,6 +10,11 @@ export type MobileToggleClassNames =
   'NavIcon';
 
 const styles = (theme: Theme): Styles => ({
+  '@global': {
+    '.tnw-ux-prevent-body-scroll': {
+      overflow: 'hidden'
+    }
+  },
   MobileToggle: {
     position: 'fixed',
     zIndex: theme.zIndices.content,
@@ -34,17 +39,17 @@ const styles = (theme: Theme): Styles => ({
   },
 
   Toggle: {
-    zIndex: theme.zIndices.navigation,
+    zIndex: theme.zIndices.navigation + 1,
     background: theme.color.brand.grayDark,
-    position: 'absolute',
+    position: 'fixed',
     right: theme.space(1),
     top: theme.space(1),
     borderRadius: '50%',
     display: 'none',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 36,
-    height: 36,
+    width: '36px',
+    height: '36px',
     willChange: 'opacity'
   },
 

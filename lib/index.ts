@@ -20,6 +20,7 @@ import { Grid } from './components/layout/Grid';
 import { GridItem } from './components/layout/GridItem';
 import { Headline } from './components/typography/Headline';
 import { HighlightText } from './components/feedback/HighlightText';
+import { HorizontalBar } from './components/layout/HorizontalBar';
 import { Icon } from './components/graphics/Icon';
 import { Icons } from './components/graphics/Icons';
 import { IconSize } from './types/IconSize';
@@ -33,6 +34,7 @@ import { MadeBy } from './components/branding/MadeBy';
 import { Message } from './components/feedback/Message';
 import { Modal } from './components/feedback/Modal';
 import { ModalRow } from './components/feedback/ModalRow';
+import { NonIdealState } from './components/feedback/NonIdealState';
 import { Notifications } from './components/feedback/Notifications';
 import { PageTree } from './model/PageTree';
 import { PageTreeItem } from './model/PageTree/PageTreeItem';
@@ -86,6 +88,7 @@ export {
   GridItem,
   Headline,
   HighlightText,
+  HorizontalBar,
   Icon,
   IconSize,
   Icons,
@@ -99,6 +102,7 @@ export {
   Message,
   Modal,
   ModalRow,
+  NonIdealState,
   notifications,
   Notifications,
   PageTree,

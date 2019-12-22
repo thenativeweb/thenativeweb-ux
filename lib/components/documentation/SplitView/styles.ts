@@ -4,6 +4,7 @@ import { Theme } from '../../../themes';
 export type SplitViewClassNames =
   'SplitView' |
   'SplitViewWithCodeVisible' |
+  'WithPreviewPadding' |
   'TogglePanel' |
   'PreviewPanel' |
   'CodePanel' |
@@ -26,6 +27,12 @@ const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
     }
   },
 
+  WithPreviewPadding: {
+    '& $PreviewPanel': {
+      padding: theme.space(2)
+    }
+  },
+
   TogglePanel: {
     background: `${theme.color.brand.grayDark} !important`,
     borderRight: `1px solid ${theme.color.brand.gray}`
@@ -36,7 +43,6 @@ const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
     overflow: 'auto',
     flexGrow: 1,
     border: `1px solid ${theme.color.brand.grayLight}`,
-    padding: theme.space(2),
 
     '& hr:not([class])': {
       background: theme.color.brand.grayLight,

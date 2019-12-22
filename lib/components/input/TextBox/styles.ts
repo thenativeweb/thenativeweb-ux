@@ -17,6 +17,8 @@ const styles = (theme: Theme): Styles<TextBoxClassNames> => ({
     boxSizing: 'border-box',
     border: `1px solid`,
     borderColor: theme.color.content.border,
+    borderRadius: '1px',
+    appearance: 'none',
 
     '&:focus': {
       outline: 'none',

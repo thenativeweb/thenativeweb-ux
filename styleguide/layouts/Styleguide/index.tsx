@@ -6,9 +6,12 @@ import { PageNavigation } from '../../components/Navigation/PageNavigation';
 import { PageTree } from '../../../lib/model/PageTree';
 import { useRouteChange } from '../../components/Navigation/useRouteChange';
 import {
+  Button,
   classNames,
   createUseStyles,
+  HorizontalBar,
   Link,
+  NonIdealState,
   Product,
   Sidebar,
   SidebarBrand,
@@ -17,7 +20,7 @@ import {
   useDevice,
   Website
 } from '../../../lib';
-import React, { FunctionComponent, ReactElement, useCallback, useState } from 'react';
+import React, { FunctionComponent, ReactElement, useCallback, useEffect, useState } from 'react';
 import { StyleguideClassNames, styles } from './styles';
 
 const useStyles = createUseStyles<Theme, StyleguideClassNames>(styles);
@@ -25,22 +28,29 @@ const useStyles = createUseStyles<Theme, StyleguideClassNames>(styles);
 const Styleguide: FunctionComponent = ({ children }): ReactElement => {
   const classes = useStyles();
   const device = useDevice();
+  const isMobile = device === 'xs';
+
   const [ isNavigationVisible, setIsNavigationVisible ] = useState(true);
+  const [ isSearchVisible, setIsSearchVisible ] = useState(false);
+
   const componentClasses = classNames(classes.Styleguide, {
     [classes.WithNavigationVisible]: isNavigationVisible
   });
 
   const pageTree = new PageTree({ items: navigation });
 
+  const hideNavigationOnMobile = useCallback((): void => {
+    if (isMobile) {
+      setIsNavigationVisible(false);
+    }
+  }, []);
+
   const toggleNavigation = useCallback((): void => {
     setIsNavigationVisible(!isNavigationVisible);
   }, [ isNavigationVisible ]);
 
-  useRouteChange((): void => {
-    if (device === 'xs') {
-      setIsNavigationVisible(false);
-    }
-  }, [ device ]);
+  useRouteChange(hideNavigationOnMobile, [ device ]);
+  useEffect(hideNavigationOnMobile, []);
 
   return (
     <Website
@@ -48,7 +58,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
       useNotifications={ true }
       useDialogs={ true }
     >
-      <div className={ classes.SidebarDesktop }>
+      <div className={ classes.NavigationForDesktop }>
         <Sidebar>
           <NextLink href='/'>
             <Link href='/'>
@@ -65,21 +75,41 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
         </Sidebar>
       </div>
 
-      <div className={ classes.TopbarMobile }>
+      <HorizontalBar
+        background='dark'
+        paddingHorizontal='sm'
+        borderBottom={ false }
+        className={ classes.NavigationForMobile }
+      >
         <NextLink href='/'>
           <Link href='/'>
             <Product name='ux' size='sm' />
           </Link>
         </NextLink>
-      </div>
+      </HorizontalBar>
 
       <MobileToggle
         isVisible={ isNavigationVisible }
         onClick={ toggleNavigation }
       />
 
-      <div className={ classes.NavigationPanel }>
-        <PageNavigation pageTree={ pageTree } />
+      <div className={ classes.NavigationUniversal }>
+        <PageNavigation
+          header={
+            <HorizontalBar align='space-between' paddingHorizontal='none'>
+              <Button icon='search' onClick={ (): void => setIsSearchVisible(!isSearchVisible) } iconSize='sm' style={{ padding: 16 }} />
+            </HorizontalBar>
+          }
+          nonIdealState={
+            <NonIdealState cause='Sorry, no pages found.'>
+              <p>
+                Try searching for something else!
+              </p>
+            </NonIdealState>
+          }
+          pageTree={ pageTree }
+          showSearchBar={ isSearchVisible }
+        />
       </div>
 
       <div className={ classes.Content }>

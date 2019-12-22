@@ -9,13 +9,19 @@ const useStyles = createUseStyles<Theme, SplitViewClassNames>(styles);
 interface ComponentPreviewProps {
   className?: string;
   children: [ ReactNode, ReactNode ];
+  previewPadding?: boolean;
 }
 
-const SplitView: FunctionComponent<ComponentPreviewProps> = ({ children, className }): ReactElement | null => {
+const SplitView: FunctionComponent<ComponentPreviewProps> = ({
+  children,
+  className,
+  previewPadding = true
+}): ReactElement | null => {
   const classes = useStyles();
   const [ isCodeVisible, setIsCodeVisible ] = useState(true);
   const componentClasses = classNames(classes.SplitView, {
-    [classes.SplitViewWithCodeVisible]: isCodeVisible
+    [classes.SplitViewWithCodeVisible]: isCodeVisible,
+    [classes.WithPreviewPadding]: previewPadding
   }, className);
 
   if (!Array.isArray(children)) {

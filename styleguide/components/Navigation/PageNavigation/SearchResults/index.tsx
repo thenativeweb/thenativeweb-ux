@@ -1,16 +1,21 @@
 import NextLink from 'next/link';
 import { Breadcrumbs, createUseStyles, HighlightText, Link, PageTreeItem, Tags, Theme } from '../../../../../lib';
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { SearchResultsClassNames, styles } from './styles';
 
 const useStyles = createUseStyles<Theme, SearchResultsClassNames>(styles);
 
 interface SearchResultsProps {
+  nonIdealState?: ReactNode;
   results?: PageTreeItem [];
   query: string;
 }
 
-const SearchResults: FunctionComponent<SearchResultsProps> = ({ results, query }): ReactElement | null => {
+const SearchResults: FunctionComponent<SearchResultsProps> = ({
+  nonIdealState,
+  results,
+  query
+}): ReactElement | null => {
   const classes = useStyles();
 
   if (!results) {
@@ -20,14 +25,7 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({ results, query }
   if (results.length === 0) {
     return (
       <div className={ classes.SearchResults }>
-        <div
-          className={ classes.Errors }
-        >
-          <div className={ classes.ErrorCause }>Sorry, no pages found.</div>
-          <div className={ classes.ErrorTip }>
-            Try searching for something else!
-          </div>
-        </div>
+        { nonIdealState }
       </div>
     );
   }

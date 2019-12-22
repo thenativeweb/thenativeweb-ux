@@ -71,6 +71,10 @@ const createTheme = ({
         default: '1px'
       },
 
+      HorizontalBar: {
+        minHeight: '54px'
+      },
+
       Sidebar: {
         width: '80px'
       },

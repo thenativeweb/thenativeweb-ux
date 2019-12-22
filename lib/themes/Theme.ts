@@ -20,6 +20,7 @@ export interface Theme {
 
   readonly components: {
     borderRadius: { default: string };
+    HorizontalBar: { minHeight: string };
     Sidebar: { width: string };
     Pattern: Pattern;
     Paragraph: {

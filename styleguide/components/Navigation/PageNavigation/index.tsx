@@ -3,10 +3,10 @@ import { Page } from './Page';
 import { SearchResults } from './SearchResults';
 import { Section } from './Section';
 import {
-  createUseStyles, Icon, PageTree, PageTreeItem, TextBox, Theme
+  createUseStyles, HorizontalBar, PageTree, PageTreeItem, TextBox, Theme
 } from '../../../../lib';
 import { PageNavigationClassNames, styles } from './styles';
-import React, { ChangeEvent, FunctionComponent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, FunctionComponent, ReactElement, ReactNode, useEffect, useState } from 'react';
 
 const useStyles = createUseStyles<Theme, PageNavigationClassNames>(styles);
 
@@ -37,9 +37,19 @@ const renderSection = (section: PageTreeItem): ReactElement => (
 );
 
 interface PageNavigationProps {
+  header?: ReactNode;
+  footer?: ReactNode;
   pageTree: PageTree;
+  nonIdealState?: ReactNode;
+  showSearchBar?: boolean;
 }
-const PageNavigation: FunctionComponent<PageNavigationProps> = ({ pageTree }): ReactElement => {
+const PageNavigation: FunctionComponent<PageNavigationProps> = ({
+  footer,
+  header,
+  pageTree,
+  nonIdealState,
+  showSearchBar
+}): ReactElement => {
   const classes = useStyles();
 
   const [ query, setQuery ] = useState('');
@@ -53,23 +63,31 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({ pageTree }): R
     setResults(newResults);
   };
 
+  useEffect((): void => {
+    setQuery('');
+    setResults([]);
+  }, [ showSearchBar ]);
+
   return (
     <div className={ classes.PageNavigation }>
-      <div className={ classes.SearchBar }>
-        <Icon
-          className={ classes.SearchIcon }
-          name='search'
-          size='sm'
-        />
-        <TextBox
-          className={ classes.SearchField }
-          value={ query }
-          placeholder='Search…'
-          type='search'
-          onChange={ handleChange }
-        />
-      </div>
-
+      {
+        header
+      }
+      {
+        showSearchBar ?
+          (
+            <HorizontalBar className={ classes.SearchBar }>
+              <TextBox
+                className={ classes.SearchField }
+                value={ query }
+                autoFocus={ true }
+                placeholder='Search…'
+                type='search'
+                onChange={ handleChange }
+              />
+            </HorizontalBar>
+          ) : null
+      }
       <div className={ classes.Content }>
         {
           query.length === 0 ?
@@ -79,10 +97,17 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({ pageTree }): R
         {
           query.length > 0 ?
             (
-              <SearchResults query={ query } results={ results } />
+              <SearchResults
+                query={ query }
+                results={ results }
+                nonIdealState={ nonIdealState }
+              />
             ) : null
         }
       </div>
+      {
+        footer
+      }
     </div>
   );
 };

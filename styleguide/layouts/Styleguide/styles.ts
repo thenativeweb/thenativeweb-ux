@@ -5,11 +5,11 @@ export type StyleguideClassNames =
   'Content' |
   'Styleguide' |
   'WithNavigationVisible' |
-  'NavigationPanel' |
-  'SidebarDesktop'|
-  'TopbarMobile';
+  'NavigationUniversal' |
+  'NavigationForDesktop'|
+  'NavigationForMobile';
 
-const navigationPanelWidthXs = '75vw';
+const navigationPanelWidthXs = '100%';
 const navigationPanelWidthSm = '200px';
 const navigationPanelWidthMd = '300px';
 
@@ -19,13 +19,13 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
   },
 
   WithNavigationVisible: {
-    '& $NavigationPanel': {
+    '& $NavigationUniversal': {
       overflowY: 'auto',
       overflowX: 'hidden'
     }
   },
 
-  SidebarDesktop: {
+  NavigationForDesktop: {
     zIndex: theme.zIndices.navigation,
     position: 'fixed',
     top: 0,
@@ -35,12 +35,10 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     display: 'flex'
   },
 
-  TopbarMobile: {
-    background: theme.color.brand.grayDark,
-    padding: [ theme.space(1), theme.space(1) ]
+  NavigationForMobile: {
   },
 
-  NavigationPanel: {
+  NavigationUniversal: {
     zIndex: theme.zIndices.navigation,
     position: 'fixed',
     top: 0,
@@ -48,7 +46,7 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     height: '100%',
     overflow: 'hidden',
     background: theme.color.brand.white,
-    transition: `width 200ms, transform 300ms ${theme.ease.outCirc}, opacity 300ms ${theme.ease.outCirc}`
+    transition: `width 200ms, transform 300ms ${theme.ease.outCirc}, opacity 500ms ${theme.ease.outCirc}`
   },
 
   Content: {
@@ -56,19 +54,20 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
   },
 
   [theme.breakpoints.only('xs')]: {
-    SidebarDesktop: {
+    NavigationForDesktop: {
       display: 'none'
     },
 
-    TopbarMobile: {
+    NavigationForMobile: {
       display: 'flex'
     },
 
-    NavigationPanel: {
+    NavigationUniversal: {
       left: 0,
       opacity: 0,
-      transform: 'translate(-50%,0)',
       width: navigationPanelWidthXs,
+      pointerEvents: 'none',
+      transform: 'translate(0,-20px)',
 
       '& > *': {
         width: navigationPanelWidthXs
@@ -80,7 +79,8 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     },
 
     WithNavigationVisible: {
-      '& $NavigationPanel': {
+      '& $NavigationUniversal': {
+        pointerEvents: 'all',
         opacity: 1,
         transform: 'translate(0,0)'
       },
@@ -92,15 +92,15 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
   },
 
   [theme.breakpoints.up('sm')]: {
-    SidebarDesktop: {
+    NavigationForDesktop: {
       display: 'flex'
     },
 
-    TopbarMobile: {
+    NavigationForMobile: {
       display: 'none'
     },
 
-    NavigationPanel: {
+    NavigationUniversal: {
       borderRight: `1px solid ${theme.color.brand.grayLight}`,
       left: theme.components.Sidebar.width,
 
@@ -115,7 +115,7 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     },
 
     WithNavigationVisible: {
-      '& $NavigationPanel': {
+      '& $NavigationUniversal': {
         width: navigationPanelWidthSm
       },
 
@@ -126,14 +126,14 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
   },
 
   [theme.breakpoints.up('md')]: {
-    NavigationPanel: {
+    NavigationUniversal: {
       '& > *': {
         width: navigationPanelWidthMd
       }
     },
 
     WithNavigationVisible: {
-      '& $NavigationPanel': {
+      '& $NavigationUniversal': {
         width: navigationPanelWidthMd
       },
 

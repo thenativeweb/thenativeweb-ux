@@ -4,7 +4,6 @@ import { Theme } from '../../../../lib';
 export type PageNavigationClassNames =
   'PageNavigation' |
   'SearchBar' |
-  'SearchIcon' |
   'SearchField' |
   'Content';
 
@@ -17,23 +16,10 @@ const styles = (theme: Theme): Styles => ({
     flexDirection: 'column'
   },
 
-  SearchBar: {
-    flexShrink: 0,
-    display: 'flex',
-    alignItems: 'center',
-    height: 56,
-    borderBottom: `1px solid ${theme.color.brand.grayLight}`
-  },
-
-  SearchIcon: {
-    left: theme.space(3),
-    fill: theme.color.brand.grayModest,
-    position: 'absolute'
-  },
+  SearchBar: {},
 
   SearchField: {
-    margin: [ 0, theme.space(2) ],
-    padding: [ theme.space(0.5), theme.space(1), theme.space(0.5), theme.space(4) ],
+    padding: [ theme.space(0.5), theme.space(1) ],
     flexGrow: 1
   },
 

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { createUseStyles, Icon, Theme, Transition } from '../../../../lib';
 import { MobileToggleClassNames, styles } from './styles';
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { Fragment, FunctionComponent, ReactElement, useEffect } from 'react';
 
 const useStyles = createUseStyles<Theme, MobileToggleClassNames>(styles);
 
@@ -13,9 +13,21 @@ interface MobileToggleProps {
 const MobileToggle: FunctionComponent<MobileToggleProps> = ({ isVisible, onClick }): ReactElement => {
   const classes = useStyles();
 
+  useEffect((): void => {
+    const { body } = document;
+
+    if (isVisible) {
+      body.classList.add('thenativeweb-mobile-toggle--prevent-body-scroll');
+    } else {
+      body.classList.remove('thenativeweb-mobile-toggle--prevent-body-scroll');
+    }
+  }, [ isVisible ]);
+
   return (
-    <div className={ classNames(classes.MobileToggle, { [classes.IsVisible]: isVisible }) }>
-      <div onClick={ onClick } className={ classes.Backdrop } />
+    <Fragment>
+      <div className={ classNames(classes.MobileToggle, { [classes.IsVisible]: isVisible }) }>
+        <div onClick={ onClick } className={ classes.Backdrop } />
+      </div>
       <div onClick={ onClick } className={ classes.Toggle }>
         <div className={ classes.IconContainer }>
           <Transition in={ isVisible } type='Fade'>
@@ -36,8 +48,7 @@ const MobileToggle: FunctionComponent<MobileToggleProps> = ({ isVisible, onClick
           </Transition>
         </div>
       </div>
-    </div>
-
+    </Fragment>
   );
 };
 
