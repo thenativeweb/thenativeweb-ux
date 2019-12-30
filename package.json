@@ -25,7 +25,7 @@
   "dependencies": {
     "animejs": "3.1.0",
     "classnames": "2.2.6",
-    "jss": "10.0.1",
+    "jss": "10.0.2",
     "lodash": "4.17.15",
     "react-jss": "10.0.2",
     "react-transition-group": "4.3.0",
