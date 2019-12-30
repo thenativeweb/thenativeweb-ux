@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.7...1.0.8) (2019-12-30)
+
+
+### Bug Fixes
+
+* bump jss from 10.0.1 to 10.0.2 ([#195](https://github.com/thenativeweb/thenativeweb-ux/issues/195)) ([02b0d5e](https://github.com/thenativeweb/thenativeweb-ux/commit/02b0d5e344f8e17301651dff293f01d9e14bf183))
+
 ## [1.0.7](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.6...1.0.7) (2019-12-30)
 
 
