@@ -1,3 +1,31 @@
+## [1.0.8](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.7...1.0.8) (2019-12-30)
+
+
+### Bug Fixes
+
+* bump jss from 10.0.1 to 10.0.2 ([#195](https://github.com/thenativeweb/thenativeweb-ux/issues/195)) ([02b0d5e](https://github.com/thenativeweb/thenativeweb-ux/commit/02b0d5e344f8e17301651dff293f01d9e14bf183))
+
+## [1.0.7](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.6...1.0.7) (2019-12-30)
+
+
+### Bug Fixes
+
+* bump react-jss from 10.0.1 to 10.0.2 ([#196](https://github.com/thenativeweb/thenativeweb-ux/issues/196)) ([93e106d](https://github.com/thenativeweb/thenativeweb-ux/commit/93e106d4aea8c347343b373af950340d0917f06e))
+
+## [1.0.6](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.5...1.0.6) (2019-12-28)
+
+
+### Bug Fixes
+
+* bump react-jss from 10.0.0 to 10.0.1 ([#193](https://github.com/thenativeweb/thenativeweb-ux/issues/193)) ([f611bef](https://github.com/thenativeweb/thenativeweb-ux/commit/f611befd623b79331aa43b75949b7977c4a8b326))
+
+## [1.0.5](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.4...1.0.5) (2019-12-28)
+
+
+### Bug Fixes
+
+* bump jss from 10.0.0 to 10.0.1 ([#192](https://github.com/thenativeweb/thenativeweb-ux/issues/192)) ([47cc70d](https://github.com/thenativeweb/thenativeweb-ux/commit/47cc70d0a5f960e0e3567869cd99a15187e084c3))
+
 ## [1.0.4](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.3...1.0.4) (2019-12-13)
 
 
