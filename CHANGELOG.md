@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.8...1.0.9) (2020-01-06)
+
+
+### Bug Fixes
+
+* Replace async-retry. ([#205](https://github.com/thenativeweb/thenativeweb-ux/issues/205)) ([f1db430](https://github.com/thenativeweb/thenativeweb-ux/commit/f1db430c3f4d95b6fdbaee596485abf258c40979))
+
 ## [1.0.8](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.7...1.0.8) (2019-12-30)
 
 
