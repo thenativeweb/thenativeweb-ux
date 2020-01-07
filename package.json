@@ -45,7 +45,7 @@
     "@types/react-transition-group": "4.2.3",
     "@types/shelljs": "0.8.6",
     "assertthat": "5.1.0",
-    "axios": "0.19.0",
+    "axios": "0.19.1",
     "buntstift": "3.0.3",
     "common-tags": "1.8.0",
     "jsdom": "15.2.1",
