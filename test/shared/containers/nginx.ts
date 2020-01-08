@@ -2,7 +2,7 @@ import axios from 'axios';
 import { buntstift } from 'buntstift';
 import { oneLine } from 'common-tags';
 import path from 'path';
-import retry from 'async-retry';
+import { retry } from 'retry-ignore-abort';
 import shell from 'shelljs';
 import { getIntegrationTestUrl, integrationTestPort } from '../environment';
 
