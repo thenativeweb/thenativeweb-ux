@@ -1,10 +1,25 @@
 import { Styles } from 'jss';
+import { Theme } from '../../../themes';
 
-export type LogoTheNativeWebClassNames = 'LogoTheNativeWeb' | 'SizeSm' | 'SizeMd' | 'SizeLg' | 'SizeXl';
+export type LogoTheNativeWebClassNames =
+  'LogoTheNativeWeb' |
+  'Foreground' |
+  'Background' |
+  'SizeSm' |
+  'SizeMd' |
+  'SizeLg' |
+  'SizeXl';
 
-const styles: Styles<LogoTheNativeWebClassNames> = {
+const styles = (theme: Theme): Styles<LogoTheNativeWebClassNames> => ({
   LogoTheNativeWeb: {},
 
+  Foreground: {
+    fill: theme.color.brand.white
+  },
+
+  Background: {
+    fill: theme.color.brand.highlight
+  },
   SizeSm: {
     width: '36px',
     height: '36px'
@@ -24,6 +39,6 @@ const styles: Styles<LogoTheNativeWebClassNames> = {
     width: '200px',
     height: '200px'
   }
-};
+});
 
 export { styles };
