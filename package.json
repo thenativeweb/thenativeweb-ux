@@ -43,7 +43,7 @@
     "@types/common-tags": "1.8.0",
     "@types/jsdom": "12.2.4",
     "@types/lodash": "4.14.149",
-    "@types/node": "13.1.4",
+    "@types/node": "13.1.6",
     "@types/puppeteer": "2.0.0",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
@@ -62,8 +62,8 @@
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "retry-ignore-abort": "2.2.2",
-    "roboter": "10.1.14",
-    "semantic-release-configuration": "1.0.7",
+    "roboter": "10.1.17",
+    "semantic-release-configuration": "1.0.8",
     "shelljs": "0.8.3"
   },
   "peerDependencies": {
