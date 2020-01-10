@@ -68,7 +68,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
             </Link>
           </NextLink>
           <SidebarItem
-            iconName='menu'
+            iconName='toggle-left-panel'
             onClick={ toggleNavigation }
             isActive={ isNavigationVisible }
           />

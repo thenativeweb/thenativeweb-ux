@@ -18,15 +18,11 @@ const Icons = (): ReactElement => (
       <polygon points='14.2,1.3 5.4,11.6 1.7,8.3 0.3,9.7 5.6,14.4 15.8,2.7' />
     </symbol>
 
-    <symbol viewBox='0 0 24 24' id='icon-show-source-code-xml'>
-      <path d='M24 10.935v2.131l-8 3.947v-2.23l5.64-2.783-5.64-2.79v-2.223l8 3.948zm-16 3.848l-5.64-2.783 5.64-2.79v-2.223l-8 3.948v2.131l8 3.947v-2.23zm7.047-10.783h-2.078l-4.011 16h2.073l4.016-16z' />
-    </symbol>
-
     <symbol viewBox='0 0 24 24' id='icon-chevron'>
       <path d='M7,6l2.038-2L17,12l-7.962,8L7,18.001L13,12L7,6z' />
     </symbol>
 
-    <symbol id='icon-close' viewBox='0 0 24 24'>
+    <symbol viewBox='0 0 24 24' id='icon-close'>
       <path d='M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z' />
     </symbol>
 
@@ -105,6 +101,10 @@ const Icons = (): ReactElement => (
 
     <symbol viewBox='0 0 40 40' id='icon-stackoverflow-medium'>
       <polygon points='32 35 6 35 6 26 8 26 8 33 30 33 30 26 32 26 32 35' /><path d='M27,30H11V28H27Zm.35-3.88L11.79,22.92l.4-2,15.56,3.21Zm1.34-3.75L14.31,15.71l.84-1.81,14.39,6.67Zm2.3-3.3-12.22-10L20,7.53l12.22,10Zm3-2.61L24.46,3.9l1.6-1.21,9.49,12.57Z' />
+    </symbol>
+
+    <symbol viewBox='0 0 24 24' id='icon-toggle-left-panel'>
+      <path d='M8,0h16v24H8V0z M0,0v24h6V0H0z' />
     </symbol>
 
     <symbol viewBox='0 0 40 40' id='icon-open-source-medium'>
