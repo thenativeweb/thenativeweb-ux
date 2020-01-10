@@ -1,6 +1,7 @@
 import { Chapter } from './Chapter';
 import { createUseStyles } from '../../../styles';
 import { Page } from './Page';
+import { PageSearch } from '../PageTree/PageSearch';
 import { SearchResults } from './SearchResults';
 import { Section } from './Section';
 import {
@@ -53,12 +54,14 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
 }): ReactElement => {
   const classes = useStyles();
 
+  const pageSearch = new PageSearch(pageTree);
+
   const [ query, setQuery ] = useState('');
   const [ results, setResults ] = useState<PageTreeItem []>([]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const newQuery = event.target.value;
-    const newResults = pageTree.search(newQuery);
+    const newResults = pageSearch.query(newQuery);
 
     setQuery(newQuery);
     setResults(newResults);

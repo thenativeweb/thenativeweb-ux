@@ -1,5 +1,4 @@
 import { PageTreeItem } from './PageTreeItem';
-import { PageTreeSearch } from './PageTreeSearch';
 import { slugify } from '../../../services';
 
 class PageTree {
@@ -9,14 +8,14 @@ class PageTree {
 
   public readonly items: PageTreeItem [];
 
-  private readonly treeSearch: PageTreeSearch;
+  public readonly itemsFlat: PageTreeItem [];
 
   public constructor ({ items, basePath = '' }: { items: PageTreeItem []; basePath?: string }) {
     this.originalItem = items;
     this.basePath = basePath;
 
     this.items = this.buildMetaData(this.originalItem, basePath, []);
-    this.treeSearch = new PageTreeSearch(this.items);
+    this.itemsFlat = this.buildFlatItems(this.items);
   }
 
   private buildMetaData (items: PageTreeItem [], path: string, breadcrumbs: string []): PageTreeItem [] {
@@ -49,8 +48,18 @@ class PageTree {
     return itemsWithMetadata;
   }
 
-  public search (query: string): PageTreeItem [] {
-    return this.treeSearch.query(query);
+  private buildFlatItems (itemsAsTree: PageTreeItem []): PageTreeItem [] {
+    const flattenedItems: PageTreeItem[] = [];
+
+    for (const item of itemsAsTree) {
+      if (item.children) {
+        flattenedItems.push(...this.buildFlatItems(item.children));
+      } else {
+        flattenedItems.push({ ...item });
+      }
+    }
+
+    return flattenedItems;
   }
 }
 
