@@ -3,8 +3,7 @@ import { Styles } from 'jss';
 import { Theme } from '../../..';
 
 export type ParagraphClassNames =
-  'Paragraph' |
-  string;
+  'Paragraph';
 
 const styles = (theme: Theme): Styles<ParagraphClassNames> => ({
   Paragraph: {

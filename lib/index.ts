@@ -1,7 +1,7 @@
 import animate from 'animejs';
 import { Application } from './components/roots/Application';
 import { Brand } from './components/branding/Brand';
-import { Breadcrumbs } from './components/feedback/Breadcrumbs';
+import { Breadcrumbs } from './components/navigation/Breadcrumbs';
 import { BusyIndicator } from './components/feedback/BusyIndicator';
 import { Button } from './components/input/Button';
 import { ButtonHint } from './components/input/ButtonHint';

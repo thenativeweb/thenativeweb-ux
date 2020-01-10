@@ -1,21 +1,24 @@
-import { HighlightText } from '../HighlightText';
-import { BreadcrumbsClassNames, styles } from './styles';
+import { getStyles } from './getStyles';
 import { classNames, createUseStyles } from '../../../styles';
-import { Icon, Theme } from '../../..';
+import { HighlightText, Icon, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface BreadcrumbsProps {
   className?: string;
+  color?: 'light' | 'dark';
   items?: string [];
   searchWords?: string [];
+  size?: 'sm' | 'md';
 }
 
-const useStyles = createUseStyles<Theme, BreadcrumbsClassNames>(styles);
+const useStyles = createUseStyles<Theme, keyof ReturnType<typeof getStyles>>(getStyles);
 
 const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   className,
   items,
-  searchWords
+  searchWords,
+  color = 'dark',
+  size = 'md'
 }): ReactElement | null => {
   const classes = useStyles();
 
@@ -23,8 +26,19 @@ const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
     return null;
   }
 
+  const componentClasses = classNames(
+    classes.Breadcrumbs,
+    {
+      [classes.SizeSm]: size === 'sm',
+      [classes.SizeMd]: size === 'md',
+      [classes.ColorDark]: color === 'dark',
+      [classes.ColorLight]: color === 'light'
+    },
+    className
+  );
+
   return (
-    <div className={ classNames(classes.Breadcrumbs, className) }>
+    <div className={ componentClasses }>
       {
         items.map((breadcrumb, index): ReactElement => (
           <React.Fragment key={ breadcrumb }>
