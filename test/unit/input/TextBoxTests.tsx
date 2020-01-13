@@ -31,7 +31,7 @@ suite('TextBox', (): void => {
 
     assert.that(textBox).is.not.null();
     assert.that(textBox!.className).is.containing('TextBox');
-    assert.that(textBox!.type).is.equalTo('default');
+    assert.that(textBox!.type).is.equalTo('text');
     assert.that(textBox!.disabled).is.false();
     assert.that(textBox!.required).is.false();
   });
