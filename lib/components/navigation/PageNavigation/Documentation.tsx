@@ -1,5 +1,5 @@
 import { ComponentPreview } from '../../../components/documentation/ComponentPreview';
-import { Code, Headline, PageNavigation, PageTree, Paragraph } from '../../..';
+import { Code, Headline, Link, PageNavigation, PageTree, Paragraph } from '../../..';
 import React, { ReactElement } from 'react';
 
 const Documentation = (): ReactElement => {
@@ -11,25 +11,15 @@ const Documentation = (): ReactElement => {
           {
             title: 'First chapter',
             children: [
-              {
-                title: 'First Section',
-                children: [
-                  { title: 'First page' },
-                  { title: 'Second page' }
-                ]
-              }
+              { title: 'Page A' },
+              { title: 'Page B' }
             ]
           },
           {
             title: 'Second chapter',
             children: [
-              {
-                title: 'First Section',
-                children: [
-                  { title: 'First page' },
-                  { title: 'Second page' }
-                ]
-              }
+              { title: 'Page C' },
+              { title: 'Page D' }
             ]
           }
         ]
@@ -37,7 +27,7 @@ const Documentation = (): ReactElement => {
       {
         title: 'Second Section',
         children: [
-          { title: 'First chapter' }
+          { title: 'Page E' }
         ]
       }
     ]
@@ -48,12 +38,11 @@ const Documentation = (): ReactElement => {
       <Headline>PageNavigation</Headline>
 
       <Paragraph>
-        A <code>PageNavigation</code> can be used show and display a hierarchy
-        of pages inside a Next.js application. It accepts
-        a <code>PageTree</code> structure as data source and will build a
-        collapsible tree from it. It automatically generates Next.js links
-        from the slugified title of each page and takes care of highlighting
-        active pages.
+        A <code>PageNavigation</code> can be used to display a hierarchy
+        of pages inside an application. It accepts a <code>PageTree</code> structure
+        as its data source and will build a collapsible tree navigation from it.
+        It generates a <Link href='https://nextjs.org/docs/api-reference/next/link'>next/link</Link> for
+        each page using the slugified title.
       </Paragraph>
 
       <Paragraph>
@@ -71,25 +60,15 @@ const Documentation = (): ReactElement => {
                 {
                   title: 'First chapter',
                   children: [
-                    {
-                      title: 'First Section',
-                      children: [
-                        { title: 'First page' },
-                        { title: 'Second page' }
-                      ]
-                    }
+                    { title: 'Page A' },
+                    { title: 'Page B' }
                   ]
                 },
                 {
                   title: 'Second chapter',
                   children: [
-                    {
-                      title: 'First Section',
-                      children: [
-                        { title: 'First page' },
-                        { title: 'Second page' }
-                      ]
-                    }
+                    { title: 'Page C' },
+                    { title: 'Page D' }
                   ]
                 }
               ]
@@ -97,7 +76,7 @@ const Documentation = (): ReactElement => {
             {
               title: 'Second Section',
               children: [
-                { title: 'First chapter' }
+                { title: 'Page E' }
               ]
             }
           ]
@@ -112,6 +91,26 @@ const Documentation = (): ReactElement => {
       <ComponentPreview>
         <PageNavigation
           pageTree={ pageTree }
+          activePath=''
+        />
+      </ComponentPreview>
+
+      <Headline level='2'>Setting the active path</Headline>
+
+      <Paragraph>
+        Use the <code>activePath</code> property to define the active page
+        within your tree. The path to this page will be expanded automatically.
+        Once this property changes, all paths that have been expanded by the
+        user will be closed automatically. If you are using this component
+        from within a Next.js application, you get
+        the <code>activePath</code> using the <code>asPath</code> property of
+        the <Link href='https://nextjs.org/docs/api-reference/next/router'>next/router</Link>.
+      </Paragraph>
+
+      <ComponentPreview>
+        <PageNavigation
+          pageTree={ pageTree }
+          activePath='/first-section/first-chapter/page-a'
         />
       </ComponentPreview>
     </React.Fragment>

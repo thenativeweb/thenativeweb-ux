@@ -12,13 +12,13 @@ import React, { ChangeEvent, FunctionComponent, ReactElement, ReactNode, useEffe
 
 const useStyles = createUseStyles<Theme, PageNavigationClassNames>(styles);
 
-const renderChapterOrPages = (item: PageTreeItem): ReactElement => {
+const renderChapterOrPages = (item: PageTreeItem, activePath: string): ReactElement => {
   if (item.children) {
     return (
-      <Chapter title={ item.title } key={ item.path }>
+      <Chapter title={ item.title } key={ item.path } activePath={ activePath }>
         {
           item.children.map((page: PageTreeItem): ReactElement => (
-            <Page title={ page.title } key={ page.title } />
+            <Page title={ page.title } key={ page.title } activePath={ activePath } />
           ))
         }
       </Chapter>
@@ -26,31 +26,35 @@ const renderChapterOrPages = (item: PageTreeItem): ReactElement => {
   }
 
   return (
-    <Page title={ item.title } key={ item.title } />
+    <Page title={ item.title } key={ item.title } activePath={ activePath } />
   );
 };
 
-const renderSection = (section: PageTreeItem): ReactElement => (
-  <Section title={ section.title } key={ section.path }>
+const renderSection = (section: PageTreeItem, activePath: string): ReactElement => (
+  <Section title={ section.title } key={ section.path } activePath={ activePath }>
     {
-      section.children?.map((chapterOrPage): ReactElement => renderChapterOrPages(chapterOrPage))
+      section.children?.map((chapterOrPage): ReactElement => renderChapterOrPages(chapterOrPage, activePath))
     }
   </Section>
 );
 
 interface PageNavigationProps {
+  id?: string;
   header?: ReactNode;
   footer?: ReactNode;
   pageTree: PageTree;
   nonIdealState?: ReactNode;
   showSearchBar?: boolean;
+  activePath: string;
 }
 const PageNavigation: FunctionComponent<PageNavigationProps> = ({
+  id,
   footer,
   header,
   pageTree,
   nonIdealState,
-  showSearchBar
+  showSearchBar,
+  activePath
 }): ReactElement => {
   const classes = useStyles();
 
@@ -73,7 +77,7 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
   }, [ showSearchBar ]);
 
   return (
-    <div className={ classes.PageNavigation }>
+    <div id={ id } className={ classes.PageNavigation }>
       {
         header
       }
@@ -95,7 +99,7 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
       <div className={ classes.Content }>
         {
           query.length === 0 ?
-            pageTree.items.map((section): ReactElement => renderSection(section)) :
+            pageTree.items.map((section): ReactElement => renderSection(section, activePath)) :
             null
         }
         {

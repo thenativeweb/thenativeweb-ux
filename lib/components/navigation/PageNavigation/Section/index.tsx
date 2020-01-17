@@ -2,36 +2,31 @@ import { Chapter } from '../Chapter';
 import { createUseStyles } from '../../../../styles';
 import { isDomNode } from '../../../../utils/isDomNode';
 import { Page } from '../Page';
-import { useRouteChange } from '../../useRouteChange';
-import { useRouter } from 'next/router';
-import {
-  classNames, Icon, Link, Theme
-} from '../../../..';
-import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode, useCallback, useState } from 'react';
+import { classNames, Icon, Link, slugify, Theme } from '../../../..';
+import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
 import { SectionClassNames, styles } from './styles';
 
 const useStyles = createUseStyles<Theme, SectionClassNames>(styles);
 
 interface SectionProps {
+  activePath: string;
   isActive?: boolean;
   title: string;
 }
 
-const Section: FunctionComponent<SectionProps> = ({ children, title }): ReactElement => {
+const Section: FunctionComponent<SectionProps> = ({
+  children,
+  title,
+  activePath
+}): ReactElement => {
   const classes = useStyles();
-  const router = useRouter();
-  const path = `/${title.toLocaleLowerCase()}`;
-  let isActive = router.asPath.startsWith(path);
+  const path = `/${slugify(title)}`;
+  const isActive = activePath.startsWith(path);
 
   const [ isExpanded, setIsExpanded ] = useState(isActive);
 
   let hasChapters = false,
       hasPages = false;
-
-  useRouteChange((url): void => {
-    isActive = url.startsWith(path);
-    setIsExpanded(isActive);
-  });
 
   const handleClick = useCallback((event: MouseEvent): void => {
     event.preventDefault();
@@ -39,6 +34,10 @@ const Section: FunctionComponent<SectionProps> = ({ children, title }): ReactEle
 
     setIsExpanded(!isExpanded);
   }, [ isExpanded ]);
+
+  useEffect((): void => {
+    setIsExpanded(isActive);
+  }, [ activePath ]);
 
   React.Children.forEach(children, (child: ReactNode): void => {
     if (isDomNode(child)) {
@@ -78,7 +77,8 @@ const Section: FunctionComponent<SectionProps> = ({ children, title }): ReactEle
               (child as ReactElement).type === Chapter
             ) {
               return React.cloneElement(child as any, {
-                path
+                path,
+                activePath
               });
             }
 
@@ -87,7 +87,8 @@ const Section: FunctionComponent<SectionProps> = ({ children, title }): ReactEle
             ) {
               return React.cloneElement(child as any, {
                 path,
-                level: 2
+                level: 2,
+                activePath
               });
             }
           })

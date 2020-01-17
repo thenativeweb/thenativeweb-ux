@@ -1,34 +1,33 @@
 import { createUseStyles } from '../../../../styles';
 import { isDomNode } from '../../../../utils/isDomNode';
 import { Page } from '../Page';
-import { useRouteChange } from '../../useRouteChange';
-import { useRouter } from 'next/router';
 import { ChapterClassNames, styles } from './styles';
-import {
-  classNames, Icon, Link, Theme
-} from '../../../..';
-import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode, useCallback, useState } from 'react';
+import { classNames, Icon, Link, slugify, Theme } from '../../../..';
+import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
 
 const useStyles = createUseStyles<Theme, ChapterClassNames>(styles);
 
 interface ChapterProps {
-  isActive?: boolean;
+  activePath: string;
   title: string;
   path?: string;
 }
 
-const Chapter: FunctionComponent<ChapterProps> = ({ children, title, path }): ReactElement => {
+const Chapter: FunctionComponent<ChapterProps> = ({
+  activePath,
+  children,
+  title,
+  path
+}): ReactElement => {
   const classes = useStyles();
-  const router = useRouter();
-  const chapterPath = `${path}/${title.toLocaleLowerCase()}`;
-  let isActive = router.asPath.startsWith(chapterPath);
+  const chapterPath = `${path}/${slugify(title)}`;
+  const isActive = activePath.startsWith(chapterPath);
 
   const [ isExpanded, setIsExpanded ] = useState(isActive);
 
-  useRouteChange((url): void => {
-    isActive = url.startsWith(chapterPath);
+  useEffect((): void => {
     setIsExpanded(isActive);
-  });
+  }, [ activePath ]);
 
   const handleClick = useCallback((event: MouseEvent): void => {
     event.preventDefault();
@@ -58,7 +57,8 @@ const Chapter: FunctionComponent<ChapterProps> = ({ children, title, path }): Re
 
               if ((child as ReactElement).type === Page) {
                 return React.createElement('li', null, React.cloneElement(child as any, {
-                  path: chapterPath
+                  path: chapterPath,
+                  activePath
                 }));
               }
             })

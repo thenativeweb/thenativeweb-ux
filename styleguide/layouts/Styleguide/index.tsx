@@ -31,16 +31,18 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
   const router = useRouter();
   const classes = useStyles();
   const device = useDevice();
+  const pageTree = new PageTree({ items: navigation });
   const isMobile = device === 'xs';
 
   const [ isNavigationVisible, setIsNavigationVisible ] = useState(true);
   const [ isSearchVisible, setIsSearchVisible ] = useState(false);
+  const [ activePath, setActivePath ] = useState(router.asPath);
+
+  const currentPage = pageTree.getPageItemByPath(activePath);
 
   const componentClasses = classNames(classes.Styleguide, {
     [classes.WithNavigationVisible]: isNavigationVisible
   });
-
-  const pageTree = new PageTree({ items: navigation });
 
   const hideNavigationOnMobile = useCallback((): void => {
     if (isMobile) {
@@ -52,10 +54,12 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
     setIsNavigationVisible(!isNavigationVisible);
   }, [ isNavigationVisible ]);
 
-  useRouteChange(hideNavigationOnMobile, [ device ]);
-  useEffect(hideNavigationOnMobile, []);
+  useRouteChange((newPath): void => {
+    setActivePath(newPath);
+    hideNavigationOnMobile();
+  }, [ device ]);
 
-  const currentPage = pageTree.getPageItemByPath(router.asPath);
+  useEffect(hideNavigationOnMobile, []);
 
   return (
     <Website
@@ -114,6 +118,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
           }
           pageTree={ pageTree }
           showSearchBar={ isSearchVisible }
+          activePath={ activePath }
         />
       </div>
 
