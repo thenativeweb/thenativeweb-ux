@@ -85,6 +85,20 @@ const Documentation = (): ReactElement => {
       </Code>
 
       <Paragraph>
+        A <code>PageTree</code> consists of <code>PageTreeItems</code> which
+        follow the following interface:
+      </Paragraph>
+
+      <Code language='typescript'>{`
+        interface PageTreeItem {
+          title: string;
+          keywords?: string [];
+          children?: PageTreeItem [];
+        }
+      `}
+      </Code>
+
+      <Paragraph>
         Pass this <code>pageTree</code> to the PageNavigation component.
       </Paragraph>
 
@@ -109,6 +123,22 @@ const Documentation = (): ReactElement => {
 
       <ComponentPreview>
         <PageNavigation
+          pageTree={ pageTree }
+          activePath='/first-section/first-chapter/page-a'
+        />
+      </ComponentPreview>
+
+      <Headline level='2'>Searching for pages</Headline>
+
+      <Paragraph>
+        A search bar can be enabled to quickly search inside a page tree. This
+        search will use the <code>pageTree</code> as data source and query
+        title, keywords and the breadcrumbs of a page.
+      </Paragraph>
+
+      <ComponentPreview>
+        <PageNavigation
+          showSearchBar={ true }
           pageTree={ pageTree }
           activePath='/first-section/first-chapter/page-a'
         />
