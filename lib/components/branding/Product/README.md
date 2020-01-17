@@ -12,7 +12,7 @@ import { Container, ThemeProvider, themes } from 'thenativeweb-ux';
     <Product name='console' size='xl' />
   </div>
   <hr />
-  <ThemeProvider theme={ themes.wolkenkit }>
+  <ThemeProvider theme={ themes.Wolkenkit }>
     <div style={{ background: 'rgb(47, 51, 59)'}}>
       <Product name='console' />
       <hr />

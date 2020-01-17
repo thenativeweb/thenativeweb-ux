@@ -7,7 +7,7 @@ import { ThemeProvider, themes } from 'thenativeweb-ux';
     <Pattern />
   </div>
   <hr/>
-  <ThemeProvider theme={ themes.wolkenkit }>
+  <ThemeProvider theme={ themes.Wolkenkit }>
     <div style={{ position: 'relative', background: 'black', height: '200px' }}>
       <Pattern />
     </div>

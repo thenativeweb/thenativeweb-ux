@@ -22,7 +22,7 @@ Optionally, you may provide a partner using the `partner` property.
 import { themes, ThemeProvider, Container } from 'thenativeweb-ux';
 
 <div>
-  <ThemeProvider theme={ themes.wolkenkit }>
+  <ThemeProvider theme={ themes.Wolkenkit }>
     <Container background='dark'>
       <MadeBy partner={{ name: 'Intuity', href: 'https://www.intuity.de'}} />
     </Container>

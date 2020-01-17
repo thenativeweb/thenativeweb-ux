@@ -20,7 +20,7 @@ import {
 } from 'thenativeweb-ux';
 
 <div style={{ position: 'relative', width: 640, height: 480 }}>
-  <ThemeProvider theme={ themes.wolkenkit }>
+  <ThemeProvider theme={ themes.Wolkenkit }>
     <Application useNotifications={ false } useDialogs={ false }>
       <Sidebar>
         <SidebarBrand><Product name='my-app' /></SidebarBrand>
@@ -37,7 +37,7 @@ import {
         </SidebarFooter>
       </Sidebar>
       <div style={{ padding: '20px', border: '#eee solid 1px' }}>
-        <Headline>An wolkenkit themed application</Headline>
+        <Headline>A wolkenkit themed application</Headline>
         <Button onClick={ () => console.log('clicked') }>Click me!</Button>
         <Dropdown options={[ { value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' } ]} value={ 'bar' } onChange={ () => {}} />
         <Link>This is a link</Link>

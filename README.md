@@ -40,8 +40,8 @@ Then, inside your application's `render` function, setup the basic structure by 
 
 By default, the `ThemeProvider` will create a _the native web_ theme, but you can also select other themes. Currently, the following themes are available:
 
--   `thenativeweb`
--   `wolkenkit`
+-   `TheNativeWeb`
+-   `Wolkenkit`
 
 ### Using components
 

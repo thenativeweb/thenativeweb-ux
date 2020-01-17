@@ -5,10 +5,10 @@ import { FontSizes } from './FontSizes';
 import { InteractionColors } from './InteractionColors';
 import { Pattern } from './Pattern';
 
-export interface Theme {
-  readonly breakpoints: Breakpoints;
+abstract class Theme {
+  public readonly breakpoints: Breakpoints;
 
-  readonly color: {
+  public readonly color: {
     brand: BrandColors;
     division: DivisionColors;
     interaction: InteractionColors;
@@ -18,38 +18,38 @@ export interface Theme {
     state: { error: string; success: string };
   };
 
-  readonly components: {
+  public readonly components: {
     borderRadius: { default: string };
     Sidebar: { width: string };
     Pattern: Pattern;
   };
 
-  readonly devices: {
+  public readonly devices: {
     small: string;
     medium: string;
     large: string;
     xlarge: string;
   };
 
-  readonly font: {
+  public readonly font: {
     import: string;
     size: FontSizes;
     family: { default: string; headline: string; code: string };
   };
 
-  readonly icon: {
+  public readonly icon: {
     size: { xs: string; sm: string; md: string; lg: string; xl: string; xxl: string };
   };
 
-  readonly name: string;
+  public readonly name: string;
 
-  readonly shadow: {
+  public readonly shadow: {
     overlay: string;
   };
 
-  readonly spaceUnit: number;
+  public readonly spaceUnit: number;
 
-  readonly zIndices: {
+  public readonly zIndices: {
     content: number;
     contentOverlay: number;
     navigation: number;
@@ -59,7 +59,130 @@ export interface Theme {
     transfer: number;
   };
 
-  space: (factor: number) => number;
+  public readonly space: (factor: number) => number;
 
-  readonly custom: any;
+  public readonly custom: any;
+
+  public constructor ({
+    name,
+    spaceUnit,
+    brandColors,
+    interactionColors,
+    pattern,
+    fontSizes = {
+      xxs: '11px',
+      xs: '12px',
+      sm: '14px',
+      md: '16px',
+      lg: '18px',
+      xl: '24px',
+      xxl: '36px'
+    }
+  }: {
+    name: string;
+    spaceUnit: number;
+    brandColors: BrandColors;
+    interactionColors: InteractionColors;
+    pattern: Pattern;
+    fontSizes?: FontSizes;
+  }, custom?: any) {
+    this.breakpoints = new Breakpoints();
+
+    this.color = {
+      brand: brandColors,
+
+      interaction: {
+        focus: interactionColors.focus
+      },
+
+      content: {
+        background: brandColors.white,
+        border: brandColors.grayLight
+      },
+
+      copytext: brandColors.grayDark,
+
+      backdrop: 'rgba(0, 0, 0, 0.5)',
+
+      state: {
+        error: '#e7415d',
+        success: '#27ae60'
+      },
+
+      division: {
+        company: '#dd0099',
+        concepts: '#ffcc00',
+        learning: '#880088',
+        services: '#ff7700',
+        technologies: '#66aa22',
+        wolkenkit: '#00aaff'
+      }
+    };
+
+    this.components = {
+      borderRadius: {
+        default: '1px'
+      },
+
+      Sidebar: {
+        width: '80px'
+      },
+
+      Pattern: pattern
+    };
+
+    this.devices = {
+      small: '@media (max-width: 544px)',
+      medium: '@media (max-width: 768px)',
+      large: '@media (max-width: 992px)',
+      xlarge: '@media (max-width: 1200px)'
+    };
+
+    this.font = {
+      import: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700|Ubuntu:300,400,500|Ubuntu+Mono',
+
+      size: fontSizes,
+
+      family: {
+        default: `'Source Sans Pro', Arial, Helvetica, sans-serif`,
+        headline: `'Ubuntu', sans-serif`,
+        code: `'Ubuntu Mono', monospace !important`
+      }
+    };
+
+    this.icon = {
+      size: {
+        xs: '14px',
+        sm: '16px',
+        md: '24px',
+        lg: '32px',
+        xl: '48px',
+        xxl: '64px'
+      }
+    };
+
+    this.name = name;
+
+    this.shadow = {
+      overlay: '1px 1px 10px rgba(0, 0, 0, 0.25)'
+    };
+
+    this.spaceUnit = spaceUnit;
+
+    this.zIndices = {
+      content: 100,
+      contentOverlay: 200,
+      navigation: 1000,
+      menu: 2000,
+      modal: 3000,
+      overlay: 4000,
+      transfer: 5000
+    };
+
+    this.space = (factor: number): number => factor * spaceUnit;
+
+    this.custom = custom;
+  }
 }
+
+export { Theme };

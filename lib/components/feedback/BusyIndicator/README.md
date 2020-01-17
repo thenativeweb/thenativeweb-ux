@@ -12,7 +12,7 @@ import { Container, ThemeProvider, themes } from 'thenativeweb-ux';
     <BusyIndicator />
   </Container>
 
-  <ThemeProvider theme={ themes.wolkenkit}>
+  <ThemeProvider theme={ themes.Wolkenkit}>
     <div>
       <Container>
         <BusyIndicator />

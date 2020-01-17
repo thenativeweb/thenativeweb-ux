@@ -7,7 +7,7 @@ import { Container, ThemeProvider, themes } from 'thenativeweb-ux';
     <PoweredBy />
   </Container>
   <hr/>
-  <ThemeProvider theme={ themes.wolkenkit }>
+  <ThemeProvider theme={ themes.Wolkenkit }>
     <Container background='dark'>
       <PoweredBy product='wolkenkit' />
     </Container>
