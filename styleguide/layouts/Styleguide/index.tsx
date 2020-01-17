@@ -1,11 +1,12 @@
-import { Footer } from '../../components/Footer';
 import { navigation } from '../../configuration/navigation';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import {
+  Breadcrumbs,
   Button,
   classNames,
   createUseStyles,
+  Footer,
   HorizontalBar,
   Link,
   MobileToggle,
@@ -19,8 +20,7 @@ import {
   Theme,
   useDevice,
   useRouteChange,
-  Website,
-  Breadcrumbs
+  Website
 } from '../../../lib';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect, useState } from 'react';
 import { StyleguideClassNames, styles } from './styles';
@@ -128,7 +128,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
 
         { children }
 
-        <Footer />
+        <Footer yearOfCreation={ 2017 } />
       </div>
     </Website>
   );

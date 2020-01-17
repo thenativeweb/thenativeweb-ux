@@ -80,7 +80,8 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
 
     Content: {
       paddingLeft: theme.space(2),
-      paddingRight: theme.space(2)
+      paddingRight: theme.space(2),
+      paddingBottom: theme.space(3)
     },
 
     WithNavigationVisible: {

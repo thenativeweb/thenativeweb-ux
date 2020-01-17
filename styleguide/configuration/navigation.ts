@@ -8,6 +8,7 @@ const navigation = [
     ]},
     { title: 'Layout', children: [
       { title: 'Container' },
+      { title: 'Footer' },
       { title: 'Grid' },
       { title: 'HorizontalBar' },
       { title: 'Sidebar', keywords: [ 'menu', 'navigation' ]}

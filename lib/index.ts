@@ -13,6 +13,7 @@ import { ControlGroupDivider } from './components/forms/ControlGroupDivider';
 import { ControlGroupItem } from './components/forms/ControlGroupItem';
 import { Dialogs } from './components/feedback/Dialogs';
 import { Dropdown } from './components/input/Dropdown';
+import { Footer } from './components/layout/Footer';
 import { Form } from './components/forms/Form';
 import { FormActions } from './components/forms/FormActions';
 import { FormRow } from './components/forms/FormRow';
@@ -86,6 +87,7 @@ export {
   Form,
   FormActions,
   FormRow,
+  Footer,
   getPortalRootNode,
   Grid,
   GridItem,
