@@ -11,8 +11,10 @@ export type HorizontalBarClassNames =
   'HorizontalBar' |
   'BackgroundLight' |
   'BackgroundDark' |
+  'PaddingHorizontalNone' |
   'PaddingHorizontalSm' |
   'PaddingHorizontalMd' |
+  'SpaceBetweenItemsNone' |
   'SpaceBetweenItemsSm' |
   'SpaceBetweenItemsMd' |
   'SpaceBetweenItemsLg' |
@@ -58,6 +60,8 @@ const styles = (theme: Theme): Styles<HorizontalBarClassNames> => ({
     borderColor: color(theme.color.brand.white).alpha(0.15).rgb().toString()
   },
 
+  PaddingHorizontalNone: {},
+
   PaddingHorizontalSm: {
     padding: `0 ${theme.space(1)}px`
   },
@@ -65,6 +69,8 @@ const styles = (theme: Theme): Styles<HorizontalBarClassNames> => ({
   PaddingHorizontalMd: {
     padding: `0 ${theme.space(2)}px`
   },
+
+  SpaceBetweenItemsNone: {},
 
   SpaceBetweenItemsSm: {
     '& > *': {

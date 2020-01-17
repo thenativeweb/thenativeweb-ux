@@ -1,10 +1,10 @@
 import { ComponentPreview } from '../../../components/documentation/ComponentPreview';
-import { Headline, HorizontalBar, Paragraph } from '../../..';
-import React, { ReactElement, Fragment } from 'react';
 import { Property } from '../../documentation/Property';
+import { Headline, HorizontalBar, Paragraph } from '../../..';
+import React, { Fragment, ReactElement } from 'react';
 
 const Documentation = (): ReactElement => (
-  <React.Fragment>
+  <Fragment>
     <Headline>HorizontalBar</Headline>
 
     <Paragraph>
@@ -99,7 +99,46 @@ const Documentation = (): ReactElement => (
         </HorizontalBar>
       </Fragment>
     </ComponentPreview>
-  </React.Fragment>
+
+    <Headline level='2'>Adjusting space between items</Headline>
+
+    <ComponentPreview previewPadding={ false }>
+      <Fragment>
+        <HorizontalBar spaceBetweenItems='none'>
+          <div style={{ background: 'deeppink' }}>Element 1</div>
+          <div style={{ background: 'gray' }}>Element 2</div>
+        </HorizontalBar>
+        <HorizontalBar spaceBetweenItems='sm'>
+          <div style={{ background: 'deeppink' }}>Growing element</div>
+          <div style={{ background: 'gray' }}>Element 2</div>
+        </HorizontalBar>
+        <HorizontalBar spaceBetweenItems='md'>
+          <div style={{ background: 'deeppink' }}>Growing element</div>
+          <div style={{ background: 'gray' }}>Element 2</div>
+        </HorizontalBar>
+        <HorizontalBar spaceBetweenItems='lg'>
+          <div style={{ background: 'deeppink' }}>Growing element</div>
+          <div style={{ background: 'gray' }}>Element 2</div>
+        </HorizontalBar>
+      </Fragment>
+    </ComponentPreview>
+
+    <Headline level='2'>Adjusting horizontal padding</Headline>
+
+    <ComponentPreview previewPadding={ false }>
+      <Fragment>
+        <HorizontalBar paddingHorizontal='none'>
+          <div style={{ background: 'deeppink' }}>Element 1</div>
+        </HorizontalBar>
+        <HorizontalBar paddingHorizontal='sm'>
+          <div style={{ background: 'deeppink' }}>Growing element</div>
+        </HorizontalBar>
+        <HorizontalBar paddingHorizontal='md'>
+          <div style={{ background: 'deeppink' }}>Growing element</div>
+        </HorizontalBar>
+      </Fragment>
+    </ComponentPreview>
+  </Fragment>
 );
 
 export { Documentation };
