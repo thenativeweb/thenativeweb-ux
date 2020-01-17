@@ -6,6 +6,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 interface BreadcrumbsProps {
   className?: string;
   color?: 'light' | 'dark';
+  id?: string;
   items?: string [];
   searchWords?: string [];
   size?: 'sm' | 'md';
@@ -15,9 +16,10 @@ const useStyles = createUseStyles<Theme, keyof ReturnType<typeof getStyles>>(get
 
 const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   className,
+  color = 'dark',
+  id,
   items,
   searchWords,
-  color = 'dark',
   size = 'md'
 }): ReactElement | null => {
   const classes = useStyles();
@@ -38,19 +40,19 @@ const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   );
 
   return (
-    <div className={ componentClasses }>
+    <div id={ id } className={ componentClasses }>
       {
         items.map((breadcrumb, index): ReactElement => (
           <React.Fragment key={ breadcrumb }>
             {
               index > 0 ?
                 (
-                  <div className={ classes.PathSeparator }>
+                  <div className={ classes.Separator }>
                     <Icon name='chevron' size='sm' color='current' />
                   </div>
                 ) : null
             }
-            <div className={ classes.PathLabel }>
+            <div className={ classes.Breadcrumb }>
               <HighlightText searchWords={ searchWords }>{ breadcrumb }</HighlightText>
             </div>
           </React.Fragment>

@@ -13,13 +13,11 @@ const getStyles = (theme: Theme) => {
       alignItems: 'center'
     },
 
-    PathSeparator: {
+    Separator: {
       display: 'inline-flex'
     },
 
-    PathSeparatorIcon: {},
-
-    PathLabel: {
+    Breadcrumb: {
       display: 'inline'
     },
 
@@ -34,7 +32,7 @@ const getStyles = (theme: Theme) => {
     SizeSm: {
       fontSize: theme.font.size.sm,
 
-      '& $PathSeparator': {
+      '& $Separator': {
         marginLeft: '2px'
       }
     },
@@ -42,7 +40,7 @@ const getStyles = (theme: Theme) => {
     SizeMd: {
       fontSize: theme.font.size.md,
 
-      '& $PathSeparator': {
+      '& $Separator': {
         marginLeft: theme.space(1),
         marginRight: theme.space(0.5)
       }
