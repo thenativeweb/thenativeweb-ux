@@ -61,6 +61,9 @@ const navigation = [
     { title: 'Animation', children: [
       { title: 'Transition' },
       { title: 'TransitionGroup' }
+    ]},
+    { title: 'Documentation', children: [
+      { title: 'Code' }
     ]}
   ]},
   { title: 'Services', children: [

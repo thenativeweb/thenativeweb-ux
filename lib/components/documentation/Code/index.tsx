@@ -17,15 +17,22 @@ import { CodeClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface CodeProps {
+  id?: string;
   children: string | undefined | null;
-  language?: 'javascript' | 'jsx' | 'typescript' | 'tsx';
+  language?: 'javascript' | 'jsx' | 'typescript' | 'tsx' | 'shell';
   className?: string;
   type?: 'inline' | 'block';
 }
 
 const useStyles = createUseStyles<Theme, CodeClassNames>(styles);
 
-const Code: FunctionComponent<CodeProps> = ({ children, className, language = 'javascript', type = 'block' }): ReactElement | null => {
+const Code: FunctionComponent<CodeProps> = ({
+  children,
+  className,
+  id,
+  language = 'javascript',
+  type = 'block'
+}): ReactElement | null => {
   const classes = useStyles();
 
   if (!children) {
@@ -33,11 +40,11 @@ const Code: FunctionComponent<CodeProps> = ({ children, className, language = 'j
   }
 
   if (type === 'inline') {
-    return <code>{ children }</code>;
+    return <code id={ id }>{ children }</code>;
   }
 
   return (
-    <pre className={ classNames(classes.Code, className) }>
+    <pre id={ id } className={ classNames(classes.Code, className) }>
       <SyntaxHighlighter style={ prismStyles } language={ language }>{ stripIndent(children) }</SyntaxHighlighter>
     </pre>
   );
