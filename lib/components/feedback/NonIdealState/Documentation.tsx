@@ -9,8 +9,8 @@ const Documentation = (): ReactElement => (
     <Paragraph>
       Use the <code>NonIdealState</code> component to let the user know that a
       particular area within the application is not working as originally
-      intended. Describe the cause of this state and give very quick tops how to
-      resolve the issues.
+      intended. Describe the cause of this condition and give quick tips on how
+      to how to get out of it.
     </Paragraph>
 
     <ComponentPreview>

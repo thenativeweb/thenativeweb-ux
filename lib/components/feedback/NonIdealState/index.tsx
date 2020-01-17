@@ -4,13 +4,15 @@ import { NonIdealStateClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface NonIdealStateProps {
+  id?: string;
   className?: string;
-  cause?: string;
+  cause: string;
 }
 
 const useStyles = createUseStyles<Theme, NonIdealStateClassNames>(styles);
 
 const NonIdealState: FunctionComponent<NonIdealStateProps> = ({
+  id,
   className,
   cause,
   children
@@ -19,7 +21,7 @@ const NonIdealState: FunctionComponent<NonIdealStateProps> = ({
 
   return (
     <Container>
-      <div className={ classNames(classes.NonIdealState, className) }>
+      <div id={ id } className={ classNames(classes.NonIdealState, className) }>
         <div className={ classes.Cause }>{ cause }</div>
         <div className={ classes.Help }>
           { children }
