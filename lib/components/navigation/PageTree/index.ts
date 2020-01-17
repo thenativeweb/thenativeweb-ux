@@ -61,6 +61,13 @@ class PageTree {
 
     return flattenedItems;
   }
+
+  public getPageItemByPath (path: string): PageTreeItem | undefined {
+    const pathWithoutTrailingSlash = path.endsWith('/') ? path.slice(0, Math.max(0, path.length - 1)) : path;
+    const foundItem = this.itemsFlat.find((item): boolean => item.path === pathWithoutTrailingSlash);
+
+    return foundItem;
+  }
 }
 
 export { PageTree };

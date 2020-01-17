@@ -26,15 +26,11 @@ const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
   },
 
   Permalink: {
-    position: 'absolute',
-    display: 'block',
-    left: `-0.7em`,
-    top: '0',
-    paddingRight: `${theme.space(2)}px`,
     fontSize: `1em`,
     color: theme.color.content.background,
     fontWeight: '600 !important',
     textDecoration: 'none',
+    paddingRight: `${theme.space(2)}px`,
 
     '&:visited': {
       color: `${theme.color.content.background}`
@@ -45,11 +41,7 @@ const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
     fontSize: theme.font.size.xxl,
     fontWeight: 600,
     margin: `${theme.space(4)}px 0 ${theme.space(2)}px 0`,
-    marginBottom: `${theme.space(2)}px`,
-
-    '&:first-child': {
-      marginTop: 0
-    }
+    marginBottom: `${theme.space(2)}px`
   },
 
   Level2: {
@@ -86,11 +78,18 @@ const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
 
   [theme.breakpoints.down('sm')]: {
     Permalink: {
-      color: `${theme.color.brand.highlight} !important`
+      position: 'relative',
+      display: 'inline',
+      color: `${theme.color.brand.highlight} !important`,
+      paddingRight: `${theme.space(0.5)}px`
     },
 
     Level1: {
-      fontSize: theme.font.size.xl
+      fontSize: theme.font.size.xl,
+
+      '&:first-of-type': {
+        marginTop: `${theme.space(3)}px`
+      }
     },
 
     Level2: {
@@ -107,6 +106,15 @@ const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
 
     Level5: {
       fontSize: theme.font.size.lg
+    }
+  },
+
+  [theme.breakpoints.up('sm')]: {
+    Permalink: {
+      position: 'absolute',
+      display: 'block',
+      left: `-0.7em`,
+      top: '0'
     }
   }
 });

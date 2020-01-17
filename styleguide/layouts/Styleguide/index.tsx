@@ -1,6 +1,7 @@
 import { Footer } from '../../components/Footer';
 import { navigation } from '../../configuration/navigation';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import {
   Button,
   classNames,
@@ -18,7 +19,8 @@ import {
   Theme,
   useDevice,
   useRouteChange,
-  Website
+  Website,
+  Breadcrumbs
 } from '../../../lib';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect, useState } from 'react';
 import { StyleguideClassNames, styles } from './styles';
@@ -26,6 +28,7 @@ import { StyleguideClassNames, styles } from './styles';
 const useStyles = createUseStyles<Theme, StyleguideClassNames>(styles);
 
 const Styleguide: FunctionComponent = ({ children }): ReactElement => {
+  const router = useRouter();
   const classes = useStyles();
   const device = useDevice();
   const isMobile = device === 'xs';
@@ -51,6 +54,8 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
 
   useRouteChange(hideNavigationOnMobile, [ device ]);
   useEffect(hideNavigationOnMobile, []);
+
+  const currentPage = pageTree.getPageItemByPath(router.asPath);
 
   return (
     <Website
@@ -113,6 +118,14 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
       </div>
 
       <div className={ classes.Content }>
+        {
+          currentPage && (
+            <HorizontalBar paddingHorizontal='none' className={ classes.ContentTopBar }>
+              <Breadcrumbs items={ currentPage.breadcrumbs } size='md' color='light' />
+            </HorizontalBar>
+          )
+        }
+
         { children }
 
         <Footer />

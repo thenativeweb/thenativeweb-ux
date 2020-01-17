@@ -2,12 +2,13 @@ import { Styles } from 'jss';
 import { Theme } from '../../../lib';
 
 export type StyleguideClassNames =
-  'Content' |
-  'Styleguide' |
-  'WithNavigationVisible' |
-  'NavigationUniversal' |
-  'NavigationForDesktop'|
-  'NavigationForMobile';
+'Styleguide' |
+'WithNavigationVisible' |
+'NavigationUniversal' |
+'NavigationForDesktop'|
+'NavigationForMobile' |
+'Content' |
+'ContentTopBar';
 
 const navigationPanelWidthXs = '100%';
 const navigationPanelWidthSm = '200px';
@@ -53,6 +54,9 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     transition: 'margin-left 200ms'
   },
 
+  ContentTopBar: {
+  },
+
   [theme.breakpoints.only('xs')]: {
     NavigationForDesktop: {
       display: 'none'
@@ -75,7 +79,8 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     },
 
     Content: {
-      padding: [ theme.space(2.5), theme.space(4) ]
+      paddingLeft: theme.space(2),
+      paddingRight: theme.space(2)
     },
 
     WithNavigationVisible: {
@@ -111,6 +116,7 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
 
     Content: {
       padding: theme.space(6),
+      paddingTop: 0,
       marginLeft: theme.components.Sidebar.width
     },
 
