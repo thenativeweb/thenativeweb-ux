@@ -1,17 +1,22 @@
-import { createUseStyles } from '../../../styles';
 import Highlighter from 'react-highlight-words';
 import { Theme } from '../../../themes';
+import { classNames, createUseStyles } from '../../../styles';
 import { HighlightTextClassNames, styles } from './styles';
 import React, { Fragment, FunctionComponent, ReactElement } from 'react';
 
 const useStyles = createUseStyles<Theme, HighlightTextClassNames>(styles);
 
 interface HighlightTextProps {
+  className?: string;
   searchWords?: string [];
   children: string;
 }
 
-const HighlightText: FunctionComponent<HighlightTextProps> = ({ children, searchWords }): ReactElement | null => {
+const HighlightText: FunctionComponent<HighlightTextProps> = ({
+  className,
+  children,
+  searchWords
+}): ReactElement | null => {
   const classes = useStyles();
 
   if (!children) {
@@ -32,7 +37,7 @@ const HighlightText: FunctionComponent<HighlightTextProps> = ({ children, search
 
   return (
     <Highlighter
-      className={ classes.HighlightText }
+      className={ classNames(classes.HighlightText, className) }
       highlightClassName={ classes.Highlight }
       searchWords={ patterns }
       textToHighlight={ children }

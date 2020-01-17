@@ -7,13 +7,13 @@ const Documentation = (): ReactElement => (
     <Headline>HighlightText</Headline>
 
     <Paragraph>
-      Use the <code>HighlightText</code> component to highlights search words
-      inside of a text.
+      Use the <code>HighlightText</code> component to highlight search words
+      within a text.
     </Paragraph>
 
     <ComponentPreview>
       <HighlightText searchWords={ [ 'foo', 'bar', 'baz' ] }>
-        This is thext that will be highlighted: foo, bar, and baz.
+        This text will be highlighted: foo, bar, and baz.
       </HighlightText>
     </ComponentPreview>
   </React.Fragment>
