@@ -20,8 +20,12 @@ export interface Theme {
 
   readonly components: {
     borderRadius: { default: string };
+    HorizontalBar: { minHeight: string };
     Sidebar: { width: string };
     Pattern: Pattern;
+    Paragraph: {
+      maxWidth: string;
+    };
   };
 
   readonly devices: {
@@ -60,6 +64,11 @@ export interface Theme {
   };
 
   space: (factor: number) => number;
+
+  readonly ease: {
+    outCirc: string;
+    outExpo: string;
+  };
 
   readonly custom: any;
 }

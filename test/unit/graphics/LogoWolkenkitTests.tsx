@@ -36,6 +36,7 @@ suite('LogoWolkenkit', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
+          <LogoWolkenkit size='sm' />
           <LogoWolkenkit size='md' />
           <LogoWolkenkit size='lg' />
           <LogoWolkenkit size='xl' />
@@ -45,8 +46,9 @@ suite('LogoWolkenkit', (): void => {
     });
 
     const logos = toArray(container.querySelectorAll('div'));
-    const [ medium, large, xLarge ] = logos;
+    const [ small, medium, large, xLarge ] = logos;
 
+    assert.that(small.className).is.containing('SizeSm');
     assert.that(medium.className).is.containing('SizeMd');
     assert.that(large.className).is.containing('SizeLg');
     assert.that(xLarge.className).is.containing('SizeXl');

@@ -8,6 +8,7 @@ const wolkenkit = createTheme({
     highlight: '#29abe2',
     grayDark: '#2f333b',
     gray: '#363d45',
+    grayModest: '#999999',
     grayLight: '#e5e6eb',
     white: '#ffffff'
   },

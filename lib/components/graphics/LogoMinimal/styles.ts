@@ -27,7 +27,7 @@ const styles = (theme: Theme): Styles<LogoMinimalClassNames> => ({
   },
 
   Background: {
-    fill: '#FF0099'
+    fill: theme.color.brand.highlight
   },
 
   IsMonochrome: {
@@ -43,7 +43,7 @@ const styles = (theme: Theme): Styles<LogoMinimalClassNames> => ({
     cursor: 'pointer',
     '&:hover': {
       '& $Background': {
-        fill: '#FF0099'
+        fill: theme.color.brand.highlight
       },
       '& $Foreground': {
         fill: theme.color.brand.white

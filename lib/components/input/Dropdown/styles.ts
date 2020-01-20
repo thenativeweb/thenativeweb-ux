@@ -1,7 +1,13 @@
 import { Styles } from 'jss';
 import { Theme } from '../../..';
 
-export type DropdownClassNames = 'Dropdown' | 'SizeSm' | 'SizeMd' | 'IsFocused' | 'CollapseIcon';
+export type DropdownClassNames =
+  'Dropdown' |
+  'SizeSm' |
+  'SizeMd' |
+  'IsFocused' |
+  'IsSubtle' |
+  'CollapseIcon';
 
 const styles = (theme: Theme): Styles<DropdownClassNames> => ({
   Dropdown: {
@@ -13,6 +19,7 @@ const styles = (theme: Theme): Styles<DropdownClassNames> => ({
     background: theme.color.brand.grayDark,
     border: theme.color.brand.grayDark,
     fontFamily: theme.font.family.default,
+    color: theme.color.brand.white,
 
     '& select': {
       flexGrow: 1,
@@ -22,7 +29,7 @@ const styles = (theme: Theme): Styles<DropdownClassNames> => ({
       fontSize: 'inherit',
       fontWeight: 'inherit',
       border: 0,
-      color: theme.color.brand.white,
+      color: 'inherit',
       cursor: 'pointer',
       outline: 'none',
       appearance: 'none',
@@ -64,8 +71,15 @@ const styles = (theme: Theme): Styles<DropdownClassNames> => ({
     }
   },
 
+  IsSubtle: {
+    background: theme.color.brand.white,
+    border: theme.color.brand.white,
+    color: theme.color.brand.grayDark
+  },
+
   IsFocused: {
-    background: theme.color.brand.highlight
+    background: theme.color.brand.highlight,
+    color: theme.color.brand.white
   },
 
   CollapseIcon: {
