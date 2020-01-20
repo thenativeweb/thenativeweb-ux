@@ -16,7 +16,7 @@ interface GridItemProps {
 
 const useStyles = createUseStyles<Theme, string>(styles);
 
-const GridItem: FunctionComponent<GridItemProps> = React.memo(({
+const GridItem: FunctionComponent<GridItemProps> = ({
   component = 'div',
   className,
   children,
@@ -56,6 +56,6 @@ const GridItem: FunctionComponent<GridItemProps> = React.memo(({
   const componentClasses = classNames(classes.GridItem, columnClasses, className);
 
   return React.createElement(component, { className: componentClasses, style, id }, children);
-});
+};
 
 export { GridItem };

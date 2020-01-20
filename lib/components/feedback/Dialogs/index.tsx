@@ -65,7 +65,7 @@ const Dialogs: FunctionComponent<DialogsProps> = ({
       onKeyDown={ handleKeyDown }
       onCancel={ handleCancel }
     >
-      <Headline>
+      <Headline level='2' withPermalink={ false } textAlign='center'>
         { dialogService.state.confirm.title }
       </Headline>
       <div className={ classes.Actions }>

@@ -20,8 +20,12 @@ abstract class Theme {
 
   public readonly components: {
     borderRadius: { default: string };
+    HorizontalBar: { minHeight: string };
     Sidebar: { width: string };
     Pattern: Pattern;
+    Paragraph: {
+      maxWidth: string;
+    };
   };
 
   public readonly devices: {
@@ -60,6 +64,11 @@ abstract class Theme {
   };
 
   public readonly space: (factor: number) => number;
+
+  public readonly ease: {
+    outCirc: string;
+    outExpo: string;
+  };
 
   public readonly custom: any;
 
@@ -124,11 +133,19 @@ abstract class Theme {
         default: '1px'
       },
 
+      HorizontalBar: {
+        minHeight: '54px'
+      },
+
       Sidebar: {
         width: '80px'
       },
 
-      Pattern: pattern
+      Pattern: pattern,
+
+      Paragraph: {
+        maxWidth: '800px'
+      }
     };
 
     this.devices = {
@@ -180,6 +197,11 @@ abstract class Theme {
     };
 
     this.space = (factor: number): number => factor * spaceUnit;
+
+    this.ease = {
+      outCirc: 'cubic-bezier(0.075, 0.820, 0.165, 1.000)',
+      outExpo: 'cubic-bezier(0.190, 1.000, 0.220, 1.000)'
+    };
 
     this.custom = custom;
   }

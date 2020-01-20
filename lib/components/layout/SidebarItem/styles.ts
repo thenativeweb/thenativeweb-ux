@@ -1,3 +1,4 @@
+import color from 'color';
 import { Styles } from 'jss';
 import { Theme } from '../../..';
 
@@ -18,6 +19,7 @@ const styles = (theme: Theme): Styles<SidebarItemClassNames> => ({
     overflow: 'visible',
     borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
     cursor: 'pointer',
+    color: theme.color.brand.white,
 
     '&$IsTopLevel:hover, &$IsClickable:hover, &$IsActive': {
       cursor: 'pointer',
@@ -31,6 +33,13 @@ const styles = (theme: Theme): Styles<SidebarItemClassNames> => ({
       }
     },
 
+    '&$IsClickable:active': {
+      background: color(theme.color.brand.highlight).
+        darken(0.1).
+        rgb().
+        string()
+    },
+
     '& $Label': {},
 
     '& $Icon': {
@@ -39,7 +48,7 @@ const styles = (theme: Theme): Styles<SidebarItemClassNames> => ({
       alignItems: 'center',
       paddingTop: `${theme.space(3)}px`,
       paddingBottom: `${theme.space(3)}px`,
-      color: theme.color.brand.white,
+      color: 'inherit',
 
       '& img': {
         width: '48px',

@@ -6,6 +6,7 @@ export type ProducClassNames =
   'IsCollapsed' |
   'Name' |
   'CompositeName' |
+  'SizeSm' |
   'SizeMd' |
   'SizeLg' |
   'SizeXl' |
@@ -42,6 +43,15 @@ const styles = (theme: Theme): Styles<ProducClassNames> => ({
 
     '& span': {
       color: theme.color.brand.white
+    }
+  },
+
+  SizeSm: {
+    flexDirection: 'row',
+
+    '& $Name, & $CompositeName': {
+      marginLeft: theme.space(1),
+      fontSize: theme.font.size.sm
     }
   },
 

@@ -28,7 +28,7 @@ const LogoMinimal: FunctionComponent<LogoMinimalProps> = ({
 
   return (
     <div className={ componentClasses }>
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 112' role='presentational'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 112' aria-hidden='true'>
         <g>
           <path className={ classes.Foreground } d='M99,80.9l-43.1,24.9L12.8,80.9V31.1L55.9,6.2L99,31.1V80.9z' />
           <g>

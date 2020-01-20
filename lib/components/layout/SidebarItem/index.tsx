@@ -53,7 +53,7 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
     <div ref={ ref as any } id={ id } className={ componentClasses }>
       <div className={ classes.Icon } onClick={ onClick }>
         { iconUrl ? <img src={ iconUrl } /> : null }
-        { iconName ? <Icon name={ iconName } size='lg' color='white' /> : null }
+        { iconName ? <Icon name={ iconName } size='md' color='current' /> : null }
       </div>
       <div className={ classes.Items }>
         {

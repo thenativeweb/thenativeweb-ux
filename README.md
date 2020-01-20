@@ -15,55 +15,32 @@ thenativeweb-ux provides UI components for the native web applications.
 ## Installation
 
 ```shell
-$ npm install thenativeweb-ux
+$ npm install thenativeweb-ux react react-dom next
 ```
 
-## Quick start
+## Viewing the documentation
 
-First you need to add a reference to your application. For a minimum setup, you have to reference the components `Application` and `ThemeProvider`:
+For application developers there is a [styleguide](styleguide) that serves as the documentation of this module. It contains a quick start, and showcases all the available components. To run it on your local machine clone this repository, install its dependencies, and run the following command:
 
-```javascript
-import { Application, ThemeProvider } from 'thenativeweb-ux';
+```shell
+$ npm run start-styleguide
 ```
 
-Then, inside your application's `render` function, setup the basic structure by wrapping the `Application` component inside a `ThemeProvider`.:
+Then point your browser to `http://localhost:6060/`.
 
-```jsx
-<ThemeProvider>
-  <Application>
-    {
-      // ...
-    }
-  </Application>
-</ThemeProvider>
-```
+## Viewing the Next.js sample application
 
-By default, the `ThemeProvider` will create a _the native web_ theme, but you can also select other themes. Currently, the following themes are available:
-
--   `TheNativeWeb`
--   `Wolkenkit`
-
-### Using components
-
-Besides setting up the application itself, you may also use a variety of components. To use a component, you need to add a reference to it. E.g., to use the `Button` component, add the following line to your code:
-
-```javascript
-import { Button } from 'thenativeweb-ux';
-```
-
-### Viewing the Next.js sample application
-
-The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how the various components can be used from within a Next.js project. To run the sample application use the following command:
+The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how components can be used from within a Next.js project. To run the sample application use the following command:
 
 ```shell
 $ npm run start-sample-application
 ```
 
-### Debugging integration tests
+## Debugging integration tests
 
 This project uses [puppeteer](https://github.com/GoogleChrome/puppeteer) to verify that components render correctly inside a browser. By default these tests are run in headless mode. As debugging integration tests in headless mode can be painful there are two options to debug integration tests visually.
 
-#### Viewing failing test pages in a browser
+### Viewing failing test pages in a browser
 
 First, to debug a failing integration test, you can have a look at the failing test page in a browser without running the tests. For that run the sample application using the following command:
 
@@ -73,7 +50,7 @@ $ npm run start-sample-application
 
 Then point your browser to the failing test page and verify if it renders correctly.
 
-#### Running tests with a UI and in slow motion
+### Running tests with a UI and in slow motion
 
 Second, verifying that all the puppeteer commands are executed succesfully, it is much easier to do when puppeteer is not running in headless mode. To disable headless mode, set the environment variable `DEBUG` to `true`. This will start puppeteer in non-headless mode and slow down each operation:
 
