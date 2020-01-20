@@ -48,7 +48,7 @@
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
     "@types/react-highlight-words": "0.16.0",
-    "@types/react-syntax-highlighter": "11.0.2",
+    "@types/react-syntax-highlighter": "11.0.4",
     "@types/react-transition-group": "4.2.3",
     "@types/shelljs": "0.8.6",
     "assertthat": "5.1.0",
