@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/thenativeweb/thenativeweb-ux/compare/1.1.1...1.1.2) (2020-01-20)
+
+
+### Bug Fixes
+
+* Update Mocha configuration to new format. ([#242](https://github.com/thenativeweb/thenativeweb-ux/issues/242)) ([617c8d6](https://github.com/thenativeweb/thenativeweb-ux/commit/617c8d65b5930b632259a59757026ce39d4693d7))
+
 ## [1.1.1](https://github.com/thenativeweb/thenativeweb-ux/compare/1.1.0...1.1.1) (2020-01-20)
 
 
