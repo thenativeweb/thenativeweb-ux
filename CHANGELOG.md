@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/thenativeweb/thenativeweb-ux/compare/1.1.0...1.1.1) (2020-01-20)
+
+
+### Bug Fixes
+
+* bump react-syntax-highlighter from 11.0.2 to 12.2.1 ([#246](https://github.com/thenativeweb/thenativeweb-ux/issues/246)) ([e55834f](https://github.com/thenativeweb/thenativeweb-ux/commit/e55834f555959dc97cc25108a302863d543713b1))
+
 # [1.1.0](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.10...1.1.0) (2020-01-20)
 
 
