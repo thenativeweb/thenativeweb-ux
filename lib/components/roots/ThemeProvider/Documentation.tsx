@@ -15,8 +15,8 @@ const Documentation = (): ReactElement => (
     <Paragraph>
       By default the <code>ThemeProvider</code> will use the default
       theme called <code>TheNativeWeb</code>. To apply the wolkenkit theme,
-      import the <code>themes</code> object and
-      pass <code>themes.Wolkenkit</code> as the <code>theme</code> property.
+      import the <code>themes</code> object and pass a new instance
+      of <code>themes.Wolkenkit</code> as the <code>theme</code> property.
     </Paragraph>
 
     <ComponentPreview>
