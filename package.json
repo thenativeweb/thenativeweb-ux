@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -25,9 +25,13 @@
   "dependencies": {
     "animejs": "3.1.0",
     "classnames": "2.2.6",
+    "color": "3.1.2",
     "jss": "10.0.2",
     "lodash": "4.17.15",
+    "pretty-format": "24.9.0",
+    "react-highlight-words": "0.16.0",
     "react-jss": "10.0.2",
+    "react-syntax-highlighter": "11.0.2",
     "react-transition-group": "4.3.0",
     "uuidv4": "6.0.1"
   },
@@ -35,6 +39,7 @@
     "@babel/runtime-corejs2": "7.8.3",
     "@types/animejs": "3.1.0",
     "@types/classnames": "2.2.9",
+    "@types/color": "3.0.0",
     "@types/common-tags": "1.8.0",
     "@types/jsdom": "12.2.4",
     "@types/lodash": "4.14.149",
@@ -42,6 +47,8 @@
     "@types/puppeteer": "2.0.0",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
+    "@types/react-highlight-words": "0.16.0",
+    "@types/react-syntax-highlighter": "11.0.2",
     "@types/react-transition-group": "4.2.3",
     "@types/shelljs": "0.8.6",
     "assertthat": "5.1.0",
@@ -60,10 +67,13 @@
     "shelljs": "0.8.3"
   },
   "peerDependencies": {
+    "next": "^9.2.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
   "scripts": {
+    "start-styleguide": "cd styleguide && npx next --port 6060",
+    "build-styleguide": "cd styleguide && npx next build && npx next export",
     "start-sample-application": "cd test/shared/sampleApplication && npx next",
     "export-sample-application": "cd test/shared/sampleApplication && npx next build && npx next export"
   },

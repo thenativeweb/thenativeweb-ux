@@ -18,6 +18,7 @@ const LogoWolkenkit: FunctionComponent<LogoProps> = ({
   }
 
   const componentClasses = classNames(classes.LogoWolkenkit, {
+    [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg',
     [classes.SizeXl]: size === 'xl'
@@ -32,7 +33,7 @@ const LogoWolkenkit: FunctionComponent<LogoProps> = ({
   }, classes.MovingCloud2);
 
   return (
-    <div className={ componentClasses } role='presentational'>
+    <div className={ componentClasses } aria-hidden='true'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'>
         <defs>
           <clipPath id='hexa-mask'>

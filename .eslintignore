@@ -1,2 +1,5 @@
+styleguide/out
+styleguide/.next
+
 test/shared/sampleApplication/out
 test/shared/sampleApplication/.next

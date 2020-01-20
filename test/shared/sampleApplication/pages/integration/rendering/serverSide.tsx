@@ -15,7 +15,7 @@ export default (): ReactElement => (
     </Sidebar>
     <Container isScrollable={ true } vertical='stretch' horizontal='stretch' style={{ padding: '20px' }}>
       <div>
-        <Headline id='headline'>Server side rendered headline</Headline>
+        <Headline id='headline' withPermalink={ false }>Server side rendered headline</Headline>
       </div>
     </Container>
   </Application>

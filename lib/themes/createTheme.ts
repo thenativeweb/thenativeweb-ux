@@ -71,11 +71,19 @@ const createTheme = ({
         default: '1px'
       },
 
+      HorizontalBar: {
+        minHeight: '54px'
+      },
+
       Sidebar: {
         width: '80px'
       },
 
-      Pattern: pattern
+      Pattern: pattern,
+
+      Paragraph: {
+        maxWidth: '800px'
+      }
     },
 
     devices: {
@@ -123,6 +131,11 @@ const createTheme = ({
     },
 
     space: (factor: number): number => factor * spaceUnit,
+
+    ease: {
+      outCirc: 'cubic-bezier(0.075, 0.820, 0.165, 1.000)',
+      outExpo: 'cubic-bezier(0.190, 1.000, 0.220, 1.000)'
+    },
 
     custom
   };

@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.10...1.1.0) (2020-01-20)
+
+
+### Features
+
+* Introduce styleguide. ([#185](https://github.com/thenativeweb/thenativeweb-ux/issues/185)) ([64cc445](https://github.com/thenativeweb/thenativeweb-ux/commit/64cc44515bee94ecb04a66188bc5d73e4c931305))
+
 ## [1.0.10](https://github.com/thenativeweb/thenativeweb-ux/compare/1.0.9...1.0.10) (2020-01-16)
 
 

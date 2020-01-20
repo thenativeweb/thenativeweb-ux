@@ -14,7 +14,7 @@ interface TextBoxProps {
   placeholder?: string;
   required?: boolean;
   style?: CSSProperties;
-  type?: 'default' | 'date' | 'port' | 'time';
+  type?: 'default' | 'date' | 'port' | 'time' | 'search';
   value?: string;
   onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -67,7 +67,8 @@ const TextBox: FunctionComponent<TextBoxProps> = ({
     {
       [classes.IsDisabled]: disabled,
       [classes.TypePort]: type === 'port',
-      [classes.TypeTime]: type === 'time'
+      [classes.TypeTime]: type === 'time',
+      [classes.TypeSearch]: type === 'search'
     },
     className
   );

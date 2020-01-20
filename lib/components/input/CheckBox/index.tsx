@@ -8,7 +8,7 @@ interface CheckBoxProps {
   className?: string;
   checked?: boolean;
   name?: string;
-  id: string;
+  id?: string;
   style?: Styles;
   onChange?: () => void;
 }

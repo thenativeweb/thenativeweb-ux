@@ -20,7 +20,7 @@ const LogoFull: FunctionComponent<LogoFullProps> = ({
   });
 
   return (
-    <div className={ componentClasses } role='presentational'>
+    <div className={ componentClasses } aria-hidden='true'>
       <svg viewBox='0 0 264 44'>
         <path
           fill='#FFFFFF'

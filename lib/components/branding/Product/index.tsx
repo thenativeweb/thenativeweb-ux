@@ -6,7 +6,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 interface ProductProps {
   name?: string;
   isAnimated?: boolean;
-  size?: 'md' | 'lg' | 'xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   type?: 'default' | 'text-only' | 'logo-only';
 }
 
@@ -22,6 +22,7 @@ const Product: FunctionComponent<ProductProps> = ({
   const theme = useTheme();
 
   const brandClassNames = classNames(classes.Product, {
+    [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
     [classes.SizeLg]: size === 'lg',
     [classes.SizeXl]: size === 'xl',
@@ -33,8 +34,10 @@ const Product: FunctionComponent<ProductProps> = ({
   let Logo = LogoTheNativeWeb;
 
   if (theme.name === 'wolkenkit' || name === 'wolkenkit') {
-    nameComponent = <div className={ classes.CompositeName }><span>wolken</span>kit</div>;
     Logo = LogoWolkenkit;
+  }
+  if ((theme.name === 'wolkenkit' && !name) || name === 'wolkenkit') {
+    nameComponent = <div className={ classes.CompositeName }><span>wolken</span>kit</div>;
   }
 
   return (
