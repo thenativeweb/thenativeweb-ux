@@ -19,7 +19,7 @@ $ npm install thenativeweb-ux react react-dom next
 
 ## Viewing the documentation
 
-For application developers there is a [styleguide](styleguide) that servers as the documentation of this module. It contains a quick start, and showcases all the available components. To run it on your local machine clone this repository, install its dependencies, and run the following command:
+For application developers there is a [styleguide](styleguide) that serves as the documentation of this module. It contains a quick start, and showcases all the available components. To run it on your local machine clone this repository, install its dependencies, and run the following command:
 
 ```shell
 $ npm run start-styleguide
