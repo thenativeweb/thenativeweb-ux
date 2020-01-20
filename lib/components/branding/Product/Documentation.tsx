@@ -40,7 +40,7 @@ const Documentation = (): ReactElement => (
 
     <ComponentPreview>
       <div>
-        <ThemeProvider theme={ themes.Wolkenkit }>
+        <ThemeProvider theme={ new themes.Wolkenkit() }>
           <div style={{ background: 'rgb(47, 51, 59)' }}>
             <Product name='wolkenkit' />
             <hr />

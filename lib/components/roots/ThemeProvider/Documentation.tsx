@@ -21,7 +21,7 @@ const Documentation = (): ReactElement => (
 
     <ComponentPreview>
       <div style={{ position: 'relative', width: '100%', height: '100%', border: '1px solid black' }}>
-        <ThemeProvider theme={ themes.Wolkenkit }>
+        <ThemeProvider theme={ new themes.Wolkenkit() }>
           <Application useNotifications={ false } useDialogs={ false }>
             <Sidebar>
               <SidebarBrand><Product name='my-app' /></SidebarBrand>
