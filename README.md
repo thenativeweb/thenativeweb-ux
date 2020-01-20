@@ -14,18 +14,20 @@ thenativeweb-ux provides UI components for the native web applications.
 ## Installation
 
 ```shell
-$ npm install thenativeweb-ux
+$ npm install thenativeweb-ux react react-dom next
 ```
 
-### Viewing the styleguide
+## Viewing the documentation
 
-You can run the [styleguide](styleguide) that demonstrates the various components and their usage on your local machine. To run the styleguide use the following command:
+For application developers there is a [styleguide](styleguide) that servers as the documentation of this module. It contains a quick start, and showcases all the available components. To run it on your local machine clone this repository, install its dependencies, and run the following command:
 
 ```shell
 $ npm run start-styleguide
 ```
 
-### Viewing the Next.js sample application
+Then point your browser to `http://localhost:6060/`.
+
+## Viewing the Next.js sample application
 
 The integration tests include a [Next.js sample application](test/shared/sampleApplication) that shows how components can be used from within a Next.js project. To run the sample application use the following command:
 
@@ -33,11 +35,11 @@ The integration tests include a [Next.js sample application](test/shared/sampleA
 $ npm run start-sample-application
 ```
 
-### Debugging integration tests
+## Debugging integration tests
 
 This project uses [puppeteer](https://github.com/GoogleChrome/puppeteer) to verify that components render correctly inside a browser. By default these tests are run in headless mode. As debugging integration tests in headless mode can be painful there are two options to debug integration tests visually.
 
-#### Viewing failing test pages in a browser
+### Viewing failing test pages in a browser
 
 First, to debug a failing integration test, you can have a look at the failing test page in a browser without running the tests. For that run the sample application using the following command:
 
@@ -47,7 +49,7 @@ $ npm run start-sample-application
 
 Then point your browser to the failing test page and verify if it renders correctly.
 
-#### Running tests with a UI and in slow motion
+### Running tests with a UI and in slow motion
 
 Second, verifying that all the puppeteer commands are executed succesfully, it is much easier to do when puppeteer is not running in headless mode. To disable headless mode, set the environment variable `DEBUG` to `true`. This will start puppeteer in non-headless mode and slow down each operation:
 
