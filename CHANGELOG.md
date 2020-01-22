@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/thenativeweb/thenativeweb-ux/compare/1.1.2...1.1.3) (2020-01-22)
+
+
+### Bug Fixes
+
+* bump pretty-format from 24.9.0 to 25.1.0 ([#253](https://github.com/thenativeweb/thenativeweb-ux/issues/253)) ([06aba25](https://github.com/thenativeweb/thenativeweb-ux/commit/06aba2594a9521c6059fb845edb64f185c439deb))
+
 ## [1.1.2](https://github.com/thenativeweb/thenativeweb-ux/compare/1.1.1...1.1.2) (2020-01-20)
 
 
