@@ -70,8 +70,6 @@ abstract class Theme {
     outExpo: string;
   };
 
-  public readonly custom: any;
-
   public constructor ({
     name,
     spaceUnit,
@@ -94,7 +92,7 @@ abstract class Theme {
     interactionColors: InteractionColors;
     pattern: Pattern;
     fontSizes?: FontSizes;
-  }, custom?: any) {
+  }) {
     this.breakpoints = new Breakpoints();
 
     this.color = {
@@ -202,8 +200,6 @@ abstract class Theme {
       outCirc: 'cubic-bezier(0.075, 0.820, 0.165, 1.000)',
       outExpo: 'cubic-bezier(0.190, 1.000, 0.220, 1.000)'
     };
-
-    this.custom = custom;
   }
 }
 

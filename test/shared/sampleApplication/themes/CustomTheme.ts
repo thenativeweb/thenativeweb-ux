@@ -1,6 +1,10 @@
 import { Theme } from '../../../../lib/themes/Theme';
 
 class CustomTheme extends Theme {
+  public readonly customComponent = {
+    width: '42px'
+  };
+
   public constructor () {
     super({
       name: 'Custom',
@@ -22,12 +26,6 @@ class CustomTheme extends Theme {
       pattern: {
         opacity: 0.05,
         backgroundImage: 'none'
-      }
-    }, {
-      components: {
-        CustomComponent: {
-          width: '42px'
-        }
       }
     });
   }
