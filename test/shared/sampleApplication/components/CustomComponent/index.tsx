@@ -1,16 +1,9 @@
-import { Styles } from 'jss';
-import { classNames, createUseStyles, Theme } from '../../../../lib';
+import { CustomTheme as Theme } from '../../themes/CustomTheme';
+import { classNames, createUseStyles } from '../../../../../lib';
+import { CustomComponentClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const useStyles = createUseStyles<Theme, 'CustomComponent' | 'SizeLg'>((theme: Theme): Styles => ({
-  CustomComponent: {
-    width: theme.custom.components.CustomComponent.width
-  },
-
-  SizeLg: {
-    fontSize: '24px'
-  }
-}));
+const useStyles = createUseStyles<Theme, CustomComponentClassNames>(styles);
 
 interface CustomComponentProps {
   className?: string;

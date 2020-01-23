@@ -7,7 +7,7 @@ interface ThemeProviderProps {
   theme?: Theme;
 }
 
-const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({ theme = themes.thenativeweb, children }): ReactElement => (
+const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({ theme = new themes.TheNativeWeb(), children }): ReactElement => (
   <JssThemeProvider theme={ theme }>{children}</JssThemeProvider>
 );
 

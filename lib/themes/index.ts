@@ -1,10 +1,10 @@
 import { Theme } from './Theme';
-import { thenativeweb } from './thenativeweb';
-import { wolkenkit } from './wolkenkit';
+import { TheNativeWeb } from './TheNativeWeb';
+import { Wolkenkit } from './Wolkenkit';
 
 const themes = {
-  thenativeweb,
-  wolkenkit
+  TheNativeWeb,
+  Wolkenkit
 };
 
 export {
