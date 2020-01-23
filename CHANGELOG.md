@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/thenativeweb/thenativeweb-ux/compare/1.1.3...2.0.0) (2020-01-23)
+
+
+### Features
+
+* Make themes use inheritance. ([#241](https://github.com/thenativeweb/thenativeweb-ux/issues/241)) ([00a43ee](https://github.com/thenativeweb/thenativeweb-ux/commit/00a43ee4cf80a003e965636d2150485e1a8dc544))
+
+
+### BREAKING CHANGES
+
+* Theme is now an abstract base class instead of an interface, and themes' names have changed. Please also note that you now must create an instance of a theme using new.
+
 ## [1.1.3](https://github.com/thenativeweb/thenativeweb-ux/compare/1.1.2...1.1.3) (2020-01-22)
 
 
