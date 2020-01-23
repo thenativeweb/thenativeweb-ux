@@ -70,8 +70,9 @@ const navigation = [
     { title: 'dialogs' },
     { title: 'notifications' }
   ]},
-  { title: 'Styles', children: [
-    { title: 'Creating custom components' }
+  { title: 'Extending and Customizing', children: [
+    { title: 'Creating custom components' },
+    { title: 'Creating custom themes' }
   ]}
 ];
 /* eslint-enable object-property-newline */

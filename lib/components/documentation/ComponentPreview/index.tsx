@@ -43,7 +43,7 @@ const ComponentPreview: FunctionComponent<ComponentPreviewProps> = ({
 
               <hr />
 
-              <ThemeProvider theme={ themes.wolkenkit }>
+              <ThemeProvider theme={ new themes.Wolkenkit() }>
                 <div>
                   { children }
                 </div>

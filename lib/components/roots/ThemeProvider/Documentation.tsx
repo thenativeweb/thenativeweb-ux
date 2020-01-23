@@ -14,14 +14,14 @@ const Documentation = (): ReactElement => (
 
     <Paragraph>
       By default the <code>ThemeProvider</code> will use the default
-      theme called <code>thenativeweb</code>. To apply the wolkenkit theme,
-      import the <code>themes</code> object and
-      pass <code>themes.wolkenkit</code> as the <code>theme</code> property.
+      theme called <code>TheNativeWeb</code>. To apply the wolkenkit theme,
+      import the <code>themes</code> object and pass a new instance
+      of <code>themes.Wolkenkit</code> as the <code>theme</code> property.
     </Paragraph>
 
     <ComponentPreview>
       <div style={{ position: 'relative', width: '100%', height: '100%', border: '1px solid black' }}>
-        <ThemeProvider theme={ themes.wolkenkit }>
+        <ThemeProvider theme={ new themes.Wolkenkit() }>
           <Application useNotifications={ false } useDialogs={ false }>
             <Sidebar>
               <SidebarBrand><Product name='my-app' /></SidebarBrand>

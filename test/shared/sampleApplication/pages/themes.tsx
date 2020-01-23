@@ -1,5 +1,5 @@
 import { CustomComponent } from '../components/CustomComponent';
-import { customTheme } from '../themes/customTheme';
+import { CustomTheme } from '../themes/CustomTheme';
 import {
   Button,
   ThemeProvider,
@@ -8,7 +8,7 @@ import {
 import React, { ReactElement } from 'react';
 
 const Page = (): ReactElement => (
-  <ThemeProvider theme={ customTheme }>
+  <ThemeProvider theme={ new CustomTheme() }>
     <Website>
       <header>Themes</header>
       <CustomComponent id='custom-component' size='lg'>This is a custom component</CustomComponent>

@@ -11,6 +11,7 @@ thenativeweb-ux provides UI components for the native web applications.
 | Dev dependencies | ![David](https://img.shields.io/david/dev/thenativeweb/thenativeweb-ux)                                                                                    |
 | Build            | ![GitHub Actions](https://github.com/thenativeweb/thenativeweb-ux/workflows/Release/badge.svg?branch=master) |
 | License          | ![GitHub](https://img.shields.io/github/license/thenativeweb/thenativeweb-ux)                                                                              |
+
 ## Installation
 
 ```shell

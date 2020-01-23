@@ -3,9 +3,7 @@ import React, { ReactElement } from 'react';
 
 const Documentation = (): ReactElement => (
   <React.Fragment>
-    <Headline>styles</Headline>
-
-    <Headline level='2'>Creating custom components</Headline>
+    <Headline>Creating custom components</Headline>
 
     <Paragraph>
       <code>thenativeweb-ux</code> uses <Link href='https://cssinjs.org'>JSS</Link> and <Link href='https://github.com/JedWatson/classnames'>classnames</Link> to
