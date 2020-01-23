@@ -15,7 +15,7 @@ const TransitionGroup: FunctionComponent<TransitionGroupProps> = ({
 
   return (
     <ReactTransitionGroup component='span'>
-      { React.Children.map(children, (child): ReactElement => <Transition>{ child }</Transition>)}
+      { React.Children.map(children, (child): ReactElement => <Transition>{ child }</Transition>)! }
     </ReactTransitionGroup>
   );
 };
