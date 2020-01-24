@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.2...2.0.3) (2020-01-24)
+
+
+### Bug Fixes
+
+* Ignore Next export folder for styleguide. ([#262](https://github.com/thenativeweb/thenativeweb-ux/issues/262)) ([1b8bf09](https://github.com/thenativeweb/thenativeweb-ux/commit/1b8bf095e2ac4625224f622b2c545b6d6ff89736))
+
 ## [2.0.2](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.1...2.0.2) (2020-01-24)
 
 
