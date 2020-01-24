@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.1...2.0.2) (2020-01-24)
+
+
+### Bug Fixes
+
+* Add missing title tag. ([#261](https://github.com/thenativeweb/thenativeweb-ux/issues/261)) ([c0813d5](https://github.com/thenativeweb/thenativeweb-ux/commit/c0813d5397fb0dcc2007c2c4e58a564f6bdfc9be))
+
 ## [2.0.1](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.0...2.0.1) (2020-01-23)
 
 
