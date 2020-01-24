@@ -5,6 +5,7 @@
 # Build artefacts
 *build/
 .next/
+styleguide/out
 test/shared/sampleApplication/out
 
 # OS generated files and folders
