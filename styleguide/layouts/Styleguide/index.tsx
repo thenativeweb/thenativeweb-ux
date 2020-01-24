@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { navigation } from '../../configuration/navigation';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -67,6 +68,9 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
       useNotifications={ true }
       useDialogs={ true }
     >
+      <Head>
+        <title>the native web UX</title>
+      </Head>
       <div className={ classes.NavigationForDesktop }>
         <Sidebar>
           <NextLink href='/'>
