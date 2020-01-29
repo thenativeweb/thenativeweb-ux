@@ -1,7 +1,8 @@
 import App from 'next/app';
 import { Styleguide } from '../layouts/Styleguide';
+import { theme } from '../theme';
 import React, { ReactElement } from 'react';
-import { removeServerSideStyles, ThemeProvider } from '../../lib';
+import { removeServerSideStyles, ThemeProvider, Website } from '../../lib';
 
 class CustomApp extends App {
   /* eslint-disable class-methods-use-this */
@@ -14,10 +15,15 @@ class CustomApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <ThemeProvider>
-        <Styleguide>
-          <Component { ...pageProps } />
-        </Styleguide>
+      <ThemeProvider theme={ theme }>
+        <Website
+          useNotifications={ true }
+          useDialogs={ true }
+        >
+          <Styleguide>
+            <Component { ...pageProps } />
+          </Styleguide>
+        </Website>
       </ThemeProvider>
     );
   }

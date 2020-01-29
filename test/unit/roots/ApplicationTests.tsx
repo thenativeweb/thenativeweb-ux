@@ -20,13 +20,13 @@ suite('Application', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Application useDialogs={ false }>Application</Application>
+          <Application id='application' useDialogs={ false }>Application</Application>
         </ThemeProvider>,
         container
       );
     });
 
-    const application = container.querySelector('div');
+    const application = container.querySelector('#application');
 
     assert.that(application!.className).is.containing('Application');
   });

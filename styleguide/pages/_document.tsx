@@ -1,11 +1,13 @@
 import { RenderPageResult } from 'next/dist/next-server/lib/utils';
+import { theme } from '../theme';
 import NextDocument, { DocumentContext, DocumentInitialProps } from 'next/document';
 import React, { ReactElement } from 'react';
-import { ServerSideStyles, StyleCollector } from '../../lib';
+import { ServerSideStyles, StaticGlobalStyles, StyleCollector } from '../../lib';
 
 class CustomDocument extends NextDocument {
   public static async getInitialProps (originalContext: DocumentContext): Promise<DocumentInitialProps> {
     const serverSideStyles = new ServerSideStyles();
+    const staticGlobalStyles = new StaticGlobalStyles({ theme });
 
     const customContext = {
       ...originalContext,
@@ -30,6 +32,7 @@ class CustomDocument extends NextDocument {
         <React.Fragment>
           { initialProps.styles }
           { serverSideStyles.generateStyleTag() }
+          { staticGlobalStyles.generateStyleTag() }
         </React.Fragment>
       )
     };

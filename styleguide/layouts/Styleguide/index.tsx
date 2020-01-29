@@ -19,8 +19,7 @@ import {
   SidebarItem,
   Theme,
   useDevice,
-  useRouteChange,
-  Website
+  useRouteChange
 } from '../../../lib';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect, useState } from 'react';
 import { StyleguideClassNames, styles } from './styles';
@@ -62,11 +61,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
   useEffect(hideNavigationOnMobile, []);
 
   return (
-    <Website
-      className={ componentClasses }
-      useNotifications={ true }
-      useDialogs={ true }
-    >
+    <div className={ componentClasses }>
       <div className={ classes.NavigationForDesktop }>
         <Sidebar>
           <NextLink href='/'>
@@ -135,7 +130,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
 
         <Footer yearOfCreation={ 2017 } />
       </div>
-    </Website>
+    </div>
   );
 };
 

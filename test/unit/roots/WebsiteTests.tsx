@@ -20,14 +20,30 @@ suite('Website', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Website>Website</Website>
+          <Website><div className='foo'>Website</div></Website>
         </ThemeProvider>,
         container
       );
     });
 
-    const website = container.querySelector('div');
+    const website = container.querySelector('.foo');
 
-    assert.that(website!.className).is.containing('Website');
+    assert.that(website!.textContent).is.equalTo('Website');
+  });
+
+  test('renders icons.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Website id='website'><div>Website</div></Website>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const iconSvgContainer = container.querySelector('#website svg');
+
+    assert.that(iconSvgContainer).is.not.null();
+    assert.that(iconSvgContainer!.innerHTML).is.containing('<symbol');
   });
 });

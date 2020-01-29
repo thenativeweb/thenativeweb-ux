@@ -60,7 +60,7 @@ import { Transition } from './components/animation/Transition';
 import { TransitionGroup } from './components/animation/TransitionGroup';
 import { useRouteChange } from './components/navigation/useRouteChange';
 import { Website } from './components/roots/Website';
-import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, useDevice, useTheme } from './styles';
+import { classNames, createUseStyles, removeServerSideStyles, ServerSideStyles, StaticGlobalStyles, useDevice, useTheme } from './styles';
 import { dialogs, excecutionEnvironment, getPortalRootNode, notifications, slugify } from './services';
 import { Theme, themes } from './themes';
 
@@ -126,6 +126,7 @@ export {
   slugify,
   StyleCollector,
   ServerSideStyles,
+  StaticGlobalStyles,
   Tags,
   Text,
   TextArea,
