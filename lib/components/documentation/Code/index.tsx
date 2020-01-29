@@ -1,6 +1,6 @@
 import { prismStyles } from './prismStyles';
 import { stripIndent } from 'common-tags';
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import { CodeClassNames, styles } from './styles';
