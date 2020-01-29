@@ -1,3 +1,24 @@
+## [2.0.4](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.3...2.0.4) (2020-01-29)
+
+
+### Bug Fixes
+
+* Fix copyright in footer component. ([#266](https://github.com/thenativeweb/thenativeweb-ux/issues/266)) ([66a75b0](https://github.com/thenativeweb/thenativeweb-ux/commit/66a75b0b03efda4e0403462ff0da8ae504f0bdbb))
+
+## [2.0.3](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.2...2.0.3) (2020-01-24)
+
+
+### Bug Fixes
+
+* Ignore Next export folder for styleguide. ([#262](https://github.com/thenativeweb/thenativeweb-ux/issues/262)) ([1b8bf09](https://github.com/thenativeweb/thenativeweb-ux/commit/1b8bf095e2ac4625224f622b2c545b6d6ff89736))
+
+## [2.0.2](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.1...2.0.2) (2020-01-24)
+
+
+### Bug Fixes
+
+* Add missing title tag. ([#261](https://github.com/thenativeweb/thenativeweb-ux/issues/261)) ([c0813d5](https://github.com/thenativeweb/thenativeweb-ux/commit/c0813d5397fb0dcc2007c2c4e58a564f6bdfc9be))
+
 ## [2.0.1](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.0...2.0.1) (2020-01-23)
 
 
