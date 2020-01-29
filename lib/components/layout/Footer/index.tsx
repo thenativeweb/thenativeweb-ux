@@ -25,7 +25,7 @@ const Footer: FunctionComponent<FooterProps> = ({
   );
 
   const currentYear = new Date().getFullYear();
-  const copyrightTimespan = currentYear !== yearOfCreation ? `${yearOfCreation} - ${currentYear}` : `${currentYear}`;
+  const copyrightTimespan = currentYear !== yearOfCreation ? `${yearOfCreation}-${currentYear}` : `${currentYear}`;
 
   return (
     <footer id={ id } className={ componentClassNames } style={ style }>
