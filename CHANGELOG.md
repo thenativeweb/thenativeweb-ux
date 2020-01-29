@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.3...2.0.4) (2020-01-29)
+
+
+### Bug Fixes
+
+* Fix copyright in footer component. ([#266](https://github.com/thenativeweb/thenativeweb-ux/issues/266)) ([66a75b0](https://github.com/thenativeweb/thenativeweb-ux/commit/66a75b0b03efda4e0403462ff0da8ae504f0bdbb))
+
 ## [2.0.3](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.2...2.0.3) (2020-01-24)
 
 
