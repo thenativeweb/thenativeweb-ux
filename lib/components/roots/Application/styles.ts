@@ -2,9 +2,9 @@ import { Styles } from 'jss';
 
 export type ApplicationClassNames = 'Application' | 'ApplicationLayout';
 
-const styles: Styles = {
+const styles: Styles<ApplicationClassNames> = {
   Application: {
-    position: 'absolute !important',
+    position: 'absolute !important' as any,
     left: 0,
     top: 0,
     right: 0,

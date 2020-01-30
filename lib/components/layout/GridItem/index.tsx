@@ -1,6 +1,5 @@
 import { ResponsiveSpaceProp } from '../../../types/ResponsiveSpaceProp';
 import { styles } from './styles';
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
@@ -14,7 +13,7 @@ interface GridItemProps {
   style?: CSSProperties;
 }
 
-const useStyles = createUseStyles<Theme, string>(styles);
+const useStyles = createUseStyles(styles);
 
 const GridItem: FunctionComponent<GridItemProps> = ({
   component = 'div',

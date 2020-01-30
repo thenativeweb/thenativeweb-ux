@@ -1,8 +1,7 @@
-import { Styles } from 'jss';
 import { ButtonClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
 import { Icon, IconSize, Label, Theme } from '../../..';
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface ButtonProps {
   adjust?: 'flex' | 'auto';
@@ -14,7 +13,7 @@ interface ButtonProps {
   isPrimary?: boolean;
   isSubtle?: boolean;
   size?: 'sm' | 'md';
-  style?: Styles;
+  style?: CSSProperties;
   type?: 'button' | 'submit' | 'reset';
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }

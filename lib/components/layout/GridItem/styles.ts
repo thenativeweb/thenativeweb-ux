@@ -5,15 +5,27 @@ const columnCount = 13,
       columns = [ ...new Array(columnCount) ].map((item, index): number => index + 1);
 
 const columnProperties = {
-  ColumnStart: (column: number): Styles => ({
-    gridColumnStart: column
-  }),
-  ColumnEnd: (column: number): Styles => ({
-    gridColumnEnd: column + 1
-  }),
-  ColumnSpan: (column: number): Styles => ({
-    gridColumnStart: `span ${column}`
-  })
+  ColumnStart (column: number): Styles {
+    const styles: Styles = {
+      gridColumnStart: String(column)
+    };
+
+    return styles;
+  },
+  ColumnEnd (column: number): Styles {
+    const styles: Styles = {
+      gridColumnEnd: String(column + 1)
+    };
+
+    return styles;
+  },
+  ColumnSpan (column: number): Styles {
+    const styles: Styles = {
+      gridColumnStart: `span ${column}`
+    };
+
+    return styles;
+  }
 };
 
 const createColumnClasses = function ({ deviceSize }: { deviceSize: string }): Styles {

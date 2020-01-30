@@ -7,27 +7,31 @@ export type PageNavigationClassNames =
   'SearchField' |
   'Content';
 
-const styles = (theme: Theme): Styles => ({
-  PageNavigation: {
-    position: 'relative',
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column'
-  },
+const getStyles = (theme: Theme): Styles<PageNavigationClassNames> => {
+  const styles: Styles<PageNavigationClassNames> = {
+    PageNavigation: {
+      position: 'relative',
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    },
 
-  SearchBar: {},
+    SearchBar: {},
 
-  SearchField: {
-    padding: [ theme.space(0.5), theme.space(1) ],
-    flexGrow: 1
-  },
+    SearchField: {
+      padding: `${theme.space(0.5)}px ${theme.space(1)}px`,
+      flexGrow: 1
+    },
 
-  Content: {
-    flexGrow: 1,
-    overflow: 'auto',
-    '-webkit-overflow-scrolling': 'touch'
-  }
-});
+    Content: {
+      flexGrow: 1,
+      overflow: 'auto',
+      '-webkit-overflow-scrolling': 'touch'
+    }
+  };
 
-export { styles };
+  return styles;
+};
+
+export { getStyles as styles };

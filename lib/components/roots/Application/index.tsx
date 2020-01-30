@@ -1,3 +1,4 @@
+import { Theme } from '../../../themes';
 import { ApplicationClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
 import { Dialogs, Icons, Notifications } from '../../..';
@@ -11,7 +12,7 @@ interface ApplicationProps {
   style?: any;
 }
 
-const useStyles = createUseStyles<ApplicationClassNames>(styles);
+const useStyles = createUseStyles<Theme, ApplicationClassNames>(styles);
 
 const Application: FunctionComponent<ApplicationProps> = ({
   id,
