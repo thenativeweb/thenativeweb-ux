@@ -56,7 +56,7 @@ suite('Code', (): void => {
 
     const codeBlock = container.querySelector('#code');
 
-    assert.that(codeBlock!.innerHTML).is.matching(/message<span class="token".*>:<\/span> <span class="token".*>string<\/span>/u);
+    assert.that(codeBlock!.innerHTML).is.matching(/<span class="token".*>string<\/span>/u);
   });
 
   test('renders children as shell code if property language is set to shell.', async (): Promise<void> => {

@@ -2,25 +2,39 @@ import { Styles } from 'jss';
 import { Theme } from '../../../themes';
 
 export type CodeClassNames =
-  'Code';
+  'Code' |
+  'CodeContainer'|
+  'WithLineNumbers';
 
 const styles = (theme: Theme): Styles<CodeClassNames> => ({
   Code: {
-    '& pre, code': {
-      fontFamily: theme.font.family.code,
-      fontSize: '15px'
-    },
+    marginBottom: theme.space(3),
+    background: theme.color.brand.grayDark,
+    maxWidth: theme.space(100),
+    display: 'block',
 
     '& code': {
+      fontFamily: theme.font.family.code,
+      paddingTop: theme.space(2),
+      paddingBottom: theme.space(2),
+      paddingLeft: theme.space(2),
+      paddingRight: '0 !important',
+      color: '#666',
+      fontSize: '15px',
+      display: 'block'
+    },
+
+    '& $CodeContainer': {
       border: 0,
-      display: 'block',
       color: '#e5e6eb',
-      background: theme.color.brand.grayDark,
-      padding: [ theme.space(2), theme.space(3) ],
-      overflowX: 'auto',
-      maxWidth: '800px'
+      paddingRight: `${theme.space(1)} !important`,
+      overflowX: 'auto'
     }
-  }
+  },
+
+  CodeContainer: {},
+
+  WithLineNumbers: {}
 });
 
 export { styles };
