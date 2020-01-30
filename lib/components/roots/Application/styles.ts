@@ -1,14 +1,8 @@
-import { createDefaultStyles } from '../../../styles';
 import { Styles } from 'jss';
-import { Theme } from '../../..';
 
-export type ApplicationClassNames = '@global' | 'Application' | 'ApplicationLayout';
+export type ApplicationClassNames = 'Application' | 'ApplicationLayout';
 
-const styles = (theme: Theme): Styles<ApplicationClassNames> => ({
-  '@global': {
-    ...createDefaultStyles(theme)
-  },
-
+const styles: Styles = {
   Application: {
     position: 'absolute !important',
     left: 0,
@@ -25,6 +19,6 @@ const styles = (theme: Theme): Styles<ApplicationClassNames> => ({
     gridTemplateColumns: 'auto 1fr',
     gridTemplateRows: '1fr'
   }
-});
+};
 
 export { styles };
