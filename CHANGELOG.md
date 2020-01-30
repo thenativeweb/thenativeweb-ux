@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.4...2.0.5) (2020-01-30)
+
+
+### Bug Fixes
+
+* Fix global styles. ([#280](https://github.com/thenativeweb/thenativeweb-ux/issues/280)) ([1834a99](https://github.com/thenativeweb/thenativeweb-ux/commit/1834a991aab85f960f0b5b5326e500495524e1b8))
+
 ## [2.0.4](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.3...2.0.4) (2020-01-29)
 
 
