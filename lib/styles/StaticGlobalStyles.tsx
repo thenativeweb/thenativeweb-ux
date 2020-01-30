@@ -31,8 +31,8 @@ class StaticGlobalStyles {
         margin: 0;
         padding: 0;
         border: 0;
-        fontFamily: inherit;
-        boxSizing: border-box;
+        font-family: inherit;
+        box-sizing: border-box;
       }
     `;
   }

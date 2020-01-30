@@ -1,28 +1,19 @@
-import App from 'next/app';
-import { theme } from '../themes/default';
+import { theme } from '../theme';
+import { NextApp, Website } from '../../../../lib';
 import React, { ReactElement } from 'react';
-import { removeServerSideStyles, ThemeProvider, Website } from '../../../../lib';
 
-class CustomApp extends App {
-  /* eslint-disable class-methods-use-this */
-  public componentDidMount (): void {
-    removeServerSideStyles();
-  }
-  /* eslint-enable class-methods-use-this */
-
+class CustomApp extends NextApp {
   public render (): ReactElement {
     const { Component, pageProps } = this.props;
 
-    return (
-      <ThemeProvider theme={ theme }>
-        <Website
-          useNotifications={ true }
-          useDialogs={ true }
-        >
-          <Component { ...pageProps } />
-        </Website>
-      </ThemeProvider>
-    );
+    return NextApp.renderWithTheme((
+      <Website
+        useNotifications={ true }
+        useDialogs={ true }
+      >
+        <Component { ...pageProps } />
+      </Website>
+    ), theme);
   }
 }
 

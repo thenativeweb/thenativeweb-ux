@@ -36,6 +36,8 @@ import { Message } from './components/feedback/Message';
 import { MobileToggle } from './components/navigation/MobileToggle';
 import { Modal } from './components/feedback/Modal';
 import { ModalRow } from './components/feedback/ModalRow';
+import { NextApp } from './NextApp';
+import { NextDocument } from './NextDocument';
 import { NonIdealState } from './components/feedback/NonIdealState';
 import { Notifications } from './components/feedback/Notifications';
 import { PageNavigation } from './components/navigation/PageNavigation';
@@ -108,6 +110,8 @@ export {
   MobileToggle,
   Modal,
   ModalRow,
+  NextApp,
+  NextDocument,
   NonIdealState,
   notifications,
   Notifications,
