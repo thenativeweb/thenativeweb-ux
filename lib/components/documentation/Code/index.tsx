@@ -1,13 +1,3 @@
-// In order to create smaller bundles one can use Light versions of
-// ReactSyntaxHighlighter…
-//
-// import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-// import javascript from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
-// import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
-// import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
-//
-// SyntaxHighlighter.registerLanguage('jsx', jsx);
-
 import { prismStyles } from './prismStyles';
 import { stripIndent } from 'common-tags';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';

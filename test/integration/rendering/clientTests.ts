@@ -36,8 +36,10 @@ suite('Client', function (): void {
 
   test('removes server side rendered styles.', async (): Promise<void> => {
     await page.waitForSelector('#button');
-    const styleTag = await page.$('#server-side-styles');
+    const serverSideStyles = await page.$('#server-side-styles');
+    const staticGlobalStyles = await page.$('#static-global-styles');
 
-    assert.that(styleTag).is.null();
+    assert.that(serverSideStyles).is.null();
+    assert.that(staticGlobalStyles).is.not.null();
   });
 });

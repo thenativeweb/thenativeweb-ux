@@ -4,6 +4,7 @@ import { Dialogs, Icons, Notifications, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface ApplicationProps {
+  id?: string;
   className?: string;
   useDialogs?: boolean;
   useNotifications?: boolean;
@@ -13,6 +14,7 @@ interface ApplicationProps {
 const useStyles = createUseStyles<Theme, ApplicationClassNames>(styles);
 
 const Application: FunctionComponent<ApplicationProps> = ({
+  id,
   children,
   className,
   style,
@@ -23,7 +25,7 @@ const Application: FunctionComponent<ApplicationProps> = ({
   const componentClasses = classNames(classes.Application, className);
 
   return (
-    <div className={ componentClasses } style={ style }>
+    <div id={ id } className={ componentClasses } style={ style }>
       <span suppressHydrationWarning={ true }>
         <Icons />
         { useDialogs ? <Dialogs /> : null }

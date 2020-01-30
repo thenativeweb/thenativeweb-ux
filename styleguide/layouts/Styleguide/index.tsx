@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { navigation } from '../../configuration/navigation';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -20,8 +19,7 @@ import {
   SidebarItem,
   Theme,
   useDevice,
-  useRouteChange,
-  Website
+  useRouteChange
 } from '../../../lib';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect, useState } from 'react';
 import { StyleguideClassNames, styles } from './styles';
@@ -63,14 +61,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
   useEffect(hideNavigationOnMobile, []);
 
   return (
-    <Website
-      className={ componentClasses }
-      useNotifications={ true }
-      useDialogs={ true }
-    >
-      <Head>
-        <title>the native web UX</title>
-      </Head>
+    <div className={ componentClasses }>
       <div className={ classes.NavigationForDesktop }>
         <Sidebar>
           <NextLink href='/'>
@@ -139,7 +130,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement => {
 
         <Footer yearOfCreation={ 2017 } />
       </div>
-    </Website>
+    </div>
   );
 };
 
