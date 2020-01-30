@@ -1,5 +1,5 @@
 import { Styleguide } from '../layouts/Styleguide';
-import { theme } from './theme';
+import { theme } from '../theme';
 import { NextApp, Website } from '../../lib';
 import React, { ReactElement } from 'react';
 

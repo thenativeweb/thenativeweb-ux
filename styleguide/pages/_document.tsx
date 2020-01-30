@@ -1,5 +1,5 @@
 import { NextDocument } from '../../lib';
-import { theme } from './theme';
+import { theme } from '../theme';
 import { DocumentContext, DocumentInitialProps } from 'next/document';
 
 class CustomDocument extends NextDocument {

@@ -1,4 +1,4 @@
-import { themes } from '../../lib';
+import { themes } from '../lib';
 
 const theme = new themes.TheNativeWeb();
 
