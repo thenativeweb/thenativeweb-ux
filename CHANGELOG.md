@@ -1,3 +1,19 @@
+# [3.0.0](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.5...3.0.0) (2020-01-30)
+
+
+### Features
+
+* Add NextApp and NextDocument components. ([#285](https://github.com/thenativeweb/thenativeweb-ux/issues/285)) ([1c0d847](https://github.com/thenativeweb/thenativeweb-ux/commit/1c0d8476a6e4326d64bf27f6cda09202f280860f))
+
+
+### BREAKING CHANGES
+
+* NextApp and NextDocument should now be used to setup Next.js applications.
+
+* Update documentation.
+
+* Move styleguide theme out of the page folder.
+
 ## [2.0.5](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.4...2.0.5) (2020-01-30)
 
 
