@@ -43,7 +43,7 @@
     "@types/common-tags": "1.8.0",
     "@types/jsdom": "12.2.4",
     "@types/lodash": "4.14.149",
-    "@types/node": "13.5.2",
+    "@types/node": "13.5.3",
     "@types/puppeteer": "2.0.0",
     "@types/react": "16.9.19",
     "@types/react-dom": "16.9.5",
@@ -62,7 +62,7 @@
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "retry-ignore-abort": "2.2.2",
-    "roboter": "11.0.10",
+    "roboter": "11.0.11",
     "semantic-release-configuration": "1.0.15",
     "shelljs": "0.8.3"
   },
