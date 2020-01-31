@@ -1,3 +1,15 @@
+// Color('#dd0099').lighten(0.5).desaturate(0.2);
+const pink = '#ED5EC1';
+
+// Color('#66aa22').lighten(0.5).desaturate(0.2);
+const green = '##99CF63';
+
+// Color('#00aaff').lighten(0.5).desaturate(0.2);
+const blue = '#8CD0F2';
+
+// Color('#880088').lighten(1).desaturate(0.4);
+const purple = '#CF41CF';
+
 const prismStyles = {
   comment: {
     color: '#5c6370'
@@ -18,52 +30,55 @@ const prismStyles = {
     opacity: '.7'
   },
   property: {
-    color: '#98c379'
+    color: green
   },
   keyword: {
-    color: '#c678dd'
+    color: purple
   },
   tag: {
-    color: '#98c379'
+    color: green
   },
   'class-name': {
-    color: '#e052b6'
+    color: pink
+  },
+  'maybe-classname': {
+    color: pink
   },
   boolean: {
-    color: '#99CC99'
+    color: green
   },
   constant: {
-    color: '#99CC99'
+    color: green
   },
   symbol: {
-    color: '#e052b6'
+    color: pink
   },
   deleted: {
-    color: '#e052b6'
+    color: pink
   },
   number: {
-    color: '#c678dd'
+    color: purple
   },
   selector: {
-    color: '#98c379'
+    color: green
   },
   attrname: {
-    color: '#98c379'
+    color: green
   },
   string: {
-    color: '#98c379'
+    color: green
   },
   char: {
-    color: '#98c379'
+    color: green
   },
   builtin: {
-    color: '#98c379'
+    color: green
   },
   inserted: {
-    color: '#98c379'
+    color: green
   },
   variable: {
-    color: '#C6C5FE'
+    color: blue
   },
   operator: {
     color: '#EDEDED'
@@ -73,25 +88,22 @@ const prismStyles = {
     cursor: 'help'
   },
   url: {
-    color: '#c678dd'
-  },
-  '.languagecss .token.string': {
-    color: '#87C38A'
+    color: purple
   },
   '.style.token.string': {
-    color: '#87C38A'
+    color: green
   },
   atrule: {
-    color: '#98c379'
+    color: green
   },
   attrvalue: {
-    color: '#F9EE98'
+    color: blue
   },
   function: {
-    color: '#c678dd'
+    color: blue
   },
   regex: {
-    color: '#98c379'
+    color: green
   },
   important: {
     color: '#fd971f',
