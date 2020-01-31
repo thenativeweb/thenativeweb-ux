@@ -20,7 +20,7 @@ $ npm install thenativeweb-ux react react-dom next
 
 ## Viewing the documentation
 
-For application developers there is a [ux.thenativeweb.io/](styleguide) that serves as the documentation of this module. It contains a quick start, and showcases all the available components.
+For application developers there is a [styleguide](https://ux.thenativeweb.io) that serves as the documentation of this module. It contains a quick start, and showcases all the available components.
 
 You can also run the [styleguide](styleguide) on your local machine. Clone this repository, install its dependencies, and run the following command:
 
