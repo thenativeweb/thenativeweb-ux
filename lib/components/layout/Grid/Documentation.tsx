@@ -161,8 +161,8 @@ const Documentation = (): ReactElement => (
           columnStart={{ sm: 1, lg: 4 }}
           columnEnd={{ sm: 12, lg: 10 }}
         >
-            Spans across all 12 columns on small devices and from colum 4-10
-            on large devices.
+          Spans across all 12 columns on small devices and from colum 4-10
+          on large devices.
         </GridItem>
       </Grid>
     </ComponentPreview>
