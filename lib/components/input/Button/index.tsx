@@ -48,7 +48,7 @@ const Button: FunctionComponent<ButtonProps> = ({
       [classes.SizeSm]: size === 'sm',
       [classes.SizeMd]: size === 'md',
       [classes.TypeSubtle]: isSubtle === true,
-      [classes.TypePrimary]: isPrimary === true,
+      [classes.TypePrimary]: isPrimary,
       [classes.TypeIcon]: icon,
       [classes.TypeIconOnly]: icon && !children
     },
