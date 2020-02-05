@@ -1,7 +1,7 @@
 import { assert } from 'assertthat';
-import { browser } from '../../shared/browser';
+import { browser } from '../../../shared/browser';
 import { Page } from 'puppeteer';
-import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
+import { getIntegrationTestUrl, integrationTestTimeOut } from '../../../shared/environment';
 
 suite('GridItem', function (): void {
   this.timeout(integrationTestTimeOut);
@@ -38,7 +38,7 @@ suite('GridItem', function (): void {
     test('spans GridItems across multiple columns using repsonsive properties.', async (): Promise<void> => {
       const url = getIntegrationTestUrl('/integration/components/layout/gridItem');
 
-      page = await browser.setupPage({ viewport: { width: 590, height: 600 }});
+      page = await browser.setupPage({ viewport: browser.viewports.xs });
 
       await page.goto(url);
       await page.waitForSelector('#grid');
@@ -52,7 +52,7 @@ suite('GridItem', function (): void {
       assert.that(thirdItemOnXsDeviceBoundingBox!.width).is.equalTo(gridOnXsDeviceBoundingBox!.width);
       await browser.teardownPage(page);
 
-      page = await browser.setupPage({ viewport: { width: 1270, height: 600 }});
+      page = await browser.setupPage({ viewport: browser.viewports.md });
 
       await page.goto(url);
       await page.waitForSelector('#grid');
