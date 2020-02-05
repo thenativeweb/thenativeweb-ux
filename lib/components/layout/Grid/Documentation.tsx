@@ -51,10 +51,12 @@ const Documentation = (): ReactElement => (
     </ComponentPreview>
 
     <Headline level='2'>Responsive column count</Headline>
+
     <Paragraph>
       It is possible to provide multiple <code>columns</code> values depending
       on the size of the viewport:
     </Paragraph>
+
     <ComponentPreview>
       <Grid columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
         <GridItem>First Column</GridItem>
@@ -65,10 +67,12 @@ const Documentation = (): ReactElement => (
     </ComponentPreview>
 
     <Headline level='2'>Colum and row gap</Headline>
+
     <Paragraph>
       The <code>columnGap</code> and the  <code>rowGap</code> property can
       be used to control horizontal and vertical gaps between items of the grid:
     </Paragraph>
+
     <ComponentPreview>
       <React.Fragment>
         <Grid columns='3' columnGap='1' rowGap='1'>
@@ -94,16 +98,19 @@ const Documentation = (): ReactElement => (
     </ComponentPreview>
 
     <Headline>GridItem</Headline>
+
     <Paragraph>
       If you need more control when positioning elements inside
       a <code>Grid</code> use the <code>GridItem</code> component.
     </Paragraph>
 
     <Headline level='2'>columnSpan</Headline>
+
     <Paragraph>
       To span an element across multiple columns, set
       the <code>columnSpan</code> property:
     </Paragraph>
+
     <ComponentPreview>
       <Grid>
         <GridItem columnSpan='6'>Column from gap 1-6</GridItem>
@@ -113,10 +120,12 @@ const Documentation = (): ReactElement => (
     </ComponentPreview>
 
     <Headline level='2'>Responsive columnSpan</Headline>
+
     <Paragraph>
       It is possible to provide multiple <code>columSpan</code> values depending
       on the size of the viewport:
     </Paragraph>
+
     <ComponentPreview>
       <Grid>
         <GridItem columnSpan={{ sm: 12, md: 6, lg: 4 }}>
@@ -135,12 +144,14 @@ const Documentation = (): ReactElement => (
     </ComponentPreview>
 
     <Headline level='2'>columnStart and columnEnd</Headline>
+
     <Paragraph>
       Instead of using <code>columnSpan</code> you can set
       the <code>columnStart</code> property to specifiy in which column an
       element should be start in. Use the `columnEnd` property to set a
       specific column to end with.
     </Paragraph>
+
     <ComponentPreview>
       <Grid>
         <GridItem columnStart='1' columnEnd='6'>Column from gap 1-6</GridItem>
@@ -155,6 +166,7 @@ const Documentation = (): ReactElement => (
       multiple <code>columnStart</code> and <code>columnEnd</code> values
       depending on the size of the viewport:
     </Paragraph>
+
     <ComponentPreview>
       <Grid>
         <GridItem

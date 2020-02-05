@@ -20,16 +20,15 @@ suite('GridItem', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <GridItem id='some-id'>Item</GridItem>
+          <GridItem id='grid-item'>Item</GridItem>
         </ThemeProvider>,
         container
       );
     });
 
-    const item = container.querySelector('div');
+    const item = container.querySelector('#grid-item');
 
     assert.that(item!.className).is.containing('GridItem');
-    assert.that(item!.id).is.equalTo('some-id');
   });
 
   test('renders defined element type.', async (): Promise<void> => {
@@ -51,7 +50,7 @@ suite('GridItem', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <GridItem columnSpan={{ xs: 3, sm: 3, md: 3, lg: 3 }}>GridItem</GridItem>
+          <GridItem columnSpan={{ xs: 3, sm: 4, md: 5, lg: 6 }}>GridItem</GridItem>
         </ThemeProvider>,
         container
       );
@@ -61,10 +60,10 @@ suite('GridItem', (): void => {
 
     assert.that(item!.className).is.containingAllOf(
       [
-        'xsColumnSpan-3',
-        'smColumnSpan-3',
-        'mdColumnSpan-3',
-        'lgColumnSpan-3'
+        'xs-columnSpan-3',
+        'sm-columnSpan-4',
+        'md-columnSpan-5',
+        'lg-columnSpan-6'
       ]
     );
   });
@@ -73,7 +72,7 @@ suite('GridItem', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <GridItem columnStart={{ xs: 3, sm: 3, md: 3, lg: 3 }}>GridItem</GridItem>
+          <GridItem columnStart={{ xs: 3, sm: 4, md: 5, lg: 6 }}>GridItem</GridItem>
         </ThemeProvider>,
         container
       );
@@ -83,10 +82,10 @@ suite('GridItem', (): void => {
 
     assert.that(item!.className).is.containingAllOf(
       [
-        'xsColumnStart-3',
-        'smColumnStart-3',
-        'mdColumnStart-3',
-        'lgColumnStart-3'
+        'xs-columnStart-3',
+        'sm-columnStart-4',
+        'md-columnStart-5',
+        'lg-columnStart-6'
       ]
     );
   });
@@ -95,7 +94,7 @@ suite('GridItem', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <GridItem columnEnd={{ xs: 3, sm: 3, md: 3, lg: 3 }}>GridItem</GridItem>
+          <GridItem columnEnd={{ xs: 3, sm: 4, md: 5, lg: 6 }}>GridItem</GridItem>
         </ThemeProvider>,
         container
       );
@@ -105,10 +104,10 @@ suite('GridItem', (): void => {
 
     assert.that(item!.className).is.containingAllOf(
       [
-        'xsColumnEnd-3',
-        'smColumnEnd-3',
-        'mdColumnEnd-3',
-        'lgColumnEnd-3'
+        'xs-columnEnd-3',
+        'sm-columnEnd-4',
+        'md-columnEnd-5',
+        'lg-columnEnd-6'
       ]
     );
   });
