@@ -1,4 +1,4 @@
-import { oneLine } from 'common-tags';
+import { minifyCss } from './minifyCss';
 import { Theme } from '..';
 import React, { ReactElement } from 'react';
 
@@ -10,13 +10,16 @@ class StaticGlobalStyles {
   }
 
   public generateStyleTag (): ReactElement {
+    const styles = this.buildStyles();
+    const minfiedStyles = minifyCss(styles);
+
     return (
-      <style id='static-global-styles' dangerouslySetInnerHTML={{ __html: this.buildStyles() }} />
+      <style id='static-global-styles' dangerouslySetInnerHTML={{ __html: minfiedStyles }} />
     );
   }
 
   private buildStyles (): string {
-    return oneLine`
+    return `
       @import url(${this.theme.font.import});
 
       body, html  {
