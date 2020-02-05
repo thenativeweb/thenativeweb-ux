@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.1.0...3.2.0) (2020-02-05)
+
+
+### Features
+
+* Minify CSS. ([b5584cd](https://github.com/thenativeweb/thenativeweb-ux/commit/b5584cd266b172b169909414717d95f2ee7c1d24))
+
 # [3.1.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.0.0...3.1.0) (2020-02-05)
 
 
