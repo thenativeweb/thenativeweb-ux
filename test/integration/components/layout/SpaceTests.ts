@@ -62,67 +62,67 @@ suite('Space', function (): void {
       assert.that(paddingYAsString).is.equalTo('16px 0px');
       assert.that(paddingYAsNumber).is.equalTo('16px 0px');
     });
-  });
 
-  test('set correct padding values when using responsive properties.', async (): Promise<void> => {
-    const url = getIntegrationTestUrl(testPageUrl);
+    test('set correct padding values when using responsive properties.', async (): Promise<void> => {
+      const url = getIntegrationTestUrl(testPageUrl);
 
-    // Test on xs viewport
-    page = await browser.setupPage({ viewport: browser.viewports.xs });
+      // Test on xs viewport
+      page = await browser.setupPage({ viewport: browser.viewports.xs });
 
-    await page.goto(url);
-    await page.waitForSelector('#with-responsive-padding');
+      await page.goto(url);
+      await page.waitForSelector('#with-responsive-padding');
 
-    const responsivePaddingOnXsDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
+      const responsivePaddingOnXsDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
 
-    assert.that(responsivePaddingOnXsDevice).is.equalTo('8px');
+      assert.that(responsivePaddingOnXsDevice).is.equalTo('8px');
 
-    await browser.teardownPage(page);
+      await browser.teardownPage(page);
 
-    // Test on xs viewport
-    page = await browser.setupPage({ viewport: browser.viewports.sm });
+      // Test on xs viewport
+      page = await browser.setupPage({ viewport: browser.viewports.sm });
 
-    await page.goto(url);
-    await page.waitForSelector('#with-responsive-padding');
+      await page.goto(url);
+      await page.waitForSelector('#with-responsive-padding');
 
-    const responsivePaddingOnSmDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
+      const responsivePaddingOnSmDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
 
-    assert.that(responsivePaddingOnSmDevice).is.equalTo('16px');
+      assert.that(responsivePaddingOnSmDevice).is.equalTo('16px');
 
-    await browser.teardownPage(page);
+      await browser.teardownPage(page);
 
-    // Test on md viewport
-    page = await browser.setupPage({ viewport: browser.viewports.md });
+      // Test on md viewport
+      page = await browser.setupPage({ viewport: browser.viewports.md });
 
-    await page.goto(url);
-    await page.waitForSelector('#with-responsive-padding');
+      await page.goto(url);
+      await page.waitForSelector('#with-responsive-padding');
 
-    const responsivePaddingOnMdDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
+      const responsivePaddingOnMdDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
 
-    assert.that(responsivePaddingOnMdDevice).is.equalTo('24px');
+      assert.that(responsivePaddingOnMdDevice).is.equalTo('24px');
 
-    await browser.teardownPage(page);
+      await browser.teardownPage(page);
 
-    // Test on lg viewport
-    page = await browser.setupPage({ viewport: browser.viewports.lg });
+      // Test on lg viewport
+      page = await browser.setupPage({ viewport: browser.viewports.lg });
 
-    await page.goto(url);
-    await page.waitForSelector('#with-responsive-padding');
+      await page.goto(url);
+      await page.waitForSelector('#with-responsive-padding');
 
-    const responsivePaddingOnLgDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
+      const responsivePaddingOnLgDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
 
-    assert.that(responsivePaddingOnLgDevice).is.equalTo('32px');
+      assert.that(responsivePaddingOnLgDevice).is.equalTo('32px');
 
-    await browser.teardownPage(page);
+      await browser.teardownPage(page);
 
-    // Test on xl viewport
-    page = await browser.setupPage({ viewport: browser.viewports.xl });
+      // Test on xl viewport
+      page = await browser.setupPage({ viewport: browser.viewports.xl });
 
-    await page.goto(url);
-    await page.waitForSelector('#with-responsive-padding');
+      await page.goto(url);
+      await page.waitForSelector('#with-responsive-padding');
 
-    const responsivePaddingOnXlDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
+      const responsivePaddingOnXlDevice = await page.$eval('#with-responsive-padding', (element: Element): string => window.getComputedStyle(element).padding);
 
-    assert.that(responsivePaddingOnXlDevice).is.equalTo('40px');
+      assert.that(responsivePaddingOnXlDevice).is.equalTo('40px');
+    });
   });
 });
