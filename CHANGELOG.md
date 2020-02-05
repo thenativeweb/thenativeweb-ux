@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.0.0...3.1.0) (2020-02-05)
+
+
+### Features
+
+* Add Space component. ([#301](https://github.com/thenativeweb/thenativeweb-ux/issues/301)) ([478dd98](https://github.com/thenativeweb/thenativeweb-ux/commit/478dd988bab7438aeab89630fc4e0bef3bee7503))
+
 # [3.0.0](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.5...3.0.0) (2020-01-30)
 
 
