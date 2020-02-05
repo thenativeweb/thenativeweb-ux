@@ -5,7 +5,7 @@ import { Styles } from 'jss';
 import { Theme } from '../themes/Theme';
 
 type CssAttributesFunction = ({ spaceFactor, theme }: { spaceFactor: ResponsiveSpaceFactor; theme: Theme }) => Styles;
-type ClassDefinitions = Partial<{ [key: string]: {} | CssAttributesFunction }>;
+export type ClassDefinitions = Partial<{ [key: string]: {} | CssAttributesFunction }>;
 
 const createSpaceDependentClasses = function ({
   theme,
@@ -41,7 +41,7 @@ const createDefaultSpaceDependantClasses = function ({
   theme: Theme;
   definitions: ClassDefinitions;
 }): { [key: string]: string | undefined } {
-  const emptySpaceProperties: Partial<{ [key: string]: {} | CssAttributesFunction }> = {};
+  const emptySpaceProperties: ClassDefinitions = {};
 
   for (const propertyName of Object.keys(definitions)) {
     emptySpaceProperties[propertyName] = {};
@@ -65,8 +65,8 @@ const getSpaceDependentClassNamesFromProps = function ({
   definitions,
   classes
 }: {
-  props: { [key: string]: ResponsiveSpaceProp };
-  definitions: { [key: string]: {} | CssAttributesFunction };
+  props: Partial<{ [ key: string ]: ResponsiveSpaceProp }>;
+  definitions: ClassDefinitions;
   classes: any;
 }): string[] {
   const responsiveClassNames = [];
@@ -77,6 +77,10 @@ const getSpaceDependentClassNamesFromProps = function ({
     if (typeof propertyValue === 'string' || typeof propertyValue === 'number') {
       responsiveClassNames.push(classes[`-${propertyName}-${propertyValue}`]);
     } else {
+      if (!propertyValue) {
+        continue;
+      }
+
       for (const [ sizeKey, sizeValue ] of Object.entries(propertyValue)) {
         responsiveClassNames.push(classes[`${sizeKey}-${propertyName}-${sizeValue}`]);
       }

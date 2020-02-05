@@ -51,6 +51,7 @@ import { Sidebar } from './components/layout/Sidebar';
 import { SidebarBrand } from './components/layout/SidebarBrand';
 import { SidebarFooter } from './components/layout/SidebarFooter';
 import { SidebarItem } from './components/layout/SidebarItem';
+import { Space } from './components/layout/Space';
 import { StyleCollector } from './components/roots/StyleCollector';
 import { Tags } from './components/feedback/Tags';
 import { Text } from './components/typography/Text';
@@ -128,6 +129,7 @@ export {
   SidebarFooter,
   SidebarItem,
   slugify,
+  Space,
   StyleCollector,
   ServerSideStyles,
   StaticGlobalStyles,
