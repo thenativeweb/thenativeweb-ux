@@ -7,8 +7,7 @@ const Documentation = (): ReactElement => (
     <Headline>Space</Headline>
 
     <Paragraph>
-      A <code>Space</code> component can be used to add padding around
-      other components.
+      A <code>Space</code> component can be used to add padding around components.
     </Paragraph>
 
     <ComponentPreview previewPadding={ false }>
@@ -28,10 +27,11 @@ const Documentation = (): ReactElement => (
       </Fragment>
     </ComponentPreview>
 
-    <Headline level='2'>Setting specific spacings</Headline>
+    <Headline level='2'>Specific paddings</Headline>
 
     <Paragraph>
-      Instead of the default, you can also set specific paddings.
+      Instead of the default padding, you can also set specific paddings,
+      e.g. <code>paddingTop</code>.
     </Paragraph>
 
     <ComponentPreview previewPadding={ false }>
@@ -51,21 +51,21 @@ const Documentation = (): ReactElement => (
       </Fragment>
     </ComponentPreview>
 
-    <Headline level='2'>Using horizontal and vertical shortuts</Headline>
+    <Headline level='2'>Horizontal and vertical shortcuts</Headline>
 
     <Paragraph>
-      As you often need to set both horizontal or vertical paddings
+      As you often need to set both horizontal or both vertical paddings,
       the <code>Space</code> components provides two shortcut
-      properties <code>paddingX</code> and <code>paddingY</code>.
+      properties: <code>paddingX</code> and <code>paddingY</code>.
     </Paragraph>
 
     <ComponentPreview previewPadding={ false }>
       <Fragment>
-        <Space paddingY='1'>
-          <div style={{ background: 'deeppink' }}>paddingY: 3</div>
-        </Space>
-        <Space paddingX='1'>
+        <Space paddingX='3'>
           <div style={{ background: 'deeppink' }}>paddingX: 3</div>
+        </Space>
+        <Space paddingY='3'>
+          <div style={{ background: 'deeppink' }}>paddingY: 3</div>
         </Space>
       </Fragment>
     </ComponentPreview>
@@ -73,12 +73,15 @@ const Documentation = (): ReactElement => (
     <Headline level='2'>Using responsive values</Headline>
 
     <Paragraph>
-      All properties can be set depending on the size of the viewport:
+      All padding properties can also be set depending on the size of the viewport:
     </Paragraph>
 
     <ComponentPreview previewPadding={ false }>
       <Space padding={{ xs: 1, sm: 2, md: 4, lg: 6, xl: 8 }}>
-        <div style={{ background: 'deeppink' }}>{ `padding: { xs: 1, sm: 2, md: 4, lg: 6, xl: 8 }` }</div>
+        <div style={{ background: 'deeppink' }}>
+          The padding of this div will change with the size of the viewport. <br />
+          { `{ xs: 1, sm: 2, md: 4, lg: 6, xl: 8 }` }
+        </div>
       </Space>
     </ComponentPreview>
   </React.Fragment>
