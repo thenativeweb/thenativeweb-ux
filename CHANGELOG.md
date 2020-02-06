@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.0...3.2.1) (2020-02-06)
+
+
+### Bug Fixes
+
+* Fix broken link in README.md file. ([#303](https://github.com/thenativeweb/thenativeweb-ux/issues/303)) ([4e46471](https://github.com/thenativeweb/thenativeweb-ux/commit/4e46471dfba275dbf5778e55d6de439d75fbbac3))
+
 # [3.2.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.1.0...3.2.0) (2020-02-05)
 
 
