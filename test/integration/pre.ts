@@ -19,7 +19,8 @@ import shell from 'shelljs';
   if (childProcess.code !== 0) {
     buntstift.error('Failed to create build.');
 
-    buntstift.exit(1);
+    // eslint-disable-next-line unicorn/no-process-exit
+    process.exit(1);
   }
 
   // Build a static export of the Next.js example that we can then serve using
@@ -31,14 +32,17 @@ import shell from 'shelljs';
   if (childProcess.code !== 0) {
     buntstift.error('Failed to create static export from Next.js sample application.');
 
-    buntstift.exit(1);
+    // eslint-disable-next-line unicorn/no-process-exit
+    process.exit(1);
   }
 
   try {
     await nginx.start();
   } catch {
     buntstift.error('Failed to serve sample application for integration tests.');
-    buntstift.exit(1);
+
+    // eslint-disable-next-line unicorn/no-process-exit
+    process.exit(1);
   }
 })();
 
