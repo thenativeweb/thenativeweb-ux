@@ -23,13 +23,13 @@ const spaceDependentProperties: ClassDefinitions = {
     spaceFactor,
     theme
   }: { spaceFactor: ResponsiveSpaceFactor; theme: Theme }): Styles => ({
-    gridColumnGap: String(theme.space(Number(spaceFactor)))
+    gridColumnGap: `${theme.space(Number(spaceFactor))}px`
   }),
   rowGap: ({
     spaceFactor,
     theme
   }: { spaceFactor: ResponsiveSpaceFactor; theme: Theme }): Styles => ({
-    gridRowGap: String(theme.space(Number(spaceFactor)))
+    gridRowGap: `${theme.space(Number(spaceFactor))}px`
   })
 };
 

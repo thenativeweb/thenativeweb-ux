@@ -4,27 +4,27 @@ import { ClassDefinitions, createDefaultSpaceDependantClasses, createSpaceDepend
 
 const spaceDependentProperties: ClassDefinitions = {
   padding: ({ spaceFactor, theme }): Styles => ({
-    padding: String(theme.space(Number(spaceFactor)))
+    padding: `${theme.space(Number(spaceFactor))}px`
   }),
   paddingLeft: ({ spaceFactor, theme }): Styles => ({
-    paddingLeft: String(theme.space(Number(spaceFactor)))
+    paddingLeft: `${theme.space(Number(spaceFactor))}px`
   }),
   paddingRight: ({ spaceFactor, theme }): Styles => ({
-    paddingRight: String(theme.space(Number(spaceFactor)))
+    paddingRight: `${theme.space(Number(spaceFactor))}px`
   }),
   paddingBottom: ({ spaceFactor, theme }): Styles => ({
-    paddingBottom: String(theme.space(Number(spaceFactor)))
+    paddingBottom: `${theme.space(Number(spaceFactor))}px`
   }),
   paddingTop: ({ spaceFactor, theme }): Styles => ({
-    paddingTop: String(theme.space(Number(spaceFactor)))
+    paddingTop: `${theme.space(Number(spaceFactor))}px`
   }),
   paddingX: ({ spaceFactor, theme }): Styles => ({
-    paddingLeft: String(theme.space(Number(spaceFactor))),
-    paddingRight: String(theme.space(Number(spaceFactor)))
+    paddingLeft: `${theme.space(Number(spaceFactor))}px`,
+    paddingRight: `${theme.space(Number(spaceFactor))}px`
   }),
   paddingY: ({ spaceFactor, theme }): Styles => ({
-    paddingTop: String(theme.space(Number(spaceFactor))),
-    paddingBottom: String(theme.space(Number(spaceFactor)))
+    paddingTop: `${theme.space(Number(spaceFactor))}px`,
+    paddingBottom: `${theme.space(Number(spaceFactor))}px`
   })
 };
 
