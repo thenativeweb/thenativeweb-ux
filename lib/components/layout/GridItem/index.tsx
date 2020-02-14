@@ -1,4 +1,6 @@
+import { getSpaceDependentClassNamesFromProps } from '../../../styles/utils';
 import { ResponsiveSpaceProp } from '../../../types/ResponsiveSpaceProp';
+import { spaceDependentProperties } from './spaceDependentProperties';
 import { styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
@@ -19,40 +21,19 @@ const GridItem: FunctionComponent<GridItemProps> = ({
   component = 'div',
   className,
   children,
-  columnStart,
-  columnSpan,
-  columnEnd,
   id,
-  style
+  style,
+  ...props
 }): ReactElement => {
   const classes = useStyles();
-  const columnClasses = [];
 
-  if (typeof columnStart === 'object') {
-    for (const sizeId of Object.keys(columnStart)) {
-      columnClasses.push(classes[`${sizeId}ColumnStart-${columnStart[sizeId]}`]);
-    }
-  } else {
-    columnClasses.push(classes[`ColumnStart-${columnStart}`]);
-  }
+  const spaceDependentClassNames = getSpaceDependentClassNamesFromProps({
+    props: props as Partial<{ [key: string]: ResponsiveSpaceProp }>,
+    classes,
+    definitions: spaceDependentProperties
+  });
 
-  if (typeof columnEnd === 'object') {
-    for (const sizeId of Object.keys(columnEnd)) {
-      columnClasses.push(classes[`${sizeId}ColumnEnd-${columnEnd[sizeId]}`]);
-    }
-  } else {
-    columnClasses.push(classes[`ColumnEnd-${columnEnd}`]);
-  }
-
-  if (typeof columnSpan === 'object') {
-    for (const sizeId of Object.keys(columnSpan)) {
-      columnClasses.push(classes[`${sizeId}ColumnSpan-${columnSpan[sizeId]}`]);
-    }
-  } else {
-    columnClasses.push(classes[`ColumnSpan-${columnSpan}`]);
-  }
-
-  const componentClasses = classNames(classes.GridItem, columnClasses, className);
+  const componentClasses = classNames(classes.GridItem, spaceDependentClassNames, className);
 
   return React.createElement(component, { className: componentClasses, style, id }, children);
 };

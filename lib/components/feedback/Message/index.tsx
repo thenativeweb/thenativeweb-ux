@@ -31,7 +31,7 @@ const Message: FunctionComponent<MessageProps> = ({
     [classes.WithIcon]: iconName
   });
 
-  if (isVisible === false) {
+  if (!isVisible) {
     return null;
   }
 

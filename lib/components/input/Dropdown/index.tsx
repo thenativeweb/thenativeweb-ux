@@ -46,7 +46,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
   const dropdownClassNames = classNames(classes.Dropdown, {
     [classes.SizeSm]: size === 'sm',
     [classes.SizeMd]: size === 'md',
-    [classes.IsSubtle]: isSubtle === true,
+    [classes.IsSubtle]: isSubtle,
     [classes.IsFocused]: isFocused
   });
 

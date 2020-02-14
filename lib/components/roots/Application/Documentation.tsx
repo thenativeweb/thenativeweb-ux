@@ -15,7 +15,7 @@ const Documentation = (): ReactElement => (
       parent&apos;s <code>position</code> property to <code>relative</code>.
       Also, this means that any scrolling is disabled, since you don&apos;t
       typically want to have this at the root-level. If you need any parts
-       of the UI to scroll, use a <code>Container</code> component.
+      of the UI to scroll, use a <code>Container</code> component.
     </Paragraph>
     <ComponentPreview>
       <div style={{ position: 'relative', width: '100%', height: 300, border: '1px solid black' }}>

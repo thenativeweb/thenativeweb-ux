@@ -1,8 +1,9 @@
+import { ClassDefinitions } from '../../../styles/utils';
 import { ResponsiveSpaceFactor } from '../../../types/ResponsiveSpaceFactor';
 import { Styles } from 'jss';
 import { Theme } from '../../..';
 
-const spaceDependentProperties = {
+const spaceDependentProperties: ClassDefinitions = {
   columns ({ spaceFactor }: { spaceFactor: ResponsiveSpaceFactor }): Styles {
     if (spaceFactor === 0) {
       return {

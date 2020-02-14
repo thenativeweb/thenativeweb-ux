@@ -1,3 +1,24 @@
+## [3.2.1](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.0...3.2.1) (2020-02-06)
+
+
+### Bug Fixes
+
+* Fix broken link in README.md file. ([#303](https://github.com/thenativeweb/thenativeweb-ux/issues/303)) ([4e46471](https://github.com/thenativeweb/thenativeweb-ux/commit/4e46471dfba275dbf5778e55d6de439d75fbbac3))
+
+# [3.2.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.1.0...3.2.0) (2020-02-05)
+
+
+### Features
+
+* Minify CSS. ([b5584cd](https://github.com/thenativeweb/thenativeweb-ux/commit/b5584cd266b172b169909414717d95f2ee7c1d24))
+
+# [3.1.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.0.0...3.1.0) (2020-02-05)
+
+
+### Features
+
+* Add Space component. ([#301](https://github.com/thenativeweb/thenativeweb-ux/issues/301)) ([478dd98](https://github.com/thenativeweb/thenativeweb-ux/commit/478dd988bab7438aeab89630fc4e0bef3bee7503))
+
 # [3.0.0](https://github.com/thenativeweb/thenativeweb-ux/compare/2.0.5...3.0.0) (2020-01-30)
 
 

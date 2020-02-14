@@ -7,6 +7,7 @@ const navigation = [
       { title: 'ThemeProvider' }
     ]},
     { title: 'Layout', children: [
+      { title: 'Space' },
       { title: 'Container' },
       { title: 'Footer' },
       { title: 'Grid' },

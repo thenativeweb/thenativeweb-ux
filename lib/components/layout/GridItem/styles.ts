@@ -1,90 +1,30 @@
+import { spaceDependentProperties } from './spaceDependentProperties';
 import { Styles } from 'jss';
 import { Theme } from '../../..';
-
-const columnCount = 13,
-      columns = [ ...new Array(columnCount) ].map((item, index): number => index + 1);
-
-const columnProperties = {
-  ColumnStart (column: number): Styles {
-    const styles: Styles = {
-      gridColumnStart: String(column)
-    };
-
-    return styles;
-  },
-  ColumnEnd (column: number): Styles {
-    const styles: Styles = {
-      gridColumnEnd: String(column + 1)
-    };
-
-    return styles;
-  },
-  ColumnSpan (column: number): Styles {
-    const styles: Styles = {
-      gridColumnStart: `span ${column}`
-    };
-
-    return styles;
-  }
-};
-
-const createColumnClasses = function ({ deviceSize }: { deviceSize: string }): Styles {
-  const classes: Styles = {};
-
-  for (const column of columns) {
-    /* eslint-disable new-cap */
-    classes[`${deviceSize}ColumnStart-${column}`] = columnProperties.ColumnStart(column);
-    classes[`${deviceSize}ColumnEnd-${column}`] = columnProperties.ColumnEnd(column);
-    classes[`${deviceSize}ColumnSpan-${column}`] = columnProperties.ColumnSpan(column);
-    /* eslint-enable new-cap */
-  }
-
-  return classes;
-};
+import { createDefaultSpaceDependantClasses, createSpaceDependentClasses } from '../../../styles/utils';
 
 const styles = (theme: Theme): Styles => ({
   GridItem: {
     width: '100%'
   },
 
-  ...createColumnClasses({
-    deviceSize: ''
-  }),
-
-  ...createColumnClasses({
-    deviceSize: 'xs'
-  }),
-  ...createColumnClasses({
-    deviceSize: 'sm'
-  }),
-  ...createColumnClasses({
-    deviceSize: 'md'
-  }),
-  ...createColumnClasses({
-    deviceSize: 'lg'
-  }),
-  ...createColumnClasses({
-    deviceSize: 'xl'
-  }),
+  ...createSpaceDependentClasses({ theme, definitions: spaceDependentProperties }),
+  ...createDefaultSpaceDependantClasses({ theme, definitions: spaceDependentProperties }),
 
   [theme.breakpoints.up('xs')]: {
-    ...createColumnClasses({ deviceSize: 'xs' })
+    ...createSpaceDependentClasses({ deviceSize: 'xs', theme, definitions: spaceDependentProperties })
   },
-
   [theme.breakpoints.up('sm')]: {
-    ...createColumnClasses({ deviceSize: 'sm' })
+    ...createSpaceDependentClasses({ deviceSize: 'sm', theme, definitions: spaceDependentProperties })
   },
-
   [theme.breakpoints.up('md')]: {
-    ...createColumnClasses({ deviceSize: 'md' })
+    ...createSpaceDependentClasses({ deviceSize: 'md', theme, definitions: spaceDependentProperties })
   },
-
   [theme.breakpoints.up('lg')]: {
-    ...createColumnClasses({ deviceSize: 'lg' })
+    ...createSpaceDependentClasses({ deviceSize: 'lg', theme, definitions: spaceDependentProperties })
   },
-
   [theme.breakpoints.up('xl')]: {
-    ...createColumnClasses({ deviceSize: 'xl' })
+    ...createSpaceDependentClasses({ deviceSize: 'xl', theme, definitions: spaceDependentProperties })
   }
 });
 
