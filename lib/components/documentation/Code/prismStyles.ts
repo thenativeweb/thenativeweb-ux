@@ -2,7 +2,7 @@
 const pink = '#ED5EC1';
 
 // Color('#66aa22').lighten(0.5).desaturate(0.2);
-const green = '##99CF63';
+const green = '#99CF63';
 
 // Color('#00aaff').lighten(0.5).desaturate(0.2);
 const blue = '#8CD0F2';
@@ -41,11 +41,11 @@ const prismStyles = {
   'class-name': {
     color: pink
   },
-  'maybe-classname': {
+  'maybe-class-name': {
     color: pink
   },
   boolean: {
-    color: green
+    color: blue
   },
   constant: {
     color: green
@@ -65,8 +65,11 @@ const prismStyles = {
   attrname: {
     color: green
   },
+  'attr-value': {
+    color: blue
+  },
   string: {
-    color: green
+    color: blue
   },
   char: {
     color: green
@@ -100,7 +103,7 @@ const prismStyles = {
     color: blue
   },
   function: {
-    color: blue
+    color: green
   },
   regex: {
     color: green
