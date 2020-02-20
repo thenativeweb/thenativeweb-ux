@@ -20,6 +20,7 @@ const styles = (theme: Theme): Styles<LogoTheNativeWebClassNames> => ({
   Background: {
     fill: theme.color.brand.highlight
   },
+
   SizeSm: {
     width: '36px',
     height: '36px'
