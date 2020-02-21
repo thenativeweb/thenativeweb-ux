@@ -2,6 +2,7 @@ import { assert } from 'assertthat';
 import { browser } from '../../shared/browser';
 import { Page } from 'puppeteer';
 import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
+import { rejects } from 'assert';
 
 suite('dialogs', function (): void {
   this.timeout(integrationTestTimeOut);
@@ -60,11 +61,17 @@ suite('dialogs', function (): void {
 
       const cancelAction = await page.$('#dialogs-confirm-action-confirm');
 
-      await new Promise(async (resolve): Promise<void> => {
+      await new Promise(async (resolve, reject): Promise<void> => {
         page.once('console', (message): void => {
-          assert.that(message.text()).is.equalTo('confirm::action::confirm::clicked');
+          try {
+            if (message.text() !== 'confirm::action::confirm::clicked') {
+              return;
+            }
 
-          resolve();
+            resolve();
+          } catch (ex) {
+            reject(ex);
+          }
         });
 
         await cancelAction!.click();
