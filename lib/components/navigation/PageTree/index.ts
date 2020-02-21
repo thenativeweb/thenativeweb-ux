@@ -1,4 +1,5 @@
 import { PageTreeItem } from './PageTreeItem';
+import { PageTreeItemWithMetadata } from './PageTreeItemWithMetadata';
 import { slugify } from '../../../services';
 
 class PageTree {
@@ -6,9 +7,9 @@ class PageTree {
 
   private readonly basePath: string;
 
-  public readonly items: PageTreeItem [];
+  public readonly items: PageTreeItemWithMetadata [];
 
-  public readonly itemsFlat: PageTreeItem [];
+  public readonly itemsFlat: PageTreeItemWithMetadata [];
 
   public constructor ({ items, basePath = '' }: { items: PageTreeItem []; basePath?: string }) {
     this.originalItem = items;
@@ -18,8 +19,8 @@ class PageTree {
     this.itemsFlat = this.buildFlatItems(this.items);
   }
 
-  private buildMetaData (items: PageTreeItem [], path: string, breadcrumbs: string []): PageTreeItem [] {
-    const itemsWithMetadata = items.map((item): PageTreeItem => {
+  private buildMetaData (items: PageTreeItem [], path: string, breadcrumbs: string []): PageTreeItemWithMetadata [] {
+    const itemsWithMetadata = items.map((item): PageTreeItemWithMetadata => {
       const slug = slugify(item.title);
       const breadcrumbsForItem = [ ...breadcrumbs, item.title ];
       const breadcrumbsAsString = breadcrumbsForItem.join(' ');
@@ -36,7 +37,7 @@ class PageTree {
       }
 
       return {
-        ...item,
+        title: item.title,
         slug,
         path: `${path}/${slug}`,
         breadcrumbs: breadcrumbsForItem,
@@ -48,8 +49,8 @@ class PageTree {
     return itemsWithMetadata;
   }
 
-  private buildFlatItems (itemsAsTree: PageTreeItem []): PageTreeItem [] {
-    const flattenedItems: PageTreeItem[] = [];
+  private buildFlatItems (itemsAsTree: PageTreeItemWithMetadata []): PageTreeItemWithMetadata [] {
+    const flattenedItems: PageTreeItemWithMetadata[] = [];
 
     for (const item of itemsAsTree) {
       if (item.children) {
@@ -62,7 +63,7 @@ class PageTree {
     return flattenedItems;
   }
 
-  public getPageItemByPath (path: string): PageTreeItem | undefined {
+  public getPageItemByPath (path: string): PageTreeItemWithMetadata | undefined {
     const pathWithoutTrailingSlash = path.endsWith('/') ? path.slice(0, Math.max(0, path.length - 1)) : path;
     const foundItem = this.itemsFlat.find((item): boolean => item.path === pathWithoutTrailingSlash);
 

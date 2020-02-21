@@ -23,7 +23,7 @@ const styles = (theme: Theme): Styles => ({
 
   Title: {
     display: 'flex',
-    padding: [ theme.space(1), theme.space(2), theme.space(1), theme.space(2) ],
+    padding: `${theme.space(1)}px ${theme.space(2)}px`,
     margin: 0,
     lineHeight: 1,
     cursor: 'pointer',

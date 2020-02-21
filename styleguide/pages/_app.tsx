@@ -1,6 +1,5 @@
-import { Styleguide } from '../layouts/Styleguide';
+import { NextApp } from '../../lib';
 import { theme } from '../theme';
-import { NextApp, Website } from '../../lib';
 import React, { ReactElement } from 'react';
 
 class CustomApp extends NextApp {
@@ -8,14 +7,7 @@ class CustomApp extends NextApp {
     const { Component, pageProps } = this.props;
 
     return NextApp.renderWithTheme((
-      <Website
-        useNotifications={ true }
-        useDialogs={ true }
-      >
-        <Styleguide>
-          <Component { ...pageProps } />
-        </Styleguide>
-      </Website>
+      <Component { ...pageProps } />
     ), theme);
   }
 }

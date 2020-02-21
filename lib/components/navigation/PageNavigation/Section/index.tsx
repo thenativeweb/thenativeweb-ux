@@ -2,7 +2,7 @@ import { Chapter } from '../Chapter';
 import { createUseStyles } from '../../../../styles';
 import { isDomNode } from '../../../../utils/isDomNode';
 import { Page } from '../Page';
-import { classNames, Icon, Link, slugify, Theme } from '../../../..';
+import { classNames, Icon, Link, Theme } from '../../../..';
 import React, { FunctionComponent, MouseEvent, ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
 import { SectionClassNames, styles } from './styles';
 
@@ -10,17 +10,18 @@ const useStyles = createUseStyles<Theme, SectionClassNames>(styles);
 
 interface SectionProps {
   activePath: string;
+  path: string;
   isActive?: boolean;
   title: string;
 }
 
 const Section: FunctionComponent<SectionProps> = ({
+  activePath,
   children,
-  title,
-  activePath
+  path,
+  title
 }): ReactElement => {
   const classes = useStyles();
-  const path = `/${slugify(title)}`;
   const isActive = activePath.startsWith(path);
 
   const [ isExpanded, setIsExpanded ] = useState(isActive);
