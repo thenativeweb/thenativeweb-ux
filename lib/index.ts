@@ -47,6 +47,7 @@ import { Notifications } from './components/feedback/Notifications';
 import { PageNavigation } from './components/navigation/PageNavigation';
 import { PageTree } from './components/navigation/PageTree';
 import { PageTreeItem } from './components/navigation/PageTree/PageTreeItem';
+import { PageTreeItemWithMetadata } from './components/navigation/PageTree/PageTreeItemWithMetadata';
 import { Paragraph } from './components/typography/Paragraph';
 import { Pattern } from './components/branding/Pattern';
 import { PoweredBy } from './components/branding/PoweredBy';
@@ -127,6 +128,7 @@ export {
   PageNavigation,
   PageTree,
   PageTreeItem,
+  PageTreeItemWithMetadata,
   Paragraph,
   Pattern,
   PoweredBy,

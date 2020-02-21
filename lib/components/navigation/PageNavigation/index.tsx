@@ -5,7 +5,7 @@ import { PageSearch } from '../PageTree/PageSearch';
 import { SearchResults } from './SearchResults';
 import { Section } from './Section';
 import {
-  HorizontalBar, PageTree, PageTreeItem, TextBox, Theme
+  HorizontalBar, PageTree, PageTreeItemWithMetadata, TextBox, Theme
 } from '../../..';
 import { PageNavigationClassNames, styles } from './styles';
 import React, { ChangeEvent, FunctionComponent, ReactElement, ReactNode, useEffect, useState } from 'react';
@@ -16,7 +16,7 @@ const renderSecondLevel = ({
   item,
   activePath
 }: {
-  item: PageTreeItem;
+  item: PageTreeItemWithMetadata;
   activePath: string;
 }): ReactElement => {
   if (item.children) {
@@ -27,7 +27,7 @@ const renderSecondLevel = ({
         activePath={ activePath }
       >
         {
-          item.children.map((page: PageTreeItem): ReactElement => (
+          item.children.map((page: PageTreeItemWithMetadata): ReactElement => (
             <Page
               title={ page.title }
               key={ page.title }
@@ -52,7 +52,7 @@ const renderSection = ({
   section,
   activePath
 }: {
-  section: PageTreeItem;
+  section: PageTreeItemWithMetadata;
   activePath: string;
 }): ReactElement => (
   <Section
@@ -90,7 +90,7 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
   const pageSearch = new PageSearch(pageTree);
 
   const [ query, setQuery ] = useState('');
-  const [ results, setResults ] = useState<PageTreeItem []>([]);
+  const [ results, setResults ] = useState<PageTreeItemWithMetadata []>([]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const newQuery = event.target.value;

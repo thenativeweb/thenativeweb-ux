@@ -1,5 +1,5 @@
 import { PageTree } from '.';
-import { PageTreeItem } from '../../..';
+import { PageTreeItemWithMetadata } from '../../..';
 
 class PageSearch {
   private readonly pageTree: PageTree;
@@ -8,7 +8,7 @@ class PageSearch {
     this.pageTree = pageTree;
   }
 
-  public query (query: string): PageTreeItem [] {
+  public query (query: string): PageTreeItemWithMetadata [] {
     const queryWords = query.
       split(' ').
       filter((word): boolean => word !== '');
@@ -19,7 +19,7 @@ class PageSearch {
       return pattern;
     });
 
-    const results = this.pageTree.itemsFlat.filter((item: PageTreeItem): boolean => {
+    const results = this.pageTree.itemsFlat.filter((item: PageTreeItemWithMetadata): boolean => {
       let occurences = 0;
 
       for (const pattern of patterns) {
