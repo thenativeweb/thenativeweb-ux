@@ -30,7 +30,7 @@
     "lodash": "4.17.15",
     "pretty-format": "25.1.0",
     "react-highlight-words": "0.16.0",
-    "react-jss": "10.0.2",
+    "react-jss": "10.0.4",
     "react-syntax-highlighter": "12.2.1",
     "react-transition-group": "4.3.0",
     "uuidv4": "6.0.2"
