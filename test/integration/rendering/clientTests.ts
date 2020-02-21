@@ -23,11 +23,17 @@ suite('Client', function (): void {
   test('takes over once server side rendering is complete.', async (): Promise<void> => {
     const button = await page.$('#button');
 
-    await new Promise(async (resolve): Promise<void> => {
-      page.once('console', (msg): void => {
-        assert.that(msg.text()).is.equalTo('button::clicked');
+    await new Promise(async (resolve, reject): Promise<void> => {
+      page.once('console', (message): void => {
+        try {
+          if (message.text() !== 'button::clicked') {
+            return;
+          }
 
-        resolve();
+          resolve();
+        } catch (ex) {
+          reject(ex);
+        }
       });
 
       await button!.click();
