@@ -12,13 +12,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Cache node_modules
+      id: cache-modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('package.json') }}
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
     - name: Install dependencies
+      if: steps.cache-modules.outputs.cache-hit != 'true'
       run: |
-        npm install
+        npm ci
     - name: Run roboter
       run: |
         npx roboter
