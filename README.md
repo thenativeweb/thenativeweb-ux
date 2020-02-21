@@ -69,3 +69,13 @@ To build this module use [roboter](https://www.npmjs.com/package/roboter).
 ```shell
 $ npx roboter
 ```
+
+## Analysing the bundle size
+
+When you add new dependencies, make sure to analyse the effects on the bundle size. To generate a bundle analysis for both the client and the server run:
+
+```shell
+$ npx roboter analyse-bundle
+```
+
+This task will build the styleguide with all of its pages, run an analysis of the generated bundles, and open the results in the browser.

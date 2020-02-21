@@ -3,6 +3,8 @@ import { Theme } from '../../..';
 
 export type LogoFullClassNames =
 'LogoFull' |
+'Highlight' |
+'White' |
 'SizeSm' |
 'SizeMd' |
 'SizeLg';
@@ -18,14 +20,22 @@ const styles = (theme: Theme): Styles<LogoFullClassNames> => ({
     background: theme.color.brand.grayDark
   },
 
+  Highlight: {
+    fill: theme.color.brand.highlight
+  },
+
+  White: {
+    fill: theme.color.brand.white
+  },
+
   SizeSm: {
     width: '132px',
     height: '22px'
   },
 
   SizeMd: {
-    width: '264px',
-    height: '44px'
+    width: '224px',
+    height: 'auto'
   },
 
   SizeLg: {

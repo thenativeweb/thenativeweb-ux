@@ -1,4 +1,4 @@
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 import { ResponsiveSpaceFactor } from '../types/ResponsiveSpaceFactor';
 import { ResponsiveSpaceProp } from '../types/ResponsiveSpaceProp';
 import { Styles } from 'jss';
