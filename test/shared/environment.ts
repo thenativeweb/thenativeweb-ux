@@ -2,7 +2,7 @@ import { processenv } from 'processenv';
 
 const integrationTestPort = 3000;
 const debugModeEnabled = processenv('DEBUG', false);
-const defaultIntegrationTestTimeout = 5 * 1000;
+const defaultIntegrationTestTimeout = 10_000;
 
 const integrationTestTimeOut = debugModeEnabled ? defaultIntegrationTestTimeout * 2 : defaultIntegrationTestTimeout;
 
