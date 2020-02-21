@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.1...3.2.2) (2020-02-21)
+
+
+### Bug Fixes
+
+* Fix logo. ([#326](https://github.com/thenativeweb/thenativeweb-ux/issues/326)) ([98b044f](https://github.com/thenativeweb/thenativeweb-ux/commit/98b044f834a0f9a2804038c7352161be035fdbcd))
+
 ## [3.2.1](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.0...3.2.1) (2020-02-06)
 
 
