@@ -12,7 +12,12 @@
     "target": "ES2019"
   },
   "include": [
-    "./**/*.ts",
-    "./**/*.tsx"
+    "./lib/**/*.ts",
+    "./test/**/*.ts"
+  ],
+  "exclude": [
+    "./build/**/*.ts",
+    "./styleguide/**/*.ts",
+    "./styleguide/**/*.tsx"
   ]
 }
