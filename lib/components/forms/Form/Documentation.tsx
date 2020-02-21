@@ -9,8 +9,8 @@ const handleSubmit = (event: FormEvent): void => {
 };
 
 const Documentation = (): ReactElement => {
-  const [ firstValue, setFirstValue ] = useState();
-  const [ secondValue, setSecondValue ] = useState();
+  const [ firstValue, setFirstValue ] = useState<string>();
+  const [ secondValue, setSecondValue ] = useState<boolean>();
 
   return (
     <Fragment>
