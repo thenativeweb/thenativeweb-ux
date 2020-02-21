@@ -4,12 +4,12 @@
     "declaration": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "lib": [ "dom", "ES2020" ],
+    "lib": [ "dom", "ES2019" ],
     "module": "CommonJS",
     "outDir": "build",
     "resolveJsonModule": true,
     "strict": true,
-    "target": "ES2020"
+    "target": "ES2019"
   },
   "include": [
     "./**/*.ts",

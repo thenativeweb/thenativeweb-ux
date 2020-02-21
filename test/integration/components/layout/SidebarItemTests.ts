@@ -1,4 +1,3 @@
-import { assert } from 'assertthat';
 import { browser } from '../../../shared/browser';
 import { Page } from 'puppeteer';
 import { getIntegrationTestUrl, integrationTestTimeOut } from '../../../shared/environment';
@@ -32,11 +31,17 @@ suite('SidebarItem', function (): void {
 
     const childItem = await page.$('#sidebar-item-logout');
 
-    await new Promise(async (resolve): Promise<void> => {
+    await new Promise(async (resolve, reject): Promise<void> => {
       page.once('console', (message): void => {
-        assert.that(message.text()).is.equalTo('clicked::clicked::logout');
+        try {
+          if (message.text() !== 'clicked::clicked::logout') {
+            return;
+          }
 
-        resolve();
+          resolve();
+        } catch (ex) {
+          reject(ex);
+        }
       });
 
       await childItem!.click();
