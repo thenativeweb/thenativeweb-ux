@@ -7,6 +7,7 @@ import { Button } from './components/input/Button';
 import { ButtonHint } from './components/input/ButtonHint';
 import { CheckBox } from './components/input/CheckBox';
 import { Code } from './components/documentation/Code';
+import color from 'color';
 import { Container } from './components/layout/Container';
 import { ControlGroup } from './components/forms/ControlGroup';
 import { ControlGroupDivider } from './components/forms/ControlGroupDivider';
@@ -76,6 +77,7 @@ export {
   Button,
   ButtonHint,
   classNames,
+  color,
   createUseStyles,
   CheckBox,
   Code,
