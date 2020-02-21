@@ -2,7 +2,6 @@ import { assert } from 'assertthat';
 import { browser } from '../../shared/browser';
 import { Page } from 'puppeteer';
 import { getIntegrationTestUrl, integrationTestTimeOut } from '../../shared/environment';
-import { rejects } from 'assert';
 
 suite('dialogs', function (): void {
   this.timeout(integrationTestTimeOut);
