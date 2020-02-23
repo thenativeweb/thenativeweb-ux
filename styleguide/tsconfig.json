@@ -14,10 +14,10 @@
     "resolveJsonModule": true,
     "strict": true,
     "target": "es2019",
-    "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "allowJs": true
   },
   "exclude": [
     "out",

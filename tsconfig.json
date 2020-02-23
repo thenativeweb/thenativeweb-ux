@@ -13,11 +13,14 @@
   },
   "include": [
     "./lib/**/*.ts",
-    "./test/**/*.ts"
+    "./lib/**/*.tsx",
+    "./test/**/*.ts",
+    "./test/**/*.tsx"
   ],
   "exclude": [
-    "./build/**/*.ts",
-    "./styleguide/**/*.ts",
-    "./styleguide/**/*.tsx"
+    "./build",
+    "./styleguide/out",
+    "./styleguide/.next",
+    "./styleguide"
   ]
 }
