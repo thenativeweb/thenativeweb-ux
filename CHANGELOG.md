@@ -1,3 +1,10 @@
+## [3.2.3](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.2...3.2.3) (2020-02-24)
+
+
+### Bug Fixes
+
+* bump uuidv4 from 6.0.2 to 6.0.3 ([#331](https://github.com/thenativeweb/thenativeweb-ux/issues/331)) ([f2eb181](https://github.com/thenativeweb/thenativeweb-ux/commit/f2eb18189d5909c0381b7c1947befd9462f9a9ed))
+
 ## [3.2.2](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.1...3.2.2) (2020-02-21)
 
 
