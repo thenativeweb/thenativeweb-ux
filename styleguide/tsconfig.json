@@ -6,20 +6,22 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "ES2020"
+      "es2019"
     ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
     "resolveJsonModule": true,
     "strict": true,
-    "target": "ES2020",
-    "allowJs": true,
+    "target": "es2019",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "allowJs": true
   },
   "exclude": [
+    "out",
+    ".next",
     "node_modules"
   ],
   "include": [

@@ -1,4 +1,3 @@
-import { Documentation } from '../../lib/Documentation';
-import React, { ReactElement } from 'react';
+import { createRedirect } from '../../lib';
 
-export default (): ReactElement => <Documentation />;
+export default createRedirect('/en-US');

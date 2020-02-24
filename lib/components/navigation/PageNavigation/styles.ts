@@ -19,14 +19,15 @@ const styles = (theme: Theme): Styles => ({
   SearchBar: {},
 
   SearchField: {
-    padding: [ theme.space(0.5), theme.space(1) ],
+    padding: `${theme.space(0.5)}px ${theme.space(1)}px`,
     flexGrow: 1
   },
 
   Content: {
     flexGrow: 1,
     overflow: 'auto',
-    '-webkit-overflow-scrolling': 'touch'
+    '-webkit-overflow-scrolling': 'touch',
+    paddingTop: theme.space(1.5)
   }
 });
 

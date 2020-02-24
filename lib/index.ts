@@ -12,12 +12,14 @@ import { Container } from './components/layout/Container';
 import { ControlGroup } from './components/forms/ControlGroup';
 import { ControlGroupDivider } from './components/forms/ControlGroupDivider';
 import { ControlGroupItem } from './components/forms/ControlGroupItem';
+import { createRedirect } from './createRedirect';
 import { Dialogs } from './components/feedback/Dialogs';
 import { Dropdown } from './components/input/Dropdown';
 import { Footer } from './components/layout/Footer';
 import { Form } from './components/forms/Form';
 import { FormActions } from './components/forms/FormActions';
 import { FormRow } from './components/forms/FormRow';
+import { getLanguageFromUrl } from './utils/getLanguageFromUrl';
 import { Grid } from './components/layout/Grid';
 import { GridItem } from './components/layout/GridItem';
 import { Headline } from './components/typography/Headline';
@@ -27,6 +29,7 @@ import { Icon } from './components/graphics/Icon';
 import { Icons } from './components/graphics/Icons';
 import { IconSize } from './types/IconSize';
 import { Label } from './components/typography/Label';
+import { LayoutComponent } from './types/LayoutComponent';
 import { Link } from './components/input/Link';
 import { LogoFull } from './components/graphics/LogoFull';
 import { LogoMinimal } from './components/graphics/LogoMinimal';
@@ -44,6 +47,7 @@ import { Notifications } from './components/feedback/Notifications';
 import { PageNavigation } from './components/navigation/PageNavigation';
 import { PageTree } from './components/navigation/PageTree';
 import { PageTreeItem } from './components/navigation/PageTree/PageTreeItem';
+import { PageTreeItemWithMetadata } from './components/navigation/PageTree/PageTreeItemWithMetadata';
 import { Paragraph } from './components/typography/Paragraph';
 import { Pattern } from './components/branding/Pattern';
 import { PoweredBy } from './components/branding/PoweredBy';
@@ -85,6 +89,7 @@ export {
   ControlGroup,
   ControlGroupDivider,
   ControlGroupItem,
+  createRedirect,
   dialogs,
   Dialogs,
   Dropdown,
@@ -93,6 +98,7 @@ export {
   FormActions,
   FormRow,
   Footer,
+  getLanguageFromUrl,
   getPortalRootNode,
   Grid,
   GridItem,
@@ -103,6 +109,7 @@ export {
   IconSize,
   Icons,
   Label,
+  LayoutComponent,
   Link,
   LogoFull,
   LogoMinimal,
@@ -121,6 +128,7 @@ export {
   PageNavigation,
   PageTree,
   PageTreeItem,
+  PageTreeItemWithMetadata,
   Paragraph,
   Pattern,
   PoweredBy,

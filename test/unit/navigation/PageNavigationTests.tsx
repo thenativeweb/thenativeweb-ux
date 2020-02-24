@@ -60,8 +60,8 @@ suite('PageNavigation', (): void => {
 
     const component = container.querySelector('#component');
 
-    const firstSection = component!.querySelector<HTMLElement>('[class*=Section][class*=HasChapters]:first-of-type');
-    const secondSection = component!.querySelector<HTMLElement>('[class*=Section][class*=HasPages]:nth-of-type(2)');
+    const firstSection = component!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level1]:first-of-type');
+    const secondSection = component!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level1]:nth-of-type(2)');
 
     assert.that(firstSection!.textContent).is.containing('First Section');
     assert.that(firstSection!.className).is.not.containing('IsExpanded');
@@ -82,13 +82,13 @@ suite('PageNavigation', (): void => {
 
     const component = container.querySelector('#component');
 
-    const activeSection = component!.querySelector<HTMLElement>('[class*=Section][class*=IsActive]:first-of-type');
-    const activeSectionTitle = activeSection!.querySelector<HTMLElement>('[class*=Title]');
+    const activeSection = component!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level1][class*=IsActive]');
+    const activeSectionTitle = activeSection!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level1][class*=IsActive] > [class*=Title]');
 
-    const activeChapter = activeSection!.querySelector<HTMLElement>('[class*=Chapter][class*=IsActive]');
-    const activeChapterTitle = activeChapter!.querySelector<HTMLElement>('[class*=Title]');
+    const activeChapter = activeSection!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level2][class*=IsActive]');
+    const activeChapterTitle = activeSection!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level2][class*=IsActive] > [class*=Title]');
 
-    const activePage = activeSection!.querySelector<HTMLElement>('[class*=Page][class*=IsActive]');
+    const activePage = activeSection!.querySelector<HTMLElement>('[class*=Page][class*=Level3][class*=IsActive]');
 
     assert.that(activeSectionTitle!.textContent).is.equalTo('First Section');
     assert.that(activeSection!.className).is.containing('IsExpanded');
@@ -110,11 +110,11 @@ suite('PageNavigation', (): void => {
     });
 
     const component = container.querySelector('#component');
-    const activeSections = component!.querySelectorAll<HTMLElement>('[class*=Section][class*=IsActive]');
+    const activeSections = component!.querySelectorAll<HTMLElement>('[class*=PageGroup][class*=Level1][class*=IsActive]');
 
     assert.that(activeSections.length).is.equalTo(1);
 
-    const inactiveSection = component!.querySelector<HTMLElement>('[class*=Section]:nth-of-type(2)');
+    const inactiveSection = component!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level1]:nth-of-type(2)');
     const inactiveSectionTitle = inactiveSection!.querySelector<HTMLElement>('[class*=Title]');
 
     assert.that(inactiveSectionTitle!.textContent).is.equalTo('Second Section');
@@ -138,7 +138,7 @@ suite('PageNavigation', (): void => {
     });
 
     const component = container.querySelector('#component');
-    const inactiveSection = component!.querySelector<HTMLElement>('[class*=Section]:nth-of-type(2)');
+    const inactiveSection = component!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level1]:nth-of-type(2)');
     const inactiveSectionTitle = inactiveSection!.querySelector<HTMLElement>('[class*=Title]');
 
     assert.that(inactiveSectionTitle!.textContent).is.equalTo('Second Section');
@@ -148,7 +148,7 @@ suite('PageNavigation', (): void => {
       click(inactiveSectionTitle!);
     });
 
-    const expandedSections = component!.querySelectorAll<HTMLElement>('[class*=Section][class*=IsExpanded]');
+    const expandedSections = component!.querySelectorAll<HTMLElement>('[class*=PageGroup][class*=Level1][class*=IsExpanded]');
 
     assert.that(expandedSections.length).is.equalTo(2);
     assert.that(inactiveSection!.className).is.containing('IsExpanded');
@@ -162,8 +162,8 @@ suite('PageNavigation', (): void => {
       );
     });
 
-    const activeSectionsAfterPathChanged = component!.querySelectorAll<HTMLElement>('[class*=Section][class*=IsActive]');
-    const activeSectionTitleAfterPathChanged = component!.querySelector<HTMLElement>('[class*=Section][class*=IsActive] [class*=Title]');
+    const activeSectionsAfterPathChanged = component!.querySelectorAll<HTMLElement>('[class*=PageGroup][class*=Level1][class*=IsActive]');
+    const activeSectionTitleAfterPathChanged = component!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level1][class*=IsActive] > [class*=Title]');
 
     assert.that(activeSectionsAfterPathChanged.length).is.equalTo(1);
 

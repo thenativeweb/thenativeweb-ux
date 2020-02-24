@@ -2,6 +2,11 @@
   "extends": "es/browser",
 
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+
+    "project": [
+      "./tsconfig.json",
+      "./styleguide/**/tsconfig.json"
+    ]
   }
 }
