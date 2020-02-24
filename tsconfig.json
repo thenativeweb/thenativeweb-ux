@@ -21,6 +21,7 @@
     "./build",
     "./styleguide/out",
     "./styleguide/.next",
-    "./styleguide"
+    "./test/shared/sampleApplication/out",
+    "./test/shared/sampleApplication/.next"
   ]
 }

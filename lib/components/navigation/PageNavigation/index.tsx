@@ -1,9 +1,8 @@
-import { Chapter } from './Chapter';
 import { createUseStyles } from '../../../styles';
 import { Page } from './Page';
+import { PageGroup } from './PageGroup';
 import { PageSearch } from '../PageTree/PageSearch';
 import { SearchResults } from './SearchResults';
-import { Section } from './Section';
 import {
   HorizontalBar, PageTree, PageTreeItemWithMetadata, TextBox, Theme
 } from '../../..';
@@ -12,60 +11,41 @@ import React, { ChangeEvent, FunctionComponent, ReactElement, ReactNode, useEffe
 
 const useStyles = createUseStyles<Theme, PageNavigationClassNames>(styles);
 
-const renderSecondLevel = ({
+const renderItems = ({
   item,
-  activePath
+  activePath,
+  level
 }: {
   item: PageTreeItemWithMetadata;
   activePath: string;
+  level: number;
 }): ReactElement => {
   if (item.children) {
     return (
-      <Chapter
+      <PageGroup
         title={ item.title }
         key={ item.path }
         activePath={ activePath }
+        path={ item.path }
+        level={ level }
       >
         {
-          item.children.map((page: PageTreeItemWithMetadata): ReactElement => (
-            <Page
-              title={ page.title }
-              key={ page.title }
-              activePath={ activePath }
-            />
-          ))
+          item.children.map((childItem): ReactElement => renderItems({ item: childItem, activePath, level: level + 1 }))
         }
-      </Chapter>
+      </PageGroup>
     );
   }
 
   return (
     <Page
+      path={ item.path }
+      level={ level }
       title={ item.title }
       key={ item.title }
       activePath={ activePath }
     />
   );
 };
-
-const renderSection = ({
-  section,
-  activePath
-}: {
-  section: PageTreeItemWithMetadata;
-  activePath: string;
-}): ReactElement => (
-  <Section
-    title={ section.title }
-    key={ section.path }
-    activePath={ activePath }
-    path={ section.path }
-  >
-    {
-      section.children?.map((chapterOrPage): ReactElement => renderSecondLevel({ item: chapterOrPage, activePath }))
-    }
-  </Section>
-);
 
 interface PageNavigationProps {
   id?: string;
@@ -105,6 +85,8 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
     setResults([]);
   }, [ showSearchBar ]);
 
+  const level = 1;
+
   return (
     <div id={ id } className={ classes.PageNavigation }>
       {
@@ -128,7 +110,7 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
       <div className={ classes.Content }>
         {
           query.length === 0 ?
-            pageTree.items.map((section): ReactElement => renderSection({ section, activePath })) :
+            pageTree.items.map((item): ReactElement => renderItems({ item, activePath, level })) :
             null
         }
         {

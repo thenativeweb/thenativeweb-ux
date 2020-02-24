@@ -1,6 +1,6 @@
 import { createUseStyles } from '../../../../styles';
 import NextLink from 'next/link';
-import { classNames, Link, slugify, Theme } from '../../../..';
+import { classNames, Link, Theme } from '../../../..';
 import { PageClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
@@ -16,10 +16,10 @@ interface PageProps {
 const Page: FunctionComponent<PageProps> = ({
   activePath,
   title,
-  level = 3,
+  level = 2,
   path
 }): ReactElement => {
-  const pagePathWithTrailingSlash = `${path}/${slugify(title)}${activePath.endsWith('/') ? '/' : ''}`;
+  const pagePathWithTrailingSlash = `${path}${activePath.endsWith('/') ? '/' : ''}`;
   const isActive = activePath === pagePathWithTrailingSlash;
 
   // We need to create a path without an ending slash for the NextLinks.
@@ -30,10 +30,8 @@ const Page: FunctionComponent<PageProps> = ({
   const classes = useStyles();
 
   const componentClasses = classNames(classes.Page, {
-    [classes.IsActive]: isActive,
-    [classes.Level2]: level === 2,
-    [classes.Level3]: level === 3
-  });
+    [classes.IsActive]: isActive
+  }, `Level${level}`);
 
   return (
     <NextLink href={ pagePathWithoutTrailingSlash }>
