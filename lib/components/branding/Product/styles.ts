@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type ProducClassNames =
   'Product' |
@@ -13,7 +12,7 @@ export type ProducClassNames =
   'TypeLogoOnly' |
   'TypeTextOnly';
 
-const styles = (theme: Theme): Styles<ProducClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<ProducClassNames> => ({
   Product: {
     display: 'flex',
     flexDirection: 'column',

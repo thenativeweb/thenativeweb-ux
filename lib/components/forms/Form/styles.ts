@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type FormClassNames = 'Form';
 
-const styles = (theme: Theme): Styles<FormClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<FormClassNames> => ({
   Form: {
     fontFamily: theme.font.family.default
   }

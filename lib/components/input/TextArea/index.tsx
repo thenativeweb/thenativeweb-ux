@@ -1,8 +1,7 @@
-import { Styles } from 'jss';
 import { Theme } from '../../../themes';
 import { useAutoFocus } from '../../useAutoFocus';
 import { classNames, createUseStyles } from '../../../styles';
-import React, { ChangeEvent, FocusEvent, FunctionComponent, ReactElement } from 'react';
+import React, { ChangeEvent, CSSProperties, FocusEvent, FunctionComponent, ReactElement } from 'react';
 import { styles, TextAreaClassNames } from './styles';
 
 interface TextAreaProps {
@@ -16,7 +15,7 @@ interface TextAreaProps {
   ref?: any;
   required?: boolean;
   size?: 'sm' | 'md';
-  style?: Styles;
+  style?: CSSProperties;
   value?: string;
   onFocus?: (event: FocusEvent<HTMLTextAreaElement>) => void;
   onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;

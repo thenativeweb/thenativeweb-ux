@@ -1,12 +1,11 @@
-import { Styles } from 'jss';
-import { Theme } from '../../../themes';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type ComponentPreviewClassNames =
   'ComponentPreview' |
   'BackgroundDark'|
   'Code';
 
-const styles = (theme: Theme): Styles<ComponentPreviewClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<ComponentPreviewClassNames> => ({
   ComponentPreview: {
   },
 

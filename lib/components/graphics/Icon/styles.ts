@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type IconClassNames =
   'Icon' |
@@ -16,7 +15,7 @@ export type IconClassNames =
   'TypeInline' |
   'TypeFlexAuto';
 
-const styles = (theme: Theme): Styles<IconClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<IconClassNames> => ({
   Icon: {
     '& a': {
       fill: 'currentColor'

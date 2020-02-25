@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../../themes';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type SplitViewClassNames =
   'SplitView' |
@@ -10,7 +9,7 @@ export type SplitViewClassNames =
   'CodePanel' |
   'ToggleButtonCode';
 
-const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   SplitView: {
     marginTop: theme.space(2),
     position: 'relative',

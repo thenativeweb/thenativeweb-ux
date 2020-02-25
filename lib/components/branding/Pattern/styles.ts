@@ -1,10 +1,9 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type PatternClassNames =
   'Pattern';
 
-const styles = (theme: Theme): Styles<PatternClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<PatternClassNames> => ({
   Pattern: {
     position: 'absolute',
     left: 0,

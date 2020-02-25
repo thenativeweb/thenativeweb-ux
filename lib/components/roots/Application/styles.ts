@@ -1,8 +1,8 @@
-import { Styles } from 'jss';
+import { ComponentClassNames } from '../../..';
 
 export type ApplicationClassNames = 'Application' | 'ApplicationLayout';
 
-const styles: Styles<ApplicationClassNames> = {
+const styles: ComponentClassNames<ApplicationClassNames> = {
   Application: {
     position: 'absolute !important' as any,
     left: 0,

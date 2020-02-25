@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type PageNavigationClassNames =
   'PageNavigation' |
@@ -7,31 +6,27 @@ export type PageNavigationClassNames =
   'SearchField' |
   'Content';
 
-const getStyles = (theme: Theme): Styles<PageNavigationClassNames> => {
-  const styles: Styles<PageNavigationClassNames> = {
-    PageNavigation: {
-      position: 'relative',
-      width: '100%',
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column'
-    },
+const getStyles = (theme: Theme): ComponentClassNames<PageNavigationClassNames> => ({
+  PageNavigation: {
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column'
+  },
 
-    SearchBar: {},
+  SearchBar: {},
 
-    SearchField: {
-      padding: `${theme.space(0.5)}px ${theme.space(1)}px`,
-      flexGrow: 1
-    },
+  SearchField: {
+    padding: `${theme.space(0.5)}px ${theme.space(1)}px`,
+    flexGrow: 1
+  },
 
-    Content: {
-      flexGrow: 1,
-      overflow: 'auto',
-      '-webkit-overflow-scrolling': 'touch'
-    }
-  };
-
-  return styles;
-};
+  Content: {
+    flexGrow: 1,
+    overflow: 'auto',
+    '-webkit-overflow-scrolling': 'touch'
+  }
+});
 
 export { getStyles as styles };

@@ -1,34 +1,34 @@
-import { Styles } from 'jss';
-import { Theme } from '../../../themes';
+import { NestedCssProperties } from '../../../types/NestedCssProperties';
 import { ClassDefinitions, createDefaultSpaceDependantClasses, createSpaceDependentClasses } from '../../../styles/utils';
+import { ComponentClassNames, Theme } from '../../..';
 
 const spaceDependentProperties: ClassDefinitions = {
-  padding: ({ spaceFactor, theme }): Styles => ({
+  padding: ({ spaceFactor, theme }): NestedCssProperties => ({
     padding: `${theme.space(Number(spaceFactor))}px`
   }),
-  paddingLeft: ({ spaceFactor, theme }): Styles => ({
+  paddingLeft: ({ spaceFactor, theme }): NestedCssProperties => ({
     paddingLeft: `${theme.space(Number(spaceFactor))}px`
   }),
-  paddingRight: ({ spaceFactor, theme }): Styles => ({
+  paddingRight: ({ spaceFactor, theme }): NestedCssProperties => ({
     paddingRight: `${theme.space(Number(spaceFactor))}px`
   }),
-  paddingBottom: ({ spaceFactor, theme }): Styles => ({
+  paddingBottom: ({ spaceFactor, theme }): NestedCssProperties => ({
     paddingBottom: `${theme.space(Number(spaceFactor))}px`
   }),
-  paddingTop: ({ spaceFactor, theme }): Styles => ({
+  paddingTop: ({ spaceFactor, theme }): NestedCssProperties => ({
     paddingTop: `${theme.space(Number(spaceFactor))}px`
   }),
-  paddingX: ({ spaceFactor, theme }): Styles => ({
+  paddingX: ({ spaceFactor, theme }): NestedCssProperties => ({
     paddingLeft: `${theme.space(Number(spaceFactor))}px`,
     paddingRight: `${theme.space(Number(spaceFactor))}px`
   }),
-  paddingY: ({ spaceFactor, theme }): Styles => ({
+  paddingY: ({ spaceFactor, theme }): NestedCssProperties => ({
     paddingTop: `${theme.space(Number(spaceFactor))}px`,
     paddingBottom: `${theme.space(Number(spaceFactor))}px`
   })
 };
 
-const styles = (theme: Theme): Styles => ({
+const styles = (theme: Theme): ComponentClassNames<string> => ({
   Space: {},
 
   ...createSpaceDependentClasses({ theme, definitions: spaceDependentProperties }),

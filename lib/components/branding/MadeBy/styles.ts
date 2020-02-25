@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type MadeByClassNames =
   'MadeBy' |
@@ -9,7 +8,7 @@ export type MadeByClassNames =
   'SizeMd'|
   'SizeLg';
 
-const styles = (theme: Theme): Styles<MadeByClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<MadeByClassNames> => ({
   MadeBy: {
     overflow: 'hidden',
     fontFamily: theme.font.family.default,

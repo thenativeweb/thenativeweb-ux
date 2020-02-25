@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type LinkClassNames = 'Link';
 
-const styles = (theme: Theme): Styles => ({
+const styles = (theme: Theme): ComponentClassNames<LinkClassNames> => ({
   Link: {
     color: theme.color.brand.highlight,
     textDecoration: 'none',

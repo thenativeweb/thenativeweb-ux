@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type LogoFullClassNames =
 'LogoFull' |
@@ -9,7 +8,7 @@ export type LogoFullClassNames =
 'SizeMd' |
 'SizeLg';
 
-const styles = (theme: Theme): Styles<LogoFullClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<LogoFullClassNames> => ({
   LogoFull: {
     display: 'flex',
     flexDirection: 'column',

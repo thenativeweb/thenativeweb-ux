@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type TextClassNames =
   'Text' |
@@ -9,7 +8,7 @@ export type TextClassNames =
   'SizeSm' |
   'BreakLines';
 
-const styles = (theme: Theme): Styles<TextClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<TextClassNames> => ({
   Text: {
     display: 'block',
     overflow: 'hidden',
@@ -19,8 +18,7 @@ const styles = (theme: Theme): Styles<TextClassNames> => ({
     fontFamily: theme.font.family.default
   },
 
-  AdjustAuto: {
-  },
+  AdjustAuto: {},
 
   AdjustFlex: {
     flexGrow: 1,

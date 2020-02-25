@@ -1,12 +1,11 @@
 import color from 'color';
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type HighlightTextClassNames =
   'HighlightText' |
   'Highlight';
 
-const styles = (theme: Theme): Styles => ({
+const styles = (theme: Theme): ComponentClassNames<HighlightTextClassNames> => ({
   HighlightText: {},
 
   Highlight: {

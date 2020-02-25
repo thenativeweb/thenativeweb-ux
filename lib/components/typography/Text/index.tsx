@@ -1,7 +1,6 @@
-import { Styles } from 'jss';
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 import { styles, TextClassNames } from './styles';
 
 interface TextProps {
@@ -10,7 +9,7 @@ interface TextProps {
   className?: string;
   id?: string;
   size?: 'sm' | 'md';
-  style?: Styles;
+  style?: CSSProperties;
 }
 
 const useStyles = createUseStyles<Theme, TextClassNames>(styles);

@@ -1,15 +1,14 @@
-import { Styles } from 'jss';
 import { Theme } from '../../..';
 import { CheckBoxClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface CheckBoxProps {
   className?: string;
   checked?: boolean;
   name?: string;
   id?: string;
-  style?: Styles;
+  style?: CSSProperties;
   onChange?: () => void;
 }
 

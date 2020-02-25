@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type TextAreaClassNames =
   'TextArea' |
@@ -7,7 +6,7 @@ export type TextAreaClassNames =
   'SizeSm' |
   'SizeMd';
 
-const styles = (theme: Theme): Styles<TextAreaClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<TextAreaClassNames> => ({
   TextArea: {
     padding: '9px 12px',
     fontSize: theme.font.size.md,

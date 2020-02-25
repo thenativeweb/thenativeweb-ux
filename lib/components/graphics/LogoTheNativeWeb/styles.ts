@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../../themes';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type LogoTheNativeWebClassNames =
   'LogoTheNativeWeb' |
@@ -10,7 +9,7 @@ export type LogoTheNativeWebClassNames =
   'SizeLg' |
   'SizeXl';
 
-const styles = (theme: Theme): Styles<LogoTheNativeWebClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<LogoTheNativeWebClassNames> => ({
   LogoTheNativeWeb: {},
 
   Foreground: {

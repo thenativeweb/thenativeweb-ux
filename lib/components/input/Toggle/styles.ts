@@ -1,12 +1,11 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type ToggleClassNames =
   'Toggle' |
   'ActiveButton' |
   'Button';
 
-const styles = (theme: Theme): Styles<ToggleClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<ToggleClassNames> => ({
   Toggle: {
     display: 'flex'
   },

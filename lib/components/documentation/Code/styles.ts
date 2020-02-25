@@ -1,12 +1,11 @@
-import { Styles } from 'jss';
-import { Theme } from '../../../themes';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type CodeClassNames =
   'Code' |
   'CodeContainer'|
   'WithLineNumbers';
 
-const styles = (theme: Theme): Styles<CodeClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<CodeClassNames> => ({
   Code: {
     marginBottom: theme.space(3),
     background: theme.color.brand.grayDark,

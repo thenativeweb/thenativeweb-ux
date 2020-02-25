@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type ButtonHintClassNames = 'ButtonHint';
 
-const styles = (theme: Theme): Styles<ButtonHintClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<ButtonHintClassNames> => ({
   ButtonHint: {
     opacity: 0.5,
     fontSize: theme.font.size.sm,

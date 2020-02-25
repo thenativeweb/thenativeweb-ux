@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type SidebarFooterClassNames = 'SidebarFooter';
 
-const styles = (theme: Theme): Styles<SidebarFooterClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<SidebarFooterClassNames> => ({
   SidebarFooter: {
     position: 'absolute',
     bottom: 0,

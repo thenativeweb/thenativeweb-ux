@@ -1,8 +1,8 @@
-import { Styles } from 'jss';
+import { ComponentClassNames } from '../../..';
 
 export type LabelClassNames = 'Label';
 
-const styles: Styles<LabelClassNames> = {
+const styles: ComponentClassNames<LabelClassNames> = {
   Label: {
     display: 'block',
     flexGrow: 1,

@@ -1,6 +1,6 @@
-import { Styles } from 'jss';
+import { ComponentClassNames } from '../../..';
 
-const styles: Styles<'Dialogs' | 'Actions'> = {
+const styles: ComponentClassNames<'Dialogs' | 'Actions'> = {
   Dialogs: {},
 
   Actions: {

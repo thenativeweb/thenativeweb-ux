@@ -1,4 +1,4 @@
-import { Styles } from 'jss';
+import { ComponentClassNames } from '../../..';
 import { Theme } from '../../../themes/Theme';
 
 export type ButtonClassNames =
@@ -13,8 +13,8 @@ export type ButtonClassNames =
   'TypeIconOnly' |
   'Icon';
 
-const getStyles = (theme: Theme): Styles<ButtonClassNames> => {
-  const styles: Styles<ButtonClassNames> = {
+const getStyles = (theme: Theme): ComponentClassNames<ButtonClassNames> => {
+  const styles: ComponentClassNames<ButtonClassNames> = {
     Button: {
       display: 'flex',
       alignItems: 'center',

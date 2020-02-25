@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type BusyIndicatorClassNames =
   '@keyframes loading-indicator-pulse' |
@@ -9,7 +8,7 @@ export type BusyIndicatorClassNames =
   'Pulse2' |
   'Pulse3';
 
-const styles = (theme: Theme): Styles<BusyIndicatorClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<BusyIndicatorClassNames> => ({
   '@keyframes loading-indicator-pulse': {
     '0%': {
       transform: 'scale(0.5)'
