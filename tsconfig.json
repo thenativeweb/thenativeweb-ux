@@ -6,18 +6,26 @@
     "jsx": "react",
     "lib": [ "dom", "ES2019" ],
     "module": "CommonJS",
+    "allowJs": false,
+    "moduleResolution": "Node",
     "outDir": "build",
-    "resolveJsonModule": true,
     "strict": true,
     "target": "ES2019"
   },
   "include": [
     "./lib/**/*.ts",
-    "./test/**/*.ts"
+    "./lib/**/*.tsx",
+    "./test/**/*.ts",
+    "./test/**/*.tsx"
   ],
   "exclude": [
     "./build/**/*.ts",
-    "./styleguide/**/*.ts",
-    "./styleguide/**/*.tsx"
+    "./build/**/*.tsx",
+    "./styleguide/.next/**/*.ts",
+    "./styleguide/out/**/*.ts",
+    "./styleguide/.next/**/*.tsx",
+    "./styleguide/out/**/*.tsx",
+    "./test/shared/sampleApplication/**/*.ts",
+    "./test/shared/sampleApplication/**/*.tsx"
   ]
 }

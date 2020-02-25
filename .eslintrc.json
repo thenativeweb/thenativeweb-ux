@@ -6,7 +6,8 @@
 
     "project": [
       "./tsconfig.json",
-      "./styleguide/**/tsconfig.json"
+      "./styleguide/tsconfig.json",
+      "./test/shared/sampleApplication/tsconfig.json"
     ]
   }
 }
