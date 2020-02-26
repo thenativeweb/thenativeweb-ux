@@ -1,6 +1,6 @@
 import { createUseStyles } from '../../../../styles';
 import NextLink from 'next/link';
-import { Breadcrumbs, HighlightText, Link, PageTreeItem, Tags, Theme } from '../../../..';
+import { Breadcrumbs, HighlightText, Link, PageTreeItemWithMetadata, Tags, Theme } from '../../../..';
 import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { SearchResultsClassNames, styles } from './styles';
 
@@ -8,7 +8,7 @@ const useStyles = createUseStyles<Theme, SearchResultsClassNames>(styles);
 
 interface SearchResultsProps {
   nonIdealState?: ReactNode;
-  results?: PageTreeItem [];
+  results?: PageTreeItemWithMetadata [];
   query: string;
 }
 
@@ -36,7 +36,7 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({
   return (
     <div className={ classes.SearchResults }>
       {
-        results.map((result: PageTreeItem): ReactElement => (
+        results.map((result: PageTreeItemWithMetadata): ReactElement => (
           <div
             className={ classes.SearchResult }
             key={ result.path }
@@ -46,7 +46,7 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({
               searchWords={ searchWords }
             />
 
-            <NextLink href={ result.path! }>
+            <NextLink href={ result.path }>
               <Link
                 className={ classes.Page }
                 data-path={ result.path }

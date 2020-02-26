@@ -1,3 +1,24 @@
+## [3.2.5](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.4...3.2.5) (2020-02-25)
+
+
+### Bug Fixes
+
+* bump uuidv4 from 6.0.4 to 6.0.5 ([#338](https://github.com/thenativeweb/thenativeweb-ux/issues/338)) ([0e7ba8d](https://github.com/thenativeweb/thenativeweb-ux/commit/0e7ba8dae99cee5b6d1c2a5cdbe8eaa24f74b97f))
+
+## [3.2.4](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.3...3.2.4) (2020-02-25)
+
+
+### Bug Fixes
+
+* bump uuidv4 from 6.0.3 to 6.0.4 ([#336](https://github.com/thenativeweb/thenativeweb-ux/issues/336)) ([e5ab458](https://github.com/thenativeweb/thenativeweb-ux/commit/e5ab458925df19df611292919c4bbc95c5ae3257))
+
+## [3.2.3](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.2...3.2.3) (2020-02-24)
+
+
+### Bug Fixes
+
+* bump uuidv4 from 6.0.2 to 6.0.3 ([#331](https://github.com/thenativeweb/thenativeweb-ux/issues/331)) ([f2eb181](https://github.com/thenativeweb/thenativeweb-ux/commit/f2eb18189d5909c0381b7c1947befd9462f9a9ed))
+
 ## [3.2.2](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.1...3.2.2) (2020-02-21)
 
 

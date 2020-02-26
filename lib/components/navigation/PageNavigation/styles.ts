@@ -25,7 +25,8 @@ const getStyles = (theme: Theme): ComponentClassNames<PageNavigationClassNames> 
   Content: {
     flexGrow: 1,
     overflow: 'auto',
-    '-webkit-overflow-scrolling': 'touch'
+    '-webkit-overflow-scrolling': 'touch',
+    paddingTop: theme.space(1.5)
   }
 });
 

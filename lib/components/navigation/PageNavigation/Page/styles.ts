@@ -3,26 +3,23 @@ import { ComponentClassNames, Theme } from '../../../..';
 
 export type PageClassNames =
   'Page' |
-  'Level2' |
-  'Level3' |
   'IsActive';
 
-const getStyles = (theme: Theme): ComponentClassNames<PageClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<PageClassNames> => ({
   Page: {
     display: 'block',
     color: theme.color.brand.gray,
+    lineHeight: theme.font.size.xl,
+    marginLeft: theme.space(-2),
+    padding: `${theme.space(0.5)}px ${theme.space(2)}px ${theme.space(0.5)}px ${theme.space(2)}px`,
 
     '&:hover': {
       color: theme.color.brand.highlight
+    },
+
+    '&.Level2, &.Level3, &.Level4, &.Level5': {
+      paddingLeft: theme.space(6.5)
     }
-  },
-
-  Level2: {
-    padding: `${theme.space(0.5)}px ${theme.space(2)}px ${theme.space(0.5)}px ${theme.space(4.5)}px`
-  },
-
-  Level3: {
-    padding: `${theme.space(0.5)}px ${theme.space(2)}px ${theme.space(0.5)}px ${theme.space(6)}px`
   },
 
   IsActive: {
@@ -47,4 +44,4 @@ const getStyles = (theme: Theme): ComponentClassNames<PageClassNames> => ({
   }
 });
 
-export { getStyles as styles };
+export { styles };
