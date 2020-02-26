@@ -28,4 +28,6 @@ const Brand: FunctionComponent<BrandProps> = ({
   );
 };
 
+Brand.displayName = 'Brand';
+
 export { Brand };

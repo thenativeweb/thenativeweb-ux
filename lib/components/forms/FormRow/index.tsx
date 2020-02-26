@@ -15,4 +15,6 @@ const FormRow: FunctionComponent = ({
   );
 };
 
+FormRow.displayName = 'FormRow';
+
 export { FormRow };

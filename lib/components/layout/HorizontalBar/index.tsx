@@ -55,4 +55,6 @@ const HorizontalBar: FunctionComponent<HorizontalBarProps> = ({
   );
 };
 
+HorizontalBar.displayName = 'HorizontalBar';
+
 export { HorizontalBar };

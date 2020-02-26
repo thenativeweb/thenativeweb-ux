@@ -30,4 +30,6 @@ const Paragraph: FunctionComponent<ParagraphProps> = ({
   );
 };
 
+Paragraph.displayName = 'Paragraph';
+
 export { Paragraph };

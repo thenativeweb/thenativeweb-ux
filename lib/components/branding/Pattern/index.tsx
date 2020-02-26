@@ -19,4 +19,6 @@ const Pattern: FunctionComponent<PatternProps> = ({ children, className }): Reac
   return <div className={ componentClasses }>{ children }</div>;
 };
 
+Pattern.displayName = 'Pattern';
+
 export { Pattern };

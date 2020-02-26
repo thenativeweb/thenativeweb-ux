@@ -52,4 +52,6 @@ const SplitView: FunctionComponent<ComponentPreviewProps> = ({
   );
 };
 
+SplitView.displayName = 'SplitView';
+
 export { SplitView };

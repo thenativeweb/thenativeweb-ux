@@ -32,4 +32,6 @@ const Tags: FunctionComponent<TagsProps> = ({ className, items, searchWords }): 
   );
 };
 
+Tags.displayName = 'Tags';
+
 export { Tags };

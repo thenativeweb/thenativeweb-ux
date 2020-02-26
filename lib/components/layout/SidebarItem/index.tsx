@@ -73,4 +73,6 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
   );
 });
 
+SidebarItem.displayName = 'SidebarItem';
+
 export { SidebarItem };

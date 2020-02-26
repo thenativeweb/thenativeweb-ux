@@ -38,4 +38,6 @@ const GridItem: FunctionComponent<GridItemProps> = ({
   return React.createElement(component, { className: componentClasses, style, id }, children);
 };
 
+GridItem.displayName = 'GridItem';
+
 export { GridItem };

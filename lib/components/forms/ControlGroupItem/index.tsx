@@ -95,4 +95,6 @@ const ControlGroupItem: FunctionComponent<ControlGroupItemProps> = ({
   );
 };
 
+ControlGroupItem.displayName = 'ControlGroupItem';
+
 export { ControlGroupItem };

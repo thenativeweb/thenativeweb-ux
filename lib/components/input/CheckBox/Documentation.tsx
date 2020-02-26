@@ -25,4 +25,6 @@ const Documentation = (): ReactElement => {
   );
 };
 
+CheckBox.displayName = 'CheckBox';
+
 export { Documentation };

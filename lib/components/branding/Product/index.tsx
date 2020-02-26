@@ -48,4 +48,6 @@ const Product: FunctionComponent<ProductProps> = ({
   );
 };
 
+Product.displayName = 'Product';
+
 export { Product };

@@ -62,4 +62,6 @@ const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   );
 };
 
+Breadcrumbs.displayName = 'Breadcrumbs';
+
 export { Breadcrumbs };

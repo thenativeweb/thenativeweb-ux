@@ -61,4 +61,6 @@ const Headline: FunctionComponent<HeadlineProps> = ({
   );
 };
 
+Headline.displayName = 'Headline';
+
 export { Headline };

@@ -16,4 +16,6 @@ const Property: FunctionComponent<PropertyProps> = ({ name, value, description }
   </Paragraph>
 );
 
+Property.displayName = 'Property';
+
 export { Property };

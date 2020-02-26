@@ -14,4 +14,6 @@ const StyleCollector: FunctionComponent<StyleCollectorProps> = ({ children, serv
   );
 };
 
+StyleCollector.displayName = 'StyleCollector';
+
 export { StyleCollector };

@@ -77,4 +77,6 @@ Code.defaultProps = {
   type: 'block'
 };
 
+Code.displayName = 'Code';
+
 export { Code };

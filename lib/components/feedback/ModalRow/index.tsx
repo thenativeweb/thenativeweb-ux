@@ -20,4 +20,6 @@ const ModalRow: FunctionComponent<ModalRowProps> = ({
   );
 };
 
+ModalRow.displayName = 'ModalRow';
+
 export { ModalRow };

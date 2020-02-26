@@ -43,4 +43,6 @@ const Text: FunctionComponent<TextProps> = ({
   );
 };
 
+Text.displayName = 'Text';
+
 export { Text };

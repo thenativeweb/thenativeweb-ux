@@ -55,4 +55,6 @@ const Container: FunctionComponent<ContainerProps> = ({
   );
 };
 
+Container.displayName = 'Container';
+
 export { Container };

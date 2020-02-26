@@ -103,4 +103,6 @@ const TextBox: FunctionComponent<TextBoxProps> = ({
   );
 };
 
+TextBox.displayName = 'TextBox';
+
 export { TextBox };

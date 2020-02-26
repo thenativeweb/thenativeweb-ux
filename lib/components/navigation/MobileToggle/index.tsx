@@ -78,4 +78,6 @@ const MobileToggle: FunctionComponent<MobileToggleProps> = ({
   );
 };
 
+MobileToggle.displayName = 'MobileToggle';
+
 export { MobileToggle };

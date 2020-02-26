@@ -40,4 +40,6 @@ const Application: FunctionComponent<ApplicationProps> = ({
   );
 };
 
+Application.displayName = 'Application';
+
 export { Application };

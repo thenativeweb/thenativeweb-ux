@@ -31,4 +31,6 @@ const FormActions: FunctionComponent<FormActionsProps> = ({
   );
 };
 
+FormActions.displayName = 'FormActions';
+
 export { FormActions };

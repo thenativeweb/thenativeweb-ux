@@ -55,4 +55,6 @@ const PageGroup: FunctionComponent<PageGroupProps> = ({
   );
 };
 
+PageGroup.displayName = 'PageGroup';
+
 export { PageGroup };

@@ -23,4 +23,6 @@ const Website: FunctionComponent<WebsiteProps> = ({
   </Fragment>
 );
 
+Website.displayName = 'Website';
+
 export { Website };

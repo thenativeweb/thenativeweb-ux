@@ -27,4 +27,6 @@ const Form: FunctionComponent<FormProps> = ({
   );
 };
 
+Form.displayName = 'Form';
+
 export { Form };

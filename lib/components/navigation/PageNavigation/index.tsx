@@ -131,4 +131,6 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
   );
 };
 
+PageNavigation.displayName = 'PageNavigation';
+
 export { PageNavigation };

@@ -36,4 +36,6 @@ const Space: FunctionComponent<SpaceProps> = ({ id, className, children, ...prop
   );
 };
 
+Space.displayName = 'Space';
+
 export { Space };

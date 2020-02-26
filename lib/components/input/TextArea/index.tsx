@@ -77,4 +77,6 @@ const TextArea: FunctionComponent<TextAreaProps> = ({
   );
 };
 
+TextArea.displayName = 'TextArea';
+
 export { TextArea };

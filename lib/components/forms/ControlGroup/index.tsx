@@ -31,4 +31,6 @@ const ControlGroup: FunctionComponent<ControlGroupProps> = ({
   );
 };
 
+ControlGroup.displayName = 'ControlGroup';
+
 export { ControlGroup };

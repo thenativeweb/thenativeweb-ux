@@ -24,4 +24,6 @@ const Label: FunctionComponent<LabelProps> = function ({
   );
 };
 
+Label.displayName = 'Label';
+
 export { Label };

@@ -75,4 +75,6 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
   );
 };
 
+Dropdown.displayName = 'Dropdown';
+
 export { Dropdown };
