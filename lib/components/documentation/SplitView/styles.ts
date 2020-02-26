@@ -13,13 +13,18 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   SplitView: {
     marginTop: theme.space(2),
     position: 'relative',
-    display: 'grid',
-    gridTemplateColumns: `${theme.space(4)}px 0px 1fr`,
-    margin: `${theme.space(3)}px 0 ${theme.space(3)}px 0`
+    display: 'flex',
+    margin: `${theme.space(3)}px 0 ${theme.space(3)}px 0`,
+    overflow: 'hidden'
   },
 
   SplitViewWithCodeVisible: {
-    gridTemplateColumns: `${theme.space(4)}px 1fr 1fr`,
+    '& $CodePanel': {
+      display: 'block',
+      flexGrow: 1,
+      flexShrink: 1,
+      flexBasis: '50%'
+    },
 
     '& $ToggleButtonCode svg': {
       transform: 'rotate(180deg)'
@@ -33,15 +38,38 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   },
 
   TogglePanel: {
+    flexGrow: 0,
+    flexShrink: 0,
+    flexBasis: `${theme.space(3)}px`,
     background: `${theme.color.brand.grayDark} !important`,
     borderRight: `1px solid ${theme.color.brand.gray}`
   },
 
+  CodePanel: {
+    height: '100%',
+    width: '100%',
+    maxHeight: '50vh',
+    flexGrow: 0,
+    flexShrink: 0,
+    background: theme.color.brand.grayDark,
+    overflowY: 'auto',
+    position: 'relative',
+    display: 'none',
+
+    '& > *': {
+      width: '100%',
+      height: '100%',
+      overflow: 'auto'
+    }
+  },
+
   PreviewPanel: {
     position: 'relative',
-    maxHeight: '50vh',
+    minHeight: '100%',
     overflow: 'auto',
     flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: '50%',
     border: `1px solid ${theme.color.brand.grayLight}`,
 
     '& hr:not([class])': {
@@ -50,23 +78,6 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
       height: '1px',
       borderStyle: 'solid',
       border: '0'
-    }
-  },
-
-  CodePanel: {
-    maxHeight: '50vh',
-    height: '100%',
-    width: '100%',
-    background: theme.color.brand.grayDark,
-    flexGrow: 0,
-    flexShrink: 0,
-    overflow: 'hidden',
-    position: 'relative',
-
-    '& > *': {
-      width: '100%',
-      height: '100%',
-      overflow: 'auto'
     }
   },
 
@@ -88,8 +99,7 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
 
   [theme.breakpoints.down('sm')]: {
     SplitView: {
-      gridTemplateColumns: 'none',
-      gridTemplateRows: `${theme.space(4)}px 0px 1fr`,
+      flexDirection: 'column',
 
       '& $ToggleButtonCode svg': {
         transform: 'rotate(90deg)'
@@ -97,12 +107,15 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
     },
 
     SplitViewWithCodeVisible: {
-      gridTemplateColumns: 'none',
-      gridTemplateRows: `${theme.space(4)}px 1fr 1fr`,
-
       '& $ToggleButtonCode svg': {
         transform: 'rotate(-90deg)'
       }
+    }
+  },
+
+  [theme.breakpoints.up('md')]: {
+    PreviewPanel: {
+      maxHeight: '50vh'
     }
   }
 });

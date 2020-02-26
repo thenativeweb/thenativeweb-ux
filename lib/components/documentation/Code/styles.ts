@@ -26,8 +26,8 @@ const styles = (theme: Theme): ComponentClassNames<CodeClassNames> => ({
     '& $CodeContainer': {
       border: 0,
       color: '#e5e6eb',
-      paddingRight: `${theme.space(1)} !important`,
-      overflowX: 'auto'
+      paddingRight: `${theme.space(1)}px !important`,
+      overflow: 'auto'
     }
   },
 
