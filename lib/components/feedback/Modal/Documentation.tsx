@@ -95,7 +95,7 @@ const Documentation = (): ReactElement => {
                     { value: 'fullscreen', label: 'fullscreen' }
                   ]
                 }
-                value={ attach }
+                value={ size }
                 onChange={ (value): void => setSize(value) }
               />
             </ControlGroupItem>
