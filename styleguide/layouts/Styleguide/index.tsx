@@ -32,7 +32,13 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement | null => {
   const classes = useStyles();
   const device = useDevice();
 
-  const language = getLanguageFromUrl(router.asPath);
+  const language = getLanguageFromUrl(router.pathname);
+
+  // eslint-disable-next-line no-console
+  console.log({
+    pathname: router.pathname,
+    asPath: router.asPath
+  });
 
   if (!Array.isArray(navigation[language])) {
     return null;
