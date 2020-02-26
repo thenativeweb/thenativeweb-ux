@@ -34,12 +34,6 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement | null => {
 
   const language = getLanguageFromUrl(router.pathname);
 
-  // eslint-disable-next-line no-console
-  console.log({
-    pathname: router.pathname,
-    asPath: router.asPath
-  });
-
   if (!Array.isArray(navigation[language])) {
     return null;
   }
