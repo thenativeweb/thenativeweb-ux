@@ -1,3 +1,4 @@
+import color from 'color';
 import { ComponentClassNames, Theme } from '../../..';
 
 export type CodeClassNames =
@@ -25,7 +26,7 @@ const styles = (theme: Theme): ComponentClassNames<CodeClassNames> => ({
 
     '& $CodeContainer': {
       border: 0,
-      color: '#e5e6eb',
+      color: color(theme.color.brand.grayModest).lighten(0.5).rgb().toString(),
       paddingRight: `${theme.space(1)}px !important`,
       overflow: 'auto'
     }
