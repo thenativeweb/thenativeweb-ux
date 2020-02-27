@@ -1,6 +1,6 @@
 import { CssProperties } from './CssProperties';
-import { TLength } from './TLength';
+import { Length } from './Length';
 
 export interface NestedCssProperties extends CssProperties {
-  [selector: string]: NestedCssProperties | TLength | TLength[] | undefined;
+  [selector: string]: NestedCssProperties | Length | Length[] | undefined;
 }
