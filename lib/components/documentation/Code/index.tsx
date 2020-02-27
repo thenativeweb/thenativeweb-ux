@@ -56,7 +56,7 @@ const Code: FunctionComponent<CodeProps> = ({
   );
 
   return (
-    <pre id={ id } className={ componentClasses }>
+    <div id={ id } className={ componentClasses }>
       <SyntaxHighlighter
         showLineNumbers={ showLineNumbers }
         style={ prismStyles }
@@ -69,7 +69,7 @@ const Code: FunctionComponent<CodeProps> = ({
       >
         { stripIndent(children) }
       </SyntaxHighlighter>
-    </pre>
+    </div>
   );
 };
 

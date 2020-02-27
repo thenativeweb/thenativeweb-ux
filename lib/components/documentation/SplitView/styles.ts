@@ -11,6 +11,7 @@ export type SplitViewClassNames =
 
 const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   SplitView: {
+    background: theme.color.brand.grayDark,
     marginTop: theme.space(2),
     position: 'relative',
     display: 'flex',
@@ -19,16 +20,9 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   },
 
   SplitViewWithCodeVisible: {
-    '& $CodePanel': {
-      display: 'block',
-      flexGrow: 1,
-      flexShrink: 1,
-      flexBasis: '50%'
-    },
-
-    '& $ToggleButtonCode svg': {
-      transform: 'rotate(180deg)'
-    }
+    flexBasis: '50%',
+    flexGrow: 1,
+    flexShrink: 1
   },
 
   WithPreviewPadding: {
@@ -46,15 +40,11 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   },
 
   CodePanel: {
-    height: '100%',
-    width: '100%',
     maxHeight: '50vh',
     flexGrow: 0,
     flexShrink: 0,
-    background: theme.color.brand.grayDark,
     overflowY: 'auto',
     position: 'relative',
-    display: 'none',
 
     '& > *': {
       width: '100%',
@@ -64,6 +54,7 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   },
 
   PreviewPanel: {
+    background: theme.color.brand.white,
     position: 'relative',
     minHeight: '100%',
     overflow: 'auto',
@@ -98,6 +89,14 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   },
 
   [theme.breakpoints.down('sm')]: {
+    CodePanel: {
+      height: '0px'
+    },
+
+    PreviewPanel: {
+      maxHeight: '50vh'
+    },
+
     SplitView: {
       flexDirection: 'column',
 
@@ -107,6 +106,11 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
     },
 
     SplitViewWithCodeVisible: {
+      '& $CodePanel': {
+        height: '50vh',
+        width: '100%'
+      },
+
       '& $ToggleButtonCode svg': {
         transform: 'rotate(-90deg)'
       }
@@ -114,8 +118,23 @@ const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   },
 
   [theme.breakpoints.up('md')]: {
+    CodePanel: {
+      width: '0%'
+    },
+
     PreviewPanel: {
       maxHeight: '50vh'
+    },
+
+    SplitViewWithCodeVisible: {
+      '& $CodePanel': {
+        flexBasis: '50%',
+        width: '50%'
+      },
+
+      '& $ToggleButtonCode svg': {
+        transform: 'rotate(180deg)'
+      }
     }
   }
 });
