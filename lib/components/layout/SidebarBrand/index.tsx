@@ -15,4 +15,6 @@ const SidebarBrand: FunctionComponent = ({ children }): ReactElement => {
   );
 };
 
+SidebarBrand.displayName = 'SidebarBrand';
+
 export { SidebarBrand };

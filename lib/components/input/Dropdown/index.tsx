@@ -63,7 +63,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
           options.map((option): ReactElement => (
             <option
               key={ option.value }
-              value={ option.value }
+              value={ option.label }
             >
               {option.label}
             </option>
@@ -74,5 +74,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
     </div>
   );
 };
+
+Dropdown.displayName = 'Dropdown';
 
 export { Dropdown };

@@ -1,12 +1,11 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type FooterClassNames =
   'Footer' |
   'MadeBy' |
   'Copyright';
 
-const styles = (theme: Theme): Styles<FooterClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<FooterClassNames> => ({
   Footer: {
     fontSize: theme.font.size.md,
     fontWeight: 300,

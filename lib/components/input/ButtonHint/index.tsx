@@ -17,4 +17,6 @@ const ButtonHint: FunctionComponent = ({
   );
 };
 
+ButtonHint.displayName = 'ButtonHint';
+
 export { ButtonHint };

@@ -31,4 +31,6 @@ const NonIdealState: FunctionComponent<NonIdealStateProps> = ({
   );
 };
 
+NonIdealState.displayName = 'NonIdealState';
+
 export { NonIdealState };

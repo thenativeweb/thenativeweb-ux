@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type ModalClassNames =
   '@global' |
@@ -21,7 +20,7 @@ export type ModalClassNames =
   'Content' |
   'Title';
 
-const styles = (theme: Theme): Styles<ModalClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<ModalClassNames> => ({
   '@global': {
     '.thenativeweb-modal--visible': {
       pointerEvents: 'none'
@@ -76,17 +75,11 @@ const styles = (theme: Theme): Styles<ModalClassNames> => ({
     boxSizing: 'border-box'
   },
 
-  ChromeSizeSm: {
-    width: '25vw'
-  },
+  ChromeSizeSm: {},
 
-  ChromeSizeMd: {
-    width: '61vw'
-  },
+  ChromeSizeMd: {},
 
-  ChromeSizeLg: {
-    width: '90vw'
-  },
+  ChromeSizeLg: {},
 
   ChromeSizeFullscreen: {
     width: '100vw'
@@ -163,6 +156,40 @@ const styles = (theme: Theme): Styles<ModalClassNames> => ({
       marginTop: `${theme.space(3)}px`,
       marginBottom: `${theme.space(3)}px`,
       border: 'none'
+    }
+  },
+
+  [theme.breakpoints.up('xs')]: {
+    ChromeSizeSm: {
+      width: '85vw'
+    },
+
+    ChromeSizeMd: {
+      width: '95vw'
+    },
+
+    ChromeSizeLg: {
+      width: '100vw'
+    }
+  },
+
+  [theme.breakpoints.up('md')]: {
+    ChromeSizeSm: {
+      width: '50vw'
+    },
+
+    ChromeSizeMd: {
+      width: '61vw'
+    },
+
+    ChromeSizeLg: {
+      width: '90vw'
+    }
+  },
+
+  [theme.breakpoints.up('lg')]: {
+    ChromeSizeSm: {
+      width: '25vw'
     }
   }
 });

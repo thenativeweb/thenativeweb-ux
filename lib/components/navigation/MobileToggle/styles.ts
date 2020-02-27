@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type MobileToggleClassNames =
   '@global' |
@@ -14,7 +13,7 @@ export type MobileToggleClassNames =
   'IconContainer' |
   'NavIcon';
 
-const styles = (theme: Theme): Styles<MobileToggleClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<MobileToggleClassNames> => ({
   '@global': {
     '.tnw-ux-prevent-body-scroll': {
       overflow: 'hidden'

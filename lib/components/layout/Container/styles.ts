@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type ContainerClassNames =
   'Container' |
@@ -17,7 +16,7 @@ export type ContainerClassNames =
   'VerticalBottom' |
   'VerticalStretch';
 
-const styles = (theme: Theme): Styles<ContainerClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<ContainerClassNames> => ({
   Container: {
     boxSizing: 'border-box',
     position: 'relative',

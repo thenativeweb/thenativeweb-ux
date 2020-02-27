@@ -46,4 +46,6 @@ const Toggle: FunctionComponent<ToggleProps> = ({
   );
 };
 
+Toggle.displayName = 'Toggle';
+
 export { Toggle };

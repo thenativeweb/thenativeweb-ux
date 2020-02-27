@@ -32,21 +32,22 @@ suite('dialogs', function (): void {
 
       const confirmAction = await page.$('#dialogs-confirm-action-confirm');
 
-      await new Promise(async (resolve, reject): Promise<void> => {
-        page.once('console', (message): void => {
-          try {
-            if (message.text() !== 'confirm::action::confirm::clicked') {
-              return;
+      await Promise.all([
+        new Promise((resolve, reject): void => {
+          page.once('console', (message): void => {
+            try {
+              if (message.text() !== 'confirm::action::confirm::clicked') {
+                return;
+              }
+
+              resolve();
+            } catch (ex) {
+              reject(ex);
             }
-
-            resolve();
-          } catch (ex) {
-            reject(ex);
-          }
-        });
-
-        await confirmAction!.click();
-      });
+          });
+        }),
+        confirmAction!.click()
+      ]);
     });
 
     test('shows a confirm dialog and resolves once the cancel action has been clicked.', async (): Promise<void> => {
@@ -65,21 +66,23 @@ suite('dialogs', function (): void {
 
       const cancelAction = await page.$('#dialogs-confirm-action-confirm');
 
-      await new Promise(async (resolve, reject): Promise<void> => {
-        page.once('console', (message): void => {
-          try {
-            if (message.text() !== 'confirm::action::confirm::clicked') {
-              return;
+      await Promise.all([
+        new Promise((resolve, reject): void => {
+          page.once('console', (message): void => {
+            try {
+              if (message.text() !== 'confirm::action::confirm::clicked') {
+                return;
+              }
+
+              resolve();
+            } catch (ex) {
+              reject(ex);
             }
+          });
+        }),
 
-            resolve();
-          } catch (ex) {
-            reject(ex);
-          }
-        });
-
-        await cancelAction!.click();
-      });
+        cancelAction!.click()
+      ]);
     });
   });
 });

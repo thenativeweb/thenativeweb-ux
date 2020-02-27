@@ -80,4 +80,6 @@ const Dialogs: FunctionComponent<DialogsProps> = ({
   );
 };
 
+Dialogs.displayName = 'Dialogs';
+
 export { Dialogs };

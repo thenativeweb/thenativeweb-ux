@@ -23,21 +23,23 @@ suite('Client', function (): void {
   test('takes over once server side rendering is complete.', async (): Promise<void> => {
     const button = await page.$('#button');
 
-    await new Promise(async (resolve, reject): Promise<void> => {
-      page.once('console', (message): void => {
-        try {
-          if (message.text() !== 'button::clicked') {
-            return;
+    await Promise.all([
+      new Promise((resolve, reject): void => {
+        page.once('console', (message): void => {
+          try {
+            if (message.text() !== 'button::clicked') {
+              return;
+            }
+
+            resolve();
+          } catch (ex) {
+            reject(ex);
           }
+        });
+      }),
 
-          resolve();
-        } catch (ex) {
-          reject(ex);
-        }
-      });
-
-      await button!.click();
-    });
+      button!.click()
+    ]);
   });
 
   test('removes server side rendered styles.', async (): Promise<void> => {

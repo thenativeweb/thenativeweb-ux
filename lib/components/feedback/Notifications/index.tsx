@@ -54,4 +54,6 @@ const Notifications: FunctionComponent<NotificationsProps> = ({
   );
 };
 
+Notifications.displayName = 'Notifications';
+
 export { Notifications };

@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type LogoWolkenkitClassNames =
   'LogoWolkenkit' |
@@ -13,7 +12,7 @@ export type LogoWolkenkitClassNames =
   'MovingCloud1' |
   'MovingCloud2';
 
-const styles = (theme: Theme): Styles<LogoWolkenkitClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<LogoWolkenkitClassNames> => ({
   LogoWolkenkit: {},
 
   SizeSm: {

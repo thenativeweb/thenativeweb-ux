@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type BrandClassNames = 'Brand';
 
-const styles = (theme: Theme): Styles => ({
+const styles = (theme: Theme): ComponentClassNames<BrandClassNames> => ({
   Brand: {
     width: '100%',
     height: '100%',

@@ -15,4 +15,6 @@ const SidebarFooter: FunctionComponent = ({ children }): ReactElement => {
   );
 };
 
+SidebarFooter.displayName = 'SidebarFooter';
+
 export { SidebarFooter };

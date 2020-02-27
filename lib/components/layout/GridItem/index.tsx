@@ -2,7 +2,6 @@ import { getSpaceDependentClassNamesFromProps } from '../../../styles/utils';
 import { ResponsiveSpaceProp } from '../../../types/ResponsiveSpaceProp';
 import { spaceDependentProperties } from './spaceDependentProperties';
 import { styles } from './styles';
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
@@ -16,8 +15,7 @@ interface GridItemProps {
   style?: CSSProperties;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-arguments
-const useStyles = createUseStyles<Theme, string>(styles);
+const useStyles = createUseStyles(styles);
 
 const GridItem: FunctionComponent<GridItemProps> = ({
   component = 'div',
@@ -39,5 +37,7 @@ const GridItem: FunctionComponent<GridItemProps> = ({
 
   return React.createElement(component, { className: componentClasses, style, id }, children);
 };
+
+GridItem.displayName = 'GridItem';
 
 export { GridItem };

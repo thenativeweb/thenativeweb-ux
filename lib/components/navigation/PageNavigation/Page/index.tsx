@@ -40,4 +40,6 @@ const Page: FunctionComponent<PageProps> = ({
   );
 };
 
+Page.displayName = 'Page';
+
 export { Page };

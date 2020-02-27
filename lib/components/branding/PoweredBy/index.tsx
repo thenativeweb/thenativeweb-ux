@@ -24,4 +24,6 @@ const PoweredBy: FunctionComponent<PoweredByProps> = ({
   );
 };
 
+PoweredBy.displayName = 'PoweredBy';
+
 export { PoweredBy };

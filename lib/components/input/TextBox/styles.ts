@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type TextBoxClassNames =
   'TextBox' |
@@ -8,7 +7,7 @@ export type TextBoxClassNames =
   'TypeTime' |
   'TypeSearch';
 
-const styles = (theme: Theme): Styles<TextBoxClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<TextBoxClassNames> => ({
   TextBox: {
     padding: '9px 12px',
     fontSize: theme.font.size.md,

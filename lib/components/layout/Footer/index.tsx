@@ -39,4 +39,6 @@ const Footer: FunctionComponent<FooterProps> = ({
   );
 };
 
+Footer.displayName = 'Footer';
+
 export { Footer };

@@ -1,11 +1,10 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type TagsClassNames =
   'Tags' |
   'Tag';
 
-const styles = (theme: Theme): Styles => ({
+const getStyles = (theme: Theme): ComponentClassNames<TagsClassNames> => ({
   Tags: {
     fontSize: theme.font.size.sm,
     fontWeight: 600
@@ -15,10 +14,10 @@ const styles = (theme: Theme): Styles => ({
     display: 'inline-block',
     background: theme.color.brand.grayLight,
     borderRadius: theme.space(2),
-    padding: [ theme.space(0.25), theme.space(1) ],
+    padding: `${theme.space(0.25)}px ${theme.space(1)}px`,
     marginRight: theme.space(1),
     color: theme.color.brand.grayDark
   }
 });
 
-export { styles };
+export { getStyles as styles };

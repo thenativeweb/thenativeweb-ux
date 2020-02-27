@@ -21,4 +21,6 @@ const Transition: FunctionComponent<TransitionProps> = ({
   );
 };
 
+Transition.displayName = 'Transition';
+
 export { Transition };

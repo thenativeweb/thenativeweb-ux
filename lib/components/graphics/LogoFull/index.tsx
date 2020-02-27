@@ -68,11 +68,13 @@ const LogoFull: FunctionComponent<LogoFullProps> = ({
         </g>
         <path
           className={ classes.Highlight }
-          fill='#FF0098' d='M256,35.3c0,1.6-1.3,3-3,3c-1.6,0-3-1.3-3-3s1.4-3,3-3C254.7,32.2,256,33.6,256,35.3z'
+          d='M256,35.3c0,1.6-1.3,3-3,3c-1.6,0-3-1.3-3-3s1.4-3,3-3C254.7,32.2,256,33.6,256,35.3z'
         />
       </svg>
     </div>
   );
 };
+
+LogoFull.displayName = 'LogoFull';
 
 export { LogoFull };

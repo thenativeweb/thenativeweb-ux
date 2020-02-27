@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type SidebarClassNames = 'Sidebar';
 
-const styles = (theme: Theme): Styles<SidebarClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<SidebarClassNames> => ({
   Sidebar: {
     position: 'relative',
     flexGrow: 0,

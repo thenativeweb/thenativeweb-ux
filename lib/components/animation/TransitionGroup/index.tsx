@@ -20,4 +20,6 @@ const TransitionGroup: FunctionComponent<TransitionGroupProps> = ({
   );
 };
 
+TransitionGroup.displayName = 'TransitionGroup';
+
 export { TransitionGroup };

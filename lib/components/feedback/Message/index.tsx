@@ -47,4 +47,6 @@ const Message: FunctionComponent<MessageProps> = ({
   );
 };
 
+Message.displayName = 'Message';
+
 export { Message };

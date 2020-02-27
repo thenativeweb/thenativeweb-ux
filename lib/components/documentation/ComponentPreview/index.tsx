@@ -56,4 +56,6 @@ const ComponentPreview: FunctionComponent<ComponentPreviewProps> = ({
   );
 };
 
+ComponentPreview.displayName = 'ComponentPreview';
+
 export { ComponentPreview };

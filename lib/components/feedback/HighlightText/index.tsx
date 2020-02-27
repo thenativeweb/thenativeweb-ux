@@ -45,4 +45,6 @@ const HighlightText: FunctionComponent<HighlightTextProps> = ({
   );
 };
 
+HighlightText.displayName = 'HighlightText';
+
 export { HighlightText };

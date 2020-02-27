@@ -47,4 +47,6 @@ const LogoMinimal: FunctionComponent<LogoMinimalProps> = ({
   );
 };
 
+LogoMinimal.displayName = 'LogoMinimal';
+
 export { LogoMinimal };

@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type ControlGroupItemClassNames =
   'ControlGroupItem' |
@@ -11,7 +10,7 @@ export type ControlGroupItemClassNames =
   'Control' |
   'TypeCheckBox';
 
-const styles = (theme: Theme): Styles<ControlGroupItemClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<ControlGroupItemClassNames> => ({
   ControlGroupItem: {
     display: 'flex',
     flexDirection: 'column',

@@ -33,7 +33,7 @@ suite('Code', (): void => {
 
     const codeBlock = container.querySelector('#code');
 
-    assert.that(codeBlock!.tagName).is.equalTo('PRE');
+    assert.that(codeBlock!.tagName).is.equalTo('DIV');
     assert.that(codeBlock!.className).is.containing('Code');
     assert.that(codeBlock!.id).is.equalTo('code');
     assert.that(codeBlock!.innerHTML).is.matching(/<span class="token console".*>console<\/span>/u);

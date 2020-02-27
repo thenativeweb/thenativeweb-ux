@@ -49,4 +49,6 @@ const Icon: FunctionComponent<IconProps> = ({
   );
 };
 
+Icon.displayName = 'Icon';
+
 export { Icon };

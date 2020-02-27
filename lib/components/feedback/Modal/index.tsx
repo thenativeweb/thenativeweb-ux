@@ -145,4 +145,6 @@ const Modal: FunctionComponent<ModalProps> = ({
   );
 };
 
+Modal.displayName = 'Modal';
+
 export { Modal };

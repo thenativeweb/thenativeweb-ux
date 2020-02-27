@@ -52,4 +52,6 @@ const MadeBy: FunctionComponent<MadeByProps> = ({
   );
 };
 
+MadeBy.displayName = 'MadeBy';
+
 export { MadeBy };

@@ -1,6 +1,5 @@
 import { spaceDependentProperties } from './spaceDependentProperties';
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 import {
   createDefaultSpaceDependantClasses,
   createSpaceDependentClasses
@@ -8,7 +7,7 @@ import {
 
 export type GridDefaultClassNames = 'Grid';
 
-const styles = (theme: Theme): Styles<GridDefaultClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<GridDefaultClassNames> => ({
   Grid: {
     width: '100%',
     display: 'grid'

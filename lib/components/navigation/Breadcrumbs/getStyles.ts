@@ -1,53 +1,54 @@
 import color from 'color';
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
-// We explicitly don't set a return type here since the component is then able
-// automatically to extract the classnames from the styles object.
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const getStyles = (theme: Theme) => {
-  const styles: Styles = {
-    Breadcrumbs: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center'
-    },
+export type BreadcrumbsClassNames =
+  'Breadcrumbs' |
+  'Breadcrumb' |
+  'Separator' |
+  'ColorLight' |
+  'ColorDark' |
+  'SizeMd' |
+  'SizeSm';
 
-    Separator: {
-      display: 'inline-flex'
-    },
+const getStyles = (theme: Theme): ComponentClassNames<BreadcrumbsClassNames> => ({
+  Breadcrumbs: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center'
+  },
 
-    Breadcrumb: {
-      display: 'inline'
-    },
+  Separator: {
+    display: 'inline-flex'
+  },
 
-    ColorLight: {
-      color: color(theme.color.brand.grayDark).lighten(2).rgb().toString()
-    },
+  Breadcrumb: {
+    display: 'inline'
+  },
 
-    ColorDark: {
-      color: color(theme.color.brand.grayDark).lighten(1).rgb().toString()
-    },
+  ColorLight: {
+    color: color(theme.color.brand.grayDark).lighten(2).rgb().toString()
+  },
 
-    SizeSm: {
-      fontSize: theme.font.size.sm,
+  ColorDark: {
+    color: color(theme.color.brand.grayDark).lighten(1).rgb().toString()
+  },
 
-      '& $Separator': {
-        marginLeft: '2px'
-      }
-    },
+  SizeSm: {
+    fontSize: theme.font.size.sm,
 
-    SizeMd: {
-      fontSize: theme.font.size.md,
-
-      '& $Separator': {
-        marginLeft: theme.space(1),
-        marginRight: theme.space(0.5)
-      }
+    '& $Separator': {
+      marginLeft: '2px'
     }
-  };
+  },
 
-  return styles;
-};
+  SizeMd: {
+    fontSize: theme.font.size.md,
+
+    '& $Separator': {
+      marginLeft: theme.space(1),
+      marginRight: theme.space(0.5)
+    }
+  }
+});
 
 export { getStyles };

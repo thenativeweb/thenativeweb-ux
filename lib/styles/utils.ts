@@ -1,10 +1,10 @@
 import merge from 'lodash/merge';
+import { NestedCssProperties } from '../types/NestedCssProperties';
 import { ResponsiveSpaceFactor } from '../types/ResponsiveSpaceFactor';
 import { ResponsiveSpaceProp } from '../types/ResponsiveSpaceProp';
-import { Styles } from 'jss';
-import { Theme } from '../themes/Theme';
+import { Theme } from '..';
 
-type CssAttributesFunction = ({ spaceFactor, theme }: { spaceFactor: ResponsiveSpaceFactor; theme: Theme }) => Styles;
+type CssAttributesFunction = ({ spaceFactor, theme }: { spaceFactor: ResponsiveSpaceFactor; theme: Theme }) => NestedCssProperties;
 export type ClassDefinitions = Partial<{ [key: string]: {} | CssAttributesFunction }>;
 
 const createSpaceDependentClasses = function ({

@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type PageNavigationClassNames =
   'PageNavigation' |
@@ -7,7 +6,7 @@ export type PageNavigationClassNames =
   'SearchField' |
   'Content';
 
-const styles = (theme: Theme): Styles => ({
+const getStyles = (theme: Theme): ComponentClassNames<PageNavigationClassNames> => ({
   PageNavigation: {
     position: 'relative',
     width: '100%',
@@ -31,4 +30,4 @@ const styles = (theme: Theme): Styles => ({
   }
 });
 
-export { styles };
+export { getStyles as styles };

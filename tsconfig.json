@@ -6,8 +6,9 @@
     "jsx": "react",
     "lib": [ "dom", "ES2019" ],
     "module": "CommonJS",
+    "allowJs": false,
+    "moduleResolution": "Node",
     "outDir": "build",
-    "resolveJsonModule": true,
     "strict": true,
     "target": "ES2019"
   },
@@ -18,10 +19,13 @@
     "./test/**/*.tsx"
   ],
   "exclude": [
-    "./build",
-    "./styleguide/out",
-    "./styleguide/.next",
-    "./test/shared/sampleApplication/out",
-    "./test/shared/sampleApplication/.next"
+    "./build/**/*.ts",
+    "./build/**/*.tsx",
+    "./styleguide/.next/**/*.ts",
+    "./styleguide/out/**/*.ts",
+    "./styleguide/.next/**/*.tsx",
+    "./styleguide/out/**/*.tsx",
+    "./test/shared/sampleApplication/**/*.ts",
+    "./test/shared/sampleApplication/**/*.tsx"
   ]
 }

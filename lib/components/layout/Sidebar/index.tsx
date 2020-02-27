@@ -19,4 +19,6 @@ const Sidebar: FunctionComponent<SidebarProps> = ({ children, id }): ReactElemen
   );
 };
 
+Sidebar.displayName = 'Sidebar';
+
 export { Sidebar };

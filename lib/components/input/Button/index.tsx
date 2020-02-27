@@ -77,4 +77,6 @@ const Button: FunctionComponent<ButtonProps> = ({
   /* eslint-enable react/button-has-type */
 };
 
+Button.displayName = 'Button';
+
 export { Button };

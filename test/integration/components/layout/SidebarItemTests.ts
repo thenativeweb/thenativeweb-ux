@@ -31,20 +31,22 @@ suite('SidebarItem', function (): void {
 
     const childItem = await page.$('#sidebar-item-logout');
 
-    await new Promise(async (resolve, reject): Promise<void> => {
-      page.once('console', (message): void => {
-        try {
-          if (message.text() !== 'clicked::clicked::logout') {
-            return;
+    await Promise.all([
+      new Promise((resolve, reject): void => {
+        page.once('console', (message): void => {
+          try {
+            if (message.text() !== 'clicked::clicked::logout') {
+              return;
+            }
+
+            resolve();
+          } catch (ex) {
+            reject(ex);
           }
+        });
+      }),
 
-          resolve();
-        } catch (ex) {
-          reject(ex);
-        }
-      });
-
-      await childItem!.click();
-    });
+      childItem!.click()
+    ]);
   });
 });

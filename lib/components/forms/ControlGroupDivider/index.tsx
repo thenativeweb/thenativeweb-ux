@@ -15,4 +15,6 @@ const ControlGroupDivider: FunctionComponent = (): ReactElement => {
   );
 };
 
+ControlGroupDivider.displayName = 'ControlGroupDivider';
+
 export { ControlGroupDivider };

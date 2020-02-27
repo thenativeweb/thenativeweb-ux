@@ -29,4 +29,6 @@ const BusyIndicator: FunctionComponent<BusyIndicatorProps> = ({
   );
 };
 
+BusyIndicator.displayName = 'BusyIndicator';
+
 export { BusyIndicator };

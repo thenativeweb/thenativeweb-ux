@@ -104,4 +104,6 @@ const LogoWolkenkit: FunctionComponent<LogoProps> = ({
   );
 };
 
+LogoWolkenkit.displayName = 'LogoWolkenkit';
+
 export { LogoWolkenkit };

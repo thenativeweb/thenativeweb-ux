@@ -1,6 +1,5 @@
 import color from 'color';
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type SidebarItemClassNames =
   'SidebarItem' |
@@ -12,7 +11,7 @@ export type SidebarItemClassNames =
   'Label' |
   'Items';
 
-const styles = (theme: Theme): Styles<SidebarItemClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<SidebarItemClassNames> => ({
   SidebarItem: {
     position: 'relative',
     flex: '0 0 auto',

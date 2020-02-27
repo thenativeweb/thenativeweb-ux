@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type HeadlineClassNames =
   'Headline' |
@@ -12,7 +11,7 @@ export type HeadlineClassNames =
   'TextAlignLeft' |
   'TextAlignCenter';
 
-const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
+const getStyles = (theme: Theme): ComponentClassNames<HeadlineClassNames> => ({
   Headline: {
     fontFamily: theme.font.family.default,
     opacity: 0.95,
@@ -28,7 +27,7 @@ const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
   Permalink: {
     fontSize: `1em`,
     color: theme.color.content.background,
-    fontWeight: '600 !important',
+    fontWeight: '600 !important' as any,
     textDecoration: 'none',
     paddingRight: `${theme.space(2)}px`,
 
@@ -119,4 +118,4 @@ const styles = (theme: Theme): Styles<HeadlineClassNames> => ({
   }
 });
 
-export { styles };
+export { getStyles as styles };

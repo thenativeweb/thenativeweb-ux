@@ -1,10 +1,10 @@
-import { Styles } from 'jss';
+import { ComponentClassNames } from '../../..';
 
 export type ApplicationClassNames = 'Application' | 'ApplicationLayout';
 
-const styles: Styles = {
+const styles: ComponentClassNames<ApplicationClassNames> = {
   Application: {
-    position: 'absolute !important',
+    position: 'absolute !important' as any,
     left: 0,
     top: 0,
     right: 0,

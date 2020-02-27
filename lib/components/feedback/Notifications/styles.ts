@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type NotificationsClassNames = 'Notifications';
 
-const styles = (theme: Theme): Styles<NotificationsClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<NotificationsClassNames> => ({
   Notifications: {
     position: 'fixed',
     top: `${theme.space(3)}px`,

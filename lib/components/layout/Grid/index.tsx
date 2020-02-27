@@ -45,4 +45,6 @@ const Grid: FunctionComponent<GridProps> = ({
   );
 };
 
+Grid.displayName = 'Grid';
+
 export { Grid };

@@ -1,6 +1,5 @@
 import color from 'color';
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type HorizontalBarClassNames =
   'AlignStretch' |
@@ -21,7 +20,7 @@ export type HorizontalBarClassNames =
   'WithBorderBottom' |
   'WithBorderTop';
 
-const styles = (theme: Theme): Styles<HorizontalBarClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<HorizontalBarClassNames> => ({
   HorizontalBar: {
     display: 'flex',
     alignItems: 'center',

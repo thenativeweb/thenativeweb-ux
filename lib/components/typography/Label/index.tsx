@@ -1,3 +1,4 @@
+import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { LabelClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -7,7 +8,7 @@ interface LabelProps {
   id?: string;
 }
 
-const useStyles = createUseStyles<LabelClassNames>(styles);
+const useStyles = createUseStyles<Theme, LabelClassNames>(styles);
 
 const Label: FunctionComponent<LabelProps> = function ({
   children,
@@ -22,5 +23,7 @@ const Label: FunctionComponent<LabelProps> = function ({
     </div>
   );
 };
+
+Label.displayName = 'Label';
 
 export { Label };

@@ -1,6 +1,5 @@
 import color from 'color';
-import { Styles } from 'jss';
-import { Theme } from '../../../..';
+import { ComponentClassNames, Theme } from '../../../..';
 
 export type PageGroupClassNames =
   'PageGroup' |
@@ -11,7 +10,7 @@ export type PageGroupClassNames =
   'IsCollapsed' |
   'Children';
 
-const styles = (theme: Theme): Styles<PageGroupClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<PageGroupClassNames> => ({
   PageGroup: {
     position: 'relative',
 

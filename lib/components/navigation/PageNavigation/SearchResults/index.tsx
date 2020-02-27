@@ -66,4 +66,6 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({
   );
 };
 
+SearchResults.displayName = 'SearchResults';
+
 export { SearchResults };

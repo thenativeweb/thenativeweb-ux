@@ -6,27 +6,25 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "es2019"
+      "ES2019"
     ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
     "resolveJsonModule": true,
     "strict": true,
-    "target": "es2019",
-    "allowJs": true,
+    "target": "ES2019",
+    "allowJs": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
   },
-  "exclude": [
-    "out",
-    ".next",
-    "node_modules"
-  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type ControlGroupDividerClassNames = 'ControlGroupDivider';
 
-const styles = (theme: Theme): Styles<ControlGroupDividerClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<ControlGroupDividerClassNames> => ({
   ControlGroupDivider: {
     flexGrow: 0,
     flexShrink: 0,

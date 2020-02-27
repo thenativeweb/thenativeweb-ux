@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type NonIdealStateClassNames =
   'NonIdealState' |
@@ -7,7 +6,7 @@ export type NonIdealStateClassNames =
   'Tip' |
   'Help';
 
-const styles = (theme: Theme): Styles<NonIdealStateClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<NonIdealStateClassNames> => ({
   NonIdealState: {
     marginTop: theme.space(4),
     padding: theme.space(2),

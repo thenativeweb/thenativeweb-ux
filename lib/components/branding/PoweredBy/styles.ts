@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type PoweredByClassNames = 'PoweredBy' | 'Intro';
 
-const styles = (theme: Theme): Styles<PoweredByClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<PoweredByClassNames> => ({
   PoweredBy: {
     display: 'flex',
     flexDirection: 'column',

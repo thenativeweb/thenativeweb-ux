@@ -11,4 +11,6 @@ const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({ theme = new them
   <JssThemeProvider theme={ theme }>{children}</JssThemeProvider>
 );
 
+ThemeProvider.displayName = 'ThemeProvider';
+
 export { ThemeProvider };

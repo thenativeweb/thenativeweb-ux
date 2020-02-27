@@ -41,4 +41,6 @@ const Link: FunctionComponent<LinkProps> = React.forwardRef(({
   );
 });
 
+Link.displayName = 'Link';
+
 export { Link };

@@ -1,14 +1,14 @@
 import { ClassDefinitions } from '../../../styles/utils';
-import { Styles } from 'jss';
+import { NestedCssProperties } from '../../../types/NestedCssProperties';
 
 const spaceDependentProperties: ClassDefinitions = {
-  columnStart: ({ spaceFactor }): Styles => ({
-    gridColumnStart: spaceFactor
+  columnStart: ({ spaceFactor }): NestedCssProperties => ({
+    gridColumnStart: String(spaceFactor)
   }),
-  columnEnd: ({ spaceFactor }): Styles => ({
-    gridColumnEnd: Number(spaceFactor) + 1
+  columnEnd: ({ spaceFactor }): NestedCssProperties => ({
+    gridColumnEnd: String(Number(spaceFactor) + 1)
   }),
-  columnSpan: ({ spaceFactor }): Styles => ({
+  columnSpan: ({ spaceFactor }): NestedCssProperties => ({
     gridColumnStart: `span ${spaceFactor}`
   })
 };

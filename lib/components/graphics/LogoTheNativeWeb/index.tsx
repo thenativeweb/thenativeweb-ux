@@ -44,4 +44,6 @@ const LogoTheNativeWeb: FunctionComponent<LogoProps> = ({
   );
 };
 
+LogoTheNativeWeb.displayName = 'LogoTheNativeWeb';
+
 export { LogoTheNativeWeb };

@@ -1,12 +1,11 @@
 import color from 'color';
-import { Styles } from 'jss';
-import { Theme } from '../../../..';
+import { ComponentClassNames, Theme } from '../../../..';
 
 export type PageClassNames =
   'Page' |
   'IsActive';
 
-const styles = (theme: Theme): Styles<PageClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<PageClassNames> => ({
   Page: {
     display: 'block',
     color: theme.color.brand.gray,

@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type LogoMinimalClassNames =
   'LogoMinimal' |
@@ -11,7 +10,7 @@ export type LogoMinimalClassNames =
   'SizeMd' |
   'SizeLg';
 
-const styles = (theme: Theme): Styles<LogoMinimalClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<LogoMinimalClassNames> => ({
   LogoMinimal: {
     display: 'flex',
     flexDirection: 'column',

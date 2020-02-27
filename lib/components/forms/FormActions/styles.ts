@@ -1,9 +1,8 @@
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type FormActionsClassNames = 'FormActions' | 'TypeDefault' | 'TypeStacked';
 
-const styles = (theme: Theme): Styles<FormActionsClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<FormActionsClassNames> => ({
   FormActions: {
     display: 'flex',
     borderTop: `1px solid ${theme.color.content.border}`,

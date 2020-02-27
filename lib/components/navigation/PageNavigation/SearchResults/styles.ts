@@ -1,21 +1,16 @@
-import { Styles } from 'jss';
-import { Theme } from '../../../..';
+import { ComponentClassNames, Theme } from '../../../..';
 
 export type SearchResultsClassNames =
   'SearchResults' |
-  'Errors' |
-  'ErrorCause' |
-  'ErrorTip' |
-  'SocialIcon' |
   'SearchResult' |
   'Page';
 
-const styles = (theme: Theme): Styles => ({
+const getStyles = (theme: Theme): ComponentClassNames<SearchResultsClassNames> => ({
   SearchResults: {},
 
   SearchResult: {
     margin: 0,
-    padding: [ theme.space(2), theme.space(2) ],
+    padding: theme.space(2),
     borderBottom: `1px solid ${theme.color.brand.grayLight}`,
     fontSize: theme.font.size.md,
 
@@ -42,4 +37,4 @@ const styles = (theme: Theme): Styles => ({
   }
 });
 
-export { styles };
+export { getStyles as styles };

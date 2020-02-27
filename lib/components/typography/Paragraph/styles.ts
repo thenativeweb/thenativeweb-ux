@@ -1,11 +1,10 @@
 import color from 'color';
-import { Styles } from 'jss';
-import { Theme } from '../../..';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type ParagraphClassNames =
   'Paragraph';
 
-const styles = (theme: Theme): Styles<ParagraphClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<ParagraphClassNames> => ({
   Paragraph: {
     color: 'inherit',
     fontFamily: theme.font.family.default,

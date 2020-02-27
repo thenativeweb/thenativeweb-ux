@@ -1,13 +1,12 @@
-import { Styles } from 'jss';
 import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { ParagraphClassNames, styles } from './styles';
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface ParagraphProps {
   className?: string;
   id?: string;
-  style?: Styles;
+  style?: CSSProperties;
 }
 
 const useStyles = createUseStyles<Theme, ParagraphClassNames>(styles);
@@ -30,5 +29,7 @@ const Paragraph: FunctionComponent<ParagraphProps> = ({
     </p>
   );
 };
+
+Paragraph.displayName = 'Paragraph';
 
 export { Paragraph };

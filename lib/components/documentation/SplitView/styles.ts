@@ -1,5 +1,4 @@
-import { Styles } from 'jss';
-import { Theme } from '../../../themes';
+import { ComponentClassNames, Theme } from '../../..';
 
 export type SplitViewClassNames =
   'SplitView' |
@@ -10,21 +9,20 @@ export type SplitViewClassNames =
   'CodePanel' |
   'ToggleButtonCode';
 
-const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
+const styles = (theme: Theme): ComponentClassNames<SplitViewClassNames> => ({
   SplitView: {
+    background: theme.color.brand.grayDark,
     marginTop: theme.space(2),
     position: 'relative',
-    display: 'grid',
-    gridTemplateColumns: `${theme.space(4)}px 0px 1fr`,
-    margin: `${theme.space(3)}px 0 ${theme.space(3)}px 0`
+    display: 'flex',
+    margin: `${theme.space(3)}px 0 ${theme.space(3)}px 0`,
+    overflow: 'hidden'
   },
 
   SplitViewWithCodeVisible: {
-    gridTemplateColumns: `${theme.space(4)}px 1fr 1fr`,
-
-    '& $ToggleButtonCode svg': {
-      transform: 'rotate(180deg)'
-    }
+    flexBasis: '50%',
+    flexGrow: 1,
+    flexShrink: 1
   },
 
   WithPreviewPadding: {
@@ -34,15 +32,35 @@ const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
   },
 
   TogglePanel: {
+    flexGrow: 0,
+    flexShrink: 0,
+    flexBasis: `${theme.space(3)}px`,
     background: `${theme.color.brand.grayDark} !important`,
     borderRight: `1px solid ${theme.color.brand.gray}`
   },
 
-  PreviewPanel: {
-    position: 'relative',
+  CodePanel: {
     maxHeight: '50vh',
+    flexGrow: 0,
+    flexShrink: 0,
+    overflowY: 'auto',
+    position: 'relative',
+
+    '& > *': {
+      width: '100%',
+      height: '100%',
+      overflow: 'auto'
+    }
+  },
+
+  PreviewPanel: {
+    background: theme.color.brand.white,
+    position: 'relative',
+    minHeight: '100%',
     overflow: 'auto',
     flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: '50%',
     border: `1px solid ${theme.color.brand.grayLight}`,
 
     '& hr:not([class])': {
@@ -51,23 +69,6 @@ const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
       height: '1px',
       borderStyle: 'solid',
       border: '0'
-    }
-  },
-
-  CodePanel: {
-    maxHeight: '50vh',
-    height: '100%',
-    width: '100%',
-    background: theme.color.brand.grayDark,
-    flexGrow: 0,
-    flexShrink: 0,
-    overflow: 'hidden',
-    position: 'relative',
-
-    '& > *': {
-      width: '100%',
-      height: '100%',
-      overflow: 'auto'
     }
   },
 
@@ -88,9 +89,16 @@ const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
   },
 
   [theme.breakpoints.down('sm')]: {
+    CodePanel: {
+      height: '0px'
+    },
+
+    PreviewPanel: {
+      maxHeight: '50vh'
+    },
+
     SplitView: {
-      gridTemplateColumns: 'none',
-      gridTemplateRows: `${theme.space(4)}px 0px 1fr`,
+      flexDirection: 'column',
 
       '& $ToggleButtonCode svg': {
         transform: 'rotate(90deg)'
@@ -98,11 +106,34 @@ const styles = (theme: Theme): Styles<SplitViewClassNames> => ({
     },
 
     SplitViewWithCodeVisible: {
-      gridTemplateColumns: 'none',
-      gridTemplateRows: `${theme.space(4)}px 1fr 1fr`,
+      '& $CodePanel': {
+        height: '50vh',
+        width: '100%'
+      },
 
       '& $ToggleButtonCode svg': {
         transform: 'rotate(-90deg)'
+      }
+    }
+  },
+
+  [theme.breakpoints.up('md')]: {
+    CodePanel: {
+      width: '0%'
+    },
+
+    PreviewPanel: {
+      maxHeight: '50vh'
+    },
+
+    SplitViewWithCodeVisible: {
+      '& $CodePanel': {
+        flexBasis: '50%',
+        width: '50%'
+      },
+
+      '& $ToggleButtonCode svg': {
+        transform: 'rotate(180deg)'
       }
     }
   }
