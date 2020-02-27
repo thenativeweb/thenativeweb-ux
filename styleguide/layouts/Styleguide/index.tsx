@@ -33,6 +33,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement | null => {
   const device = useDevice();
 
   const language = getLanguageFromUrl(router.pathname);
+  const basePath = `/${language}`;
 
   if (!Array.isArray(navigation[language])) {
     return null;
@@ -40,7 +41,7 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement | null => {
 
   const pageTree = new PageTree({
     items: navigation[language],
-    basePath: `/${language}`
+    basePath
   });
   const isMobile = device === 'xs';
 
@@ -75,8 +76,8 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement | null => {
     <div className={ componentClasses }>
       <div className={ classes.NavigationForDesktop }>
         <Sidebar>
-          <NextLink href='/'>
-            <Link href='/'>
+          <NextLink href={ basePath }>
+            <Link href={ basePath }>
               <SidebarBrand>
                 <Product name='ux' />
               </SidebarBrand>
@@ -96,8 +97,8 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement | null => {
         borderBottom={ false }
         className={ classes.NavigationForMobile }
       >
-        <NextLink href='/'>
-          <Link href='/'>
+        <NextLink href={ basePath }>
+          <Link href={ basePath }>
             <Product name='ux' size='sm' />
           </Link>
         </NextLink>
