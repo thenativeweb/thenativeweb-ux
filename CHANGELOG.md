@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.3.1...3.4.0) (2020-02-28)
+
+
+### Features
+
+* Add smooth scrolling to Link component. ([#348](https://github.com/thenativeweb/thenativeweb-ux/issues/348)) ([28cfb0b](https://github.com/thenativeweb/thenativeweb-ux/commit/28cfb0b078ec953697aea86689447a9e647f061f))
+
 ## [3.3.1](https://github.com/thenativeweb/thenativeweb-ux/compare/3.3.0...3.3.1) (2020-02-28)
 
 
