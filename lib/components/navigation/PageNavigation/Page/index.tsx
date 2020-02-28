@@ -1,5 +1,4 @@
 import { createUseStyles } from '../../../../styles';
-import NextLink from 'next/link';
 import { classNames, Link, Theme } from '../../../..';
 import { PageClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -34,9 +33,7 @@ const Page: FunctionComponent<PageProps> = ({
   }, `Level${level}`);
 
   return (
-    <NextLink href={ pagePathWithoutTrailingSlash }>
-      <Link href={ pagePathWithoutTrailingSlash } className={ componentClasses }>{ title }</Link>
-    </NextLink>
+    <Link href={ pagePathWithoutTrailingSlash } className={ componentClasses }>{ title }</Link>
   );
 };
 

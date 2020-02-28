@@ -150,7 +150,7 @@ class TestApp extends React.Component<{}, TestAppState> {
             <section>
               <Headline level='2'>Link</Headline>
               <Link href='/interal'>This is an internal link!</Link>
-              <Link href='http://www.google.de' isExternal={ true }>This is an external link!</Link>
+              <Link href='http://www.google.de'>This is an external link!</Link>
             </section>
             <section>
               <Headline level='2'>Message</Headline>

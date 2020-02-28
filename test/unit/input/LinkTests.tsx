@@ -2,6 +2,7 @@ import { act } from '../../shared/act';
 import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { click, mouseover } from '../../shared/eventDispatchers';
 import { Link, ThemeProvider } from '../../../lib';
 
 suite('Link', (): void => {
@@ -20,13 +21,13 @@ suite('Link', (): void => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Link href='/linkTo'>This is a link.</Link>
+          <Link id='link' href='/linkTo'>This is a link.</Link>
         </ThemeProvider>,
         container
       );
     });
 
-    const link = container.querySelector('a');
+    const link = container.querySelector<HTMLAnchorElement>('#link');
 
     assert.that(link).is.not.null();
     assert.that(link!.className).is.containing('Link');
@@ -36,34 +37,73 @@ suite('Link', (): void => {
     assert.that(link!.target).is.not.equalTo('_blank');
   });
 
-  test('can be found by defined property id.', async (): Promise<void> => {
+  test('sets defined properties in DOM Element if href is absolute.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Link id='some-id' href='/linkTo'>This is a link.</Link>
+          <Link id='link' href='https://thenativeweb.io'>This is a link.</Link>
         </ThemeProvider>,
         container
       );
     });
 
-    const link = container.querySelector('#some-id');
-
-    assert.that(link).is.not.null();
-  });
-
-  test('sets defined properties in DOM Element if property isExternal is set to true.', async (): Promise<void> => {
-    act((): void => {
-      ReactDOM.render(
-        <ThemeProvider>
-          <Link href='https://thenativeweb.io' isExternal={ true }>This is a link.</Link>
-        </ThemeProvider>,
-        container
-      );
-    });
-
-    const link = container.querySelector('a');
+    const link = container.querySelector<HTMLAnchorElement>('#link');
 
     assert.that(link!.rel).is.equalTo('noopener noreferrer');
     assert.that(link!.target).is.equalTo('_blank');
+  });
+
+  test('takes onClick function and runs it if clicked.', async (): Promise<void> => {
+    let clicked = false;
+
+    const onClick = (): void => {
+      clicked = true;
+    };
+
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Link id='link' onClick={ onClick } href='https://thenativeweb.io'>This is a link.</Link>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const link = container.querySelector<HTMLAnchorElement>('#link');
+
+    assert.that(link).is.not.null();
+
+    act((): void => {
+      click(link!);
+    });
+
+    assert.that(clicked).is.true();
+  });
+
+  test('takes onMouseOver function and runs it if hovered.', async (): Promise<void> => {
+    let hovered = false;
+
+    const onMouseOver = (): void => {
+      hovered = true;
+    };
+
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Link id='link' onMouseOver={ onMouseOver } href='https://thenativeweb.io'>This is a link.</Link>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const link = container.querySelector<HTMLAnchorElement>('#link');
+
+    assert.that(link).is.not.null();
+
+    act((): void => {
+      mouseover(link!);
+    });
+
+    assert.that(hovered).is.true();
   });
 });
