@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": [ "dom", "ES2019" ],
+    "module": "ES2015",
+    "allowJs": false,
+    "moduleResolution": "Node",
+    "outDir": "build/esm",
+    "strict": true,
+    "target": "ES2019"
+  },
+  "include": [
+    "./lib/**/*.ts",
+    "./lib/**/*.tsx",
+    "./test/**/*.ts",
+    "./test/**/*.tsx"
+  ],
+  "exclude": [
+    "./build/**/*.ts",
+    "./build/**/*.tsx",
+    "./styleguide/.next/**/*.ts",
+    "./styleguide/out/**/*.ts",
+    "./styleguide/.next/**/*.tsx",
+    "./styleguide/out/**/*.tsx",
+    "./test/shared/sampleApplication/**/*.ts",
+    "./test/shared/sampleApplication/**/*.tsx"
+  ]
+}

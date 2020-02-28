@@ -21,7 +21,9 @@
     }
   ],
   "main": "build/lib/index.js",
+  "module": "build/esm/lib/index.js",
   "types": "build/lib/index.d.ts",
+  "type": "module",
   "dependencies": {
     "animejs": "3.1.0",
     "classnames": "2.2.6",
@@ -77,6 +79,7 @@
     "start-styleguide": "cd styleguide && npx next --port 6060",
     "build-styleguide": "cd styleguide && npx next build && npx next export",
     "analyse-bundle": "cd styleguide && ANALYSE_BUNDLE=true npx next build && npx next export",
+    "postbuild": "npx tsc -p tsconfig.esm.json",
     "start-sample-application": "cd test/shared/sampleApplication && npx next",
     "export-sample-application": "cd test/shared/sampleApplication && npx next build && npx next export"
   },
