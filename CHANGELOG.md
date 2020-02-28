@@ -1,3 +1,10 @@
+## [3.3.1](https://github.com/thenativeweb/thenativeweb-ux/compare/3.3.0...3.3.1) (2020-02-28)
+
+
+### Bug Fixes
+
+* Fix language routing. ([#346](https://github.com/thenativeweb/thenativeweb-ux/issues/346)) ([5a8d392](https://github.com/thenativeweb/thenativeweb-ux/commit/5a8d392dca714e1517ae2e7af6578f284ee2fe4b))
+
 # [3.3.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.5...3.3.0) (2020-02-28)
 
 
