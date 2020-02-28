@@ -23,7 +23,6 @@
   "main": "build/lib/index.js",
   "module": "build/esm/lib/index.js",
   "types": "build/lib/index.d.ts",
-  "type": "module",
   "dependencies": {
     "animejs": "3.1.0",
     "classnames": "2.2.6",
