@@ -1,3 +1,10 @@
+# [3.3.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.5...3.3.0) (2020-02-28)
+
+
+### Features
+
+* Add esm build. ([#345](https://github.com/thenativeweb/thenativeweb-ux/issues/345)) ([02633bd](https://github.com/thenativeweb/thenativeweb-ux/commit/02633bd35296186eb28ce1f85c0d7c601033c10e))
+
 ## [3.2.5](https://github.com/thenativeweb/thenativeweb-ux/compare/3.2.4...3.2.5) (2020-02-25)
 
 
