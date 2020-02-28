@@ -51,11 +51,11 @@ suite('Link', (): void => {
     assert.that(link).is.not.null();
   });
 
-  test('sets defined properties in DOM Element if property isExternal is set to true.', async (): Promise<void> => {
+  test('sets defined properties in DOM Element if href is absolute.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(
         <ThemeProvider>
-          <Link href='https://thenativeweb.io' isExternal={ true }>This is a link.</Link>
+          <Link href='https://thenativeweb.io'>This is a link.</Link>
         </ThemeProvider>,
         container
       );

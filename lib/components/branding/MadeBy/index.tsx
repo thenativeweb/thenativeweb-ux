@@ -40,12 +40,12 @@ const MadeBy: FunctionComponent<MadeByProps> = ({
 
       &nbsp;
 
-      <Link href='https://www.thenativeweb.io' isExternal={ true }>the native web</Link>
+      <Link href='https://www.thenativeweb.io'>the native web</Link>
 
       { partners.map((item, index): ReactElement => (
         <React.Fragment key={ item.name }>
           { index === partners.length - 1 ? ' and ' : ', ' }
-          <Link href={ item.href } isExternal={ true }>{ item.name }</Link>
+          <Link href={ item.href }>{ item.name }</Link>
         </React.Fragment>
       )) }
     </div>
