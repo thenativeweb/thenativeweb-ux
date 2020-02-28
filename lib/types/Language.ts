@@ -1,1 +1,1 @@
-export type Language = 'en-US' | string;
+export type Language = 'en-us' | string;

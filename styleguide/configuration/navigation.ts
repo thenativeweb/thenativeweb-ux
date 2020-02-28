@@ -5,7 +5,7 @@ type Navigation = Record<Language, PageTreeItem []>;
 
 /* eslint-disable object-property-newline */
 const navigation: Navigation = {
-  'en-US': [
+  'en-us': [
     { title: 'Components', children: [
       { title: 'Roots', children: [
         { title: 'Application' },

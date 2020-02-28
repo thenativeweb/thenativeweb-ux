@@ -1,3 +1,3 @@
 import { createRedirect } from '../../lib';
 
-export default createRedirect('/en-US');
+export default createRedirect('/en-us');
