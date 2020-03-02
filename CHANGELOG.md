@@ -1,3 +1,10 @@
+## [3.4.1](https://github.com/thenativeweb/thenativeweb-ux/compare/3.4.0...3.4.1) (2020-03-02)
+
+
+### Bug Fixes
+
+* Remove font-weight and font-family from Link styles. ([#355](https://github.com/thenativeweb/thenativeweb-ux/issues/355)) ([33c7c81](https://github.com/thenativeweb/thenativeweb-ux/commit/33c7c811bf45ce4933e2b3389834e513e79502ec))
+
 # [3.4.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.3.1...3.4.0) (2020-02-28)
 
 
