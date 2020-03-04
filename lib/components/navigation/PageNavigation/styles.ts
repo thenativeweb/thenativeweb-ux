@@ -3,6 +3,7 @@ import { ComponentClassNames, Theme } from '../../..';
 export type PageNavigationClassNames =
   'PageNavigation' |
   'SearchBar' |
+  'SearchBarIcon' |
   'SearchField' |
   'Content';
 
@@ -12,21 +13,42 @@ const getStyles = (theme: Theme): ComponentClassNames<PageNavigationClassNames> 
     width: '100%',
     height: '100%',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+
+    '& $SearchBarIcon': {
+      position: 'absolute',
+      left: `${theme.space(3)}px`,
+      pointerEvents: 'none'
+    },
+
+    '& $SearchField': {
+      padding: `${theme.space(1)}px ${theme.space(1)}px`,
+      paddingLeft: `${theme.space(4)}px`,
+      flexGrow: 1
+    },
+
+    '& $Content': {
+      flexGrow: 1,
+      overflow: 'auto',
+      '-webkit-overflow-scrolling': 'touch',
+      paddingTop: theme.space(1.5)
+    }
   },
 
   SearchBar: {},
 
-  SearchField: {
-    padding: `${theme.space(0.5)}px ${theme.space(1)}px`,
-    flexGrow: 1
-  },
+  SearchBarIcon: {},
 
-  Content: {
-    flexGrow: 1,
-    overflow: 'auto',
-    '-webkit-overflow-scrolling': 'touch',
-    paddingTop: theme.space(1.5)
+  SearchField: {},
+
+  Content: {},
+
+  [theme.breakpoints.down('xs')]: {
+    PageNavigation: {
+      '& $SearchField': {
+        marginRight: theme.space(5)
+      }
+    }
   }
 });
 

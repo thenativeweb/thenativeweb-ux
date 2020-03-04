@@ -4,7 +4,6 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import {
   Breadcrumbs,
-  Button,
   classNames,
   createUseStyles,
   Footer,
@@ -54,7 +53,6 @@ const Styleguide: FunctionComponent<StyleguideProps> = ({
   const isMobile = device === 'xs';
 
   const [ isNavigationVisible, setIsNavigationVisible ] = useState(true);
-  const [ isSearchVisible, setIsSearchVisible ] = useState(false);
   const [ activePath, setActivePath ] = useState(router.pathname);
 
   const currentPage = pageTree.getPageItemByPath(activePath);
@@ -128,11 +126,6 @@ const Styleguide: FunctionComponent<StyleguideProps> = ({
 
       <div className={ classes.NavigationUniversal }>
         <PageNavigation
-          header={
-            <HorizontalBar align='space-between' paddingHorizontal='none'>
-              <Button icon='search' onClick={ (): void => setIsSearchVisible(!isSearchVisible) } iconSize='sm' style={{ padding: 16 }} />
-            </HorizontalBar>
-          }
           nonIdealState={
             <NonIdealState cause='Sorry, no pages found.'>
               <p>
@@ -141,7 +134,7 @@ const Styleguide: FunctionComponent<StyleguideProps> = ({
             </NonIdealState>
           }
           pageTree={ pageTree }
-          showSearchBar={ isSearchVisible }
+          showSearchBar={ true }
           activePath={ activePath }
         />
       </div>
