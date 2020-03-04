@@ -15,6 +15,7 @@ import { ControlGroupDivider } from './components/forms/ControlGroupDivider';
 import { ControlGroupItem } from './components/forms/ControlGroupItem';
 import { createRedirect } from './createRedirect';
 import { Dialogs } from './components/feedback/Dialogs';
+import { DocumentationPage } from './layouts/DocumentationPage';
 import { Dropdown } from './components/input/Dropdown';
 import { Footer } from './components/layout/Footer';
 import { Form } from './components/forms/Form';
@@ -30,6 +31,7 @@ import { Icon } from './components/graphics/Icon';
 import { Icons } from './components/graphics/Icons';
 import { IconSize } from './types/IconSize';
 import { Label } from './components/typography/Label';
+import { Language } from './types/Language';
 import { LayoutComponent } from './types/LayoutComponent';
 import { Link } from './components/input/Link';
 import { LogoFull } from './components/graphics/LogoFull';
@@ -41,6 +43,7 @@ import { Message } from './components/feedback/Message';
 import { MobileToggle } from './components/navigation/MobileToggle';
 import { Modal } from './components/feedback/Modal';
 import { ModalRow } from './components/feedback/ModalRow';
+import { MultiLanguagePageTree } from './types/MultiLanguagePageTree';
 import { NextApp } from './NextApp';
 import { NextDocument } from './NextDocument';
 import { NonIdealState } from './components/feedback/NonIdealState';
@@ -94,6 +97,7 @@ export {
   createRedirect,
   dialogs,
   Dialogs,
+  DocumentationPage,
   Dropdown,
   excecutionEnvironment,
   Form,
@@ -111,6 +115,7 @@ export {
   IconSize,
   Icons,
   Label,
+  Language,
   LayoutComponent,
   Link,
   LogoFull,
@@ -122,6 +127,7 @@ export {
   MobileToggle,
   Modal,
   ModalRow,
+  MultiLanguagePageTree,
   NextApp,
   NextDocument,
   NonIdealState,

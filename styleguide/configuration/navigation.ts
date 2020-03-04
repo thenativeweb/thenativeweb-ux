@@ -1,10 +1,7 @@
-import { Language } from '../../lib/types/Language';
-import { PageTreeItem } from '../../lib';
-
-type Navigation = Record<Language, PageTreeItem []>;
+import { MultiLanguagePageTree } from '../../lib';
 
 /* eslint-disable object-property-newline */
-const navigation: Navigation = {
+const navigation: MultiLanguagePageTree = {
   'en-us': [
     { title: 'Components', children: [
       { title: 'Roots', children: [
@@ -72,6 +69,9 @@ const navigation: Navigation = {
       { title: 'Documentation', children: [
         { title: 'Code' }
       ]}
+    ]},
+    { title: 'Layouts', children: [
+      { title: 'DocumentationPage' }
     ]},
     { title: 'Services', children: [
       { title: 'dialogs' },

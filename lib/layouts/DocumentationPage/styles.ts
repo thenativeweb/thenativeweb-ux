@@ -1,8 +1,7 @@
-import { Styles } from 'jss';
-import { Theme } from '../../../lib';
+import { ComponentClassNames, Theme } from '../..';
 
-export type StyleguideClassNames =
-'Styleguide' |
+export type DocumentationPageClassNames =
+'DocumentationPage' |
 'WithNavigationVisible' |
 'NavigationUniversal' |
 'NavigationForDesktop'|
@@ -14,8 +13,8 @@ const navigationPanelWidthXs = '100%';
 const navigationPanelWidthSm = '200px';
 const navigationPanelWidthMd = '300px';
 
-const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
-  Styleguide: {
+const styles = (theme: Theme): ComponentClassNames<DocumentationPageClassNames> => ({
+  DocumentationPage: {
     background: theme.color.brand.white
   },
 
@@ -103,7 +102,7 @@ const styles = (theme: Theme): Styles<StyleguideClassNames> => ({
     },
 
     NavigationForMobile: {
-      display: 'none'
+      display: 'none !important'
     },
 
     NavigationUniversal: {
