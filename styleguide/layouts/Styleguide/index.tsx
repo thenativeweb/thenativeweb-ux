@@ -83,8 +83,8 @@ const Styleguide: FunctionComponent<StyleguideProps> = ({
       <Head>
         {
           pageTitle ?
-            <title>the native web ux | { pageTitle }</title> :
-            <title>the native web ux</title>
+            <title>the native web UX | { pageTitle }</title> :
+            <title>the native web UX</title>
         }
         <link key='favicon' rel='icon' href='/favicon.png' type='image/png' />
         <meta key='viewport' name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover' />

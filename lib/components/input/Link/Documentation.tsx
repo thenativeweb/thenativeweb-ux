@@ -24,7 +24,7 @@ const Documentation = (): ReactElement => (
 
     <Paragraph>
       When linking to anchors on the current page, the <code>Link</code> component
-      will smooth scroll to the target.
+      will smoothly scroll to the target.
     </Paragraph>
 
     <ComponentPreview>
