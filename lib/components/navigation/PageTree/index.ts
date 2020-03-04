@@ -42,7 +42,8 @@ class PageTree {
         path: `${path}/${slug}`,
         breadcrumbs: breadcrumbsForItem,
         breadcrumbsAsString,
-        keywordsAsString
+        keywordsAsString,
+        keywords: item.keywords
       };
     });
 
