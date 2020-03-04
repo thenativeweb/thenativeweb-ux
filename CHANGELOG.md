@@ -1,3 +1,10 @@
+## [3.4.2](https://github.com/thenativeweb/thenativeweb-ux/compare/3.4.1...3.4.2) (2020-03-04)
+
+
+### Bug Fixes
+
+* Make anchor links change the URL. ([#356](https://github.com/thenativeweb/thenativeweb-ux/issues/356)) ([2fd240c](https://github.com/thenativeweb/thenativeweb-ux/commit/2fd240cb3d87e8c602f3cadee7e525ef7fd9ff6e))
+
 ## [3.4.1](https://github.com/thenativeweb/thenativeweb-ux/compare/3.4.0...3.4.1) (2020-03-02)
 
 
