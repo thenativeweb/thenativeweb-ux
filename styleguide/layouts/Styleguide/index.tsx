@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { navigation } from '../../configuration/navigation';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -27,7 +28,14 @@ import { StyleguideClassNames, styles } from './styles';
 
 const useStyles = createUseStyles<Theme, StyleguideClassNames>(styles);
 
-const Styleguide: FunctionComponent = ({ children }): ReactElement | null => {
+interface StyleguideProps {
+  pageTitle?: string;
+}
+
+const Styleguide: FunctionComponent<StyleguideProps> = ({
+  pageTitle,
+  children
+}): ReactElement | null => {
   const router = useRouter();
   const classes = useStyles();
   const device = useDevice();
@@ -74,6 +82,15 @@ const Styleguide: FunctionComponent = ({ children }): ReactElement | null => {
 
   return (
     <div className={ componentClasses }>
+      <Head>
+        {
+          pageTitle ?
+            <title>the native web ux | { pageTitle }</title> :
+            <title>the native web ux</title>
+        }
+        <link key='favicon' rel='icon' href='/favicon.png' type='image/png' />
+        <meta key='viewport' name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover' />
+      </Head>
       <div className={ classes.NavigationForDesktop }>
         <Sidebar>
           <NextLink href={ basePath }>
