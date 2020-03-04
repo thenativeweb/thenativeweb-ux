@@ -20,7 +20,22 @@ const Documentation = (): ReactElement => (
       </Link>
     </ComponentPreview>
 
-    <Headline level='2'>External links</Headline>
+    <Headline level='2'>Anchor links</Headline>
+
+    <Paragraph>
+      When linking to anchors on the current page, the <code>Link</code> component
+      will smoothly scroll to the target.
+    </Paragraph>
+
+    <ComponentPreview>
+      <Link
+        href='#intercepting-click-events'
+      >
+        This a link to #intercepting-click-events
+      </Link>
+    </ComponentPreview>
+
+    <Headline level='2'>Intercepting click events</Headline>
 
     <Paragraph>
       When linking to external websites, the <code>rel</code> and <code>target</code> attributes

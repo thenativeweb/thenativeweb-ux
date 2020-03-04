@@ -3,9 +3,7 @@ import { Page } from './Page';
 import { PageGroup } from './PageGroup';
 import { PageSearch } from '../PageTree/PageSearch';
 import { SearchResults } from './SearchResults';
-import {
-  HorizontalBar, PageTree, PageTreeItemWithMetadata, TextBox, Theme
-} from '../../..';
+import { HorizontalBar, Icon, PageTree, PageTreeItemWithMetadata, TextBox, Theme } from '../../..';
 import { PageNavigationClassNames, styles } from './styles';
 import React, { ChangeEvent, FunctionComponent, ReactElement, ReactNode, useEffect, useState } from 'react';
 
@@ -96,6 +94,7 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
         showSearchBar ?
           (
             <HorizontalBar className={ classes.SearchBar }>
+              <Icon className={ classes.SearchBarIcon } name='search' size='sm' color='current' />
               <TextBox
                 className={ classes.SearchField }
                 value={ query }

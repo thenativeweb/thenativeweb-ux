@@ -13,9 +13,11 @@ const scrollToAnchor = function (event: MouseEvent<HTMLElement>): void {
     return;
   }
 
-  event.preventDefault();
+  window.history.pushState(null, '', href);
 
   targetToScrollTo.scrollIntoView({ behavior: 'smooth' });
+
+  event.preventDefault();
 };
 
 export { scrollToAnchor };
