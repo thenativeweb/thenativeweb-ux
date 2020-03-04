@@ -22,7 +22,7 @@ const Documentation = (): ReactElement => (
       </Code>
     </ComponentPreview>
 
-    <Headline>Languages</Headline>
+    <Headline level='2'>Languages</Headline>
 
     <Paragraph>
       Besides the default `language` JavaScript the component also renders
@@ -65,7 +65,7 @@ const Documentation = (): ReactElement => (
       </Fragment>
     </ComponentPreview>
 
-    <Headline>Inline</Headline>
+    <Headline level='2'>Inline</Headline>
 
     <Paragraph>
       Code can also be rendered inline in a Paragraph.
