@@ -37,8 +37,6 @@ const Documentation = (): ReactElement => (
 
     <Headline level='2'>Intercepting click events</Headline>
 
-    <Headline level='2'>External links</Headline>
-
     <Paragraph>
       When linking to external websites, the <code>rel</code> and <code>target</code> attributes
       will be set automatically, so that external links will open in a new tab.
