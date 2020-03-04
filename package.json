@@ -56,7 +56,7 @@
     "@types/shelljs": "0.8.6",
     "assertthat": "5.1.0",
     "axios": "0.19.2",
-    "buntstift": "4.0.1",
+    "buntstift": "4.0.2",
     "common-tags": "1.8.0",
     "jsdom": "16.2.0",
     "next": "9.2.2",
