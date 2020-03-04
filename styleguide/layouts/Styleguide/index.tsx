@@ -55,7 +55,7 @@ const Styleguide: FunctionComponent<StyleguideProps> = ({
 
   const [ isNavigationVisible, setIsNavigationVisible ] = useState(true);
   const [ isSearchVisible, setIsSearchVisible ] = useState(false);
-  const [ activePath, setActivePath ] = useState(router.asPath);
+  const [ activePath, setActivePath ] = useState(router.pathname);
 
   const currentPage = pageTree.getPageItemByPath(activePath);
 
