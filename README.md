@@ -38,6 +38,20 @@ The integration tests include a [Next.js sample application](test/shared/sampleA
 $ npm run start-sample-application
 ```
 
+## Verifying links
+
+To verify whether a website contains broken links, use the following command:
+
+```shell
+$ npx verify-links <url>
+```
+
+If you want to ignore some urls, provide the `--ignore` flag and set a regular expression that describes the urls to ignore:
+
+```shell
+$ npx verify-links --ignore <regex> <url>
+```
+
 ## Debugging integration tests
 
 This project uses [puppeteer](https://github.com/GoogleChrome/puppeteer) to verify that components render correctly inside a browser. By default these tests are run in headless mode. As debugging integration tests in headless mode can be painful there are two options to debug integration tests visually.
