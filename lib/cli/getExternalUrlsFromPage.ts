@@ -1,7 +1,7 @@
 const getExternalUrlsFromPage = function ({ page, baseUrl }: {
   page: CheerioStatic;
   baseUrl: string;
-}) {
+}): string[] {
   const urls: string[] = [];
 
   const linkElements = page('a[href]').toArray();
