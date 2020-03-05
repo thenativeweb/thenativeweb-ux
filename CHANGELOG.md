@@ -1,3 +1,10 @@
+# [3.5.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.4.3...3.5.0) (2020-03-05)
+
+
+### Features
+
+* Add DocumentationPage layout. ([#359](https://github.com/thenativeweb/thenativeweb-ux/issues/359)) ([1e3af00](https://github.com/thenativeweb/thenativeweb-ux/commit/1e3af00d4b8bf5e8f98b21a5f5569faae37aa7e7))
+
 ## [3.4.3](https://github.com/thenativeweb/thenativeweb-ux/compare/3.4.2...3.4.3) (2020-03-04)
 
 
