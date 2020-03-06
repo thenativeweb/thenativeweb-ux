@@ -6,9 +6,11 @@ import shell from 'shelljs';
 
 const nginx = {
   async start ({
+    name,
     rootDirectory,
     port
   }: {
+    name: string;
     rootDirectory: string;
     port: number;
   }): Promise<void> {
@@ -17,7 +19,7 @@ const nginx = {
         -d
         -p ${port}:80
         -v ${rootDirectory}:/usr/share/nginx/html
-        --name test-nginx
+        --name ${name}
         nginx:1.17.4-alpine
     `);
 
@@ -37,10 +39,10 @@ const nginx = {
     }
   },
 
-  async stop (): Promise<void> {
+  async stop ({ name }: { name: string }): Promise<void> {
     shell.exec([
-      'docker kill test-nginx',
-      'docker rm -v test-nginx'
+      `docker kill ${name}`,
+      `docker rm -v ${name}`
     ].join(';'));
   }
 };

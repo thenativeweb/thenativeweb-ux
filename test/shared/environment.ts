@@ -1,7 +1,7 @@
 import { processenv } from 'processenv';
 
+const integrationTestContainer = 'integration-nginx';
 const integrationTestPort = 3000;
-const styleguideTestPort = 6060;
 const debugModeEnabled = processenv('DEBUG', false);
 const defaultIntegrationTestTimeout = 10_000;
 
@@ -18,10 +18,6 @@ const getIntegrationTestUrl = function (absolutePagePath = '/'): string {
   return `http://localhost:${integrationTestPort}${path}`;
 };
 
-const getStyleguideUrl = function (): string {
-  return `http://localhost:${styleguideTestPort}/en-us`;
-};
-
 const viewport = { width: 1280, height: 800 };
 
 const headless = !debugModeEnabled;
@@ -31,11 +27,10 @@ const slowMotion = debugModeEnabled ? 250 : 0;
 
 export {
   integrationTestTimeOut,
+  integrationTestContainer,
   integrationTestPort,
   getIntegrationTestUrl,
-  getStyleguideUrl,
   viewport,
   headless,
-  slowMotion,
-  styleguideTestPort
+  slowMotion
 };

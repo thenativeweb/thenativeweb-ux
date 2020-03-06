@@ -1,8 +1,8 @@
 import { buntstift } from 'buntstift';
-import { integrationTestPort } from '../shared/environment';
 import { nginx } from '../shared/containers/nginx';
 import path from 'path';
 import shell from 'shelljs';
+import { integrationTestContainer, integrationTestPort } from '../shared/environment';
 
 /* eslint-disable @typescript-eslint/no-floating-promises */
 (async (): Promise<void> => {
@@ -41,6 +41,7 @@ import shell from 'shelljs';
     const staticBuildDirectory = path.join(__dirname, '..', '..', 'test', 'shared', 'sampleApplication', 'out');
 
     await nginx.start({
+      name: integrationTestContainer,
       rootDirectory: staticBuildDirectory,
       port: integrationTestPort
     });
