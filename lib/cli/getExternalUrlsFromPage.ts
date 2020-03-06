@@ -23,6 +23,22 @@ const getExternalUrlsFromPage = function ({ page, baseUrl }: {
     urls.push(url);
   }
 
+  const metaRedirectContent = page('head meta[http-equiv="refresh"]').attr('content');
+
+  if (metaRedirectContent) {
+    const results = /url=(?<url>.*)$/u.exec(metaRedirectContent);
+
+    if (results && results[1]) {
+      let url = results[1];
+
+      if (url.startsWith('/')) {
+        url = `${baseUrl}${url}`;
+      }
+
+      urls.push(url);
+    }
+  }
+
   return urls;
 };
 
