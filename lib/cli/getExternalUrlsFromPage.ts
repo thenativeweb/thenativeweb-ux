@@ -23,28 +23,20 @@ const getExternalUrlsFromPage = function ({ page, baseUrl }: {
     urls.push(url);
   }
 
-  const metaRedirectElements = page('head meta[http-equiv="refresh"]').toArray();
+  const metaRedirectContent = page('head meta[http-equiv="refresh"]').attr('content');
 
-  for (const metaRedirectElement of metaRedirectElements) {
-    const content = page(metaRedirectElement).attr('content');
+  if (metaRedirectContent) {
+    const results = /url=(?<url>.*)$/u.exec(metaRedirectContent);
 
-    if (!content) {
-      continue;
+    if (results && results[1]) {
+      let url = results[1];
+
+      if (url.startsWith('/')) {
+        url = `${baseUrl}${url}`;
+      }
+
+      urls.push(url);
     }
-
-    const results = /url=(?<url>.*)$/u.exec(content);
-
-    if (!results || !results[1]) {
-      continue;
-    }
-
-    let url = results[1];
-
-    if (url.startsWith('/')) {
-      url = `${baseUrl}${url}`;
-    }
-
-    urls.push(url);
   }
 
   return urls;
