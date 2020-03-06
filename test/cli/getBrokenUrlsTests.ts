@@ -37,4 +37,21 @@ suite('getBrokenUrls', (): void => {
       }
     ]);
   });
+
+  test('supports meta redirects.', async (): Promise<void> => {
+    const brokenUrls = await getBrokenUrls({
+      urls: [ `http://localhost:${port}/meta-redirect.html` ],
+      baseUrl: `http://localhost:${port}`
+    });
+
+    assert.that(brokenUrls).is.equalTo([
+      {
+        url: `http://localhost:${port}/missing.html`,
+        referrers: [
+          `http://localhost:${port}/page.html`,
+          `http://localhost:${port}/index.html`
+        ]
+      }
+    ]);
+  });
 });
