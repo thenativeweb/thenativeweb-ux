@@ -38,7 +38,7 @@ import { integrationTestContainer, integrationTestPort } from '../shared/environ
   }
 
   try {
-    const staticBuildDirectory = path.join(__dirname, '..', '..', 'test', 'shared', 'sampleApplication', 'out');
+    const staticBuildDirectory = path.join(__dirname, '..', 'shared', 'sampleApplication', 'out');
 
     await nginx.start({
       name: integrationTestContainer,
