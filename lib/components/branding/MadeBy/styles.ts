@@ -12,9 +12,7 @@ const styles = (theme: Theme): ComponentClassNames<MadeByClassNames> => ({
   MadeBy: {
     overflow: 'hidden',
     fontFamily: theme.font.family.default,
-    textAlign: 'center',
-    paddingTop: theme.space(1),
-    paddingBottom: theme.space(1)
+    textAlign: 'center'
   },
 
   ColorDark: {

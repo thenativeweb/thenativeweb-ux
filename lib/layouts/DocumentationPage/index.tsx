@@ -27,6 +27,8 @@ import React, { FunctionComponent, ReactElement, useCallback, useEffect, useStat
 const useStyles = createUseStyles<Theme, DocumentationPageClassNames>(styles);
 
 interface DocumentationPageProps {
+  linkToImprint?: string;
+  linkToPrivacyPolicy?: string;
   navigation: MultiLanguagePageTree;
   siteTitle: string;
   pageTitle?: string;
@@ -35,6 +37,8 @@ interface DocumentationPageProps {
 }
 
 const DocumentationPage: FunctionComponent<DocumentationPageProps> = ({
+  linkToImprint,
+  linkToPrivacyPolicy,
   children,
   navigation,
   pageTitle,
@@ -148,18 +152,26 @@ const DocumentationPage: FunctionComponent<DocumentationPageProps> = ({
       </div>
 
       <div className={ classes.Content }>
-        {
-          currentPage && (
-            <HorizontalBar paddingHorizontal='none' className={ classes.ContentTopBar }>
-              <Breadcrumbs items={ currentPage.breadcrumbs } size='md' color='light' />
-            </HorizontalBar>
-          )
-        }
+        <article>
+          {
+            currentPage && (
+              <HorizontalBar paddingHorizontal='none' className={ classes.ContentTopBar }>
+                <Breadcrumbs items={ currentPage.breadcrumbs } size='md' color='light' />
+              </HorizontalBar>
+            )
+          }
 
-        { children }
+          { children }
+        </article>
 
-        <Footer yearOfCreation={ yearOfCreation } />
+        <Footer
+          linkToGithub={ currentPage && `https://github.com/thenativeweb/thenativeweb-ux/edit/master/styleguide/pages/${currentPage.path}.tsx` }
+          linkToImprint={ linkToImprint }
+          linkToPrivacyPolicy={ linkToPrivacyPolicy }
+          yearOfCreation={ yearOfCreation }
+        />
       </div>
+
     </div>
   );
 };

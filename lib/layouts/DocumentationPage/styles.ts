@@ -15,7 +15,8 @@ const navigationPanelWidthMd = '300px';
 
 const styles = (theme: Theme): ComponentClassNames<DocumentationPageClassNames> => ({
   DocumentationPage: {
-    background: theme.color.brand.white
+    background: theme.color.brand.white,
+    minHeight: '100vh'
   },
 
   WithNavigationVisible: {
@@ -50,7 +51,14 @@ const styles = (theme: Theme): ComponentClassNames<DocumentationPageClassNames> 
   },
 
   Content: {
-    transition: 'margin-left 200ms'
+    transition: 'margin-left 200ms',
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+
+    '& > article': {
+      flexGrow: 1
+    }
   },
 
   ContentTopBar: {
