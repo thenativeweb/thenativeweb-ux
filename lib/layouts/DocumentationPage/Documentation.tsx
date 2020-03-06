@@ -7,8 +7,8 @@ const Documentation = (): ReactElement => (
 
     <Paragraph>
       Use this layout to render documentation sites that feature a tree
-      navigation structure. It consists of a <Link href='/components/navigation/sidebar'><code>SideBar</code></Link>,
-      a <Link href='/components/navigation/pagenavigation'><code>PageNavigation</code></Link>, and
+      navigation structure. It consists of a <Link href='/en-us/components/layout/sidebar'><code>SideBar</code></Link>,
+      a <Link href='/en-us/components/navigation/pagenavigation'><code>PageNavigation</code></Link>, and
       a content panel.
     </Paragraph>
 
@@ -17,7 +17,7 @@ const Documentation = (): ReactElement => (
     <Paragraph>
       On <code>xs</code> screens, the content panel will fill the whole page and
       the <code>PageNavigation</code> will be rendered in a fullscreen container.
-      A <Link href='/components/navigation/mobiletoggle'><code>MobileToggle</code></Link> can
+      A <Link href='/en-us/components/navigation/mobiletoggle'><code>MobileToggle</code></Link> can
       then be used to toggle this navigation.
     </Paragraph>
 

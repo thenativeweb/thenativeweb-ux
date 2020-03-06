@@ -2,6 +2,7 @@ import { buntstift } from 'buntstift';
 import { nginx } from '../shared/containers/nginx';
 import path from 'path';
 import shell from 'shelljs';
+import { integrationTestContainer, integrationTestPort } from '../shared/environment';
 
 /* eslint-disable @typescript-eslint/no-floating-promises */
 (async (): Promise<void> => {
@@ -37,7 +38,13 @@ import shell from 'shelljs';
   }
 
   try {
-    await nginx.start();
+    const staticBuildDirectory = path.join(__dirname, '..', 'shared', 'sampleApplication', 'out');
+
+    await nginx.start({
+      name: integrationTestContainer,
+      rootDirectory: staticBuildDirectory,
+      port: integrationTestPort
+    });
   } catch {
     buntstift.error('Failed to serve sample application for integration tests.');
 

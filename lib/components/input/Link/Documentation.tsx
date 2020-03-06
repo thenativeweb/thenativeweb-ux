@@ -14,7 +14,7 @@ const Documentation = (): ReactElement => (
 
     <ComponentPreview>
       <Link
-        href='/internal'
+        href='/en-us/components/input/button'
       >
         This an interal link
       </Link>
