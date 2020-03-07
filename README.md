@@ -52,6 +52,12 @@ If you want to ignore some urls, provide the `--ignore` flag and set a regular e
 $ npx verify-links --ignore <regex> <url>
 ```
 
+Sometimes, you may want to specify a sitemap file. For this, add the `--sitemap` flag and provide the path to the sitemap file you want to use:
+
+```shell
+$ npx verify-links --sitemap <path> <url>
+```
+
 ## Debugging integration tests
 
 This project uses [puppeteer](https://github.com/GoogleChrome/puppeteer) to verify that components render correctly inside a browser. By default these tests are run in headless mode. As debugging integration tests in headless mode can be painful there are two options to debug integration tests visually.
