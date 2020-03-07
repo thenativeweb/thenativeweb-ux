@@ -1,6 +1,8 @@
 import { buntstift } from 'buntstift';
 import { Command } from 'command-line-interface';
+import { getAbsolutePath } from './getAbsolutePath';
 import { getBrokenUrls } from './getBrokenUrls';
+import { getUrlsFromSitemap } from './getUrlsFromSitemap';
 import { RootOptions } from './RootOptions';
 
 const rootCommand = function (): Command<RootOptions> {
@@ -27,6 +29,14 @@ const rootCommand = function (): Command<RootOptions> {
         defaultOption: true
       },
       {
+        name: 'sitemap',
+        alias: 's',
+        description: 'use a sitemap',
+        parameterName: 'path',
+        type: 'string',
+        isRequired: false
+      },
+      {
         name: 'ignore',
         alias: 'i',
         description: 'set the ignore filter',
@@ -36,11 +46,27 @@ const rootCommand = function (): Command<RootOptions> {
       }
     ],
 
-    async handle ({ options: { verbose, url, ignore }}): Promise<void> {
+    async handle ({ options: { verbose, url, sitemap, ignore }}): Promise<void> {
       buntstift.configure(
         buntstift.getConfiguration().
           withVerboseMode(verbose)
       );
+
+      let urlsFromSitemap: string[] = [];
+
+      if (sitemap) {
+        const sitemapPath = getAbsolutePath({
+          path: sitemap,
+          cwd: process.cwd()
+        });
+
+        try {
+          urlsFromSitemap = await getUrlsFromSitemap({ sitemapPath });
+        } catch (ex) {
+          buntstift.error(`Failed to load sitemap '${sitemapPath}'.`);
+          throw ex;
+        }
+      }
 
       const stopWaiting = buntstift.wait();
 
@@ -52,7 +78,7 @@ const rootCommand = function (): Command<RootOptions> {
 
       try {
         const brokenLinks = await getBrokenUrls({
-          urls: [ url ],
+          urls: [ url, ...urlsFromSitemap ],
           baseUrl: url,
           ignore: ignoreRegex,
           onVerifying ({ url: verifiedUrl }): void {
