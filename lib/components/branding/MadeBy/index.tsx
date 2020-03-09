@@ -1,5 +1,5 @@
 import { classNames, createUseStyles } from '../../../styles';
-import { Icon, Link, Space, Theme } from '../../..';
+import { Icon, Link, Theme } from '../../..';
 import { MadeByClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
@@ -34,22 +34,20 @@ const MadeBy: FunctionComponent<MadeByProps> = ({
 
   return (
     <div className={ componentClasses }>
-      <Space paddingY='1'>
-        <span>
-          Made with <Icon name='heart' color='highlight' type='inline' /> by
-        </span>
+      <span>
+        Made with <Icon name='heart' color='highlight' type='inline' /> by
+      </span>
 
-        &nbsp;
+      &nbsp;
 
-        <Link href='https://www.thenativeweb.io'>the native web</Link>
+      <Link href='https://www.thenativeweb.io'>the native web</Link>
 
-        { partners.map((item, index): ReactElement => (
-          <React.Fragment key={ item.name }>
-            { index === partners.length - 1 ? ' and ' : ', ' }
-            <Link href={ item.href }>{ item.name }</Link>
-          </React.Fragment>
-        )) }
-      </Space>
+      { partners.map((item, index): ReactElement => (
+        <React.Fragment key={ item.name }>
+          { index === partners.length - 1 ? ' and ' : ', ' }
+          <Link href={ item.href }>{ item.name }</Link>
+        </React.Fragment>
+      )) }
     </div>
   );
 };
