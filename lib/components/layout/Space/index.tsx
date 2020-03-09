@@ -6,6 +6,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 import { spaceDependentProperties, styles } from './styles';
 
 interface SpaceProps {
+  between?: ResponsiveSpaceProp;
   className?: string;
   id?: string;
   padding?: ResponsiveSpaceProp;
