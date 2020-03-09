@@ -69,7 +69,7 @@
     "express": "4.17.1",
     "get-port": "5.1.1",
     "jsdom": "16.2.0",
-    "next": "9.2.2",
+    "next": "9.3.0",
     "processenv": "3.0.1",
     "puppeteer": "2.1.1",
     "react": "16.13.0",
