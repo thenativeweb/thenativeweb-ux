@@ -57,5 +57,11 @@ export default (): ReactElement => (
     <Space id='with-responsive-padding' padding={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }}>
       Content
     </Space>
+
+    <Space id='with-between' between='2'>
+      <div>First</div>
+      <div>Second</div>
+      <div>Last</div>
+    </Space>
   </div>
 );
