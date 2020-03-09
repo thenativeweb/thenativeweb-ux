@@ -1,3 +1,10 @@
+# [3.6.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.5.0...3.6.0) (2020-03-09)
+
+
+### Features
+
+* Add broken link checker. ([#364](https://github.com/thenativeweb/thenativeweb-ux/issues/364)) ([90b4e34](https://github.com/thenativeweb/thenativeweb-ux/commit/90b4e343bc4953da06b16e10f1a9f8ec24cdd8f8)), closes [#365](https://github.com/thenativeweb/thenativeweb-ux/issues/365) [#366](https://github.com/thenativeweb/thenativeweb-ux/issues/366)
+
 # [3.5.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.4.3...3.5.0) (2020-03-05)
 
 

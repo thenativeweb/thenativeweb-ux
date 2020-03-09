@@ -1,5 +1,6 @@
 import { processenv } from 'processenv';
 
+const integrationTestContainer = 'integration-nginx';
 const integrationTestPort = 3000;
 const debugModeEnabled = processenv('DEBUG', false);
 const defaultIntegrationTestTimeout = 10_000;
@@ -26,6 +27,7 @@ const slowMotion = debugModeEnabled ? 250 : 0;
 
 export {
   integrationTestTimeOut,
+  integrationTestContainer,
   integrationTestPort,
   getIntegrationTestUrl,
   viewport,
