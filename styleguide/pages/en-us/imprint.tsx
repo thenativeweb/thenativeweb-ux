@@ -21,7 +21,7 @@ export default (): ReactElement => (
     <Paragraph>
       Phone +49 177 3373175<br />
       Mail <Link href='mailto:hello@thenativeweb.io'>hello@thenativeweb.io</Link><br />
-      Twitter <Link href='https://www.twitter/thenativeweb'>@thenativeweb</Link><br />
+      Twitter <Link href='https://twitter.com/thenativeweb'>@thenativeweb</Link><br />
       GitHub <Link href='https://github.com/thenativeweb'>thenativeweb</Link>
     </Paragraph>
 

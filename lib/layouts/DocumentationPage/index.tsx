@@ -165,7 +165,7 @@ const DocumentationPage: FunctionComponent<DocumentationPageProps> = ({
         </article>
 
         <Footer
-          linkToGithub={ currentPage && `https://github.com/thenativeweb/thenativeweb-ux/edit/master/styleguide/pages/${currentPage.path}.tsx` }
+          linkToGithub={ currentPage && `https://github.com/thenativeweb/thenativeweb-ux/edit/master/styleguide/pages${currentPage.path}.tsx` }
           linkToImprint={ linkToImprint }
           linkToPrivacyPolicy={ linkToPrivacyPolicy }
           yearOfCreation={ yearOfCreation }
