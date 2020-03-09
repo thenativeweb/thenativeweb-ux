@@ -44,7 +44,7 @@ suite('Breadcrumbs', (): void => {
       ]
     );
 
-    const breadcrumbs = toArray(component!.querySelectorAll('[class^=Breadcrumb-]'));
+    const breadcrumbs = toArray(component!.querySelectorAll<HTMLDivElement>('[class^=Breadcrumb-]'));
     const [ first, second, third ] = breadcrumbs;
 
     assert.that(breadcrumbs.length).is.equalTo(3);
@@ -100,7 +100,7 @@ suite('Breadcrumbs', (): void => {
     });
 
     const component = container.querySelector('#component');
-    const highlights = toArray(component!.querySelectorAll('[class*=Highlight-]'));
+    const highlights = toArray(component!.querySelectorAll<HTMLDivElement>('[class*=Highlight-]'));
 
     assert.that(highlights.length).is.equalTo(1);
     assert.that(highlights[0]!.textContent).is.equalTo('Second');

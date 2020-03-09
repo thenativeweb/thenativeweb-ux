@@ -58,7 +58,7 @@ suite('Message', (): void => {
       );
     });
 
-    const message = toArray(container.querySelectorAll('#some-id'));
+    const message = toArray(container.querySelectorAll<HTMLDivElement>('#some-id'));
     const [ info, error ] = message;
 
     assert.that(info.className).is.containingAllOf([ 'TypeInfo', 'WithIcon' ]);

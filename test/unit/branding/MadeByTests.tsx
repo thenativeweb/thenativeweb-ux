@@ -44,7 +44,7 @@ suite('MadeBy', (): void => {
       );
     });
 
-    const madeBys = toArray(container.querySelectorAll('[class^=MadeBy]'));
+    const madeBys = toArray(container.querySelectorAll<HTMLDivElement>('[class^=MadeBy]'));
     const [ small, medium, large ] = madeBys;
 
     assert.that(small.className).is.containing('SizeSm');
@@ -63,7 +63,7 @@ suite('MadeBy', (): void => {
       );
     });
 
-    const madeBys = toArray(container.querySelectorAll('[class^=MadeBy]'));
+    const madeBys = toArray(container.querySelectorAll<HTMLDivElement>('[class^=MadeBy]'));
     const [ light, dark ] = madeBys;
 
     assert.that(light.className).is.containing('ColorLight');
@@ -80,7 +80,7 @@ suite('MadeBy', (): void => {
       );
     });
 
-    const links = toArray(container.querySelectorAll('a'));
+    const links = toArray(container.querySelectorAll<HTMLAnchorElement>('a'));
     const partner = links.filter((link): boolean => link.textContent === 'some-name');
 
     assert.that(partner).is.not.null();

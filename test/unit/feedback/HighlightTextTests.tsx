@@ -30,7 +30,7 @@ suite('HighlightText', (): void => {
     });
 
     const component = container.querySelector('.component');
-    const highlights = toArray(container.querySelectorAll<HTMLElement>('[class^=Highlight-]'));
+    const highlights = toArray(container.querySelectorAll<HTMLDivElement>('[class^=Highlight-]'));
     const [ foo, bar, baz ] = highlights;
 
     assert.that(component!.className).is.containing('HighlightText');
