@@ -27,7 +27,7 @@ suite('Icon', (): void => {
       );
     });
 
-    const icon = container.querySelector('svg');
+    const icon = container.querySelector<SVGElement>('svg');
 
     assert.that(icon).is.not.null();
     assert.that(icon!.className.baseVal).is.containingAllOf([ 'Icon', 'ColorDefault', 'SizeSm' ]);
@@ -48,7 +48,7 @@ suite('Icon', (): void => {
       );
     });
 
-    const icons = toArray(container.querySelectorAll('.Icon-for-testing'));
+    const icons = toArray(container.querySelectorAll<SVGElement>('.Icon-for-testing'));
     const [ xSmall, small, medium, large, xLarge, xxLarge ] = icons;
 
     assert.that(xSmall.className.baseVal).is.containing('SizeXs');
@@ -72,7 +72,7 @@ suite('Icon', (): void => {
       );
     });
 
-    const icons = toArray(container.querySelectorAll('.Icon-for-testing'));
+    const icons = toArray(container.querySelectorAll<SVGElement>('.Icon-for-testing'));
     const [ standard, current, highlight, white ] = icons;
 
     assert.that(standard.className.baseVal).is.containing('ColorDefault');
@@ -92,7 +92,7 @@ suite('Icon', (): void => {
       );
     });
 
-    const [ inline, flex ] = toArray(container.querySelectorAll('.Icon-for-testing'));
+    const [ inline, flex ] = toArray(container.querySelectorAll<SVGElement>('.Icon-for-testing'));
 
     assert.that(inline.className.baseVal).is.containing('TypeInline');
     assert.that(flex.className.baseVal).is.containing('TypeFlex');

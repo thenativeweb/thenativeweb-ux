@@ -1,11 +1,14 @@
 import { classNames, createUseStyles } from '../../../styles';
 import { FooterClassNames, styles } from './styles';
-import { MadeBy, Theme } from '../../..';
+import { Grid, GridItem, Link, MadeBy, Space, Theme } from '../../..';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface FooterProps {
   className?: string;
   id?: string;
+  linkToGithub?: string;
+  linkToImprint?: string;
+  linkToPrivacyPolicy?: string;
   yearOfCreation: number;
   style?: CSSProperties;
 }
@@ -15,6 +18,9 @@ const useStyles = createUseStyles<Theme, FooterClassNames>(styles);
 const Footer: FunctionComponent<FooterProps> = ({
   className,
   id,
+  linkToGithub,
+  linkToImprint,
+  linkToPrivacyPolicy,
   yearOfCreation,
   style
 }): ReactElement => {
@@ -29,12 +35,56 @@ const Footer: FunctionComponent<FooterProps> = ({
 
   return (
     <footer id={ id } className={ componentClassNames } style={ style }>
-      <div className={ classes.MadeBy }>
-        <MadeBy size='md' color='light' />
-      </div>
-      <div className={ classes.Copyright }>
-        © Copyright { copyrightTimespan } the native web GmbH. All rights reserved.
-      </div>
+      <Grid
+        columns={{ xs: 1, sm: 2 }}
+        columnGap={{ xs: 0, sm: 4, md: 10 }}
+        rowGap={{ xs: 1, sm: 2 }}
+      >
+        <GridItem>
+          <Space between={{ xs: 1, sm: 2 }}>
+            {
+              linkToGithub ?
+                (
+                  <div className={ classes.Contribute }>
+                    Found a bug? Missing something? Want to contribute?
+                    Just <Link href={ linkToGithub }>edit this page on Github</Link>.
+                  </div>
+                ) :
+                null
+            }
+
+            <div className={ classes.MadeBy }>
+              <MadeBy size='md' color='light' />
+            </div>
+          </Space>
+        </GridItem>
+        <GridItem>
+          <Space between={{ xs: 1 }}>
+            <div className={ classes.Copyright }>
+              © Copyright { copyrightTimespan } the native web GmbH. All rights reserved.
+            </div>
+            <div className={ classes.Legal }>
+              {
+                linkToImprint ?
+                  <Link href={ linkToImprint }>Imprint</Link> :
+                  null
+              }
+
+              {
+                linkToImprint && linkToPrivacyPolicy ?
+                  <span> & </span> :
+                  null
+              }
+
+              {
+                linkToPrivacyPolicy ?
+                  <Link href={ linkToPrivacyPolicy }>Privacy Policy</Link> :
+                  null
+              }
+            </div>
+          </Space>
+        </GridItem>
+      </Grid>
     </footer>
   );
 };

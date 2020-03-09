@@ -3,6 +3,14 @@ import { ClassDefinitions, createDefaultSpaceDependantClasses, createSpaceDepend
 import { ComponentClassNames, Theme } from '../../..';
 
 const spaceDependentProperties: ClassDefinitions = {
+  between: ({ spaceFactor, theme }): NestedCssProperties => ({
+    '& > *': {
+      marginBottom: `${theme.space(Number(spaceFactor))}px`
+    },
+    '& > *:last-child': {
+      marginBottom: `0`
+    }
+  }),
   padding: ({ spaceFactor, theme }): NestedCssProperties => ({
     padding: `${theme.space(Number(spaceFactor))}px`
   }),

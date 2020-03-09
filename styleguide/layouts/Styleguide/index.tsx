@@ -9,6 +9,8 @@ const Styleguide: FunctionComponent = ({
     siteTitle='the native web UX'
     productName='ux'
     navigation={ navigation }
+    linkToImprint='/en-us/imprint'
+    linkToPrivacyPolicy='/en-us/privacy-policy'
     yearOfCreation={ 2017 }
   >
     {

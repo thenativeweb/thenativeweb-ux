@@ -70,14 +70,36 @@ const Documentation = (): ReactElement => (
       </Fragment>
     </ComponentPreview>
 
+    <Headline level='2'>Defining space between children</Headline>
+
+    <Paragraph>
+      To specify the space between child elements use
+      the <code>between</code> property:
+    </Paragraph>
+
+    <ComponentPreview>
+      <Space between='3'>
+        <div style={{ background: 'deeppink' }}>First</div>
+        <div style={{ background: 'deeppink' }}>Second</div>
+        <div style={{ background: 'deeppink' }}>Last</div>
+      </Space>
+    </ComponentPreview>
+
     <Headline level='2'>Using responsive values</Headline>
 
     <Paragraph>
-      All padding properties can also be set depending on the size of the viewport:
+      All properties can also be set depending on the size of the viewport:
     </Paragraph>
 
     <ComponentPreview previewPadding={ false }>
-      <Space padding={{ xs: 1, sm: 2, md: 4, lg: 6, xl: 8 }}>
+      <Space
+        between={{ xs: 1, sm: 2, md: 4, lg: 6, xl: 8 }}
+        padding={{ xs: 1, sm: 2, md: 4, lg: 6, xl: 8 }}
+      >
+        <div style={{ background: 'deeppink' }}>
+          The padding of this div will change with the size of the viewport. <br />
+          { `{ xs: 1, sm: 2, md: 4, lg: 6, xl: 8 }` }
+        </div>
         <div style={{ background: 'deeppink' }}>
           The padding of this div will change with the size of the viewport. <br />
           { `{ xs: 1, sm: 2, md: 4, lg: 6, xl: 8 }` }

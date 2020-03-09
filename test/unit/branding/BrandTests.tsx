@@ -79,7 +79,7 @@ suite('Brand', (): void => {
       );
     });
 
-    const brands = toArray(container.querySelectorAll('[class^=LogoFull]'));
+    const brands = toArray(container.querySelectorAll<HTMLDivElement>('[class^=LogoFull]'));
     const [ small, medium, large ] = brands;
 
     assert.that(small.className).is.containing('SizeSm');
@@ -98,7 +98,7 @@ suite('Brand', (): void => {
       );
     });
 
-    const brands = toArray(container.querySelectorAll('[class^=LogoMinimal]'));
+    const brands = toArray(container.querySelectorAll<HTMLDivElement>('[class^=LogoMinimal]'));
     const [ interactive, notInteractive ] = brands;
 
     assert.that(interactive.className).is.containing('IsInteractive');

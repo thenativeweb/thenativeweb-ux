@@ -74,7 +74,7 @@ suite('Container', (): void => {
       );
     });
 
-    const containerDiv = toArray(container.querySelectorAll('#some-id'));
+    const containerDiv = toArray(container.querySelectorAll<HTMLDivElement>('#some-id'));
     const [ gray, dark, none ] = containerDiv;
 
     assert.that(gray.className).is.containing('BackgroundLight');
@@ -103,7 +103,7 @@ suite('Container', (): void => {
       );
     });
 
-    const containerDiv = toArray(container.querySelectorAll('#some-id'));
+    const containerDiv = toArray(container.querySelectorAll<HTMLDivElement>('#some-id'));
     const [ left, right, center, stretch ] = containerDiv;
 
     assert.that(left.className).is.containing('HorizontalLeft');
@@ -133,7 +133,7 @@ suite('Container', (): void => {
       );
     });
 
-    const containerDiv = toArray(container.querySelectorAll('#some-id'));
+    const containerDiv = toArray(container.querySelectorAll<HTMLDivElement>('#some-id'));
     const [ top, bottom, center, stretch ] = containerDiv;
 
     assert.that(top.className).is.containing('VerticalTop');

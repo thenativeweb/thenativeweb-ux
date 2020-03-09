@@ -3,7 +3,9 @@ import { ComponentClassNames, Theme } from '../../..';
 export type FooterClassNames =
   'Footer' |
   'MadeBy' |
-  'Copyright';
+  'Copyright' |
+  'Legal' |
+  'Contribute';
 
 const styles = (theme: Theme): ComponentClassNames<FooterClassNames> => ({
   Footer: {
@@ -11,18 +13,18 @@ const styles = (theme: Theme): ComponentClassNames<FooterClassNames> => ({
     fontWeight: 300,
     borderTop: `1px solid ${theme.color.content.border}`,
 
-    textAlign: 'center',
-    paddingLeft: theme.space(2),
-    paddingRight: theme.space(2)
+    '& $MadeBy > *': {
+      textAlign: 'left'
+    }
   },
 
-  MadeBy: {
+  Contribute: {},
 
-  },
+  MadeBy: {},
 
-  Copyright: {
+  Copyright: {},
 
-  },
+  Legal: {},
 
   [theme.breakpoints.down('sm')]: {
     Footer: {
@@ -35,6 +37,14 @@ const styles = (theme: Theme): ComponentClassNames<FooterClassNames> => ({
     Footer: {
       marginTop: theme.space(6),
       paddingTop: theme.space(4)
+    },
+
+    Copyright: {
+      textAlign: 'right'
+    },
+
+    Legal: {
+      textAlign: 'right'
     }
   }
 });

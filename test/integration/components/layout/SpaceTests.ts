@@ -125,4 +125,23 @@ suite('Space', function (): void {
       assert.that(responsivePaddingOnXlDevice).is.equalTo('40px');
     });
   });
+
+  suite('between', (): void => {
+    test('sets correct margins for all children expcept the last child.', async (): Promise<void> => {
+      const url = getIntegrationTestUrl(testPageUrl);
+
+      page = await browser.setupPage();
+
+      await page.goto(url);
+      await page.waitForSelector('#with-between');
+
+      const firstChildMargin = await page.$eval('#with-between div:nth-child(1)', (element: Element): string => window.getComputedStyle(element).margin);
+      const secondChildMargin = await page.$eval('#with-between div:nth-child(2)', (element: Element): string => window.getComputedStyle(element).margin);
+      const lastChildMargin = await page.$eval('#with-between div:nth-child(3)', (element: Element): string => window.getComputedStyle(element).margin);
+
+      assert.that(firstChildMargin).is.equalTo('0px 0px 16px');
+      assert.that(secondChildMargin).is.equalTo('0px 0px 16px');
+      assert.that(lastChildMargin).is.equalTo('0px');
+    });
+  });
 });

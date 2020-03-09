@@ -27,7 +27,7 @@ suite('styleguide', (): void => {
   });
 
   test('contains no broken urls.', async function (): Promise<void> {
-    this.timeout(10_000);
+    this.timeout(2 * 60_000);
 
     const projectRoot = path.join(__dirname, '..', '..');
     const cliPath = path.join(__dirname, '..', '..', 'lib', 'bin', 'verifyLinks.ts');

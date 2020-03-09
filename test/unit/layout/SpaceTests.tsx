@@ -58,6 +58,32 @@ suite('Space', (): void => {
     );
   });
 
+  test('sets both non-responsive and responsive classes for defined property between.', async (): Promise<void> => {
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Space id='non-responsive' between='3'>Space</Space>
+          <Space id='responsive' between={{ xs: 3, sm: 4, md: 5, lg: 6 }}>Space</Space>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const nonResponsive = container.querySelector('#non-responsive');
+    const responsive = container.querySelector('#responsive');
+
+    assert.that(nonResponsive!.className).is.containing(' -between-3');
+
+    assert.that(responsive!.className).is.containingAllOf(
+      [
+        'xs-between-3',
+        'sm-between-4',
+        'md-between-5',
+        'lg-between-6'
+      ]
+    );
+  });
+
   test('adds custom className.', async (): Promise<void> => {
     act((): void => {
       ReactDOM.render(

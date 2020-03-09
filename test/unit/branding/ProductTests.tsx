@@ -45,7 +45,7 @@ suite('Product', (): void => {
       );
     });
 
-    const products = toArray(container.querySelectorAll('[class^=Product]'));
+    const products = toArray<HTMLDivElement>(container.querySelectorAll('[class^=Product]'));
     const [ small, medium, large, xLarge ] = products;
 
     assert.that(small.className).is.containing('SizeSm');
@@ -66,7 +66,7 @@ suite('Product', (): void => {
       );
     });
 
-    const products = toArray(container.querySelectorAll('[class^=Product]'));
+    const products = toArray<HTMLDivElement>(container.querySelectorAll('[class^=Product]'));
     const [ standard, textOnly, logoOnly ] = products;
 
     assert.that(standard.querySelector('[class^=LogoTheNativeWeb]')).is.not.null();
@@ -91,7 +91,7 @@ suite('Product', (): void => {
       );
     });
 
-    const products = toArray(container.querySelectorAll('[class^=Product]'));
+    const products = toArray(container.querySelectorAll<HTMLDivElement>('[class^=Product]'));
     const [ wolkenkitAnimated, wolkenkitStatic, tnwAnimated ] = products;
 
     assert.that(wolkenkitAnimated.querySelector('[class^=MovingCloudAnimated]')).is.not.null();
@@ -110,7 +110,7 @@ suite('Product', (): void => {
       );
     });
 
-    const products = toArray(container.querySelectorAll('[class^=Product]'));
+    const products = toArray(container.querySelectorAll<HTMLDivElement>('[class^=Product]'));
     const [ wolkenkit, other ] = products;
 
     assert.that(wolkenkit.querySelector('[class^=CompositeName]')).is.not.null();
