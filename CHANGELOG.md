@@ -1,3 +1,10 @@
+# [3.7.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.6.0...3.7.0) (2020-03-09)
+
+
+### Features
+
+* Provide more details in Footer. ([#367](https://github.com/thenativeweb/thenativeweb-ux/issues/367)) ([e54eb38](https://github.com/thenativeweb/thenativeweb-ux/commit/e54eb3814e2a21ddb4a16d6cb3841fe330d58822))
+
 # [3.6.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.5.0...3.6.0) (2020-03-09)
 
 
