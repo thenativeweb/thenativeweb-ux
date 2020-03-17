@@ -3,7 +3,7 @@ import { assert } from 'assertthat';
 import { click } from '../../shared/eventDispatchers';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { toArray } from '../../shared/toArray';
+import { toArray } from '../../../lib/utils/toArray';
 import { Button, ThemeProvider } from '../../../lib';
 
 suite('Button', (): void => {

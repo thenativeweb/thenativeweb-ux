@@ -2,7 +2,7 @@ import { act } from '../../shared/act';
 import { assert } from 'assertthat';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { toArray } from '../../shared/toArray';
+import { toArray } from '../../../lib/utils/toArray';
 import { Brand, ThemeProvider } from '../../../lib';
 
 suite('Brand', (): void => {

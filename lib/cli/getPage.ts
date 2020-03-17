@@ -1,9 +1,14 @@
 import axios from 'axios';
-import cheerio from 'cheerio';
+import { JSDOM, VirtualConsole } from 'jsdom';
+
+export interface Page {
+  document: Document;
+  destroy: () => void;
+}
 
 const getPage = async ({ url }: {
   url: string;
-}): Promise<CheerioStatic> => {
+}): Promise<Page> => {
   const { data } = await axios({
     method: 'get',
     url,
@@ -16,7 +21,16 @@ const getPage = async ({ url }: {
     }
   });
 
-  const page = cheerio.load(data);
+  const { window } = new JSDOM(data, {
+    virtualConsole: new VirtualConsole().sendTo(console, { omitJSDOMErrors: true })
+  });
+
+  const page = {
+    document: window.document,
+    destroy (): void {
+      window.close();
+    }
+  };
 
   return page;
 };
