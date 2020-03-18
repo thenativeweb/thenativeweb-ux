@@ -1,13 +1,16 @@
+import { Page } from './getPage';
+import { toArray } from '../utils/toArray';
+
 const getExternalUrlsFromPage = function ({ page, baseUrl }: {
-  page: CheerioStatic;
+  page: Page;
   baseUrl: string;
 }): string[] {
   const urls: string[] = [];
 
-  const linkElements = page('a[href]').toArray();
+  const linkElements = toArray(page.document.querySelectorAll<HTMLAnchorElement>('a[href]'));
 
   for (const linkElement of linkElements) {
-    let url = page(linkElement).attr('href');
+    let url = linkElement.getAttribute('href');
 
     if (!url) {
       continue;
@@ -23,7 +26,7 @@ const getExternalUrlsFromPage = function ({ page, baseUrl }: {
     urls.push(url);
   }
 
-  const metaRedirectContent = page('head meta[http-equiv="refresh"]').attr('content');
+  const metaRedirectContent = page.document.querySelector<HTMLMetaElement>('head meta[http-equiv="refresh"]')?.getAttribute('content');
 
   if (metaRedirectContent) {
     const results = /url=(?<url>.*)$/u.exec(metaRedirectContent);

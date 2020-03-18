@@ -1,8 +1,8 @@
 import { BrokenUrl } from './BrokenUrl';
 import { cloneDeep } from 'lodash';
 import { getExternalUrlsFromPage } from './getExternalUrlsFromPage';
-import { getPage } from './getPage';
 import { noop } from './noop';
+import { getPage, Page } from './getPage';
 
 const getBrokenUrls = async function ({
   urls,
@@ -35,7 +35,7 @@ const getBrokenUrls = async function ({
 
     verifiedUrls.push(currentUrl);
 
-    let page;
+    let page: Page;
 
     try {
       page = await getPage({ url: currentUrl });
@@ -71,6 +71,8 @@ const getBrokenUrls = async function ({
         urlsToVerify.push(externalUrl);
       }
     }
+
+    page.destroy();
   }
 
   return brokenUrls;
