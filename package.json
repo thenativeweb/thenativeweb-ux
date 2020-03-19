@@ -61,7 +61,7 @@
     "@types/react-syntax-highlighter": "11.0.4",
     "@types/react-transition-group": "4.2.4",
     "@types/shelljs": "0.8.6",
-    "assertthat": "5.1.0",
+    "assertthat": "5.1.1",
     "axios": "0.19.2",
     "buntstift": "4.0.3",
     "common-tags": "1.8.0",
