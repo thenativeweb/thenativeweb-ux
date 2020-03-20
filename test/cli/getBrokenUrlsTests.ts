@@ -1,5 +1,5 @@
 import { assert } from 'assertthat';
-import { getBrokenUrls } from '../../lib/cli/getBrokenUrls';
+import { getBrokenUrls } from '../../lib/cli/verifyLinks/getBrokenUrls';
 import getPort from 'get-port';
 import http from 'http';
 import path from 'path';

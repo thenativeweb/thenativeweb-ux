@@ -38,24 +38,34 @@ The integration tests include a [Next.js sample application](test/shared/sampleA
 $ npm run start-sample-application
 ```
 
+## Optimizing images
+
+To optimize JPG, PNG, and SVG images of a website, use the following command:
+
+```shell
+$ npx ux optimize-images --source <path> --destination <path>
+```
+
+The command recursively copies all images from the source folder to the destination folder and optimizes them using a reasonable preset.
+
 ## Verifying links
 
 To verify whether a website contains broken links, use the following command:
 
 ```shell
-$ npx verify-links <url>
+$ npx ux verify-links <url>
 ```
 
 If you want to ignore some urls, provide the `--ignore` flag and set a regular expression that describes the urls to ignore:
 
 ```shell
-$ npx verify-links --ignore <regex> <url>
+$ npx ux verify-links --ignore <regex> <url>
 ```
 
 Sometimes, you may want to specify a sitemap file. For this, add the `--sitemap` flag and provide the path to the sitemap file you want to use:
 
 ```shell
-$ npx verify-links --sitemap <path> <url>
+$ npx ux verify-links --sitemap <path> <url>
 ```
 
 ## Debugging integration tests
