@@ -1,3 +1,10 @@
+## [3.7.2](https://github.com/thenativeweb/thenativeweb-ux/compare/3.7.1...3.7.2) (2020-03-20)
+
+
+### Bug Fixes
+
+* Remove unneeded dependency. ([#396](https://github.com/thenativeweb/thenativeweb-ux/issues/396)) ([ea86c94](https://github.com/thenativeweb/thenativeweb-ux/commit/ea86c94611f6e552bb52e1d8b3a81bfbee4c39c0))
+
 ## [3.7.1](https://github.com/thenativeweb/thenativeweb-ux/compare/3.7.0...3.7.1) (2020-03-18)
 
 
