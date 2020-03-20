@@ -46,7 +46,6 @@
     "@babel/runtime-corejs2": "7.9.0",
     "@next/bundle-analyzer": "9.3.1",
     "@types/animejs": "3.1.0",
-    "@types/cheerio": "0.22.16",
     "@types/classnames": "2.2.10",
     "@types/color": "3.0.1",
     "@types/common-tags": "1.8.0",
