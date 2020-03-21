@@ -10,7 +10,9 @@ const styles = (theme: Theme): ComponentClassNames<ComponentPreviewClassNames> =
   },
 
   BackgroundDark: {
-    background: theme.color.brand.grayDark
+    '& > *': {
+      background: theme.color.brand.grayDark
+    }
   },
 
   Code: {

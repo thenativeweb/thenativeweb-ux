@@ -16,11 +16,11 @@ const styles = (theme: Theme): ComponentClassNames<MadeByClassNames> => ({
   },
 
   ColorDark: {
-    color: theme.color.brand.grayLight
+    color: theme.color.brand.grayDark
   },
 
   ColorLight: {
-    color: theme.color.brand.grayDark
+    color: theme.color.brand.white
   },
 
   SizeSm: {

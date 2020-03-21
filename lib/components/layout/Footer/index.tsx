@@ -4,7 +4,10 @@ import { Grid, GridItem, Link, MadeBy, Space, Theme } from '../../..';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface FooterProps {
+  borderTop?: 'none' | 'dark';
   className?: string;
+  color?: 'light' | 'dark';
+  fontSize?: 'sm' | 'md';
   id?: string;
   linkToGithub?: string;
   linkToImprint?: string;
@@ -16,7 +19,10 @@ interface FooterProps {
 const useStyles = createUseStyles<Theme, FooterClassNames>(styles);
 
 const Footer: FunctionComponent<FooterProps> = ({
+  borderTop = 'dark',
   className,
+  color = 'dark',
+  fontSize = 'md',
   id,
   linkToGithub,
   linkToImprint,
@@ -27,6 +33,14 @@ const Footer: FunctionComponent<FooterProps> = ({
   const classes = useStyles();
   const componentClassNames = classNames(
     classes.Footer,
+    {
+      [classes.BorderTopNone]: borderTop === 'none',
+      [classes.ColorLight]: color === 'light',
+      [classes.ColorDark]: color === 'dark',
+      [classes.BorderTopDark]: borderTop === 'dark',
+      [classes.FontSizeSm]: fontSize === 'sm',
+      [classes.FontSizeMd]: fontSize === 'md'
+    },
     className
   );
 
@@ -54,7 +68,7 @@ const Footer: FunctionComponent<FooterProps> = ({
             }
 
             <div className={ classes.MadeBy }>
-              <MadeBy size='md' color='light' />
+              <MadeBy size='md' color={ color } />
             </div>
           </Space>
         </GridItem>

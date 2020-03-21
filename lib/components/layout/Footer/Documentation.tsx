@@ -1,4 +1,5 @@
 import { ComponentPreview } from '../../../components/documentation/ComponentPreview';
+import { Property } from '../../documentation/Property';
 import { Footer, Headline, Paragraph } from '../../..';
 import React, { Fragment, ReactElement } from 'react';
 
@@ -15,7 +16,7 @@ const Documentation = (): ReactElement => (
       <Footer yearOfCreation={ new Date().getFullYear() } />
     </ComponentPreview>
 
-    <Headline level='2'>Year of creation</Headline>
+    <Headline level='2'>Specifying the year of creation</Headline>
 
     <Paragraph>
       You need to set the <em>yearOfCreation</em> property in order to define the copyright
@@ -49,6 +50,49 @@ const Documentation = (): ReactElement => (
 
     <ComponentPreview>
       <Footer linkToPrivacyPolicy='/en-us/privacy-policy' yearOfCreation={ new Date().getFullYear() } />
+    </ComponentPreview>
+
+    <Headline level='2'>Setting the font size</Headline>
+
+    <ComponentPreview>
+      <Fragment>
+        <Property name='fontSize' value='sm' />
+
+        <Footer
+          fontSize='sm'
+          borderTop='none'
+          linkToPrivacyPolicy='/en-us/privacy-policy'
+          yearOfCreation={ new Date().getFullYear() }
+        />
+
+        <hr />
+
+        <Property name='fontSize' value='md' />
+
+        <Footer
+          fontSize='md'
+          borderTop='none'
+          linkToPrivacyPolicy='/en-us/privacy-policy'
+          yearOfCreation={ new Date().getFullYear() }
+        />
+      </Fragment>
+    </ComponentPreview>
+
+    <Headline level='2'>Setting the color on dark background</Headline>
+
+    <Paragraph>
+      Switch the <code>color</code> property to <code>light</code> if you would
+      like to place it on a <code>dark</code> background. Additionally it can make
+      sense to set the <code>borderTop</code> property to <code>none</code>.
+    </Paragraph>
+
+    <ComponentPreview background='dark'>
+      <Footer
+        color='light'
+        linkToPrivacyPolicy='/en-us/privacy-policy'
+        yearOfCreation={ new Date().getFullYear() }
+        borderTop='none'
+      />
     </ComponentPreview>
   </React.Fragment>
 );
