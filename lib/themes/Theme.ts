@@ -154,7 +154,7 @@ abstract class Theme {
     };
 
     this.font = {
-      import: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700|Ubuntu:300,400,500|Ubuntu+Mono',
+      import: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700|Ubuntu:300,400,500|Ubuntu+Mono&display=swap',
 
       size: fontSizes,
 
