@@ -12,7 +12,7 @@ const optimizeImagesCommand = function (): Command<OptimizeImagesOptions> {
       {
         name: 'source',
         alias: 's',
-        description: 'set the source folder',
+        description: 'set the source directory',
         parameterName: 'path',
         type: 'string',
         isRequired: true
