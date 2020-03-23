@@ -20,7 +20,7 @@ const optimizeImagesCommand = function (): Command<OptimizeImagesOptions> {
       {
         name: 'destination',
         alias: 'd',
-        description: 'set the destination folder',
+        description: 'set the destination directory',
         parameterName: 'path',
         type: 'string',
         isRequired: true
