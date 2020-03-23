@@ -35,20 +35,20 @@ const optimizeImages = async function ({
     }
   });
 
-  for (const sourcePath of imagePaths) {
-    const relativeSourcePath = path.relative(source, sourcePath);
-    const extensionName = path.extname(sourcePath).toLowerCase().replace('.', '') as SupportedExtensionNames;
-    const destinationPath = path.join(destination, relativeSourcePath);
+  for (const imagePath of imagePaths) {
+    const relativeimagePath = path.relative(source, imagePath);
+    const extensionName = path.extname(imagePath).toLowerCase().replace('.', '') as SupportedExtensionNames;
+    const destinationPath = path.join(destination, relativeimagePath);
     const optimizeImage = optimizerForExtension[extensionName];
 
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     queue.add(async (): Promise<void> => {
-      buntstift.verbose(`Optimizing ${sourcePath}...`);
+      buntstift.verbose(`Optimizing '${imagePath}'...`);
 
       await ensureFile(destinationPath);
-      await optimizeImage({ source: sourcePath, destination: destinationPath, verbose });
+      await optimizeImage({ source: imagePath, destination: destinationPath, verbose });
 
-      buntstift.verbose(`Optimized ${sourcePath}.`);
+      buntstift.verbose(`Optimized '${imagePath}'.`);
     });
   }
 

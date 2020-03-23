@@ -6,7 +6,7 @@ import { OptimizeImagesOptions } from './OptimizeImagesOptions';
 const optimizeImagesCommand = function (): Command<OptimizeImagesOptions> {
   return {
     name: 'optimize-images',
-    description: 'Optimizes the size of JPG, PNG, SVG images.',
+    description: 'Optimizes the size of .jpg, .png, and .svg images.',
 
     optionDefinitions: [
       {
@@ -15,8 +15,7 @@ const optimizeImagesCommand = function (): Command<OptimizeImagesOptions> {
         description: 'set the source folder',
         parameterName: 'path',
         type: 'string',
-        isRequired: true,
-        defaultOption: true
+        isRequired: true
       },
       {
         name: 'destination',

@@ -39,7 +39,7 @@ suite('styleguide', (): void => {
 
     await new Promise((resolve, reject): void => {
       shell.exec(
-        `npx ts-node ${cliPath} --verbose verify-links --url ${styleguideUrl} --ignore '${ignoreUrls}'`,
+        `npx ts-node '${cliPath}' --verbose verify-links --url '${styleguideUrl}' --ignore '${ignoreUrls}'`,
         { cwd: projectRoot },
         (code, stdout, stderr): void => {
           if (code !== 0) {

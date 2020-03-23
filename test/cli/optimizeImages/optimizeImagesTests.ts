@@ -11,16 +11,16 @@ const getFileSize = async function (filePath: string): Promise<number> {
 };
 
 suite('optimizeImages', (): void => {
-  test('copies images from source to destination folder and optimizes their file size.', async (): Promise<void> => {
+  test('copies images from the source to destination directory and optimizes their file sizes.', async (): Promise<void> => {
     const sourceDirectory = await isolated({
-      files: path.join(__dirname, 'flat-images')
+      files: path.join(__dirname, 'flatImages')
     });
     const destinationDirectory = await isolated();
 
     const originalSizes = {
-      jpg: await getFileSize(path.join(sourceDirectory, 'flat-images', 'image.jpg')),
-      png: await getFileSize(path.join(sourceDirectory, 'flat-images', 'image.png')),
-      svg: await getFileSize(path.join(sourceDirectory, 'flat-images', 'image.svg'))
+      jpg: await getFileSize(path.join(sourceDirectory, 'flatImages', 'image.jpg')),
+      png: await getFileSize(path.join(sourceDirectory, 'flatImages', 'image.png')),
+      svg: await getFileSize(path.join(sourceDirectory, 'flatImages', 'image.svg'))
     };
 
     await optimizeImages({
@@ -30,26 +30,26 @@ suite('optimizeImages', (): void => {
     });
 
     const optimizedSizes = {
-      jpg: await getFileSize(path.join(destinationDirectory, 'flat-images', 'image.jpg')),
-      png: await getFileSize(path.join(destinationDirectory, 'flat-images', 'image.png')),
-      svg: await getFileSize(path.join(destinationDirectory, 'flat-images', 'image.svg'))
+      jpg: await getFileSize(path.join(destinationDirectory, 'flatImages', 'image.jpg')),
+      png: await getFileSize(path.join(destinationDirectory, 'flatImages', 'image.png')),
+      svg: await getFileSize(path.join(destinationDirectory, 'flatImages', 'image.svg'))
     };
 
-    assert.that(optimizedSizes.jpg < originalSizes.jpg).is.true();
-    assert.that(optimizedSizes.png < originalSizes.png).is.true();
-    assert.that(optimizedSizes.svg < originalSizes.svg).is.true();
+    assert.that(optimizedSizes.jpg).is.lessThan(originalSizes.jpg);
+    assert.that(optimizedSizes.png).is.lessThan(originalSizes.png);
+    assert.that(optimizedSizes.svg).is.lessThan(originalSizes.svg);
   });
 
   test('supports nested directories.', async (): Promise<void> => {
     const sourceDirectory = await isolated({
-      files: path.join(__dirname, 'nested-images')
+      files: path.join(__dirname, 'nestedImages')
     });
     const destinationDirectory = await isolated();
 
     const originalSizes = {
-      jpg: await getFileSize(path.join(sourceDirectory, 'nested-images', 'jpg', 'image.jpg')),
-      png: await getFileSize(path.join(sourceDirectory, 'nested-images', 'png', 'image.png')),
-      svg: await getFileSize(path.join(sourceDirectory, 'nested-images', 'svg', 'image.svg'))
+      jpg: await getFileSize(path.join(sourceDirectory, 'nestedImages', 'jpg', 'image.jpg')),
+      png: await getFileSize(path.join(sourceDirectory, 'nestedImages', 'png', 'image.png')),
+      svg: await getFileSize(path.join(sourceDirectory, 'nestedImages', 'svg', 'image.svg'))
     };
 
     await optimizeImages({
@@ -59,13 +59,13 @@ suite('optimizeImages', (): void => {
     });
 
     const optimizedSizes = {
-      jpg: await getFileSize(path.join(destinationDirectory, 'nested-images', 'jpg', 'image.jpg')),
-      png: await getFileSize(path.join(destinationDirectory, 'nested-images', 'png', 'image.png')),
-      svg: await getFileSize(path.join(destinationDirectory, 'nested-images', 'svg', 'image.svg'))
+      jpg: await getFileSize(path.join(destinationDirectory, 'nestedImages', 'jpg', 'image.jpg')),
+      png: await getFileSize(path.join(destinationDirectory, 'nestedImages', 'png', 'image.png')),
+      svg: await getFileSize(path.join(destinationDirectory, 'nestedImages', 'svg', 'image.svg'))
     };
 
-    assert.that(optimizedSizes.jpg < originalSizes.jpg).is.true();
-    assert.that(optimizedSizes.png < originalSizes.png).is.true();
-    assert.that(optimizedSizes.svg < originalSizes.svg).is.true();
+    assert.that(optimizedSizes.jpg).is.lessThan(originalSizes.jpg);
+    assert.that(optimizedSizes.png).is.lessThan(originalSizes.png);
+    assert.that(optimizedSizes.svg).is.lessThan(originalSizes.svg);
   });
 });

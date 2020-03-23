@@ -40,13 +40,13 @@ $ npm run start-sample-application
 
 ## Optimizing images
 
-To optimize JPG, PNG, and SVG images of a website, use the following command:
+To optimize `.jpg`, `.png`, and `.svg` images of a website, use the following command:
 
 ```shell
 $ npx ux optimize-images --source <path> --destination <path>
 ```
 
-The command recursively copies all images from the source folder to the destination folder and optimizes them using a reasonable preset.
+This command recursively copies all images from the source directory to the destination directory and optimizes them using a reasonable preset.
 
 ## Verifying links
 

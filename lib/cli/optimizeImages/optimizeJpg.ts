@@ -13,9 +13,9 @@ const optimizeJpg = async function ({
   const cwd = process.cwd();
 
   await new Promise((resolve, reject): void => {
-    shell.exec(`${mozjpeg} -progressive -quality 70 -outfile "${destination}"  "${source}"`, { cwd, silent: !verbose }, (code): void => {
+    shell.exec(`${mozjpeg} -progressive -quality 70 -outfile '${destination}'  '${source}'`, { cwd, silent: !verbose }, (code): void => {
       if (code !== 0) {
-        return reject(new Error(`Failed to optimize ${source}.`));
+        return reject(new Error(`Failed to optimize '${source}'.`));
       }
 
       resolve();
