@@ -1,3 +1,29 @@
+# [4.0.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.7.2...4.0.0) (2020-03-23)
+
+
+### Features
+
+* Introduce ux CLI. Add optimize-images sub command. ([#397](https://github.com/thenativeweb/thenativeweb-ux/issues/397)) ([f3a50d8](https://github.com/thenativeweb/thenativeweb-ux/commit/f3a50d80dec798d87924d3796b6ecdea46e50eaa))
+
+
+### BREAKING CHANGES
+
+* Move verify-links into sub command of ux CLI.
+
+* Add package-lock.json.
+
+* Include feedback from review.
+
+* Update lib/cli/optimizeImages/optimizeImagesCommand.ts
+
+Co-Authored-By: Golo Roden <golo.roden@thenativeweb.io>
+
+* Update lib/cli/optimizeImages/optimizeImagesCommand.ts
+
+Co-Authored-By: Golo Roden <golo.roden@thenativeweb.io>
+
+Co-authored-by: Golo Roden <golo.roden@thenativeweb.io>
+
 ## [3.7.2](https://github.com/thenativeweb/thenativeweb-ux/compare/3.7.1...3.7.2) (2020-03-20)
 
 

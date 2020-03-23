@@ -1,5 +1,5 @@
 import { Page } from './getPage';
-import { toArray } from '../utils/toArray';
+import { toArray } from '../../utils/toArray';
 
 const getExternalUrlsFromPage = function ({ page, baseUrl }: {
   page: Page;
