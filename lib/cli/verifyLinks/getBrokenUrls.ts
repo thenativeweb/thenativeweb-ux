@@ -1,7 +1,7 @@
 import { BrokenUrl } from './BrokenUrl';
 import { cloneDeep } from 'lodash';
 import { getExternalUrlsFromPage } from './getExternalUrlsFromPage';
-import { noop } from './noop';
+import { noop } from '../noop';
 import { getPage, Page } from './getPage';
 
 const getBrokenUrls = async function ({
