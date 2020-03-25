@@ -1,3 +1,23 @@
+# [5.0.0](https://github.com/thenativeweb/thenativeweb-ux/compare/4.0.0...5.0.0) (2020-03-25)
+
+
+### Features
+
+* Make footer configurable. ([#403](https://github.com/thenativeweb/thenativeweb-ux/issues/403)) ([d419d97](https://github.com/thenativeweb/thenativeweb-ux/commit/d419d971712b6de932bca5d4dfaf094c609735e8))
+
+
+### BREAKING CHANGES
+
+* Invert color property of MadeBy component.
+
+* Improve font loading.
+
+* Add unit tests for new Footer properties.
+
+* Fix example in documentation.
+
+* Include feedback from review.
+
 # [4.0.0](https://github.com/thenativeweb/thenativeweb-ux/compare/3.7.2...4.0.0) (2020-03-23)
 
 
