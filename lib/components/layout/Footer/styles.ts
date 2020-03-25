@@ -2,6 +2,12 @@ import { ComponentClassNames, Theme } from '../../..';
 
 export type FooterClassNames =
   'Footer' |
+  'BorderTopNone' |
+  'BorderTopDark' |
+  'ColorLight' |
+  'ColorDark' |
+  'FontSizeSm' |
+  'FontSizeMd' |
   'MadeBy' |
   'Copyright' |
   'Legal' |
@@ -9,13 +15,33 @@ export type FooterClassNames =
 
 const styles = (theme: Theme): ComponentClassNames<FooterClassNames> => ({
   Footer: {
-    fontSize: theme.font.size.md,
     fontWeight: 300,
-    borderTop: `1px solid ${theme.color.content.border}`,
 
     '& $MadeBy > *': {
       textAlign: 'left'
     }
+  },
+
+  ColorLight: {
+    color: theme.color.brand.white
+  },
+
+  ColorDark: {
+    color: theme.color.brand.gray
+  },
+
+  BorderTopNone: {},
+
+  BorderTopDark: {
+    borderTop: `1px solid ${theme.color.content.border}`
+  },
+
+  FontSizeSm: {
+    fontSize: theme.font.size.sm
+  },
+
+  FontSizeMd: {
+    fontSize: theme.font.size.md
   },
 
   Contribute: {},
@@ -28,14 +54,20 @@ const styles = (theme: Theme): ComponentClassNames<FooterClassNames> => ({
 
   [theme.breakpoints.down('sm')]: {
     Footer: {
-      marginTop: theme.space(4),
+      marginTop: theme.space(4)
+    },
+
+    BorderTopDark: {
       paddingTop: theme.space(2)
     }
   },
 
   [theme.breakpoints.up('sm')]: {
     Footer: {
-      marginTop: theme.space(6),
+      marginTop: theme.space(6)
+    },
+
+    BorderTopDark: {
       paddingTop: theme.space(4)
     },
 

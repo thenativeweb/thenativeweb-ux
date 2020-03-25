@@ -42,6 +42,66 @@ suite('Footer', (): void => {
     assert.that(legalLinks?.textContent).is.equalTo('');
   });
 
+  test('sets classes for defined property borderTop.', async (): Promise<void> => {
+    const currentYear = new Date().getFullYear();
+
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Footer id='footerBorderTopNone' borderTop='none' yearOfCreation={ currentYear } />
+          <Footer id='footerBorderTopDark' borderTop='dark' yearOfCreation={ currentYear } />
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const footerBorderTopNone = container.querySelector('#footerBorderTopNone');
+    const footerBorderTopDark = container.querySelector('#footerBorderTopDark');
+
+    assert.that(footerBorderTopNone!.className).is.containing(`BorderTopNone`);
+    assert.that(footerBorderTopDark!.className).is.containing(`BorderTopDark`);
+  });
+
+  test('sets classes for defined property color.', async (): Promise<void> => {
+    const currentYear = new Date().getFullYear();
+
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Footer id='footerColorDark' color='dark' yearOfCreation={ currentYear } />
+          <Footer id='footerColorLight' color='light' yearOfCreation={ currentYear } />
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const footerColorDark = container.querySelector('#footerColorDark');
+    const footerColorLight = container.querySelector('#footerColorLight');
+
+    assert.that(footerColorDark!.className).is.containing(`ColorDark`);
+    assert.that(footerColorLight!.className).is.containing(`ColorLight`);
+  });
+
+  test('sets classes for defined property fontSize.', async (): Promise<void> => {
+    const currentYear = new Date().getFullYear();
+
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Footer id='footerFontSizeSm' fontSize='sm' yearOfCreation={ currentYear } />
+          <Footer id='footerFontSizeMd' fontSize='md' yearOfCreation={ currentYear } />
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const footerFontSizeSm = container.querySelector('#footerFontSizeSm');
+    const footerFontSizeMd = container.querySelector('#footerFontSizeMd');
+
+    assert.that(footerFontSizeSm!.className).is.containing(`FontSizeSm`);
+    assert.that(footerFontSizeMd!.className).is.containing(`FontSizeMd`);
+  });
+
   test('renders a copyright timeframe when a year of creation older than the current year is given.', async (): Promise<void> => {
     const currentYear = new Date().getFullYear();
     const lastYear = currentYear - 1;

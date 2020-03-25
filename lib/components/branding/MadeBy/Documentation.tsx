@@ -10,20 +10,20 @@ const Documentation = (): ReactElement => (
       The <code>MadeBy</code> component displays whom the application was
       developed by. Switch the <code>color</code> property
       to <code>light</code> if you would like to place it on
-      a <code>light</code> background.
+      a <code>dark</code> background.
     </Paragraph>
 
     <ComponentPreview useAllThemes={ true }>
       <React.Fragment>
-        <div style={{ background: 'black' }}>
-          <MadeBy />
-          <MadeBy size='md' />
-          <MadeBy size='lg' />
-        </div>
+        <MadeBy />
+        <MadeBy size='md' />
+        <MadeBy size='lg' />
 
-        <MadeBy color='light' />
-        <MadeBy color='light' size='md' />
-        <MadeBy color='light' size='lg' />
+        <div style={{ background: 'black' }}>
+          <MadeBy size='sm' color='light' />
+          <MadeBy size='md' color='light' />
+          <MadeBy size='lg' color='light' />
+        </div>
       </React.Fragment>
     </ComponentPreview>
 
@@ -35,15 +35,15 @@ const Documentation = (): ReactElement => (
 
     <ComponentPreview useAllThemes={ true }>
       <React.Fragment>
+        <MadeBy
+          partner={{ name: 'Intuity', href: 'https://www.intuity.de' }}
+        />
         <div style={{ background: 'black' }}>
           <MadeBy
             partner={{ name: 'Intuity', href: 'https://www.intuity.de' }}
+            color='light'
           />
         </div>
-        <MadeBy
-          partner={{ name: 'Intuity', href: 'https://www.intuity.de' }}
-          color='light'
-        />
       </React.Fragment>
     </ComponentPreview>
   </React.Fragment>

@@ -12,13 +12,14 @@ const Documentation = (): ReactElement => (
     </Paragraph>
 
     <Code language='tsx'>{`
-      import { Styles } from 'jss';
-      import { classNames, createUseStyles, Styles, Theme } from '../../../../lib';
+      import { classNames, ComponentClassNames, createUseStyles, Theme } from 'thenativeweb-ux';
       import React, { FunctionComponent, ReactElement } from 'react';
 
-      const useStyles = createUseStyles<Theme, 'CustomComponent' | 'SizeLg'>((theme: Theme): Styles => ({
+      type CustomComponentClassNames = 'CustomComponent' | 'SizeLg';
+
+      const useStyles = createUseStyles<Theme, CustomComponentClassNames>((theme): ComponentClassNames<CustomComponentClassNames> => ({
         CustomComponent: {
-          width: theme.custom.components.CustomComponent.width
+          width: theme.customComponent.width
         },
 
         SizeLg: {
