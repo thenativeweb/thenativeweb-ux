@@ -61,7 +61,6 @@ const Documentation = (): ReactElement => (
         <Footer
           fontSize='sm'
           borderTop='none'
-          linkToPrivacyPolicy='/en-us/privacy-policy'
           yearOfCreation={ new Date().getFullYear() }
         />
 
@@ -72,7 +71,6 @@ const Documentation = (): ReactElement => (
         <Footer
           fontSize='md'
           borderTop='none'
-          linkToPrivacyPolicy='/en-us/privacy-policy'
           yearOfCreation={ new Date().getFullYear() }
         />
       </Fragment>
@@ -89,7 +87,6 @@ const Documentation = (): ReactElement => (
     <ComponentPreview background='dark'>
       <Footer
         color='light'
-        linkToPrivacyPolicy='/en-us/privacy-policy'
         yearOfCreation={ new Date().getFullYear() }
         borderTop='none'
       />
