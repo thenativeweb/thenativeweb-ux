@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@babel/runtime-corejs2": "7.9.2",
-    "@next/bundle-analyzer": "9.3.1",
+    "@next/bundle-analyzer": "9.3.2",
     "@types/animejs": "3.1.0",
     "@types/classnames": "2.2.10",
     "@types/color": "3.0.1",
