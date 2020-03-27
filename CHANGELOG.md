@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.0.4...5.1.0) (2020-03-27)
+
+
+### Features
+
+* Add YouTube icon. ([#416](https://github.com/thenativeweb/thenativeweb-ux/issues/416)) ([03ac9d7](https://github.com/thenativeweb/thenativeweb-ux/commit/03ac9d7c6e5c62ae557ed35b5368b9792bb75618))
+
 ## [5.0.4](https://github.com/thenativeweb/thenativeweb-ux/compare/5.0.3...5.0.4) (2020-03-27)
 
 
