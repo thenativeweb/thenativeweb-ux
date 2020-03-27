@@ -135,6 +135,7 @@ const Documentation = (): ReactElement => (
     <Paragraph><Icon name='stackoverflow' type='inline' size='md' /> stackoverflow</Paragraph>
     <Paragraph><Icon name='slack' type='inline' size='md' /> slack</Paragraph>
     <Paragraph><Icon name='twitter' type='inline' size='md' /> twitter</Paragraph>
+    <Paragraph><Icon name='youtube' type='inline' size='md' /> youtube</Paragraph>
 
     <Paragraph><Icon name='cloud-medium' type='inline' size='lg' /> cloud-medium</Paragraph>
     <Paragraph><Icon name='cqrs-medium' type='inline' size='lg' /> cqrs-medium</Paragraph>
