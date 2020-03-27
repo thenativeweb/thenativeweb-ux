@@ -1,3 +1,10 @@
+## [5.0.3](https://github.com/thenativeweb/thenativeweb-ux/compare/5.0.2...5.0.3) (2020-03-26)
+
+
+### Bug Fixes
+
+* bump pretty-format from 25.2.1 to 25.2.3 ([#412](https://github.com/thenativeweb/thenativeweb-ux/issues/412)) ([57c401f](https://github.com/thenativeweb/thenativeweb-ux/commit/57c401fb87ac1e5246bae330f661c393b2542d2c))
+
 ## [5.0.2](https://github.com/thenativeweb/thenativeweb-ux/compare/5.0.1...5.0.2) (2020-03-26)
 
 
