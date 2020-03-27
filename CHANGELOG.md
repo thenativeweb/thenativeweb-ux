@@ -1,3 +1,10 @@
+## [5.0.4](https://github.com/thenativeweb/thenativeweb-ux/compare/5.0.3...5.0.4) (2020-03-27)
+
+
+### Bug Fixes
+
+* Enforce build. ([#415](https://github.com/thenativeweb/thenativeweb-ux/issues/415)) ([e81f4cf](https://github.com/thenativeweb/thenativeweb-ux/commit/e81f4cfa3078a5cb6db823a77eefa02ac88341e4))
+
 ## [5.0.3](https://github.com/thenativeweb/thenativeweb-ux/compare/5.0.2...5.0.3) (2020-03-26)
 
 
