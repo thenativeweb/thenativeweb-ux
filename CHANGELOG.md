@@ -1,3 +1,10 @@
+## [5.1.2](https://github.com/thenativeweb/thenativeweb-ux/compare/5.1.1...5.1.2) (2020-03-30)
+
+
+### Bug Fixes
+
+* bump csstype from 2.6.9 to 2.6.10 ([#421](https://github.com/thenativeweb/thenativeweb-ux/issues/421)) ([740f031](https://github.com/thenativeweb/thenativeweb-ux/commit/740f03103f47eb53831fe68854f1e81cfe0a25e6))
+
 ## [5.1.1](https://github.com/thenativeweb/thenativeweb-ux/compare/5.1.0...5.1.1) (2020-03-30)
 
 
