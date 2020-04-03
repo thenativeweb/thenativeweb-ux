@@ -1,3 +1,10 @@
+## [5.1.5](https://github.com/thenativeweb/thenativeweb-ux/compare/5.1.4...5.1.5) (2020-04-03)
+
+
+### Bug Fixes
+
+* Remove lodash from client bundle. ([#440](https://github.com/thenativeweb/thenativeweb-ux/issues/440)) ([101ffcf](https://github.com/thenativeweb/thenativeweb-ux/commit/101ffcff76593ce70d0a52b24141e4db7a9ddada))
+
 ## [5.1.4](https://github.com/thenativeweb/thenativeweb-ux/compare/5.1.3...5.1.4) (2020-04-03)
 
 
