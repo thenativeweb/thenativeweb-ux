@@ -1,4 +1,3 @@
-import merge from 'lodash/merge';
 import { NestedCssProperties } from '../types/NestedCssProperties';
 import { ResponsiveSpaceFactor } from '../types/ResponsiveSpaceFactor';
 import { ResponsiveSpaceProp } from '../types/ResponsiveSpaceProp';
@@ -11,7 +10,7 @@ const createSpaceDependentClasses = function ({
   theme,
   definitions,
   deviceSize = '',
-  maximumSpaceFactor = 16
+  maximumSpaceFactor = 17
 }: {
   theme: Theme;
   definitions: ClassDefinitions;
@@ -50,11 +49,14 @@ const createDefaultSpaceDependantClasses = function ({
   let classes: Partial<{ [key: string]: string | undefined }> = {};
 
   for (const deviceSize of [ 'xs', 'sm', 'md', 'lg', 'xl' ]) {
-    classes = merge({}, classes, createSpaceDependentClasses({
-      theme,
-      definitions: emptySpaceProperties,
-      deviceSize
-    }));
+    classes = {
+      ...classes,
+      ...createSpaceDependentClasses({
+        theme,
+        definitions: emptySpaceProperties,
+        deviceSize
+      })
+    };
   }
 
   return classes;
