@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "5.1.3",
+  "version": "5.1.4",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -40,7 +40,7 @@
     "mozjpeg": "6.0.1",
     "p-queue": "6.3.0",
     "pngquant-bin": "5.0.2",
-    "pretty-format": "25.2.3",
+    "pretty-format": "25.2.6",
     "react-highlight-words": "0.16.0",
     "react-jss": "10.1.1",
     "react-syntax-highlighter": "12.2.1",
@@ -62,7 +62,7 @@
     "@types/jsdom": "16.2.0",
     "@types/lodash": "4.14.149",
     "@types/mozjpeg": "5.0.0",
-    "@types/node": "13.9.8",
+    "@types/node": "13.11.0",
     "@types/pngquant-bin": "4.0.0",
     "@types/puppeteer": "2.0.1",
     "@types/react": "16.9.32",
