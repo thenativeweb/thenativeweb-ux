@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.1.5...5.2.0) (2020-04-07)
+
+
+### Features
+
+* Add black color to themes. ([#442](https://github.com/thenativeweb/thenativeweb-ux/issues/442)) ([390cb20](https://github.com/thenativeweb/thenativeweb-ux/commit/390cb20f396b767747b039c66b99b7c183aa026b))
+
 ## [5.1.5](https://github.com/thenativeweb/thenativeweb-ux/compare/5.1.4...5.1.5) (2020-04-03)
 
 
