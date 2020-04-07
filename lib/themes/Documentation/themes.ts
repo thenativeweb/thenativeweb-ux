@@ -7,6 +7,7 @@ const customThemeThatExtendsBaseTheme = new CustomThemeThatExtendsBaseTheme({
   spaceUnit: 18,
 
   brandColors: {
+    black: '#000000',
     highlight: '#48BB78',
     gray: '#222',
     grayDark: '#111',
