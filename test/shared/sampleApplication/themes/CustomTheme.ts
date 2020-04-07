@@ -11,7 +11,8 @@ class CustomTheme extends Theme {
       spaceUnit: 8,
 
       brandColors: {
-        highlight: '#48BB78',
+        black: '#000000',
+        highlight: '#48bb78',
         gray: '#363d45',
         grayDark: '#2f333b',
         grayLight: '#eeeeee',

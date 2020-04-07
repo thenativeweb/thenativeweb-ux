@@ -7,6 +7,7 @@ class Wolkenkit extends Theme {
       spaceUnit: 8,
 
       brandColors: {
+        black: '#000000',
         highlight: '#29abe2',
         gray: '#363d45',
         grayDark: '#2f333b',

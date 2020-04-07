@@ -34,7 +34,8 @@ const Documentation = (): ReactElement => (
           spaceUnit: 18,
 
           brandColors: {
-            highlight: '#48BB78',
+            black: '#000000',
+            highlight: '#48bb78',
             gray: '#222',
             grayDark: '#111',
             grayLight: '#eeeeee',
