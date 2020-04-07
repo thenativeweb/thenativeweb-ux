@@ -1,4 +1,5 @@
 export interface BrandColors {
+  black: string;
   gray: string;
   grayDark: string;
   grayLight: string;

@@ -7,6 +7,7 @@ class TheNativeWeb extends Theme {
       spaceUnit: 8,
 
       brandColors: {
+        black: '#000000',
         highlight: '#dd0099',
         grayDark: '#222222',
         gray: '#363d45',
