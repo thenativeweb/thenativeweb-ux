@@ -27,7 +27,7 @@
     "ux": "build/lib/bin/ux.js"
   },
   "dependencies": {
-    "animejs": "3.1.0",
+    "animejs": "3.2.0",
     "classnames": "2.2.6",
     "color": "3.1.2",
     "command-line-interface": "3.6.0",
