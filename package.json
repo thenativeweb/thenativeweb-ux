@@ -80,7 +80,7 @@
     "isolated": "3.0.1",
     "next": "9.3.5",
     "processenv": "3.0.1",
-    "puppeteer": "2.1.1",
+    "puppeteer": "3.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "retry-ignore-abort": "2.2.3",
