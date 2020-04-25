@@ -86,7 +86,7 @@
     "retry-ignore-abort": "2.2.3",
     "roboter": "11.1.19",
     "semantic-release-configuration": "1.0.19",
-    "shelljs": "0.8.3"
+    "shelljs": "0.8.4"
   },
   "peerDependencies": {
     "next": "^9.3.1",
