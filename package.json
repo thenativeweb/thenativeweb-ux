@@ -50,7 +50,7 @@
     "uuidv4": "6.0.7"
   },
   "devDependencies": {
-    "@babel/runtime-corejs2": "7.9.2",
+    "@babel/runtime-corejs2": "7.9.6",
     "@next/bundle-analyzer": "9.3.6",
     "@types/animejs": "3.1.0",
     "@types/classnames": "2.2.10",
