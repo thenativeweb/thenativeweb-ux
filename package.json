@@ -79,7 +79,7 @@
     "get-port": "5.1.1",
     "isolated": "3.0.1",
     "next": "9.3.6",
-    "processenv": "3.0.1",
+    "processenv": "3.0.2",
     "puppeteer": "3.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
