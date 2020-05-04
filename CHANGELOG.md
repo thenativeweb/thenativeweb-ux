@@ -1,3 +1,10 @@
+## [5.2.6](https://github.com/thenativeweb/thenativeweb-ux/compare/5.2.5...5.2.6) (2020-05-04)
+
+
+### Bug Fixes
+
+* bump p-queue from 6.3.0 to 6.4.0 ([#475](https://github.com/thenativeweb/thenativeweb-ux/issues/475)) ([7843199](https://github.com/thenativeweb/thenativeweb-ux/commit/7843199b347724abaf32e6635e62d14ac95e4b8f))
+
 ## [5.2.5](https://github.com/thenativeweb/thenativeweb-ux/compare/5.2.4...5.2.5) (2020-04-30)
 
 
