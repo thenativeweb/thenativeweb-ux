@@ -6,8 +6,6 @@ update_configs:
     update_schedule: "live"
     default_assignees:
     - "goloroden"
-    - "mattwagl"
-    - "vaalllaa"
     default_labels:
     - "Dependencies"
     commit_message:
