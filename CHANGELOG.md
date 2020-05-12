@@ -1,3 +1,10 @@
+## [5.2.11](https://github.com/thenativeweb/thenativeweb-ux/compare/5.2.10...5.2.11) (2020-05-12)
+
+
+### Bug Fixes
+
+* Fix device hook. ([#489](https://github.com/thenativeweb/thenativeweb-ux/issues/489)) ([44685c4](https://github.com/thenativeweb/thenativeweb-ux/commit/44685c48a318a1b6f6296559b95051c5801a12d2))
+
 ## [5.2.10](https://github.com/thenativeweb/thenativeweb-ux/compare/5.2.9...5.2.10) (2020-05-07)
 
 
