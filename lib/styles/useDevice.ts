@@ -12,11 +12,11 @@ const useDevice = (): Size | undefined => {
 
     if (width > 0 && width <= theme.breakpoints.steps.sm) {
       size = 'xs';
-    } else if (width > theme.breakpoints.steps.sm && width < theme.breakpoints.steps.md) {
+    } else if (width > theme.breakpoints.steps.sm && width <= theme.breakpoints.steps.md) {
       size = 'sm';
-    } else if (width > theme.breakpoints.steps.md && width < theme.breakpoints.steps.lg) {
+    } else if (width > theme.breakpoints.steps.md && width <= theme.breakpoints.steps.lg) {
       size = 'md';
-    } else if (width > theme.breakpoints.steps.lg && width < theme.breakpoints.steps.xl) {
+    } else if (width > theme.breakpoints.steps.lg && width <= theme.breakpoints.steps.xl) {
       size = 'lg';
     } else if (width > theme.breakpoints.steps.xl) {
       size = 'xl';
