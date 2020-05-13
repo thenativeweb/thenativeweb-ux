@@ -62,7 +62,7 @@
     "@types/jsdom": "16.2.1",
     "@types/lodash": "4.14.150",
     "@types/mozjpeg": "5.0.0",
-    "@types/node": "13.13.5",
+    "@types/node": "14.0.0",
     "@types/pngquant-bin": "4.0.0",
     "@types/puppeteer": "2.1.0",
     "@types/react": "16.9.35",
