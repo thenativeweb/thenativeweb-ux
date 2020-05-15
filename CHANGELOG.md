@@ -1,3 +1,10 @@
+# [5.3.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.2.11...5.3.0) (2020-05-15)
+
+
+### Features
+
+* Allow disabling importing fonts. ([#494](https://github.com/thenativeweb/thenativeweb-ux/issues/494)) ([a925944](https://github.com/thenativeweb/thenativeweb-ux/commit/a925944d0c759174ac8a4fde1ec6b14cd1c3ee3c))
+
 ## [5.2.11](https://github.com/thenativeweb/thenativeweb-ux/compare/5.2.10...5.2.11) (2020-05-12)
 
 
