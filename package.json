@@ -70,7 +70,7 @@
     "@types/react-highlight-words": "0.16.1",
     "@types/react-syntax-highlighter": "11.0.4",
     "@types/react-transition-group": "4.2.4",
-    "@types/shelljs": "0.8.7",
+    "@types/shelljs": "0.8.8",
     "assertthat": "5.1.1",
     "axios": "0.19.2",
     "buntstift": "4.0.4",
