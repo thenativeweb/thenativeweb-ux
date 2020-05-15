@@ -20,7 +20,7 @@ class StaticGlobalStyles {
 
   private buildStyles (): string {
     return `
-      @import url(${this.theme.font.import});
+      ${this.theme.font.import ? `@import url(${this.theme.font.import});` : ''}
 
       body, html  {
         margin: 0;
