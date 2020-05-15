@@ -36,7 +36,7 @@ abstract class Theme {
   };
 
   public readonly font: {
-    import: string;
+    import?: string;
     size: FontSizes;
     family: { default: string; headline: string; code: string };
   };
