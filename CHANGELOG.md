@@ -1,3 +1,10 @@
+# [5.6.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.5.0...5.6.0) (2020-05-17)
+
+
+### Features
+
+* Implement minLength and maxLength on TextArea. ([#505](https://github.com/thenativeweb/thenativeweb-ux/issues/505)) ([9a858c5](https://github.com/thenativeweb/thenativeweb-ux/commit/9a858c5b104738d4a3613cd4313d8420e002c324))
+
 # [5.5.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.4.0...5.5.0) (2020-05-17)
 
 
