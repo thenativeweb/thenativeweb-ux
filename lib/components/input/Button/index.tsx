@@ -62,7 +62,6 @@ const Button: FunctionComponent<ButtonProps> = ({
     buttonType = 'submit';
   }
 
-  /* eslint-disable react/button-has-type */
   return (
     <button
       autoFocus={ autoFocus }
@@ -77,7 +76,6 @@ const Button: FunctionComponent<ButtonProps> = ({
       { children ? <Label>{ children }</Label> : null }
     </button>
   );
-  /* eslint-enable react/button-has-type */
 };
 
 Button.displayName = 'Button';

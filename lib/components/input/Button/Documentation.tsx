@@ -79,6 +79,7 @@ const Documentation = (): ReactElement => (
 
     <ComponentPreview>
       <div>
+        <Button isPrimary={ true } isEnabled={ false }>Disabled primary button</Button>
         <Button isEnabled={ false }>Disabled button</Button>
       </div>
     </ComponentPreview>
