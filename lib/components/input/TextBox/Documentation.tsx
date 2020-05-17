@@ -4,11 +4,13 @@ import { Headline, notifications, TextBox } from '../../..';
 import React, { ReactElement, useState } from 'react';
 
 const Documentation = (): ReactElement => {
-  const [ value, setValue ] = useState('');
-  const [ port, setPort ] = useState('');
-  const [ time, setTime ] = useState('');
   const [ date, setDate ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ port, setPort ] = useState('');
   const [ search, setSearch ] = useState('');
+  const [ time, setTime ] = useState('');
+  const [ value, setValue ] = useState('');
+  const [ valueMinMax, setValueMinMax ] = useState('Value length must be between 1 and 100');
 
   return (
     <React.Fragment>
@@ -29,6 +31,26 @@ const Documentation = (): ReactElement => {
 
       <ComponentPreview>
         <React.Fragment>
+          <Property name='type' value='date' />
+
+          <TextBox
+            value={ date }
+            type='date'
+            onChange={ (event): void => setDate(event.target.value) }
+          />
+
+          <hr />
+
+          <Property name='type' value='email' />
+
+          <TextBox
+            value={ email }
+            type='email'
+            onChange={ (event): void => setEmail(event.target.value) }
+          />
+
+          <hr />
+
           <Property name='type' value='port' />
 
           <TextBox
@@ -40,26 +62,6 @@ const Documentation = (): ReactElement => {
 
           <hr />
 
-          <Property name='type' value='time' />
-
-          <TextBox
-            value={ time }
-            type='time'
-            onChange={ (event): void => setTime(event.target.value) }
-          />
-
-          <hr />
-
-          <Property name='type' value='date' />
-
-          <TextBox
-            value={ date }
-            type='date'
-            onChange={ (event): void => setDate(event.target.value) }
-          />
-
-          <hr />
-
           <Property name='type' value='search' />
 
           <TextBox
@@ -67,7 +69,29 @@ const Documentation = (): ReactElement => {
             type='search'
             onChange={ (event): void => setSearch(event.target.value) }
           />
+
+          <hr />
+
+          <Property name='type' value='time' />
+
+          <TextBox
+            value={ time }
+            type='time'
+            onChange={ (event): void => setTime(event.target.value) }
+          />
         </React.Fragment>
+      </ComponentPreview>
+
+      <Headline level='2'>Min and max length</Headline>
+
+      <ComponentPreview>
+        <TextBox
+          value={ valueMinMax }
+          minLength={ 1 }
+          maxLength={ 100 }
+          required={ true }
+          onChange={ (event): void => setValueMinMax(event.target.value) }
+        />
       </ComponentPreview>
 
       <Headline level='2'>Disabled</Headline>

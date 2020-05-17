@@ -3,6 +3,7 @@ import { ComponentClassNames, Theme } from '../../..';
 export type TextBoxClassNames =
   'TextBox' |
   'IsDisabled' |
+  'TypeEmail' |
   'TypePort' |
   'TypeTime' |
   'TypeSearch';
@@ -18,6 +19,10 @@ const styles = (theme: Theme): ComponentClassNames<TextBoxClassNames> => ({
     borderColor: theme.color.content.border,
     borderRadius: '1px',
     appearance: 'none',
+
+    '&:invalid': {
+      borderColor: `${theme.color.interaction.error} !important`
+    },
 
     '&:focus': {
       outline: 'none',
@@ -38,6 +43,8 @@ const styles = (theme: Theme): ComponentClassNames<TextBoxClassNames> => ({
     background: theme.color.brand.grayLight
   },
 
+  TypeEmail: {},
+
   TypePort: {
     width: '5em'
   },
@@ -46,8 +53,7 @@ const styles = (theme: Theme): ComponentClassNames<TextBoxClassNames> => ({
     width: '7em'
   },
 
-  TypeSearch: {
-  }
+  TypeSearch: {}
 });
 
 export { styles };

@@ -17,7 +17,8 @@ const customThemeThatExtendsBaseTheme = new CustomThemeThatExtendsBaseTheme({
   },
 
   interactionColors: {
-    focus: '#363d45'
+    focus: '#363d45',
+    error: '#ff0000'
   },
 
   fontSizes: {
