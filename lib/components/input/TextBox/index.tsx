@@ -10,11 +10,13 @@ interface TextBoxProps {
   disabled?: boolean;
   focusDelay?: number;
   id?: string;
+  maxLength?: number;
+  minLength?: number;
   name?: string;
   placeholder?: string;
   required?: boolean;
   style?: CSSProperties;
-  type?: 'default' | 'date' | 'port' | 'time' | 'search';
+  type?: 'default' | 'date' | 'email' | 'port' | 'time' | 'search';
   value?: string;
   onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -29,6 +31,8 @@ const TextBox: FunctionComponent<TextBoxProps> = ({
   className,
   id,
   name,
+  maxLength = Number.MAX_SAFE_INTEGER,
+  minLength = 0,
   value,
   placeholder,
   style,
@@ -66,6 +70,7 @@ const TextBox: FunctionComponent<TextBoxProps> = ({
     classes.TextBox,
     {
       [classes.IsDisabled]: disabled,
+      [classes.TypeEmail]: type === 'email',
       [classes.TypePort]: type === 'port',
       [classes.TypeTime]: type === 'time',
       [classes.TypeSearch]: type === 'search'
@@ -88,6 +93,8 @@ const TextBox: FunctionComponent<TextBoxProps> = ({
       id={ id }
       ref={ elementRef }
       className={ componentClasses }
+      maxLength={ maxLength }
+      minLength={ minLength }
       name={ name }
       value={ value }
       onBlur={ onBlur }

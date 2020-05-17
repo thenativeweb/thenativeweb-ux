@@ -17,7 +17,8 @@ class Wolkenkit extends Theme {
       },
 
       interactionColors: {
-        focus: '#363d45'
+        focus: '#363d45',
+        error: '#ff0000'
       },
 
       pattern: {

@@ -17,7 +17,8 @@ class TheNativeWeb extends Theme {
       },
 
       interactionColors: {
-        focus: '#222222'
+        focus: '#222222',
+        error: '#ff0000'
       },
 
       pattern: {

@@ -99,7 +99,8 @@ abstract class Theme {
       brand: brandColors,
 
       interaction: {
-        focus: interactionColors.focus
+        focus: interactionColors.focus,
+        error: interactionColors.error
       },
 
       content: {
