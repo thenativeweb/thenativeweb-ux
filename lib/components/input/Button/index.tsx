@@ -10,6 +10,7 @@ interface ButtonProps {
   icon?: string;
   iconSize?: IconSize;
   id?: string;
+  isEnabled?: boolean;
   isPrimary?: boolean;
   isSubtle?: boolean;
   size?: 'sm' | 'md';
@@ -28,6 +29,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   id,
   icon,
   iconSize = 'md',
+  isEnabled = true,
   onClick = (): void => {
     // Intentionally left blank.
   },
@@ -64,6 +66,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   return (
     <button
       autoFocus={ autoFocus }
+      disabled={ !isEnabled }
       id={ id }
       type={ buttonType }
       className={ componentClasses }
