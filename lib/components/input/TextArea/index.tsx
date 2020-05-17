@@ -10,6 +10,8 @@ interface TextAreaProps {
   className?: string;
   disabled?: boolean;
   id?: string;
+  maxLength?: number;
+  minLength?: number;
   name?: string;
   placeholder?: string;
   ref?: any;
@@ -30,6 +32,8 @@ const TextArea: FunctionComponent<TextAreaProps> = ({
   disabled = false,
   focusDelay = 0,
   id,
+  maxLength = Number.MAX_SAFE_INTEGER,
+  minLength = 0,
   name,
   value,
   placeholder,
@@ -65,6 +69,8 @@ const TextArea: FunctionComponent<TextAreaProps> = ({
       ref={ elementRef }
       className={ componentClasses }
       disabled={ disabled }
+      maxLength={ maxLength }
+      minLength={ minLength }
       name={ name }
       value={ value }
       onBlur={ onBlur }

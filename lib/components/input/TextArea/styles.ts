@@ -16,6 +16,10 @@ const styles = (theme: Theme): ComponentClassNames<TextAreaClassNames> => ({
     border: `1px solid`,
     borderColor: theme.color.content.border,
 
+    '&:invalid': {
+      borderColor: `${theme.color.interaction.error} !important`
+    },
+
     '&:focus': {
       outline: 'none',
       borderColor: theme.color.interaction.focus
