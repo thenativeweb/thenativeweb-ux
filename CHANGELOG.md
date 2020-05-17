@@ -1,3 +1,10 @@
+# [5.5.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.4.0...5.5.0) (2020-05-17)
+
+
+### Features
+
+* Improve validation. ([#504](https://github.com/thenativeweb/thenativeweb-ux/issues/504)) ([53df761](https://github.com/thenativeweb/thenativeweb-ux/commit/53df761bf872d35fae3d0679346efa0a73c10e50))
+
 # [5.4.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.3.0...5.4.0) (2020-05-17)
 
 
