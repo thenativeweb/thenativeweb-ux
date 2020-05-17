@@ -10,6 +10,7 @@ interface ButtonProps {
   icon?: string;
   iconSize?: IconSize;
   id?: string;
+  isEnabled?: boolean;
   isPrimary?: boolean;
   isSubtle?: boolean;
   size?: 'sm' | 'md';
@@ -28,6 +29,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   id,
   icon,
   iconSize = 'md',
+  isEnabled = true,
   onClick = (): void => {
     // Intentionally left blank.
   },
@@ -60,10 +62,10 @@ const Button: FunctionComponent<ButtonProps> = ({
     buttonType = 'submit';
   }
 
-  /* eslint-disable react/button-has-type */
   return (
     <button
       autoFocus={ autoFocus }
+      disabled={ !isEnabled }
       id={ id }
       type={ buttonType }
       className={ componentClasses }
@@ -74,7 +76,6 @@ const Button: FunctionComponent<ButtonProps> = ({
       { children ? <Label>{ children }</Label> : null }
     </button>
   );
-  /* eslint-enable react/button-has-type */
 };
 
 Button.displayName = 'Button';

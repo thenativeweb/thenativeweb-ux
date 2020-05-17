@@ -40,9 +40,9 @@ const ControlGroupItem: FunctionComponent<ControlGroupItemProps> = ({
     className
   );
 
-  if (type === 'checkbox') {
-    const controlId = child.props.id ? child.props.id : undefined;
+  const controlId = child?.props?.id;
 
+  if (type === 'checkbox') {
     return (
       <div
         className={ componentClasses }
@@ -74,7 +74,7 @@ const ControlGroupItem: FunctionComponent<ControlGroupItemProps> = ({
       className={ componentClasses }
     >
       <div className={ classes.Label }>
-        { label ? <label>{ label }</label> : null }
+        { label ? <label htmlFor={ controlId }>{ label }</label> : null }
         {
           helpLink ?
             (

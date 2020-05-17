@@ -72,6 +72,17 @@ const Documentation = (): ReactElement => (
         <Button icon='heart' />
       </div>
     </ComponentPreview>
+
+    <Headline level='2'>Disabling buttons</Headline>
+
+    <p>Buttons can be disabled to show that their action is not available right now.</p>
+
+    <ComponentPreview>
+      <div>
+        <Button isPrimary={ true } isEnabled={ false }>Disabled primary button</Button>
+        <Button isEnabled={ false }>Disabled button</Button>
+      </div>
+    </ComponentPreview>
   </React.Fragment>
 );
 

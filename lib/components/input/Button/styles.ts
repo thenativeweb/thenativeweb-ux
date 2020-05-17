@@ -34,12 +34,17 @@ const getStyles = (theme: Theme): ComponentClassNames<ButtonClassNames> => {
       transition: 'background-color 300ms cubic-bezier(0.190, 1.000, 0.220, 1.000)',
       willChange: 'background-color',
 
+      '&:disabled': {
+        cursor: 'not-allowed',
+        opacity: 0.3
+      },
+
       '&:focus': {
         'background-color': theme.color.brand.highlight,
         borderColor: theme.color.interaction.focus
       },
 
-      '&:active': {
+      '&:active:enabled': {
         'background-color': theme.color.brand.grayDark,
         opacity: 0.9
       },
@@ -108,7 +113,7 @@ const getStyles = (theme: Theme): ComponentClassNames<ButtonClassNames> => {
         fill: theme.color.brand.grayDark
       },
 
-      '&:hover': {
+      '&:hover:enabled': {
         color: theme.color.brand.highlight,
 
         '& $Icon': {
@@ -127,7 +132,7 @@ const getStyles = (theme: Theme): ComponentClassNames<ButtonClassNames> => {
         }
       },
 
-      '&:active': {
+      '&:active:enabled': {
         color: theme.color.brand.grayDark,
 
         '& $Icon': {
@@ -162,13 +167,13 @@ const getStyles = (theme: Theme): ComponentClassNames<ButtonClassNames> => {
         marginRight: 0
       },
 
-      '&:hover': {
+      '&:hover:enabled': {
         '& $Icon': {
           fill: theme.color.brand.highlight
         }
       },
 
-      '&:active': {
+      '&:active:enabled': {
         '& $Icon': {
           fill: `${theme.color.brand.grayDark} !important`,
           marginRight: 0
