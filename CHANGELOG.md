@@ -1,3 +1,10 @@
+# [5.4.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.3.0...5.4.0) (2020-05-17)
+
+
+### Features
+
+* Allow buttons to be disabled. ([#503](https://github.com/thenativeweb/thenativeweb-ux/issues/503)) ([37a86d9](https://github.com/thenativeweb/thenativeweb-ux/commit/37a86d93d13666cd49aa95c59c48f79775074a59))
+
 # [5.3.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.2.11...5.3.0) (2020-05-15)
 
 
