@@ -37,7 +37,7 @@
     "jsdom": "16.2.2",
     "jss": "10.1.1",
     "lodash": "4.17.15",
-    "mozjpeg": "6.0.1",
+    "mozjpeg": "7.0.0",
     "p-queue": "6.4.0",
     "pngquant-bin": "5.0.2",
     "pretty-format": "26.0.1",
