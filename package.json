@@ -71,7 +71,7 @@
     "@types/react-syntax-highlighter": "11.0.4",
     "@types/react-transition-group": "4.4.0",
     "@types/shelljs": "0.8.8",
-    "@types/webpack": "4.41.16",
+    "@types/webpack": "4.41.17",
     "assertthat": "5.1.1",
     "axios": "0.19.2",
     "buntstift": "4.0.4",
