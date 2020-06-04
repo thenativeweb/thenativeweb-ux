@@ -1,3 +1,10 @@
+## [5.6.2](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.1...5.6.2) (2020-06-04)
+
+
+### Bug Fixes
+
+* bump jss from 10.1.1 to 10.2.0 ([#536](https://github.com/thenativeweb/thenativeweb-ux/issues/536)) ([68732bb](https://github.com/thenativeweb/thenativeweb-ux/commit/68732bb1378187f07cf57f29925f3671857fae0b))
+
 ## [5.6.1](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.0...5.6.1) (2020-05-28)
 
 
