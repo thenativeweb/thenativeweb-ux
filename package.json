@@ -51,7 +51,7 @@
     "jss": "10.3.0",
     "lodash": "4.17.15",
     "mozjpeg": "7.0.0",
-    "p-queue": "6.4.0",
+    "p-queue": "6.5.0",
     "pngquant-bin": "5.0.2",
     "pretty-format": "26.1.0",
     "react-highlight-words": "0.16.0",
