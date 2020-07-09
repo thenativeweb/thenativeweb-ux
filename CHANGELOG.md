@@ -1,3 +1,38 @@
+## [5.6.17](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.16...5.6.17) (2020-07-08)
+
+
+### Bug Fixes
+
+* bump @types/node from 14.0.19 to 14.0.20 ([#580](https://github.com/thenativeweb/thenativeweb-ux/issues/580)) ([3c707eb](https://github.com/thenativeweb/thenativeweb-ux/commit/3c707eb8f291731da73580b334e409382b0f755b))
+
+## [5.6.16](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.15...5.6.16) (2020-07-08)
+
+
+### Bug Fixes
+
+* bump lodash from 4.17.18 to 4.17.19 ([#579](https://github.com/thenativeweb/thenativeweb-ux/issues/579)) ([04113af](https://github.com/thenativeweb/thenativeweb-ux/commit/04113af362ae49c9adbb5ad41fee62b05127b0cc))
+
+## [5.6.15](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.14...5.6.15) (2020-07-08)
+
+
+### Bug Fixes
+
+* bump lodash from 4.17.15 to 4.17.18 ([#578](https://github.com/thenativeweb/thenativeweb-ux/issues/578)) ([2fbb359](https://github.com/thenativeweb/thenativeweb-ux/commit/2fbb359b7e5a962b42c3c024173f36ff1b885032))
+
+## [5.6.14](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.13...5.6.14) (2020-07-08)
+
+
+### Bug Fixes
+
+* bump @types/node from 14.0.14 to 14.0.19 ([#576](https://github.com/thenativeweb/thenativeweb-ux/issues/576)) ([2049221](https://github.com/thenativeweb/thenativeweb-ux/commit/20492218dec1abe4b7ef3c12890dd5236b7a4731))
+
+## [5.6.13](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.12...5.6.13) (2020-07-01)
+
+
+### Bug Fixes
+
+* bump csstype from 2.6.10 to 2.6.11 ([#565](https://github.com/thenativeweb/thenativeweb-ux/issues/565)) ([8051fd4](https://github.com/thenativeweb/thenativeweb-ux/commit/8051fd409d761717203fcd05c1f3517038cdcdf1))
+
 ## [5.6.12](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.11...5.6.12) (2020-07-01)
 
 
