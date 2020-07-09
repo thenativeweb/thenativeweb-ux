@@ -1,10 +1,9 @@
 import { LogoFullProps } from '../LogoFull';
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { LogoMinimalClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const useStyles = createUseStyles<Theme, LogoMinimalClassNames>(styles);
+const useStyles = createUseStyles<LogoMinimalClassNames>(styles);
 
 interface LogoMinimalProps extends LogoFullProps {
   color?: 'default' | 'monochrome';

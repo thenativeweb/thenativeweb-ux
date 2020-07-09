@@ -1,6 +1,5 @@
 import { Icon } from '../../..';
 import { isDomNode } from '../../../utils/isDomNode';
-import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { SidebarItemClassNames, styles } from './styles';
@@ -15,7 +14,7 @@ interface SidebarItemProps {
   onClick?: () => void;
 }
 
-const useStyles = createUseStyles<Theme, SidebarItemClassNames>(styles);
+const useStyles = createUseStyles<SidebarItemClassNames>(styles);
 
 const SidebarItem: FunctionComponent<SidebarItemProps> = React.forwardRef(({
   className,

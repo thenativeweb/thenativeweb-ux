@@ -1,16 +1,10 @@
-import { Classes } from 'jss';
 import { createUseStyles } from '../../../styles';
-import { Theme } from '../../..';
 import { ModalRowClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-interface ModalRowProps {
-  classes: Classes;
-}
+const useStyles = createUseStyles<ModalRowClassNames>(styles);
 
-const useStyles = createUseStyles<Theme, ModalRowClassNames>(styles);
-
-const ModalRow: FunctionComponent<ModalRowProps> = ({
+const ModalRow: FunctionComponent = ({
   children
 }): ReactElement => {
   const classes = useStyles();

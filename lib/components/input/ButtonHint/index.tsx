@@ -1,9 +1,8 @@
 import { createUseStyles } from '../../../styles';
-import { Theme } from '../../..';
 import { ButtonHintClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const useStyles = createUseStyles<Theme, ButtonHintClassNames>(styles);
+const useStyles = createUseStyles<ButtonHintClassNames>(styles);
 
 const ButtonHint: FunctionComponent = ({
   children

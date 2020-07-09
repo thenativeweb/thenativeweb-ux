@@ -1,5 +1,4 @@
 import { createUseStyles } from '../../../styles';
-import { Theme } from '../../../themes';
 import React, { FunctionComponent, ReactElement } from 'react';
 import { SidebarClassNames, styles } from './styles';
 
@@ -7,7 +6,7 @@ interface SidebarProps {
   id?: string;
 }
 
-const useStyles = createUseStyles<Theme, SidebarClassNames>(styles);
+const useStyles = createUseStyles<SidebarClassNames>(styles);
 
 const Sidebar: FunctionComponent<SidebarProps> = ({ children, id }): ReactElement => {
   const classes = useStyles();

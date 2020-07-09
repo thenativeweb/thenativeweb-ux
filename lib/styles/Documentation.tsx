@@ -17,7 +17,7 @@ const Documentation = (): ReactElement => (
 
       type CustomComponentClassNames = 'CustomComponent' | 'SizeLg';
 
-      const useStyles = createUseStyles<Theme, CustomComponentClassNames>((theme): ComponentClassNames<CustomComponentClassNames> => ({
+      const useStyles = createUseStyles<CustomComponentClassNames>((theme): ComponentClassNames<CustomComponentClassNames> => ({
         CustomComponent: {
           width: theme.customComponent.width
         },

@@ -1,5 +1,5 @@
+import { Container } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
-import { Container, Theme } from '../../..';
 import { NonIdealStateClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
@@ -9,7 +9,7 @@ interface NonIdealStateProps {
   cause: string;
 }
 
-const useStyles = createUseStyles<Theme, NonIdealStateClassNames>(styles);
+const useStyles = createUseStyles<NonIdealStateClassNames>(styles);
 
 const NonIdealState: FunctionComponent<NonIdealStateProps> = ({
   id,

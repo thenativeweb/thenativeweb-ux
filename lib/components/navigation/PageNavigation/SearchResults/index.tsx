@@ -1,10 +1,10 @@
 import { createUseStyles } from '../../../../styles';
 import NextLink from 'next/link';
-import { Breadcrumbs, HighlightText, Link, PageTreeItemWithMetadata, Tags, Theme } from '../../../..';
+import { Breadcrumbs, HighlightText, Link, PageTreeItemWithMetadata, Tags } from '../../../..';
 import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { SearchResultsClassNames, styles } from './styles';
 
-const useStyles = createUseStyles<Theme, SearchResultsClassNames>(styles);
+const useStyles = createUseStyles<SearchResultsClassNames>(styles);
 
 interface SearchResultsProps {
   nonIdealState?: ReactNode;

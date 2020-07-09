@@ -1,10 +1,9 @@
 import { Button } from '../../..';
-import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement, ReactNode, useState } from 'react';
 import { SplitViewClassNames, styles } from './styles';
 
-const useStyles = createUseStyles<Theme, SplitViewClassNames>(styles);
+const useStyles = createUseStyles<SplitViewClassNames>(styles);
 
 interface ComponentPreviewProps {
   className?: string;

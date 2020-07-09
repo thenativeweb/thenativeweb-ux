@@ -1,10 +1,9 @@
 import { LogoProps } from '../LogoProps';
-import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import { LogoTheNativeWebClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const useStyles = createUseStyles<Theme, LogoTheNativeWebClassNames>(styles);
+const useStyles = createUseStyles<LogoTheNativeWebClassNames>(styles);
 
 const LogoTheNativeWeb: FunctionComponent<LogoProps> = ({
   isVisible = true,

@@ -1,4 +1,3 @@
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { LogoFullClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -7,7 +6,7 @@ export interface LogoFullProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const useStyles = createUseStyles<Theme, LogoFullClassNames>(styles);
+const useStyles = createUseStyles<LogoFullClassNames>(styles);
 
 const LogoFull: FunctionComponent<LogoFullProps> = ({
   size = 'md'

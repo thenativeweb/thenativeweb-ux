@@ -1,4 +1,3 @@
-import { Theme } from '../../../themes';
 import { useAutoFocus } from '../../useAutoFocus';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { ChangeEvent, CSSProperties, FocusEvent, FunctionComponent, ReactElement } from 'react';
@@ -24,7 +23,7 @@ interface TextAreaProps {
   onBlur?: (event: FocusEvent<HTMLTextAreaElement>) => void;
 }
 
-const useStyles = createUseStyles<Theme, TextAreaClassNames>(styles);
+const useStyles = createUseStyles<TextAreaClassNames>(styles);
 
 const TextArea: FunctionComponent<TextAreaProps> = ({
   autoFocus = false,

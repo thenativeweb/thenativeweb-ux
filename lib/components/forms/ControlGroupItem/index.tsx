@@ -1,4 +1,4 @@
-import { CheckBox, Icon, Theme } from '../../..';
+import { CheckBox, Icon } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { ControlGroupItemClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -11,7 +11,7 @@ interface ControlGroupItemProps {
   label?: string;
 }
 
-const useStyles = createUseStyles<Theme, ControlGroupItemClassNames>(styles);
+const useStyles = createUseStyles<ControlGroupItemClassNames>(styles);
 
 const ControlGroupItem: FunctionComponent<ControlGroupItemProps> = ({
   adjust = 'flex',

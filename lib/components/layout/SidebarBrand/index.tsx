@@ -1,9 +1,8 @@
 import { createUseStyles } from '../../../styles';
-import { Theme } from '../../../themes';
 import React, { FunctionComponent, ReactElement } from 'react';
 import { SidebarBrandClassNames, styles } from './styles';
 
-const useStyles = createUseStyles<Theme, SidebarBrandClassNames>(styles);
+const useStyles = createUseStyles<SidebarBrandClassNames>(styles);
 
 const SidebarBrand: FunctionComponent = ({ children }): ReactElement => {
   const classes = useStyles();

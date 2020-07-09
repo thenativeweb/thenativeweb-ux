@@ -1,7 +1,7 @@
+import { slugify } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { HeadlineClassNames, styles } from './styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
-import { slugify, Theme } from '../../..';
 
 interface HeadlineProps {
   id?: string;
@@ -12,7 +12,7 @@ interface HeadlineProps {
   withPermalink?: boolean;
 }
 
-const useStyles = createUseStyles<Theme, HeadlineClassNames>(styles);
+const useStyles = createUseStyles<HeadlineClassNames>(styles);
 
 const Headline: FunctionComponent<HeadlineProps> = ({
   children,

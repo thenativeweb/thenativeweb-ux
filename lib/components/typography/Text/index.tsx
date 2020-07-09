@@ -1,4 +1,3 @@
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 import { styles, TextClassNames } from './styles';
@@ -12,7 +11,7 @@ interface TextProps {
   style?: CSSProperties;
 }
 
-const useStyles = createUseStyles<Theme, TextClassNames>(styles);
+const useStyles = createUseStyles<TextClassNames>(styles);
 
 const Text: FunctionComponent<TextProps> = ({
   adjust = 'auto',

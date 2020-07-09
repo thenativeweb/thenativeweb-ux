@@ -1,4 +1,3 @@
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { FormClassNames, styles } from './styles';
 import React, { FormEvent, FunctionComponent, ReactElement } from 'react';
@@ -8,7 +7,7 @@ interface FormProps {
   onSubmit?: (event: FormEvent) => void;
 }
 
-const useStyles = createUseStyles<Theme, FormClassNames>(styles);
+const useStyles = createUseStyles<FormClassNames>(styles);
 
 const Form: FunctionComponent<FormProps> = ({
   children,

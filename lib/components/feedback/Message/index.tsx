@@ -1,5 +1,5 @@
+import { Icon } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
-import { Icon, Theme } from '../../..';
 import { MessageClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
@@ -9,7 +9,7 @@ interface MessageProps {
   id?: string;
 }
 
-const useStyles = createUseStyles<Theme, MessageClassNames>(styles);
+const useStyles = createUseStyles<MessageClassNames>(styles);
 
 const Message: FunctionComponent<MessageProps> = ({
   children,

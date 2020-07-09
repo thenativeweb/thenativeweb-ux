@@ -1,6 +1,5 @@
 import { getSpaceDependentClassNamesFromProps } from '../../../styles/utils';
 import { ResponsiveSpaceProp } from '../../../types/ResponsiveSpaceProp';
-import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 import { spaceDependentProperties, styles } from './styles';
@@ -18,7 +17,7 @@ interface SpaceProps {
   paddingY?: ResponsiveSpaceProp;
 }
 
-const useStyles = createUseStyles<Theme, 'Space'>(styles);
+const useStyles = createUseStyles<'Space'>(styles);
 
 const Space: FunctionComponent<SpaceProps> = ({ id, className, children, ...props }): ReactElement => {
   const classes = useStyles();

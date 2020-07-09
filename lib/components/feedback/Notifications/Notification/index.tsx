@@ -1,5 +1,4 @@
 import { NotificationType } from '../../../../services/NotificationService';
-import { Theme } from '../../../..';
 import { classNames, createUseStyles } from '../../../../styles';
 import { NotificationClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -9,7 +8,7 @@ interface NotificationProps {
   text: string;
 }
 
-const useStyles = createUseStyles<Theme, NotificationClassNames>(styles);
+const useStyles = createUseStyles<NotificationClassNames>(styles);
 
 const Notification: FunctionComponent<NotificationProps> = ({
   type,

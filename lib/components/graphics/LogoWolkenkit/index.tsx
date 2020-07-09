@@ -1,10 +1,9 @@
 import { LogoProps } from '../LogoProps';
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { LogoWolkenkitClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const useStyles = createUseStyles<Theme, LogoWolkenkitClassNames>(styles);
+const useStyles = createUseStyles<LogoWolkenkitClassNames>(styles);
 
 const LogoWolkenkit: FunctionComponent<LogoProps> = ({
   isAnimated = false,
