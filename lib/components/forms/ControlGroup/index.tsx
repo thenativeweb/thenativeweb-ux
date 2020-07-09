@@ -1,4 +1,3 @@
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { ControlGroupClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -8,7 +7,7 @@ interface ControlGroupProps {
   isVisible?: boolean;
 }
 
-const useStyles = createUseStyles<Theme, ControlGroupClassNames>(styles);
+const useStyles = createUseStyles<ControlGroupClassNames>(styles);
 
 const ControlGroup: FunctionComponent<ControlGroupProps> = ({
   className,

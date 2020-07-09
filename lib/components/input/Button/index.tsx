@@ -1,6 +1,6 @@
 import { ButtonClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
-import { Icon, IconSize, Label, Theme } from '../../..';
+import { Icon, IconSize, Label } from '../../..';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface ButtonProps {
@@ -19,7 +19,7 @@ interface ButtonProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const useStyles = createUseStyles<Theme, ButtonClassNames>(styles);
+const useStyles = createUseStyles<ButtonClassNames>(styles);
 
 const Button: FunctionComponent<ButtonProps> = ({
   autoFocus = false,

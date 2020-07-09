@@ -1,6 +1,5 @@
 import NextLink from 'next/link';
 import { scrollToAnchor } from '../../../utils/scrollToAnchor';
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { LinkClassNames, styles } from './styles';
 import React, { CSSProperties, FunctionComponent, MouseEvent, ReactElement } from 'react';
@@ -14,7 +13,7 @@ interface LinkProps {
   onMouseOver?: (event: MouseEvent<HTMLAnchorElement>) => void;
 }
 
-const useStyles = createUseStyles<Theme, LinkClassNames>(styles);
+const useStyles = createUseStyles<LinkClassNames>(styles);
 
 const Link: FunctionComponent<LinkProps> = React.forwardRef(({
   id,

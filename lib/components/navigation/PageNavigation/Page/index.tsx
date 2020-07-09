@@ -1,9 +1,9 @@
 import { createUseStyles } from '../../../../styles';
-import { classNames, Link, Theme } from '../../../..';
+import { classNames, Link } from '../../../..';
 import { PageClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const useStyles = createUseStyles<Theme, PageClassNames>(styles);
+const useStyles = createUseStyles<PageClassNames>(styles);
 
 interface PageProps {
   activePath: string;

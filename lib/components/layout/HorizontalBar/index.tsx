@@ -1,5 +1,4 @@
 import { Background } from '../../Background';
-import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import { HorizontalBarClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -15,7 +14,7 @@ interface HorizontalBarProps {
   spaceBetweenItems?: 'none' | 'sm' | 'md' | 'lg';
 }
 
-const useStyles = createUseStyles<Theme, HorizontalBarClassNames>(styles);
+const useStyles = createUseStyles<HorizontalBarClassNames>(styles);
 
 const HorizontalBar: FunctionComponent<HorizontalBarProps> = ({
   align = 'stretch',

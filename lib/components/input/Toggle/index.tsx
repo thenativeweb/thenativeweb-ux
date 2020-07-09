@@ -1,4 +1,3 @@
-import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement, useCallback } from 'react';
 import { renderDefaultToggle, RenderToggleOptions } from './renderDefaultToggle';
@@ -14,7 +13,7 @@ interface ToggleProps {
   style?: CSSProperties;
 }
 
-const useStyles = createUseStyles<Theme, ToggleClassNames>(styles);
+const useStyles = createUseStyles<ToggleClassNames>(styles);
 
 const Toggle: FunctionComponent<ToggleProps> = ({
   id,

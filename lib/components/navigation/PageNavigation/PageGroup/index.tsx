@@ -1,9 +1,9 @@
 import { createUseStyles } from '../../../../styles';
-import { classNames, Icon, Link, Theme } from '../../../..';
+import { classNames, Icon, Link } from '../../../..';
 import { PageGroupClassNames, styles } from './styles';
 import React, { FunctionComponent, MouseEvent, ReactElement, useCallback, useEffect, useState } from 'react';
 
-const useStyles = createUseStyles<Theme, PageGroupClassNames>(styles);
+const useStyles = createUseStyles<PageGroupClassNames>(styles);
 
 interface PageGroupProps {
   activePath: string;

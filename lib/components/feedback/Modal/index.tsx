@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import { TransitionType } from '../../animation/Transition/TransitionType';
-import { Button, excecutionEnvironment, getPortalRootNode, Theme, Transition } from '../../..';
+import { Button, excecutionEnvironment, getPortalRootNode, Transition } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { ModalClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
@@ -18,7 +18,7 @@ interface ModalProps {
   onKeyDown?: (key: string, event: KeyboardEvent) => void;
 }
 
-const useStyles = createUseStyles<Theme, ModalClassNames>(styles);
+const useStyles = createUseStyles<ModalClassNames>(styles);
 
 const Modal: FunctionComponent<ModalProps> = ({
   attach = 'left',

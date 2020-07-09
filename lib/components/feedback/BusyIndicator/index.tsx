@@ -1,4 +1,3 @@
-import { Theme } from '../../..';
 import { BusyIndicatorClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -8,7 +7,7 @@ interface BusyIndicatorProps {
   isVisible?: boolean;
 }
 
-const useStyles = createUseStyles<Theme, BusyIndicatorClassNames>(styles);
+const useStyles = createUseStyles<BusyIndicatorClassNames>(styles);
 
 const BusyIndicator: FunctionComponent<BusyIndicatorProps> = ({
   className,

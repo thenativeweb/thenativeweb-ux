@@ -1,5 +1,5 @@
 import { classNames, createUseStyles } from '../../../styles';
-import { Icon, Link, Theme } from '../../..';
+import { Icon, Link } from '../../..';
 import { MadeByClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
@@ -14,7 +14,7 @@ interface MadeByProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const useStyles = createUseStyles<Theme, MadeByClassNames>(styles);
+const useStyles = createUseStyles<MadeByClassNames>(styles);
 
 const MadeBy: FunctionComponent<MadeByProps> = ({
   color = 'dark',

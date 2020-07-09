@@ -1,14 +1,14 @@
 import { Notification } from './Notification';
 import { NotificationService } from '../../../services/NotificationService';
 import ReactDOM from 'react-dom';
+import { TransitionGroup } from '../../..';
 import { useForceUpdate } from '../../useForceUpdate';
 import { classNames, createUseStyles } from '../../../styles';
 import { excecutionEnvironment, getPortalRootNode, notifications } from '../../../services';
 import { NotificationsClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect } from 'react';
-import { Theme, TransitionGroup } from '../../..';
 
-const useStyles = createUseStyles<Theme, NotificationsClassNames>(styles);
+const useStyles = createUseStyles<NotificationsClassNames>(styles);
 
 interface NotificationsProps {
   className?: string;

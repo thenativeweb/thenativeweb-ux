@@ -1,6 +1,6 @@
 import { createUseStyles } from '../../../styles';
 import { BrandClassNames, styles } from './styles';
-import { LogoFull, LogoMinimal, Theme } from '../../..';
+import { LogoFull, LogoMinimal } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface BrandProps {
@@ -10,7 +10,7 @@ interface BrandProps {
   isInteractive?: boolean;
 }
 
-const useStyles = createUseStyles<Theme, BrandClassNames>(styles);
+const useStyles = createUseStyles<BrandClassNames>(styles);
 
 const Brand: FunctionComponent<BrandProps> = ({
   color = 'default',

@@ -4,7 +4,6 @@ import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javasc
 import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx';
 import { stripIndent } from 'common-tags';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { Theme } from '../../../themes';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
 import { classNames, createUseStyles, useTheme } from '../../../styles';
@@ -27,7 +26,7 @@ interface CodeProps {
   showLineNumbers?: boolean;
 }
 
-const useStyles = createUseStyles<Theme, CodeClassNames>(styles);
+const useStyles = createUseStyles<CodeClassNames>(styles);
 
 const Code: FunctionComponent<CodeProps> = ({
   children,

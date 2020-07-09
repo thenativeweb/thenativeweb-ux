@@ -1,10 +1,9 @@
 import { createUseStyles } from '../../../styles';
-import { Theme } from '../../../themes';
 import { classNames, HighlightText } from '../../..';
 import React, { FunctionComponent, ReactElement, useMemo } from 'react';
 import { styles, TagsClassNames } from './styles';
 
-const useStyles = createUseStyles<Theme, TagsClassNames>(styles);
+const useStyles = createUseStyles<TagsClassNames>(styles);
 
 interface TagsProps {
   className?: string;

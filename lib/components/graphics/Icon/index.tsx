@@ -1,6 +1,6 @@
+import { IconSize } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { IconClassNames, styles } from './styles';
-import { IconSize, Theme } from '../../..';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface IconProps {
@@ -12,7 +12,7 @@ interface IconProps {
   type?: 'default' | 'inline' | 'flex-auto';
 }
 
-const useStyles = createUseStyles<Theme, IconClassNames>(styles);
+const useStyles = createUseStyles<IconClassNames>(styles);
 
 const Icon: FunctionComponent<IconProps> = ({
   name,

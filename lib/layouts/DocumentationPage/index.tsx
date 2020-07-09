@@ -16,7 +16,6 @@ import {
   Sidebar,
   SidebarBrand,
   SidebarItem,
-  Theme,
   useDevice,
   useRouteChange
 } from '../..';
@@ -24,7 +23,7 @@ import { classNames, createUseStyles } from '../../styles';
 import { DocumentationPageClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement, useCallback, useEffect, useState } from 'react';
 
-const useStyles = createUseStyles<Theme, DocumentationPageClassNames>(styles);
+const useStyles = createUseStyles<DocumentationPageClassNames>(styles);
 
 interface DocumentationPageProps {
   linkToImprint?: string;

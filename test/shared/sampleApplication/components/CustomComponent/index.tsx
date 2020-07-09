@@ -1,9 +1,9 @@
-import { CustomTheme as Theme } from '../../themes/CustomTheme';
+import { CustomTheme } from '../../themes/CustomTheme';
 import { classNames, createUseStyles } from '../../../../../lib';
 import { CustomComponentClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
-const useStyles = createUseStyles<Theme, CustomComponentClassNames>(styles);
+const useStyles = createUseStyles<CustomComponentClassNames, CustomTheme>(styles);
 
 interface CustomComponentProps {
   className?: string;

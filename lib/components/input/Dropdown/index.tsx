@@ -1,6 +1,6 @@
+import { Icon } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { DropdownClassNames, styles } from './styles';
-import { Icon, Theme } from '../../..';
 import React, { CSSProperties, FormEvent, FunctionComponent, ReactElement, useCallback, useState } from 'react';
 
 export interface DropdownOption {
@@ -21,7 +21,7 @@ interface DropdownProps {
   onChange?: (value: string) => void;
 }
 
-const useStyles = createUseStyles<Theme, DropdownClassNames>(styles);
+const useStyles = createUseStyles<DropdownClassNames>(styles);
 
 const Dropdown: FunctionComponent<DropdownProps> = ({
   emptyLabel,

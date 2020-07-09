@@ -1,4 +1,3 @@
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { PatternClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -7,7 +6,7 @@ interface PatternProps {
   className?: string;
 }
 
-const useStyles = createUseStyles<Theme, PatternClassNames>(styles);
+const useStyles = createUseStyles<PatternClassNames>(styles);
 
 const Pattern: FunctionComponent<PatternProps> = ({ children, className }): ReactElement => {
   const classes = useStyles();

@@ -1,10 +1,9 @@
 import Highlighter from 'react-highlight-words';
-import { Theme } from '../../../themes';
 import { classNames, createUseStyles } from '../../../styles';
 import { HighlightTextClassNames, styles } from './styles';
 import React, { Fragment, FunctionComponent, ReactElement } from 'react';
 
-const useStyles = createUseStyles<Theme, HighlightTextClassNames>(styles);
+const useStyles = createUseStyles<HighlightTextClassNames>(styles);
 
 interface HighlightTextProps {
   className?: string;

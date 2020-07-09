@@ -1,6 +1,6 @@
 import { classNames, createUseStyles } from '../../../styles';
 import { FooterClassNames, styles } from './styles';
-import { Grid, GridItem, Link, MadeBy, Space, Theme } from '../../..';
+import { Grid, GridItem, Link, MadeBy, Space } from '../../..';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
 
 interface FooterProps {
@@ -16,7 +16,7 @@ interface FooterProps {
   style?: CSSProperties;
 }
 
-const useStyles = createUseStyles<Theme, FooterClassNames>(styles);
+const useStyles = createUseStyles<FooterClassNames>(styles);
 
 const Footer: FunctionComponent<FooterProps> = ({
   borderTop = 'dark',

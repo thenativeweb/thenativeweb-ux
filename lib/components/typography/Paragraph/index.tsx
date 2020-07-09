@@ -1,4 +1,3 @@
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { ParagraphClassNames, styles } from './styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
@@ -9,7 +8,7 @@ interface ParagraphProps {
   style?: CSSProperties;
 }
 
-const useStyles = createUseStyles<Theme, ParagraphClassNames>(styles);
+const useStyles = createUseStyles<ParagraphClassNames>(styles);
 
 const Paragraph: FunctionComponent<ParagraphProps> = ({
   className,

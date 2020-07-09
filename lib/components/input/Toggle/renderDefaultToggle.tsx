@@ -1,12 +1,12 @@
 import { Button } from '../../..';
-import { Classes } from 'jss';
+import { ToggleClassNames } from './styles';
 import React, { ReactElement } from 'react';
 
 export interface RenderToggleOptions {
   value: string;
   isSelected: boolean;
   changeValue: (newValue: string) => void;
-  classes: Classes;
+  classes: Record<ToggleClassNames, string>;
 }
 
 const renderDefaultToggle = ({ value, isSelected, changeValue, classes }: RenderToggleOptions): ReactElement => (

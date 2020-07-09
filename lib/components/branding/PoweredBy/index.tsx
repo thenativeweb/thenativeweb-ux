@@ -1,6 +1,6 @@
 import { createUseStyles } from '../../../styles';
+import { Product } from '../../..';
 import { PoweredByClassNames, styles } from './styles';
-import { Product, Theme } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface PoweredByProps {
@@ -8,7 +8,7 @@ interface PoweredByProps {
   size?: 'md' | 'lg';
 }
 
-const useStyles = createUseStyles<Theme, PoweredByClassNames>(styles);
+const useStyles = createUseStyles<PoweredByClassNames>(styles);
 
 const PoweredBy: FunctionComponent<PoweredByProps> = ({
   product,

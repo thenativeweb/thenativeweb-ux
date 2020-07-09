@@ -1,4 +1,3 @@
-import { Theme } from '../../../themes';
 import { useAutoFocus } from '../../useAutoFocus';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { ChangeEvent, CSSProperties, FocusEvent, FunctionComponent, KeyboardEvent, ReactElement, useCallback } from 'react';
@@ -24,7 +23,7 @@ interface TextBoxProps {
   onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
 }
 
-const useStyles = createUseStyles<Theme, TextBoxClassNames>(styles);
+const useStyles = createUseStyles<TextBoxClassNames>(styles);
 
 const TextBox: FunctionComponent<TextBoxProps> = ({
   autoFocus = false,

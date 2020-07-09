@@ -1,5 +1,4 @@
 import { Background } from '../../Background';
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { ContainerClassNames, styles } from './styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
@@ -15,7 +14,7 @@ interface ContainerProps {
   style?: CSSProperties;
 }
 
-const useStyles = createUseStyles<Theme, ContainerClassNames>(styles);
+const useStyles = createUseStyles<ContainerClassNames>(styles);
 
 const Container: FunctionComponent<ContainerProps> = ({
   className,

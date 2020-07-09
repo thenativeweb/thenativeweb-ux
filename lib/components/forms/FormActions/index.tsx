@@ -1,4 +1,3 @@
-import { Theme } from '../../..';
 import { classNames, createUseStyles } from '../../../styles';
 import { FormActionsClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
@@ -8,7 +7,7 @@ interface FormActionsProps {
   type?: 'default' | 'stacked';
 }
 
-const useStyles = createUseStyles<Theme, FormActionsClassNames>(styles);
+const useStyles = createUseStyles<FormActionsClassNames>(styles);
 
 const FormActions: FunctionComponent<FormActionsProps> = ({
   children,

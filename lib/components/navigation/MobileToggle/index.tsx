@@ -1,9 +1,9 @@
 import { classNames, createUseStyles } from '../../../styles';
-import { Icon, Theme, Transition } from '../../..';
+import { Icon, Transition } from '../../..';
 import { MobileToggleClassNames, styles } from './styles';
 import React, { Fragment, FunctionComponent, ReactElement, useEffect } from 'react';
 
-const useStyles = createUseStyles<Theme, MobileToggleClassNames>(styles);
+const useStyles = createUseStyles<MobileToggleClassNames>(styles);
 
 interface MobileToggleProps {
   position?: 'fixed' | 'absolute';

@@ -1,5 +1,5 @@
 import { classNames, createUseStyles, useTheme } from '../../../styles';
-import { LogoTheNativeWeb, LogoWolkenkit, Theme } from '../../..';
+import { LogoTheNativeWeb, LogoWolkenkit } from '../../..';
 import { ProducClassNames, styles } from './styles';
 import React, { FunctionComponent, ReactElement } from 'react';
 
@@ -10,7 +10,7 @@ interface ProductProps {
   type?: 'default' | 'text-only' | 'logo-only';
 }
 
-const useStyles = createUseStyles<Theme, ProducClassNames>(styles);
+const useStyles = createUseStyles<ProducClassNames>(styles);
 
 const Product: FunctionComponent<ProductProps> = ({
   isAnimated = false,

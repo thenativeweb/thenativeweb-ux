@@ -1,7 +1,6 @@
-import { Styles } from 'jss';
 import {
+  ComponentClassNames,
   createUseStyles,
-  Theme,
   Website
 } from '../../../../../../lib';
 import React, { ReactElement } from 'react';
@@ -13,7 +12,7 @@ type ClassNames =
   'OnlyLg' |
   'OnlyXl';
 
-const useStyles = createUseStyles<Theme, ClassNames>((theme: Theme): Styles<ClassNames> => ({
+const useStyles = createUseStyles<ClassNames>((theme): ComponentClassNames<ClassNames> => ({
   OnlyXs: { display: 'none' },
   OnlySm: { display: 'none' },
   OnlyMd: { display: 'none' },

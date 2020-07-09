@@ -1,4 +1,3 @@
-import { Theme } from '../../..';
 import { CheckBoxClassNames, styles } from './styles';
 import { classNames, createUseStyles } from '../../../styles';
 import React, { CSSProperties, FunctionComponent, ReactElement } from 'react';
@@ -12,7 +11,7 @@ interface CheckBoxProps {
   onChange?: () => void;
 }
 
-const useStyles = createUseStyles<Theme, CheckBoxClassNames>(styles);
+const useStyles = createUseStyles<CheckBoxClassNames>(styles);
 
 const CheckBox: FunctionComponent<CheckBoxProps> = ({
   checked,

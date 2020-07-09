@@ -1,6 +1,6 @@
 import { getStyles } from './getStyles';
 import { classNames, createUseStyles } from '../../../styles';
-import { HighlightText, Icon, Theme } from '../../..';
+import { HighlightText, Icon } from '../../..';
 import React, { FunctionComponent, ReactElement } from 'react';
 
 interface BreadcrumbsProps {
@@ -12,7 +12,7 @@ interface BreadcrumbsProps {
   size?: 'sm' | 'md';
 }
 
-const useStyles = createUseStyles<Theme, keyof ReturnType<typeof getStyles>>(getStyles);
+const useStyles = createUseStyles<keyof ReturnType<typeof getStyles>>(getStyles);
 
 const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
   className,
