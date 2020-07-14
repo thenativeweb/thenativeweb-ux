@@ -1,3 +1,17 @@
+## [5.6.21](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.20...5.6.21) (2020-07-14)
+
+
+### Bug Fixes
+
+* bump @babel/runtime-corejs2 from 7.10.4 to 7.10.5 ([#593](https://github.com/thenativeweb/thenativeweb-ux/issues/593)) ([3841b2e](https://github.com/thenativeweb/thenativeweb-ux/commit/3841b2ea35dd3d198e10e17bc8f09f5990a5ec81))
+
+## [5.6.20](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.19...5.6.20) (2020-07-14)
+
+
+### Bug Fixes
+
+* bump command-line-interface from 3.6.0 to 3.6.1 ([#590](https://github.com/thenativeweb/thenativeweb-ux/issues/590)) ([9be4e92](https://github.com/thenativeweb/thenativeweb-ux/commit/9be4e922056efbe78f953c78e746a5c5e353498e))
+
 ## [5.6.19](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.18...5.6.19) (2020-07-10)
 
 
