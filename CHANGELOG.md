@@ -1,3 +1,10 @@
+## [5.6.29](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.28...5.6.29) (2020-07-24)
+
+
+### Bug Fixes
+
+* bump @types/node from 14.0.25 to 14.0.26 ([#608](https://github.com/thenativeweb/thenativeweb-ux/issues/608)) ([68f645a](https://github.com/thenativeweb/thenativeweb-ux/commit/68f645a240963f5218ed85c940ee09d9868f7ae9))
+
 ## [5.6.28](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.27...5.6.28) (2020-07-24)
 
 
