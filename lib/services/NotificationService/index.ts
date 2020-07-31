@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 
 export type NotificationType = 'error' | 'success';
 
@@ -27,7 +27,7 @@ class NotificationService extends EventEmitter {
 
   public addNotification ({ type, text, duration }: { type: NotificationType; text: string; duration: number }): Notification {
     const notification: Notification = {
-      id: uuid(),
+      id: v4(),
       type,
       text,
       duration
