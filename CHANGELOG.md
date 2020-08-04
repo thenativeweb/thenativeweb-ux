@@ -1,3 +1,10 @@
+## [5.6.36](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.35...5.6.36) (2020-08-04)
+
+
+### Bug Fixes
+
+* bump command-line-interface from 3.6.1 to 3.6.2 ([#627](https://github.com/thenativeweb/thenativeweb-ux/issues/627)) ([e773216](https://github.com/thenativeweb/thenativeweb-ux/commit/e77321629bdb7c1b807f1d96eb24ca2608936003))
+
 ## [5.6.35](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.34...5.6.35) (2020-07-31)
 
 
