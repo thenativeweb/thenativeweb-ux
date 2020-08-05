@@ -1,3 +1,10 @@
+## [5.6.37](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.36...5.6.37) (2020-08-05)
+
+
+### Bug Fixes
+
+* bump @types/uuid from 8.0.0 to 8.0.1 ([#629](https://github.com/thenativeweb/thenativeweb-ux/issues/629)) ([756bdca](https://github.com/thenativeweb/thenativeweb-ux/commit/756bdca657539643951e59e35dad30b2fe9b024f))
+
 ## [5.6.36](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.35...5.6.36) (2020-08-04)
 
 
