@@ -93,7 +93,6 @@ export {
   ControlGroup,
   ControlGroupDivider,
   ControlGroupItem,
-  ComponentClassNames,
   createRedirect,
   dialogs,
   Dialogs,
@@ -112,11 +111,8 @@ export {
   HighlightText,
   HorizontalBar,
   Icon,
-  IconSize,
   Icons,
   Label,
-  Language,
-  LayoutComponent,
   Link,
   LogoFull,
   LogoMinimal,
@@ -127,7 +123,6 @@ export {
   MobileToggle,
   Modal,
   ModalRow,
-  MultiLanguagePageTree,
   NextApp,
   NextDocument,
   NonIdealState,
@@ -135,8 +130,6 @@ export {
   Notifications,
   PageNavigation,
   PageTree,
-  PageTreeItem,
-  PageTreeItemWithMetadata,
   Paragraph,
   Pattern,
   PoweredBy,
@@ -165,4 +158,14 @@ export {
   useDevice,
   useTheme,
   useRouteChange
+};
+
+export type {
+  ComponentClassNames,
+  IconSize,
+  Language,
+  LayoutComponent,
+  MultiLanguagePageTree,
+  PageTreeItem,
+  PageTreeItemWithMetadata
 };
