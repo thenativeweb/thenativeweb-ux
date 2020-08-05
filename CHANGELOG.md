@@ -1,3 +1,31 @@
+## [5.6.38](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.37...5.6.38) (2020-08-05)
+
+
+### Bug Fixes
+
+* bump @babel/runtime-corejs2 from 7.11.0 to 7.11.1 ([#628](https://github.com/thenativeweb/thenativeweb-ux/issues/628)) ([eb5082f](https://github.com/thenativeweb/thenativeweb-ux/commit/eb5082f11b0686ddc4be5074deb9b0149ed0816c))
+
+## [5.6.37](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.36...5.6.37) (2020-08-05)
+
+
+### Bug Fixes
+
+* bump @types/uuid from 8.0.0 to 8.0.1 ([#629](https://github.com/thenativeweb/thenativeweb-ux/issues/629)) ([756bdca](https://github.com/thenativeweb/thenativeweb-ux/commit/756bdca657539643951e59e35dad30b2fe9b024f))
+
+## [5.6.36](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.35...5.6.36) (2020-08-04)
+
+
+### Bug Fixes
+
+* bump command-line-interface from 3.6.1 to 3.6.2 ([#627](https://github.com/thenativeweb/thenativeweb-ux/issues/627)) ([e773216](https://github.com/thenativeweb/thenativeweb-ux/commit/e77321629bdb7c1b807f1d96eb24ca2608936003))
+
+## [5.6.35](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.34...5.6.35) (2020-07-31)
+
+
+### Bug Fixes
+
+* bump csstype from 2.6.11 to 3.0.2 ([#619](https://github.com/thenativeweb/thenativeweb-ux/issues/619)) ([4ec99be](https://github.com/thenativeweb/thenativeweb-ux/commit/4ec99beeb7ef1ec99a355aa99e001fa81110c366))
+
 ## [5.6.34](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.33...5.6.34) (2020-07-31)
 
 
