@@ -1,3 +1,10 @@
+## [5.6.41](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.40...5.6.41) (2020-08-10)
+
+
+### Bug Fixes
+
+* bump jsdom from 16.3.0 to 16.4.0 ([#637](https://github.com/thenativeweb/thenativeweb-ux/issues/637)) ([a673228](https://github.com/thenativeweb/thenativeweb-ux/commit/a6732280d4bc26c5ac702ab6acdd4b0aefafecca))
+
 ## [5.6.40](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.39...5.6.40) (2020-08-06)
 
 
