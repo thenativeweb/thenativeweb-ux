@@ -63,7 +63,7 @@
     "uuid": "8.3.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "9.5.1",
+    "@next/bundle-analyzer": "9.5.2",
     "@types/classnames": "2.2.10",
     "@types/common-tags": "1.8.0",
     "@types/express": "4.17.7",
