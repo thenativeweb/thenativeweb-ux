@@ -1,3 +1,10 @@
+## [5.6.45](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.44...5.6.45) (2020-08-16)
+
+
+### Bug Fixes
+
+* bump p-queue from 6.6.0 to 6.6.1 ([#650](https://github.com/thenativeweb/thenativeweb-ux/issues/650)) ([a36e688](https://github.com/thenativeweb/thenativeweb-ux/commit/a36e68832eb0ccb7cb5ccbccc5d164cb757b908b))
+
 ## [5.6.44](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.43...5.6.44) (2020-08-14)
 
 
