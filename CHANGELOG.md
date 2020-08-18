@@ -1,3 +1,31 @@
+## [5.6.46](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.45...5.6.46) (2020-08-18)
+
+
+### Bug Fixes
+
+* bump react-syntax-highlighter from 13.3.1 to 13.5.0 ([#652](https://github.com/thenativeweb/thenativeweb-ux/issues/652)) ([f96fed4](https://github.com/thenativeweb/thenativeweb-ux/commit/f96fed4741f446a8e863fcdc01f53b9aa8efa563))
+
+## [5.6.45](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.44...5.6.45) (2020-08-16)
+
+
+### Bug Fixes
+
+* bump p-queue from 6.6.0 to 6.6.1 ([#650](https://github.com/thenativeweb/thenativeweb-ux/issues/650)) ([a36e688](https://github.com/thenativeweb/thenativeweb-ux/commit/a36e68832eb0ccb7cb5ccbccc5d164cb757b908b))
+
+## [5.6.44](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.43...5.6.44) (2020-08-14)
+
+
+### Bug Fixes
+
+* bump pretty-format from 26.2.0 to 26.4.0 ([#644](https://github.com/thenativeweb/thenativeweb-ux/issues/644)) ([104166e](https://github.com/thenativeweb/thenativeweb-ux/commit/104166e417c9319fe3d0f818f3d26158abb7a8a8))
+
+## [5.6.43](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.42...5.6.43) (2020-08-14)
+
+
+### Bug Fixes
+
+* bump lodash from 4.17.19 to 4.17.20 ([#645](https://github.com/thenativeweb/thenativeweb-ux/issues/645)) ([01aca79](https://github.com/thenativeweb/thenativeweb-ux/commit/01aca799d24b8d5f37c2c7c472eec45e676ede3b))
+
 ## [5.6.42](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.41...5.6.42) (2020-08-10)
 
 
