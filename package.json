@@ -74,7 +74,7 @@
     "@types/webpack": "4.41.22",
     "assertthat": "5.2.1",
     "axios": "0.20.0",
-    "buntstift": "4.0.15",
+    "buntstift": "4.0.16",
     "common-tags": "1.8.0",
     "express": "4.17.1",
     "get-port": "5.1.1",
