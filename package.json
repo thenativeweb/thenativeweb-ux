@@ -81,7 +81,7 @@
     "isolated": "3.0.2",
     "next": "9.5.3",
     "processenv": "3.0.2",
-    "puppeteer": "5.2.1",
+    "puppeteer": "5.3.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "retry-ignore-abort": "2.2.4",
