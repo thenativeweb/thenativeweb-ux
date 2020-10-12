@@ -1,3 +1,24 @@
+## [5.6.78](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.77...5.6.78) (2020-10-12)
+
+
+### Bug Fixes
+
+* bump color from 3.1.2 to 3.1.3 ([#722](https://github.com/thenativeweb/thenativeweb-ux/issues/722)) ([41f17b2](https://github.com/thenativeweb/thenativeweb-ux/commit/41f17b28f05bc1f55a7c60f293c3b589c72c0e06))
+
+## [5.6.77](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.76...5.6.77) (2020-10-12)
+
+
+### Bug Fixes
+
+* bump @types/node from 14.11.5 to 14.11.8 ([#723](https://github.com/thenativeweb/thenativeweb-ux/issues/723)) ([1b69f5a](https://github.com/thenativeweb/thenativeweb-ux/commit/1b69f5a6324eb25a1a8da254a1577c30ec1c0779))
+
+## [5.6.76](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.75...5.6.76) (2020-10-12)
+
+
+### Bug Fixes
+
+* bump @types/lodash from 4.14.161 to 4.14.162 ([#725](https://github.com/thenativeweb/thenativeweb-ux/issues/725)) ([7ecbe2d](https://github.com/thenativeweb/thenativeweb-ux/commit/7ecbe2ddb73d6d7372f526e3156140a333eceade))
+
 ## [5.6.75](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.74...5.6.75) (2020-10-12)
 
 
