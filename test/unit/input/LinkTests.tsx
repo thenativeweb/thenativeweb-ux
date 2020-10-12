@@ -106,4 +106,21 @@ suite('Link', (): void => {
 
     assert.that(hovered).is.true();
   });
+
+  test('sets tabIndex on inner a element if tabIndex is provided.', async (): Promise<void> => {
+    const tabIndex = 0;
+
+    act((): void => {
+      ReactDOM.render(
+        <ThemeProvider>
+          <Link tabIndex={ tabIndex } id='link' href='/linkTo'>This is a link.</Link>
+        </ThemeProvider>,
+        container
+      );
+    });
+
+    const link = container.querySelector<HTMLAnchorElement>('#link');
+
+    assert.that(link!.tabIndex).is.equalTo(tabIndex);
+  });
 });
