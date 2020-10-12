@@ -1,3 +1,10 @@
+# [5.7.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.78...5.7.0) (2020-10-12)
+
+
+### Features
+
+* Add tabIndex for Link component ([#730](https://github.com/thenativeweb/thenativeweb-ux/issues/730)) ([1b9d19e](https://github.com/thenativeweb/thenativeweb-ux/commit/1b9d19e73a15decb1430cb827e2958ecc03012ba))
+
 ## [5.6.78](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.77...5.6.78) (2020-10-12)
 
 
