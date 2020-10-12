@@ -9,6 +9,7 @@ interface LinkProps {
   href: string;
   id?: string;
   style?: CSSProperties;
+  tabIndex?: number;
   onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
   onMouseOver?: (event: MouseEvent<HTMLAnchorElement>) => void;
 }
@@ -21,6 +22,7 @@ const Link: FunctionComponent<LinkProps> = React.forwardRef(({
   children,
   href,
   style,
+  tabIndex,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onClick,
   onMouseOver
@@ -38,6 +40,7 @@ const Link: FunctionComponent<LinkProps> = React.forwardRef(({
   const anchorProps = {
     id,
     style,
+    tabIndex,
     href,
     className: linkClasses,
     target,
