@@ -1,3 +1,10 @@
+## [5.6.78](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.77...5.6.78) (2020-10-12)
+
+
+### Bug Fixes
+
+* bump color from 3.1.2 to 3.1.3 ([#722](https://github.com/thenativeweb/thenativeweb-ux/issues/722)) ([41f17b2](https://github.com/thenativeweb/thenativeweb-ux/commit/41f17b28f05bc1f55a7c60f293c3b589c72c0e06))
+
 ## [5.6.77](https://github.com/thenativeweb/thenativeweb-ux/compare/5.6.76...5.6.77) (2020-10-12)
 
 
