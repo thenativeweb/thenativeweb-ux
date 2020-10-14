@@ -1,3 +1,10 @@
+## [5.7.2](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.1...5.7.2) (2020-10-14)
+
+
+### Bug Fixes
+
+* bump animejs from 3.2.0 to 3.2.1 ([#734](https://github.com/thenativeweb/thenativeweb-ux/issues/734)) ([a0cf295](https://github.com/thenativeweb/thenativeweb-ux/commit/a0cf295c665af20ed116f6f40e663186bb66446a))
+
 ## [5.7.1](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.0...5.7.1) (2020-10-13)
 
 
