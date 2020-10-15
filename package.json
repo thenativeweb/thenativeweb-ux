@@ -82,7 +82,7 @@
     "next": "9.5.3",
     "processenv": "3.0.2",
     "puppeteer": "5.3.1",
-    "react": "16.13.1",
+    "react": "16.14.0",
     "react-dom": "16.13.1",
     "retry-ignore-abort": "2.2.4",
     "roboter": "11.2.19",
