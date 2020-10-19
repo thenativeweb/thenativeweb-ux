@@ -1,3 +1,11 @@
+## [5.7.4](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.3...5.7.4) (2020-10-19)
+
+
+### Bug Fixes
+
+* bump @babel/runtime-corejs2 from 7.12.0 to 7.12.1 ([#743](https://github.com/thenativeweb/thenativeweb-ux/issues/743)) ([6647933](https://github.com/thenativeweb/thenativeweb-ux/commit/6647933aadf8c3f688d7fd99b2dffadb75d2fc18))
+* bump @types/node from 14.11.8 to 14.11.10 ([#745](https://github.com/thenativeweb/thenativeweb-ux/issues/745)) ([3c01013](https://github.com/thenativeweb/thenativeweb-ux/commit/3c010134f43d676247891e0bd73040b699440670))
+
 ## [5.7.3](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.2...5.7.3) (2020-10-15)
 
 
