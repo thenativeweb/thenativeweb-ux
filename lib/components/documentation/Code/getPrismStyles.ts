@@ -1,7 +1,7 @@
 import color from 'color';
 import { Theme } from '../../..';
 
-const getPrismStyles = function (theme: Theme): object {
+const getPrismStyles = function (theme: Theme): Record<string, any> {
   const blue = color(theme.color.division.wolkenkit).lighten(0.6).desaturate(0.1),
         green = color(theme.color.division.technologies).lighten(0.5).desaturate(0.2),
         pink = color(theme.color.division.company).lighten(0.4).desaturate(0.3),

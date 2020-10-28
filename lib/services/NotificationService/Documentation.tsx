@@ -35,12 +35,12 @@ const Documentation = (): ReactElement => (
       </Code>
 
       <Button
-        onClick={
-          (): void => notifications.show({
+        onClick={ (): void => {
+          notifications.show({
             type: 'success',
             text: 'This is a notification!'
-          })
-        }
+          });
+        } }
       >
         Show Notification
       </Button>
@@ -69,22 +69,22 @@ const Documentation = (): ReactElement => (
       </Code>
       <React.Fragment>
         <Button
-          onClick={
-            (): void => notifications.show({
+          onClick={ (): void => {
+            notifications.show({
               type: 'error',
               text: 'This is an error!'
-            })
-          }
+            });
+          } }
         >
           Inform about error!
         </Button>
         <Button
-          onClick={
-            (): void => notifications.show({
+          onClick={ (): void => {
+            notifications.show({
               type: 'success',
               text: 'This is a success!'
-            })
-          }
+            });
+          } }
         >
           Inform about success!
         </Button>

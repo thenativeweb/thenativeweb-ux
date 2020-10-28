@@ -7,7 +7,13 @@ const Documentation = (): ReactElement => (
     <Headline>Button</Headline>
 
     <ComponentPreview>
-      <Button onClick={ (): void => notifications.show({ type: 'success', text: 'onClick' }) }>Click me!</Button>
+      <Button
+        onClick={ (): void => {
+          notifications.show({ type: 'success', text: 'onClick' });
+        } }
+      >
+        Click me!
+      </Button>
     </ComponentPreview>
 
     <Headline level='2'>Adjusting to flex container</Headline>

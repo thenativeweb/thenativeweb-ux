@@ -54,7 +54,7 @@ const verifyLinksCommand = function (): Command<VerifyLinksOptions> {
 
         try {
           urlsFromSitemap = await getUrlsFromSitemap({ sitemapPath });
-        } catch (ex) {
+        } catch (ex: unknown) {
           buntstift.error(`Failed to load sitemap '${sitemapPath}'.`);
           throw ex;
         }

@@ -47,7 +47,7 @@ interface TestAppState {
   toggleOptionSelected: string;
 }
 
-class TestApp extends React.Component<{}, TestAppState> {
+class TestApp extends React.Component<Record<string, unknown>, TestAppState> {
   public constructor (props: any) {
     super(props);
 
@@ -102,7 +102,14 @@ class TestApp extends React.Component<{}, TestAppState> {
             <section><Headline>Components</Headline></section>
             <section>
               <Headline level='2'>Button</Headline>
-              <Button id='button' onClick={ (): void => this.setState({ buttonClicked: true }) }>{ !buttonClicked ? 'Click me' : 'Thanks!' }</Button>
+              <Button
+                id='button'
+                onClick={ (): void => {
+                  this.setState({ buttonClicked: true });
+                } }
+              >
+                { !buttonClicked ? 'Click me' : 'Thanks!' }
+              </Button>
               <Button id='button-with-icon' icon='heart' onClick={ (): void => log('button-with-icon::clicked') }>Button with icon</Button>
               <Button id='button-icon-only' icon='heart' onClick={ (): void => log('button-subtle::clicked') } />
               <Button id='button-subtle' isSubtle={ true } onClick={ (): void => log('button-subtle::clicked') }>Subtle Button</Button>
@@ -122,19 +129,36 @@ class TestApp extends React.Component<{}, TestAppState> {
             </section>
             <section>
               <Headline level='2'>Dropdown</Headline>
-              <Dropdown value={ dropdownOptionSelected } options={ dropdownOptions } onChange={ (value): void => this.setState({ dropdownOptionSelected: value }) } />
+              <Dropdown
+                value={ dropdownOptionSelected }
+                options={ dropdownOptions }
+                onChange={ (value): void => {
+                  this.setState({ dropdownOptionSelected: value });
+                } }
+              />
             </section>
             <section>
               <Headline level='2'>Form</Headline>
               <Form onSubmit={ this.handleFormSubmitted }>
                 <ControlGroup>
                   <ControlGroupItem label='TextBox with label'>
-                    <TextBox value={ formValue } onChange={ (event): void => this.setState({ formValue: event.target.value }) } />
+                    <TextBox
+                      value={ formValue }
+                      onChange={ (event): void => {
+                        this.setState({ formValue: event.target.value });
+                      } }
+                    />
                   </ControlGroupItem>
                 </ControlGroup>
                 <ControlGroup>
                   <ControlGroupItem label='Checkbox with label'>
-                    <CheckBox id='form-checkbox' checked={ checkBoxValue } onChange={ (): void => this.setState({ checkBoxValue: !checkBoxValue }) } />
+                    <CheckBox
+                      id='form-checkbox'
+                      checked={ checkBoxValue }
+                      onChange={ (): void => {
+                        this.setState({ checkBoxValue: !checkBoxValue });
+                      } }
+                    />
                   </ControlGroupItem>
                 </ControlGroup>
                 <ControlGroup>
@@ -159,13 +183,38 @@ class TestApp extends React.Component<{}, TestAppState> {
             </section>
             <section>
               <Headline level='2'>Modal</Headline>
-              <Button id='show-modal' onClick={ (): void => this.setState({ showModal: true }) }>Show modal</Button>
-              <Modal attach='sidebar' size='md' isVisible={ showModal } onCancel={ (): void => this.setState({ showModal: false }) }>
-                <Form onSubmit={ (): void => this.setState({ showModal: false }) }>
+              <Button
+                id='show-modal'
+                onClick={ (): void => {
+                  this.setState({ showModal: true });
+                } }
+              >
+                Show modal
+              </Button>
+              <Modal
+                attach='sidebar'
+                size='md'
+                isVisible={ showModal }
+                onCancel={ (): void => {
+                  this.setState({ showModal: false });
+                } }
+              >
+                <Form
+                  onSubmit={ (): void => {
+                    this.setState({ showModal: false });
+                  } }
+                >
                   <Headline level='2'>Headline</Headline>
                   <div id='modal-content'>This is the content of the modal.</div>
                   <FormActions>
-                    <Button id='cancel-modal' onClick={ (): void => this.setState({ showModal: false }) }>Cancel</Button>
+                    <Button
+                      id='cancel-modal'
+                      onClick={ (): void => {
+                        this.setState({ showModal: false });
+                      } }
+                    >
+                      Cancel
+                    </Button>
                     <Button id='submit-modal' isPrimary={ true }>Submit</Button>
                   </FormActions>
                 </Form>
@@ -180,11 +229,23 @@ class TestApp extends React.Component<{}, TestAppState> {
             </section>
             <section>
               <Headline level='2'>TextArea</Headline>
-              <TextArea value={ textAreaValue } placeholder='Enter text' onChange={ (event): void => this.setState({ textAreaValue: event.target.value }) } />
+              <TextArea
+                value={ textAreaValue }
+                placeholder='Enter text'
+                onChange={ (event): void => {
+                  this.setState({ textAreaValue: event.target.value });
+                } }
+              />
             </section>
             <section>
               <Headline level='2'>TextBox</Headline>
-              <TextBox value={ textBoxValue } placeholder='Enter text' onChange={ (event): void => this.setState({ textBoxValue: event.target.value }) } />
+              <TextBox
+                value={ textBoxValue }
+                placeholder='Enter text'
+                onChange={ (event): void => {
+                  this.setState({ textBoxValue: event.target.value });
+                } }
+              />
             </section>
             <section>
               <Headline level='2'>Toggle</Headline>
@@ -193,7 +254,9 @@ class TestApp extends React.Component<{}, TestAppState> {
                   id='toggle'
                   values={ [ 'Option 1', 'Option 2' ] }
                   selectedValue={ toggleOptionSelected }
-                  onChange={ (newValue): void => this.setState({ toggleOptionSelected: newValue }) }
+                  onChange={ (newValue): void => {
+                    this.setState({ toggleOptionSelected: newValue });
+                  } }
                 />
                 Selected option is: <span id='toggle-value'>{ toggleOptionSelected }</span>
               </div>
@@ -203,7 +266,12 @@ class TestApp extends React.Component<{}, TestAppState> {
               <Form>
                 <ControlGroup>
                   <ControlGroupItem label='Show box?'>
-                    <CheckBox id='transition-checkbox' onChange={ (): void => this.setState((prevState): any => ({ isBoxVisible: !prevState.isBoxVisible })) } />
+                    <CheckBox
+                      id='transition-checkbox'
+                      onChange={ (): void => {
+                        this.setState((prevState): any => ({ isBoxVisible: !prevState.isBoxVisible }));
+                      } }
+                    />
                   </ControlGroupItem>
                 </ControlGroup>
               </Form>

@@ -1,11 +1,11 @@
 import { assert } from 'assertthat';
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import { isolated } from 'isolated';
 import { optimizeImages } from '../../../lib/cli/optimizeImages/optimizeImages';
 import path from 'path';
 
 const getFileSize = async function (filePath: string): Promise<number> {
-  const { size } = await fs.stat(filePath);
+  const { size } = await fs.promises.stat(filePath);
 
   return size;
 };

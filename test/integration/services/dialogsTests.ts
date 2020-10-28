@@ -41,7 +41,7 @@ suite('dialogs', function (): void {
               }
 
               resolve();
-            } catch (ex) {
+            } catch (ex: unknown) {
               reject(ex);
             }
           });
@@ -75,7 +75,7 @@ suite('dialogs', function (): void {
               }
 
               resolve();
-            } catch (ex) {
+            } catch (ex: unknown) {
               reject(ex);
             }
           });

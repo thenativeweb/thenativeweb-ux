@@ -123,16 +123,18 @@ const Modal: FunctionComponent<ModalProps> = ({
         <Transition type={ transitionType } in={ isVisible }>
           <div className={ chromeClasses } role='dialog'>
             {
-              showHeader ? (
-                <div className={ classes.Header }>
-                  <div className={ classes.HeaderText }>{ header }</div>
-                  <Button
-                    isSubtle={ true }
-                    icon='close'
-                    onClick={ handleBackDropClicked }
-                  />
-                </div>
-              ) : null
+              showHeader ?
+                (
+                  <div className={ classes.Header }>
+                    <div className={ classes.HeaderText }>{ header }</div>
+                    <Button
+                      isSubtle={ true }
+                      icon='close'
+                      onClick={ handleBackDropClicked }
+                    />
+                  </div>
+                ) :
+                null
             }
             <div className={ classes.Content }>
               { children }

@@ -1,5 +1,5 @@
+import internalPath from 'path';
 import untildify from 'untildify';
-import { isAbsolute, join } from 'path';
 
 const getAbsolutePath = function ({ path, cwd }: {
   path: string;
@@ -7,11 +7,11 @@ const getAbsolutePath = function ({ path, cwd }: {
 }): string {
   const untilfiedPath = untildify(path);
 
-  if (isAbsolute(untilfiedPath)) {
+  if (internalPath.isAbsolute(untilfiedPath)) {
     return untilfiedPath;
   }
 
-  const absolutePath = join(cwd, path);
+  const absolutePath = internalPath.join(cwd, path);
 
   return absolutePath;
 };

@@ -22,6 +22,7 @@ const getPage = async ({ url }: {
   });
 
   const { window } = new JSDOM(data, {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     virtualConsole: new VirtualConsole().sendTo(console, { omitJSDOMErrors: true })
   });
 

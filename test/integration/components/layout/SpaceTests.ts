@@ -33,10 +33,12 @@ suite('Space', function (): void {
       const paddingLeftAsNumber = await page.$eval('#with-paddingLeft-as-number', (element: Element): string => window.getComputedStyle(element).padding);
       const paddingRightAsString = await page.$eval('#with-paddingRight-as-string', (element: Element): string => window.getComputedStyle(element).padding);
       const paddingRightAsNumber = await page.$eval('#with-paddingRight-as-number', (element: Element): string => window.getComputedStyle(element).padding);
+      /* eslint-disable @typescript-eslint/naming-convention */
       const paddingXAsString = await page.$eval('#with-paddingX-as-string', (element: Element): string => window.getComputedStyle(element).padding);
       const paddingXAsNumber = await page.$eval('#with-paddingX-as-number', (element: Element): string => window.getComputedStyle(element).padding);
       const paddingYAsString = await page.$eval('#with-paddingY-as-string', (element: Element): string => window.getComputedStyle(element).padding);
       const paddingYAsNumber = await page.$eval('#with-paddingY-as-number', (element: Element): string => window.getComputedStyle(element).padding);
+      /* eslint-enable @typescript-eslint/naming-convention */
 
       assert.that(paddingAsString).is.equalTo('16px');
       assert.that(paddingAsNumber).is.equalTo('16px');

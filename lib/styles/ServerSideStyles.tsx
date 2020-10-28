@@ -18,9 +18,11 @@ class ServerSideStyles {
 
     const minifiedStyles = minifyCss(styles);
 
+    /* eslint-disable @typescript-eslint/naming-convention */
     return (
       <style id='server-side-styles' dangerouslySetInnerHTML={{ __html: minifiedStyles }} />
     );
+    /* eslint-enable @typescript-eslint/naming-convention */
   }
 }
 

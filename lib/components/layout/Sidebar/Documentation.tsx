@@ -40,11 +40,22 @@ const Documentation = (): ReactElement => (
             <SidebarBrand><Product name='my-app' /></SidebarBrand>
             <SidebarItem iconName='account'>
               <SidebarItem>You are logged in as Sophie</SidebarItem>
-              <SidebarItem onClick={ (): void => notifications.show({ type: 'success', text: 'onClick: Logout' }) }>Logout</SidebarItem>
+              <SidebarItem
+                onClick={ (): void => {
+                  notifications.show({ type: 'success', text: 'onClick: Logout' });
+                } }
+              >
+                Logout
+              </SidebarItem>
             </SidebarItem>
             <SidebarItem iconName='menu' isActive={ true } />
             <SidebarItem iconName='toggle-left-panel' />
-            <SidebarItem iconName='help' onClick={ (): void => notifications.show({ type: 'success', text: 'onClick: help' }) } />
+            <SidebarItem
+              iconName='help'
+              onClick={ (): void => {
+                notifications.show({ type: 'success', text: 'onClick: help' });
+              } }
+            />
           </Sidebar>
         </Application>
       </div>

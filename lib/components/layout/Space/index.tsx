@@ -22,7 +22,7 @@ const useStyles = createUseStyles<'Space'>(styles);
 const Space: FunctionComponent<SpaceProps> = ({ id, className, children, ...props }): ReactElement => {
   const classes = useStyles();
   const spaceDependentClassNames = getSpaceDependentClassNamesFromProps({
-    props: props as Partial<{ [key: string]: ResponsiveSpaceProp }>,
+    props: props as Partial<Record<string, ResponsiveSpaceProp>>,
     classes,
     definitions: spaceDependentProperties
   });

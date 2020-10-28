@@ -37,8 +37,6 @@ class Breakpoints {
     if (size === 'lg') {
       return 'xl';
     }
-
-    return undefined;
   }
 
   public static getMinWidthRule (minWidth: number, unit: string): string {

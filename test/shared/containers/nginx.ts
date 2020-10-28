@@ -31,8 +31,8 @@ const nginx = {
       // We only do 3 retries here as nginx starts pretty fast. Otherwise we
       // wait for a very long time if nginx does not serve the files correctly.
       await retry(async (): Promise<void> => await axios.get(`http://localhost:${port}`), { retries: 3 });
-    } catch (ex) {
-      buntstift.info(ex.message);
+    } catch (ex: unknown) {
+      buntstift.info((ex as Error).message);
       buntstift.error('Failed to connect to nginx.');
 
       throw ex;

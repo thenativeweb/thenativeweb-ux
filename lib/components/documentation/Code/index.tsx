@@ -38,7 +38,7 @@ const Code: FunctionComponent<CodeProps> = ({
 }): ReactElement | null => {
   const theme = useTheme();
   const classes = useStyles();
-  const prismStyles = useMemo((): object => getPrismStyles(theme), [ theme ]);
+  const prismStyles = useMemo((): Record<string, any> => getPrismStyles(theme), [ theme ]);
 
   if (!children) {
     return null;

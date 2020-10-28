@@ -13,9 +13,11 @@ class StaticGlobalStyles {
     const styles = this.buildStyles();
     const minfiedStyles = minifyCss(styles);
 
+    /* eslint-disable @typescript-eslint/naming-convention */
     return (
       <style id='static-global-styles' dangerouslySetInnerHTML={{ __html: minfiedStyles }} />
     );
+    /* eslint-enable @typescript-eslint/naming-convention */
   }
 
   private buildStyles (): string {

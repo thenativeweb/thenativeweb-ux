@@ -40,7 +40,7 @@ suite('SidebarItem', function (): void {
             }
 
             resolve();
-          } catch (ex) {
+          } catch (ex: unknown) {
             reject(ex);
           }
         });

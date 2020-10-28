@@ -50,7 +50,8 @@ const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({
                   <div className={ classes.Separator }>
                     <Icon name='chevron' size='sm' color='current' />
                   </div>
-                ) : null
+                ) :
+                null
             }
             <div className={ classes.Breadcrumb }>
               <HighlightText searchWords={ searchWords }>{ breadcrumb }</HighlightText>

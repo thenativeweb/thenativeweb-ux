@@ -20,10 +20,16 @@ const Documentation = (): ReactElement => {
         <TextBox
           value={ value }
           placeholder='local.wolkenkit.io'
-          onFocus={ (event): void => notifications.show({ type: 'success', text: `onFocus: ${event.target.value}` }) }
+          onFocus={ (event): void => {
+            notifications.show({ type: 'success', text: `onFocus: ${event.target.value}` });
+          } }
           onChange={ (event): void => setValue(event.target.value) }
-          onBlur={ (event): void => notifications.show({ type: 'success', text: `onBlur: ${event.target.value}` }) }
-          onEnter={ (): void => notifications.show({ type: 'success', text: `onEnter` }) }
+          onBlur={ (event): void => {
+            notifications.show({ type: 'success', text: `onBlur: ${event.target.value}` });
+          } }
+          onEnter={ (): void => {
+            notifications.show({ type: 'success', text: `onEnter` });
+          } }
         />
       </ComponentPreview>
 
