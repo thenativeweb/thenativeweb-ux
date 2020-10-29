@@ -1,3 +1,39 @@
+## [5.7.7](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.6...5.7.7) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump csstype from 3.0.3 to 3.0.4 ([#752](https://github.com/thenativeweb/thenativeweb-ux/issues/752)) ([622e446](https://github.com/thenativeweb/thenativeweb-ux/commit/622e446c325f14f4f7e06fd8726e69f743de918b))
+
+## [5.7.7](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.6...5.7.7) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump csstype from 3.0.3 to 3.0.4 ([#752](https://github.com/thenativeweb/thenativeweb-ux/issues/752)) ([622e446](https://github.com/thenativeweb/thenativeweb-ux/commit/622e446c325f14f4f7e06fd8726e69f743de918b))
+
+## [5.7.6](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.5...5.7.6) (2020-10-28)
+
+
+### Bug Fixes
+
+* bump @types/node from 14.14.0 to 14.14.5 ([#755](https://github.com/thenativeweb/thenativeweb-ux/issues/755)) ([4838bcc](https://github.com/thenativeweb/thenativeweb-ux/commit/4838bcc220c4d622c193ab73143d7230002ef379))
+
+## [5.7.5](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.4...5.7.5) (2020-10-22)
+
+
+### Bug Fixes
+
+* bump @types/node from 14.11.10 to 14.14.0 ([#749](https://github.com/thenativeweb/thenativeweb-ux/issues/749)) ([f365a62](https://github.com/thenativeweb/thenativeweb-ux/commit/f365a62c30675c4a901fac4f2a0d6bd7f94c4f34))
+
+## [5.7.4](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.3...5.7.4) (2020-10-19)
+
+
+### Bug Fixes
+
+* bump @babel/runtime-corejs2 from 7.12.0 to 7.12.1 ([#743](https://github.com/thenativeweb/thenativeweb-ux/issues/743)) ([6647933](https://github.com/thenativeweb/thenativeweb-ux/commit/6647933aadf8c3f688d7fd99b2dffadb75d2fc18))
+* bump @types/node from 14.11.8 to 14.11.10 ([#745](https://github.com/thenativeweb/thenativeweb-ux/issues/745)) ([3c01013](https://github.com/thenativeweb/thenativeweb-ux/commit/3c010134f43d676247891e0bd73040b699440670))
+
 ## [5.7.3](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.2...5.7.3) (2020-10-15)
 
 
