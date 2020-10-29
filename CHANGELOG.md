@@ -1,3 +1,10 @@
+## [5.7.9](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.8...5.7.9) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump @types/react-syntax-highlighter from 11.0.5 to 13.5.0 ([#744](https://github.com/thenativeweb/thenativeweb-ux/issues/744)) ([ddbf91b](https://github.com/thenativeweb/thenativeweb-ux/commit/ddbf91b0a960e5ee93749d42b8747438a857e76a))
+
 ## [5.7.8](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.7...5.7.8) (2020-10-29)
 
 
