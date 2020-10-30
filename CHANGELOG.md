@@ -1,3 +1,10 @@
+## [5.7.12](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.11...5.7.12) (2020-10-30)
+
+
+### Bug Fixes
+
+* bump pretty-format from 26.6.0 to 26.6.1 ([#770](https://github.com/thenativeweb/thenativeweb-ux/issues/770)) ([d0fcb80](https://github.com/thenativeweb/thenativeweb-ux/commit/d0fcb80e79d2da41796ca51dfb7e93df4d0b9602))
+
 ## [5.7.11](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.10...5.7.11) (2020-10-30)
 
 
