@@ -27,7 +27,7 @@
     "ux": "build/lib/bin/ux.js"
   },
   "dependencies": {
-    "@babel/runtime-corejs2": "7.12.1",
+    "@babel/runtime-corejs2": "7.12.5",
     "@types/animejs": "3.1.2",
     "@types/color": "3.0.1",
     "@types/fs-extra": "9.0.3",
@@ -78,7 +78,7 @@
     "common-tags": "1.8.0",
     "express": "4.17.1",
     "get-port": "5.1.1",
-    "isolated": "3.0.3",
+    "isolated": "3.0.6",
     "next": "9.5.3",
     "processenv": "3.0.3",
     "puppeteer": "5.4.1",
