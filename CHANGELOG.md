@@ -1,3 +1,45 @@
+## [5.7.13](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.12...5.7.13) (2020-11-03)
+
+
+### Bug Fixes
+
+* bump pretty-format from 26.6.1 to 26.6.2 ([#779](https://github.com/thenativeweb/thenativeweb-ux/issues/779)) ([d3483a6](https://github.com/thenativeweb/thenativeweb-ux/commit/d3483a61b50bc7ad5df890960230e61c07b926cf))
+
+## [5.7.12](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.11...5.7.12) (2020-10-30)
+
+
+### Bug Fixes
+
+* bump pretty-format from 26.6.0 to 26.6.1 ([#770](https://github.com/thenativeweb/thenativeweb-ux/issues/770)) ([d0fcb80](https://github.com/thenativeweb/thenativeweb-ux/commit/d0fcb80e79d2da41796ca51dfb7e93df4d0b9602))
+
+## [5.7.11](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.10...5.7.11) (2020-10-30)
+
+
+### Bug Fixes
+
+* bump @types/node from 14.14.5 to 14.14.6 ([#768](https://github.com/thenativeweb/thenativeweb-ux/issues/768)) ([877a8cd](https://github.com/thenativeweb/thenativeweb-ux/commit/877a8cd87367d150369d74d5415488e0e5be672d))
+
+## [5.7.10](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.9...5.7.10) (2020-10-30)
+
+
+### Bug Fixes
+
+* bump @types/lodash from 4.14.162 to 4.14.164 ([#766](https://github.com/thenativeweb/thenativeweb-ux/issues/766)) ([5f7ac82](https://github.com/thenativeweb/thenativeweb-ux/commit/5f7ac82d547416749449bf1b6032f302cf252794))
+
+## [5.7.9](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.8...5.7.9) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump @types/react-syntax-highlighter from 11.0.5 to 13.5.0 ([#744](https://github.com/thenativeweb/thenativeweb-ux/issues/744)) ([ddbf91b](https://github.com/thenativeweb/thenativeweb-ux/commit/ddbf91b0a960e5ee93749d42b8747438a857e76a))
+
+## [5.7.8](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.7...5.7.8) (2020-10-29)
+
+
+### Bug Fixes
+
+* bump pretty-format from 26.5.2 to 26.6.0 ([#747](https://github.com/thenativeweb/thenativeweb-ux/issues/747)) ([f43d049](https://github.com/thenativeweb/thenativeweb-ux/commit/f43d04931508ffd64aabf7c9247e688e0e8b9e23))
+
 ## [5.7.7](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.6...5.7.7) (2020-10-29)
 
 
