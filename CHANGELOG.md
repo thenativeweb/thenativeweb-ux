@@ -1,3 +1,17 @@
+## [5.7.14](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.13...5.7.14) (2020-11-03)
+
+
+### Bug Fixes
+
+* bump @types/fs-extra from 9.0.2 to 9.0.3 ([#783](https://github.com/thenativeweb/thenativeweb-ux/issues/783)) ([8dd2128](https://github.com/thenativeweb/thenativeweb-ux/commit/8dd212834b732cdf7d6fda55838e542815a66c00))
+
+## [5.7.13](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.12...5.7.13) (2020-11-03)
+
+
+### Bug Fixes
+
+* bump pretty-format from 26.6.1 to 26.6.2 ([#779](https://github.com/thenativeweb/thenativeweb-ux/issues/779)) ([d3483a6](https://github.com/thenativeweb/thenativeweb-ux/commit/d3483a61b50bc7ad5df890960230e61c07b926cf))
+
 ## [5.7.12](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.11...5.7.12) (2020-10-30)
 
 
