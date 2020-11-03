@@ -1,6 +1,5 @@
 import fs from 'fs';
-import { parseString as ParseStringCallback } from 'xml2js';
-import { promisify } from 'util';
+import { parseStringPromise as parseString } from 'xml2js';
 import { Value } from 'validate-value';
 
 interface UrlSetEntry {
@@ -11,8 +10,6 @@ interface UrlSetEntry {
 interface SitemapContent {
   urlset: { url: UrlSetEntry[] };
 }
-
-const parseString: (str: string) => Promise<any> = promisify(ParseStringCallback);
 
 const invalidXMLStructureErrorMessage = 'Provided XML file has invalid structure.';
 
