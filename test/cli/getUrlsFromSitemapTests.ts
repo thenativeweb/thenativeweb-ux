@@ -1,12 +1,12 @@
 import { assert } from 'assertthat';
+import fs from 'fs';
 import { isolated } from 'isolated';
 import path from 'path';
-import { writeFileSync } from 'fs';
 import { getUrlsFromSitemap, parseSitemapTXT, parseSitemapXML } from '../../lib/cli/verifyLinks/getUrlsFromSitemap';
 import { html, stripIndent } from 'common-tags';
 
 suite('parseSitemapXML', (): void => {
-  test('returns all links from the xml file.', async (): Promise<void> => {
+  test('returns all links from the XML file.', async (): Promise<void> => {
     const sitemapContent = {
       urlset: {
         url: [
@@ -32,8 +32,8 @@ suite('parseSitemapXML', (): void => {
   });
 });
 
-suite('parseSitetmapTXT', (): void => {
-  test('returns all links from the txt file.', async (): Promise<void> => {
+suite('parseSitemapTXT', (): void => {
+  test('returns all links from the TXT file.', async (): Promise<void> => {
     const sitemapContent = stripIndent`
       https://example.com/
       https://example.com/examplepage1
@@ -71,7 +71,7 @@ suite('parseSitetmapTXT', (): void => {
 });
 
 suite('getUrlsFromSitemap', (): void => {
-  test('parses XML file correctly.', async (): Promise<void> => {
+  test('parses the XML file correctly.', async (): Promise<void> => {
     const validXMLData = html`
       <?xml version="1.0" encoding="UTF-8"?>
       <urlset>
@@ -96,7 +96,7 @@ suite('getUrlsFromSitemap', (): void => {
     const tempDirectory = await isolated();
     const tempFile = path.join(tempDirectory, 'tempFile');
 
-    writeFileSync(tempFile, validXMLData);
+    await fs.promises.writeFile(tempFile, validXMLData);
 
     const urls = await getUrlsFromSitemap({ sitemapPath: tempFile });
 
@@ -110,14 +110,14 @@ suite('getUrlsFromSitemap', (): void => {
     const tempDirectory = await isolated();
     const tempFile = path.join(tempDirectory, 'tempFile');
 
-    writeFileSync(tempFile, validTXTData);
+    await fs.promises.writeFile(tempFile, validTXTData);
 
     const urls = await getUrlsFromSitemap({ sitemapPath: tempFile });
 
     assert.that(urls).is.equalTo([ 'https://example.com/', 'https://example.com/examplepage' ]);
   });
 
-  test('throws error on valid xml file with wrong structure.', async (): Promise<void> => {
+  test('throws an error on valid XML file with wrong structure.', async (): Promise<void> => {
     const invalidXMLData = html`
       <?xml version="1.0" encoding="UTF-8"?>
       <wrong>
@@ -125,17 +125,11 @@ suite('getUrlsFromSitemap', (): void => {
       </wrong>`;
     const tempDirectory = await isolated();
     const tempFile = path.join(tempDirectory, 'tempFile');
-    let errorThrown = false;
 
-    writeFileSync(tempFile, invalidXMLData);
+    await fs.promises.writeFile(tempFile, invalidXMLData);
 
-    writeFileSync(tempFile, invalidXMLData);
-
-    try {
+    await assert.that(async (): Promise<void> => {
       await getUrlsFromSitemap({ sitemapPath: tempFile });
-    } catch {
-      errorThrown = true;
-    }
-    assert.that(errorThrown).is.true();
+    }).is.throwingAsync();
   });
 });
