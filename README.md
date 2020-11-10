@@ -92,9 +92,9 @@ $ DEBUG=true npx roboter test --type integration
 
 This makes most sense if you also limit tests that should be run using mocha's `only` option.
 
-## Running the build
+## Running quality assurance
 
-To build this module use [roboter](https://www.npmjs.com/package/roboter).
+To run quality assurance for this module use [roboter](https://www.npmjs.com/package/roboter):
 
 ```shell
 $ npx roboter

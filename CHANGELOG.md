@@ -1,3 +1,38 @@
+## [5.7.18](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.17...5.7.18) (2020-11-09)
+
+
+### Bug Fixes
+
+* bump @types/node from 14.14.6 to 14.14.7 ([#808](https://github.com/thenativeweb/thenativeweb-ux/issues/808)) ([84722cc](https://github.com/thenativeweb/thenativeweb-ux/commit/84722cce1d6939f312a5a6de76f8539b1836de62))
+
+## [5.7.17](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.16...5.7.17) (2020-11-05)
+
+
+### Bug Fixes
+
+* bump @types/lodash from 4.14.164 to 4.14.165 ([#802](https://github.com/thenativeweb/thenativeweb-ux/issues/802)) ([e4e2832](https://github.com/thenativeweb/thenativeweb-ux/commit/e4e2832557098092065bcb87175327f14b49fc36))
+
+## [5.7.16](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.15...5.7.16) (2020-11-03)
+
+
+### Bug Fixes
+
+* bump react-syntax-highlighter from 15.2.1 to 15.3.0 ([#771](https://github.com/thenativeweb/thenativeweb-ux/issues/771)) ([dc7e4b7](https://github.com/thenativeweb/thenativeweb-ux/commit/dc7e4b7b22fcc9eceefc6d0cb14835b0d8491730))
+
+## [5.7.15](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.14...5.7.15) (2020-11-03)
+
+
+### Bug Fixes
+
+* bump @babel/runtime-corejs2 from 7.12.1 to 7.12.5 ([#794](https://github.com/thenativeweb/thenativeweb-ux/issues/794)) ([78f960c](https://github.com/thenativeweb/thenativeweb-ux/commit/78f960c7cd088c37f5862257d97433d800bd0f39))
+
+## [5.7.14](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.13...5.7.14) (2020-11-03)
+
+
+### Bug Fixes
+
+* bump @types/fs-extra from 9.0.2 to 9.0.3 ([#783](https://github.com/thenativeweb/thenativeweb-ux/issues/783)) ([8dd2128](https://github.com/thenativeweb/thenativeweb-ux/commit/8dd212834b732cdf7d6fda55838e542815a66c00))
+
 ## [5.7.13](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.12...5.7.13) (2020-11-03)
 
 
