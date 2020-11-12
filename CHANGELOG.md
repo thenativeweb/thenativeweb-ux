@@ -1,3 +1,10 @@
+# [5.8.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.19...5.8.0) (2020-11-12)
+
+
+### Features
+
+* Add XML parser to sitemap generator ([#817](https://github.com/thenativeweb/thenativeweb-ux/issues/817)) ([d833afe](https://github.com/thenativeweb/thenativeweb-ux/commit/d833afed29017b819a1e6ed0bf09bb4bf2b9173f))
+
 ## [5.7.19](https://github.com/thenativeweb/thenativeweb-ux/compare/5.7.18...5.7.19) (2020-11-12)
 
 
