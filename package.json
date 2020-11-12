@@ -81,7 +81,7 @@
     "common-tags": "1.8.0",
     "express": "4.17.1",
     "get-port": "5.1.1",
-    "isolated": "3.0.7",
+    "isolated": "3.0.8",
     "next": "9.5.3",
     "processenv": "3.0.3",
     "puppeteer": "5.4.1",
