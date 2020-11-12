@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { parseStringPromise as parseString } from 'xml2js';
-import { Value } from 'validate-value';
+import { values as v, Value } from 'validate-value';
 
 interface UrlSetEntry {
   loc: string[];
@@ -14,28 +14,28 @@ interface SitemapContent {
 const invalidXMLStructureErrorMessage = 'Provided XML file has invalid structure.';
 
 const sitemapContentSchema = {
-  type: 'object' as const,
+  type: v.object,
   properties: {
     urlset: {
-      type: 'object' as const,
+      type: v.object,
       properties: {
         url: {
-          type: 'array' as const,
+          type: v.array,
           items: {
-            type: 'object' as const,
+            type: v.object,
             properties: {
               loc: {
-                type: 'array' as const,
+                type: v.array,
                 items: {
-                  type: 'string' as const
+                  type: v.string
                 },
                 minItems: 1,
                 maxItems: 1
               },
               lastmod: {
-                type: 'array' as const,
+                type: v.array,
                 items: {
-                  type: 'string' as const
+                  type: v.string
                 },
                 minItems: 1,
                 maxItems: 1
