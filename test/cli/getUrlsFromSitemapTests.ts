@@ -5,6 +5,8 @@ import path from 'path';
 import { getUrlsFromSitemap, parseSitemapTXT, parseSitemapXML } from '../../lib/cli/verifyLinks/getUrlsFromSitemap';
 import { html, stripIndent } from 'common-tags';
 
+const now = new Date().toISOString();
+
 suite('parseSitemapXML', (): void => {
   test('returns all links from the XML file.', async (): Promise<void> => {
     const sitemapContent = {
@@ -12,15 +14,15 @@ suite('parseSitemapXML', (): void => {
         url: [
           {
             loc: [ 'https://example.com/' ],
-            lastmod: [ '...' ]
+            lastmod: [ now ]
           },
           {
             loc: [ 'https://example.com/examplepage1' ],
-            lastmod: [ '...' ]
+            lastmod: [ now ]
           },
           {
             loc: [ 'https://example.com/examplepage2' ],
-            lastmod: [ '...' ]
+            lastmod: [ now ]
           }
         ]
       }
@@ -80,7 +82,7 @@ suite('getUrlsFromSitemap', (): void => {
             https://example.com/
           </loc>
           <lastmod>
-            ...
+            ${now}
           </lastmod>
         </url>
 
@@ -89,7 +91,7 @@ suite('getUrlsFromSitemap', (): void => {
             https://example.com/examplepage
           </loc>
           <lastmod>
-            ...
+            ${now}
           </lastmod>
         </url>
     </urlset>`;
