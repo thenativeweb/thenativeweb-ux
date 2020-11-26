@@ -1,3 +1,10 @@
+## [5.8.12](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.11...5.8.12) (2020-11-26)
+
+
+### Bug Fixes
+
+* bump validate-value from 8.8.1 to 8.9.0 ([#848](https://github.com/thenativeweb/thenativeweb-ux/issues/848)) ([e121455](https://github.com/thenativeweb/thenativeweb-ux/commit/e121455c4101d1b71dacefeffd83f554885da701))
+
 ## [5.8.11](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.10...5.8.11) (2020-11-26)
 
 
