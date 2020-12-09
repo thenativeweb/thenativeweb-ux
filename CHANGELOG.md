@@ -1,3 +1,10 @@
+## [5.8.21](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.20...5.8.21) (2020-12-09)
+
+
+### Bug Fixes
+
+* bump uuid from 8.3.1 to 8.3.2 ([#878](https://github.com/thenativeweb/thenativeweb-ux/issues/878)) ([24468b2](https://github.com/thenativeweb/thenativeweb-ux/commit/24468b2eda836371c27c9f4730e9909fe7dfbb3b))
+
 ## [5.8.20](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.19...5.8.20) (2020-12-09)
 
 
