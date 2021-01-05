@@ -1,3 +1,12 @@
+## [5.8.27](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.26...5.8.27) (2021-01-05)
+
+
+### Bug Fixes
+
+* bump validate-value from 8.9.6 to 8.9.7 ([#887](https://github.com/thenativeweb/thenativeweb-ux/issues/887)) ([5a85660](https://github.com/thenativeweb/thenativeweb-ux/commit/5a856604768246d3b2f96d70987030fadbfd4502))
+* bump validate-value from 8.9.7 to 8.9.9 ([#890](https://github.com/thenativeweb/thenativeweb-ux/issues/890)) ([2bb929f](https://github.com/thenativeweb/thenativeweb-ux/commit/2bb929f1c17bf2f9184d4bcdc8c6615c97702fa5))
+* getPage can't fetch from twitter without browser user-agent ([#906](https://github.com/thenativeweb/thenativeweb-ux/issues/906)) ([967f17e](https://github.com/thenativeweb/thenativeweb-ux/commit/967f17e74793b19d29dacaf90f6ae6d8415f2553))
+
 ## [5.8.26](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.25...5.8.26) (2020-12-13)
 
 
