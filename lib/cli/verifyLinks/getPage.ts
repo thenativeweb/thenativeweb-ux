@@ -18,6 +18,7 @@ const getPage = async ({ url }: {
       // treated like a browser). E.g., this makes a difference when accessing
       // GitHub. So, to get the desired behavior, accept anything.
       accept: '*/*',
+
       // Twitter stopped serving to axios, based on its user agent.
       // We use a browser-style user agent here to trick twitter into
       // serving us anyway.
