@@ -19,9 +19,8 @@ const getPage = async ({ url }: {
       // GitHub. So, to get the desired behavior, accept anything.
       accept: '*/*',
 
-      // Twitter stopped serving to axios, based on its user agent.
-      // We use a browser-style user agent here to trick twitter into
-      // serving us anyway.
+      // Twitter stopped serving to axios, based on its user agent. We use a
+      // browser-style user agent here to trick Twitter into serving us anyway.
       'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0'
     }
   });
