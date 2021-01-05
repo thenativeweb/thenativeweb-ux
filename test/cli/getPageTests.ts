@@ -1,5 +1,5 @@
 import { assert } from 'assertthat';
-import { getPage } from 'lib/cli/verifyLinks/getPage';
+import { getPage } from '../../lib/cli/verifyLinks/getPage';
 
 suite('getPage', (): void => {
   test('is able to fetch from Twitter.', async (): Promise<void> => {
