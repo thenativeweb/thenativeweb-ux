@@ -1,3 +1,10 @@
+## [5.8.28](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.27...5.8.28) (2021-01-06)
+
+
+### Bug Fixes
+
+* bump globby from 11.0.1 to 11.0.2 ([#910](https://github.com/thenativeweb/thenativeweb-ux/issues/910)) ([cb5206b](https://github.com/thenativeweb/thenativeweb-ux/commit/cb5206b0da44cecf5b4f6c505662cf5a36a8e4f6))
+
 ## [5.8.27](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.26...5.8.27) (2021-01-05)
 
 
