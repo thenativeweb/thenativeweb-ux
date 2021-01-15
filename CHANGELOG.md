@@ -1,3 +1,10 @@
+## [5.8.31](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.30...5.8.31) (2021-01-15)
+
+
+### Bug Fixes
+
+* bump @types/node from 14.14.20 to 14.14.21 ([#924](https://github.com/thenativeweb/thenativeweb-ux/issues/924)) ([2f0d9ec](https://github.com/thenativeweb/thenativeweb-ux/commit/2f0d9ec52d6a66763571386bc964c20188840117))
+
 ## [5.8.30](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.29...5.8.30) (2021-01-13)
 
 
