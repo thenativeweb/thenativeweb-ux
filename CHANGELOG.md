@@ -1,3 +1,10 @@
+## [5.8.32](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.31...5.8.32) (2021-01-18)
+
+
+### Bug Fixes
+
+* bump @types/lodash from 4.14.167 to 4.14.168 ([#926](https://github.com/thenativeweb/thenativeweb-ux/issues/926)) ([109684f](https://github.com/thenativeweb/thenativeweb-ux/commit/109684f9fd16fd67196f4384b75560a013ed110a))
+
 ## [5.8.31](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.30...5.8.31) (2021-01-15)
 
 
