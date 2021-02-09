@@ -1,3 +1,10 @@
+## [5.8.36](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.35...5.8.36) (2021-02-09)
+
+
+### Bug Fixes
+
+* bump @babel/runtime-corejs2 from 7.12.5 to 7.12.13 ([#944](https://github.com/thenativeweb/thenativeweb-ux/issues/944)) ([2119937](https://github.com/thenativeweb/thenativeweb-ux/commit/21199376f95cb8d8909910a8463f325f60ad3d6c))
+
 ## [5.8.35](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.34...5.8.35) (2021-02-09)
 
 
