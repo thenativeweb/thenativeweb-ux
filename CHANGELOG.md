@@ -1,3 +1,10 @@
+## [5.8.38](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.37...5.8.38) (2021-02-09)
+
+
+### Bug Fixes
+
+* bump fs-extra from 9.0.1 to 9.1.0 ([#927](https://github.com/thenativeweb/thenativeweb-ux/issues/927)) ([5c59693](https://github.com/thenativeweb/thenativeweb-ux/commit/5c59693d9f52a06f34c412e64d00f5f7df23566d))
+
 ## [5.8.37](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.36...5.8.37) (2021-02-09)
 
 
