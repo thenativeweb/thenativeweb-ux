@@ -30,7 +30,7 @@
     "@babel/runtime-corejs2": "7.12.13",
     "@types/animejs": "3.1.2",
     "@types/color": "3.0.1",
-    "@types/fs-extra": "9.0.6",
+    "@types/fs-extra": "9.0.7",
     "@types/globby": "9.1.0",
     "@types/jsdom": "16.2.6",
     "@types/lodash": "4.14.168",
