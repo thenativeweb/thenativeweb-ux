@@ -1,3 +1,10 @@
+## [5.8.45](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.44...5.8.45) (2021-02-18)
+
+
+### Reverts
+
+* Revert "fix: bump svgo from 1.3.2 to 2.0.0 (#971)" (#975) ([9a4f4f8](https://github.com/thenativeweb/thenativeweb-ux/commit/9a4f4f8aa1d83a73d259a9b0c66435885e93626a)), closes [#971](https://github.com/thenativeweb/thenativeweb-ux/issues/971) [#975](https://github.com/thenativeweb/thenativeweb-ux/issues/975)
+
 ## [5.8.44](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.43...5.8.44) (2021-02-17)
 
 
