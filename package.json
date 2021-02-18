@@ -27,7 +27,7 @@
     "ux": "build/lib/bin/ux.js"
   },
   "dependencies": {
-    "@babel/runtime-corejs2": "7.12.13",
+    "@babel/runtime-corejs2": "7.12.17",
     "@types/animejs": "3.1.2",
     "@types/color": "3.0.1",
     "@types/fs-extra": "9.0.7",
