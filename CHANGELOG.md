@@ -1,3 +1,10 @@
+## [5.8.50](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.49...5.8.50) (2021-02-22)
+
+
+### Bug Fixes
+
+* bump svgo from 2.0.1 to 2.0.3 ([#985](https://github.com/thenativeweb/thenativeweb-ux/issues/985)) ([9a10cf1](https://github.com/thenativeweb/thenativeweb-ux/commit/9a10cf19d5ee909150e5d487d0a6901bdbf4021a))
+
 ## [5.8.49](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.48...5.8.49) (2021-02-20)
 
 
