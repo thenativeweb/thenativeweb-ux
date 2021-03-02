@@ -1,3 +1,10 @@
+## [5.8.58](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.57...5.8.58) (2021-03-02)
+
+
+### Bug Fixes
+
+* bump csstype from 3.0.6 to 3.0.7 ([#994](https://github.com/thenativeweb/thenativeweb-ux/issues/994)) ([6307ca8](https://github.com/thenativeweb/thenativeweb-ux/commit/6307ca87081c01c65fe83681ba22cc0c9070a62c))
+
 ## [5.8.57](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.56...5.8.57) (2021-03-02)
 
 
