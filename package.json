@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "5.8.53",
+  "version": "5.8.57",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -27,10 +27,10 @@
     "ux": "build/lib/bin/ux.js"
   },
   "dependencies": {
-    "@babel/runtime-corejs2": "7.13.4",
+    "@babel/runtime-corejs2": "7.13.8",
     "@types/animejs": "3.1.2",
     "@types/color": "3.0.1",
-    "@types/fs-extra": "9.0.7",
+    "@types/fs-extra": "9.0.8",
     "@types/globby": "9.1.0",
     "@types/jsdom": "16.2.6",
     "@types/lodash": "4.14.168",
@@ -59,7 +59,7 @@
     "react-jss": "10.3.0",
     "react-syntax-highlighter": "15.4.3",
     "react-transition-group": "4.4.1",
-    "svgo": "2.0.3",
+    "svgo": "2.2.0",
     "untildify": "4.0.0",
     "uuid": "8.3.2",
     "validate-value": "8.9.17",
@@ -77,7 +77,7 @@
     "@types/webpack": "4.41.26",
     "assertthat": "5.2.5",
     "axios": "0.21.1",
-    "buntstift": "4.0.19",
+    "buntstift": "4.0.20",
     "common-tags": "1.8.0",
     "express": "4.17.1",
     "get-port": "5.1.1",
@@ -89,7 +89,7 @@
     "react-dom": "16.13.1",
     "retry-ignore-abort": "2.2.12",
     "roboter": "11.2.19",
-    "semantic-release-configuration": "1.0.34",
+    "semantic-release-configuration": "1.0.35",
     "shelljs": "0.8.4"
   },
   "peerDependencies": {

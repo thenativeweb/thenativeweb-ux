@@ -1,3 +1,31 @@
+## [5.8.57](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.56...5.8.57) (2021-03-02)
+
+
+### Bug Fixes
+
+* bump svgo from 2.1.0 to 2.2.0 ([#1001](https://github.com/thenativeweb/thenativeweb-ux/issues/1001)) ([250d962](https://github.com/thenativeweb/thenativeweb-ux/commit/250d9625c90e55369c53735f9d4e0a6aaac403fb))
+
+## [5.8.56](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.55...5.8.56) (2021-03-01)
+
+
+### Bug Fixes
+
+* bump @types/fs-extra from 9.0.7 to 9.0.8 ([#998](https://github.com/thenativeweb/thenativeweb-ux/issues/998)) ([af64cc3](https://github.com/thenativeweb/thenativeweb-ux/commit/af64cc3cc8905c6be5bb72b7c071ae9aee968bd2))
+
+## [5.8.55](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.54...5.8.55) (2021-02-27)
+
+
+### Bug Fixes
+
+* bump @babel/runtime-corejs2 from 7.13.4 to 7.13.8 ([#996](https://github.com/thenativeweb/thenativeweb-ux/issues/996)) ([adc170c](https://github.com/thenativeweb/thenativeweb-ux/commit/adc170cbc6d47f646c4348eef87ca20611de8cb5))
+
+## [5.8.54](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.53...5.8.54) (2021-02-26)
+
+
+### Bug Fixes
+
+* bump svgo from 2.0.3 to 2.1.0 ([#992](https://github.com/thenativeweb/thenativeweb-ux/issues/992)) ([efbbba9](https://github.com/thenativeweb/thenativeweb-ux/commit/efbbba95414481d5ceeaab3e894740ca346434bf))
+
 ## [5.8.53](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.52...5.8.53) (2021-02-23)
 
 
