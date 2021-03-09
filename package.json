@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "5.8.60",
+  "version": "5.8.61",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -27,7 +27,7 @@
     "ux": "build/lib/bin/ux.js"
   },
   "dependencies": {
-    "@babel/runtime-corejs2": "7.13.9",
+    "@babel/runtime-corejs2": "7.13.10",
     "@types/animejs": "3.1.2",
     "@types/color": "3.0.1",
     "@types/fs-extra": "9.0.8",
