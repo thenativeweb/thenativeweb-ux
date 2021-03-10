@@ -1,3 +1,11 @@
+## [5.8.64](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.63...5.8.64) (2021-03-10)
+
+
+### Bug Fixes
+
+* bump @types/jsdom from 16.2.6 to 16.2.7 ([#1018](https://github.com/thenativeweb/thenativeweb-ux/issues/1018)) ([887f7c5](https://github.com/thenativeweb/thenativeweb-ux/commit/887f7c5493d9863acb6256464bd040b91ae2c3ed))
+* bump svgo from 2.2.1 to 2.2.2 ([#1016](https://github.com/thenativeweb/thenativeweb-ux/issues/1016)) ([ec8c8f2](https://github.com/thenativeweb/thenativeweb-ux/commit/ec8c8f2eb3e2e5e91046b12eb233ebb70c6186a2))
+
 ## [5.8.63](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.62...5.8.63) (2021-03-10)
 
 
