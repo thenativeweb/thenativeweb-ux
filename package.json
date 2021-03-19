@@ -49,7 +49,7 @@
     "csstype": "3.0.7",
     "fs-extra": "9.1.0",
     "globby": "11.0.2",
-    "jsdom": "16.4.0",
+    "jsdom": "16.5.1",
     "lodash": "4.17.21",
     "mozjpeg": "7.0.0",
     "p-queue": "6.6.2",
