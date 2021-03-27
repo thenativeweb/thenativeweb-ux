@@ -1,3 +1,10 @@
+## [5.8.73](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.72...5.8.73) (2021-03-27)
+
+
+### Bug Fixes
+
+* bump @types/jsdom from 16.2.8 to 16.2.9 ([#1051](https://github.com/thenativeweb/thenativeweb-ux/issues/1051)) ([0ac688a](https://github.com/thenativeweb/thenativeweb-ux/commit/0ac688a4023f988aca17fdefb040c984b741e741))
+
 ## [5.8.72](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.71...5.8.72) (2021-03-27)
 
 
