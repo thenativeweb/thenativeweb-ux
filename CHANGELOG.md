@@ -1,3 +1,10 @@
+## [5.8.76](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.75...5.8.76) (2021-03-31)
+
+
+### Bug Fixes
+
+* bump @types/react-highlight-words from 0.16.1 to 0.16.2 ([#1060](https://github.com/thenativeweb/thenativeweb-ux/issues/1060)) ([2195936](https://github.com/thenativeweb/thenativeweb-ux/commit/2195936bbd8314e09fb8f413a49779133771e916))
+
 ## [5.8.75](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.74...5.8.75) (2021-03-29)
 
 
