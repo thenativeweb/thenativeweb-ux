@@ -1,3 +1,10 @@
+## [5.8.80](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.79...5.8.80) (2021-04-03)
+
+
+### Bug Fixes
+
+* bump classnames from 2.3.0 to 2.3.1 ([#1066](https://github.com/thenativeweb/thenativeweb-ux/issues/1066)) ([45d79b1](https://github.com/thenativeweb/thenativeweb-ux/commit/45d79b1c684050f72269aa8097b9b95ee5940024))
+
 ## [5.8.79](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.78...5.8.79) (2021-04-02)
 
 
