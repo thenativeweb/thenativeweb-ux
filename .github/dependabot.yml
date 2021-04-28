@@ -1,0 +1,83 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  assignees:
+  - goloroden
+  labels:
+  - Dependencies
+  versioning-strategy: increase
+  allow:
+  - dependency-type: direct
+  ignore:
+  - dependency-name: roboter
+    versions:
+    - "> 11.2.19, < 12"
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.22
+    - 14.14.23
+    - 14.14.24
+    - 14.14.30
+    - 14.14.34
+    - 15.0.1
+  - dependency-name: "@babel/runtime-corejs2"
+    versions:
+    - 7.12.17
+    - 7.13.0
+    - 7.13.1
+    - 7.13.17
+    - 7.13.2
+    - 7.13.6
+    - 7.13.7
+  - dependency-name: "@types/classnames"
+    versions:
+    - 2.3.1
+  - dependency-name: validate-value
+    versions:
+    - 8.9.18
+    - 8.9.19
+    - 8.9.23
+  - dependency-name: puppeteer
+    versions:
+    - 7.0.4
+    - 8.0.0
+    - 9.0.0
+  - dependency-name: p-queue
+    versions:
+    - 7.0.0
+    - 7.1.0
+  - dependency-name: "@types/webpack"
+    versions:
+    - 5.0.0
+    - 5.28.0
+  - dependency-name: command-line-interface
+    versions:
+    - 4.0.0
+    - 4.0.1
+    - 4.0.2
+    - 4.0.3
+    - 4.0.4
+  - dependency-name: retry-ignore-abort
+    versions:
+    - 2.2.13
+  - dependency-name: semantic-release-configuration
+    versions:
+    - 2.0.0
+  - dependency-name: react-jss
+    versions:
+    - 10.5.1
+    - 10.6.0
+  - dependency-name: jsdom
+    versions:
+    - 16.5.0
+  - dependency-name: svgo
+    versions:
+    - 2.0.2
+  commit-message:
+    prefix: fix
+    prefix-development: chore
