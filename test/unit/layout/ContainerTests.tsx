@@ -159,7 +159,7 @@ suite('Container', (): void => {
 
     const [ scrollable, nonScrollable ] = toArray(container.querySelectorAll('.container'));
 
-    assert.that(scrollable.className).is.containing('IsScrollable');
-    assert.that(nonScrollable.className).is.containing('IsNotScrollable');
+    assert.that(scrollable.className as string).is.containing('IsScrollable');
+    assert.that(nonScrollable.className as string).is.containing('IsNotScrollable');
   });
 });

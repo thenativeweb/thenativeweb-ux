@@ -41,7 +41,7 @@ suite('Button', (): void => {
         'TypeIconOnly'
       ]
     );
-    assert.that(button!.className).is.containing([ 'SizeMd' ]);
+    assert.that(button!.className).is.containing('SizeMd');
     assert.that(button!.type).is.equalTo('button');
     assert.that(button!.autofocus).is.not.true();
     assert.that(button!.textContent).is.equalTo('Click me');
