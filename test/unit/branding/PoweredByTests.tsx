@@ -45,8 +45,8 @@ suite('PoweredBy', (): void => {
 
     const [ medium, large ] = toArray(container.querySelectorAll('[class^=Product]'));
 
-    assert.that(medium.className).is.containing('SizeMd');
-    assert.that(large.className).is.containing('SizeLg');
+    assert.that(medium.className as string).is.containing('SizeMd');
+    assert.that(large.className as string).is.containing('SizeLg');
   });
 
   test('passes through defined property product.', async (): Promise<void> => {
