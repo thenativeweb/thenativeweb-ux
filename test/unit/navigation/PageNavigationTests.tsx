@@ -63,10 +63,10 @@ suite('PageNavigation', (): void => {
     const firstSection = component!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level1]:first-of-type');
     const secondSection = component!.querySelector<HTMLElement>('[class*=PageGroup][class*=Level1]:nth-of-type(2)');
 
-    assert.that(firstSection!.textContent).is.containing('First Section');
+    assert.that(firstSection!.textContent as string).is.containing('First Section');
     assert.that(firstSection!.className).is.not.containing('IsExpanded');
 
-    assert.that(secondSection!.textContent).is.containing('Second Section');
+    assert.that(secondSection!.textContent as string).is.containing('Second Section');
     assert.that(secondSection!.className).is.not.containing('IsExpanded');
   });
 

@@ -30,7 +30,7 @@ suite('Icon', (): void => {
     const icon = container.querySelector<SVGElement>('svg');
 
     assert.that(icon).is.not.null();
-    assert.that(icon!.className.baseVal).is.containingAllOf([ 'Icon', 'ColorDefault', 'SizeSm' ]);
+    assert.that(icon!.className.baseVal as string).is.containingAllOf([ 'Icon', 'ColorDefault', 'SizeSm' ]);
   });
 
   test('sets classes for defined property size.', async (): Promise<void> => {
@@ -51,12 +51,12 @@ suite('Icon', (): void => {
     const icons = toArray(container.querySelectorAll<SVGElement>('.Icon-for-testing'));
     const [ xSmall, small, medium, large, xLarge, xxLarge ] = icons;
 
-    assert.that(xSmall.className.baseVal).is.containing('SizeXs');
-    assert.that(small.className.baseVal).is.containing('SizeSm');
-    assert.that(medium.className.baseVal).is.containing('SizeMd');
-    assert.that(large.className.baseVal).is.containing('SizeLg');
-    assert.that(xLarge.className.baseVal).is.containing('SizeXl');
-    assert.that(xxLarge.className.baseVal).is.containing('SizeXxl');
+    assert.that(xSmall.className.baseVal as string).is.containing('SizeXs');
+    assert.that(small.className.baseVal as string).is.containing('SizeSm');
+    assert.that(medium.className.baseVal as string).is.containing('SizeMd');
+    assert.that(large.className.baseVal as string).is.containing('SizeLg');
+    assert.that(xLarge.className.baseVal as string).is.containing('SizeXl');
+    assert.that(xxLarge.className.baseVal as string).is.containing('SizeXxl');
   });
 
   test('sets classes for defined property color.', async (): Promise<void> => {
@@ -75,10 +75,10 @@ suite('Icon', (): void => {
     const icons = toArray(container.querySelectorAll<SVGElement>('.Icon-for-testing'));
     const [ standard, current, highlight, white ] = icons;
 
-    assert.that(standard.className.baseVal).is.containing('ColorDefault');
-    assert.that(current.className.baseVal).is.containing('ColorCurrent');
-    assert.that(highlight.className.baseVal).is.containing('ColorHighlight');
-    assert.that(white.className.baseVal).is.containing('ColorWhite');
+    assert.that(standard.className.baseVal as string).is.containing('ColorDefault');
+    assert.that(current.className.baseVal as string).is.containing('ColorCurrent');
+    assert.that(highlight.className.baseVal as string).is.containing('ColorHighlight');
+    assert.that(white.className.baseVal as string).is.containing('ColorWhite');
   });
 
   test('sets classes for defined property type.', async (): Promise<void> => {
@@ -94,7 +94,7 @@ suite('Icon', (): void => {
 
     const [ inline, flex ] = toArray(container.querySelectorAll<SVGElement>('.Icon-for-testing'));
 
-    assert.that(inline.className.baseVal).is.containing('TypeInline');
-    assert.that(flex.className.baseVal).is.containing('TypeFlex');
+    assert.that(inline.className.baseVal as string).is.containing('TypeInline');
+    assert.that(flex.className.baseVal as string).is.containing('TypeFlex');
   });
 });
