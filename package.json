@@ -62,7 +62,7 @@
     "svgo": "2.3.0",
     "untildify": "4.0.0",
     "uuid": "8.3.2",
-    "validate-value": "8.9.17",
+    "validate-value": "8.9.25",
     "xml2js": "0.4.23"
   },
   "devDependencies": {
