@@ -51,8 +51,8 @@ suite('ControlGroupItem', (): void => {
 
     const [ flex, auto ] = toArray(container.querySelectorAll('.Item-for-testing'));
 
-    assert.that(flex.className).is.containing('AdjustFlex');
-    assert.that(auto.className).is.containing('AdjustAuto');
+    assert.that(flex.className as string).is.containing('AdjustFlex');
+    assert.that(auto.className as string).is.containing('AdjustAuto');
   });
 
   test('inserts link if property helpLink is defined.', async (): Promise<void> => {
