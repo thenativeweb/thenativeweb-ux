@@ -1,3 +1,10 @@
+## [5.8.90](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.89...5.8.90) (2021-05-10)
+
+
+### Bug Fixes
+
+* bump hosted-git-info from 2.8.8 to 2.8.9 ([#1107](https://github.com/thenativeweb/thenativeweb-ux/issues/1107)) ([734e6fd](https://github.com/thenativeweb/thenativeweb-ux/commit/734e6fdafb8da80a2c5f16217077c620254a08b9))
+
 ## [5.8.89](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.88...5.8.89) (2021-05-06)
 
 
