@@ -88,7 +88,7 @@
     "react": "17.0.2",
     "react-dom": "16.13.1",
     "retry-ignore-abort": "2.2.17",
-    "roboter": "11.2.19",
+    "roboter": "11.6.48",
     "semantic-release-configuration": "2.0.0",
     "shelljs": "0.8.4"
   },
