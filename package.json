@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "5.8.94",
+  "version": "5.8.95",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -89,7 +89,7 @@
     "react-dom": "16.13.1",
     "retry-ignore-abort": "2.2.17",
     "roboter": "11.2.19",
-    "semantic-release-configuration": "2.0.0",
+    "semantic-release-configuration": "2.0.1",
     "shelljs": "0.8.4"
   },
   "peerDependencies": {
