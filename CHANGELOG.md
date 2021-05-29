@@ -1,3 +1,10 @@
+## [5.8.96](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.95...5.8.96) (2021-05-29)
+
+
+### Bug Fixes
+
+* bump ws from 7.3.1 to 7.4.6 ([#1130](https://github.com/thenativeweb/thenativeweb-ux/issues/1130)) ([0ecc0ef](https://github.com/thenativeweb/thenativeweb-ux/commit/0ecc0ef9a8ba4c6ed82c668e2b9e5be3b338f2a2))
+
 ## [5.8.95](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.94...5.8.95) (2021-05-24)
 
 
