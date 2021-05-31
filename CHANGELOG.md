@@ -1,3 +1,10 @@
+## [5.8.98](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.97...5.8.98) (2021-05-31)
+
+
+### Bug Fixes
+
+* bump react-transition-group from 4.4.1 to 4.4.2 ([#1138](https://github.com/thenativeweb/thenativeweb-ux/issues/1138)) ([467c59c](https://github.com/thenativeweb/thenativeweb-ux/commit/467c59c4b8314863c7cb09fd1d8ec0784c9e3b14))
+
 ## [5.8.97](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.96...5.8.97) (2021-05-31)
 
 

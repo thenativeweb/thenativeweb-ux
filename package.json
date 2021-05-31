@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "5.8.97",
+  "version": "5.8.98",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -58,7 +58,7 @@
     "react-highlight-words": "0.17.0",
     "react-jss": "10.3.0",
     "react-syntax-highlighter": "15.4.3",
-    "react-transition-group": "4.4.1",
+    "react-transition-group": "4.4.2",
     "svgo": "2.3.0",
     "untildify": "4.0.0",
     "uuid": "8.3.2",
