@@ -1,3 +1,10 @@
+## [5.8.97](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.96...5.8.97) (2021-05-31)
+
+
+### Bug Fixes
+
+* bump mozjpeg from 7.0.0 to 7.1.0 ([#1133](https://github.com/thenativeweb/thenativeweb-ux/issues/1133)) ([76dbaa0](https://github.com/thenativeweb/thenativeweb-ux/commit/76dbaa0d19447160625e414270b045ffbdfc5de8))
+
 ## [5.8.96](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.95...5.8.96) (2021-05-29)
 
 
