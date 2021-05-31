@@ -1,3 +1,24 @@
+## [5.8.99](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.98...5.8.99) (2021-05-31)
+
+
+### Bug Fixes
+
+* bump @types/node from 15.6.0 to 15.6.1 ([#1137](https://github.com/thenativeweb/thenativeweb-ux/issues/1137)) ([6e4b7d4](https://github.com/thenativeweb/thenativeweb-ux/commit/6e4b7d4e715534e2fb9901e8f9f42dcba925260c))
+
+## [5.8.98](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.97...5.8.98) (2021-05-31)
+
+
+### Bug Fixes
+
+* bump react-transition-group from 4.4.1 to 4.4.2 ([#1138](https://github.com/thenativeweb/thenativeweb-ux/issues/1138)) ([467c59c](https://github.com/thenativeweb/thenativeweb-ux/commit/467c59c4b8314863c7cb09fd1d8ec0784c9e3b14))
+
+## [5.8.97](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.96...5.8.97) (2021-05-31)
+
+
+### Bug Fixes
+
+* bump mozjpeg from 7.0.0 to 7.1.0 ([#1133](https://github.com/thenativeweb/thenativeweb-ux/issues/1133)) ([76dbaa0](https://github.com/thenativeweb/thenativeweb-ux/commit/76dbaa0d19447160625e414270b045ffbdfc5de8))
+
 ## [5.8.96](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.95...5.8.96) (2021-05-29)
 
 
