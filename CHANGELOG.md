@@ -1,3 +1,10 @@
+# [5.9.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.99...5.9.0) (2021-06-01)
+
+
+### Features
+
+* Add summer school. ([#1144](https://github.com/thenativeweb/thenativeweb-ux/issues/1144)) ([6c1ec63](https://github.com/thenativeweb/thenativeweb-ux/commit/6c1ec638bd64c5619ed1dc5f0ea6de64b4b41acc))
+
 ## [5.8.99](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.98...5.8.99) (2021-05-31)
 
 
