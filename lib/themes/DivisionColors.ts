@@ -3,6 +3,7 @@ export interface DivisionColors {
   concepts: string;
   learning: string;
   services: string;
+  'summer-school': string;
   technologies: string;
   wolkenkit: string;
 }
