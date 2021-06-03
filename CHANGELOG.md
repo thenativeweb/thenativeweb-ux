@@ -1,3 +1,10 @@
+## [5.9.1](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.0...5.9.1) (2021-06-03)
+
+
+### Bug Fixes
+
+* Rename summer school to tech:lounge. ([e09dee9](https://github.com/thenativeweb/thenativeweb-ux/commit/e09dee9e1e419270c5a247410aebb37065419f99))
+
 # [5.9.0](https://github.com/thenativeweb/thenativeweb-ux/compare/5.8.99...5.9.0) (2021-06-01)
 
 
