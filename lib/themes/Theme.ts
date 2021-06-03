@@ -122,7 +122,7 @@ abstract class Theme {
         concepts: '#ffcc00',
         learning: '#880088',
         services: '#ff7700',
-        'summer-school': '#00eeff',
+        techlounge: '#00eeff',
         technologies: '#66aa22',
         wolkenkit: '#00aaff'
       }
