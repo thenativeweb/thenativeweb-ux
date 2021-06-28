@@ -89,7 +89,7 @@
     "react-dom": "16.13.1",
     "retry-ignore-abort": "2.2.22",
     "roboter": "11.2.19",
-    "semantic-release-configuration": "2.0.1",
+    "semantic-release-configuration": "2.0.4",
     "shelljs": "0.8.4"
   },
   "peerDependencies": {
