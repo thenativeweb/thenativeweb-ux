@@ -1,3 +1,17 @@
+## [5.9.3](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.2...5.9.3) (2021-06-15)
+
+
+### Bug Fixes
+
+* bump @types/jsdom from 16.2.10 to 16.2.11 ([#1154](https://github.com/thenativeweb/thenativeweb-ux/issues/1154)) ([e90a9fe](https://github.com/thenativeweb/thenativeweb-ux/commit/e90a9fe6f246b45c2ad17c41917bd4b380bb91a6))
+
+## [5.9.2](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.1...5.9.2) (2021-06-14)
+
+
+### Bug Fixes
+
+* bump @babel/runtime-corejs2 from 7.14.0 to 7.14.5 ([#1158](https://github.com/thenativeweb/thenativeweb-ux/issues/1158)) ([8a27289](https://github.com/thenativeweb/thenativeweb-ux/commit/8a27289d67eb6eb22d95ab9d34fe7508fdcb776a))
+
 ## [5.9.1](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.0...5.9.1) (2021-06-03)
 
 
