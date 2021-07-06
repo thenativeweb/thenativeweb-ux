@@ -1,3 +1,10 @@
+## [5.9.7](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.6...5.9.7) (2021-07-06)
+
+
+### Bug Fixes
+
+* bump @types/xml2js from 0.4.8 to 0.4.9 ([#1192](https://github.com/thenativeweb/thenativeweb-ux/issues/1192)) ([1495928](https://github.com/thenativeweb/thenativeweb-ux/commit/14959283a4114851bc198bbe73e6d502bc7bfafa))
+
 ## [5.9.6](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.5...5.9.6) (2021-07-06)
 
 
