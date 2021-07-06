@@ -35,7 +35,7 @@
     "@types/jsdom": "16.2.12",
     "@types/lodash": "4.14.170",
     "@types/mozjpeg": "5.0.0",
-    "@types/node": "15.6.1",
+    "@types/node": "16.0.0",
     "@types/pngquant-bin": "4.0.0",
     "@types/react-highlight-words": "0.16.2",
     "@types/react-syntax-highlighter": "13.5.0",
