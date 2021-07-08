@@ -59,7 +59,7 @@
     "react-jss": "10.3.0",
     "react-syntax-highlighter": "15.4.3",
     "react-transition-group": "4.4.2",
-    "svgo": "2.3.0",
+    "svgo": "2.3.1",
     "untildify": "4.0.0",
     "uuid": "8.3.2",
     "validate-value": "8.9.17",
