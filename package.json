@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "5.9.7",
+  "version": "5.9.9",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -33,7 +33,7 @@
     "@types/fs-extra": "9.0.11",
     "@types/globby": "9.1.0",
     "@types/jsdom": "16.2.12",
-    "@types/lodash": "4.14.170",
+    "@types/lodash": "4.14.171",
     "@types/mozjpeg": "5.0.0",
     "@types/node": "15.6.1",
     "@types/pngquant-bin": "4.0.0",
