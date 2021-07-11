@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "5.9.12",
+  "version": "5.9.13",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -68,9 +68,9 @@
   "devDependencies": {
     "@next/bundle-analyzer": "11.0.1",
     "@types/classnames": "2.3.1",
-    "@types/common-tags": "1.8.0",
+    "@types/common-tags": "1.8.1",
     "@types/express": "4.17.12",
-    "@types/puppeteer": "5.4.3",
+    "@types/puppeteer": "5.4.4",
     "@types/react": "17.0.13",
     "@types/react-dom": "17.0.6",
     "@types/shelljs": "0.8.8",
