@@ -1,3 +1,10 @@
+## [5.9.10](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.9...5.9.10) (2021-07-08)
+
+
+### Bug Fixes
+
+* bump @types/animejs from 3.1.3 to 3.1.4 ([#1197](https://github.com/thenativeweb/thenativeweb-ux/issues/1197)) ([a1aec2d](https://github.com/thenativeweb/thenativeweb-ux/commit/a1aec2df7bc8f10eb6bd06192481f8b4d397b2e4))
+
 ## [5.9.9](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.8...5.9.9) (2021-07-08)
 
 
