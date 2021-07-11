@@ -1,3 +1,10 @@
+## [5.9.13](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.12...5.9.13) (2021-07-11)
+
+
+### Bug Fixes
+
+* bump @types/color from 3.0.1 to 3.0.2 ([#1202](https://github.com/thenativeweb/thenativeweb-ux/issues/1202)) ([5d74819](https://github.com/thenativeweb/thenativeweb-ux/commit/5d748194675717ef9a20727a56a1163d7ec47964))
+
 ## [5.9.12](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.11...5.9.12) (2021-07-11)
 
 
