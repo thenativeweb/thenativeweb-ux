@@ -29,7 +29,7 @@
   "dependencies": {
     "@babel/runtime-corejs2": "7.14.6",
     "@types/animejs": "3.1.4",
-    "@types/color": "3.0.1",
+    "@types/color": "3.0.2",
     "@types/fs-extra": "9.0.11",
     "@types/globby": "9.1.0",
     "@types/jsdom": "16.2.13",
