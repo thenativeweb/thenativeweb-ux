@@ -32,7 +32,6 @@ const Documentation = (): ReactElement => {
               <ControlGroupItem label='Transition type'>
                 <Dropdown
                   value={ type }
-
                   options={ transitionTypes }
                   onChange={ (value: string): void => setType(value) }
                 />

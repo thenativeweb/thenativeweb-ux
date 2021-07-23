@@ -2,6 +2,8 @@ build
 
 styleguide/out
 styleguide/.next
+styleguide/next-env.d.ts
 
 test/shared/sampleApplication/out
 test/shared/sampleApplication/.next
+test/shared/sampleApplication/next-env.d.ts

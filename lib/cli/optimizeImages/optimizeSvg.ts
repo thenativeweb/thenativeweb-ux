@@ -11,7 +11,7 @@ const optimizeSvg = async function ({
 }): Promise<void> {
   const cwd = process.cwd();
 
-  await new Promise((resolve, reject): void => {
+  await new Promise<void>((resolve, reject): void => {
     shell.exec(`npx svgo '${source}' -o '${destination}'`, { cwd, silent: !verbose }, (code): void => {
       if (code !== 0) {
         return reject(new Error(`Failed to optimize '${source}'.`));

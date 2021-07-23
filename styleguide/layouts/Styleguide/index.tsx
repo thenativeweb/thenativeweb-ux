@@ -11,7 +11,7 @@ const Styleguide: FunctionComponent = ({
     navigation={ navigation }
     linkToImprint='/en-us/imprint'
     linkToPrivacyPolicy='/en-us/privacy-policy'
-    yearOfCreation={ 2017 }
+    yearOfCreation={ 2_017 }
   >
     {
       children

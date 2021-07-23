@@ -25,7 +25,7 @@ const Documentation = (): ReactElement => (
 
     <ComponentPreview>
       <Fragment>
-        <Footer yearOfCreation={ 2016 } />
+        <Footer yearOfCreation={ 2_016 } />
         <Footer yearOfCreation={ new Date().getFullYear() } />
       </Fragment>
     </ComponentPreview>

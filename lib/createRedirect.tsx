@@ -25,6 +25,7 @@ const createRedirect = (destination: string): NextPage<RedirectProps> => {
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   RedirectComponent.getInitialProps = function ({ res }): RedirectProps {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (res && res.writeHead) {
       res.writeHead(302, { Location: destination });
       res.end();

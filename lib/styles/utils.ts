@@ -4,7 +4,7 @@ import { ResponsiveSpaceProp } from '../types/ResponsiveSpaceProp';
 import { Theme } from '..';
 
 type CssAttributesFunction = ({ spaceFactor, theme }: { spaceFactor: ResponsiveSpaceFactor; theme: Theme }) => NestedCssProperties;
-export type ClassDefinitions = Partial<{ [key: string]: {} | CssAttributesFunction }>;
+export type ClassDefinitions = Partial<Record<string, Record<string, any> | CssAttributesFunction>>;
 
 const createSpaceDependentClasses = function ({
   theme,
@@ -16,8 +16,8 @@ const createSpaceDependentClasses = function ({
   definitions: ClassDefinitions;
   deviceSize?: string;
   maximumSpaceFactor?: number;
-}): { [key: string]: string | undefined } {
-  const classes: Partial<{ [key: string]: string | undefined }> = {};
+}): Record<string, string | undefined> {
+  const classes: Partial<Record<string, string | undefined>> = {};
 
   for (let spaceFactor = 0; spaceFactor < maximumSpaceFactor; spaceFactor++) {
     for (const propertyName of Object.keys(definitions)) {
@@ -39,14 +39,14 @@ const createDefaultSpaceDependantClasses = function ({
 }: {
   theme: Theme;
   definitions: ClassDefinitions;
-}): { [key: string]: string | undefined } {
+}): Record<string, string | undefined> {
   const emptySpaceProperties: ClassDefinitions = {};
 
   for (const propertyName of Object.keys(definitions)) {
     emptySpaceProperties[propertyName] = {};
   }
 
-  let classes: Partial<{ [key: string]: string | undefined }> = {};
+  let classes: Partial<Record<string, string | undefined>> = {};
 
   for (const deviceSize of [ 'xs', 'sm', 'md', 'lg', 'xl' ]) {
     classes = {
@@ -67,7 +67,7 @@ const getSpaceDependentClassNamesFromProps = function ({
   definitions,
   classes
 }: {
-  props: Partial<{ [ key: string ]: ResponsiveSpaceProp }>;
+  props: Partial<Record<string, ResponsiveSpaceProp>>;
   definitions: ClassDefinitions;
   classes: any;
 }): string[] {

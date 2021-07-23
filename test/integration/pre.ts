@@ -8,11 +8,6 @@ import { integrationTestContainer, integrationTestPort } from '../shared/environ
 (async (): Promise<void> => {
   const projectRoot = path.join(__dirname, '..', '..');
 
-  // Remove temporary build folder from previous tests.
-  shell.rm('-rf', [
-    path.join(projectRoot, 'build')
-  ]);
-
   // Create a build via roboter, so that the test application always uses the
   // latest version.
   let childProcess = shell.exec('npx roboter build', { cwd: projectRoot });

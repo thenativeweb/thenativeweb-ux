@@ -24,7 +24,7 @@ suite('Client', function (): void {
     const button = await page.$('#button');
 
     await Promise.all([
-      new Promise((resolve, reject): void => {
+      new Promise<void>((resolve, reject): void => {
         page.once('console', (message): void => {
           try {
             if (message.text() !== 'button::clicked') {
@@ -32,7 +32,7 @@ suite('Client', function (): void {
             }
 
             resolve();
-          } catch (ex) {
+          } catch (ex: unknown) {
             reject(ex);
           }
         });

@@ -50,7 +50,7 @@ class NotificationService extends EventEmitter {
   public show ({
     type = 'success',
     text,
-    duration = 3000
+    duration = 3_000
   }: {
     type: NotificationType;
     text: string;

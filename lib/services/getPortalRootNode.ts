@@ -1,4 +1,4 @@
-const portals: { [key: string]: HTMLElement | undefined } = {};
+const portals: Record<string, HTMLElement | undefined> = {};
 
 const getPortalRootNode = function (
   id = 'thenativeweb-ux-portal',

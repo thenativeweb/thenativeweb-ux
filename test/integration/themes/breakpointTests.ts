@@ -56,7 +56,7 @@ suite('breakpoints', function (): void {
 
     test(`only('md') creates a query that targets devices smaller than 1280px.`, async (): Promise<void> => {
       await assertElementVisibility({
-        viewportWidth: 1270,
+        viewportWidth: 1_270,
         visibleSelectors: [ '#md' ],
         hiddenSelectors: [ '#xs', '#sm', '#lg', '#xl' ]
       });
@@ -64,7 +64,7 @@ suite('breakpoints', function (): void {
 
     test(`only('md') creates a query that targets devices smaller than 1920px.`, async (): Promise<void> => {
       await assertElementVisibility({
-        viewportWidth: 1910,
+        viewportWidth: 1_910,
         visibleSelectors: [ '#lg' ],
         hiddenSelectors: [ '#xs', '#sm', '#md', '#xl' ]
       });
@@ -72,7 +72,7 @@ suite('breakpoints', function (): void {
 
     test(`only('lg') creates a query that targets devices larger than 1920px.`, async (): Promise<void> => {
       await assertElementVisibility({
-        viewportWidth: 1930,
+        viewportWidth: 1_930,
         visibleSelectors: [ '#xl' ],
         hiddenSelectors: [ '#xs', '#sm', '#md', '#lg' ]
       });
