@@ -28,7 +28,7 @@ const GridItem: FunctionComponent<GridItemProps> = ({
   const classes = useStyles();
 
   const spaceDependentClassNames = getSpaceDependentClassNamesFromProps({
-    props: props as Partial<{ [key: string]: ResponsiveSpaceProp }>,
+    props: props as Partial<Record<string, ResponsiveSpaceProp>>,
     classes,
     definitions: spaceDependentProperties
   });

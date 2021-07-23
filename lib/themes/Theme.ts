@@ -189,11 +189,11 @@ abstract class Theme {
     this.zIndices = {
       content: 100,
       contentOverlay: 200,
-      navigation: 1000,
-      menu: 2000,
-      modal: 3000,
-      overlay: 4000,
-      transfer: 5000
+      navigation: 1_000,
+      menu: 2_000,
+      modal: 3_000,
+      overlay: 4_000,
+      transfer: 5_000
     };
 
     this.space = (factor: number): number => factor * spaceUnit;

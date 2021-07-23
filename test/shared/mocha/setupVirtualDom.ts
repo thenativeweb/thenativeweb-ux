@@ -14,7 +14,7 @@ const copyProperties = (source: Record<string, any>, target: Record<string, any>
 (global as any).window = window;
 (global as any).document = window.document;
 (global as any).navigator = { userAgent: 'Node.js' };
-(global as any).requestAnimationFrame = (callback: Function): number => setTimeout(callback, 0);
+(global as any).requestAnimationFrame = (callback: FrameRequestCallback): number => setTimeout(callback, 0);
 (global as any).cancelAnimationFrame = (id: number): void => clearTimeout(id);
 /* eslint-enable @typescript-eslint/no-implied-eval */
 

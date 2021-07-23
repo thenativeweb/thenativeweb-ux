@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { parseStringPromise as parseString } from 'xml2js';
-import { values as v, Value } from 'validate-value';
+import { isOfType, JsonSchema } from 'validate-value';
 
 interface UrlSetEntry {
   loc: string[];
@@ -11,31 +11,31 @@ interface SitemapContent {
   urlset: { url: UrlSetEntry[] };
 }
 
-const invalidXMLStructureErrorMessage = 'Provided XML file has invalid structure.';
+const invalidXmlStructureErrorMessage = 'Provided XML file has invalid structure.';
 
-const sitemapContentSchema = {
-  type: v.object,
+const sitemapContentSchema: JsonSchema = {
+  type: 'object',
   properties: {
     urlset: {
-      type: v.object,
+      type: 'object',
       properties: {
         url: {
-          type: v.array,
+          type: 'array',
           items: {
-            type: v.object,
+            type: 'object',
             properties: {
               loc: {
-                type: v.array,
+                type: 'array',
                 items: {
-                  type: v.string
+                  type: 'string'
                 },
                 minItems: 1,
                 maxItems: 1
               },
               lastmod: {
-                type: v.array,
+                type: 'array',
                 items: {
-                  type: v.string
+                  type: 'string'
                 },
                 minItems: 1,
                 maxItems: 1
@@ -52,13 +52,13 @@ const sitemapContentSchema = {
   required: [ 'urlset' ]
 };
 
-const isSitemapContent = (data: any): boolean =>
-  new Value(sitemapContentSchema).isValid(data);
+const isSitemapContent = (data: any): data is SitemapContent =>
+  isOfType(data, sitemapContentSchema);
 
-const parseSitemapXML = (sitemapContent: SitemapContent): string[] =>
+const parseSitemapXml = (sitemapContent: SitemapContent): string[] =>
   sitemapContent.urlset.url.map((url): string => url.loc[0].trim());
 
-const parseSitemapTXT = (sitemapContent: string): string[] => {
+const parseSitemapTxt = (sitemapContent: string): string[] => {
   const urls = sitemapContent.
     split('\n').
     map((url): string => url.trim()).
@@ -76,13 +76,13 @@ const getUrlsFromSitemap = async function ({ sitemapPath }: {
     const xmlParsedSitemap = await parseString(sitemap);
 
     if (isSitemapContent(xmlParsedSitemap)) {
-      return parseSitemapXML(xmlParsedSitemap);
+      return parseSitemapXml(xmlParsedSitemap);
     }
   } catch {
-    return parseSitemapTXT(sitemap);
+    return parseSitemapTxt(sitemap);
   }
 
-  throw new Error(invalidXMLStructureErrorMessage);
+  throw new Error(invalidXmlStructureErrorMessage);
 };
 
-export { getUrlsFromSitemap, parseSitemapTXT, parseSitemapXML };
+export { getUrlsFromSitemap, parseSitemapTxt, parseSitemapXml };

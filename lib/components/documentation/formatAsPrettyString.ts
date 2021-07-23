@@ -1,7 +1,7 @@
 import { isReactElement } from '../../utils/isReactElement';
-import prettyFormat from 'pretty-format';
+import prettyFormat, { plugins as availablePlugins } from 'pretty-format';
 
-const { ReactElement: ReactElementPlugin } = prettyFormat.plugins;
+const { ReactElement: ReactElementPlugin } = availablePlugins;
 
 const formatAsPrettyString = (source?: any): string | undefined => {
   const plugins = [];

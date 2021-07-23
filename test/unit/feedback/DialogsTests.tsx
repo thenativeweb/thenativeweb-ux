@@ -37,7 +37,7 @@ suite('Dialogs', (): void => {
     });
 
     await Promise.all([
-      new Promise((resolve, reject): void => {
+      new Promise<void>((resolve, reject): void => {
         // This promise only resolves if the confirm button inside the dialog
         // has been clicked.
         dialogService.confirm({
@@ -54,7 +54,7 @@ suite('Dialogs', (): void => {
           }).
           catch(reject);
       }),
-      new Promise((resolve): void => {
+      new Promise<void>((resolve): void => {
         // We delay the following code so the confirm dialog can be rendered
         // first.
         setTimeout((): void => {
@@ -85,7 +85,7 @@ suite('Dialogs', (): void => {
     });
 
     await Promise.all([
-      new Promise((resolve, reject): void => {
+      new Promise<void>((resolve, reject): void => {
         // This promise only resolves if the confirm button inside the dialog
         // has been clicked.
         dialogService.confirm({
@@ -102,7 +102,7 @@ suite('Dialogs', (): void => {
           }).
           catch(reject);
       }),
-      new Promise((resolve): void => {
+      new Promise<void>((resolve): void => {
         // We delay the following code so the confirm dialog can be rendered
         // first.
         setTimeout((): void => {

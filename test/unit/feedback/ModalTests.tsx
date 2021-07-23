@@ -52,6 +52,7 @@ suite('Modal', (): void => {
   });
 
   test('returns null if isVisible is set to false.', async (): Promise<void> => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const onCancel = (): void => {
       // Intentionally left blank.
     };
@@ -71,6 +72,7 @@ suite('Modal', (): void => {
   });
 
   test('sets classes for defined property attach.', async (): Promise<void> => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const onCancel = (): void => {
       // Intentionally left blank.
     };
@@ -97,6 +99,7 @@ suite('Modal', (): void => {
   });
 
   test('sets classes for defined property size.', async (): Promise<void> => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const onCancel = (): void => {
       // Intentionally left blank.
     };
@@ -123,6 +126,7 @@ suite('Modal', (): void => {
   });
 
   test('sets classes for defined property padding.', async (): Promise<void> => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const onCancel = (): void => {
       // Intentionally left blank.
     };
@@ -144,6 +148,7 @@ suite('Modal', (): void => {
   });
 
   test('inserts defined text for header if property showHeader is set to true.', async (): Promise<void> => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const onCancel = (): void => {
       // Intentionally left blank.
     };
@@ -168,6 +173,7 @@ suite('Modal', (): void => {
   });
 
   test('inserts defined children as content.', async (): Promise<void> => {
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     const onCancel = (): void => {
       // Intentionally left blank.
     };

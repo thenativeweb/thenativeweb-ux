@@ -12,9 +12,12 @@ const nextConfiguration = {
   exportTrailingSlash: true,
 
   webpack (configuration) {
-    configuration.module.rules[0].include.push(libraryEntryPointPath);
+    configuration.module.rules[1]?.include?.push(libraryEntryPointPath);
 
     return configuration;
+  },
+  eslint: {
+    ignoreDuringBuilds: true
   }
 };
 

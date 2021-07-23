@@ -33,7 +33,7 @@ suite('dialogs', function (): void {
       const confirmAction = await page.$('#dialogs-confirm-action-confirm');
 
       await Promise.all([
-        new Promise((resolve, reject): void => {
+        new Promise<void>((resolve, reject): void => {
           page.once('console', (message): void => {
             try {
               if (message.text() !== 'confirm::action::confirm::clicked') {
@@ -41,7 +41,7 @@ suite('dialogs', function (): void {
               }
 
               resolve();
-            } catch (ex) {
+            } catch (ex: unknown) {
               reject(ex);
             }
           });
@@ -67,7 +67,7 @@ suite('dialogs', function (): void {
       const cancelAction = await page.$('#dialogs-confirm-action-confirm');
 
       await Promise.all([
-        new Promise((resolve, reject): void => {
+        new Promise<void>((resolve, reject): void => {
           page.once('console', (message): void => {
             try {
               if (message.text() !== 'confirm::action::confirm::clicked') {
@@ -75,7 +75,7 @@ suite('dialogs', function (): void {
               }
 
               resolve();
-            } catch (ex) {
+            } catch (ex: unknown) {
               reject(ex);
             }
           });

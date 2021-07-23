@@ -32,7 +32,7 @@ suite('SidebarItem', function (): void {
     const childItem = await page.$('#sidebar-item-logout');
 
     await Promise.all([
-      new Promise((resolve, reject): void => {
+      new Promise<void>((resolve, reject): void => {
         page.once('console', (message): void => {
           try {
             if (message.text() !== 'clicked::clicked::logout') {
@@ -40,7 +40,7 @@ suite('SidebarItem', function (): void {
             }
 
             resolve();
-          } catch (ex) {
+          } catch (ex: unknown) {
             reject(ex);
           }
         });

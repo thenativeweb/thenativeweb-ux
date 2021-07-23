@@ -4,8 +4,8 @@ const defaultSteps = {
   xs: 0,
   sm: 600,
   md: 960,
-  lg: 1280,
-  xl: 1920
+  lg: 1_280,
+  xl: 1_920
 };
 
 class Breakpoints {

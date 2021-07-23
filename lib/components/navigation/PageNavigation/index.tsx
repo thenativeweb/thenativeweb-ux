@@ -104,7 +104,8 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
                 onChange={ handleChange }
               />
             </HorizontalBar>
-          ) : null
+          ) :
+          null
       }
       <div className={ classes.Content }>
         {
@@ -120,7 +121,8 @@ const PageNavigation: FunctionComponent<PageNavigationProps> = ({
                 results={ results }
                 nonIdealState={ nonIdealState }
               />
-            ) : null
+            ) :
+            null
         }
       </div>
       {

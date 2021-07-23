@@ -37,7 +37,7 @@ suite('styleguide', (): void => {
     // and do not exists.
     const ignoreUrls = `${styleguideUrl}\\/(first-section|second-section)/`;
 
-    await new Promise((resolve, reject): void => {
+    await new Promise<void>((resolve, reject): void => {
       shell.exec(
         `npx ts-node '${cliPath}' --verbose verify-links --url '${styleguideUrl}' --ignore '${ignoreUrls}'`,
         { cwd: projectRoot },

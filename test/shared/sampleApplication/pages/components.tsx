@@ -47,7 +47,7 @@ interface TestAppState {
   toggleOptionSelected: string;
 }
 
-class TestApp extends React.Component<{}, TestAppState> {
+class TestApp extends React.Component<object, TestAppState> {
   public constructor (props: any) {
     super(props);
 

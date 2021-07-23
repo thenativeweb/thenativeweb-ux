@@ -36,9 +36,9 @@ suite('Notifications', (): void => {
       );
     });
 
-    const notificationsDOM = portalRootNode.querySelector<HTMLElement>('.Class-for-testing-1');
+    const notificationsDom = portalRootNode.querySelector<HTMLElement>('.Class-for-testing-1');
 
-    assert.that(notificationsDOM!.className).is.containing('Notifications');
+    assert.that(notificationsDom!.className).is.containing('Notifications');
   });
 
   test('renders an error notification if it is added to the given notificationService.', async (): Promise<void> => {

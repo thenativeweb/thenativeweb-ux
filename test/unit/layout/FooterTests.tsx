@@ -35,7 +35,7 @@ suite('Footer', (): void => {
 
     const copyright = footer!.querySelector('[class^=Copyright-]');
 
-    assert.that(copyright!.textContent as string).is.startingWith(`© Copyright ${currentYear}`);
+    assert.that(copyright!.textContent!).is.startingWith(`© Copyright ${currentYear}`);
 
     const legalLinks = footer!.querySelector('[class^=Legal-]');
 
@@ -121,7 +121,7 @@ suite('Footer', (): void => {
 
     const copyright = footer!.querySelector('[class^=Copyright-]');
 
-    assert.that(copyright!.textContent as string).is.startingWith(`© Copyright ${lastYear}-${currentYear}`);
+    assert.that(copyright!.textContent!).is.startingWith(`© Copyright ${lastYear}-${currentYear}`);
   });
 
   test('renders a link to the imprint.', async (): Promise<void> => {
@@ -140,7 +140,7 @@ suite('Footer', (): void => {
 
     const [ imprintLink ] = toArray(footer!.querySelectorAll<HTMLAnchorElement>('[class^=Legal-] a'));
 
-    assert.that(imprintLink.getAttribute('href') as string).is.startingWith('/imprint');
+    assert.that(imprintLink.getAttribute('href')!).is.startingWith('/imprint');
   });
 
   test('renders a link to the privacy policy.', async (): Promise<void> => {
@@ -159,7 +159,7 @@ suite('Footer', (): void => {
 
     const [ privacyPolicyLink ] = toArray(footer!.querySelectorAll<HTMLAnchorElement>('[class^=Legal-] a'));
 
-    assert.that(privacyPolicyLink.getAttribute('href') as string).is.startingWith('/privacy-policy');
+    assert.that(privacyPolicyLink.getAttribute('href')!).is.startingWith('/privacy-policy');
   });
 
   test('renders an edit on github link.', async (): Promise<void> => {
@@ -178,6 +178,6 @@ suite('Footer', (): void => {
 
     const [ privacyPolicyLink ] = toArray(footer!.querySelectorAll<HTMLAnchorElement>('[class^=Contribute-] a'));
 
-    assert.that(privacyPolicyLink.getAttribute('href') as string).is.startingWith('https://www.github.com');
+    assert.that(privacyPolicyLink.getAttribute('href')!).is.startingWith('https://www.github.com');
   });
 });

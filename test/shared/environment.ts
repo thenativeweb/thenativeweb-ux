@@ -1,7 +1,7 @@
 import { processenv } from 'processenv';
 
 const integrationTestContainer = 'integration-nginx';
-const integrationTestPort = 3000;
+const integrationTestPort = 3_000;
 const debugModeEnabled = processenv('DEBUG', false);
 const defaultIntegrationTestTimeout = 10_000;
 
@@ -18,7 +18,7 @@ const getIntegrationTestUrl = function (absolutePagePath = '/'): string {
   return `http://localhost:${integrationTestPort}${path}`;
 };
 
-const viewport = { width: 1280, height: 800 };
+const viewport = { width: 1_280, height: 800 };
 
 const headless = !debugModeEnabled;
 

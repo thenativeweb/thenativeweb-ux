@@ -73,7 +73,7 @@ class DialogService extends EventEmitter {
       // Delay the rendering for keyboard events not to conflict.
       setTimeout((): void => {
         this.emit('changed');
-      }, 0.1 * 1000);
+      }, 0.1 * 1_000);
     });
   }
 }
