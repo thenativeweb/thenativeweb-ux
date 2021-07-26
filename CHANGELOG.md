@@ -1,3 +1,10 @@
+## [5.9.16](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.15...5.9.16) (2021-07-26)
+
+
+### Bug Fixes
+
+* bump react-syntax-highlighter from 15.4.3 to 15.4.4 ([#1222](https://github.com/thenativeweb/thenativeweb-ux/issues/1222)) ([7ad1a90](https://github.com/thenativeweb/thenativeweb-ux/commit/7ad1a9088e9de37ac7c893453394baffcd22b8a4))
+
 ## [5.9.15](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.14...5.9.15) (2021-07-23)
 
 
