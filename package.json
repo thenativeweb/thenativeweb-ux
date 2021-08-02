@@ -87,7 +87,7 @@
     "puppeteer": "10.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "retry-ignore-abort": "2.2.25",
+    "retry-ignore-abort": "2.2.26",
     "roboter": "11.7.8",
     "semantic-release-configuration": "2.0.5",
     "shelljs": "0.8.4"
