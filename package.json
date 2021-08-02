@@ -1,6 +1,6 @@
 {
   "name": "thenativeweb-ux",
-  "version": "5.9.18",
+  "version": "5.9.19",
   "description": "thenativeweb-ux provides UI components for the native web applications.",
   "contributors": [
     {
@@ -45,7 +45,7 @@
     "animejs": "3.2.1",
     "classnames": "2.3.1",
     "color": "4.0.0",
-    "command-line-interface": "4.0.17",
+    "command-line-interface": "4.0.18",
     "csstype": "3.0.8",
     "fs-extra": "10.0.0",
     "globby": "11.0.4",
@@ -87,7 +87,7 @@
     "puppeteer": "10.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "retry-ignore-abort": "2.2.25",
+    "retry-ignore-abort": "2.2.26",
     "roboter": "11.7.8",
     "semantic-release-configuration": "2.0.5",
     "shelljs": "0.8.4"

@@ -1,3 +1,10 @@
+## [5.9.19](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.18...5.9.19) (2021-08-02)
+
+
+### Bug Fixes
+
+* bump command-line-interface from 4.0.17 to 4.0.18 ([#1227](https://github.com/thenativeweb/thenativeweb-ux/issues/1227)) ([e3e2eb4](https://github.com/thenativeweb/thenativeweb-ux/commit/e3e2eb434f6e0e44259da7d2c976eaed0c695a9c))
+
 ## [5.9.18](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.17...5.9.18) (2021-07-26)
 
 
