@@ -1,3 +1,10 @@
+## [5.9.22](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.21...5.9.22) (2021-08-04)
+
+
+### Bug Fixes
+
+* Fix versions of peer dependencies. ([#1228](https://github.com/thenativeweb/thenativeweb-ux/issues/1228)) ([c627ac5](https://github.com/thenativeweb/thenativeweb-ux/commit/c627ac5a8d0d1e788d575c183a43172ed5ffaa41))
+
 ## [5.9.21](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.20...5.9.21) (2021-08-02)
 
 
