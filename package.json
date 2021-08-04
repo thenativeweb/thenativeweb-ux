@@ -93,8 +93,8 @@
     "shelljs": "0.8.4"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "scripts": {
     "start-styleguide": "cd styleguide && npx next --port 6060",
