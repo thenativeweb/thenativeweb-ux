@@ -1,3 +1,10 @@
+## [5.9.25](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.24...5.9.25) (2021-08-15)
+
+
+### Bug Fixes
+
+* bump @types/node from 16.4.10 to 16.6.1 ([#1241](https://github.com/thenativeweb/thenativeweb-ux/issues/1241)) ([5a5608c](https://github.com/thenativeweb/thenativeweb-ux/commit/5a5608ce6640eb4ceee42517dea2f69603008877))
+
 ## [5.9.24](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.23...5.9.24) (2021-08-13)
 
 
