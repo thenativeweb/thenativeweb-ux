@@ -1,3 +1,31 @@
+## [5.9.29](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.28...5.9.29) (2021-08-16)
+
+
+### Bug Fixes
+
+* bump command-line-interface from 4.0.18 to 4.0.21 ([#1242](https://github.com/thenativeweb/thenativeweb-ux/issues/1242)) ([9f6443a](https://github.com/thenativeweb/thenativeweb-ux/commit/9f6443ad000cbd40829f1e9f63b917a35bb08af2))
+
+## [5.9.28](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.27...5.9.28) (2021-08-16)
+
+
+### Bug Fixes
+
+* bump @babel/runtime-corejs2 from 7.14.8 to 7.15.3 ([#1243](https://github.com/thenativeweb/thenativeweb-ux/issues/1243)) ([4acbf6f](https://github.com/thenativeweb/thenativeweb-ux/commit/4acbf6f2a9eeba13575f2e044b3ae59681113c06))
+
+## [5.9.27](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.26...5.9.27) (2021-08-16)
+
+
+### Bug Fixes
+
+* bump jsdom from 16.7.0 to 17.0.0 ([#1244](https://github.com/thenativeweb/thenativeweb-ux/issues/1244)) ([3af2da1](https://github.com/thenativeweb/thenativeweb-ux/commit/3af2da1bd1078fdc7748e01f25e64cc30ab72865))
+
+## [5.9.26](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.25...5.9.26) (2021-08-16)
+
+
+### Bug Fixes
+
+* bump svgo from 2.3.1 to 2.4.0 ([#1246](https://github.com/thenativeweb/thenativeweb-ux/issues/1246)) ([dcc8b39](https://github.com/thenativeweb/thenativeweb-ux/commit/dcc8b39e32fe0ecb5490739bcb3e74b236ec1499))
+
 ## [5.9.25](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.24...5.9.25) (2021-08-15)
 
 
