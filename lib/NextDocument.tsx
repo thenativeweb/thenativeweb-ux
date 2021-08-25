@@ -1,9 +1,9 @@
 import { RenderPageResult } from 'next/dist/next-server/lib/utils';
-import Document, { DocumentContext, DocumentInitialProps } from 'next/document';
+import NextDocument, { DocumentContext, DocumentInitialProps } from 'next/document';
 import React, { ReactElement } from 'react';
 import { ServerSideStyles, StaticGlobalStyles, StyleCollector, Theme } from '.';
 
-class NextDocument extends Document {
+class StyledDocument extends NextDocument {
   public static async getInitialPropsWithTheme (originalContext: DocumentContext, theme: Theme): Promise<DocumentInitialProps> {
     const serverSideStyles = new ServerSideStyles();
     const staticGlobalStyles = new StaticGlobalStyles({ theme });
@@ -38,4 +38,4 @@ class NextDocument extends Document {
   }
 }
 
-export { NextDocument };
+export { StyledDocument as NextDocument };

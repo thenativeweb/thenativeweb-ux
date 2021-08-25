@@ -20,6 +20,7 @@
       "email": "valentina.rotkin@thenativeweb.io"
     }
   ],
+  "private": false,
   "main": "build/lib/index.js",
   "module": "build/esm/lib/index.js",
   "types": "build/lib/index.d.ts",
@@ -88,7 +89,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "retry-ignore-abort": "2.2.26",
-    "roboter": "12.0.0",
+    "roboter": "12.2.1",
     "semantic-release-configuration": "2.0.5",
     "shelljs": "0.8.4"
   },
@@ -97,12 +98,12 @@
     "react-dom": "^17.0.2"
   },
   "scripts": {
-    "start-styleguide": "cd styleguide && npx next --port 6060",
-    "build-styleguide": "cd styleguide && npx next build && npx next export",
     "analyse-bundle": "cd styleguide && ANALYSE_BUNDLE=true npx next build && npx next export",
+    "build-styleguide": "cd styleguide && npx next build && npx next export",
+    "export-sample-application": "cd test/shared/sampleApplication && npx next build && npx next export",
     "postbuild": "npx tsc -p tsconfig.esm.json",
     "start-sample-application": "cd test/shared/sampleApplication && npx next",
-    "export-sample-application": "cd test/shared/sampleApplication && npx next build && npx next export"
+    "start-styleguide": "cd styleguide && npx next --port 6060"
   },
   "repository": {
     "type": "git",
@@ -114,5 +115,5 @@
     "ui",
     "ux"
   ],
-  "license": "LGPL-3.0"
+  "license": "LGPL-3.0-only"
 }
