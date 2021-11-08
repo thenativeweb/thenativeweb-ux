@@ -75,7 +75,7 @@
     "@types/react-dom": "17.0.9",
     "@types/shelljs": "0.8.9",
     "@types/webpack": "5.28.0",
-    "assertthat": "6.3.13",
+    "assertthat": "6.3.14",
     "axios": "0.24.0",
     "buntstift": "5.0.0",
     "common-tags": "1.8.0",
