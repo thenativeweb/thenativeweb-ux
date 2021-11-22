@@ -78,7 +78,7 @@
     "assertthat": "6.3.14",
     "axios": "0.24.0",
     "buntstift": "5.0.0",
-    "common-tags": "1.8.1",
+    "common-tags": "1.8.2",
     "express": "4.17.1",
     "get-port": "5.1.1",
     "isolated": "3.0.25",
