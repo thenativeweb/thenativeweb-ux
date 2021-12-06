@@ -44,7 +44,7 @@
     "@types/xml2js": "0.4.9",
     "animejs": "3.2.1",
     "classnames": "2.3.1",
-    "color": "4.0.2",
+    "color": "4.1.0",
     "command-line-interface": "4.0.21",
     "csstype": "3.0.10",
     "fs-extra": "10.0.0",
