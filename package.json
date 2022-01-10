@@ -90,7 +90,7 @@
     "retry-ignore-abort": "2.2.27",
     "roboter": "11.7.8",
     "semantic-release-configuration": "2.0.5",
-    "shelljs": "0.8.4"
+    "shelljs": "0.8.5"
   },
   "peerDependencies": {
     "react": "^17.0.2",
