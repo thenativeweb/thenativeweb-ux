@@ -1,3 +1,10 @@
+## [5.9.31](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.30...5.9.31) (2022-01-17)
+
+
+### Bug Fixes
+
+* bump color from 4.1.0 to 4.2.0 ([#1379](https://github.com/thenativeweb/thenativeweb-ux/issues/1379)) ([2e22536](https://github.com/thenativeweb/thenativeweb-ux/commit/2e22536f7ddfb227dae5bbf93a19e943fef9d0e2))
+
 ## [5.9.30](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.29...5.9.30) (2021-08-16)
 
 
