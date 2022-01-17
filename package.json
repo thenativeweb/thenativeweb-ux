@@ -48,7 +48,7 @@
     "command-line-interface": "4.0.21",
     "csstype": "3.0.10",
     "fs-extra": "10.0.0",
-    "globby": "11.0.4",
+    "globby": "12.1.0",
     "jsdom": "19.0.0",
     "lodash": "4.17.21",
     "mozjpeg": "7.1.1",
