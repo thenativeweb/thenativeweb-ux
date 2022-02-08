@@ -1,3 +1,10 @@
+## [5.9.32](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.31...5.9.32) (2022-02-07)
+
+
+### Bug Fixes
+
+* bump @types/node from 17.0.10 to 17.0.15 ([#1407](https://github.com/thenativeweb/thenativeweb-ux/issues/1407)) ([540a4bc](https://github.com/thenativeweb/thenativeweb-ux/commit/540a4bc4b4eeec531e44883528246618e2193a95))
+
 ## [5.9.31](https://github.com/thenativeweb/thenativeweb-ux/compare/5.9.30...5.9.31) (2022-01-17)
 
 
