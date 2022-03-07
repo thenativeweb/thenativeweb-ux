@@ -47,7 +47,7 @@
     "color": "4.2.1",
     "command-line-interface": "4.0.21",
     "csstype": "3.0.11",
-    "fs-extra": "10.0.0",
+    "fs-extra": "10.0.1",
     "globby": "11.0.4",
     "jsdom": "19.0.0",
     "lodash": "4.17.21",
