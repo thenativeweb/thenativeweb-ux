@@ -76,7 +76,7 @@
     "@types/shelljs": "0.8.11",
     "@types/webpack": "5.28.0",
     "assertthat": "6.4.0",
-    "axios": "0.25.0",
+    "axios": "0.26.1",
     "buntstift": "5.0.1",
     "common-tags": "1.8.2",
     "express": "4.17.3",
