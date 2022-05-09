@@ -66,7 +66,7 @@
     "xml2js": "0.4.23"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "12.0.10",
+    "@next/bundle-analyzer": "12.1.6",
     "@types/classnames": "2.3.1",
     "@types/common-tags": "1.8.1",
     "@types/express": "4.17.13",
