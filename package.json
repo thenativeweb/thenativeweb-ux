@@ -53,7 +53,7 @@
     "lodash": "4.17.21",
     "mozjpeg": "7.1.1",
     "p-queue": "6.6.2",
-    "pngquant-bin": "5.0.2",
+    "pngquant-bin": "8.0.1",
     "pretty-format": "27.5.0",
     "react-highlight-words": "0.17.0",
     "react-jss": "10.7.1",
