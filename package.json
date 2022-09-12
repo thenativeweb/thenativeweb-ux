@@ -45,7 +45,7 @@
     "animejs": "3.2.1",
     "classnames": "2.3.1",
     "color": "4.2.1",
-    "command-line-interface": "4.0.21",
+    "command-line-interface": "5.0.0",
     "csstype": "3.0.11",
     "fs-extra": "10.0.0",
     "globby": "11.0.4",
